@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Cousine&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="icon" type="image/ico" href="/images/favicon.ico" />
+  <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>Solar2D Documentation — Plugins | AdColony</title>
+  <meta name="description" content="Solar2D lets you build games/apps for all major platforms including iOS, Android, Kindle, Apple TV, Android TV, macOS, and Windows. Get the free toolset!" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/shCoreDefault.css" />
+<script src="https://corona-cdn.coronalabs.com/js/docs.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-9574984-14', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+<div class="header"></div>
+<div class="title">
+	<span class="titleimg" onclick="window.location='https://docs.coronalabs.com/'"></span>
+	<div id="nav">
+		<ul>
+<li><a href="../../guide/programming/index.html">Getting Started</a></li>
+<li><a href="../../guide/index.html">Guides</a></li>
+<li><a href="../../api/index.html">API Reference</a></li>
+<li><a href="../../tutorial/index.html">Tutorials</a></li>
+<li><a href="../../plugin/index.html">Plugins</a></li>
+<li><a href="../../native/index.html">Solar2D Native</a></li>
+<li><a href="../../coronacards/index.html">CoronaCards</a></li>
+</ul>
+
+		<!--
+		<div id="resources-link"><a href="https://coronalabs.com/resources/">Corona Resources</a></div>
+		-->
+	</div>
+</div>
+
+<div class="SearchBar">
+  <form action="https://www.google.com/cse" id="cse-search-box">
+  <input type="hidden" name="cx" value="009283852522218786394:g40gqt2m6rq" />
+  <input type="hidden" name="ie" value="UTF-8" />
+  <input type="text" placeholder="Search" name="q" id="q" autocomplete="off" size="40" />
+  <input type="submit" name="sa" value="Search" />
+  </form>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#adcolony.">adcolony.*</a><ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#registration">Registration</a></li>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#functions">Functions</a><ul>
+<li><a href="#adcolony.initplugin.adcolony.init"><span>adcolony.init()</span></a></li>
+<li><a href="#adcolony.loadplugin.adcolony.load"><span>adcolony.load()</span></a></li>
+<li><a href="#adcolony.isloadedplugin.adcolony.isloaded"><span>adcolony.isLoaded()</span></a></li>
+<li><a href="#adcolony.showplugin.adcolony.show"><span>adcolony.show()</span></a></li>
+<li><a href="#adcolony.getinfoforzoneplugin.adcolony.getinfoforzone"><span>adcolony.getInfoForZone()</span></a></li>
+</ul></li>
+<li><a href="#events">Events</a><ul>
+<li><a href="#adsrequestplugin.adcolony.event.adsrequest"><span>adsRequest</span></a></li>
+</ul></li>
+<li><a href="#project-settings">Project Settings</a><ul>
+<li><a href="#ios">iOS</a></li>
+<li><a href="#android">Android</a></li>
+</ul></li>
+<li><a href="#support">Support</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="breadcrumb">
+<a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/adcolony/index.html">AdColony</a>
+</div>
+<section id="adcolony." class="level1">
+<h1>adcolony.*</h1>
+<blockquote>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Type</strong></td>
+<td style="text-align: left;"><a href="../../api/type/Library.html">Library</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Revision</strong></td>
+<td style="text-align: left;"><a href="https://solar2d.com/download/">Release 2024.3703</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Keywords</strong></td>
+<td style="text-align: left;">ads, advertising, AdColony</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Platforms</strong></td>
+<td style="text-align: left;">Android, iOS</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<section id="overview" class="level2">
+<h2>Overview</h2>
+<p>The AdColony plugin allows developers to monetize users through <a href="http://www.adcolony.com">AdColony</a> video interstitial and rewarded video ads.</p>
+<div class="docs-tip-outer docs-tip-color-alert">
+<div class="docs-tip-inner-left">
+<div class="fa fa-unlock-alt" style="font-size: 36px; margin-top: 2px; margin-left: 1px;">
+
+</div>
+</div>
+<div class="docs-tip-inner-right">
+<p>The AdColony plugin is only available to users who have purchased the <a href="https://marketplace.coronalabs.com/products/corona-pro">Corona Professional Bundle</a> or the <a href="https://marketplace.coronalabs.com/plugin/adcolony">AdColony</a> plugin. This plugin lets you keep 100% of your ad revenue and allows you to manage your account/settings with AdColony directly.</p>
+</div>
+</div>
+<div class="guide-notebox-imp">
+<div class="notebox-title-imp">
+Important
+</div>
+<p>Check out new <code>hasUserConsent</code> init parameter to enable GDPR data collection restrictions.</p>
+</div>
+</section>
+<section id="registration" class="level2">
+<h2>Registration</h2>
+<p>Before you can use this plugin, you must <a href="https://www.adcolony.com">register</a> with AdColony.</p>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
+<pre class="brush: lua;">local adcolony = require( "plugin.adcolony" )</pre>
+</section>
+<section id="functions" class="level2">
+<h2>Functions</h2>
+<section id="adcolony.initplugin.adcolony.init" class="level4">
+<h4><a href="../../plugin/adcolony/init.html">adcolony.init()</a></h4>
+</section>
+<section id="adcolony.loadplugin.adcolony.load" class="level4">
+<h4><a href="../../plugin/adcolony/load.html">adcolony.load()</a></h4>
+</section>
+<section id="adcolony.isloadedplugin.adcolony.isloaded" class="level4">
+<h4><a href="../../plugin/adcolony/isLoaded.html">adcolony.isLoaded()</a></h4>
+</section>
+<section id="adcolony.showplugin.adcolony.show" class="level4">
+<h4><a href="../../plugin/adcolony/show.html">adcolony.show()</a></h4>
+</section>
+<section id="adcolony.getinfoforzoneplugin.adcolony.getinfoforzone" class="level4">
+<h4><a href="../../plugin/adcolony/getInfoForZone.html">adcolony.getInfoForZone()</a></h4>
+</section>
+</section>
+<section id="events" class="level2">
+<h2>Events</h2>
+<section id="adsrequestplugin.adcolony.event.adsrequest" class="level4">
+<h4><a href="../../plugin/adcolony/event/adsRequest/index.html">adsRequest</a></h4>
+</section>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
+<p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
+<pre class="brush: lua;">settings =
+{
+    plugins =
+    {
+        ["plugin.adcolony"] =
+        {
+            publisherId = "com.coronalabs"
+        },
+    },
+}</pre>
+<section id="ios" class="level3">
+<h3>iOS</h3>
+<p>If your app is for iOS, you must also include the following code in <code>build.settings</code> to ensure that AdColony functions as intended:</p>
+<pre class="brush: lua;">settings = {
+ 
+    iphone =
+    {
+        plist =
+        {
+            LSApplicationQueriesSchemes =
+            {
+                "fb",
+                "instagram",
+                "tumblr",
+                "twitter"
+            },
+            NSCalendarsUsageDescription = "This app would like to add events to the calendar.",
+            NSPhotoLibraryUsageDescription = "This app would like to access the photo library.",
+            NSCameraUsageDescription = "This app would like to access the camera.",
+            NSMotionUsageDescription = "This app would like to use interactive ad controls.",
+            NSUserTrackingUsageDescription = "To serve more releavant ads",
+            SKAdNetworkItems = {
+                { SKAdNetworkIdentifier = "4PFYVQ9L8R.skadnetwork" },
+                { SKAdNetworkIdentifier = "YCLNXRL5PM.skadnetwork" },
+                { SKAdNetworkIdentifier = "V72QYCH5UU.skadnetwork" },
+                { SKAdNetworkIdentifier = "TL55SBB4FM.skadnetwork" },
+                { SKAdNetworkIdentifier = "T38B2KH725.skadnetwork" },
+                { SKAdNetworkIdentifier = "PRCB7NJMU6.skadnetwork" },
+                { SKAdNetworkIdentifier = "PPXM28T8AP.skadnetwork" },
+                { SKAdNetworkIdentifier = "MLMMFZH3R3.skadnetwork" },
+                { SKAdNetworkIdentifier = "KLF5C3L5U5.skadnetwork" },
+                { SKAdNetworkIdentifier = "HS6BDUKANM.skadnetwork" },
+                { SKAdNetworkIdentifier = "C6K4G5QG8M.skadnetwork" },
+                { SKAdNetworkIdentifier = "9T245VHMPL.skadnetwork" },
+                { SKAdNetworkIdentifier = "9RD848Q2BZ.skadnetwork" },
+                { SKAdNetworkIdentifier = "8S468MFL3Y.skadnetwork" },
+                { SKAdNetworkIdentifier = "7UG5ZH24HU.skadnetwork" },
+                { SKAdNetworkIdentifier = "4FZDC2EVR5.skadnetwork" },
+                { SKAdNetworkIdentifier = "4468KM3ULZ.skadnetwork" },
+                { SKAdNetworkIdentifier = "3RD42EKR43.skadnetwork" },
+                { SKAdNetworkIdentifier = "2U9PT9HC89.skadnetwork" },
+                { SKAdNetworkIdentifier = "M8DBW4SV7C.skadnetwork" },
+                { SKAdNetworkIdentifier = "7RZ58N8NTL.skadnetwork" },
+                { SKAdNetworkIdentifier = "EJVT5QM6AK.skadnetwork" },
+                { SKAdNetworkIdentifier = "5LM9LJ6JB7.skadnetwork" },
+                { SKAdNetworkIdentifier = "44JX6755AQ.skadnetwork" },
+                { SKAdNetworkIdentifier = "MTKV5XTK9E.skadnetwork" },
+            }
+        }
+    }
+}</pre>
+<!--- Include ATS "override" template block --->
+<div class="guide-notebox-imp">
+<div class="notebox-title-imp">
+<p>Important</p>
+</div>
+<p>
+If building for iOS, you must bypass App Transport Security (ATS) by adding the following to the <code>plist</code> table of <code>build.settings</code>. While we do not blindly encourage this approach for all developers and projects, bypassing ATS is required in certain cases. For more information on ATS, please see the <a href="../../guide/hardware/appleATS/index.html">Managing App Transport Security</a> guide.
+</p>
+<pre class="brush: lua;">settings =
+{
+    iphone =
+    {
+        plist =
+        {
+            NSAppTransportSecurity = { NSAllowsArbitraryLoads=true },
+        },
+    },
+}</pre>
+</div>
+<!--- --->
+</section>
+<section id="android" class="level3">
+<h3>Android</h3>
+<div class="guide-notebox-imp">
+<div class="notebox-title-imp">
+Important
+</div>
+<p>For Android, you should <strong>remove</strong> any legacy inclusion of the <code>["plugin.google.play.services"]</code> plugin from your <code>build.settings</code>.</p>
+</div>
+<div class="guide-notebox">
+<div class="notebox-title">
+Note
+</div>
+<p>For Android, the following permissions/features are automatically added when using this plugin:</p>
+<ul>
+<li><code>"android.permission.INTERNET"</code></li>
+<li><code>"android.permission.ACCESS_NETWORK_STATE"</code></li>
+<li><code>"android.permission.WRITE_EXTERNAL_STORAGE"</code></li>
+</ul>
+<p>In addition, you can add the following optional permissions:</p>
+<ul>
+<li><code>"android.permission.VIBRATE"</code></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="support" class="level2">
+<h2>Support</h2>
+<ul>
+<li><a href="http://support.adcolony.com/">http://support.adcolony.com/</a></li>
+<li><a href="http://forums.coronalabs.com/forum/545-monetization-in-app-purchases-ads-etc/">Corona Forums</a></li>
+</ul>
+<hr>
+<div id="footer">
+<p class="copyright">
+© 2020-2024 Solar2D All Rights Reserved.
+</p>
+<p class="feedback">
+Help us help you! If you notice a problem with this page, please report it.
+</p>
+<p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
+</div>
+</section>
+</section>
+<script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
+<script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
+<script type="text/javascript">
+    // Define syntax highlighting scripts.
+    // N.B.: As a safeguard, you will need to whitelist the brush in filter-SyntaxHighlighter.py
+
+    SyntaxHighlighter.autoloader(
+      ['c#','https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shBrushCSharp.js'],
+      ['java','https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shBrushJava.js'],
+      ['js','https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shBrushJScript.js'],
+      ['lua','https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shBrushLua.js'],
+      ['php','https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shBrushPhp.js'],
+      ['sql','https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shBrushSql.js'],
+      ['xml','https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shBrushXml.js']
+    );
+
+    // Set default configurations.
+    SyntaxHighlighter.defaults['gutter'] = false; // Disable line numbers.
+    SyntaxHighlighter.defaults['toolbar'] = false; // Disable link back to author's site. :(
+	SyntaxHighlighter.defaults['quick-code'] = false; // Disable double click feature
+
+    // Perform the highlighting.
+    SyntaxHighlighter.all();
+</script>
+</body>
+</html>
