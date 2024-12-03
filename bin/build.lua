@@ -691,6 +691,7 @@ fh:write( Date():__tostring() )
 io.close( fh )
 
 for src in dirtree(markdown_dir) do
+	print("Processing//", src)
     if path.isdir(src) and pbasename(src) == "html" then
         local srcNormalized = normpath(abspath(src))
         local p1 = srcNormalized
