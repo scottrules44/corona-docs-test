@@ -690,30 +690,33 @@ local fh = io.open( ".lastbuild.log", "w" )
 fh:write( Date():__tostring() )
 io.close( fh )
 
--- Copy any 'html' directories to corresponding location in dst
-for src in dirtree( markdown_dir ) do
-	if ( path.isdir( src ) ) then
-		if ( "html" == pbasename( src ) ) then
-			local srcNormalized = normpath( abspath(src) )
-			local p1 = srcNormalized
-			local p2 = normpath( abspath(markdown_dir) )
+for src in dirtree(markdown_dir) do
+    if path.isdir(src) and pbasename(src) == "html" then
+        local srcNormalized = normpath(abspath(src))
+        local p1 = srcNormalized
+        local p2 = normpath(abspath(markdown_dir))
 
-			-- remove prefix p2 from p1
-			print( p1, p2 )
-			local _, i = string_find( p1, p2, 1, true )
-			print( i )
-			local relPath = string.sub( p1, i + 1 )
-			local dstNormalized = normpath( abspath( html_dir .. relPath ) )
+        -- Ensure p2 is a prefix of p1
+        local _, i = string.find(p1, p2, 1, true)
+        if not i then
+            print("Error: markdown_dir is not a prefix of the current path:", p1)
+        else
+            -- Compute relative path
+            local relPath = string.sub(p1, i + 1)
+            local dstNormalized = normpath(abspath(html_dir .. relPath))
 
-			-- remove trailing 'html'
-			dstNormalized = pdirname( dstNormalized )
+            -- Remove trailing 'html'
+            dstNormalized = pdirname(dstNormalized)
 
-			print( srcNormalized, dstNormalized )
-			os.execute( 'cp -rf "' .. srcNormalized .. '" "' .. dstNormalized .. '"'  )
-			--clonetree( srcNormalized, dstNormalized, copyfile, true )
-		end
-	end
+            print("Copying from", srcNormalized, "to", dstNormalized)
+            local success, _, code = os.execute('cp -rf "' .. srcNormalized .. '" "' .. dstNormalized .. '"')
+            if not success then
+                print("Error copying directory:", srcNormalized, "to", dstNormalized, "Error code:", code)
+            end
+        end
+    end
 end
+
 
 --
 -- Cleanup
