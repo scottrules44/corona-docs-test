@@ -674,8 +674,8 @@ for i=1,#markdown_files do
 		pandoc = nil
 	end
 
-	--local percent_completed = math_ceil((i/#markdown_files)*100)
-	--print( "PROGRESS:" .. percent_completed )
+	local percent_completed = math_ceil((i/#markdown_files)*100)
+	print( "PROGRESS:" .. percent_completed )
 end
 
 local execute = normpath(abspath( tmp_resources_dir .. "/execute" ))
@@ -684,14 +684,13 @@ handle:write( table.concat( pandocCommands, "\0" ) )
 io.close( handle )
 
 utils.execute("cat '" .. execute .. "' | xargs -n1 -P8 -0 bash -c")
-
+print("run1323//", pandocCommands)
 -- write last modified date to file
 local fh = io.open( ".lastbuild.log", "w" )
 fh:write( Date():__tostring() )
 io.close( fh )
 
 for src in dirtree(markdown_dir) do
-	print("Processing//", src)
     if path.isdir(src) and pbasename(src) == "html" then
         local srcNormalized = normpath(abspath(src))
         local p1 = srcNormalized
