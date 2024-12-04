@@ -93,8 +93,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/widget/index.html">widget</a>  ▸  <a href="../../../api/library/widget/newProgressView.html">newProgressView</a>
 </div>
-<section id="widget.newprogressview" class="level1">
-<h1>widget.newProgressView()</h1>
+<h1 id="widget.newprogressview">widget.newProgressView()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -125,52 +124,31 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Creates a <a href="../../../api/type/ProgressViewWidget/index.html">ProgressViewWidget</a> object.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>To conserve texture memory, a <a href="../../../api/type/ProgressViewWidget/index.html">ProgressViewWidget</a> can only be created from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>.</p></li>
 <li><p><a href="../../../api/type/ProgressViewWidget/index.html">ProgressViewWidget</a> objects do not support <a href="../../../api/type/DisplayObject/scale.html">scaling</a> nor changing the width/height via <a href="../../../api/type/DisplayObject/width.html">.width</a> or <a href="../../../api/type/DisplayObject/height.html">.height</a>.</p></li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">widget.newProgressView( options )</pre>
 <p>This function takes a single argument, <code>options</code>, which is a table that accepts the following parameters:</p>
-<section id="id-optional" class="level5">
-<h5>id <sub><sup>(optional)</sup></sub></h5>
+<h5 id="id-optional">id <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> An optional identification to assign to the progress view. Default is <code>widget_progressView</code>.</p>
-</section>
-<section id="x-y-optional" class="level5">
-<h5>x, y <sub><sup>(optional)</sup></sub></h5>
+<h5 id="x-y-optional">x, y <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Coordinates for the widget’s <strong>x</strong> and <strong>y</strong> center point. These values will be overridden by <code>left</code> and <code>top</code> if those values are defined.</p>
-</section>
-<section id="left-top-optional" class="level5">
-<h5>left, top <sub><sup>(optional)</sup></sub></h5>
+<h5 id="left-top-optional">left, top <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The left and top position where the widget will be created. If specified, these values override the <code>x</code> and <code>y</code> parameters.</p>
-</section>
-<section id="width-required" class="level5">
-<h5>width <sub><sup>(required)</sup></sub></h5>
+<h5 id="width-required">width <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The overall width of the progress view.</p>
-</section>
-<section id="isanimated-optional" class="level5">
-<h5>isAnimated <sub><sup>(optional)</sup></sub></h5>
+<h5 id="isanimated-optional">isAnimated <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> Set this to <code>true</code> if the progress change should be animated, <code>false</code> (or omitted) if the progress change should occur instantly.</p>
-</section>
-<section id="fillxoffset-optional" class="level5">
-<h5>fillXOffset <sub><sup>(optional)</sup></sub></h5>
+<h5 id="fillxoffset-optional">fillXOffset <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Set this to horizontally offset the fill region of the progress view. Default is <code>0</code>.</p>
-</section>
-<section id="fillyoffset-optional" class="level5">
-<h5>fillYOffset <sub><sup>(optional)</sup></sub></h5>
+<h5 id="fillyoffset-optional">fillYOffset <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Set this to vertically offset the fill region of the progress view. Default is <code>0</code>.</p>
-</section>
-</section>
-<section id="visual-customization" class="level2">
-<h2>Visual Customization</h2>
+<h2 id="visual-customization">Visual Customization</h2>
 <p>The progress view widget can be visually customized using an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>. As shown in the following example, 6 frames can be used to assemble an outer border and an inner fill bar. The outer border consists of the left cap (red), the middle span (green), and the right cap (yellow). The inner fill region consists of a left cap (orange), a middle span (blue), and a right cap (purple).</p>
 <p>Depending on the width of the progress view, the outer border caps remain at the size stated in the image sheet and the middle frame (green) stretches to fill the width between. When the progress is set to any value higher than <code>0.0</code>, the inner left cap and right cap become visible. Then, depending on the current percentage, the middle fill span (blue) stretches to fill the distance between the two caps.</p>
 <div class="float-right" style="float: none; margin: 20px 0px 20px 0px; font-size: 125%; color: #292929; vertical-align: middle;">
@@ -184,59 +162,30 @@
 </tbody>
 </table>
 </div>
-<section id="sheet-required" class="level5">
-<h5>sheet <sub><sup>(required)</sup></sub></h5>
+<h5 id="sheet-required">sheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> The <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> object for the progress view.</p>
-</section>
-<section id="fillouterleftframe-required" class="level5">
-<h5>fillOuterLeftFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillouterleftframe-required">fillOuterLeftFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the outer border left cap.</p>
-</section>
-<section id="filloutermiddleframe-required" class="level5">
-<h5>fillOuterMiddleFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="filloutermiddleframe-required">fillOuterMiddleFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the outer border middle span.</p>
-</section>
-<section id="fillouterrightframe-required" class="level5">
-<h5>fillOuterRightFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillouterrightframe-required">fillOuterRightFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the outer border right cap.</p>
-</section>
-<section id="fillouterwidth-fillouterheight-required" class="level5">
-<h5>fillOuterWidth, fillOuterHeight <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillouterwidth-fillouterheight-required">fillOuterWidth, fillOuterHeight <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width/height of the outer border frames. All border frames should share the same width and height.</p>
-</section>
-<section id="fillinnerleftframe-required" class="level5">
-<h5>fillInnerLeftFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillinnerleftframe-required">fillInnerLeftFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the inner fill left cap.</p>
-</section>
-<section id="fillinnermiddleframe-required" class="level5">
-<h5>fillInnerMiddleFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillinnermiddleframe-required">fillInnerMiddleFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the inner fill middle span.</p>
-</section>
-<section id="fillinnerrightframe-required" class="level5">
-<h5>fillInnerRightFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillinnerrightframe-required">fillInnerRightFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the inner fill right cap.</p>
-</section>
-<section id="fillwidth-fillheight-required" class="level5">
-<h5>fillWidth, fillHeight <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillwidth-fillheight-required">fillWidth, fillHeight <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width/height of the inner fill frames. All fill frames should share the same width and height.</p>
-</section>
-</section>
-<section id="methods" class="level2">
-<h2>Methods</h2>
-<section id="objectsetprogressapi.type.progressviewwidget.setprogress" class="level4">
-<h4><a href="../../../api/type/ProgressViewWidget/setProgress.html">object:setProgress()</a></h4>
-</section>
-<section id="objectgetprogressapi.type.progressviewwidget.getprogress" class="level4">
-<h4><a href="../../../api/type/ProgressViewWidget/getProgress.html">object:getProgress()</a></h4>
-</section>
-<section id="objectresizeviewapi.type.progressviewwidget.resizeview" class="level4">
-<h4><a href="../../../api/type/ProgressViewWidget/resizeView.html">object:resizeView()</a></h4>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="default" class="level5">
-<h5>Default</h5>
+<h2 id="methods">Methods</h2>
+<h4 id="objectsetprogressapi.type.progressviewwidget.setprogress"><a href="../../../api/type/ProgressViewWidget/setProgress.html">object:setProgress()</a></h4>
+<h4 id="objectgetprogressapi.type.progressviewwidget.getprogress"><a href="../../../api/type/ProgressViewWidget/getProgress.html">object:getProgress()</a></h4>
+<h4 id="objectresizeviewapi.type.progressviewwidget.resizeview"><a href="../../../api/type/ProgressViewWidget/resizeView.html">object:resizeView()</a></h4>
+<h2 id="examples">Examples</h2>
+<h5 id="default">Default</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Create the widget
@@ -251,9 +200,7 @@ local progressView = widget.newProgressView(
 
 -- Set the progress to 50%
 progressView:setProgress( 0.5 )</pre>
-</section>
-<section id="image-sheet" class="level5">
-<h5>Image Sheet</h5>
+<h5 id="image-sheet">Image Sheet</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Image sheet options and declaration
@@ -300,9 +247,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

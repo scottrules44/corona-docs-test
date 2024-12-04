@@ -153,8 +153,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../guide/index.html">Developer Guides</a>  ▸  <a href="../../guide/graphics/index.html">Graphics/Audio/Animation</a>
 </div>
-<section id="image-effects-filters-generators-composites" class="level1">
-<h1>Image Effects — Filters, Generators, Composites</h1>
+<h1 id="image-effects-filters-generators-composites">Image Effects — Filters, Generators, Composites</h1>
 <p>In Solar2D, visual effects can be applied to display objects with unprecedented ease. This guide contains a list of all <nobr>built-in</nobr> shader effects. Alternatively, to create your own custom effects, please refer to the <a href="../../guide/graphics/customEffects.html">Custom Shader Effects</a> guide.</p>
 <div class="guides-toc">
 <ul>
@@ -199,8 +198,7 @@ Note
 </div>
 <!--- FILTER EFFECTS -->
 <p><a id="filter"></a></p>
-<section id="filter-effects" class="level2">
-<h2>Filter Effects</h2>
+<h2 id="filter-effects">Filter Effects</h2>
 <p>Filter effects operate on a single texture/image, specified by the filter name (string) as the <code>effect</code> property of <code>object.fill</code> or <code>object.stroke</code>:</p>
 <pre class="brush: lua;">object.fill.effect = "[filter]"
 object.stroke.effect = "[filter]"</pre>
@@ -228,8 +226,7 @@ transition.to( object.fill.effect, { time=2000, intensity=1 } )</pre>
 </tbody>
 </table>
 </div>
-<section id="filter.bloom" class="level3">
-<h3>filter.bloom</h3>
+<h3 id="filter.bloom">filter.bloom</h3>
 <p>Renders fringes of light which extend from the borders of bright areas in an image, giving the illusion of an extremely bright light overwhelming the view.</p>
 <ul>
 <li><code>levels.white</code> — default = <code>0.843</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -267,9 +264,7 @@ object.fill.effect.blur.vertical.sigma = 240</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.blur" class="level3">
-<h3>filter.blur</h3>
+<h3 id="filter.blur">filter.blur</h3>
 <pre class="brush: lua;">object.fill.effect = "filter.blur"</pre>
 <!--- FILTER.BLUR-GAUSSIAN -->
 <a id="blurGaussian"></a>
@@ -287,9 +282,7 @@ object.fill.effect.blur.vertical.sigma = 240</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.blurgaussian" class="level3">
-<h3>filter.blurGaussian</h3>
+<h3 id="filter.blurgaussian">filter.blurGaussian</h3>
 <ul>
 <li><code>horizontal.blurSize</code> — default = <code>8</code> ; min = <code>2</code> ; max = <code>512</code></li>
 <li><code>horizontal.sigma</code> — default = <code>128</code> ; min = <code>2</code> ; max = <code>512</code></li>
@@ -318,9 +311,7 @@ object.fill.effect.vertical.sigma = 140</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.blurgaussianlinear" class="level3">
-<h3>filter.blurGaussianLinear</h3>
+<h3 id="filter.blurgaussianlinear">filter.blurGaussianLinear</h3>
 <p>A lightweight approach to Gaussian blur, as described in <a href="https://www.rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/">this RasterGrid article</a>.</p>
 <ul>
 <li><code>horizontal.offset1</code> — default = <code>1.3846153846</code> ; min = <code>0</code> ; max = <code>100</code></li>
@@ -345,9 +336,7 @@ object.fill.effect.vertical.sigma = 140</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.blurgaussianlinearhorizontal" class="level3">
-<h3>filter.blurGaussianLinearHorizontal</h3>
+<h3 id="filter.blurgaussianlinearhorizontal">filter.blurGaussianLinearHorizontal</h3>
 <ul>
 <li><code>offset1</code> — default = <code>1.3846153846</code> ; min = <code>0</code> ; max = <code>100</code></li>
 <li><code>offset2</code> — default = <code>3.2307692308</code> ; min = <code>0</code> ; max = <code>100</code></li>
@@ -369,9 +358,7 @@ object.fill.effect.vertical.sigma = 140</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.blurgaussianlinearvertical" class="level3">
-<h3>filter.blurGaussianLinearVertical</h3>
+<h3 id="filter.blurgaussianlinearvertical">filter.blurGaussianLinearVertical</h3>
 <ul>
 <li><code>offset1</code> — default = <code>1.3846153846</code> ; min = <code>0</code> ; max = <code>100</code></li>
 <li><code>offset2</code> — default = <code>3.2307692308</code> ; min = <code>0</code> ; max = <code>100</code></li>
@@ -393,9 +380,7 @@ object.fill.effect.vertical.sigma = 140</pre>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="filter.blurhorizontal" class="level3">
-<h3>filter.blurHorizontal</h3>
+<h3 id="filter.blurhorizontal">filter.blurHorizontal</h3>
 <ul>
 <li><code>blurSize</code> — default = <code>8</code> ; min = <code>2</code> ; max = <code>512</code></li>
 <li><code>sigma</code> — default = <code>128</code> ; min = <code>2</code> ; max = <code>512</code></li>
@@ -420,9 +405,7 @@ object.fill.effect.sigma = 140</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.blurvertical" class="level3">
-<h3>filter.blurVertical</h3>
+<h3 id="filter.blurvertical">filter.blurVertical</h3>
 <ul>
 <li><code>blurSize</code> — default = <code>8</code> ; min = <code>2</code> ; max = <code>512</code></li>
 <li><code>sigma</code> — default = <code>128</code> ; min = <code>2</code> ; max = <code>512</code></li>
@@ -447,9 +430,7 @@ object.fill.effect.sigma = 140</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.brightness" class="level3">
-<h3>filter.brightness</h3>
+<h3 id="filter.brightness">filter.brightness</h3>
 <ul>
 <li><code>intensity</code> — default = <code>0</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -472,9 +453,7 @@ object.fill.effect.intensity = 0.4</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.bulge" class="level3">
-<h3>filter.bulge</h3>
+<h3 id="filter.bulge">filter.bulge</h3>
 <p>Provides the illusion of lens bulging by altering eye-ray direction. Intensity of less than <code>1</code> makes the effect bulge inward (concave). Intensity greater than <code>1</code> makes the effect bulge outward (convex).</p>
 <ul>
 <li><code>intensity</code> — default = <code>1</code> ; min = <code>0</code> ; max = (none)</li>
@@ -498,9 +477,7 @@ object.fill.effect.intensity = 1.8</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.chromakey" class="level3">
-<h3>filter.chromaKey</h3>
+<h3 id="filter.chromakey">filter.chromaKey</h3>
 <ul>
 <li><code>sensitivity</code> — default = <code>0.4</code> ; min = <code>0</code> ; max = <code>1</code></li>
 <li><code>smoothing</code> — default = <code>0.1</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -527,9 +504,7 @@ object.fill.effect.color = { 0.2, 0.2, 0.2, 1 }</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.colorchanneloffset" class="level3">
-<h3>filter.colorChannelOffset</h3>
+<h3 id="filter.colorchanneloffset">filter.colorChannelOffset</h3>
 <ul>
 <li><code>xTexels</code> — default = <code>8</code> ; min = <code>0</code> ; max = (none)</li>
 <li><code>yTexels</code> — default = <code>8</code> ; min = <code>0</code> ; max = (none)</li>
@@ -554,9 +529,7 @@ object.fill.effect.yTexels = 16</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.colormatrix" class="level3">
-<h3>filter.colorMatrix</h3>
+<h3 id="filter.colormatrix">filter.colorMatrix</h3>
 <p>Multiplies a source color and adds an offset (bias) to each color component of an image.</p>
 <ul>
 <li><code>coefficients</code> — a 4×4 matrix of RGB+A coefficients.</li>
@@ -588,9 +561,7 @@ object.fill.effect.bias = { 0.6, 0.1, 0, 0 }</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.colorpolynomial" class="level3">
-<h3>filter.colorPolynomial</h3>
+<h3 id="filter.colorpolynomial">filter.colorPolynomial</h3>
 <p>Applies a set of cubic polynomials to an image.</p>
 <ul>
 <li><code>coefficients</code> — a 4×4 matrix of RGB+A coefficients.</li>
@@ -620,9 +591,7 @@ object.fill.effect.coefficients =
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.contrast" class="level3">
-<h3>filter.contrast</h3>
+<h3 id="filter.contrast">filter.contrast</h3>
 <ul>
 <li><code>contrast</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>4</code></li>
 </ul>
@@ -645,9 +614,7 @@ object.fill.effect.contrast = 2</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.crosshatch" class="level3">
-<h3>filter.crosshatch</h3>
+<h3 id="filter.crosshatch">filter.crosshatch</h3>
 <ul>
 <li><code>grain</code> — default = <code>0</code> ; min = <code>0</code> ; max = (none)</li>
 </ul>
@@ -670,9 +637,7 @@ object.fill.effect.grain = 4</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.crystallize" class="level3">
-<h3>filter.crystallize</h3>
+<h3 id="filter.crystallize">filter.crystallize</h3>
 <ul>
 <li><code>numTiles</code> — default = <code>16</code> ; min = <code>2</code> ; max = (none)</li>
 </ul>
@@ -695,9 +660,7 @@ object.fill.effect.numTiles = 32</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.desaturate" class="level3">
-<h3>filter.desaturate</h3>
+<h3 id="filter.desaturate">filter.desaturate</h3>
 <ul>
 <li><code>intensity</code> — default = <code>0.5</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -720,9 +683,7 @@ object.fill.effect.intensity = 0.5</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.dissolve" class="level3">
-<h3>filter.dissolve</h3>
+<h3 id="filter.dissolve">filter.dissolve</h3>
 <ul>
 <li><code>threshold</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -745,9 +706,7 @@ object.fill.effect.threshold = 0.6</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.duotone" class="level3">
-<h3>filter.duotone</h3>
+<h3 id="filter.duotone">filter.duotone</h3>
 <p>Increases the tonal range of a grayscale image by using different colors to reproduce distinct gray levels.</p>
 <ul>
 <li><code>darkColor</code> — default = <code>{0,0,0.5,1}</code> ; min = <code>{0,0,0,0}</code> ; max = <code>{1,1,1,1}</code></li>
@@ -773,9 +732,7 @@ object.fill.effect.lightColor = { 1, 0.6, 0.4, 1 }</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.emboss" class="level3">
-<h3>filter.emboss</h3>
+<h3 id="filter.emboss">filter.emboss</h3>
 <ul>
 <li><code>intensity</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>4</code></li>
 </ul>
@@ -798,9 +755,7 @@ object.fill.effect.intensity = 0.2</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.exposure" class="level3">
-<h3>filter.exposure</h3>
+<h3 id="filter.exposure">filter.exposure</h3>
 <ul>
 <li><code>exposure</code> — default = <code>0</code> ; min = <code>-10</code> ; max = <code>10</code></li>
 </ul>
@@ -823,9 +778,7 @@ object.fill.effect.exposure = 1.2</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.frostedglass" class="level3">
-<h3>filter.frostedGlass</h3>
+<h3 id="filter.frostedglass">filter.frostedGlass</h3>
 <ul>
 <li><code>scale</code> — default = <code>64</code> ; min = <code>1</code> ; max = (none)</li>
 </ul>
@@ -848,9 +801,7 @@ object.fill.effect.scale = 140</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.grayscale" class="level3">
-<h3>filter.grayscale</h3>
+<h3 id="filter.grayscale">filter.grayscale</h3>
 <pre class="brush: lua;">object.fill.effect = "filter.grayscale"</pre>
 <!--- FILTER.HUE -->
 <a id="hue"></a>
@@ -868,9 +819,7 @@ object.fill.effect.scale = 140</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.hue" class="level3">
-<h3>filter.hue</h3>
+<h3 id="filter.hue">filter.hue</h3>
 <ul>
 <li><code>angle</code> — default = <code>0</code> ; min = <code>0</code> ; max = <code>360</code></li>
 </ul>
@@ -893,9 +842,7 @@ object.fill.effect.angle = 200</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.invert" class="level3">
-<h3>filter.invert</h3>
+<h3 id="filter.invert">filter.invert</h3>
 <pre class="brush: lua;">object.fill.effect = "filter.invert"</pre>
 <!--- FILTER.IRIS -->
 <a id="iris"></a>
@@ -913,9 +860,7 @@ object.fill.effect.angle = 200</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.iris" class="level3">
-<h3>filter.iris</h3>
+<h3 id="filter.iris">filter.iris</h3>
 <ul>
 <li><code>center</code> — default = <code>{0.5,0.5}</code> ; min = <code>{0,0}</code> ; max = <code>{1,1}</code></li>
 <li><code>aperture</code> — default = <code>0</code> ; min = <code>0</code> (closed) ; max = <code>1</code> (open)</li>
@@ -944,9 +889,7 @@ object.fill.effect.smoothness = 0.5</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.levels" class="level3">
-<h3>filter.levels</h3>
+<h3 id="filter.levels">filter.levels</h3>
 <ul>
 <li><code>white</code> — default = <code>0.843</code> ; min = <code>0</code> ; max = <code>1</code></li>
 <li><code>black</code> — default = <code>0.565</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -973,9 +916,7 @@ object.fill.effect.gamma = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.linearwipe" class="level3">
-<h3>filter.linearWipe</h3>
+<h3 id="filter.linearwipe">filter.linearWipe</h3>
 <ul>
 <li><code>direction</code> — default = <code>{1,0}</code> ; min = <code>{-1,-1}</code> ; max = <code>{1,1}</code></li>
 <li><code>smoothness</code> — default = <code>0</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -1002,9 +943,7 @@ object.fill.effect.progress = 0.5</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.median" class="level3">
-<h3>filter.median</h3>
+<h3 id="filter.median">filter.median</h3>
 <pre class="brush: lua;">object.fill.effect = "filter.median"</pre>
 <!--- FILTER.MONOTONE -->
 <a id="monotone"></a>
@@ -1022,9 +961,7 @@ object.fill.effect.progress = 0.5</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.monotone" class="level3">
-<h3>filter.monotone</h3>
+<h3 id="filter.monotone">filter.monotone</h3>
 <ul>
 <li><code>r</code> — default = <code>0</code> ; min = <code>0</code> ; max = <code>1</code></li>
 <li><code>g</code> — default = <code>0</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -1053,9 +990,7 @@ object.fill.effect.a = 0.5</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.optile" class="level3">
-<h3>filter.opTile</h3>
+<h3 id="filter.optile">filter.opTile</h3>
 <ul>
 <li><code>numPixels</code> — default = <code>8</code> ; min = <code>0</code> ; max = (none)</li>
 <li><code>angle</code> — default = <code>0</code> ; min = <code>0</code> ; max = <code>360</code></li>
@@ -1082,9 +1017,7 @@ object.fill.effect.scale = 3</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.pixelate" class="level3">
-<h3>filter.pixelate</h3>
+<h3 id="filter.pixelate">filter.pixelate</h3>
 <ul>
 <li><code>numPixels</code> — default = <code>4</code> ; min = <code>0</code> ; max = (none)</li>
 </ul>
@@ -1107,9 +1040,7 @@ object.fill.effect.numPixels = 4</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.polkadots" class="level3">
-<h3>filter.polkaDots</h3>
+<h3 id="filter.polkadots">filter.polkaDots</h3>
 <ul>
 <li><code>numPixels</code> — default = <code>4</code> ; min = <code>4</code> ; max = (none)</li>
 <li><code>dotRadius</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -1136,9 +1067,7 @@ object.fill.effect.aspectRatio = ( object.width / object.height )</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.posterize" class="level3">
-<h3>filter.posterize</h3>
+<h3 id="filter.posterize">filter.posterize</h3>
 <ul>
 <li><code>colorsPerChannel</code> — default = <code>4</code> ; min = <code>2</code> ; max = (none)</li>
 </ul>
@@ -1161,9 +1090,7 @@ object.fill.effect.colorsPerChannel = 6</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.radialwipe" class="level3">
-<h3>filter.radialWipe</h3>
+<h3 id="filter.radialwipe">filter.radialWipe</h3>
 <ul>
 <li><code>center</code> — default = <code>{0.5,0.5}</code> ; min = <code>{-1,-1}</code> ; max = <code>{1,1}</code></li>
 <li><code>smoothness</code> — default = <code>0</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -1192,9 +1119,7 @@ object.fill.effect.progress = 0.5</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.saturate" class="level3">
-<h3>filter.saturate</h3>
+<h3 id="filter.saturate">filter.saturate</h3>
 <ul>
 <li><code>intensity</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>8</code></li>
 </ul>
@@ -1217,9 +1142,7 @@ object.fill.effect.intensity = 4</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.scatter" class="level3">
-<h3>filter.scatter</h3>
+<h3 id="filter.scatter">filter.scatter</h3>
 <ul>
 <li><code>intensity</code> — default = <code>0.5</code> ; min = <code>0</code> ; max = (none)</li>
 </ul>
@@ -1242,9 +1165,7 @@ object.fill.effect.intensity = 0.5</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.sepia" class="level3">
-<h3>filter.sepia</h3>
+<h3 id="filter.sepia">filter.sepia</h3>
 <ul>
 <li><code>intensity</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1267,9 +1188,7 @@ object.fill.effect.intensity = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.sharpenluminance" class="level3">
-<h3>filter.sharpenLuminance</h3>
+<h3 id="filter.sharpenluminance">filter.sharpenLuminance</h3>
 <ul>
 <li><code>sharpness</code> — default = <code>0</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1292,9 +1211,7 @@ object.fill.effect.sharpness = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.sobel" class="level3">
-<h3>filter.sobel</h3>
+<h3 id="filter.sobel">filter.sobel</h3>
 <pre class="brush: lua;">object.fill.effect = "filter.sobel"</pre>
 <!--- FILTER.STRAIGHTEN -->
 <a id="straighten"></a>
@@ -1312,9 +1229,7 @@ object.fill.effect.sharpness = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.straighten" class="level3">
-<h3>filter.straighten</h3>
+<h3 id="filter.straighten">filter.straighten</h3>
 <ul>
 <li><code>width</code> — default = <code>1</code> ; min = <code>1</code> ; max = (none)</li>
 <li><code>height</code> — default = <code>1</code> ; min = <code>1</code> ; max = (none)</li>
@@ -1341,9 +1256,7 @@ object.fill.effect.angle = 20</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.swirl" class="level3">
-<h3>filter.swirl</h3>
+<h3 id="filter.swirl">filter.swirl</h3>
 <ul>
 <li><code>intensity</code> — default = <code>0</code> ; min = <code>0</code> ; max = (none)</li>
 </ul>
@@ -1366,9 +1279,7 @@ object.fill.effect.intensity = 0.4</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.vignette" class="level3">
-<h3>filter.vignette</h3>
+<h3 id="filter.vignette">filter.vignette</h3>
 <ul>
 <li><code>radius</code> — default = <code>0.1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1391,9 +1302,7 @@ object.fill.effect.radius = 0.1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.vignettemask" class="level3">
-<h3>filter.vignetteMask</h3>
+<h3 id="filter.vignettemask">filter.vignetteMask</h3>
 <ul>
 <li><code>innerRadius</code> — default = <code>0.8</code> ; min = <code>0</code> ; max = <code>1</code></li>
 <li><code>outerRadius</code> — default = <code>0.25</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -1418,9 +1327,7 @@ object.fill.effect.outerRadius = 0.1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.wobble" class="level3">
-<h3>filter.wobble</h3>
+<h3 id="filter.wobble">filter.wobble</h3>
 <ul>
 <li><code>amplitude</code> — default = <code>10</code> ; min = (none) ; max = (none)</li>
 </ul>
@@ -1443,9 +1350,7 @@ object.fill.effect.amplitude = 80</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.woodcut" class="level3">
-<h3>filter.woodCut</h3>
+<h3 id="filter.woodcut">filter.woodCut</h3>
 <ul>
 <li><code>intensity</code> — default = <code>0.5</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1468,9 +1373,7 @@ object.fill.effect.intensity = 0.4</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="filter.zoomblur" class="level3">
-<h3>filter.zoomBlur</h3>
+<h3 id="filter.zoomblur">filter.zoomBlur</h3>
 <ul>
 <li><code>u</code> (horizontal origin) — default = <code>0.5</code> ; min = <code>0</code> ; max = <code>1</code></li>
 <li><code>v</code> (vertical origin) — default = <code>0.5</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -1486,10 +1389,7 @@ object.fill.effect.intensity = 0.3</pre>
 
 </div>
 <p><a id="generator"></a></p>
-</section>
-</section>
-<section id="generator-effects" class="level2">
-<h2>Generator Effects</h2>
+<h2 id="generator-effects">Generator Effects</h2>
 <p>Generator effects are procedurally-generated effects which don’t operate on any textures/images. Instead, they generate textures in the fragment shader.</p>
 <p>Like filters, generators are specified by the effect name (string) as the <code>effect</code> property of <code>object.fill</code> or <code>object.stroke</code>:</p>
 <pre class="brush: lua;">object.fill.effect = "[generator]"
@@ -1512,8 +1412,7 @@ object.fill.effect.aspectRatio = ( object.width / object.height )</pre>
 </tbody>
 </table>
 </div>
-<section id="generator.checkerboard" class="level3">
-<h3>generator.checkerboard</h3>
+<h3 id="generator.checkerboard">generator.checkerboard</h3>
 <ul>
 <li><code>color1</code> — default = <code>{1,0,0,1}</code> ; min = <code>{0,0,0,0}</code> ; max = <code>{1,1,1,1}</code></li>
 <li><code>color2</code> — default = <code>{0,0,1,1}</code> ; min = <code>{0,0,0,0}</code> ; max = <code>{1,1,1,1}</code></li>
@@ -1540,9 +1439,7 @@ object.fill.effect.yStep = 8</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="generator.lenticularhalo" class="level3">
-<h3>generator.lenticularHalo</h3>
+<h3 id="generator.lenticularhalo">generator.lenticularHalo</h3>
 <p>Renders a lenticular halo effect on an object. Although the sample image indicates otherwise, this effect is generated with a transparent alpha background. The <code>seed</code> parameter is used by the random algorithm and is provided as a means to vary the look of the halo.</p>
 <ul>
 <li><code>posX</code> — default = <code>0.5</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -1570,9 +1467,7 @@ object.fill.effect.seed = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="generator.lineargradient" class="level3">
-<h3>generator.linearGradient</h3>
+<h3 id="generator.lineargradient">generator.linearGradient</h3>
 <ul>
 <li><code>color1</code> — default = <code>{1,0,0,1}</code> ; min = <code>{0,0,0,0}</code> ; max = <code>{1,1,1,1}</code></li>
 <li><code>position1</code> — default = <code>{0,0}</code> ; min = <code>{0,0}</code> ; max = <code>{1,1}</code></li>
@@ -1599,9 +1494,7 @@ object.fill.effect.position2  = { 1, 1 }</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="generator.marchingants" class="level3">
-<h3>generator.marchingAnts</h3>
+<h3 id="generator.marchingants">generator.marchingAnts</h3>
 <pre class="brush: lua;">object.strokeWidth = 2
 object.stroke.effect = "generator.marchingAnts"</pre>
 <!--- GENERATOR.PERLIN-NOISE -->
@@ -1618,9 +1511,7 @@ object.stroke.effect = "generator.marchingAnts"</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="generator.perlinnoise" class="level3">
-<h3>generator.perlinNoise</h3>
+<h3 id="generator.perlinnoise">generator.perlinNoise</h3>
 <ul>
 <li><code>color1</code> — default = <code>{1,0,0,1}</code> ; min = <code>{0,0,0,0}</code> ; max = <code>{1,1,1,1}</code></li>
 <li><code>color2</code> — default = <code>{0,0,1,1}</code> ; min = <code>{0,0,0,0}</code> ; max = <code>{1,1,1,1}</code></li>
@@ -1645,9 +1536,7 @@ object.fill.effect.scale = 12</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="generator.radialgradient" class="level3">
-<h3>generator.radialGradient</h3>
+<h3 id="generator.radialgradient">generator.radialGradient</h3>
 <p>Renders a radial gradient on an object. The <code>center_and_radiuses</code> parameter is a table which specifies, in order, the center <strong>x</strong>, center <strong>y</strong>, inner radius, and outer radius.</p>
 <ul>
 <li><code>color1</code> — default = <code>{1,0,0,1}</code> ; min = <code>{0,0,0,0}</code> ; max = <code>{1,1,1,1}</code></li>
@@ -1675,9 +1564,7 @@ object.fill.effect.aspectRatio  = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="generator.random" class="level3">
-<h3>generator.random</h3>
+<h3 id="generator.random">generator.random</h3>
 <pre class="brush: lua;">object.fill.effect = "generator.random"</pre>
 <!--- GENERATOR.STRIPES -->
 <a id="stripes"></a>
@@ -1693,9 +1580,7 @@ object.fill.effect.aspectRatio  = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="generator.stripes" class="level3">
-<h3>generator.stripes</h3>
+<h3 id="generator.stripes">generator.stripes</h3>
 <p>Renders a stripe pattern on an object. The <code>periods</code> parameter is a table which specifies, in order, the width of the first stripe, width of the first empty space, width of the second stripe, and width of the second empty space. The <code>translation</code> parameter specifies the offset position of the pattern.</p>
 <ul>
 <li><code>periods</code> — default = <code>{1,1,1,1}</code> ; min = <code>{0,0,0,0}</code></li>
@@ -1721,9 +1606,7 @@ object.fill.effect.translation  = 0</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="generator.sunbeams" class="level3">
-<h3>generator.sunbeams</h3>
+<h3 id="generator.sunbeams">generator.sunbeams</h3>
 <p>Renders a sunbeam effect on an object. Although the sample image indicates otherwise, this effect is generated with a transparent alpha background. The <code>seed</code> parameter is used by the random algorithm and is provided as a means to vary the look of the sunbeam.</p>
 <ul>
 <li><code>posX</code> — default = <code>0.5</code> ; min = <code>0</code> ; max = <code>1</code></li>
@@ -1742,10 +1625,7 @@ object.fill.effect.seed = 0</pre>
 
 </div>
 <p><a id="composite"></a></p>
-</section>
-</section>
-<section id="composite-effects" class="level2">
-<h2>Composite Effects</h2>
+<h2 id="composite-effects">Composite Effects</h2>
 <p>Composite effects operate on <strong>two</strong> textures/images, combined together as a composite paint. Once defined, this composite paint can be used to <a href="../../guide/graphics/path.html">fill/stroke</a> an object and apply a composite blend effect. A composite paint can consist of two distinct textures/images or the same texture/image upon itself, depending on the effect you want to achieve.</p>
 <div class="side-by-side" style="margin-top: 3px;">
 <table>
@@ -1789,8 +1669,7 @@ object.fill.effect = "composite.add"</pre>
 </tbody>
 </table>
 </div>
-<section id="composite.add" class="level3">
-<h3>composite.add</h3>
+<h3 id="composite.add">composite.add</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1814,9 +1693,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.average" class="level3">
-<h3>composite.average</h3>
+<h3 id="composite.average">composite.average</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1840,9 +1717,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.colorburn" class="level3">
-<h3>composite.colorBurn</h3>
+<h3 id="composite.colorburn">composite.colorBurn</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1866,9 +1741,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.colordodge" class="level3">
-<h3>composite.colorDodge</h3>
+<h3 id="composite.colordodge">composite.colorDodge</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1892,9 +1765,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.darken" class="level3">
-<h3>composite.darken</h3>
+<h3 id="composite.darken">composite.darken</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1918,9 +1789,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.difference" class="level3">
-<h3>composite.difference</h3>
+<h3 id="composite.difference">composite.difference</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1944,9 +1813,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.exclusion" class="level3">
-<h3>composite.exclusion</h3>
+<h3 id="composite.exclusion">composite.exclusion</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1970,9 +1837,7 @@ object.fill.alpha = 0.4</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.glow" class="level3">
-<h3>composite.glow</h3>
+<h3 id="composite.glow">composite.glow</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -1996,9 +1861,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.hardlight" class="level3">
-<h3>composite.hardLight</h3>
+<h3 id="composite.hardlight">composite.hardLight</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2022,9 +1885,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.hardmix" class="level3">
-<h3>composite.hardMix</h3>
+<h3 id="composite.hardmix">composite.hardMix</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2048,9 +1909,7 @@ object.fill.alpha = 0.2</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.lighten" class="level3">
-<h3>composite.lighten</h3>
+<h3 id="composite.lighten">composite.lighten</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2074,9 +1933,7 @@ object.fill.alpha = 0.8</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.linearlight" class="level3">
-<h3>composite.linearLight</h3>
+<h3 id="composite.linearlight">composite.linearLight</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2100,9 +1957,7 @@ object.fill.alpha = 0.4</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.multiply" class="level3">
-<h3>composite.multiply</h3>
+<h3 id="composite.multiply">composite.multiply</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2126,9 +1981,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.negation" class="level3">
-<h3>composite.negation</h3>
+<h3 id="composite.negation">composite.negation</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2152,9 +2005,7 @@ object.fill.alpha = 0.3</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.normalmapwith1dirlight" class="level3">
-<h3>composite.normalMapWith1DirLight</h3>
+<h3 id="composite.normalmapwith1dirlight">composite.normalMapWith1DirLight</h3>
 <p>This composite effect renders a directional light upon a surface. In this effect, <code>dirLightDirection</code> is a table containing the light direction in texture space. The origin and the growth direction of each axis is the same as described for <code>pointLightPos</code> in <a href="#normalMapWith1PointLight">composite.normalMapWith1PointLight</a>. This direction vector indicates where the light is coming from, not the direction in which it’s going. There’s no need to normalize this vector as it’s already done internally.</p>
 <p>The <code>dirLightColor</code> parameter is a table containing RGB+A values, and <code>ambientLightIntensity</code> specifies the intensity.</p>
 <ul>
@@ -2184,9 +2035,7 @@ object.fill.effect.ambientLightIntensity = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.normalmapwith1pointlight" class="level3">
-<h3>composite.normalMapWith1PointLight</h3>
+<h3 id="composite.normalmapwith1pointlight">composite.normalMapWith1PointLight</h3>
 <p>This composite effect renders a point light upon a surface. In this effect, <code>pointLightPos</code> is a table containing the light position in texture space. This <code>{x,y,z}</code> origin is the upper left corner <code>{0,0,0}</code>. Positive <strong>x</strong> moves to the right, positive <strong>y</strong> moves towards the bottom, and positive <strong>z</strong> moves “out of the screen” towards the viewer, representing the distance from the surface. There’s no maximum value for <strong>z</strong>, but typically this value will be between <code>0</code> and <code>1</code>.</p>
 <p>The <code>pointLightColor</code> parameter is a table containing RGB+A values, and <code>ambientLightIntensity</code> specifies the intensity from <code>0</code> (dark) to <code>1</code> (full brightness).</p>
 <p>The <code>attenuationFactors</code> parameter is a table containing the diffuse light’s distance attenuation factors. In this case, <code>{x,y,z}</code> are the constant, linear, and quadratic attenuation factors. Note that distance attenuation does <strong>not</strong> affect ambient light intensity. For a better understanding of attenuation factors, read about <a href="https://developer.valvesoftware.com/wiki/Constant-Linear-Quadratic_Falloff">Falloff</a> and <a href="http://www.felixgers.de/teaching/jogl/lightAttenuation.html">Attenuation of Light</a>.</p>
@@ -2219,9 +2068,7 @@ object.fill.effect.attenuationFactors = { 0.4, 3, 0 }</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.overlay" class="level3">
-<h3>composite.overlay</h3>
+<h3 id="composite.overlay">composite.overlay</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2245,9 +2092,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.phoenix" class="level3">
-<h3>composite.phoenix</h3>
+<h3 id="composite.phoenix">composite.phoenix</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2271,9 +2116,7 @@ object.fill.alpha = 0.5</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.pinlight" class="level3">
-<h3>composite.pinLight</h3>
+<h3 id="composite.pinlight">composite.pinLight</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2297,9 +2140,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.reflect" class="level3">
-<h3>composite.reflect</h3>
+<h3 id="composite.reflect">composite.reflect</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2323,9 +2164,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.screen" class="level3">
-<h3>composite.screen</h3>
+<h3 id="composite.screen">composite.screen</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2349,9 +2188,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.softlight" class="level3">
-<h3>composite.softLight</h3>
+<h3 id="composite.softlight">composite.softLight</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2375,9 +2212,7 @@ object.fill.alpha = 1</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.subtract" class="level3">
-<h3>composite.subtract</h3>
+<h3 id="composite.subtract">composite.subtract</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2401,9 +2236,7 @@ object.fill.alpha = 0.8</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="composite.vividlight" class="level3">
-<h3>composite.vividLight</h3>
+<h3 id="composite.vividlight">composite.vividLight</h3>
 <ul>
 <li><code>alpha</code> — default = <code>1</code> ; min = <code>0</code> ; max = <code>1</code></li>
 </ul>
@@ -2416,12 +2249,8 @@ object.fill.alpha = 1</pre>
 </div>
 <p><br /></p>
 <p><a id="support"></a></p>
-</section>
-</section>
-<section id="device-specific-limitations" class="level2">
-<h2>Device-Specific Limitations</h2>
-<section id="hardware-support" class="level3">
-<h3>Hardware Support</h3>
+<h2 id="device-specific-limitations">Device-Specific Limitations</h2>
+<h3 id="hardware-support">Hardware Support</h3>
 <p>The following visual effects require modern GPUs (Graphics Processing Units) and they may not function properly on all devices.</p>
 <p><span style="float: left; margin-right: 25px; margin-top: 0px;"></p>
 <ul>
@@ -2450,9 +2279,7 @@ else
 end</pre>
 <p>If the device supports <nobr>high-precision</nobr> fragment shaders, you can override the default shader precision for all OpenGL ES shaders as outlined <a href="../../guide/basics/configSettings/index.html#shaderPrecision">here</a>.</p>
 <!--- REFERENCE LINK -->
-</section>
-<section id="rendering-execution" class="level3">
-<h3>Rendering Execution</h3>
+<h3 id="rendering-execution">Rendering Execution</h3>
 <p>Certain parameters have a direct influence on the execution time of an effect. This applies to both the initial rendering <strong>and</strong> any <nobr>re-execution</nobr> events. For example, if an object is moved/transitioned, the effects applied to it are <nobr>re-executed</nobr>. Thus, you should be careful when setting the parameters of an effect, especially those like <code>"filter.blurGaussian"</code>. If possible, we recommend that you test applicable projects on actual devices.</p>
 <hr>
 <div id="footer">
@@ -2464,9 +2291,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

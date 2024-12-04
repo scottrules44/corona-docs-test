@@ -66,11 +66,9 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/media/index.html">Graphics/Audio/Animation</a>
 </div>
-<section id="extending-anchor-points" class="level1">
-<h1>Extending Anchor Points</h1>
+<h1 id="extending-anchor-points">Extending Anchor Points</h1>
 <p>In Solar2D, all display objects have an <strong>anchor point</strong>. Essentially, this can be imagined as a “pin” point within the object’s bounds around which all transforms occur — <strong>x</strong>/<strong>y</strong> positioning, rotation, scaling, etc. For example, if an object’s anchor point is set at the <nobr>top-left</nobr> corner, rotation of the object will cause it to rotate around that point.</p>
-<section id="anchor-overview" class="level2">
-<h2>Anchor Overview</h2>
+<h2 id="anchor-overview">Anchor Overview</h2>
 <div class="float-right" style="max-width: 244px; margin-bottom: 16px; clear: both;">
 <p><img src="../../../images/docs/anchor-diagram.png" /></p>
 </div>
@@ -107,9 +105,7 @@ object.anchorY = 0.25
 
 -- Transition the object to test anchor point
 transition.to( object, { time=2000, rotation=45, delay=500 } )</pre>
-</section>
-<section id="extending-anchor-points-1" class="level2">
-<h2>Extending Anchor Points</h2>
+<h2 id="extending-anchor-points-1">Extending Anchor Points</h2>
 <p>The default “clamped” values of <code>0.0</code> to <code>1.0</code> accomodate the majority of usage cases, from any point along an object’s outer edge to any point within it — but what if we wanted to set the anchor point to some theoretical point <strong>outside</strong> of the object’s bounds?</p>
 <p>The first mandatory step in <strong>extending anchor points</strong> is to disable the <code>"isAnchorClamped"</code> setting of <a href="../../../api/library/display/setDefault.html">display.setDefault()</a>:</p>
 <pre class="brush: lua;">display.setDefault( "isAnchorClamped", false )</pre>
@@ -132,9 +128,7 @@ earth:setFillColor( 0, 0.5, 0.7 )
 earth.anchorX = -10.0
 
 transition.to( earth, { time=8000, rotation=-360, iterations=0 } )</pre>
-</section>
-<section id="pixels-vs.-range" class="level2">
-<h2>Pixels vs. Range</h2>
+<h2 id="pixels-vs.-range">Pixels vs. Range</h2>
 <p>As illustrated above, setting an anchor point is based on a <strong>range</strong> relative to the object’s bounds: <code>0</code> is top/left, <code>0.5</code> is center, <code>1</code> is bottom/right, etc. Similarly, assuming anchor clamping is disabled, a value of <code>2.0</code> extends the anchor 200% right or down from the <nobr>top-left</nobr> corner an object, while <code>-0.5</code> extends it 50% above or left of the <nobr>top-left</nobr> corner.</p>
 <p>This is logical enough, but what if we needed to set the anchor at a specific <strong>pixel</strong> point within an object or a specific pixel distance outside its bounds? For example, what if an object was 86×90 pixels in size and we wanted to set its anchor at 12 pixels in from the <nobr>top-left</nobr> point?</p>
 <p>Doing so is easily accomplished with some basic math. Simply take the pixel inset (12) and divide it by the width of the example object (86), setting that as the object’s <code>anchorX</code> value. Then do the same for the <strong>y</strong> anchor, dividing 12 by 90 and setting that value as <code>anchorY</code>:</p>
@@ -147,9 +141,7 @@ object.anchorY = 12 / object.contentHeight  -- 0.133333333333333</pre>
 <p><img src="../../../images/docs/anchor-extend.png" /></p>
 </div>
 <p>Why <code>-4</code> instead of <code>-4.5</code>? Because, as you can see in the diagram, the desired anchor point is 400 pixels outside the <strong>left</strong> edge of the circle, and since <code>0</code> represents the circle’s left edge, the portion of the blue line that extends into the center of the circle (50 pixels) can be disregarded.</p>
-</section>
-<section id="conclusion" class="level2">
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>With this optional setting, you have access to virtually any anchor point inside <strong>or</strong> outside an object’s bounds, and with some simple math, you can even pinpoint an anchor point at a pixel location relative to an object’s bounds.</p>
 <hr>
 <div id="footer">
@@ -161,8 +153,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

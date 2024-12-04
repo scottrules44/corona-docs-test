@@ -79,8 +79,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/media/index.html">Graphics/Audio/Animation</a>
 </div>
-<section id="animation-tweens-and-timelines" class="level1">
-<h1>Animation — Tweens and Timelines</h1>
+<h1 id="animation-tweens-and-timelines">Animation — Tweens and Timelines</h1>
 <p>This guide discusses how to use the Corona <a href="../../../plugin/animation/index.html">animation</a> plugin to move, rotate, fade, or scale a display object/group over a specific period of time. It also outlines how to use <a href="#timelines">timelines</a> to construct intricate <nobr>multi-interpolation</nobr> animations across one or more display objects/groups.</p>
 <div class="guides-toc">
 <ul>
@@ -93,8 +92,7 @@
 </ul>
 </div>
 <p><a id="features"></a></p>
-<section id="plugin-features" class="level2">
-<h2>Plugin Features</h2>
+<h2 id="plugin-features">Plugin Features</h2>
 <ul>
 <li><p>Ability to move, rotate, fade, or scale a display object/group over a specific period of time.</p></li>
 <li><p>Ability to construct and control <a href="#timelines">timelines</a> for intricate <nobr>multi-interpolation</nobr> animations.</p></li>
@@ -108,9 +106,7 @@
 <li><p>Ability to pause, resume, or cancel all tweens on an <nobr>object-wide</nobr> basis.</p></li>
 </ul>
 <p><a id="tweens"></a></p>
-</section>
-<section id="tweens" class="level2">
-<h2>Tweens</h2>
+<h2 id="tweens">Tweens</h2>
 <p>A basic <strong>tween</strong> can be initiated using one of these functions:</p>
 <ul>
 <li><p><a href="../../../plugin/animation/to.html">animation.to()</a> — This function animates (interpolates) properties of an object using an optional easing function. This is the most common animation call for basic tweens.</p></li>
@@ -119,12 +115,9 @@
 <p>The basic syntax for these functions is:</p>
 <pre class="brush: lua;">animation.to( target, properties, params )</pre>
 <pre class="brush: lua;">animation.from( target, properties, params )</pre>
-<section id="tween-target" class="level3">
-<h3>Tween Target</h3>
+<h3 id="tween-target">Tween Target</h3>
 <p>The first argument in either function, <code>target</code>, will most often be a <a href="../../../guide/media/displayObjects/index.html">display object</a> or <a href="../../../api/library/display/newGroup.html">display group</a> that you wish to animate. However, for more specialized cases, it can also be a <a href="../../../api/type/RectPath/index.html">RectPath</a> point for <a href="../../../guide/graphics/3D.html#quadrilateral-distortion">quadrilateral distortion</a>, a table of <nobr>RGB+A</nobr> color channels for a <a href="../../../api/type/Paint/index.html">Paint</a> fill, or a <a href="../../../api/type/Paint/effect.html">fill.effect</a> property.</p>
-</section>
-<section id="object-properties" class="level3">
-<h3>Object Properties</h3>
+<h3 id="object-properties">Object Properties</h3>
 <p>The second argument, <code>properties</code>, is a table of <nobr>key-value</nobr> pairs. Inside this table, specify each desired <strong>property</strong> to change along with its final value (starting value if using <code>animation.from()</code>).</p>
 <div class="inner-table">
 <table>
@@ -210,9 +203,7 @@
 <p>If in doubt, check the <a href="../../../api/index.html">documentation</a> associated with the object or library to confirm that it doesn’t have any property restrictions related to tweens.</p>
 </div>
 </div>
-</section>
-<section id="control-parameters" class="level3">
-<h3>Control Parameters</h3>
+<h3 id="control-parameters">Control Parameters</h3>
 <p>The third argument, <code>params</code>, is also a table of <nobr>key-value</nobr> pairs. Inside this table, specify the appropriate <strong>control parameters</strong> for the tween:</p>
 <div class="inner-table">
 <table>
@@ -267,9 +258,7 @@
 </table>
 </div>
 <p><a id="easing"></a></p>
-</section>
-<section id="easing-functions" class="level3">
-<h3>Easing Functions</h3>
+<h3 id="easing-functions">Easing Functions</h3>
 <p>By default, tweens occur at a consistent, linear rate of change from start to end. However, you may wish to use an easing effect to achieve a different result, for example, to make an object move quickly at the start and gradually slow down as it reaches its destination. This behavior can be achieved using an <a href="../../../api/library/easing/index.html">easing</a> function in conjunction with the animation call.</p>
 <p>To set an easing effect on a tween, simply provide the <code>easing</code> key in the <code>params</code> table with a value equal to one of the <a href="../../../api/library/easing/index.html">easing</a> library functions. For example:</p>
 <pre class="highlight: [6]; first-line: 1; gutter: false; brush: lua;">-- Tween the object using outward quadratic interpolation
@@ -299,9 +288,7 @@ animation.to( myObject,
 </div>
 </div>
 <p><a id="tween-events"></a></p>
-</section>
-<section id="tween-events" class="level3">
-<h3>Tween Events</h3>
+<h3 id="tween-events">Tween Events</h3>
 <p>Tweens also support a full range of <strong>tween events</strong> as listed below. These should be specified as <nobr>key-value</nobr> pairs within the <code>params</code> table. When the event occurs, the associated listener function will receive a reference to the <a href="../../../plugin/animation/type/Tween/index.html">Tween</a> object.</p>
 <div class="inner-table">
 <table>
@@ -367,15 +354,11 @@ animation.to( myObject,
     }
 )</pre>
 <p><a id="timelines"></a></p>
-</section>
-</section>
-<section id="timelines" class="level2">
-<h2>Timelines</h2>
+<h2 id="timelines">Timelines</h2>
 <p>A <strong>timeline</strong> is a powerful way to construct intricate <nobr>multi-interpolation</nobr> animations across one or more display objects/groups. They are constructed with the <a href="../../../plugin/animation/newTimeline.html">animation.newTimeline()</a> command:</p>
 <pre class="brush: lua;">animation.newTimeline( timelineParams )</pre>
 <p>For this function, the <code>timelineParams</code> argument is a <a href="../../../api/type/Table.html">table</a> which specifies the tweens, markers, and other parameters for the timeline.</p>
-<section id="timeline-tweens" class="level3">
-<h3>Timeline Tweens</h3>
+<h3 id="timeline-tweens">Timeline Tweens</h3>
 <p>At the minimum, the <code>timelineParams</code> table must contain a child table, <code>tweens</code>, which contains all of the tweens that will be involved in the timeline:</p>
 <pre class="highlight: [3]; first-line: 1; gutter: false; brush: lua;">local newTimeline = animation.newTimeline(
 {
@@ -395,9 +378,7 @@ animation.to( myObject,
         { startTime=1000, tween={ object1, { y=400 }, { time=4000, easing=easing.outQuad } } }
     },
 })</pre>
-</section>
-<section id="timeline-markers" class="level3">
-<h3>Timeline Markers</h3>
+<h3 id="timeline-markers">Timeline Markers</h3>
 <p>For an added level of control, you can specify any number of <strong>markers</strong> within the timeline duration. These markers, specified within the optional <code>markers</code> table, allow you to specify <nobr>jump-to</nobr> points within the timeline. Each marker should be defined as a <a href="../../../api/type/Table.html">table</a> containing the following properties:</p>
 <ul>
 <li><code>name</code> — A <a href="../../../api/type/String.html">string</a> name to associate with the marker. This name should be <strong>unique</strong> (you should not use duplicate marker names within the same timeline).</li>
@@ -427,9 +408,7 @@ animation.to( myObject,
 <p>Once configured, you can use a marker name to jump to its associated position. See <a href="../../../plugin/animation/type/Timeline/setPosition.html">object:setPosition()</a> or <a href="../../../plugin/animation/setPosition.html">animation.setPosition()</a> for details.</p>
 </div>
 </div>
-</section>
-<section id="other-parameters" class="level3">
-<h3>Other Parameters</h3>
+<h3 id="other-parameters">Other Parameters</h3>
 <p>Timelines accept a variety of additional parameters (optional) which can be used for <nobr>fine-tuned</nobr> setup and control. These should be specified as <nobr>key-value</nobr> pairs within the <code>timelineParams</code> table.</p>
 <div class="inner-table">
 <table>
@@ -468,9 +447,7 @@ animation.to( myObject,
 </table>
 </div>
 <p><a id="timeline-events"></a></p>
-</section>
-<section id="timeline-events" class="level3">
-<h3>Timeline Events</h3>
+<h3 id="timeline-events">Timeline Events</h3>
 <p>Timelines also support a full range of <strong>timeline events</strong> as listed below. These should be specified as <nobr>key-value</nobr> pairs within the <code>timelineParams</code> table. When the event occurs, the associated listener function will receive a reference to the <a href="../../../plugin/animation/type/Timeline/index.html">Timeline</a> object.</p>
 <div class="inner-table">
 <table>
@@ -541,10 +518,7 @@ local newTimeline = animation.newTimeline(
 -- Set the timeline playing
 newTimeline:resume()</pre>
 <p><a id="control"></a></p>
-</section>
-</section>
-<section id="controlling-tweenstimelines" class="level2">
-<h2>Controlling Tweens/Timelines</h2>
+<h2 id="controlling-tweenstimelines">Controlling Tweens/Timelines</h2>
 <p>Tweens and timelines can be controlled through various methods. You can either use a <strong>library command</strong> (through the <a href="../../../plugin/animation/index.html">animation</a> plugin) or an <strong>object command</strong> on a <a href="../../../plugin/animation/type/Tween/index.html">Tween</a> object or <a href="../../../plugin/animation/type/Timeline/index.html">Timeline</a> object.</p>
 <div class="inner-table">
 <table>
@@ -634,9 +608,7 @@ newTimeline:resume()</pre>
 </div>
 </div>
 <p><a id="status"></a></p>
-</section>
-<section id="tweentimeline-status" class="level2">
-<h2>Tween/Timeline Status</h2>
+<h2 id="tweentimeline-status">Tween/Timeline Status</h2>
 <p>If needed, you can get the <strong>status</strong> of a specific tween or timeline via the following calls:</p>
 <div class="inner-table">
 <table>
@@ -667,9 +639,7 @@ newTimeline:resume()</pre>
 </table>
 </div>
 <p><a id="custom-easing"></a></p>
-</section>
-<section id="custom-easing-functions" class="level2">
-<h2>Custom Easing Functions</h2>
+<h2 id="custom-easing-functions">Custom Easing Functions</h2>
 <p>If the built-in <a href="../../../api/library/easing/index.html">easing</a> functions do not include a very specific interpolation pattern necessary for your project, it’s possible to create custom easing functions and utilize them as the <code>easing</code> property for a tween.</p>
 <p>Custom easing functions should follow the pattern of other easing functions, such as that for <code>easing.linear</code>:</p>
 <pre class="brush: lua;">easing.linear = function( t, tMax, start, delta )
@@ -714,8 +684,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -80,8 +80,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/calendar/index.html">calendar</a>  ▸  <a href="../../plugin/calendar/editEvent.html">editEvent</a>
 </div>
-<section id="calendar.editevent" class="level1">
-<h1>calendar.editEvent()</h1>
+<h1 id="calendar.editevent">calendar.editEvent()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,42 +107,24 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p><code>calendar.editEvent()</code> updates existing event with specified properties.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">calendar.editEvent( params )</pre>
-<section id="params-required" class="level5">
-<h5>params <sub><sup>(required)</sup></sub></h5>
+<h5 id="params-required">params <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing call parameters - see next section for details.</p>
-</section>
-</section>
-<section id="parameters-table-reference" class="level2">
-<h2>Parameters table reference</h2>
-<section id="listener-optional" class="level5">
-<h5>listener <sub><sup>(optional)</sup></sub></h5>
+<h2 id="parameters-table-reference">Parameters table reference</h2>
+<h5 id="listener-optional">listener <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener that will receive <a href="../../plugin/calendar/event/calendarEvent/index.html">event</a> event.</p>
-</section>
-<section id="eventid-required" class="level5">
-<h5>eventId <sub><sup>(required)</sup></sub></h5>
+<h5 id="eventid-required">eventId <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Identifier of calendar event to modify.</p>
-</section>
-<section id="title-optional" class="level5">
-<h5>title <sub><sup>(optional)</sup></sub></h5>
+<h5 id="title-optional">title <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Title for the event.</p>
-</section>
-<section id="startdate-optional" class="level5">
-<h5>startDate <sub><sup>(optional)</sup></sub></h5>
+<h5 id="startdate-optional">startDate <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Start date for the event in Unix time format.</p>
-</section>
-<section id="enddate-optional" class="level5">
-<h5>endDate <sub><sup>(optional)</sup></sub></h5>
+<h5 id="enddate-optional">endDate <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> End date for the event in Unix time format.</p>
-</section>
-<section id="calendarid-optional" class="level5">
-<h5>calendarId <sub><sup>(optional)</sup></sub></h5>
+<h5 id="calendarid-optional">calendarId <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Calendar identifier to move the calendar event.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -151,30 +132,17 @@ Note
 </div>
 <pre class="brush: lua;">Changing calendar will probably change event's identifier.</pre>
 </div>
-</section>
-<section id="location-optional" class="level5">
-<h5>location <sub><sup>(optional)</sup></sub></h5>
+<h5 id="location-optional">location <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Location for the event.</p>
-</section>
-<section id="allday-optional" class="level5">
-<h5>allDay <sub><sup>(optional)</sup></sub></h5>
+<h5 id="allday-optional">allDay <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> Boolean value, where <code>true</code> means that the event should last all day and <code>false</code> otherwise.</p>
-</section>
-<section id="repeatfrequency-optional" class="level5">
-<h5>repeatFrequency <sub><sup>(optional)</sup></sub></h5>
+<h5 id="repeatfrequency-optional">repeatFrequency <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Recurrency frequency for the event. Valid values are: <code>day</code>, <code>week</code>, <code>month</code> and <code>year</code>.</p>
-</section>
-<section id="repeatenddate-optional" class="level5">
-<h5>repeatEndDate <sub><sup>(optional)</sup></sub></h5>
+<h5 id="repeatenddate-optional">repeatEndDate <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Recurrency end date for the event in Unix time format.</p>
-</section>
-<section id="alarms-optional" class="level5">
-<h5>alarms <sub><sup>(optional)</sup></sub></h5>
+<h5 id="alarms-optional">alarms <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Lua array, each entry containing number of minutes before event to trigger an alarm.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local calendar = require( "plugin.calendar" )
 
 local function editEventListener( event )
@@ -202,8 +170,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -74,8 +74,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/media/index.html">media</a>  ▸  <a href="../../../api/library/media/playVideo.html">playVideo</a>
 </div>
-<section id="media.playvideo" class="level1">
-<h1>media.playVideo()</h1>
+<h1 id="media.playvideo">media.playVideo()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -106,8 +105,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Plays the video at the specified path (both local and remote) in a device-specific popup media player.</p>
 <p>During video playback, the media player interface takes over. If the <code>showControls</code> function argument is <code>true</code>, the user can adjust playback (start, stop, seek, etc.). Additionally, you may specify a listener to get notified when the video has ended. Note that this function is asynchronous, so any code that follows will be executed. After that, the application code will continue to run on iOS devices, but on Android devices, the application will be suspended until the video playback is complete.</p>
 <p>Supported video formats are platform- and version-dependent. The iOS video player supports playback of movie files with the <code>.mov</code>, <code>.mp4</code>, <code>.m4v</code>, and <code>.3gp</code> filename extensions and using the following compression standards:</p>
@@ -115,15 +113,10 @@
 <li>H.264 Baseline Profile Level 3.0 video, up to 640×480 at 30 frames per second. Note that B frames are not supported in the Baseline profile.</li>
 <li>MPEG-4 Part 2 video (Simple Profile).</li>
 </ul>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
-<section id="general" class="level3">
-<h3>General</h3>
+<h2 id="gotchas">Gotchas</h2>
+<h3 id="general">General</h3>
 <p>This API is not supported on Windows.</p>
-</section>
-<section id="android" class="level3">
-<h3>Android</h3>
+<h3 id="android">Android</h3>
 <p>If the path to the video is a URL, you must add the <code>INTERNET</code> permission to the <code>build.settings</code> file in order to play the video.</p>
 <pre class="brush: lua;">settings =
 {
@@ -135,30 +128,17 @@
       },
    },
 }</pre>
-</section>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">media.playVideo( path [, baseSource ], showControls, listener )</pre>
-<section id="path-required" class="level5">
-<h5>path <sub><sup>(required)</sup></sub></h5>
+<h5 id="path-required">path <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The local filename or a remote URL for the video.</p>
-</section>
-<section id="basesource-optional" class="level5">
-<h5>baseSource <sub><sup>(optional)</sup></sub></h5>
+<h5 id="basesource-optional">baseSource <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Constant.html">Constant</a>.</em> Optional parameter that controls how the local filename path is interpreted. It can either be one of the system-defined directory constants, or <code>media.RemoteSource</code> (use this to access video on a remote server).</p>
-</section>
-<section id="showcontrols-required" class="level5">
-<h5>showControls <sub><sup>(required)</sup></sub></h5>
+<h5 id="showcontrols-required">showControls <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> If <code>true</code>, then the user can adjust playback (start, stop, seek, etc.).</p>
-</section>
-<section id="listener-optional" class="level5">
-<h5>listener <sub><sup>(optional)</sup></sub></h5>
+<h5 id="listener-optional">listener <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Listener.html">Listener</a>.</em> Listener to notify when the video has ended. The listener can be either a function listener or a table listener. If it’s a table, it must have a completion method. The event dispatched to the listener will be a completion event.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local onComplete = function( event )
    print( "video session ended" )
 end
@@ -173,8 +153,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

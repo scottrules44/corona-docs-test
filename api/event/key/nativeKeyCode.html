@@ -64,8 +64,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/event/index.html">Events</a>  ▸  <a href="../../../api/event/key/index.html">key</a>  ▸  <a href="../../../api/event/key/nativeKeyCode.html">nativeKeyCode</a>
 </div>
-<section id="event.nativekeycode" class="level1">
-<h1>event.nativeKeyCode</h1>
+<h1 id="event.nativekeycode">event.nativeKeyCode</h1>
 <blockquote>
 <table>
 <tbody>
@@ -88,15 +87,12 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Provides the key’s unique integer ID assigned to it by the operating system.</p>
 <p>This key code is not cross-platform, meaning that its numeric value for the same key will vary on different operating systems. For example, the “A” key will have key code <code>29</code> on Android and key code <code>65</code> on Windows.</p>
 <p>On Android, the key code’s value will match a <code>KEYCODE</code> constant defined in Android’s <code>KeyEvent</code> Java class.</p>
 <p>On Windows, the key code’s value will match a “virtual key code” constant in Microsoft’s <code>WinUser.h</code> C/C++ file, such as <code>VK_RETURN</code>. In .NET, it would match a constant in the <code>System.Windows.Forms.Keys</code> enum, which provides the same key code constants defined in C/C++.</p>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Called when a key event has been received
 local function onKeyEvent( event )
     local message = "Key '" .. event.keyName .. "' has key code: " .. tostring( event.nativeKeyCode )
@@ -116,8 +112,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

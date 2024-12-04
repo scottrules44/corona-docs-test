@@ -79,8 +79,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/event/index.html">Events</a>  ▸  <a href="../../../api/event/preCollision/index.html">preCollision</a>
 </div>
-<section id="precollision" class="level1">
-<h1>preCollision</h1>
+<h1 id="precollision">preCollision</h1>
 <blockquote>
 <table>
 <tbody>
@@ -119,12 +118,9 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Used in conjunction with the <a href="../../../api/library/physics/index.html">physics</a> library. Physics engine <nobr>pre-collision</nobr> events are exposed through the Corona event listener model with the event name of <code>"preCollision"</code>. In addition to these events and standard <a href="../../../api/event/collision/index.html">collision</a> events, Corona offers <a href="../../../api/event/postCollision/index.html">postCollision</a> events.</p>
-</section>
-<section id="object-references" class="level2">
-<h2>Object References</h2>
+<h2 id="object-references">Object References</h2>
 <p>Depending on whether pre-collisions are detected locally or globally, references to the objects involved will vary. For more information about these two collision handling methods, see the <a href="../../../guide/physics/collisionDetection/index.html">Collision Detection</a> guide.</p>
 <div class="inner-table">
 <table>
@@ -178,48 +174,21 @@ local function onGlobalPreCollision( event )
     print( event.element2 )      --the element (number) of the second object which was hit in the collision
 end
 Runtime:addEventListener( "preCollision", onGlobalPreCollision )</pre>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>Physics engine <nobr>pre-collision</nobr> events are quite “noisy” and may report many times per contact, potentially affecting performance. Therefore, you should only listen for these events if you truly need <nobr>pre-collision</nobr> detection. We also recommend that you use local listeners within the objects of interest rather than listening globally to all <code>"preCollision"</code> events in the physics world.</p>
-</section>
-<section id="properties" class="level2">
-<h2>Properties</h2>
-<section id="event.contactapi.event.precollision.contact" class="level4">
-<h4><a href="../../../api/event/preCollision/contact.html">event.contact</a></h4>
-</section>
-<section id="event.element1api.event.precollision.element1" class="level4">
-<h4><a href="../../../api/event/preCollision/element1.html">event.element1</a></h4>
-</section>
-<section id="event.element2api.event.precollision.element2" class="level4">
-<h4><a href="../../../api/event/preCollision/element2.html">event.element2</a></h4>
-</section>
-<section id="event.nameapi.event.precollision.name" class="level4">
-<h4><a href="../../../api/event/preCollision/name.html">event.name</a></h4>
-</section>
-<section id="event.object1api.event.precollision.object1" class="level4">
-<h4><a href="../../../api/event/preCollision/object1.html">event.object1</a></h4>
-</section>
-<section id="event.object2api.event.precollision.object2" class="level4">
-<h4><a href="../../../api/event/preCollision/object2.html">event.object2</a></h4>
-</section>
-<section id="event.otherapi.event.precollision.other" class="level4">
-<h4><a href="../../../api/event/preCollision/other.html">event.other</a></h4>
-</section>
-<section id="event.otherelementapi.event.precollision.otherelement" class="level4">
-<h4><a href="../../../api/event/preCollision/otherElement.html">event.otherElement</a></h4>
-</section>
-<section id="event.selfelementapi.event.precollision.selfelement" class="level4">
-<h4><a href="../../../api/event/preCollision/selfElement.html">event.selfElement</a></h4>
-</section>
-<section id="event.targetapi.event.precollision.target" class="level4">
-<h4><a href="../../../api/event/preCollision/target.html">event.target</a></h4>
-</section>
-<section id="event.xapi.event.precollision.x" class="level4">
-<h4><a href="../../../api/event/preCollision/x.html">event.x</a></h4>
-</section>
-<section id="event.yapi.event.precollision.y" class="level4">
-<h4><a href="../../../api/event/preCollision/y.html">event.y</a></h4>
+<h2 id="properties">Properties</h2>
+<h4 id="event.contactapi.event.precollision.contact"><a href="../../../api/event/preCollision/contact.html">event.contact</a></h4>
+<h4 id="event.element1api.event.precollision.element1"><a href="../../../api/event/preCollision/element1.html">event.element1</a></h4>
+<h4 id="event.element2api.event.precollision.element2"><a href="../../../api/event/preCollision/element2.html">event.element2</a></h4>
+<h4 id="event.nameapi.event.precollision.name"><a href="../../../api/event/preCollision/name.html">event.name</a></h4>
+<h4 id="event.object1api.event.precollision.object1"><a href="../../../api/event/preCollision/object1.html">event.object1</a></h4>
+<h4 id="event.object2api.event.precollision.object2"><a href="../../../api/event/preCollision/object2.html">event.object2</a></h4>
+<h4 id="event.otherapi.event.precollision.other"><a href="../../../api/event/preCollision/other.html">event.other</a></h4>
+<h4 id="event.otherelementapi.event.precollision.otherelement"><a href="../../../api/event/preCollision/otherElement.html">event.otherElement</a></h4>
+<h4 id="event.selfelementapi.event.precollision.selfelement"><a href="../../../api/event/preCollision/selfElement.html">event.selfElement</a></h4>
+<h4 id="event.targetapi.event.precollision.target"><a href="../../../api/event/preCollision/target.html">event.target</a></h4>
+<h4 id="event.xapi.event.precollision.x"><a href="../../../api/event/preCollision/x.html">event.x</a></h4>
+<h4 id="event.yapi.event.precollision.y"><a href="../../../api/event/preCollision/y.html">event.y</a></h4>
 <hr>
 <div id="footer">
 <p class="copyright">
@@ -230,9 +199,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

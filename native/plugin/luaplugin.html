@@ -75,8 +75,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../native/index.html">Solar2D Native</a>  ▸  <a href="../../native/plugin/index.html">Plugins</a>  ▸  <a href="../../native/plugin/luaplugin.html">Creating Lua Plugins</a>
 </div>
-<section id="creating-lua-plugins" class="level1">
-<h1>Creating Lua Plugins</h1>
+<h1 id="creating-lua-plugins">Creating Lua Plugins</h1>
 <p>This guide outlines how to create a Lua plugin and package it for submission to the <a href="https://www.solar2dplugins.com/">Solar2D Plugins Marketplace</a>.</p>
 <div class="docs-tip-outer">
 <div class="docs-tip-inner-left">
@@ -98,13 +97,10 @@
 </ul>
 </div>
 <p><a id="overview"></a></p>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>In simple terms, a <strong>Lua plugin</strong> is nothing more than a module or series of modules that provide the end user with a set of methods (functions) and properties (variables) that can be called to execute the code you’re providing. However, instead of sharing the code publicly via GitHub, your own website, or similar, you can deploy your Lua modules in a binary form and effectively protect your Intellectual Property (IP).</p>
 <p><a id="create"></a></p>
-</section>
-<section id="creating-a-plugin" class="level2">
-<h2>Creating a Plugin</h2>
+<h2 id="creating-a-plugin">Creating a Plugin</h2>
 <div class="docs-tip-outer docs-tip-color-alert">
 <div class="docs-tip-inner-left">
 <div class="fa fa-exclamation-circle" style="font-size: 35px;">
@@ -164,12 +160,9 @@ create_project.bat \path\to\new\project\ PLUGIN_NAME</pre>
 </ul>
 </div>
 <p><a id="modify"></a></p>
-</section>
-<section id="modifying-the-plugin" class="level2">
-<h2>Modifying the Plugin</h2>
+<h2 id="modifying-the-plugin">Modifying the Plugin</h2>
 <p>There are some essential parts of the project folder that you must modify:</p>
-<section id="metadata.json" class="level3">
-<h3>metadata.json</h3>
+<h3 id="metadata.json">metadata.json</h3>
 <p>First, edit the <code>metadata.json</code> file which contains information about your plugin. The base (unmodified) file looks like this:</p>
 <pre class="brush: lua;">{
     "contact": "PUBLISHER_CONTACT@PUBLISHER_URL",
@@ -206,15 +199,10 @@ create_project.bat \path\to\new\project\ PLUGIN_NAME</pre>
 </tbody>
 </table>
 </div>
-</section>
-<section id="test-files" class="level3">
-<h3>Test Files</h3>
+<h3 id="test-files">Test Files</h3>
 <p>Next, open up the <code>lua</code> folder. The three files <code>build.settings</code>, <code>config.lua</code>, and <code>main.lua</code> are your test harness files. In these files, you should provide the necessary code which behaves like a sample app and facilitates testing of the plugin code — in other words, these files will allow end users to “run” the plugin code outlined in the following section.</p>
 <p><a id="plugin-code"></a></p>
-</section>
-</section>
-<section id="plugin-code" class="level2">
-<h2>Plugin Code</h2>
+<h2 id="plugin-code">Plugin Code</h2>
 <p>Inside the <code>lua</code> folder is another folder called <code>plugin</code>. This is where you should include the actual plugin code. As outlined in <a href="#create">Creating a Plugin</a> above, there will be a Lua <strong>file</strong> with the name of your plugin, for example <code>myLuaPlugin.lua</code>,</p>
 <p>Essentially, your Lua plugin should be created using the <a href="../../api/type/CoronaLibrary/index.html">CoronaLibrary</a> class. Here’s how a plugin called <code>plugin.myLuaPlugin</code> might look:</p>
 <pre class="brush: lua;">-- Create library
@@ -252,23 +240,16 @@ local lib = Library:new{ name = "plugin.myLuaPlugin", publisherId = "com.mydomai
 </div>
 </div>
 <p><a id="submission"></a></p>
-</section>
-<section id="plugin-submission" class="level2">
-<h2>Plugin Submission</h2>
+<h2 id="plugin-submission">Plugin Submission</h2>
 <p>The following steps apply regardless of which marketplace you choose to submit your plugin to.</p>
-<section id="device-testing" class="level3">
-<h3>Device Testing</h3>
+<h3 id="device-testing">Device Testing</h3>
 <p>Using the <code>main.lua</code> file in the <code>lua</code> folder, you should build a basic sample app which exhibits the plugin and its features in action. Within that <code>main.lua</code> file, load the plugin just like you would any other Lua module:</p>
 <pre class="brush: lua;">local myLuaPlugin = require( "plugin.myLuaPlugin" )</pre>
 <p>Because the plugin code is in the <code>plugin</code> folder, your plugin will be accessible in the same manner as native Solar2D plugins.</p>
 <p>Finally, you should ensure that your code executes on both iOS and Android devices, since Lua plugins are intended to be <nobr>cross-platform</nobr> compatible. Verify that your plugin successfully compiles for devices and be aware of potential performance issues on <nobr>low-end</nobr> devices.</p>
-</section>
-<section id="documentation-sample" class="level3">
-<h3>Documentation / Sample</h3>
+<h3 id="documentation-sample">Documentation / Sample</h3>
 <p>You should prepare clear and complete documentation for your plugin so that users understand exactly how to use it. You can host this documentation on your own website, on GitHub, etc. In addition, you should offer users a basic sample project to easily test your plugin. This project can be shared/distributed via whatever method is best for you.</p>
-</section>
-<section id="plugin-packaging" class="level3">
-<h3>Plugin Packaging</h3>
+<h3 id="plugin-packaging">Plugin Packaging</h3>
 <p>Before submitting your plugin, you should <strong>package</strong> it, following a specific structure. Corona Labs offers scripts which perform this process for you:</p>
 <div class="docs-tip-outer" style="background-color: #a5aec9; width: 100%;">
 <div class="docs-tip-inner-left">
@@ -295,9 +276,7 @@ build.bat</pre>
 </div>
 </div>
 <p>This process converts your code into bytecode and prepares it for submission to a plugins host. When complete, you will see a <nobr><code>plugin-PLUGIN_NAME.zip</code></nobr> file in your project directory.</p>
-</section>
-<section id="submission" class="level3">
-<h3>Submission</h3>
+<h3 id="submission">Submission</h3>
 <p>If you’d like to submit a plugin for availability in the <a href="https://www.solar2dplugins.com/">Solar2D Plugins Marketplace</a>, refer to the <a href="https://www.solar2dplugins.com/asset-packaging-guidelines/">Solar2D Plugins Marketplace Asset Packaging Guidelines</a> for additional steps.</p>
 <hr>
 <div id="footer">
@@ -309,9 +288,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

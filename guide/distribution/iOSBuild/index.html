@@ -77,8 +77,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/distribution/index.html">Building/Distribution</a>
 </div>
-<section id="provisioning-and-building-ios" class="level1">
-<h1>Provisioning and Building — iOS</h1>
+<h1 id="provisioning-and-building-ios">Provisioning and Building — iOS</h1>
 <p>This guide explains how to set up your system and devices in the <a href="https://developer.apple.com/">Apple Developer</a> portal. It also explains how to build your apps for testing or distribution.</p>
 <div class="guides-toc">
 <ul>
@@ -98,8 +97,7 @@ Note
 <p>If you are on a Non-Apple Computer (i.e Windows or Linux) and want to build for iOS, check this <a href="https://github.com/solar2d/demo-app-store-automation">Solar2D tool</a></p>
 </div>
 <p><a id="certificate"></a></p>
-<section id="creating-certificates" class="level2">
-<h2>Creating Certificates</h2>
+<h2 id="creating-certificates">Creating Certificates</h2>
 <ol type="1">
 <li><p>You must have an <a href="https://developer.apple.com/">Apple Developer</a> account to install/test apps on iOS devices and publish to the App Store. Once registered and logged in, enter the <strong>Member Center</strong>, navigate to the <strong>Certificates, Identifiers &amp; Profiles</strong> dashboard, and click on <strong>Certificates</strong> within the <strong>iOS Apps</strong> column. Alternatively, if you’ve already entered the <strong>iOS Apps</strong> section from another page within the portal, click the <strong>All</strong> button under <strong>Certificates</strong> in the left column.</p></li>
 <li><p>In the upper-right corner, click the [<strong>+</strong>] button to create a new certificate.</p></li>
@@ -122,9 +120,7 @@ Note
 <li><p>Back in the <strong>Certificates</strong> section of the developer portal, the new certificate should appear.</p></li>
 </ol>
 <p><a id="devices"></a></p>
-</section>
-<section id="registering-devices" class="level2">
-<h2>Registering Devices</h2>
+<h2 id="registering-devices">Registering Devices</h2>
 <p>Some guides begin with creating App IDs, but we recommend that you register your devices first. This will save you the task of modifying and <nobr>re-downloading</nobr> the provisioning profiles later.</p>
 <ol type="1">
 <li><p>Connect the device, open Xcode, and then open the <strong>Devices</strong> window by selecting <strong>Window</strong> → <strong>Devices</strong>.</p></li>
@@ -140,9 +136,7 @@ Note
 <li><p>Repeat this process for all of your additional devices.</p></li>
 </ol>
 <p><a id="appID"></a></p>
-</section>
-<section id="creating-app-ids" class="level2">
-<h2>Creating App IDs</h2>
+<h2 id="creating-app-ids">Creating App IDs</h2>
 <p>Next, you must create a new <strong>App ID</strong> for your Corona app.</p>
 <ol type="1">
 <li><p>In the developer portal, click the <strong>App IDs</strong> button under <strong>Identifiers</strong> in the left column.</p></li>
@@ -169,9 +163,7 @@ Note
 <p>If you configure an App ID <strong>without</strong> additional services like Push Notifications, and later <strong>add</strong> those features to the App ID, you must reinstall the provisioning profile by repeating all of the download and installation steps outlined in the next section. Thus, it’s best to select all of the services which you intend to utilize in the app.</p>
 </div>
 <p><a id="provisioning"></a></p>
-</section>
-<section id="creating-provisioning-profiles" class="level2">
-<h2>Creating Provisioning Profiles</h2>
+<h2 id="creating-provisioning-profiles">Creating Provisioning Profiles</h2>
 <p>All iOS apps require that you use provisioning profiles during development. You cannot run an app on a device until you provision that device for development.</p>
 <ol type="1">
 <li><p>In the developer portal, click the <strong>All</strong> button under <strong>Provisioning Profiles</strong> in the left column.</p></li>
@@ -186,8 +178,7 @@ Note
 <li><p>Next, you must associate at least one <strong>certificate</strong> with the provisioning profile. Select the appropriate certificate(s) from the list and click <strong>Continue</strong>. Note that the provisioning profile must be associated with a matching certificate type. For example, if you want to create a provisioning profile for distribution, you must first create a distribution certificate. If no certificates exist for the type of profile you wish to create, the system will prompt you to create one — in this case, please see <a href="#certificate">Creating Certificates</a> above.</p></li>
 <li><p>Now proceed to the proper section below, since the steps vary for each profile type.</p></li>
 </ol>
-<section id="development" class="level3">
-<h3>Development</h3>
+<h3 id="development">Development</h3>
 <ol type="1">
 <li><p>You must associate at least one <strong>device</strong> with the development provisioning profile. Select the device(s) from the list and click <strong>Continue</strong>. If you haven’t registered any devices, please see <a href="#devices">Registering Devices</a> above.</p></li>
 <li><p>On the next screen, you must provide a <strong>Profile Name</strong> for the provisioning profile. This will be used to identify the profile in the developer portal. Also, confirm the settings that you made in the previous steps. When you’re ready, click <strong>Generate</strong> to create the profile.</p></li>
@@ -196,18 +187,14 @@ Note
 <li><p>Now you must install the profile on each device that you selected during the profile creation. Connect the device to your computer and <strong>Sync</strong> it from within <strong>iTunes</strong>. When it’s done, open the Xcode <strong>Devices</strong> window, <nobr>right-click</nobr> the device image in the left column, and select <strong>Show Provisioning Profiles…</strong> from the contextual menu. The new profile should appear in the list.</p></li>
 <li><p>Finally, to associate the new profile with Corona, restart the Corona Simulator. The profile should appear as a <strong>Code Signing Identity</strong> in the build window. See <a href="#building">Build Process</a> below for more details.</p></li>
 </ol>
-</section>
-<section id="distribution-app-store" class="level3">
-<h3>Distribution: App Store</h3>
+<h3 id="distribution-app-store">Distribution: App Store</h3>
 <ol type="1">
 <li><p>You must provide a <strong>Profile Name</strong> for the provisioning profile. This will be used to identify the profile in the developer portal. Also, confirm the settings that you made in the previous steps. When you’re ready, click <strong>Generate</strong> to create the profile.</p></li>
 <li><p>Next, download and install the provisioning profile (click the <strong>Download</strong> button and then <nobr>double-click</nobr> the file).</p></li>
 <li><p>Back in the developer portal, click <strong>Done</strong>. The new profile should appear in the list, marked as <strong>Active</strong> in the <strong>Status</strong> column.</p></li>
 <li><p>Finally, to associate the new profile with Corona, restart the Corona Simulator. The profile should appear as a <strong>Code Signing Identity</strong> in the build window. See <a href="#building">Build Process</a> below for more details.</p></li>
 </ol>
-</section>
-<section id="distribution-ad-hoc" class="level3">
-<h3>Distribution: Ad Hoc</h3>
+<h3 id="distribution-ad-hoc">Distribution: Ad Hoc</h3>
 <ol type="1">
 <li><p>You must associate at least one <strong>device</strong> with the ad hoc provisioning profile. Select the device(s) from the list and click <strong>Continue</strong>. If you haven’t registered any devices, please see <a href="#devices">Registering Devices</a> above.</p></li>
 <li><p>On the next screen, you must provide a <strong>Profile Name</strong> for the provisioning profile. This will be used to identify the profile in the developer portal. Also, confirm the settings that you made in the previous steps. When you’re ready, click <strong>Generate</strong> to create the profile.</p></li>
@@ -217,10 +204,7 @@ Note
 <li><p>Finally, to associate the new profile with Corona, restart the Corona Simulator. The profile should appear as a <strong>Code Signing Identity</strong> in the build window. See <a href="#building">Build Process</a> below for more details.</p></li>
 </ol>
 <p><a id="building"></a></p>
-</section>
-</section>
-<section id="build-process" class="level2">
-<h2>Build Process</h2>
+<h2 id="build-process">Build Process</h2>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
 Important
@@ -245,9 +229,7 @@ Important
 <li><p>Click <strong>Build</strong> and Corona will compile the app. You will then have an application file that can be loaded on a device or submitted to the App Store, depending on which provisioning profile you selected.</p></li>
 </ol>
 <p><a id="installapp"></a></p>
-</section>
-<section id="device-installation" class="level2">
-<h2>Device Installation</h2>
+<h2 id="device-installation">Device Installation</h2>
 <p>There are three methods to install an app on an iOS device, as outlined below.</p>
 <div class="docs-tip-outer docs-tip-color-alert">
 <div class="docs-tip-inner-left">
@@ -259,23 +241,18 @@ Important
 <p>You can <strong>not</strong> test an app built for <strong>App Store Distribution</strong> on a device. Apps built for distribution are intended for submission to Apple.</p>
 </div>
 </div>
-<section id="copy-to-device" class="level3">
-<h3>Copy to Device</h3>
+<h3 id="copy-to-device">Copy to Device</h3>
 <ol type="1">
 <li><p>Connect your device.</p></li>
 <li><p>Follow the steps outlined in <a href="#building">Build Process</a> above, ensuring that you select <nobr><strong>Copy to device</strong></nobr> for the <strong>After Build</strong> option.</p></li>
 </ol>
-</section>
-<section id="xcode" class="level3">
-<h3>Xcode</h3>
+<h3 id="xcode">Xcode</h3>
 <ol type="1">
 <li><p>Connect your device, open <strong>Xcode</strong>, and then open the <strong>Devices</strong> window by selecting <nobr><strong>Window</strong> → <strong>Devices</strong></nobr>.</p></li>
 <li><p>In the left column, select the device.</p></li>
 <li><p>In the main pane, look for the <strong>Installed Apps</strong> section which shows the currently installed apps (this list may be empty initially). Below the list, click the [<strong>+</strong>] button and navigate to the location of the <code>.app</code> file which was generated by Corona. Select the file and click <strong>Open</strong>. Assuming there are no provisioning/certificate errors, the app should install on the device.</p></li>
 </ol>
-</section>
-<section id="itunes" class="level3">
-<h3>iTunes</h3>
+<h3 id="itunes">iTunes</h3>
 <ol type="1">
 <li><p>Connect your device and ensure that <strong>iTunes</strong> is open.</p></li>
 <li><p>Select <strong>File</strong> → <strong>Add to Library…</strong> <nobr>(⌘-O)</nobr> and navigate to the <code>.app</code> file that was generated by Corona. Alternatively, drag the file over the iTunes dock icon and release.</p></li>
@@ -283,10 +260,7 @@ Important
 <li><p><strong>Sync</strong> the device and the app should install. Note that iTunes can be particular about app versions — if you repeatedly test new versions of your app, you should remove the previous version from the device before installing the new version. This will ensure that the most current version is installed.</p></li>
 </ol>
 <p><a id="refresh"></a></p>
-</section>
-</section>
-<section id="refreshing-profiles" class="level2">
-<h2>Refreshing Profiles</h2>
+<h2 id="refreshing-profiles">Refreshing Profiles</h2>
 <p>On occasion, you may need to refresh the provisioning profiles via Xcode. This can be accomplished as follows:</p>
 <ol type="1">
 <li><p>In Xcode, open the <strong>Preferences</strong> window by selecting <strong>Xcode</strong> → <strong>Preferences…</strong>.</p></li>
@@ -306,8 +280,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

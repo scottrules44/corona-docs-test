@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/global/index.html">global</a>  ▸  <a href="../../../api/library/global/assert.html">assert</a>
 </div>
-<section id="assert" class="level1">
-<h1>assert()</h1>
+<h1 id="assert">assert()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -96,25 +95,16 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Issues an error and aborts the program when the value of its first argument is <code>false</code> <nobr>(<code>nil</code> or <code>false</code>)</nobr>. Otherwise, it returns all its arguments.</p>
 <p>This function is useful for catching (and avoiding) unexpected situations and bugs.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">assert( v [, message] )</pre>
-<section id="v-required" class="level5">
-<h5>v <sub><sup>(required)</sup></sub></h5>
+<h5 id="v-required">v <sub><sup>(required)</sup></sub></h5>
 <p><em>Any.</em> Issues an error when this value is false.</p>
-</section>
-<section id="message-optional" class="level5">
-<h5>message <sub><sup>(optional)</sup></sub></h5>
+<h5 id="message-optional">message <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> An error message. When absent, it defaults to “assertion failed!”. The error message is displayed in the Corona Simulator Console.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Abort the program if the image is not found (in the Resource directory)
 local img = display.newImage( "imageWithWrongName.png" )
 assert( img, "Error: Image not found!" )</pre>
@@ -128,8 +118,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

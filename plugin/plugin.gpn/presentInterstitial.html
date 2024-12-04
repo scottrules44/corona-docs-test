@@ -70,8 +70,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  [plugin.gpn][plugin.plugin.gpn]  ▸  [presentInterstitial][plugin.plugin.gpn.presentInterstitial]
 </div>
-<section id="gpn.presentinterstitial" class="level1">
-<h1>gpn.presentInterstitial()</h1>
+<h1 id="gpn.presentinterstitial">gpn.presentInterstitial()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -106,33 +105,22 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Call the “present” method whenever it’s appropriate to present an interstitial ad (e.g. during a level break). The ad will display only if it is fully preloaded. It’s safe to present an interstitial after the “received” event is dispatched.</p>
 <p>Possible return values:<br />
 • “presented” - “present” call succeed: an interstitial ad will be presented fullscreen<br />
 • “not_presented” - “present” call did not result in showing an ad<br />
 • “forbids_position” - interstitial “position” is disabled</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">gpn.presentInterstitial( )
 gpn.presentInterstitial( options )</pre>
-<section id="options-optional" class="level5">
-<h5>options <sub><sup>(optional)</sup></sub></h5>
+<h5 id="options-optional">options <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Presenting options. See <strong>Format for options</strong> below.</p>
-</section>
-<section id="format-for-options" class="level3">
-<h3>Format for <code>options</code></h3>
+<h3 id="format-for-options">Format for <code>options</code></h3>
 <p>The <code>options</code> table contains the following properties:</p>
-<section id="position-optional" class="level5">
-<h5>position <sub><sup>(optional)</sup></sub></h5>
+<h5 id="position-optional">position <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> An ad position to define different behavior for different points in your game.</p>
-</section>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
+<h2 id="examples">Examples</h2>
 <pre class="brush: lua;">
     --  local presenting_params = { 
     --     position = "level_end" -- or your custom position here
@@ -154,8 +142,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -79,8 +79,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/unityads-v4/index.html">unityads-v4</a>
 </div>
-<section id="unityads.v4." class="level1">
-<h1>unityads.v4.*</h1>
+<h1 id="unityads.v4.">unityads.v4.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -103,8 +102,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>The Unity Ads plugin allows developers to monetize users through Unity Ads video interstitial and rewarded video ads.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -115,47 +113,21 @@ Important
 <p>On a per-app basis, the first time a Unity ad appears, the user will see a banner with the option to opt-out of behaviorally targeted advertising. Thereafter, the user can click an information button to receive the opt-out again. Although UnityAds will automatically present users with an opportunity to opt-out of targeted advertising, with no implementation needed from the publisher, check out new <code>setHasUserConsent</code> method to enable manual GDPR data collection restrictions.</p>
 <p>See more at <a href="https://docs.unity.com/ads/en-us/manual/ImplementingDataPrivacy">Unity Ads privacy consent documentation</a>.</p>
 </div>
-</section>
-<section id="registration" class="level2">
-<h2>Registration</h2>
+<h2 id="registration">Registration</h2>
 <p>Before you can use this plugin, you must <a href="https://unity.com/products/unity-ads">register</a> with Unity Ads.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">local unityads = require( "plugin.unityads.v4" )</pre>
-</section>
-<section id="functions" class="level2">
-<h2>Functions</h2>
-<section id="unityads.initplugin.unityads-v4.init" class="level4">
-<h4><a href="../../plugin/unityads-v4/init.html">unityads.init()</a></h4>
-</section>
-<section id="unityads.isloadedplugin.unityads-v4.isloaded" class="level4">
-<h4><a href="../../plugin/unityads-v4/isLoaded.html">unityads.isLoaded()</a></h4>
-</section>
-<section id="unityads.loadplugin.unityads-v4.load" class="level4">
-<h4><a href="../../plugin/unityads-v4/load.html">unityads.load()</a></h4>
-</section>
-<section id="unityads.showplugin.unityads-v4.show" class="level4">
-<h4><a href="../../plugin/unityads-v4/show.html">unityads.show()</a></h4>
-</section>
-<section id="unityads.sethasuserconsentplugin.unityads-v4.sethasuserconsent" class="level4">
-<h4><a href="../../plugin/unityads-v4/setHasUserConsent.html">unityads.setHasUserConsent()</a></h4>
-</section>
-<section id="unityads.setpersonalizedadsplugin.unityads-v4.setpersonalizedads" class="level4">
-<h4><a href="../../plugin/unityads-v4/setPersonalizedAds.html">unityads.setPersonalizedAds()</a></h4>
-</section>
-<section id="unityads.setprivacymodeplugin.unityads-v4.setprivacymode" class="level4">
-<h4><a href="../../plugin/unityads-v4/setPrivacyMode.html">unityads.setPrivacyMode()</a></h4>
-</section>
-</section>
-<section id="events" class="level2">
-<h2>Events</h2>
-<section id="adsrequestplugin.unityads-v4.event.adsrequest" class="level4">
-<h4><a href="../../plugin/unityads-v4/event/adsRequest/index.html">adsRequest</a></h4>
-</section>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
+<h2 id="functions">Functions</h2>
+<h4 id="unityads.initplugin.unityads-v4.init"><a href="../../plugin/unityads-v4/init.html">unityads.init()</a></h4>
+<h4 id="unityads.isloadedplugin.unityads-v4.isloaded"><a href="../../plugin/unityads-v4/isLoaded.html">unityads.isLoaded()</a></h4>
+<h4 id="unityads.loadplugin.unityads-v4.load"><a href="../../plugin/unityads-v4/load.html">unityads.load()</a></h4>
+<h4 id="unityads.showplugin.unityads-v4.show"><a href="../../plugin/unityads-v4/show.html">unityads.show()</a></h4>
+<h4 id="unityads.sethasuserconsentplugin.unityads-v4.sethasuserconsent"><a href="../../plugin/unityads-v4/setHasUserConsent.html">unityads.setHasUserConsent()</a></h4>
+<h4 id="unityads.setpersonalizedadsplugin.unityads-v4.setpersonalizedads"><a href="../../plugin/unityads-v4/setPersonalizedAds.html">unityads.setPersonalizedAds()</a></h4>
+<h4 id="unityads.setprivacymodeplugin.unityads-v4.setprivacymode"><a href="../../plugin/unityads-v4/setPrivacyMode.html">unityads.setPrivacyMode()</a></h4>
+<h2 id="events">Events</h2>
+<h4 id="adsrequestplugin.unityads-v4.event.adsrequest"><a href="../../plugin/unityads-v4/event/adsRequest/index.html">adsRequest</a></h4>
+<h2 id="project-settings">Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase. </p>
 <pre class="brush: lua;">settings =
 {
@@ -200,9 +172,7 @@ Note
 </ul>
 <p>Also, minimum Android API level required is 19</p>
 </div>
-</section>
-<section id="support" class="level2">
-<h2>Support</h2>
+<h2 id="support">Support</h2>
 <ul>
 <li><a href="https://unity3d.com/services/ads">https://unity3d.com/services/ads</a></li>
 <li><a href="https://forums.solar2d.com/c/corona/monetization-in-app-purchases-ads-etc/">Solar2D Forums</a></li>
@@ -217,8 +187,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -67,8 +67,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/physics/index.html">physics</a>  ▸  <a href="../../../api/library/physics/setTimeStep.html">setTimeStep</a>
 </div>
-<section id="physics.settimestep" class="level1">
-<h1>physics.setTimeStep()</h1>
+<h1 id="physics.settimestep">physics.setTimeStep()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -99,15 +98,11 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Specifies either a frame-based (approximated) physics simulation or a <nobr>time-based</nobr> simulation.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">physics.setTimeStep( dt )</pre>
-<section id="dt-required" class="level5">
-<h5>dt <sub><sup>(required)</sup></sub></h5>
+<h5 id="dt-required">dt <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Value of physics “time step” in seconds, meaning the time between each physics update in seconds.</p>
 <ul>
 <li>Use <code>0</code> to get an approximate time-based physics simulation.</li>
@@ -115,10 +110,7 @@
 <li>Use <code>1/30</code> for 30 updates per second.</li>
 <li>Use <code>1/60</code> for 60 updates per second.</li>
 </ul>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">physics.setTimeStep( 0 )  -- Time-based physics simulation</pre>
 <hr>
 <div id="footer">
@@ -130,8 +122,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

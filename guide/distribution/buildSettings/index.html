@@ -91,8 +91,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/distribution/index.html">Building/Distribution</a>
 </div>
-<section id="project-build-settings" class="level1">
-<h1>Project Build Settings</h1>
+<h1 id="project-build-settings">Project Build Settings</h1>
 <p>Build-time properties for an app are defined using a optional <code>build.settings</code> file written in Lua syntax. It should be placed in the project’s base directory.</p>
 <div class="guides-toc">
 <ul>
@@ -124,17 +123,14 @@ Important
 </ul>
 </div>
 <p><a id="basicstruct"></a></p>
-<section id="basic-structure" class="level2">
-<h2>Basic Structure</h2>
+<h2 id="basic-structure">Basic Structure</h2>
 <p>At the minimum, the <code>build.settings</code> file should contain a <code>settings</code> table which will contain various child tables to dictate <nobr>build-time</nobr> options.</p>
 <pre class="highlight: [1,2,3,4]; first-line: 1; gutter: false; brush: lua;">settings =
 {
     -- Child tables here
 }</pre>
 <p><a id="orientation"></a></p>
-</section>
-<section id="app-orientation" class="level2">
-<h2>App Orientation</h2>
+<h2 id="app-orientation">App Orientation</h2>
 <p>The <code>build.settings</code> file can be used to set app orientation in relation to the device’s physical orientation in space — this includes <nobr>auto-orientation</nobr> triggered by the accelerometer if the device is rotated or flipped during runtime.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -193,8 +189,7 @@ Important
 </tbody>
 </table>
 </div>
-<section id="auto-orientation" class="level3">
-<h3>Auto-Orientation</h3>
+<h3 id="auto-orientation">Auto-Orientation</h3>
 <p>On most devices, <strong>auto-orientation</strong> is triggered by the accelerometer if the device is rotated or flipped during runtime. If you want to limit an app to either landscape orientation, specify both <code>"landscapeLeft"</code> and <code>"landscapeRight"</code> in the <code>supported</code> table.</p>
 <pre class="brush: lua;">supported = { "landscapeLeft", "landscapeRight" },</pre>
 <p>Similarly, to limit an app to either portrait orientation, specify both <code>"portrait"</code> and <code>"portraitUpsideDown"</code>:</p>
@@ -210,10 +205,7 @@ Important
 </ol>
 </div>
 <p><a id="iOSsettings"></a></p>
-</section>
-</section>
-<section id="ios-build-settings" class="level2">
-<h2>iOS Build Settings</h2>
+<h2 id="ios-build-settings">iOS Build Settings</h2>
 <p>Within the <code>settings</code> table, you can include a <code>plist</code> table nested within an <code>iphone</code> table. This <code>plist</code> table is used to set values for the compiled app’s <code>Info.plist</code> file.</p>
 <pre class="highlight: [3,4,5,6,7,8,9,10,11,12,13]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -248,8 +240,7 @@ Important
 </ul>
 <p>Please see Apple’s <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html">documentation</a> for more information on supported values and what you can do with them.</p>
 <p><a id="permissions-ios"></a></p>
-<section id="permissions" class="level3">
-<h3>Permissions</h3>
+<h3 id="permissions">Permissions</h3>
 <p>On iOS, when accessing certain hardware or <nobr>OS-level</nobr> functionality, you must notify the user why you’re doing so. This is accomplished by including specific keys/descriptions in the <code>plist</code> table of <code>build.settings</code>. For example:</p>
 <pre class="highlight: [7,8]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -283,9 +274,7 @@ Important
 <li><a href="../../../api/library/media/selectVideo.html">media.selectVideo()</a></li>
 </ul>
 </div>
-</section>
-<section id="advanced-build-settings" class="level3">
-<h3>Advanced Build Settings</h3>
+<h3 id="advanced-build-settings">Advanced Build Settings</h3>
 <p>In addition to the iOS settings mentioned above, the following build options are available as outlined in the <a href="../../../guide/distribution/advancedSettings/index.html">Advanced Build Settings</a> guide:</p>
 <div class="inner-table">
 <table>
@@ -308,10 +297,7 @@ Important
 </table>
 </div>
 <p><a id="androidsettings"></a></p>
-</section>
-</section>
-<section id="android-build-settings" class="level2">
-<h2>Android Build Settings</h2>
+<h2 id="android-build-settings">Android Build Settings</h2>
 <p>Within the <code>settings</code> table, you can include an <code>android</code> table to control build settings for Android devices.</p>
 <pre class="highlight: [3,4,5,6]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -320,8 +306,7 @@ Important
 
     },
 }</pre>
-<section id="version-code" class="level3">
-<h3>Version Code</h3>
+<h3 id="version-code">Version Code</h3>
 <p>You can override the <strong>version code</strong> entered into the Simulator <strong>Build for Android</strong> box with an optional <code>versionCode</code> <nobr>key-value</nobr> pair in the <code>build.settings</code> file. This is an internal number used to distinguish application releases for the Android app store, corresponding to the <code>versionCode</code> item detailed <a href="https://developer.android.com/guide/topics/manifest/manifest-element">here</a>. This setting is invisible to users.</p>
 <pre class="highlight: [5]; first-line: 1; gutter: false; brush: lua;">settings
 {
@@ -337,9 +322,7 @@ Note
 <p>The version code must be specified as an <strong>integer</strong> — it cannot contain any decimal points. One possible scheme is to set <code>versionCode</code> to <code>"10"</code> for version <strong>1.0</strong>. The next update would be <code>"11"</code> for version <strong>1.1</strong>, and so forth.</p>
 </div>
 <p><a id="permissions-android"></a></p>
-</section>
-<section id="permissions-1" class="level3">
-<h3>Permissions</h3>
+<h3 id="permissions-1">Permissions</h3>
 <p>The <code>usesPermissions</code> table creates <nobr><code>&lt;uses-permission&gt;</code></nobr> tags in the <code>AndroidManifest.xml</code> file:</p>
 <pre class="highlight: [5,6,7,8,9,10,11]; first-line: 1; gutter: false; brush: lua;">settings
 {
@@ -362,9 +345,7 @@ Note
 <li><code>"android.permission.ACCESS_COARSE_LOCATION"</code> — allows getting the location from WiFi/cellular.</li>
 </ul>
 <p>See the Android <a href="https://developer.android.com/reference/android/Manifest.permission">documentation</a> for more information on supported values and what you can do with them.</p>
-</section>
-<section id="app-features" class="level3">
-<h3>App Features</h3>
+<h3 id="app-features">App Features</h3>
 <p>The <code>usesFeatures</code> table creates <nobr><code>&lt;uses-feature&gt;</code></nobr> tags in the <code>AndroidManifest.xml</code> file. These parameters tell the Android app store which hardware/software capabilities the app does or doesn’t require. See the Android <a href="https://developer.android.com/guide/topics/manifest/uses-feature-element.html#features-reference">features reference</a> for a list of supported values.</p>
 <pre class="highlight: [5,6,7,8,9,10]; first-line: 1; gutter: false; brush: lua;">settings
 {
@@ -385,9 +366,7 @@ Important
 <p>If you <strong>require</strong> a feature (<code>required=true</code>), devices lacking the feature will not be able to download or purchase the app. As a precaution, if your app uses the feature for some aspects but does not require it for “basic functionality,” you should include the feature within the <code>usesFeatures</code> table but set its <code>required</code> key to <code>false</code>:</p>
 <p><code>{ name="android.hardware.camera", required=false },</code></p>
 </div>
-</section>
-<section id="expansion-files" class="level3">
-<h3>Expansion Files</h3>
+<h3 id="expansion-files">Expansion Files</h3>
 <p>The <code>usesExpansionFile</code> boolean indicates if the app should be built with expansion files. If it’s set to <code>true</code> and the build target is Google Play, everything in the project directory except the Lua scripts are put into the expansion file. See the Android <a href="https://developer.android.com/google/play/expansion-files">documentation</a> for more information.</p>
 <pre class="highlight: [6,11,12,13]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -415,9 +394,7 @@ Important
 <p>Using expansion files requires setup of Google licensing. Please see <a href="../../../guide/basics/configSettings/index.html#app-licensing">here</a> for details.</p>
 </div>
 </div>
-</section>
-<section id="advanced-build-settings-1" class="level3">
-<h3>Advanced Build Settings</h3>
+<h3 id="advanced-build-settings-1">Advanced Build Settings</h3>
 <p>In addition to the Android settings mentioned above, the following build options are available as outlined in the <a href="../../../guide/distribution/advancedSettings/index.html">Advanced Build Settings</a> guide:</p>
 <div class="inner-table">
 <table>
@@ -456,10 +433,7 @@ Important
 </table>
 </div>
 <p><a id="desktopsettings"></a></p>
-</section>
-</section>
-<section id="desktop-build-settings" class="level2">
-<h2>Desktop Build Settings</h2>
+<h2 id="desktop-build-settings">Desktop Build Settings</h2>
 <p>For macOS desktop or Win32 desktop apps, <code>build.settings</code> file supports a <code>window</code> table for customizing the app’s desktop window:</p>
 <pre class="highlight: [3,4,5,6]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -479,9 +453,7 @@ Important
 </div>
 </div>
 <p><a id="plugins"></a></p>
-</section>
-<section id="plugins" class="level2">
-<h2>Plugins</h2>
+<h2 id="plugins">Plugins</h2>
 <p>Solar2D offers several <a href="../../../plugin/index.html">plugins</a> which can be used in your projects. These plugins can be included via the <code>plugins</code> table nested within the <code>settings</code> table:</p>
 <pre class="highlight: [3,4,5,6]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -508,16 +480,11 @@ Important
 <p>Plugin key names often include punctuation, for example <code>plugin.gpgs</code>. In these cases, you must use the “brackets and quotes” method of defining the key (<code>["plugin.gpgs"]</code>).</p>
 </div>
 <p><a id="appicons"></a></p>
-</section>
-<section id="custom-app-icons" class="level2">
-<h2>Custom App Icons</h2>
+<h2 id="custom-app-icons">Custom App Icons</h2>
 <p>Before deploying an app, you should design the proper <strong>app icons</strong> for the targeted platforms.</p>
-<section id="ios" class="level3">
-<h3>iOS</h3>
+<h3 id="ios">iOS</h3>
 <p>For iOS, several icon files are required. Please see the <a href="../../../guide/distribution/xcAssets/index.html">Managing Xcode Assets</a> guide for a reference on the <code>Images.xcassets</code> folder and how to include/reference it within your app.</p>
-</section>
-<section id="android" class="level3">
-<h3>Android</h3>
+<h3 id="android">Android</h3>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
 Important
@@ -561,27 +528,20 @@ Important
 </tbody>
 </table>
 </div>
-</section>
-<section id="desktop" class="level3">
-<h3>Desktop</h3>
+<h3 id="desktop">Desktop</h3>
 <p>Desktop apps — applications built for macOS or Windows — require additional icons as follows:</p>
 <ul>
 <li><p>For macOS desktop apps, you must add a <nobr><code>Icon-osx.icns</code></nobr> file to your project folder before performing a macOS build via the Simulator. This file should contain multiple images at different resolutions, bundled into a single <code>.icns</code> file (<a href="https://en.wikipedia.org/wiki/Apple_Icon_Image_format">details</a>). See the <a href="../../../guide/distribution/macOSBuild/index.html">Creating macOS Desktop Apps</a> guide for more information.</p></li>
 <li><p>For Windows desktop apps, you must add a <nobr><code>Icon-win32.ico</code></nobr> file to your project folder before performing a Win32 build via the Simulator. This file should contain multiple images at different resolutions, bundled into a single <code>.ico</code> file (<a href="https://en.wikipedia.org/wiki/ICO_(file_format)">details</a>). See the <a href="../../../guide/distribution/win32Build/index.html">Creating Win32 Desktop Apps</a> guide for more information.</p></li>
 </ul>
-</section>
-<section id="tvos-android-tv" class="level3">
-<h3>tvOS / Android TV</h3>
+<h3 id="tvos-android-tv">tvOS / Android TV</h3>
 <p>Apps designed for TV systems require additional icons:</p>
 <ul>
 <li><p>For Apple’s tvOS, several unique icons and assets are required. Please see the <a href="../../../guide/distribution/xcAssets/index.html">Managing Xcode Assets</a> guide for a reference on the <code>Images.xcassets</code> folder and how to include/reference it within your app.</p></li>
 <li><p>For Android TV, you should include a <nobr><code>Banner-xhdpi.png</code></nobr> image inside your project folder. This image should be 320×180 pixels in size.</p></li>
 </ul>
 <p><a id="splashscreen"></a></p>
-</section>
-</section>
-<section id="splash-screen" class="level2">
-<h2>Splash Screen</h2>
+<h2 id="splash-screen">Splash Screen</h2>
 <p>By default, a Solar2D branded splash screen will appear when the app opens. This splash screen can be customized or disabled.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -591,8 +551,7 @@ Note
 <li>On iOS, the iOS launch screen will appear before the splash screen, assuming the splash screen is not disabled. If the splash screen is disabled, the launch screen will appear until the app is fully loaded, then your first screen/scene will appear.</li>
 </ul>
 </div>
-<section id="customization" class="level3">
-<h3>Customization</h3>
+<h3 id="customization">Customization</h3>
 <p>If you’d like to display your own custom splash screen, include the <code>splashScreen</code> table within <code>build.settings</code> as above, but set the <code>enable</code> key to <code>true</code> and add an <code>image</code> key defining the image name. For instance:</p>
 <pre class="brush: lua;">settings =
 {
@@ -628,9 +587,7 @@ Note
 <li><p>For Android, place an image named <code>_corona_splash_screen.png</code> within <code>res/drawable/</code> using whatever mechanism is appropriate in Android Studio or otherwise.</p></li>
 </ul>
 </div>
-</section>
-<section id="removal" class="level3">
-<h3>Removal</h3>
+<h3 id="removal">Removal</h3>
 <p>To remove default splash screen, add the <code>splashScreen</code> table to the project’s <code>build.settings</code> with the <code>enable</code> key set to <code>false</code>:</p>
 <pre class="brush: lua;">settings =
 {
@@ -663,10 +620,7 @@ On iOS, the Solar2D splash screen will appear after the iOS launch screen (see&n
 
 -->
 <p><a id="launchimage"></a></p>
-</section>
-</section>
-<section id="launch-screen-ios" class="level2">
-<h2>Launch Screen — iOS</h2>
+<h2 id="launch-screen-ios">Launch Screen — iOS</h2>
 <p>For iOS, you must include some form of <strong>launch screen</strong> support. Apple recommends that you utilize an <nobr>Xcode-generated</nobr> storyboard for this, since a single storyboard is flexible and adaptable for all launch screens across all devices.</p>
 <div class="docs-tip-outer" style="background-color: #ffa752;">
 <div class="docs-tip-inner-left">
@@ -706,9 +660,7 @@ Important
 }</pre>
 </div>
 <p><a id="excludingfiles"></a></p>
-</section>
-<section id="excluding-files" class="level2">
-<h2>Excluding Files</h2>
+<h2 id="excluding-files">Excluding Files</h2>
 <div class="docs-tip-outer docs-tip-color-alert">
 <div class="docs-tip-inner-left">
 <div class="fa fa-exclamation-circle" style="font-size: 35px;">
@@ -777,8 +729,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

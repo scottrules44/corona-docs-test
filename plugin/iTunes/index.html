@@ -77,8 +77,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/iTunes/index.html">iTunes</a>
 </div>
-<section id="itunes." class="level1">
-<h1>iTunes.*</h1>
+<h1 id="itunes.">iTunes.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -101,12 +100,9 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>The iTunes plugin enables you to access the user’s iTunes library and play media from it.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>You must include the following keys/descriptions in the <code>plist</code> table of <code>build.settings</code>. When the system prompts the user to allow access, the associated description is displayed as part of the alert. Note that these descriptions can be customized to your preference and they can even be localized (<a href="../../guide/distribution/localization/index.html">guide</a>).</p>
 <pre class="brush: lua;">settings =
 {
@@ -118,40 +114,18 @@
         },
     },
 }</pre>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">local iTunes = require( "plugin.iTunes" )</pre>
-</section>
-<section id="functions" class="level2">
-<h2>Functions</h2>
-<section id="itunes.isplayingplugin.itunes.isplaying" class="level4">
-<h4><a href="../../plugin/iTunes/isPlaying.html">iTunes.isPlaying()</a></h4>
-</section>
-<section id="itunes.getvolumeplugin.itunes.getvolume" class="level4">
-<h4><a href="../../plugin/iTunes/getVolume.html">iTunes.getVolume()</a></h4>
-</section>
-<section id="itunes.pauseplugin.itunes.pause" class="level4">
-<h4><a href="../../plugin/iTunes/pause.html">iTunes.pause()</a></h4>
-</section>
-<section id="itunes.playplugin.itunes.play" class="level4">
-<h4><a href="../../plugin/iTunes/play.html">iTunes.play()</a></h4>
-</section>
-<section id="itunes.resumeplugin.itunes.resume" class="level4">
-<h4><a href="../../plugin/iTunes/resume.html">iTunes.resume()</a></h4>
-</section>
-<section id="itunes.setvolumeplugin.itunes.setvolume" class="level4">
-<h4><a href="../../plugin/iTunes/setVolume.html">iTunes.setVolume()</a></h4>
-</section>
-<section id="itunes.showplugin.itunes.show" class="level4">
-<h4><a href="../../plugin/iTunes/show.html">iTunes.show()</a></h4>
-</section>
-<section id="itunes.stopplugin.itunes.stop" class="level4">
-<h4><a href="../../plugin/iTunes/stop.html">iTunes.stop()</a></h4>
-</section>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
+<h2 id="functions">Functions</h2>
+<h4 id="itunes.isplayingplugin.itunes.isplaying"><a href="../../plugin/iTunes/isPlaying.html">iTunes.isPlaying()</a></h4>
+<h4 id="itunes.getvolumeplugin.itunes.getvolume"><a href="../../plugin/iTunes/getVolume.html">iTunes.getVolume()</a></h4>
+<h4 id="itunes.pauseplugin.itunes.pause"><a href="../../plugin/iTunes/pause.html">iTunes.pause()</a></h4>
+<h4 id="itunes.playplugin.itunes.play"><a href="../../plugin/iTunes/play.html">iTunes.play()</a></h4>
+<h4 id="itunes.resumeplugin.itunes.resume"><a href="../../plugin/iTunes/resume.html">iTunes.resume()</a></h4>
+<h4 id="itunes.setvolumeplugin.itunes.setvolume"><a href="../../plugin/iTunes/setVolume.html">iTunes.setVolume()</a></h4>
+<h4 id="itunes.showplugin.itunes.show"><a href="../../plugin/iTunes/show.html">iTunes.show()</a></h4>
+<h4 id="itunes.stopplugin.itunes.stop"><a href="../../plugin/iTunes/stop.html">iTunes.stop()</a></h4>
+<h2 id="project-settings">Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="brush: lua;">settings =
 {
@@ -163,9 +137,7 @@
         },
     },
 }</pre>
-</section>
-<section id="support" class="level2">
-<h2>Support</h2>
+<h2 id="support">Support</h2>
 <ul>
 <li><a href="http://forums.coronalabs.com/forum/631-corona-premium-plugins/">Corona Forums</a></li>
 </ul>
@@ -179,8 +151,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -73,8 +73,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/json/index.html">json</a>  ▸  <a href="../../../api/library/json/encode.html">encode</a>
 </div>
-<section id="json.encode" class="level1">
-<h1>json.encode()</h1>
+<h1 id="json.encode">json.encode()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -105,28 +104,19 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Returns the Lua object (table) as a JSON-encoded string. Since items with <code>nil</code> values in a Lua table effectively don’t exist, you should use <code>json.null</code> as a placeholder value if you need to preserve array indices in your JSON (see discussion of <code>nullval</code> in <a href="../../../api/library/json/decode.html">json.decode()</a>).</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">json.encode( t [, options] )</pre>
-<section id="t-required" class="level5">
-<h5>t <sub><sup>(required)</sup></sub></h5>
+<h5 id="t-required">t <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Lua table.</p>
-</section>
-<section id="options-optional" class="level5">
-<h5>options <sub><sup>(optional)</sup></sub></h5>
+<h5 id="options-optional">options <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Lua table containing optional directives to the JSON library:</p>
 <ul>
 <li><code>indent</code> — set to <code>true</code> to produce formatted JSON output.</li>
 <li><code>exception</code> — function called to handle unsupported datatypes. Parameters are <code>reason</code>, <code>value</code>, <code>state</code> and <code>defaultmessage</code>. Return a string to be included in the output or <code>nil</code> to raise an error. By default, Corona handles unsupported values as strings.</li>
 </ul>
-</section>
-</section>
-<section id="conversion" class="level2">
-<h2>Conversion</h2>
+<h2 id="conversion">Conversion</h2>
 <ol type="1">
 <li>Encodable Lua types include <a href="../../../api/type/String.html">String</a>, <a href="../../../api/type/Number.html">Number</a>, <a href="../../../api/type/Boolean.html">Boolean</a>, <a href="../../../api/type/Table.html">Table</a>, or <code>nil</code>.</li>
 <li>Unencodable types are noted as a descriptive string in the output.</li>
@@ -137,11 +127,8 @@
 <li>Lua dictionary tables are converted to JSON objects, for example <code>{"one":1,"two":2}</code>.</li>
 <li>By default, JSON nulls are decoded to Lua <code>nil</code> and treated by Lua in the normal way (for example, they appear not to exist — see <a href="../../../api/library/json/decode.html">json.decode()</a>).</li>
 </ol>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="general" class="level5">
-<h5>General</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="general">General</h5>
 <pre class="brush: lua;">local json = require( "json" )
 
 local t = {
@@ -169,9 +156,7 @@ if not decoded then
 else
     print( decoded.name2[4] )  --> 23.54
 end</pre>
-</section>
-<section id="console-debugging" class="level5">
-<h5>Console Debugging</h5>
+<h5 id="console-debugging">Console Debugging</h5>
 <pre class="brush: lua;">local json = require( "json" )
 
 local function onTapLogo( event )
@@ -182,9 +167,7 @@ local logo = display.newImageRect( "logo.png", 128, 128 )
 logo.x = display.contentCenterX
 logo.y = display.contentCenterY
 logo:addEventListener( "tap", onTapLogo )</pre>
-</section>
-<section id="debug-result" class="level5">
-<h5>Debug Result</h5>
+<h5 id="debug-result">Debug Result</h5>
 <pre class="brush: lua; json">onTapLogo: event: {
     "y":175,
     "x":198,
@@ -214,9 +197,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

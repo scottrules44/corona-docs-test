@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../plugin/steamworks/getUserInfo.html">getUserInfo</a>
 </div>
-<section id="steamworks.getuserinfo" class="level1">
-<h1>steamworks.getUserInfo()</h1>
+<h1 id="steamworks.getuserinfo">steamworks.getUserInfo()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -100,8 +99,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Returns a <a href="../../plugin/steamworks/type/UserInfo/index.html">UserInfo</a> object. This provides information about one user account such as the profile name, Steam level, online status, etc.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -109,26 +107,18 @@ Note
 </div>
 <p>When calling the <a href="../../plugin/steamworks/requestLeaderboardEntries.html">steamworks.requestLeaderboardEntries()</a> function, user information for each leaderboard entry will be immediately available. Steam may also unload each entry’s user information automatically. So, this information should be fetched immediately when it becomes available.</p>
 </div>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>This function will return <code>nil</code> in the following cases:</p>
 <ul>
 <li>An invalid user ID was specified.</li>
 <li>The ID of another user was specified <nobr>(not the current user)</nobr> but the information has not yet been downloaded or it’s no longer cached. In this case, the requested information will automatically be downloaded from the Steam server. The result of this request will then be provided by the <a href="../../plugin/steamworks/event/userInfoUpdate/index.html">userInfoUpdate</a> event which can be received by a listener given to the <a href="../../plugin/steamworks/addEventListener.html">steamworks.addEventListener()</a> function.</li>
 <li>The <a href="../../plugin/steamworks/isLoggedOn.html">steamworks.isLoggedOn</a> property is <code>false</code>, indicating that the application is not currently connected to the Steam client.</li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">steamworks.getUserInfo( [userSteamId] )</pre>
-<section id="usersteamid-optional" class="level5">
-<h5>userSteamId <sub><sup>(optional)</sup></sub></h5>
+<h5 id="usersteamid-optional">userSteamId <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The unique string ID of the user. The ID will default to the current user if this argument is not provided.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 -- Called when information about one user has been received or changed
@@ -156,8 +146,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

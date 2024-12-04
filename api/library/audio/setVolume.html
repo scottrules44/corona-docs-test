@@ -69,8 +69,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/audio/index.html">audio</a>  ▸  <a href="../../../api/library/audio/setVolume.html">setVolume</a>
 </div>
-<section id="audio.setvolume" class="level1">
-<h1>audio.setVolume()</h1>
+<h1 id="audio.setvolume">audio.setVolume()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -105,31 +104,20 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Sets the volume either for a specific channel, or sets the master volume.</p>
 <p>This function returns <code>true</code> on success, or <code>false</code> on failure.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>Note that the master volume is not necessarily the device’s ringer volume. However, all volumes are scaled proportionally to the ringer volume.</p>
 <p>When you set the volume, that new volume level is persistent until you set it again. Particularly with channels, you should always keep this in mind. If you change the volume, say on channel 1, channel 1 will continue to stay set at that level even if the sound finishes playing on that channel and you start playing a new sound on that channel.</p>
 <p>If you are playing audio with auto-assigned channels, please understand that if you had previously changed the volume on the channel you are auto-assigned, the volume will play at that level for your new sound. For defensive programming, you may consider using manual channel assignment for channels you intend to change the volume for and use the <a href="../../../api/library/audio/reserveChannels.html">audio.reserveChannels()</a> API to prevent those channels from being auto-assigned.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">audio.setVolume( volume [, options ] )</pre>
-<section id="volume-required" class="level5">
-<h5>volume <sub><sup>(required)</sup></sub></h5>
+<h5 id="volume-required">volume <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The new volume level you want to apply. Valid numbers range from <code>0.0</code> to <code>1.0</code>, where <code>1.0</code> is the maximum value.</p>
-</section>
-<section id="options-required" class="level5">
-<h5>options <sub><sup>(required)</sup></sub></h5>
+<h5 id="options-required">options <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Table that supports a single key, <code>channel</code>, which is the channel number you want to set the volume on. Valid channels are <code>1</code> to the maximum number of channels (currently 32). Specify <code>0</code> to apply the volume to all channels. Omitting this parameter entirely sets the master volume which is different than the channel volume. All channel volumes are scaled by the master volume.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">audio.setVolume( 0.5 )  -- set the master volume
 audio.setVolume( 0.75, { channel=1 } ) -- set the volume on channel 1</pre>
 <hr>
@@ -142,8 +130,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

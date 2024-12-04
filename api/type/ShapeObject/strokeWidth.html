@@ -65,8 +65,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/ShapeObject/index.html">ShapeObject</a>  ▸  <a href="../../../api/type/ShapeObject/strokeWidth.html">strokeWidth</a>
 </div>
-<section id="object.strokewidth" class="level1">
-<h1>object.strokeWidth</h1>
+<h1 id="object.strokewidth">object.strokeWidth</h1>
 <blockquote>
 <table>
 <tbody>
@@ -97,19 +96,14 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Sets the stroke width of vector objects, in pixels. Note that stroke widths are broken up to inner and outer parts. The stroke is centered on the boundaries of the object, but when the stroke width is odd, Corona does an integer divide by 2 then a <a href="../../../api/library/math/floor.html">math.floor()</a> on the value. For example, <code>3 / 2 = 1</code> or <code>1 / 2 = 0</code>. The inner width is set to that value, and the remainder is the outer width. This avoids blurring around the edges of the stroke.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>The stroke width of an object is <code>0</code> by default if not set.</p></li>
 <li><p>Modifying the stroke width affects the object’s <a href="../../../api/type/DisplayObject/width.html">width</a>/<a href="../../../api/type/DisplayObject/contentWidth.html">contentWidth</a>, <a href="../../../api/type/DisplayObject/height.html">height</a>/<a href="../../../api/type/DisplayObject/contentHeight.html">contentHeight</a>, and its hit testing (touch/tap) bounds.</p></li>
 </ul>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local rect = display.newRect( 135, 100, 50, 50 )
 rect:setFillColor( 1 ) 
 rect:setStrokeColor( 1, 0 ,0 )
@@ -124,8 +118,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

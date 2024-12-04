@@ -69,8 +69,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../guide/index.html">Developer Guides</a>  ▸  <a href="../../guide/graphics/index.html">Graphics/Audio/Animation</a>
 </div>
-<section id="repeating-fills" class="level1">
-<h1>Repeating Fills</h1>
+<h1 id="repeating-fills">Repeating Fills</h1>
 <p>This guide outlines how to use <strong>repeating fills</strong>, a feature which allows a larger display object to be filled with a “tiled pattern” using either a <strong>repeat</strong> or <strong>mirrored repeat</strong> repetition mode. For each pattern, an <strong>x</strong> and <strong>y</strong> offset can be applied to the fill, and the fill can be rotated/scaled independently of the object. In addition, these fill settings can be applied either by explicit declaration or via a gradual transition to achieve a variety of animated effects.</p>
 <div class="guides-toc">
 <ul>
@@ -84,8 +83,7 @@
 </ul>
 </div>
 <p><a id="fill-modes"></a></p>
-<section id="repeating-fill-modes" class="level2">
-<h2>Repeating Fill Modes</h2>
+<h2 id="repeating-fill-modes">Repeating Fill Modes</h2>
 <p>Before implementing repeating fills, the proper <strong>fill mode</strong> must be set for the particular situation. This is achieved by calling <a href="../../api/library/display/setDefault.html">display.setDefault()</a> with the <code>"textureWrapX"</code> and/or <code>"textureWrapY"</code> keys, along with one of the following <strong>wrap modes</strong>:</p>
 <ul>
 <li><p><code>"clampToEdge"</code> — This is the default mode; it clamps the texture to either the <strong>x</strong> or <strong>y</strong> direction. Clamped fills will <strong>not</strong> repeat in the clamped direction.</p></li>
@@ -99,9 +97,7 @@ rect.x, rect.y = display.contentCenterX, display.contentCenterY
 display.setDefault( "textureWrapX", "repeat" )
 display.setDefault( "textureWrapY", "mirroredRepeat" )</pre>
 <p><a id="apply-fill"></a></p>
-</section>
-<section id="applying-fills" class="level2">
-<h2>Applying Fills</h2>
+<h2 id="applying-fills">Applying Fills</h2>
 <p>With the vector object in place and the fill mode set along both axes, it can be filled with the example 64×64 image seen here:</p>
 <div style="max-width: 64px; margin-top: 12px; margin-bottom: 12px;">
 <p><img src="../../images/docs/repeat-fill-0.png" /></p>
@@ -124,9 +120,7 @@ display.setDefault( "textureWrapY", "mirroredRepeat" )</pre>
 </div>
 </div>
 <p><a id="scale-fill"></a></p>
-</section>
-<section id="scaling-the-fill" class="level2">
-<h2>Scaling the Fill</h2>
+<h2 id="scaling-the-fill">Scaling the Fill</h2>
 <p>Obviously, filling the entire shape with one stretched image doesn’t result in a repeating fill. To get the intended visual repetition in place, <strong>scaling</strong> methods must be used on the object fill. This requires just two additional lines of code:</p>
 <div class="float-right" style="max-width: 160px; margin-top: 14px; margin-bottom: 16px; clear: both;">
 <p><img src="../../images/docs/repeat-fill-2.png" /></p>
@@ -151,9 +145,7 @@ Important
 rect.fill.scaleY = scaleFactorY</pre>
 <p>The result is a 1:1 ratio for the fill repetition — meaning, the fill itself remains at its original size of 64×64 pixels, repeating within the bounds of the filled object and overflowing outside the edges as expected.</p>
 <p><a id="offset-fill"></a></p>
-</section>
-<section id="offsetting-the-fill" class="level2">
-<h2>Offsetting the Fill</h2>
+<h2 id="offsetting-the-fill">Offsetting the Fill</h2>
 <p>One common factor in the previous examples is that the fill pattern repetition is always <strong>centered</strong> within the filled object. No matter the scale, a fill “tile” will reside in the center of the object and then repeat outward in all directions, assuming neither of the axes is clamped (<code>"clampToEdge"</code>).</p>
 <p>While this default centering will probably work in most cases, <strong>offsetting</strong> a fill may sometimes be required. This can be accomplished by simply adjusting the <code>x</code> and <code>y</code> values of the fill, for instance:</p>
 <pre class="brush: lua;">rect.fill.x = 0.5
@@ -168,9 +160,7 @@ Notes
 </ul>
 </div>
 <p><a id="align-fill"></a></p>
-</section>
-<section id="aligning-the-fill" class="level2">
-<h2>Aligning the Fill</h2>
+<h2 id="aligning-the-fill">Aligning the Fill</h2>
 <p>Expanding on the fill offset concept, it’s sometimes necessary to <strong>align</strong> a fill to an object’s edges.</p>
 <p>Since the size of the object being filled may not be evenly divisible by the fill image size, some clever calculations can be implemented to achieve consistent fill alignment:</p>
 <pre class="brush: lua;">local scaleOffsetX = ( ( rect.width - 64 ) / 2 ) / 64
@@ -207,9 +197,7 @@ Important
 <pre class="brush: lua;">rect.fill.y = offsetY * -1</pre>
 </div>
 <p><a id="rotate-fill"></a></p>
-</section>
-<section id="rotating-the-fill" class="level2">
-<h2>Rotating the Fill</h2>
+<h2 id="rotating-the-fill">Rotating the Fill</h2>
 <p>The final potential adjustment is to <strong>rotate</strong> the fill independently of the object:</p>
 <div class="float-right" style="max-width: 160px; margin-top: 14px; margin-bottom: 16px; clear: both;">
 <p><img src="../../images/docs/repeat-fill-4.png" /></p>
@@ -217,9 +205,7 @@ Important
 <pre class="brush: lua;">rect.fill.rotation = 30</pre>
 <p>Fill rotation is simply performed in familiar degrees from <code>0</code> to <code>360</code>. Note that rotation is applied around the <strong>center</strong> of the filled object and cannot be set to an anchor point (fills do not respect the <code>anchorX</code> or <code>anchorY</code> properties).</p>
 <p><a id="transition-fill"></a></p>
-</section>
-<section id="transitioning-the-fill" class="level2">
-<h2>Transitioning the Fill</h2>
+<h2 id="transitioning-the-fill">Transitioning the Fill</h2>
 <p>A final powerful feature of repeating fills is the ability to <strong>transition</strong> them via basic Corona <a href="../../api/library/transition/index.html">transitions</a>. This allows you to move, rotate, or scale the fill pattern within the filled object, and independently so of any transition/movement that may be occurring on the filled object itself.</p>
 <p>The key aspect in a successful fill transition is pointing to the <code>fill</code> property of the filled object as the <strong>target</strong> of the transition, in this case <code>rect.fill</code>. For instance:</p>
 <pre class="brush: lua;">transition.to( rect.fill, { time=4000, x=0.5 } )</pre>
@@ -246,8 +232,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

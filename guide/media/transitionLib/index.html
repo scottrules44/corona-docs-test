@@ -74,8 +74,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/media/index.html">Graphics/Audio/Animation</a>
 </div>
-<section id="transitions" class="level1">
-<h1>Transitions</h1>
+<h1 id="transitions">Transitions</h1>
 <p>This guide discusses how to use the Corona <a href="../../../api/library/transition/index.html">transition</a> library to move, rotate, fade, or scale a display object/group over a specific period of time.</p>
 <div class="guides-toc">
 <ul>
@@ -88,8 +87,7 @@
 </ul>
 </div>
 <p><a id="features"></a></p>
-<section id="library-features" class="level2">
-<h2>Library Features</h2>
+<h2 id="library-features">Library Features</h2>
 <ul>
 <li>Ability to pause, resume, or cancel a transition (or all transitions).</li>
 </ul>
@@ -105,9 +103,7 @@
 <li><p>Various convenience functions such as <code>blink()</code>, <code>moveTo()</code>, <code>moveBy()</code>, etc. See <a href="#convenience">Convenience Functions</a> for usage details.</p></li>
 </ul>
 <p><a id="standard"></a></p>
-</section>
-<section id="basic-transitions" class="level2">
-<h2>Basic Transitions</h2>
+<h2 id="basic-transitions">Basic Transitions</h2>
 <!---
 
 ## Standard Transitions
@@ -251,8 +247,7 @@ A standard non-sequenced transition can be initiated using one of these function
 </tbody>
 </table>
 </div>
-<section id="examples" class="level3">
-<h3>Examples</h3>
+<h3 id="examples">Examples</h3>
 <ol type="1">
 <li>The following transition <strong>moves</strong> an object from its current position to the <strong>y</strong> coordinate of 100 over the timespan of 2000 milliseconds. In this case, the <strong>y</strong> value is the specific value in content area coordinates.</li>
 </ol>
@@ -329,18 +324,14 @@ transition.runSequence( "sequence1" )
 
 -->
 <p><a id="control"></a></p>
-</section>
-</section>
-<section id="controlling-transitions" class="level2">
-<h2>Controlling Transitions</h2>
+<h2 id="controlling-transitions">Controlling Transitions</h2>
 <p>Transitions can be paused, resumed, or cancelled before completion. The parameter passed to the control function determines the scope of the action.</p>
 <!---
 
 All transitions — standard and sequenced — can be paused, resumed, or cancelled before completion. The parameter passed to the control function determines the scope of the action.
 
 -->
-<section id="pause" class="level3">
-<h3>Pause</h3>
+<h3 id="pause">Pause</h3>
 <p>Transitions can be paused with the <a href="../../../api/library/transition/pause.html">transition.pause()</a> and <a href="../../../api/library/transition/pauseAll.html">transition.pauseAll()</a> functions. These only affect transitions that are running.</p>
 <p>With the <a href="../../../api/library/transition/pause.html">transition.pause()</a> function, you can control which specific transitions to pause by what parameter you use.</p>
 <div class="inner-table">
@@ -371,9 +362,7 @@ All transitions — standard and sequenced — can be paused, resumed, or cancel
 </tbody>
 </table>
 </div>
-</section>
-<section id="resume" class="level3">
-<h3>Resume</h3>
+<h3 id="resume">Resume</h3>
 <p>Transitions can be resumed with the <a href="../../../api/library/transition/resume.html">transition.resume()</a> and <a href="../../../api/library/transition/resumeAll.html">transition.resumeAll()</a> functions. These only affect transitions that are paused.</p>
 <p>With the <a href="../../../api/library/transition/resume.html">transition.resume()</a> function, you can control which specific transitions to resume by what parameter you use.</p>
 <div class="inner-table">
@@ -404,9 +393,7 @@ All transitions — standard and sequenced — can be paused, resumed, or cancel
 </tbody>
 </table>
 </div>
-</section>
-<section id="cancel" class="level3">
-<h3>Cancel</h3>
+<h3 id="cancel">Cancel</h3>
 <p>Transitions can be cancelled with the <a href="../../../api/library/transition/cancel.html">transition.cancel()</a> and <a href="../../../api/library/transition/cancelAll.html">transition.cancelAll()</a> functions. Note that the transition(s) will stop in place — they will not revert to their beginning state or skip to the end state. These functions only effects transitions that are currently running or paused.</p>
 <p>With the <a href="../../../api/library/transition/cancel.html">transition.cancel()</a> function, you can control which specific transitions to cancel by what parameter you use.</p>
 <div class="inner-table">
@@ -447,10 +434,7 @@ Important
 <p>If set <code>transition.ignoreEmptyReference</code> to <code>true</code> (default is <code>false</code>), then passing <code>nil</code> or no argument into these three functions will be ignored and nothing will happen. You can always use <a href="../../../api/library/transition/pauseAll.html">transition.pauseAll()</a>, <a href="../../../api/library/transition/resumeAll.html">transition.resumeAll()</a> and <a href="../../../api/library/transition/cancelAll.html">transition.cancelAll()</a> to control all transitions.</p>
 </div>
 <p><a id="easing"></a></p>
-</section>
-</section>
-<section id="easing-functions" class="level2">
-<h2>Easing Functions</h2>
+<h2 id="easing-functions">Easing Functions</h2>
 <p>By default, transitions occur on a consistent, linear rate of change from the starting value to the ending value. However, you may wish to use an <a href="../../../api/library/easing/index.html">easing</a> effect to achieve a different result, for example, to make an object move quickly at the start and gradually slow down as it reaches its destination. This behavior can be achieved using the <a href="../../../api/library/easing/index.html">easing library</a> functions in conjunction with the transition call.</p>
 <p>To set an easing effect on a transition, simply provide the <code>transition</code> key in the <code>params</code> table with a value equal to one of the <a href="../../../api/library/easing/index.html">easing library</a> functions:</p>
 <pre class="brush: lua;">--transition the object out with quadratic interpolation
@@ -459,9 +443,7 @@ transition.to( myObject, { time=2000, y=100, transition=easing.outQuad } )
 --transition the object in, then back out, with exponential interpolation
 transition.to( myObject, { time=2000, y=100, transition=easing.inOutExpo } )</pre>
 <p><a id="transevents"></a></p>
-</section>
-<section id="transition-events" class="level2">
-<h2>Transition Events</h2>
+<h2 id="transition-events">Transition Events</h2>
 <p>Corona supports a full range of transition events, including:</p>
 <ul>
 <li><code>onStart</code></li>
@@ -522,9 +504,7 @@ Important
 <p>In a wider scope, you may consider using <a href="../../../api/library/transition/cancel.html">transition.cancel()</a> with no params to cancel <strong>all</strong> transitions before exiting a <a href="../../../api/library/composer/index.html">Composer</a> scene or clearing a module.</p>
 </div>
 <p><a id="convenience"></a></p>
-</section>
-<section id="convenience-functions" class="level2">
-<h2>Convenience Functions</h2>
+<h2 id="convenience-functions">Convenience Functions</h2>
 <p>Corona provides several convenience functions which let you perform simple transitions with recognizable names. The following function accept the object/group to transition as the first parameter and, like standard transitions, a <code>params</code> table containing key-values appropriate to the transition type.</p>
 <div class="inner-table">
 <table>
@@ -580,8 +560,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

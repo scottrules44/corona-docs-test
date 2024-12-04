@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/global/index.html">global</a>  ▸  <a href="../../../api/library/global/tonumber.html">tonumber</a>
 </div>
-<section id="tonumber" class="level1">
-<h1>tonumber()</h1>
+<h1 id="tonumber">tonumber()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -100,25 +99,16 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Tries to convert its argument to a number. If the argument is already a number or a string that can be converted to a number, <code>tonumber()</code> returns the number, otherwise, it returns <code>nil</code>.</p>
 <p>An optional argument (<code>base</code>) specifies the base to interpret the numeral.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">tonumber( e [, base ] )</pre>
-<section id="e-required" class="level5">
-<h5>e <sub><sup>(required)</sup></sub></h5>
+<h5 id="e-required">e <sub><sup>(required)</sup></sub></h5>
 <p>The item to be converted to a number.</p>
-</section>
-<section id="base-optional" class="level5">
-<h5>base <sub><sup>(optional)</sup></sub></h5>
+<h5 id="base-optional">base <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Specifies the base to interpret the numeral. The base may be any integer between <code>2</code> and <code>36</code>, inclusive. In bases above 10, the letter <code>A</code> (in either uppercase or lowercase) represents <code>10</code>, <code>B</code> represents <code>11</code>, and so forth, with <code>Z</code> representing <code>35</code>. In base 10 (default), the number can have a decimal part as well as an optional exponent part. In other bases, only unsigned integers are accepted.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Convert the string "42" to a number (42)
 local numString = "42"
 local numValue = tonumber( numString )
@@ -136,8 +126,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -76,8 +76,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/games/index.html">Gaming/Physics</a>
 </div>
-<section id="implementing-game-leaderboards" class="level1">
-<h1>Implementing Game Leaderboards</h1>
+<h1 id="implementing-game-leaderboards">Implementing Game Leaderboards</h1>
 <p>Implementing <strong>leaderboards</strong> is an activity which many developers want to understand so that they can include them among their game features. Corona supports various services for managing leaderboards including <a href="../../../plugin/gpgs/index.html">Google Play Games Services</a> and <a href="../../../plugin/gameNetwork-apple/index.html">Apple Game Center</a>.</p>
 <p>This tutorial will outline one way of setting up your game to use both <nobr>Google Play Games Services</nobr> <strong>and</strong> <nobr>Apple Game Center</nobr>.</p>
 <div class="guide-notebox">
@@ -86,10 +85,8 @@ Note
 </div>
 <p>This tutorial does not outline setting up your game(s) in iTunes Connect or Google Play. Please refer to the many online resources for those instructions.</p>
 </div>
-<section id="collecting-information" class="level2">
-<h2>Collecting Information</h2>
-<section id="google" class="level3">
-<h3>Google</h3>
+<h2 id="collecting-information">Collecting Information</h2>
+<h3 id="google">Google</h3>
 <p>For <nobr>Google Play Games Services</nobr>, you will need to gather various details from the <a href="https://console.developers.google.com/">Google Play Developer Console</a>, including:</p>
 <ol type="1">
 <li><p>Your <strong>license key</strong>, a very long string found within the developer console.</p></li>
@@ -97,17 +94,11 @@ Note
 <li><p>The string that identifies your leaderboard — this looks something like <code>CgkA8kb12jK0onOQBg</code>.</p></li>
 </ol>
 <p>Keep record of all this information since you’ll need to provide it to your Corona app.</p>
-</section>
-<section id="apple" class="level3">
-<h3>Apple</h3>
+<h3 id="apple">Apple</h3>
 <p>Apple Game Center also requires you to gather some information for your app code. When you create a leaderboard, you’ll be asked to give it a unique name. It’s recommended that you follow the <nobr>reverse-domain</nobr> naming scheme such as <code>com.yourdomain.yourgame.leaderboardname</code>. Make a note of this since you’ll need to specify it within your Corona app.</p>
-</section>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
+<h2 id="project-settings">Project Settings</h2>
 <p>For each respective service, you’ll need to include the information gathered above within specific areas of your Corona project.</p>
-<section id="google-1" class="level3">
-<h3>Google</h3>
+<h3 id="google-1">Google</h3>
 <p>Details on the necessary <a href="../../../plugin/gpgs/index.html">Google Play Games Services</a> settings can be found in the <a href="../../../plugin/gpgs/index.html">documentation</a>, but here’s an overview on the necessary aspects:</p>
 <ol type="1">
 <li><p>Implement Google app licensing as outlined <a href="../../../api/library/licensing/index.html">here</a> and sign the <code>.apk</code> with a private key as outlined <a href="../../../guide/distribution/androidBuild/index.html#signrelease">here</a>.</p></li>
@@ -139,9 +130,7 @@ Note
     },
 }</pre>
 </div>
-</section>
-<section id="apple-1" class="level3">
-<h3>Apple</h3>
+<h3 id="apple-1">Apple</h3>
 <p><a href="../../../plugin/gameNetwork-apple/index.html">Apple Game Center</a> is a bit easier — basically, just include the plugin within the <code>plugins</code> table of <code>build.settings</code> as follows:</p>
 <pre class="highlight: [5,6,7,8]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -153,10 +142,7 @@ Note
         },
     },
 }</pre>
-</section>
-</section>
-<section id="data-module" class="level2">
-<h2>Data Module</h2>
+<h2 id="data-module">Data Module</h2>
 <p>In the <a href="../../../tutorial/basics/globals/index.html">Goodbye Globals!</a> tutorial, we outlined how to use a <strong>data module</strong> to share information between scenes and modules. This technique will be used again to store the various game networking plugin handles used in this tutorial.</p>
 <ol type="1">
 <li>To begin, create a new blank Lua file named <code>globalData.lua</code> and save it to your project directory. Inside, include the following lines:</li>
@@ -187,9 +173,7 @@ globalData.gameCenter = nil</pre>
 </div>
 </div>
 </div>
-</section>
-<section id="platform-detection" class="level2">
-<h2>Platform Detection</h2>
+<h2 id="platform-detection">Platform Detection</h2>
 <p>Next, let’s test to see what platform the user is on. If it’s an Android device, we’ll <code>require()</code> <nobr>Google Play Games Services</nobr>; if iOS, we’ll <code>require()</code> <nobr>Apple Game Center</nobr>. Note that each respective inclusion is stored in the <code>globalData</code> handles configured above.</p>
 <pre class="highlight: [7,8,9,10,11,12,13,14]; first-line: 1; gutter: true; brush: lua;">local globalData = require( "globalData" )
 local json = require( "json" )
@@ -205,9 +189,7 @@ if ( platform == "android" and env ~= "simulator" ) then
 elseif ( platform == "ios" and env ~= "simulator" ) then
     globalData.gameCenter = require( "gameNetwork" )
 end</pre>
-</section>
-<section id="game-network-initialization" class="level2">
-<h2>Game Network Initialization</h2>
+<h2 id="game-network-initialization">Game Network Initialization</h2>
 <p>Now we’re ready to initialize and log the user in to the proper game network. For this, we’ll first need to add <strong>listener functions</strong> to handle game network initialization events. Since Lua is a <nobr>one-pass</nobr> compiler, you need to write your code in reverse order. The basic workflow is to initialize the plugin which will trigger an event that will be processed in a listener function.</p>
 <div class="docs-tip-outer">
 <div class="docs-tip-inner-left">
@@ -252,9 +234,7 @@ elseif ( globalData.gameCenter ) then
     -- Initialize Apple Game Center
     globalData.gameCenter.init( "gamecenter", gcInitListener )
 end</pre>
-</section>
-<section id="sending-scores-to-the-leaderboard" class="level2">
-<h2>Sending Scores to the Leaderboard</h2>
+<h2 id="sending-scores-to-the-leaderboard">Sending Scores to the Leaderboard</h2>
 <p>Now that we have the game network initialized and the user is logged in, we’re ready to transmit scores. Normally you would do this after the game is over, or perhaps after the player accomplishes something noteworthy. If you’re tracking the user’s high score locally, you can choose to only transmit a score that you know to be a high score, or alternatively you can send the score to <nobr>Google Play Games Services</nobr> or <nobr>Apple Game Center</nobr> anyway and let the service decide if it needs to record a high score.</p>
 <p>For this, similar to the initialization process, we’ll need a listener function for submitted scores:</p>
 <pre class="first-line: 48; gutter: true; brush: lua;">local function submitScoreListener( event )
@@ -330,9 +310,7 @@ end</pre>
 end</pre>
 <p>Now, submitting a score is as easy as calling the <code>submitScore()</code> function, for example:</p>
 <pre class="highlight: [1]; first-line: 1; gutter: false; brush: lua;">submitScore( 10000 )</pre>
-</section>
-<section id="showing-the-leaderboard" class="level2">
-<h2>Showing the Leaderboard</h2>
+<h2 id="showing-the-leaderboard">Showing the Leaderboard</h2>
 <p>Games which include leaderboards must logically provide some way for players to view them. This might be triggered from the listener handler of a <a href="../../../api/library/widget/newButton.html">button widget</a> or, alternatively, it could be shown after the user achieves <nobr>(or fails to achieve)</nobr> a high score within the <code>submitScoreListener()</code> function we already created.</p>
 <p>Whatever the method, showing a leaderboard can be done like this:</p>
 <pre class="brush: lua;">if ( globalData.gpgs ) then
@@ -348,9 +326,7 @@ elseif ( globalData.gameCenter ) then
         }
     })
 end</pre>
-</section>
-<section id="conclusion" class="level2">
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>While your own game networking implementation can — and probably should — extend beyond just leaderboards, hopefully this tutorial gives you a solid foundation for building <nobr>cross-platform</nobr> game networking functionality using <a href="../../../plugin/gpgs/index.html">Google Play Games Services</a> and <a href="../../../plugin/gameNetwork-apple/index.html">Apple Game Center</a>.</p>
 <hr>
 <div id="footer">
@@ -362,8 +338,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

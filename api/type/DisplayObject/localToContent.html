@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/DisplayObject/index.html">DisplayObject</a>  ▸  <a href="../../../api/type/DisplayObject/localToContent.html">localToContent</a>
 </div>
-<section id="objectlocaltocontent" class="level1">
-<h1>object:localToContent()</h1>
+<h1 id="objectlocaltocontent">object:localToContent()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,27 +107,18 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Maps the given <strong>x</strong> and <strong>y</strong> coordinates of an object to content (<a href="../../../api/type/StageObject/index.html">stage</a>) coordinates.</p>
 <p>This method is useful for comparing the location of display objects in different groups. When a display object is inserted into a group, the core <strong>x</strong> and <strong>y</strong> properties for the object are relative to its group (parent) and not the content (stage). <code>object:localToContent()</code> can be used to return the actual content coordinates of an object, independent of its parent group.</p>
 <p>This method is also useful to determine the content coordinates of a specific off-center point on an object, even one that is rotated or scaled. For example, you can pass an <strong>x</strong> and <strong>y</strong> value relative to the object’s center and retrieve the specific location of that point in content (stage) coordinates. See the example code below.</p>
 <p>Note that this method is similar to <a href="../../../api/type/DisplayObject/contentBounds.html">object.contentBounds</a>, but it returns a specific coordinate point, not the bounding limits of the object.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">object:localToContent( x, y )</pre>
-<section id="x-y-required" class="level5">
-<h5>x, y <sub><sup>(required)</sup></sub></h5>
+<h5 id="x-y-required">x, y <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Coordinates relative to the display object’s center point. Point <code>0,0</code> refers to the center point of the object.</p>
-</section>
-</section>
-<section id="return-values" class="level2">
-<h2>Return Values</h2>
+<h2 id="return-values">Return Values</h2>
 <p>This function returns the <strong>x</strong> and <strong>y</strong> content coordinates, relative to the top left position of the content area.</p>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Create a square
 local square = display.newRect( 100, 100, 40, 40 )
 square:setFillColor( 1 )
@@ -160,8 +150,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

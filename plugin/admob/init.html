@@ -73,8 +73,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/admob/index.html">AdMob</a>  ▸  <a href="../../plugin/admob/init.html">init</a>
 </div>
-<section id="admob.init" class="level1">
-<h1>admob.init()</h1>
+<h1 id="admob.init">admob.init()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -109,27 +108,17 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p><code>admob.init()</code> initializes the AdMob plugin. This call is required and must be executed before making other AdMob calls such as <a href="../../plugin/admob/load.html">admob.load()</a>.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">admob.init( listener, params )</pre>
-<section id="listener-required" class="level5">
-<h5>listener <sub><sup>(required)</sup></sub></h5>
+<h5 id="listener-required">listener <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener function that will receive <a href="../../plugin/admob/event/adsRequest/index.html">adsRequest</a> events.</p>
-</section>
-<section id="params-required" class="level5">
-<h5>params <sub><sup>(required)</sup></sub></h5>
+<h5 id="params-required">params <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing AdMob initialization values — see the next section for details.</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>params</code> table includes parameters for AdMob initialization.</p>
-<section id="appid-required" class="level5">
-<h5>appId <sub><sup>(required)</sup></sub></h5>
+<h5 id="appid-required">appId <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The app ID for your app, gathered from the AdMob <a href="https://www.google.com/admob/">dashboard</a>.</p>
 <div class="docs-tip-outer docs-tip-color-alert">
 <div class="docs-tip-inner-left">
@@ -141,13 +130,9 @@
 <pre class="brush: lua;">Make sure to use same AdMob app ID as in the build.settings section of the [plugin][plugin.admob].</pre>
 </div>
 </div>
-</section>
-<section id="testmode-optional" class="level5">
-<h5>testMode <sub><sup>(optional)</sup></sub></h5>
+<h5 id="testmode-optional">testMode <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> Set this value to <code>true</code> to enable test ads. Default is <code>false</code>.</p>
-</section>
-<section id="videoadvolume-optional" class="level5">
-<h5>videoAdVolume <sub><sup>(optional)</sup></sub></h5>
+<h5 id="videoadvolume-optional">videoAdVolume <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Set desired volume for video ads. Valid values are in the range <code>0.0</code> - <code>1.0</code>. <code>0.0</code> for muting ads completely. Default is <code>1.0</code>.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -165,10 +150,7 @@ Important
 <p>You should <strong>always</strong> use test ads during development <nobr>(<code>testMode = true</code>)</nobr>. If you do not, Google may suspend your AdMob account if they detect that live ads have been interacted with during development.</p>
 </div>
 </div>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local admob = require( "plugin.admob" )
 
 -- AdMob listener function
@@ -191,8 +173,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

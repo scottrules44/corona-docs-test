@@ -67,8 +67,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/io/index.html">io</a>  ▸  <a href="../../../api/library/io/output.html">output</a>
 </div>
-<section id="io.output" class="level1">
-<h1>io.output()</h1>
+<h1 id="io.output">io.output()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -107,22 +106,15 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Sets the standard output file. When called with a file name, it opens the named file in text mode and sets its handle as the default output file. When called with a file handle, it simply sets this file handle as the default output file. When called without parameters, it returns the current default output file.</p>
 <p>The default output is <code>stdout</code> which is the Corona Simulator Console. This is similar behavior to <a href="../../../api/library/io/input.html">io.input()</a> but operates over the default output file.</p>
 <p>This function returns a file handle of the just-opened file or the handle to the current input file handle.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">io.output( [file] )</pre>
-<section id="file-optional" class="level5">
-<h5>file <sub><sup>(optional)</sup></sub></h5>
+<h5 id="file-optional">file <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a> or <a href="../../../api/type/Object.html">Object</a>.</em> File name or file handle.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local tmp = io.output()     -- Save current file handle
 local path = system.pathForFile( "newFile.txt", system.DocumentsDirectory  )
 io.output( path )           -- Open new file in text mode
@@ -141,8 +133,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

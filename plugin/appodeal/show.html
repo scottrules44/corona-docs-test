@@ -72,8 +72,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/appodeal/index.html">Appodeal</a>  ▸  <a href="../../plugin/appodeal/show.html">show</a>
 </div>
-<section id="appodeal.show" class="level1">
-<h1>appodeal.show()</h1>
+<h1 id="appodeal.show">appodeal.show()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -104,8 +103,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Shows an Appodeal ad. By default, Appodeal automatically caches ads in the background, so there is normally no need to <a href="../../plugin/appodeal/load.html">load</a> ads in advance of calling this method. However, automatic caching may be disabled when calling <a href="../../plugin/appodeal/init.html">appodeal.init()</a>.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -113,33 +111,19 @@ Important
 </div>
 <p>Appodeal SDK can’t show ads in offline mode! You will get <code>"adsRequest"</code> <a href="../../api/type/Event.html">Event</a> with phase <code>"failed"</code> If you call this method without internet connection.</p>
 </div>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">appodeal.show( adUnitType [, params] )</pre>
-<section id="adunittype-required" class="level5">
-<h5>adUnitType <sub><sup>(required)</sup></sub></h5>
+<h5 id="adunittype-required">adUnitType <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The type of ad you wish to display. Valid values include <code>"banner"</code>, <code>"interstitial"</code>, and <code>"rewardedVideo"</code>.</p>
-</section>
-<section id="params-optional" class="level5">
-<h5>params <sub><sup>(optional)</sup></sub></h5>
+<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing positioning parameters for banner ads — see the next section for details.</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>params</code> table can include properties for positioning a banner ad. This does not apply to interstitial or video ads.</p>
-<section id="yalign-optional" class="level5">
-<h5>yAlign <sub><sup>(optional)</sup></sub></h5>
+<h5 id="yalign-optional">yAlign <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Vertical alignment of the banner. Valid options are <code>"top"</code> and <code>"bottom"</code>. Default is <code>"bottom</code>.</p>
-</section>
-<section id="placement-optional" class="level5">
-<h5>placement <sub><sup>(optional)</sup></sub></h5>
+<h5 id="placement-optional">placement <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The placement you want the ad to be associated with. Placements allow you to separate ads impressions by places where it was shown. You can read more in <a href="http://faq.appodeal.com/placements">Appodeal Knowledge base</a>.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local appodeal = require( "plugin.appodeal" )
 
 local function adListener( event )
@@ -167,8 +151,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

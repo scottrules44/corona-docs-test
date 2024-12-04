@@ -82,8 +82,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/display/index.html">display</a>  ▸  <a href="../../../api/library/display/loadRemoteImage.html">loadRemoteImage</a>
 </div>
-<section id="display.loadremoteimage" class="level1">
-<h1>display.loadRemoteImage()</h1>
+<h1 id="display.loadremoteimage">display.loadRemoteImage()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -118,79 +117,49 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>This a convenience method, similar to <a href="../../../api/library/network/download.html">network.download()</a>, which returns a <a href="../../../api/type/DisplayObject/index.html">display object</a> containing the image, as well as saving the image to a file.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">display.loadRemoteImage( url, method, listener [, params], destFilename [, baseDir] [, x, y] )</pre>
-<section id="url-required" class="level5">
-<h5>url <sub><sup>(required)</sup></sub></h5>
+<h5 id="url-required">url <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The HTTP request URL which should point to a valid remote PNG or JPG file.</p>
-</section>
-<section id="method-required" class="level5">
-<h5>method <sub><sup>(required)</sup></sub></h5>
+<h5 id="method-required">method <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The HTTP method; acceptable values are <code>"GET"</code> (default) or <code>"POST"</code>.</p>
-</section>
-<section id="listener-required" class="level5">
-<h5>listener <sub><sup>(required)</sup></sub></h5>
+<h5 id="listener-required">listener <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Listener.html">Listener</a>.</em> The listener function invoked when the HTTP operation has completed. It is passed an <code>event</code> object that contains the following properties:</p>
 <ul>
 <li><code>event.response</code> — a string containing the destination file name. This is useful if you’re writing a general event handler for a variety of file downloads.</li>
 <li><code>event.target</code> — the new display object created after the image is downloaded.</li>
 <li><code>event.isError</code> — a <a href="../../../api/type/Boolean.html">Boolean</a> value: <code>true</code> in the case of a network error; <code>false</code> if not.</li>
 </ul>
-</section>
-<section id="params-optional" class="level5">
-<h5>params <sub><sup>(optional)</sup></sub></h5>
+<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> See the <a href="#params">Parameters</a> section for more information.</p>
-</section>
-<section id="destfilename-required" class="level5">
-<h5>destFilename <sub><sup>(required)</sup></sub></h5>
+<h5 id="destfilename-required">destFilename <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The name of the file to which the HTTP response will be saved.</p>
-</section>
-<section id="basedir-optional" class="level5">
-<h5>baseDir <sub><sup>(optional)</sup></sub></h5>
+<h5 id="basedir-optional">baseDir <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Constant.html">Constant</a>.</em> The folder path to which the file will be saved.</p>
-</section>
-<section id="x-y-optional" class="level5">
-<h5>x / y <sub><sup>(optional)</sup></sub></h5>
+<h5 id="x-y-optional">x / y <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The <strong>x</strong> and <strong>y</strong> coordinates to place the newly created display object, once the file has been successfully downloaded and saved.</p>
 <p><a id="params"></a></p>
-</section>
-</section>
-<section id="parameters" class="level2">
-<h2>Parameters</h2>
+<h2 id="parameters">Parameters</h2>
 <p>The <code>params</code> table is an optional table that specifies custom HTTP headers or body to include in the request. To specify custom headers, attach a <code>headers</code> table that specifies header values with string keys. To specify a custom body message, attach a <code>body</code> property to this table whose string value is the HTTP body.</p>
 <pre class="brush: lua;">local params = {}
 params.headers = {}  -- contains header values to send with your request
 params.body = ""     -- specific body to send with your request</pre>
-<section id="headers-optional" class="level5">
-<h5>headers <sub><sup>(optional)</sup></sub></h5>
+<h5 id="headers-optional">headers <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table specifying header values with string keys.</p>
-</section>
-<section id="body-optional" class="level5">
-<h5>body <sub><sup>(optional)</sup></sub></h5>
+<h5 id="body-optional">body <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Contains the HTTP body to send with your request.</p>
-</section>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>Nothing is returned from calling this function. The listener callback will contain the <a href="../../../api/type/DisplayObject/index.html">display object</a> value (<code>event.target</code>) if the download was successful.</p>
-</section>
-<section id="image-guidelines" class="level2">
-<h2>Image Guidelines</h2>
+<h2 id="image-guidelines">Image Guidelines</h2>
 <ul>
 <li>Corona supports PNG and JPG format.</li>
 <li>Images should not contain an embedded ICC profile.</li>
 <li>Avoid progressive JPG files since they will take much longer to load.</li>
 </ul>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="standard" class="level5">
-<h5>Standard</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="standard">Standard</h5>
 <pre class="brush: lua;">local function networkListener( event )
     if ( event.isError ) then
         print ( "Network error - download failed" )
@@ -205,9 +174,7 @@ params.body = ""     -- specific body to send with your request</pre>
 end
  
 display.loadRemoteImage( "https://plugins.solar2d.com/images/logo-banner.png", "GET", networkListener, "logo-banner.png", system.TemporaryDirectory, 50, 50 )</pre>
-</section>
-<section id="cancel-remote-load-before-completion" class="level5">
-<h5>Cancel Remote Load Before Completion</h5>
+<h5 id="cancel-remote-load-before-completion">Cancel Remote Load Before Completion</h5>
 <pre class="brush: lua;">--The 'display.loadRemoteImage()' API call is a convenience method around the 'network.request()' API.
 --The code below is the implementation of 'display.loadRemoteImage()'. If you need to cancel your call,
 --feel free to use the code below and modify it to your needs.
@@ -297,9 +264,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

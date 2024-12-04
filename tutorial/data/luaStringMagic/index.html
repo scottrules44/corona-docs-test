@@ -69,11 +69,9 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/data/index.html">Data/Files/Strings</a>
 </div>
-<section id="lua-string-magic" class="level1">
-<h1>Lua String Magic</h1>
+<h1 id="lua-string-magic">Lua String Magic</h1>
 <p>This tutorial features Lua string manipulation and parsing techniques which can be useful in several applications, especially business or <nobr>database-powered</nobr> apps where you need to check and confirm that text is formatted properly.</p>
-<section id="splitting-strings" class="level2">
-<h2>Splitting Strings</h2>
+<h2 id="splitting-strings">Splitting Strings</h2>
 <p>Do you have some data that’s in the form of a long string and you need to break it up into smaller strings based on a custom pattern? A common example is street addresses:</p>
 <pre class="brush: lua;">Flintstone, Fred, 101 Rockledge, Bedrock, 98775, 555-555-1212
 Rubble, Barney, 103 Rockledge, Bedrock, 98775, 555-555-1313</pre>
@@ -109,9 +107,7 @@ local myTable = string.split( myString, ", " )
 for i = 1,#myTable do
     print( myTable[i] )
 end</pre>
-</section>
-<section id="trimming-strings" class="level2">
-<h2>Trimming Strings</h2>
+<h2 id="trimming-strings">Trimming Strings</h2>
 <p>Trimming strings can be useful in several cases, especially if you’re working with data from an external source, or data that is input by the user via the device’s keyboard. As with the “split” functionality, string trimming is not native to Lua’s string library, but it can be accomplished easily enough. Inspect the following function:</p>
 <pre class="brush: lua;">local function trimString( s )
 
@@ -121,9 +117,7 @@ end</pre>
 <pre class="brush: lua;">local trimmedString = trimString( "   Some untrimmed string here.     " )
 
 print( "[" .. trimmedString .. "]" )  --> [Some untrimmed string here.]</pre>
-</section>
-<section id="formatting-as-title-case" class="level2">
-<h2>Formatting as Title Case</h2>
+<h2 id="formatting-as-title-case">Formatting as Title Case</h2>
 <p>Occasionally it’s useful to convert a string into “title case” in which the first letter of each word is converted to uppercase while the remaining letters are set as lowercase. As an example, let’s assume that a name was entered in a very sloppy format like:</p>
 <pre class="brush: lua;">Obi-waN kEnObi</pre>
 <p>Of course, you probably want to correct this, and doing so requires just one simple function:</p>
@@ -140,9 +134,7 @@ end</pre>
 <pre class="brush: lua;">local characterName = titleCase( "Obi-waN kEnObi" )
 
 print( characterName )  --> Obi-Wan Kenobi</pre>
-</section>
-<section id="strict-line-wrapping" class="level2">
-<h2>Strict Line Wrapping</h2>
+<h2 id="strict-line-wrapping">Strict Line Wrapping</h2>
 <p>Sometimes you’ll have a long string (paragraph) of text which needs to be <nobr>line-wrapped</nobr> at a specific character interval, not a pixel distance. Corona’s <a href="../../../api/library/display/newText.html">display.newText()</a> API handles line wrapping if you provide the <code>width</code> parameter, but if you want <nobr>interval-specific</nobr> control, you may prefer the following function which allows you to set a maximum number of characters per line as the <code>limit</code> argument. In addition, it allows you to set indent values — as optional strings, not integers — for both the start of the paragraph and/or each following line.</p>
 <pre class="brush: lua;">local function textWrap( str, limit, indent, indentFirst )
 
@@ -183,9 +175,7 @@ et accusam et justo duo dolores et
 ea rebum. Stet clita kasd gubergren,
 no sea takimata sanctus est Lorem
 ipsum dolor sit amet.</pre>
-</section>
-<section id="confirm-email-format" class="level2">
-<h2>Confirm Email Format</h2>
+<h2 id="confirm-email-format">Confirm Email Format</h2>
 <p>Another useful string check is confirming that a user has entered an email address in the proper format. Of course, this function can’t check if the actual address is valid and functional, but at least it confirms that the format is basically correct.</p>
 <pre class="brush: lua;">local function confirmEmail( s )
 
@@ -199,9 +189,7 @@ end</pre>
 <pre class="brush: lua;">local isEmailFormat = confirmEmail( "username@domain.com" )
 
 print( isEmailFormat )  --> true</pre>
-</section>
-<section id="stripping-emoticons" class="level2">
-<h2>Stripping Emoticons</h2>
+<h2 id="stripping-emoticons">Stripping Emoticons</h2>
 <p>Emoticons, or “emojis,” are visual symbols which let people easily express a thought or feeling via text. Unfortunately, these characters can wreak havoc if you need to save strings containing emoticons to a SQLite database, encode/decode strings using JSON, etc.</p>
 <p>If your app accepts user text input <nobr>(custom player names, etc.)</nobr> in which players may include emoticons, but you need to strip them out for data storage/conversion purposes, the following function accomplishes the task:</p>
 <pre class="brush: lua;">local function stripNonStandardCharacters( s )
@@ -225,9 +213,7 @@ end</pre>
 <p>Note that this function requires usage of the free Corona <a href="../../../plugin/utf8/index.html">UTF-8</a> plugin, so you’ll need to include it in your project and <code>require()</code> it in the module which includes this <nobr>emoticon-stripping</nobr> function. See the plugin <a href="../../../plugin/utf8/index.html">documentation</a> for details.</p>
 </div>
 </div>
-</section>
-<section id="conclusion" class="level2">
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>This wraps up our tutorial on Lua string “magic.” Hopefully you can find a place for these convenient functions in your apps!</p>
 <hr>
 <div id="footer">
@@ -239,8 +225,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/event/index.html">Events</a>  ▸  <a href="../../../api/event/lateUpdate/index.html">lateUpdate</a>
 </div>
-<section id="lateupdate" class="level1">
-<h1>lateUpdate</h1>
+<h1 id="lateupdate">lateUpdate</h1>
 <blockquote>
 <table>
 <tbody>
@@ -92,22 +91,13 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p><code>"lateUpdate"</code> events occur at the <nobr>frames-per-second</nobr> interval of the application, either 30 or 60 as specified in <code>config.lua</code>. They are only dispatched to the global <a href="../../../api/type/EventDispatcher/index.html">Runtime</a> object.</p>
 <p>This is dispatched after the <code>"enterFrame"</code> event, and right before the engine starts the rendering process. For this reason, it is useful to make any last update according to its state. Also, it is intended to be a safe call for all those who are listening to this event, otherwise, it loses its purpose.</p>
-</section>
-<section id="properties" class="level2">
-<h2>Properties</h2>
-<section id="event.nameapi.event.lateupdate.name" class="level4">
-<h4><a href="../../../api/event/lateUpdate/name.html">event.name</a></h4>
-</section>
-<section id="event.timeapi.event.lateupdate.time" class="level4">
-<h4><a href="../../../api/event/lateUpdate/time.html">event.time</a></h4>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="properties">Properties</h2>
+<h4 id="event.nameapi.event.lateupdate.name"><a href="../../../api/event/lateUpdate/name.html">event.name</a></h4>
+<h4 id="event.timeapi.event.lateupdate.time"><a href="../../../api/event/lateUpdate/time.html">event.time</a></h4>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local shouldUpdate = false
 local rect = display.newRect(100, 100, 30, 30)
 local x, y
@@ -144,8 +134,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

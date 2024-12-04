@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/games/index.html">Gaming/Physics</a>
 </div>
-<section id="basic-object-spawning" class="level1">
-<h1>Basic Object Spawning</h1>
+<h1 id="basic-object-spawning">Basic Object Spawning</h1>
 <p>In game design, a common element is <strong>object spawning</strong>, whether it be spawning a variable number of enemies and placing them randomly about the screen, or spawning items repeatedly on a timer increment. In this tutorial, we’ll step through a basic spawning module which includes the following features:</p>
 <ul>
 <li>Set rectangular bounds on the screen within which to spawn objects.</li>
@@ -77,8 +76,7 @@
 <li>Spawn a flexible amount of objects on a repeating timer.</li>
 <li>Pause, resume, or stop the spawning process.</li>
 </ul>
-<section id="initial-setup" class="level2">
-<h2>Initial Setup</h2>
+<h2 id="initial-setup">Initial Setup</h2>
 <p>Let’s begin with a few initial commands…</p>
 <pre class="brush: lua;">local spawnTimer
 local spawnedObjects = {}
@@ -87,9 +85,7 @@ local spawnedObjects = {}
 math.randomseed( os.time() )</pre>
 <p>The first variable, <code>spawnTimer</code>, is simply a Lua forward reference to the timer object which we’ll use to control the spawning process. The second variable, <code>spawnedObjects</code>, is a basic table into which we’ll insert items as they are spawned, providing us with a basic method to track them, count them, loop over them, etc.</p>
 <p>The third command sets the “seed” for the <nobr>pseudo-random</nobr> number generator. On some operating systems, this generator begins with the same initial value which causes random numbers to repeat in a predictable pattern. This addition to our code ensures that the generator always starts with a different seed.</p>
-</section>
-<section id="spawn-parameters" class="level2">
-<h2>Spawn Parameters</h2>
+<h2 id="spawn-parameters">Spawn Parameters</h2>
 <p>Now, let’s set up a table of basic spawning parameters which we can use to adjust/control the spawning:</p>
 <pre class="brush: lua;">local spawnParams = {
     xMin = 20,
@@ -101,9 +97,7 @@ math.randomseed( os.time() )</pre>
     spawnInitial = 4
 }</pre>
 <p>All of these parameters are optional and will default to various values (details later) but they should usually be set to appropriate values for your game. Essentially, the first four parameters define the rectangular region on the screen in which items will spawn, as defined by a minimum and maximum for both <strong>x</strong> and <strong>y</strong>. The next parameter (<code>spawnTime</code>) defines the timed increment, in milliseconds, upon which new items will spawn, assuming an amount of items is defined by the <code>spawnOnTimer</code> parameter. Lastly, the <code>spawnInitial</code> parameter can be used to instantly spawn a certain number of items, if the game design calls for it.</p>
-</section>
-<section id="basic-spawning-function" class="level2">
-<h2>Basic Spawning Function</h2>
+<h2 id="basic-spawning-function">Basic Spawning Function</h2>
 <p>Next, we’ll need a basic spawning function which creates the objects:</p>
 <pre class="brush: lua;">-- Spawn an item
 local function spawnItem( bounds )
@@ -121,9 +115,7 @@ end</pre>
 <p>The first few lines create a sample item — in this case a basic white vector circle. Obviously these items could be images, animated sprites, objects which you then enable for physics usage, etc.</p>
 <p>The next few lines position the item randomly within the declared bounds. Recall that we declared these as the first four parameters in the <code>spawnParams</code> table.</p>
 <p>The final line simply adds the new item to the <code>spawnedObjects</code> table, providing a simple method to track and manage the spawned objects.</p>
-</section>
-<section id="spawn-controller" class="level2">
-<h2>Spawn Controller</h2>
+<h2 id="spawn-controller">Spawn Controller</h2>
 <p>The next step is to create a simple but reasonably powerful “controller” function which allows us to start, stop, pause, and resume the spawning process. This function will accept two arguments: an <code>action</code> argument which represents the action to perform and a <code>params</code> argument (this represents the <code>spawnParams</code> table that we declared above).</p>
 <pre class="first-line: 1; gutter: true; brush: lua;">local function spawnController( action, params )
 
@@ -275,17 +267,13 @@ if ( action == "start" ) then
     end
 end</pre>
 </div>
-</section>
-<section id="calling-the-spawn-controller" class="level2">
-<h2>Calling the Spawn Controller</h2>
+<h2 id="calling-the-spawn-controller">Calling the Spawn Controller</h2>
 <p>From this point, the spawn controller can easily be called with four possible actions. Note that calling the <code>spawnController()</code> function with <code>"start"</code> as the <code>action</code> parameter is the sole use case which requires the <code>spawnParams</code> table — the other actions assume that the spawning process is already underway.</p>
 <pre class="brush: lua;">spawnController( "start", spawnParams )</pre>
 <pre class="brush: lua;">spawnController( "pause" )</pre>
 <pre class="brush: lua;">spawnController( "resume" )</pre>
 <pre class="brush: lua;">spawnController( "stop" )</pre>
-</section>
-<section id="conclusion" class="level2">
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>Hopefully this tutorial gives you a simple base module atop which to build a more comprehensive spawning methodology involving animated sprites, physics objects, variable time increments, and much more.</p>
 <hr>
 <div id="footer">
@@ -297,8 +285,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

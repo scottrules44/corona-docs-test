@@ -67,8 +67,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/apple-iap/index.html">Apple IAP</a>  ▸  <a href="../../plugin/apple-iap/init.html">init</a>
 </div>
-<section id="store.init" class="level1">
-<h1>store.init()</h1>
+<h1 id="store.init">store.init()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -99,22 +98,15 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>This call is required and must be executed before making other Apple IAP calls. This prepares the Apple IAP library and, upon successful initialization, sets <a href="../../plugin/apple-iap/isActive.html">store.isActive</a> to <code>true</code>.</p>
 <p>This also allows you to detect <a href="../../plugin/apple-iap/event/storeTransaction/index.html">storeTransaction</a> events to the listener defined as <code>listener</code>.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">store.init( listener )</pre>
-<section id="listener-required" class="level5">
-<h5>listener <sub><sup>(required)</sup></sub></h5>
+<h5 id="listener-required">listener <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> The listener that will handle <a href="../../plugin/apple-iap/event/storeTransaction/index.html">storeTransaction</a> events.</p>
 <p>For compatibility with Google IAP plugin, <code>store.init()</code> will call listener with event <code>"init"</code>.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local store = require( "plugin.apple.iap" )
 local json = require( "json" )
 
@@ -146,8 +138,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

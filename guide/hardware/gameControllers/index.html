@@ -75,8 +75,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/hardware/index.html">System/Hardware</a>
 </div>
-<section id="game-controllers" class="level1">
-<h1>Game Controllers</h1>
+<h1 id="game-controllers">Game Controllers</h1>
 <p>In Corona, creating apps with gamepad/joystick support is both easy and interactive. This guide outlines how the game controller APIs and events work together.</p>
 <div class="guides-toc">
 <ul>
@@ -89,8 +88,7 @@
 </ul>
 </div>
 <p><a id="requirements"></a></p>
-<section id="requirements" class="level2">
-<h2>Requirements</h2>
+<h2 id="requirements">Requirements</h2>
 <ul>
 <li><p>Game controllers are supported in the Corona Simulator for macOS or Windows, in Win32 desktop apps, and on Android devices.</p></li>
 <li><p>Supported game controller(s). The Corona Simulator for macOS supports most game controllers, but some controllers require additional setup. Tested controllers include:</p>
@@ -103,9 +101,7 @@
 <li><p>This guide accompanies the “Pew Pew!” sample app which utilizes all game controller APIs. You may download it from our <a href="https://github.com/coronalabs/PewPew">GitHub repository</a>.</p></li>
 </ul>
 <p><a id="querying"></a></p>
-</section>
-<section id="querying-devices" class="level2">
-<h2>Querying Devices</h2>
+<h2 id="querying-devices">Querying Devices</h2>
 <p>The initial API to begin with is <a href="../../../api/library/system/getInputDevices.html">system.getInputDevices()</a> which returns a list of all detected input devices. Note, however, the following differences between platforms:</p>
 <ul>
 <li>On Android, this call returns all connected input devices, including touch screens, gamepads, keyboards, etc.</li>
@@ -126,9 +122,7 @@ end</pre>
 <li><p>You may also query the <a href="../../../api/type/InputDevice/index.html">InputDevice</a> object for its axes via the <a href="../../../api/type/InputDevice/getAxes.html">object:getAxes()</a> method or cause it to vibrate with the <a href="../../../api/type/InputDevice/vibrate.html">object:vibrate()</a> function. Please see the <a href="../../../api/type/InputDevice/index.html">documentation</a> for a complete list of properties and methods.</p></li>
 </ul>
 <p><a id="connections"></a></p>
-</section>
-<section id="connectingdisconnecting-controllers" class="level2">
-<h2>Connecting/Disconnecting Controllers</h2>
+<h2 id="connectingdisconnecting-controllers">Connecting/Disconnecting Controllers</h2>
 <p>The <a href="../../../api/event/inputDeviceStatus/index.html">inputDeviceStatus</a> event is fired whenever a controller is connected or disconnected. The following example shows how to handle this event:</p>
 <pre class="brush: lua;">local function onInputDeviceStatusChanged( event )
     
@@ -150,9 +144,7 @@ Runtime:addEventListener( "inputDeviceStatus", onInputDeviceStatusChanged )</pre
 <li><a href="../../../api/event/inputDeviceStatus/reconfigured.html">event.reconfigured</a> — <a href="../../../api/type/Boolean.html">Boolean</a> value indicating if the device has been reconfigured.</li>
 </ul>
 <p><a id="input"></a></p>
-</section>
-<section id="handling-controller-input" class="level2">
-<h2>Handling Controller Input</h2>
+<h2 id="handling-controller-input">Handling Controller Input</h2>
 <p>Game controllers produce two types of events as a result of input: <a href="../../../api/event/axis/index.html">axis</a> and <a href="../../../api/event/key/index.html">key</a>.</p>
 <p>A <a href="../../../api/event/key/index.html">key</a> event’s <code>event.device</code> property will be <code>nil</code> on both macOS and Windows. It can also be <code>nil</code> on Android if it came from a virtual input device such as the virtual keyboard.</p>
 <p>The following example shows how to detect a specific controller. When either an <code>axis</code> or <code>key</code> event is triggered, the <code>setDevice()</code> function is called which sets the <code>event.device</code> and <a href="../../../api/type/InputDevice/index.html">InputDevice</a> <code>displayName</code>.</p>
@@ -194,12 +186,9 @@ Notes
 <li><p>Some game controllers produce both <code>axis</code> and <code>key</code> events when analog triggers are pressed, so you may wish to conditionally handle this possibility.</p></li>
 </ul>
 </div>
-<section id="handling-keys" class="level3">
-<h3>Handling Keys</h3>
+<h3 id="handling-keys">Handling Keys</h3>
 <p>Keys are handled with <a href="../../../api/event/key/index.html">key</a> events. Whenever the user presses a button on a gamepad/joystick or a key on the keyboard, this event is triggered. To identify which button/key was pressed, refer to the <a href="../../../api/event/key/keyName.html">event.keyName</a> documentation. Furthermore, when a <code>key</code> event occurs, <code>event.phase</code> will equal <code>"down"</code> when the button/key is pressed down, or <code>"up"</code> when the button/key is released.</p>
-</section>
-<section id="handling-axes" class="level3">
-<h3>Handling Axes</h3>
+<h3 id="handling-axes">Handling Axes</h3>
 <p>The <a href="../../../api/event/axis/index.html">axis</a> event fires any time the controller’s axis values change. This can result in a large amount of events, so game developers should consider accumulating the axis state. Each event has several useful properties:</p>
 <ul>
 <li><a href="../../../api/event/axis/device.html">event.device</a> — Refers to the <a href="../../../api/type/InputDevice/index.html">InputDevice</a> which this axis belongs to.</li>
@@ -217,10 +206,7 @@ Important
 </ul>
 </div>
 <p><a id="summary"></a></p>
-</section>
-</section>
-<section id="summary" class="level2">
-<h2>Summary</h2>
+<h2 id="summary">Summary</h2>
 <ul>
 <li><p>Game controllers are supported in the Corona Simulator for macOS or Windows, in Win32 desktop apps, and on Android devices.</p></li>
 <li><p>Game controller support can be implemented using the following events:</p>
@@ -238,11 +224,8 @@ Important
 <li><p>It’s wise to accumulate axis changes and take action later, for instance in the runtime <code>"enterFrame"</code> listener, similar to the <a href="https://github.com/coronalabs/PewPew">sample app</a> method.</p></li>
 </ul>
 <p><a id="references"></a></p>
-</section>
-<section id="references" class="level2">
-<h2>References</h2>
-<section id="documentation" class="level3">
-<h3>Documentation</h3>
+<h2 id="references">References</h2>
+<h3 id="documentation">Documentation</h3>
 <ul>
 <li><a href="../../../api/type/InputDevice/index.html">InputDevice</a> type</li>
 <li><a href="../../../api/type/InputAxis/index.html">InputAxis</a> type</li>
@@ -251,16 +234,12 @@ Important
 <li><a href="../../../api/event/axis/index.html">axis</a> event</li>
 <li><a href="../../../api/library/system/getInputDevices.html">system.getInputDevices()</a></li>
 </ul>
-</section>
-<section id="third-party-drivers" class="level3">
-<h3>Third-Party Drivers</h3>
+<h3 id="third-party-drivers">Third-Party Drivers</h3>
 <ul>
 <li><a href="https://github.com/d235j/360Controller/releases">360Controller driver</a></li>
 <li><a href="https://github.com/FranticRain/Xone-OSX/releases/latest">Xone-OSX driver</a></li>
 </ul>
-</section>
-<section id="sample-code" class="level3">
-<h3>Sample Code</h3>
+<h3 id="sample-code">Sample Code</h3>
 <ul>
 <li><a href="https://github.com/coronalabs/PewPew">Pew Pew!</a> sample app</li>
 <li><a href="https://github.com/coronalabs/samples-coronasdk/tree/master/Hardware/InputDevices">InputDevices</a> sample app</li>
@@ -275,9 +254,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -74,8 +74,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/social/index.html">Communication/Social</a>
 </div>
-<section id="implementing-facebook" class="level1">
-<h1>Implementing Facebook</h1>
+<h1 id="implementing-facebook">Implementing Facebook</h1>
 <p>This guide discusses how to implement common Facebook tasks and processes in your Corona app.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -97,8 +96,7 @@ Note
 </ul>
 </div>
 <p><a id="plugin"></a></p>
-<section id="including-the-plugin" class="level2">
-<h2>Including the Plugin</h2>
+<h2 id="including-the-plugin">Including the Plugin</h2>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
 Important
@@ -119,9 +117,7 @@ Important
 <p>Then, you must <code>require()</code> the plugin in any module where you need to access its methods and properties:</p>
 <pre class="brush: lua;">local facebook = require( "plugin.facebook.v4a" )</pre>
 <p><a id="user-experience"></a></p>
-</section>
-<section id="user-experience" class="level2">
-<h2>User Experience</h2>
+<h2 id="user-experience">User Experience</h2>
 <p>The user experience for different components of the Facebook plugin vary depending on the presence of a native Facebook app. In many cases, if a native Facebook app is on the device, operations like logging in or presenting the <a href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog</a> may try to redirect the heavy lifting to the Facebook app. The cases where a redirect to the Facebook app occurs has changed a lot throughout the history of the Facebook SDK, so your app should be prepared for a Facebook operation to suspend and then resume your app after the Facebook operation completes.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -129,8 +125,7 @@ Note
 </div>
 <p>On Android, a native Facebook app could be the standard <a href="https://play.google.com/store/apps/details?id=com.facebook.katana&amp;hl=en">Facebook app</a> or the <a href="https://play.google.com/store/apps/details?id=com.facebook.lite&amp;hl=en">Facebook Lite app</a>. Each native app may result in a different user experience.</p>
 </div>
-<section id="login-considerations" class="level3">
-<h3>Login Considerations</h3>
+<h3 id="login-considerations">Login Considerations</h3>
 <p>Before the Facebook Graph API can be used, the app must successfully log in to Facebook. Then, it must gather the required authentication information and the specific permissions required by the app.</p>
 <ul>
 <li><p>If the mobile device has a native Facebook app installed, your app will launch it and ask for the necessary permissions. When this happens, your app is temporarily suspended and placed into the background while the native Facebook app runs. When complete (the user has either granted permission or has cancelled), the Facebook app will try to restore your app and put it in the foreground, bringing with it the information about your permission request.</p></li>
@@ -147,10 +142,7 @@ Notes
 </ul>
 </div>
 <p><a id="ios-requirements"></a></p>
-</section>
-</section>
-<section id="ios-requirements" class="level2">
-<h2>iOS Requirements</h2>
+<h2 id="ios-requirements">iOS Requirements</h2>
 <p>If your app is for iOS, you must include specific aspects within your <code>build.settings</code> file to ensure that the native Facebook app functions properly. Please see the <a href="../../../plugin/facebook-v4a/index.html#ios">plugin documentation</a> for details.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -184,9 +176,7 @@ Note
 }</pre>
 </div>
 <p><a id="android-requirements"></a></p>
-</section>
-<section id="android-requirements" class="level2">
-<h2>Android Requirements</h2>
+<h2 id="android-requirements">Android Requirements</h2>
 <p>On Android, Facebook uses your app <strong>Package Name</strong>, for example <code>com.yoursite.yourapp</code>. To ensure that the native Facebook app functions properly, you must provide Facebook’s portal with two important pieces of information — these include the <strong>Class Name</strong> of <code>com.ansca.corona.CoronaActivity</code> and the <strong>Key Hash</strong> gathered from the keystore you built your app with. These are discussed in the <a href="../../../guide/social/setupFacebook/index.html">Facebook Portal Setup</a> guide.</p>
 <p>Furthermore, the Facebook v4 plugin needs to know about your unique Facebook App ID (<code>facebookAppId</code>):</p>
 <pre class="brush: lua;">settings =
@@ -197,9 +187,7 @@ Note
     },
 }</pre>
 <p><a id="Initialization"></a></p>
-</section>
-<section id="initialization" class="level2">
-<h2>Initialization</h2>
+<h2 id="initialization">Initialization</h2>
 <p>The Facebook plugin begins initializing when you require the plugin the first time. Depending on network conditions, this could take several seconds. In your <code>main.lua</code> file, you can create a listener function to notify you when initialization is complete and reference that function within <a href="../../../plugin/facebook-v4a/init.html">facebook.init()</a>:</p>
 <pre class="brush: lua;">local function facebookListener( event )
 
@@ -229,9 +217,7 @@ Note
 <p>This listener function can be the same function that you’ll use for Facebook requests, dialogs, and logging in, but if you prefer to use a different function for those aspects, simply specify that function reference within <a href="../../../plugin/facebook-v4a/login.html">facebook.login()</a>.</p>
 </div>
 <p><a id="login-logout"></a></p>
-</section>
-<section id="logging-inout" class="level2">
-<h2>Logging In/Out</h2>
+<h2 id="logging-inout">Logging In/Out</h2>
 <p>Logging in to Facebook is accomplished through <a href="../../../plugin/facebook-v4a/login.html">facebook.login()</a>. If you didn’t already set a <a href="../../../api/type/Listener.html">listener</a> function via <a href="../../../plugin/facebook-v4a/init.html">facebook.init()</a> or <a href="../../../plugin/facebook-v4a/setFBConnectListener.html">facebook.setFBConnectListener()</a>, you can set it by passing the listener reference as the first argument to <a href="../../../plugin/facebook-v4a/login.html">facebook.login()</a>.</p>
 <p>Secondly, via <a href="../../../plugin/facebook-v4a/login.html">facebook.login()</a>, you can request an array of <a href="https://developers.facebook.com/docs/facebook-login/permissions">permissions</a>. Both <nobr><strong>read-only</strong></nobr> and <strong>publishable</strong> permissions can be specified, with some caveats which are outlined in the <a href="../../../plugin/facebook-v4a/login.html">facebook.login()</a> documentation.</p>
 <p>Putting these two aspects together, a login call might look like this:</p>
@@ -239,9 +225,7 @@ Note
 <p>Logging the user out is even easier. To disconnect the app from Facebook’s services, simply call <a href="../../../plugin/facebook-v4a/logout.html">facebook.logout()</a>. Note, however, that this does <strong>not</strong> log the device’s user out of Facebook entirely — if the user is logged into Facebook through a native Facebook app or the device’s browser, they will remain logged in via those means.</p>
 <pre class="brush: lua;">facebook.logout()</pre>
 <p><a id="listener"></a></p>
-</section>
-<section id="facebook-listener" class="level2">
-<h2>Facebook Listener</h2>
+<h2 id="facebook-listener">Facebook Listener</h2>
 <p>All Facebook requests will call the listener function you passed to <a href="../../../plugin/facebook-v4a/init.html">facebook.init()</a>, <a href="../../../plugin/facebook-v4a/login.html">facebook.login()</a>, or set via <a href="../../../plugin/facebook-v4a/setFBConnectListener.html">facebook.setFBConnectListener()</a>. For example:</p>
 <pre class="brush: lua;">local function facebookListener( event )
 
@@ -268,9 +252,7 @@ Note
     end
 end</pre>
 <p><a id="requests"></a></p>
-</section>
-<section id="making-requests" class="level2">
-<h2>Making Requests</h2>
+<h2 id="making-requests">Making Requests</h2>
 <p>To make different Graph API requests, use the <a href="../../../plugin/facebook-v4a/request.html">facebook.request()</a> call. By default, this call makes <nobr><code>HTTP GET</code></nobr> requests to Facebook. If you wish to use another method, set the second parameter (<code>httpMethod</code>) to a value outlined in the <a href="../../../plugin/facebook-v4a/request.html">facebook.request()</a> documentation.</p>
 <pre class="brush: lua;">facebook.request( path [, httpMethod] [, params] )</pre>
 <p>The only required parameter is <code>path</code> which is based on the <a href="https://developers.facebook.com/docs/graph-api">Facebook Graph API</a> path. This will typically be the REST object that you want to access. For example, the following command will retrieve the latest posts from the user’s account feed:</p>
@@ -286,9 +268,7 @@ facebook.request( "me/photos", "POST", attachment )</pre>
 <p>When <a href="../../../plugin/facebook-v4a/request.html">facebook.request()</a> calls complete, your Facebook listener function will be called with an <code>event.type</code> of <code>"request"</code>. Facebook generally returns your data as <code>event.response</code>, a <nobr>JSON-encoded</nobr> table of data. To convert this into a Lua table, call <a href="../../../api/library/json/decode.html">json.decode()</a>, remembering to first <code>require()</code> the JSON library.</p>
 <p>To learn more about which requests, parameters, and data Facebook provides, please see the <a href="https://developers.facebook.com/docs/graph-api">Facebook Graph API</a> documentation.</p>
 <p><a id="dialogs"></a></p>
-</section>
-<section id="using-dialogs" class="level2">
-<h2>Using Dialogs</h2>
+<h2 id="using-dialogs">Using Dialogs</h2>
 <p>Facebook requires that some tasks be done through dialogs they control. To use a dialog, call the <a href="../../../plugin/facebook-v4a/showDialog.html">facebook.showDialog()</a> function:</p>
 <pre class="brush: lua;">facebook.showDialog( action, params )</pre>
 <p>For this call, the <code>action</code> parameter specifies the dialog type:</p>
@@ -314,9 +294,7 @@ facebook.request( "me/photos", "POST", attachment )</pre>
 </div>
 <p>Observe how the <code>params</code> argument is a table of key/value pairs which gets passed to the Facebook API call. The keys that you pass correspond to specific options which are available for the dialog. See the <a href="../../../plugin/facebook-v4a/showDialog.html">facebook.showDialog()</a> documentation for details.</p>
 <p><a id="published-installs"></a></p>
-</section>
-<section id="published-installs" class="level2">
-<h2>Published Installs</h2>
+<h2 id="published-installs">Published Installs</h2>
 <p>While not part of the Graph API, <strong>Published Installs</strong> is a way for apps to participate in Facebook’s mobile ad campaign which can report (to Facebook) that the app has been installed. This process is simple and there is no callback information or need to call <a href="../../../plugin/facebook-v4a/login.html">facebook.login()</a> — just call <a href="../../../plugin/facebook-v4a/publishInstall.html">facebook.publishInstall()</a>:</p>
 <pre class="brush: lua;">facebook.publishInstall()</pre>
 <hr>
@@ -329,8 +307,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

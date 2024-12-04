@@ -105,8 +105,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/widget/index.html">widget</a>  ▸  <a href="../../../api/library/widget/newSlider.html">newSlider</a>
 </div>
-<section id="widget.newslider" class="level1">
-<h1>widget.newSlider()</h1>
+<h1 id="widget.newslider">widget.newSlider()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -137,64 +136,35 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Creates a <a href="../../../api/type/SliderWidget/index.html">SliderWidget</a> object.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>To conserve texture memory, a <a href="../../../api/type/SliderWidget/index.html">SliderWidget</a> object can only be created from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>.</p></li>
 <li><p><a href="../../../api/type/SliderWidget/index.html">SliderWidget</a> objects do not support <a href="../../../api/type/DisplayObject/scale.html">scaling</a> nor changing the width/height via <a href="../../../api/type/DisplayObject/width.html">.width</a> or <a href="../../../api/type/DisplayObject/height.html">.height</a>.</p></li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">widget.newSlider( options )</pre>
 <p>This function takes a single argument, <code>options</code>, which is a table that accepts the following parameters:</p>
-<section id="id-optional" class="level5">
-<h5>id <sub><sup>(optional)</sup></sub></h5>
+<h5 id="id-optional">id <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> An optional identification to assign to the slider. Default is <code>"widget_slider"</code>.</p>
-</section>
-<section id="x-y-optional" class="level5">
-<h5>x, y <sub><sup>(optional)</sup></sub></h5>
+<h5 id="x-y-optional">x, y <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Coordinates for the widget’s <strong>x</strong> and <strong>y</strong> center point. These values will be overridden by <code>left</code> and <code>top</code> if those values are defined.</p>
-</section>
-<section id="left-top-optional" class="level5">
-<h5>left, top <sub><sup>(optional)</sup></sub></h5>
+<h5 id="left-top-optional">left, top <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The left and top position where the widget will be created. If specified, these values override the <code>x</code> and <code>y</code> parameters.</p>
-</section>
-<section id="orientation-optional" class="level5">
-<h5>orientation <sub><sup>(optional)</sup></sub></h5>
+<h5 id="orientation-optional">orientation <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The orientation of the slider, either <code>"horizontal"</code> or <code>"vertical"</code>. Default is <code>"horizontal"</code>.</p>
-</section>
-<section id="width-height-required" class="level5">
-<h5>width, height <sub><sup>(required)</sup></sub></h5>
+<h5 id="width-height-required">width, height <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width <strong>or</strong> height of the slider, depending on the <code>orientation</code> setting (<code>width</code> for horizontal or <code>height</code> for vertical).</p>
-</section>
-<section id="value-optional" class="level5">
-<h5>value <sub><sup>(optional)</sup></sub></h5>
+<h5 id="value-optional">value <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Represents the starting value of the slider, as a percentage. Default is <code>50</code>, meaning that the slider handle will begin at 50%.</p>
-</section>
-<section id="listener-optional" class="level5">
-<h5>listener <sub><sup>(optional)</sup></sub></h5>
+<h5 id="listener-optional">listener <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Listener.html">Listener</a>.</em> The function which is called to handle slider interaction events. In this listener function, <code>event.phase</code> returns the expected touch interaction phases of <code>"began"</code>, <code>"moved"</code>, or <code>"ended"</code>. In addition, you can read the new value of the slider with <code>event.value</code>.</p>
-</section>
-</section>
-<section id="properties" class="level2">
-<h2>Properties</h2>
-<section id="object.valueapi.type.sliderwidget.value" class="level4">
-<h4><a href="../../../api/type/SliderWidget/value.html">object.value</a></h4>
-</section>
-</section>
-<section id="methods" class="level2">
-<h2>Methods</h2>
-<section id="objectsetvalueapi.type.sliderwidget.setvalue" class="level4">
-<h4><a href="../../../api/type/SliderWidget/setValue.html">object:setValue()</a></h4>
-</section>
-</section>
-<section id="visual-customization" class="level2">
-<h2>Visual Customization</h2>
+<h2 id="properties">Properties</h2>
+<h4 id="object.valueapi.type.sliderwidget.value"><a href="../../../api/type/SliderWidget/value.html">object.value</a></h4>
+<h2 id="methods">Methods</h2>
+<h4 id="objectsetvalueapi.type.sliderwidget.setvalue"><a href="../../../api/type/SliderWidget/setValue.html">object:setValue()</a></h4>
+<h2 id="visual-customization">Visual Customization</h2>
 <p>The slider widget can be visually customized using an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>. As shown in the following example, 5 frames can be used to assemble an outer border and an inner fill bar. The outer border consists of the left cap (red), the middle span (green), and the right cap (yellow). The inner fill region (orange) will stretch to span the current slider fill percentage. All of the outer border frames and the inner fill frame should share the same width and height.</p>
 <p>The handle frame can be sized differently than the other frames. Note that all slider widgets have a limit to which the handle can be dragged in either direction. In regards to visual customization, the handle will stop when its <strong>center</strong> axis reaches either edge of the <strong>middle</strong> span section. Thus, for a horizontal slider, the handle will stop when its center axis reaches the left or right edge of the <nobr>center-spanning</nobr> section between the end caps. The same principle applies to a vertical slider, but the limits will be the top and bottom edge of the <nobr>center-spanning</nobr> section.</p>
 <div class="float-right" style="float: none; margin: 20px 0px 20px 0px; font-size: 125%; color: #292929; vertical-align: middle;">
@@ -208,77 +178,40 @@
 </tbody>
 </table>
 </div>
-<section id="sheet-required" class="level5">
-<h5>sheet <sub><sup>(required)</sup></sub></h5>
+<h5 id="sheet-required">sheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> The <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> object for the slider.</p>
-</section>
-<section id="horizontal-slider" class="level3">
-<h3>Horizontal Slider</h3>
-<section id="leftframe-required" class="level5">
-<h5>leftFrame <sub><sup>(required)</sup></sub></h5>
+<h3 id="horizontal-slider">Horizontal Slider</h3>
+<h5 id="leftframe-required">leftFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the border left cap.</p>
-</section>
-<section id="middleframe-required" class="level5">
-<h5>middleFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="middleframe-required">middleFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the border middle span.</p>
-</section>
-<section id="rightframe-required" class="level5">
-<h5>rightFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="rightframe-required">rightFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the border right cap.</p>
-</section>
-<section id="fillframe-required" class="level5">
-<h5>fillFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillframe-required">fillFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the middle fill span.</p>
-</section>
-<section id="framewidth-frameheight-required" class="level5">
-<h5>frameWidth, frameHeight <sub><sup>(required)</sup></sub></h5>
+<h5 id="framewidth-frameheight-required">frameWidth, frameHeight <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width/height of the border frames and middle fill span. All of these frames should share the same width and height.</p>
-</section>
-<section id="handleframe-required" class="level5">
-<h5>handleFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="handleframe-required">handleFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the handle element.</p>
-</section>
-<section id="handlewidth-handleheight-required" class="level5">
-<h5>handleWidth, handleHeight <sub><sup>(required)</sup></sub></h5>
+<h5 id="handlewidth-handleheight-required">handleWidth, handleHeight <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width/height of the handle element frame.</p>
-</section>
-</section>
-<section id="vertical-slider" class="level3">
-<h3>Vertical Slider</h3>
-<section id="topframe-required" class="level5">
-<h5>topFrame <sub><sup>(required)</sup></sub></h5>
+<h3 id="vertical-slider">Vertical Slider</h3>
+<h5 id="topframe-required">topFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the border top cap.</p>
-</section>
-<section id="middleverticalframe-required" class="level5">
-<h5>middleVerticalFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="middleverticalframe-required">middleVerticalFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the border middle span.</p>
-</section>
-<section id="bottomframe-required" class="level5">
-<h5>bottomFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="bottomframe-required">bottomFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the border bottom cap.</p>
-</section>
-<section id="fillverticalframe-required" class="level5">
-<h5>fillVerticalFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="fillverticalframe-required">fillVerticalFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the middle fill span.</p>
-</section>
-<section id="framewidth-frameheight-required-1" class="level5">
-<h5>frameWidth, frameHeight <sub><sup>(required)</sup></sub></h5>
+<h5 id="framewidth-frameheight-required-1">frameWidth, frameHeight <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width/height of the border frames and middle fill span. All of these frames should share the same width and height.</p>
-</section>
-<section id="handleframe-required-1" class="level5">
-<h5>handleFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="handleframe-required-1">handleFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the handle element.</p>
-</section>
-<section id="handlewidth-handleheight-required-1" class="level5">
-<h5>handleWidth, handleHeight <sub><sup>(required)</sup></sub></h5>
+<h5 id="handlewidth-handleheight-required-1">handleWidth, handleHeight <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width/height of the handle element frame.</p>
-</section>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="horizontal" class="level5">
-<h5>Horizontal</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="horizontal">Horizontal</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
     
 -- Slider listener
@@ -296,9 +229,7 @@ local slider = widget.newSlider(
         listener = sliderListener
     }
 )</pre>
-</section>
-<section id="vertical" class="level5">
-<h5>Vertical</h5>
+<h5 id="vertical">Vertical</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
     
 -- Slider listener
@@ -317,9 +248,7 @@ local slider = widget.newSlider(
         listener = sliderListener
     }
 )</pre>
-</section>
-<section id="image-sheet" class="level5">
-<h5>Image Sheet</h5>
+<h5 id="image-sheet">Image Sheet</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Slider listener
@@ -372,9 +301,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

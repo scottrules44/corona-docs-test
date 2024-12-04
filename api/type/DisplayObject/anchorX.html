@@ -66,8 +66,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/DisplayObject/index.html">DisplayObject</a>  ▸  <a href="../../../api/type/DisplayObject/anchorX.html">anchorX</a>
 </div>
-<section id="object.anchorx" class="level1">
-<h1>object.anchorX</h1>
+<h1 id="object.anchorx">object.anchorX</h1>
 <blockquote>
 <table>
 <tbody>
@@ -110,25 +109,18 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>This property allows you to control the alignment of the object along the <strong>x</strong> direction.</p>
 <p>In general, the anchors of an object control how geometry is positioned relative to the object’s origin. A value of <code>0</code> corresponds to left alignment, meaning the left edge of the object is aligned with the origin. A value of <code>0.5</code> corresponds to center alignment. A value of <code>1</code> corresponds to right alignment.</p>
 <p>By default, anchor values must range from <code>0.0</code> to <code>1.0</code> and the anchor of new objects is set to <code>0.5</code>, however these defaults can be modified (see below).</p>
-</section>
-<section id="anchor-defaults" class="level2">
-<h2>Anchor Defaults</h2>
+<h2 id="anchor-defaults">Anchor Defaults</h2>
 <ul>
 <li><p>The default anchor can be changed for all display objects via <a href="../../../api/library/display/setDefault.html">display.setDefault()</a>.</p></li>
 <li><p>Non-constrained anchors are allowed via the <code>"isAnchorClamped"</code> setting of <a href="../../../api/library/display/setDefault.html">display.setDefault()</a>. In this case, setting anchor values outside of the <code>0.0</code> to <code>1.0</code> range will position the anchor outside the bounds of the display object.</p></li>
 </ul>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>When you change an anchor value, the object’s origin does <strong>not</strong> change. Instead, its geometry moves relative to its origin. See the <a href="../../../guide/graphics/transform-anchor.html">Transforms and Anchors</a> guide for more information.</p>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local rect1 = display.newRect( 0, 0, 50, 50 )
 rect1:setFillColor( 1, 0, 0 )
 rect1.x = 100
@@ -150,8 +142,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

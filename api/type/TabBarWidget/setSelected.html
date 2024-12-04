@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/TabBarWidget/index.html">TabBarWidget</a>  ▸  <a href="../../../api/type/TabBarWidget/setSelected.html">setSelected</a>
 </div>
-<section id="objectsetselected" class="level1">
-<h1>object:setSelected()</h1>
+<h1 id="objectsetselected">object:setSelected()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -104,25 +103,16 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Use this method to set a specific <a href="../../../api/type/TabBarWidget/index.html">TabBarWidget</a> button to its “selected” state. Optionally, you can invoke the <code>onPress</code> listener for the button at the same time.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">object:setSelected( buttonIndex )
 object:setSelected( buttonIndex, simulatePress )</pre>
-<section id="buttonindex-required" class="level5">
-<h5>buttonIndex <sub><sup>(required)</sup></sub></h5>
+<h5 id="buttonindex-required">buttonIndex <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The button index on the tab bar, starting with <code>1</code> indicating the first button from the left.</p>
-</section>
-<section id="simulatepress-optional" class="level5">
-<h5>simulatePress <sub><sup>(optional)</sup></sub></h5>
+<h5 id="simulatepress-optional">simulatePress <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> If set to <code>true</code>, the tab button specified by <code>buttonIndex</code> will have its <code>onPress</code> listener function called. The default is <code>false</code>, meaning that the tab button will appear “selected” but the listener function will not be called.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Select the third tab
 tabBar:setSelected( 3 )  
 
@@ -138,8 +128,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

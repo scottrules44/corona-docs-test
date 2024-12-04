@@ -79,8 +79,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/graphics/index.html">graphics</a>  ▸  <a href="../../../api/library/graphics/newOutline.html">newOutline</a>
 </div>
-<section id="graphics.newoutline" class="level1">
-<h1>graphics.newOutline()</h1>
+<h1 id="graphics.newoutline">graphics.newOutline()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -119,59 +118,35 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>This function produces the outline of the shape obtained from an image file or a frame within an <a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>. A shape is recognized by the image’s <nobr>non-transparent</nobr> alpha value. Generally, simpler images produce better outlines.</p>
 <p>The returned value is a table of <strong>x</strong> and <strong>y</strong> coordinates in content space that can be used as the outline for the <a href="../../../api/library/physics/addBody.html">physics.addBody()</a> function</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
-<section id="image-file" class="level3">
-<h3>Image File</h3>
+<h2 id="syntax">Syntax</h2>
+<h3 id="image-file">Image File</h3>
 <pre class="brush: lua;">graphics.newOutline( coarsenessInTexels, imageFileName [, baseDir] )</pre>
-<section id="coarsenessintexels-required" class="level5">
-<h5>coarsenessInTexels <sub><sup>(required)</sup></sub></h5>
+<h5 id="coarsenessintexels-required">coarsenessInTexels <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The coarseness in texels. Higher values produce lower resolution outlines. Lower values produce larger outlines that can hurt performance.</p>
-</section>
-<section id="imagefile-required" class="level5">
-<h5>imageFile <sub><sup>(required)</sup></sub></h5>
+<h5 id="imagefile-required">imageFile <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The file name of the image to trace.</p>
-</section>
-<section id="basedir-optional" class="level5">
-<h5>baseDir <sub><sup>(optional)</sup></sub></h5>
+<h5 id="basedir-optional">baseDir <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Constant.html">Constant</a>.</em> Path to load the image from. Default is <code>system.ResourceDirectory</code> (project folder; same location as <code>main.lua</code>). See <a href="../../../api/library/system/pathForFile.html">system.pathForFile()</a> for valid values).</p>
-</section>
-</section>
-<section id="image-sheet-frame" class="level3">
-<h3>Image Sheet Frame</h3>
+<h3 id="image-sheet-frame">Image Sheet Frame</h3>
 <pre class="brush: lua;">graphics.newOutline( coarsenessInTexels, imageSheet, frameIndex )</pre>
-<section id="coarsenessintexels-required-1" class="level5">
-<h5>coarsenessInTexels <sub><sup>(required)</sup></sub></h5>
+<h5 id="coarsenessintexels-required-1">coarsenessInTexels <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The coarseness in texels. Higher values produce lower resolution outlines. Lower values produce larger outlines that can hurt performance.</p>
-</section>
-<section id="imagesheet-required" class="level5">
-<h5>imageSheet <sub><sup>(required)</sup></sub></h5>
+<h5 id="imagesheet-required">imageSheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> Reference to an image sheet object created with <a href="../../../api/library/graphics/newImageSheet.html">graphics.newImageSheet()</a>.</p>
-</section>
-<section id="frameindex-required" class="level5">
-<h5>frameIndex <sub><sup>(required)</sup></sub></h5>
+<h5 id="frameindex-required">frameIndex <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Represents the frame index number within the <a href="../../../api/type/ImageSheet/index.html">ImageSheet</a> to create the object from. This is only required if <code>imageSheet</code> is specified.</p>
-</section>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="image-file-1" class="level5">
-<h5>Image File</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="image-file-1">Image File</h5>
 <pre class="brush: lua;">local imageFile = "star.png"
 
 local imageOutline = graphics.newOutline( 2, imageFile )
 local image = display.newImage( imageFile )
 
 physics.addBody( image, { outline=imageOutline, bounce=0.5, friction=0.1 } )</pre>
-</section>
-<section id="image-sheet-frame-1" class="level5">
-<h5>Image Sheet Frame</h5>
+<h5 id="image-sheet-frame-1">Image Sheet Frame</h5>
 <pre class="brush: lua;">local options =
 {
     width = 64,
@@ -199,9 +174,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

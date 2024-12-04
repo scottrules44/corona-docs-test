@@ -76,8 +76,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/audio/index.html">audio</a>  ▸  <a href="../../../api/library/audio/play.html">play</a>
 </div>
-<section id="audio.play" class="level1">
-<h1>audio.play()</h1>
+<h1 id="audio.play">audio.play()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -116,29 +115,18 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Plays the audio specified by the audio handle on a channel. If a channel is not explicitly specified, an available channel will be automatically chosen for you.</p>
 <p>This function returns the channel number which the audio plays on, or <code>0</code> if the audio could not be played.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>Currently we support 32 channels. You may not play new audio on a channel that is currently active (paused or playing).</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">audio.play( audioHandle [, options ] )</pre>
-<section id="audiohandle-required" class="level5">
-<h5>audioHandle <sub><sup>(required)</sup></sub></h5>
+<h5 id="audiohandle-required">audioHandle <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Object.html">Object</a>.</em> This is the audio data you want to play (as returned from <a href="../../../api/library/audio/loadSound.html">audio.loadSound()</a> and <a href="../../../api/library/audio/loadStream.html">audio.loadStream()</a>).</p>
-</section>
-<section id="options-optional" class="level5">
-<h5>options <sub><sup>(optional)</sup></sub></h5>
+<h5 id="options-optional">options <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Additional options for playback — see the next section for details.</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>options</code> table allows you to specify additional options for playback.</p>
 <pre class="brush: lua;">local options =
 {
@@ -148,24 +136,15 @@
     fadein = 5000,
     onComplete = callbackListener
 }</pre>
-<section id="channel-optional" class="level5">
-<h5>channel <sub><sup>(optional)</sup></sub></h5>
+<h5 id="channel-optional">channel <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The channel number you want to play on. Valid channels are <code>1</code> to the maximum number of channels (currently 32). Specify <code>0</code> or omit this parameter to have a channel automatically picked for you.</p>
-</section>
-<section id="loops-optional" class="level5">
-<h5>loops <sub><sup>(optional)</sup></sub></h5>
+<h5 id="loops-optional">loops <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The number of times you want the audio to loop. <code>0</code> means that the audio will loop 0 times (the sound will play once and not loop). <code>1</code> means that the audio will play once and loop once which means you will hear the sound a total of 2 times. Passing <code>-1</code> will tell the system to infinitely loop the sample.</p>
-</section>
-<section id="duration-optional" class="level5">
-<h5>duration <sub><sup>(optional)</sup></sub></h5>
+<h5 id="duration-optional">duration <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> In milliseconds, this will cause the system to play the audio for the specified amount of time and then auto-stop the playback regardless of whether the audio has finished or not.</p>
-</section>
-<section id="fadein-optional" class="level5">
-<h5>fadein <sub><sup>(optional)</sup></sub></h5>
+<h5 id="fadein-optional">fadein <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> In milliseconds, this will cause the system to start playing a sound at the minimum channel volume and linearly ramp up to the normal channel volume over the specified number of milliseconds.</p>
-</section>
-<section id="oncomplete-optional" class="level5">
-<h5>onComplete <sub><sup>(optional)</sup></sub></h5>
+<h5 id="oncomplete-optional">onComplete <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Listener.html">Listener</a>.</em> A callback function you want to be called when playback ends. The <code>onComplete</code> callback function passes back an event table with the following properties:</p>
 <ul>
 <li><code>event.name</code> (<a href="../../../api/type/String.html">string</a>) — Value of <code>"audio"</code>.</li>
@@ -173,10 +152,7 @@
 <li><code>event.handle</code> (<a href="../../../api/type/Object.html">object</a>) — This is the audio handle you passed into <code>audio.play()</code>.</li>
 <li><code>event.completed</code> (<a href="../../../api/type/Boolean.html">boolean</a>) — This value will be <code>true</code> if the audio stopped because it finished playing normally (played to the end of the sound). It will be <code>false</code> if the audio was stopped because of other reasons.</li>
 </ul>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Completion listener function
 local function narrationFinished( event )
     print( "Narration Finished on channel", event.channel )
@@ -210,8 +186,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

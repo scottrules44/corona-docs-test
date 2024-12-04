@@ -80,8 +80,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/events/index.html">Events/Listeners</a>
 </div>
-<section id="localpush-notifications" class="level1">
-<h1>Local/Push Notifications</h1>
+<h1 id="localpush-notifications">Local/Push Notifications</h1>
 <p>This guide discusses how to implement <strong>local</strong> and <strong>push</strong> notifications.</p>
 <div class="guides-toc">
 <ul>
@@ -97,8 +96,7 @@
 </ul>
 </div>
 <p><a id="overview"></a></p>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Solar2D supports two types of notifications: <strong>local</strong> and <strong>push</strong>. The purpose of both notification types is to notify the user about something — a message or an upcoming appointment, for example — when the application isn’t running in the foreground. The essential difference between local notifications and push notifications is simple:</p>
 <ul>
 <li><p><strong>Local notifications</strong> are scheduled by an app locally and are delivered by the same device.</p></li>
@@ -115,9 +113,7 @@
 </div>
 </div>
 <p><a id="usage"></a></p>
-</section>
-<section id="usage-notes" class="level2">
-<h2>Usage Notes</h2>
+<h2 id="usage-notes">Usage Notes</h2>
 <p>To use <strong>push</strong> notifications, remember the following points:</p>
 <ul>
 <li><p>The app has to support a registration process and it must support incoming messages.</p></li>
@@ -126,9 +122,7 @@
 <li><p>We recommend that you use a third-party service to send push requests to Apple or Google, who in turn sends them onward to devices. That service can be a company like <a href="https://github.com/OneSignal/OneSignal-Solar2D-SDK">OneSignal</a>, <a href="https://www.pushwoosh.com/">PushWoosh</a>, or <a href="https://www.airship.com/">Airship</a> that specializes in push notifications.</p></li>
 </ul>
 <p><a id="interact"></a></p>
-</section>
-<section id="app-interaction" class="level2">
-<h2>App Interaction</h2>
+<h2 id="app-interaction">App Interaction</h2>
 <p>How an app reacts to notifications depends on its state:</p>
 <ul>
 <li><p><strong>Not running</strong> — the app has exited by design, user decision, reboot, etc. In this state, if the user interacts with the notification, the operating system will launch the app. Information about the notification event will be passed to the app using “launch arguments”. The app should watch for these and react accordingly, for example, show a “snooze” button for an alarm or open a <a href="../../../api/library/native/newWebView.html">native.newWebView()</a> if it has a URL. Note, however, that if the user starts the app by tapping directly on its icon, the notification will <strong>not</strong> be presented.</p></li>
@@ -136,9 +130,7 @@
 <li><p><strong>Foregrounded</strong> — the app is active and the user is currently interacting with it. In this state, the app will receive the notification event.</p></li>
 </ul>
 <p><a id="settings"></a></p>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
+<h2 id="project-settings">Project Settings</h2>
 <p>To use the <a href="../../../plugin/notifications-v2/index.html">Notifications</a> plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="highlight: [5,6,7,8]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -170,9 +162,7 @@ Important
 </ul>
 </div>
 <p><a id="ios-setup"></a></p>
-</section>
-<section id="ios-setup" class="level2">
-<h2>iOS Setup</h2>
+<h2 id="ios-setup">iOS Setup</h2>
 <p>Much of the iOS configuration for <strong>push</strong> notifications is done within the <a href="https://developer.apple.com/">Apple Developer</a> portal. In addition, you must specify what <strong>types</strong> of notifications your app will use within the <nobr><code>notification</code> → <code>iphone</code> → <code>types</code></nobr> table of <code>config.lua</code>:</p>
 <pre class="highlight: [9,10,11]; first-line: 1; gutter: false; brush: lua;">application =
 {
@@ -189,8 +179,7 @@ Important
         },
     },
 }</pre>
-<section id="firebase" class="level3">
-<h3>Firebase</h3>
+<h3 id="firebase">Firebase</h3>
 <p>If you want to use <a href="https://firebase.google.com">Google Firebase Cloud Messaging (FCM)</a> for push notifications, follow these additional steps:</p>
 <ol type="1">
 <li><p>Copy <code>GoogleService-Info.plist</code>, provided in the Firebase console, to your project’s root directory alongside <code>main.lua</code>.</p></li>
@@ -210,10 +199,7 @@ Important
 }</pre>
 </div>
 <p><a id="android-setup"></a></p>
-</section>
-</section>
-<section id="android-setup" class="level2">
-<h2>Android Setup</h2>
+<h2 id="android-setup">Android Setup</h2>
 <p>Android also requires some additional configuration for <strong>push</strong> notifications:</p>
 <ol type="1">
 <li><p>Copy <code>google-services.json</code>, provided in the Firebase console, to your project’s root directory alongside <code>main.lua</code>.</p></li>
@@ -229,8 +215,7 @@ Important
 }</pre>
 </div>
 <p><a id="androidicons"></a></p>
-<section id="android-icons" class="level3">
-<h3>Android Icons</h3>
+<h3 id="android-icons">Android Icons</h3>
 <p>You can set custom notification icons in a project by adding the following files to the root of the project directory, just like custom application icons. Please see <a href="https://developer.android.com/guide/practices/ui_guidelines/icon_design_status_bar.html">Google’s official documentation</a> for further details.</p>
 <div class="inner-table">
 <table>
@@ -269,10 +254,7 @@ Important
 </table>
 </div>
 <p><a id="localnot"></a></p>
-</section>
-</section>
-<section id="scheduling-local-notifications" class="level2">
-<h2>Scheduling Local Notifications</h2>
+<h2 id="scheduling-local-notifications">Scheduling Local Notifications</h2>
 <p>To schedule a <strong>local</strong> notification, use the <a href="../../../plugin/notifications-v2/scheduleNotification.html">notifications.scheduleNotification()</a> function and specify the <strong>time</strong> of the future event in one of two formats:</p>
 <ol type="1">
 <li><p>Number of seconds from the call time when the notification should be delivered.</p></li>
@@ -296,9 +278,7 @@ Important
 </div>
 </div>
 <p><a id="events"></a></p>
-</section>
-<section id="handling-notification-events" class="level2">
-<h2>Handling Notification Events</h2>
+<h2 id="handling-notification-events">Handling Notification Events</h2>
 <p>In accordance with the Solar2D event/listener model, if your app is running in either the foreground or background and a notification arrives, you’ll receive a <a href="../../../api/event/notification/index.html">notification</a> event. It’s your responsibility to initialize the system and set up a listener function to handle these events. Please review the following framework and then read the detailed subsections below.</p>
 <pre class="brush: lua;">local function notificationListener( event )
 
@@ -312,8 +292,7 @@ Important
 end
 
 Runtime:addEventListener( "notification", notificationListener )</pre>
-<section id="notification-data" class="level3">
-<h3>Notification Data</h3>
+<h3 id="notification-data">Notification Data</h3>
 <p>A <a href="../../../api/event/notification/index.html">notification</a> event returns a table of information which you can use to manage the specific notification. This table includes the following:</p>
 <ul>
 <li><a href="../../../api/event/notification/alert.html">event.alert</a> — This <a href="../../../api/type/String.html">string</a> value consists of the message displayed.</li>
@@ -324,9 +303,7 @@ Runtime:addEventListener( "notification", notificationListener )</pre>
 <li><a href="../../../api/event/notification/sound.html">event.sound</a> — A <a href="../../../api/type/String.html">string</a> value representing a sound file, for example <code>"alarm.caf"</code>.</li>
 <li><a href="../../../api/event/notification/type.html">event.type</a> — A <a href="../../../api/type/String.html">string</a> value of <code>"local"</code> for local notifications or <code>"remote"</code> for push notifications.</li>
 </ul>
-</section>
-<section id="launch-arguments" class="level3">
-<h3>Launch Arguments</h3>
+<h3 id="launch-arguments">Launch Arguments</h3>
 <p>When the operating system, as the result of an incoming notification, starts your app from an inactive (not running) state, the app receives the data as part of <code>launchArgs</code> instead of triggering a notification event. You can use your <code>notificationListener</code> function to process the launch arguments.</p>
 <pre class="brush: lua;">local launchArgs = ...
 
@@ -339,9 +316,7 @@ Important
 </div>
 <p>This <code>launchArgs</code> processing must be in <code>main.lua</code> since it’s the code which receives the data.</p>
 </div>
-</section>
-<section id="notification-badges-ios" class="level3">
-<h3>Notification Badges (iOS)</h3>
+<h3 id="notification-badges-ios">Notification Badges (iOS)</h3>
 <p>Notification badges on iOS are easily recognized by a small circle/number overlaying the app icon. If a notification passes a <code>badge</code> value, a badge equal to that value will appear over the app icon.</p>
 <p>It’s your responsibility to read and set the badge number depending on its previous value. This is accomplished with the <a href="../../../api/library/native/getProperty.html">native.getProperty()</a> and <a href="../../../api/library/native/setProperty.html">native.setProperty()</a> functions. In almost every case, when the user opens/handles the notification, you should decrement the badge number by 1 as follows:</p>
 <pre class="brush: lua;">-- Decrement the badge number by 1
@@ -364,15 +339,10 @@ local function notificationListener( event )
 end</pre>
 <p>Alternatively, you can clear the badge entirely:</p>
 <pre class="brush: lua;">native.setProperty( "applicationIconBadgeNumber", 0 )</pre>
-</section>
-<section id="notification-sounds" class="level3">
-<h3>Notification Sounds</h3>
+<h3 id="notification-sounds">Notification Sounds</h3>
 <p>By default, the device will play a sound when a notification comes in. You can specify a custom sound file in your project to play instead of the default sound. For instance, if you have the file <code>notification.wav</code> inside your app bundle, you can specify the string <code>"notification.wav"</code> as part of the push bundle (if the sending service supports it) and the operating system will play that custom sound instead of the default. In this case, the <code>event.sound</code> entry in the event listener will equal this string.</p>
 <p><a id="remotereg"></a></p>
-</section>
-</section>
-<section id="remote-registration-ios" class="level2">
-<h2>Remote Registration (iOS)</h2>
+<h2 id="remote-registration-ios">Remote Registration (iOS)</h2>
 <p>On iOS, when you’re ready to ask the user for permission to allow <strong>push</strong> notifications, you should call <a href="../../../plugin/notifications-v2/registerForPushNotifications.html">notifications.registerForPushNotifications()</a>. This will show the popup which asks the user if they want to enable push notifications. It’s recommended that you only ask for this permission when you need it and not at the startup of your app.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -415,8 +385,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

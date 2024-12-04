@@ -83,8 +83,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/appsflyer/index.html">appsflyer</a>  ▸  <a href="../../plugin/appsflyer/logPurchase.html">logPurchase</a>
 </div>
-<section id="appsflyer.logpurchase" class="level1">
-<h1>appsflyer.logPurchase()</h1>
+<h1 id="appsflyer.logpurchase">appsflyer.logPurchase()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -115,8 +114,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>AppsFlyer’s SDK provides server verification for in-app purchases. This method automatically generates an <code>af_purchase</code> in-app event.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -124,72 +122,41 @@ Important
 </div>
 <p>For a list of possible return values for validating receipts, please refer to Apple’s documentation <a href="https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateRemotely.html">here</a>.</p>
 </div>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">appsflyer.logPurchase( productData )</pre>
-<section id="productdata-required" class="level5">
-<h5>productData <sub><sup>(required)</sup></sub></h5>
+<h5 id="productdata-required">productData <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing key-value parameters. In-App Events provide insights on what is happening in your app. It is recommended to take the time and define the events you want to measure to allow you to track ROI (Return on Investment) and LTV (Lifetime Value).</p>
 <p>You may specify your own custom key-value parameters (optional). Values should be of type <code>String</code>.</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>productData</code> table for iOS includes following parameters for logging IAP purchases:</p>
-<section id="productid-required" class="level5">
-<h5>productId <sub><sup>(required)</sup></sub></h5>
+<h5 id="productid-required">productId <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The product ID/name for the IAP purchase.</p>
-</section>
-<section id="currency-required" class="level5">
-<h5>currency <sub><sup>(required)</sup></sub></h5>
+<h5 id="currency-required">currency <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The currency of the IAP transaction.</p>
-</section>
-<section id="transactionid-required" class="level5">
-<h5>transactionId <sub><sup>(required)</sup></sub></h5>
+<h5 id="transactionid-required">transactionId <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The transaction ID. This parameter applies to Apple App Store transactions only and is mandatory when logging an Apple IAP receipt. It expects the data from event.transaction.identifier found in the in-app purchase transaction callback.</p>
-</section>
-<section id="price-required" class="level5">
-<h5>price <sub><sup>(required)</sup></sub></h5>
+<h5 id="price-required">price <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The unit price of the IAP item. The <code>price</code> parameter should contain the total revenue associated to the validated purchase event.</p>
-</section>
-<section id="parameters-optional" class="level5">
-<h5>parameters <sub><sup>(optional)</sup></sub></h5>
+<h5 id="parameters-optional">parameters <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing additional key-value parameters.</p>
 <div style="margin-top: 16px;">
 
 </div>
 <p>The <code>productData</code> table for Android includes following parameters for logging IAP purchases:</p>
-</section>
-<section id="publickey-required" class="level5">
-<h5>publicKey <sub><sup>(required)</sup></sub></h5>
+<h5 id="publickey-required">publicKey <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> API Key, the developer gets this from the Google portal.</p>
-</section>
-<section id="signature-required" class="level5">
-<h5>signature <sub><sup>(required)</sup></sub></h5>
+<h5 id="signature-required">signature <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The transaction signature. The developer gets it from google api when purchase succeeded. This parameter applies to Google Play transactions only and is mandatory when logging a Google IAP receipt. It expects the data from event.transaction.signature found in the in-app purchase transaction callback.</p>
-</section>
-<section id="purchasedata-required" class="level5">
-<h5>purchaseData <sub><sup>(required)</sup></sub></h5>
+<h5 id="purchasedata-required">purchaseData <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Purchase data is the actual product purchased in json format. The developer gets it from google api when purchase succeeded.</p>
-</section>
-<section id="price-required-1" class="level5">
-<h5>price <sub><sup>(required)</sup></sub></h5>
+<h5 id="price-required-1">price <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The unit price of the IAP item. The <code>price</code> parameter should contain the total revenue associated to the validated purchase event.</p>
-</section>
-<section id="currency-required-1" class="level5">
-<h5>currency <sub><sup>(required)</sup></sub></h5>
+<h5 id="currency-required-1">currency <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The currency of the IAP transaction.</p>
-</section>
-<section id="parameters-optional-1" class="level5">
-<h5>parameters <sub><sup>(optional)</sup></sub></h5>
+<h5 id="parameters-optional-1">parameters <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing additional key-value parameters.</p>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="ios" class="level5">
-<h5>iOS</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="ios">iOS</h5>
 <pre class="brush: lua;">local appsflyer = require( "plugin.appsflyer" )
 
 local function appsflyerListener( event )
@@ -213,9 +180,7 @@ appsflyer.logPurchase(
        parameters = { first = "1", second = "2" }
     }
 )</pre>
-</section>
-<section id="android" class="level5">
-<h5>Android</h5>
+<h5 id="android">Android</h5>
 <pre class="brush: lua;">local appsflyer = require( "plugin.appsflyer" )
 
 local function appsflyerListener( event )
@@ -250,9 +215,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

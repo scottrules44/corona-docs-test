@@ -65,8 +65,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../plugin/gamecircle/index.html">Amazon GameCircle</a>  ▸  [Whispersync][plugin.gamecircle.Whispersync]  ▸  <a href="../../../plugin/gamecircle/Whispersync/Metadata.html">Metadata</a>
 </div>
-<section id="gamecircle.whispersync.metadata" class="level1">
-<h1>gamecircle.Whispersync.Metadata</h1>
+<h1 id="gamecircle.whispersync.metadata">gamecircle.Whispersync.Metadata</h1>
 <blockquote>
 <table>
 <tbody>
@@ -89,12 +88,9 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>A table made by the developer that can be tied to numerous data values that can be kept using Whispersync. Is useful including additional date for numbers and single strings. Example: a metatable can be used to save a user’s initials for a classical high-score table when that table’s scores are stored in a Whispersync HighNumberList.</p>
-</section>
-<section id="the-rules" class="level2">
-<h2>The Rules</h2>
+<h2 id="the-rules">The Rules</h2>
 <p>The metadata table is something the developer must be generated when using Set functions in Whispersync that can accept metadata as a parameter. The metadata will be stored with the data being assigned in the Set function and, when using a corresponding get function, the same metadata will be returned.</p>
 <p>The metadata table can only be a lua table comprised of string fields with string values in those fields. Number fields and non-string values stored in fields will either be changed into strings, not be stored with the metadata, or can even cause an runtime error in the system.</p>
 <p>This is an example of a valid metadata table.</p>
@@ -121,9 +117,7 @@ metadata[3]= 2091768
 metadata[4] = 80000
 gamecircle.Whispersync.AddToHighNumberList("LocalHighscoreTable", 8675309, "INT", metadata)
 --THIS METADATA IS INVALID, AND MAY NOT BE SAVED CORRECTLY OR COULD CAUSE A CRASH</pre>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local numID = "LocalHighscore"  
 local gamecircle = require("plugin.gamecircle")  
 gamecircle.Init(false, false, true)  
@@ -145,8 +139,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -85,8 +85,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/distribution/index.html">Building/Distribution</a>
 </div>
-<section id="creating-win32-desktop-apps" class="level1">
-<h1>Creating Win32 Desktop Apps</h1>
+<h1 id="creating-win32-desktop-apps">Creating Win32 Desktop Apps</h1>
 <p>This guide outlines how to configure and build a Win32 desktop app via the Corona Simulator. A <nobr>Corona-built</nobr> Win32 desktop app consists of a <code>.exe</code> file, a collection of <code>.dll</code> files, and your Corona project’s asset files. It is compiled for <nobr>32-­bit</nobr> which can run on both <nobr>32­-bit</nobr> and <nobr>64­-bit</nobr> Windows desktop operating systems.</p>
 <div class="guides-toc">
 <ul>
@@ -101,8 +100,7 @@
 </ul>
 </div>
 <p><a id="systemreqs"></a></p>
-<section id="system-requirements" class="level2">
-<h2>System Requirements</h2>
+<h2 id="system-requirements">System Requirements</h2>
 <ul>
 <li>Windows 7, Windows 8, or Windows 10 (<nobr>32-­bit</nobr> or <nobr>64-­bit</nobr>)</li>
 <li>Video driver supporting OpenGL 2.1 or higher</li>
@@ -117,9 +115,7 @@ Notes
 </ul>
 </div>
 <p><a id="win32settings"></a></p>
-</section>
-<section id="win32-platform-settings" class="level2">
-<h2>Win32 Platform Settings</h2>
+<h2 id="win32-platform-settings">Win32 Platform Settings</h2>
 <p>Corona’s <code>build.settings</code> file supports the following Win32 <nobr>platform-specific</nobr> settings via the <code>win32</code> table:</p>
 <pre class="brush: lua;">settings =
 {
@@ -128,8 +124,7 @@ Notes
         -- Settings for Win32 apps go here
     }
 }</pre>
-<section id="preferencestorage" class="level5">
-<h5>preferenceStorage</h5>
+<h5 id="preferencestorage">preferenceStorage</h5>
 <p>Indicates where the app’s custom preferences should be stored when accessed via the <a href="../../../api/library/system/getPreference.html">system.getPreference()</a>, <a href="../../../api/library/system/setPreferences.html">system.setPreferences()</a>, and <a href="../../../api/library/system/deletePreferences.html">system.deletePreferences()</a> functions using the <code>"app"</code> category.</p>
 <pre class="brush: lua;">settings =
 {
@@ -143,9 +138,7 @@ Notes
 <li><code>"sqlite"</code> — This is the default setting and the most portable option. Preferences are stored to a <code>CoronaPreferences.sqlite</code> database file under the Windows user’s hidden <nobr><code>.\AppData\Local\&lt;CompanyName&gt;\&lt;AppName&gt;\.system</code></nobr> directory.</li>
 <li><code>"registry"</code> — Stores the app’s preferences to the Windows registry under <nobr><code>HKEY_CURRENT_USER\Software\&lt;CompanyName&gt;\&lt;AppName&gt;</code></nobr>. This feature has portability issues, for example preference names are not <nobr>case-sensitive</nobr> when stored to the registry. Also, forward slashes (<code>/</code>) and backslashes (<code>\</code>) in a preference name will be regarded as registry key path separators and will be treated as the same characters.</li>
 </ul>
-</section>
-<section id="singleinstance" class="level5">
-<h5>singleInstance</h5>
+<h5 id="singleinstance">singleInstance</h5>
 <p>Set this to <code>true</code> (the default setting) to allow only one instance of a Win32 desktop application to exist at a time. This means that attempting to launch a second instance will bring the first instance’s window to the front of the desktop instead. If the second instance was given any command line arguments, those arguments are delivered to the first instance via an <code>"applicationOpen"</code> typed <a href="../../../api/event/system/index.html">system</a> event. Set this setting to <code>false</code> to support multiple application instances at the same time.</p>
 <pre class="brush: lua;">settings =
 {
@@ -155,10 +148,7 @@ Notes
     }
 }</pre>
 <p><a id="windowsettings"></a></p>
-</section>
-</section>
-<section id="window-settings" class="level2">
-<h2>Window Settings</h2>
+<h2 id="window-settings">Window Settings</h2>
 <p>For both Win32 desktop apps and macOS desktop apps, Corona’s <code>build.settings</code> file supports a <code>window</code> table for customizing the app’s desktop window, including the default width/height, the title of the window, and more.</p>
 <pre class="brush: lua;">settings =
 {
@@ -168,8 +158,7 @@ Notes
     },
 }</pre>
 <p>Within the <code>window</code> table, the following settings are supported:</p>
-<section id="defaultmode" class="level5">
-<h5>defaultMode</h5>
+<h5 id="defaultmode">defaultMode</h5>
 <p>Sets how the window should be launched on startup. Supported values include <code>"normal"</code>, <code>"minimized"</code>, <code>"maximized"</code>, or <code>"fullscreen"</code>. Default is <code>"normal"</code>. This can also be set programmatically via the <a href="../../../api/library/native/setProperty.html">native.setProperty()</a> API.</p>
 <pre class="brush: lua;">settings =
 {
@@ -178,9 +167,7 @@ Notes
         defaultMode = "fullscreen",
     },  
 }</pre>
-</section>
-<section id="defaultviewwidth" class="level5">
-<h5>defaultViewWidth</h5>
+<h5 id="defaultviewwidth">defaultViewWidth</h5>
 <p>Sets the default launch width of the view/client area of the window. This is the region within the borders of the window to which Corona renders. Ideally, this should match or exceed your <code>config.lua</code> content area width.</p>
 <pre class="brush: lua;">settings =
 {
@@ -189,9 +176,7 @@ Notes
         defaultViewWidth = 640,
     },  
 }</pre>
-</section>
-<section id="defaultviewheight" class="level5">
-<h5>defaultViewHeight</h5>
+<h5 id="defaultviewheight">defaultViewHeight</h5>
 <p>Sets the default launch height of the view/client area of the window. This is the region within the borders of the window to which Corona renders. Ideally, this should match or exceed your <code>config.lua</code> content area height.</p>
 <pre class="brush: lua;">settings =
 {
@@ -200,9 +185,7 @@ Notes
         defaultViewHeight = 960,
     },
 }</pre>
-</section>
-<section id="resizable" class="level5">
-<h5>resizable</h5>
+<h5 id="resizable">resizable</h5>
 <p>Set this to <code>true</code> to allow the end user to resize the window (the window is not resizable by default). Note that if <code>true</code>, you may need to handle Corona’s <a href="../../../api/event/resize/index.html">resize</a> event to <nobr>re-layout</nobr> your content.</p>
 <pre class="brush: lua;">settings =
 {
@@ -211,9 +194,7 @@ Notes
         resizable = true,
     },
 }</pre>
-</section>
-<section id="minviewwidth" class="level5">
-<h5>minViewWidth</h5>
+<h5 id="minviewwidth">minViewWidth</h5>
 <p>This setting only applies if <code>resizable</code> is set to <code>true</code>. Prevents the user from resizing the window to a width smaller than this value. Note that this represents the width of the region within the borders of the window. If <code>resizable</code> is set to <code>true</code> and this setting is not specified, the window can be resized down to whatever width the OS allows.</p>
 <pre class="brush: lua;">settings =
 {
@@ -222,9 +203,7 @@ Notes
         minViewWidth = 320,
     },
 }</pre>
-</section>
-<section id="minviewheight" class="level5">
-<h5>minViewHeight</h5>
+<h5 id="minviewheight">minViewHeight</h5>
 <p>This setting only applies if <code>resizable</code> is set to <code>true</code>. Prevents the user from resizing the window to a height smaller than this value. Note that this represents the height of the region within the borders of the window. If <code>resizable</code> is set to <code>true</code> and this setting is not specified, the window can be resized down to whatever height the OS allows.</p>
 <pre class="brush: lua;">settings =
 {
@@ -233,9 +212,7 @@ Notes
         minViewHeight = 480,
     },
 }</pre>
-</section>
-<section id="enableclosebutton" class="level5">
-<h5>enableCloseButton</h5>
+<h5 id="enableclosebutton">enableCloseButton</h5>
 <p>Enables or disables the window’s “close” button <nobr>(enabled by default)</nobr>. If disabled, you must close the window in Lua via <a href="../../../api/library/native/requestExit.html">native.requestExit()</a>. Note that Corona does not currently trigger an event when the “close” button is clicked.</p>
 <pre class="brush: lua;">settings =
 {
@@ -244,9 +221,7 @@ Notes
         enableCloseButton = true,
     },
 }</pre>
-</section>
-<section id="enableminimizebutton" class="level5">
-<h5>enableMinimizeButton</h5>
+<h5 id="enableminimizebutton">enableMinimizeButton</h5>
 <p>Enables or disables the window’s “minimize” button <nobr>(enabled by default)</nobr>.</p>
 <pre class="brush: lua;">settings =
 {
@@ -255,9 +230,7 @@ Notes
         enableMinimizeButton = true,
     },
 }</pre>
-</section>
-<section id="enablemaximizebutton" class="level5">
-<h5>enableMaximizeButton</h5>
+<h5 id="enablemaximizebutton">enableMaximizeButton</h5>
 <p>Enables or disables the window’s “maximize” button <nobr>(disabled by default)</nobr>. Note that the window will be resized when maximized/restored, so if this setting is <code>true</code>, you may need to handle Corona’s <a href="../../../api/event/resize/index.html">resize</a> event to <nobr>re-layout</nobr> your content.</p>
 <pre class="brush: lua;">settings =
 {
@@ -266,9 +239,7 @@ Notes
         enableMaximizeButton = true,
     },
 }</pre>
-</section>
-<section id="suspendwhenminimized" class="level5">
-<h5>suspendWhenMinimized</h5>
+<h5 id="suspendwhenminimized">suspendWhenMinimized</h5>
 <p>Tells the runtime to suspend when the window is minimized <nobr>(disabled by default)</nobr>.</p>
 <pre class="brush: lua;">settings =
 {
@@ -277,9 +248,7 @@ Notes
         suspendWhenMinimized = true,
     },
 }</pre>
-</section>
-<section id="titletext" class="level5">
-<h5>titleText</h5>
+<h5 id="titletext">titleText</h5>
 <p>Sets the window’s title bar text to the specified <a href="../../../api/type/String.html">string</a> (no title bar text by default). Supports <nobr>2-letter</nobr> <nobr>ISO 639‐1</nobr> language codes and optional <nobr>2-letter</nobr> <nobr>ISO 3166‐1</nobr> country codes <nobr>(neither case sensitive)</nobr>. The title text can also be set programmatically via the <a href="../../../api/library/native/setProperty.html">native.setProperty()</a> API.</p>
 <pre class="brush: lua;">settings =
 {
@@ -305,15 +274,10 @@ Notes
     },
 }</pre>
 <p><a id="excludingfiles"></a></p>
-</section>
-</section>
-<section id="excluding-files" class="level2">
-<h2>Excluding Files</h2>
+<h2 id="excluding-files">Excluding Files</h2>
 <p>You can exclude file(s) that aren’t needed for a Win32 desktop app via the <code>build.settings</code> file’s <code>excludeFiles</code> pattern matching feature. Please see the <strong>Excluding Files</strong> section of the <a href="../../../guide/distribution/buildSettings/index.html#excluding-files">Project Build Settings</a> guide for more details on pattern matching.</p>
 <p><a id="appicon"></a></p>
-</section>
-<section id="app-icon" class="level2">
-<h2>App Icon</h2>
+<h2 id="app-icon">App Icon</h2>
 <p>You must add a <code>Icon­-win32.ico</code> file to your Corona project’s root directory when doing a Win32 build via the Corona Simulator. This file should contain multiple images at different resolutions, bundled into a single <code>.ico</code> file (<a href="https://en.wikipedia.org/wiki/ICO_(file_format)">details</a>). This <nobr><code>Icon­-win32.ico</code></nobr> file will be used to set the icon for the following:</p>
 <ol type="1">
 <li>The icon that your <code>.exe</code> file uses, as viewed in Windows Explorer.</li>
@@ -327,9 +291,7 @@ Note
 <p>You can use Windows Explorer to see how your <code>.exe</code> app icon looks at different resolutions — simply choose different “View” modes in its menu/toolbar such as “Details” or “Tiled.”</p>
 </div>
 <p><a id="building"></a></p>
-</section>
-<section id="building-running" class="level2">
-<h2>Building / Running</h2>
+<h2 id="building-running">Building / Running</h2>
 <p>To build and run your Win32 desktop app, follow these steps:</p>
 <ol type="1">
 <li>Open the Corona Simulator.</li>
@@ -409,9 +371,7 @@ Note
 
 -->
 <p><a id="debugapp"></a></p>
-</section>
-<section id="debugging" class="level2">
-<h2>Debugging</h2>
+<h2 id="debugging">Debugging</h2>
 <p>The Corona Simulator does not currently support direct simulation of an app running in Windows desktop mode. However, the Windows version of Solar2D contains a new application named <code>Corona.Shell.exe</code> which can run a Corona project similarly to how a built Win32 desktop app runs. By default, you can find the Corona Shell application here:</p>
 <pre class="brush: lua;">C:\Program Files\Corona Labs\Corona SDK\Corona.Shell.exe</pre>
 <p>When you run the Corona Shell, it will prompt you to select a Corona project’s <code>main.lua</code> file. Once the file has been selected, it will run the app. This allows you to make quick changes to your project without having to perform a build each time. However, note that the Corona Shell does <strong>not</strong> support restarts or logging since it’s actually running your project just like a real Win32 desktop app (no simulation).</p>
@@ -424,9 +384,7 @@ Note
 
 -->
 <p><a id="signing"></a></p>
-</section>
-<section id="app-signing" class="level2">
-<h2>App Signing</h2>
+<h2 id="app-signing">App Signing</h2>
 <p>The Corona Simulator will <strong>n​ot</strong> ​digitally sign your built <code>.exe</code> file. This is because Windows does not require <code>.exe</code> files to be digitally signed in order to run them (it’s optional). However, some antivirus software might block your app from being started or “red­ flag” the app if it’s not digitally signed. Thus, it is best to digitally sign your <code>.exe</code> when you’re ready to distribute the app publicly.</p>
 <p>Microsoft documents how to digitally sign an application <a href="https://msdn.microsoft.com/en-us/en%C2%ADus/library/windows/desktop/aa387764.aspx">here</a>.</p>
 <p>To summarize, in order to sign your app, you need to purchase a digital certificate from a reputable source such as VeriSign or DigiCert. Microsoft’s signing tools require this to be a <code>.pfx</code> file. You’ll then need to acquire Microsoft’s <code>signtool</code> command line utility by downloading and installing one of the following:</p>
@@ -446,8 +404,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

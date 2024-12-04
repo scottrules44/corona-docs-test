@@ -80,8 +80,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/physics/index.html">Physics</a>
 </div>
-<section id="collision-detection" class="level1">
-<h1>Collision Detection</h1>
+<h1 id="collision-detection">Collision Detection</h1>
 <p>This guide discusses how to handle collisions between physical objects, or ignore (filter) collisions between specific object sets.</p>
 <div class="guides-toc">
 <ul>
@@ -95,20 +94,14 @@
 </ul>
 </div>
 <p><a id="collisionevents"></a></p>
-<section id="collision-events" class="level2">
-<h2>Collision Events</h2>
+<h2 id="collision-events">Collision Events</h2>
 <p>Physics engine collision events are exposed through the standard Corona event listener model with three types:</p>
-<section id="collision" class="level3">
-<h3>collision</h3>
+<h3 id="collision">collision</h3>
 <p>For general collision detection, you should listen for an event named <code>"collision"</code> (<a href="../../../api/event/collision/index.html">reference</a>). The <code>"collision"</code> event includes phases for <code>"began"</code> and <code>"ended"</code> which signify the moments of initial contact and broken contact. If you do not implement a <code>"collision"</code> listener, this event will not fire.</p>
-</section>
-<section id="precollision" class="level3">
-<h3>preCollision</h3>
+<h3 id="precollision">preCollision</h3>
 <p>The <code>"preCollision"</code> event (<a href="../../../api/event/preCollision/index.html">reference</a>) fires directly before the objects start to interact. This event is often used in conjunction with the <a href="#contact">physicsContact</a> outlined below.</p>
 <p>Note that <a href="../../../api/event/preCollision/index.html">preCollision</a> events are quite “noisy” and may report many times per contact, potentially affecting performance. Therefore, you should only listen for these events if you truly need <nobr>pre-collision</nobr> detection. We also recommend that you use local listeners on the objects of interest rather than listening globally to all <code>"preCollision"</code> events in the physics world.</p>
-</section>
-<section id="postcollision" class="level3">
-<h3>postCollision</h3>
+<h3 id="postcollision">postCollision</h3>
 <p>The <code>"postCollision"</code> event (<a href="../../../api/event/postCollision/index.html">reference</a>) fires directly after the objects have interacted. This is the only event in which the collision force and friction is reported. See the <a href="#forces">collision force/friction</a> section below for more on this topic. If you do not implement a <code>"postCollision"</code> listener, this event will not fire.</p>
 <p>Like <code>"preCollision"</code> events, <a href="../../../api/event/postCollision/index.html">postCollision</a> events are quite “noisy” and may report many times per contact, potentially affecting performance. Therefore, you should only listen for these events if you truly need <nobr>post-collision</nobr> detection. We also recommend that you use local listeners on the objects of interest rather than listening globally to all <code>"postCollision"</code> events in the physics world.</p>
 <div class="docs-tip-outer docs-tip-color-alert">
@@ -154,10 +147,7 @@ Propagation Rules
 <p>Any collision event handler that returns <code>true</code> will stop further propagation of that collision event, even if there are further listeners that would otherwise have received it. This allows you to further limit the number of events that are created and passed to the Lua side. While individual events are not very expensive, large numbers of them can affect overall performance, so limiting event propagation is a good practice.</p>
 </div>
 <p><a id="handling"></a></p>
-</section>
-</section>
-<section id="collision-handling" class="level2">
-<h2>Collision Handling</h2>
+<h2 id="collision-handling">Collision Handling</h2>
 <p>Collisions are reported between pairs of objects, and they can be detected either <strong>locally</strong> on an object, using an object listener, or <strong>globally</strong> using a runtime listener.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -165,8 +155,7 @@ Important
 </div>
 <p>When working with Corona <a href="../../../guide/graphics/group.html">display groups</a> and Box2D, it’s important to remember that Box2D expects all physics objects to share a <strong>global coordinate system</strong>. Both grouped and ungrouped display objects will work well since they will share the internal coordinates of that group. However, unexpected results will occur if physical objects are added to different display groups and those groups are moved, scaled, or rotated independently of each other. As a general rule, do <strong>not</strong> alter the position, scale, or rotation of display groups that contain physics objects. See <a href="../../../guide/physics/limitations/index.html">Physics Notes/Limitations</a></p>
 </div>
-<section id="local-collision-handling" class="level3">
-<h3>Local Collision Handling</h3>
+<h3 id="local-collision-handling">Local Collision Handling</h3>
 <p>Local collision handling is best utilized in a <nobr>one-to-many</nobr> collision scenario, for example one player object which may collide with multiple enemies, <nobr>power-ups</nobr>, etc. For local collision handling, each collision event includes a <code>self</code> table ID, representing the object itself, and <code>event.other</code> which contains the table ID of the other Corona display object involved in the collision. Because Corona display objects behave like Lua tables, you may freely add arbitrary data to these tables such as names, category designators, point values, or even stored functions, and then retrieve this data at collision time. For example, you may wish to store object names in an <nobr>easily-accessible</nobr> string format.</p>
 <pre class="brush: lua;">local crate1 = display.newImage( "crate.png" )
 physics.addBody( crate1, { density=3.0, friction=0.5, bounce=0.3 } )
@@ -191,9 +180,7 @@ crate1:addEventListener( "collision" )
 
 crate2.collision = onLocalCollision
 crate2:addEventListener( "collision" )</pre>
-</section>
-<section id="global-collision-handling" class="level3">
-<h3>Global Collision Handling</h3>
+<h3 id="global-collision-handling">Global Collision Handling</h3>
 <p>Global collision handling is best utilized in a <nobr>many-to-many</nobr> collision scenario, for example multiple hero characters which may collide with multiple enemies. For global collision handling, each collision event includes <code>event.object1</code> and <code>event.object2</code> which indicate the references to the two objects involved. Again, you may wish to store each object’s name in string format and retrieve it during the collision event.</p>
 <pre class="brush: lua;">local crate1 = display.newImage( "crate.png", 100, 200 )
 physics.addBody( crate1, { density = 1.0, friction = 0.3, bounce = 0.2 } )
@@ -225,10 +212,7 @@ Runtime:addEventListener( "collision", onGlobalCollision )</pre>
 </div>
 </div>
 <p><a id="multielement"></a></p>
-</section>
-</section>
-<section id="multi-element-collisions" class="level2">
-<h2>Multi-Element Collisions</h2>
+<h2 id="multi-element-collisions">Multi-Element Collisions</h2>
 <p>Collision events involving a <nobr>multi-element</nobr> body <nobr>(see the <a href="../../../guide/physics/physicsBodies/index.html">Physics Bodies</a> guide)</nobr> also return the specific body part involved in the collision. This allows for more <nobr>finely-tuned</nobr> game logic — for example, you may decide that an object colliding with the nose of a rocket does more damage than colliding with its tail fins.</p>
 <p>For a <nobr>multi-element</nobr> body, its elements are identified by a numerical <strong>index</strong> where the first element added to the body is given the number <code>1</code>, the second one is number <code>2</code>, the third is number <code>3</code>, and so on. During a collision event involving at least one <nobr>multi-element</nobr> body, the following properties are returned:</p>
 <p>For <strong>local</strong> collision events, two additional integer values are returned:</p>
@@ -243,14 +227,10 @@ Runtime:addEventListener( "collision", onGlobalCollision )</pre>
 </ol>
 <p>In each case, these values will indicate the <strong>index</strong> of the <strong>body element</strong> involved in the collision. For example, assume that one object is a rocket with three body elements: nose, cockpit, and tail. Also assume that the body elements were configured in that specific order: nose first, cockpit second, and tail last. If a collision occurs on its tail, the value of <code>event.selfElement</code> will be <code>3</code>. If a collision occurs on its cockpit, the value of <code>event.selfElement</code> will be <code>2</code>.</p>
 <p><a id="raycasting"></a></p>
-</section>
-<section id="ray-casting" class="level2">
-<h2>Ray Casting</h2>
+<h2 id="ray-casting">Ray Casting</h2>
 <p>Corona includes built-in support for <strong>ray casting</strong>. This allows you to transmit a <nobr>ray — a straight line —</nobr> from one point to another point, using it to detect if one or more physics bodies resides in that path. For details on implementing ray casting, please see the <a href="../../../tutorial/games/rayCasting/index.html">Ray Casting and Reflection</a> tutorial.</p>
 <p><a id="contact"></a></p>
-</section>
-<section id="physics-contacts" class="level2">
-<h2>Physics Contacts</h2>
+<h2 id="physics-contacts">Physics Contacts</h2>
 <p>The <a href="../../../api/type/PhysicsContact/index.html">physicsContact</a> is created by Box2D to manage/override collision behavior in special cases. Typically used in <a href="../../../api/event/preCollision/index.html">preCollision</a> event detection, this allows you to override certain properties of the collision or even void the collision entirely.</p>
 <p>For example, in a platform game, you may wish to construct <nobr>one-sided</nobr> platforms that the character can jump vertically through, but only from below. You may do this by comparing the character and platform position to see if the character is below the platform, and then void the collision entirely by setting <a href="../../../api/type/PhysicsContact/isEnabled.html">event.contact.isEnabled</a> to <code>false</code> in the <a href="../../../api/event/preCollision/index.html">preCollision</a> event handler.</p>
 <p>The physics contact can also be used to modify the bounce and friction of the collision independently of the body’s inherent settings. For instance, using a <a href="../../../api/event/preCollision/index.html">preCollision</a> event listener, you can conditionally check if two specific object types collide and then either increase or decrease the bounce or friction via <a href="../../../api/type/PhysicsContact/bounce.html">event.contact.bounce</a> or <a href="../../../api/type/PhysicsContact/friction.html">event.contact.friction</a> respectively. One actual example of this may be a “pinball” game where the <a href="../../../api/type/PhysicsContact/index.html">physicsContact</a> could be used to achieve the following:</p>
@@ -260,9 +240,7 @@ Runtime:addEventListener( "collision", onGlobalCollision )</pre>
 <li>Balls collide with all other bumpers for normal bounce (allow collision to use default behavior)</li>
 </ul>
 <p><a id="forces"></a></p>
-</section>
-<section id="collision-forcefriction" class="level2">
-<h2>Collision Force/Friction</h2>
+<h2 id="collision-forcefriction">Collision Force/Friction</h2>
 <p>Once a collision has occurred, you can use <a href="../../../api/event/postCollision/index.html">postCollision</a> event detection to obtain the direct force of the collision, along with the sideways force between the two objects, which is effectively a frictional force.</p>
 <p>The direct force of the collision is reported within the <code>"postCollision"</code> event as <code>event.force</code>, and the frictional force is available as <code>event.friction</code>:</p>
 <pre class="brush: lua;">local function onPostCollision( self, event )
@@ -286,12 +264,9 @@ object:addEventListener( "postCollision" )</pre>
 </div>
 </div>
 <p><a id="filtering"></a></p>
-</section>
-<section id="collision-filtering" class="level2">
-<h2>Collision Filtering</h2>
+<h2 id="collision-filtering">Collision Filtering</h2>
 <p>In some cases, you may want to completely void collision interaction between certain objects. For instance, bullets fired from a player should obviously collide with enemies, but there’s usually no need to have bullets collide with <nobr>power-ups</nobr>. In Corona, there are two ways to accomplish this:</p>
-<section id="categorybitsmaskbits" class="level3">
-<h3>categoryBits/maskBits</h3>
+<h3 id="categorybitsmaskbits">categoryBits/maskBits</h3>
 <p>This method involves assigning <code>categoryBits</code> and <code>maskBits</code> to your objects via a “collision filter” definition, an optional table assigned to the <code>filter</code> key during body construction. An object will only collide with other objects if their <code>categoryBits</code> are among its assigned <code>maskBits</code>. Normally, an object will only have one category bit assigned, but may have one or more mask bits depending on what other things it should collide with.</p>
 <p>In the example below, <code>redCollisionFilter</code> has a <code>maskBits</code> value of <code>3</code>. This filter is applied to the <code>redSquare</code> object, so <code>redSquare</code> will only collide with objects that have category bits of <code>1</code> or <code>2</code> — in this case, that includes other red squares (<code>categoryBits=2</code>) and the floor (<code>categoryBits=1</code>). Meanwhile, it will pass through any blue squares (<code>categoryBits=4</code>), since bit <code>4</code> is not included in its <code>maskBits</code> value.</p>
 <pre class="brush: lua;">local floorCollisionFilter = { categoryBits=1, maskBits=6 }  -- Floor collides only with 2 and 4
@@ -308,9 +283,7 @@ physics.addBody( redSquare, { friction=0, filter=redCollisionFilter } )
 local blueSquare = display.newRect( 80, 80, 40, 40 )
 blueSquare:setFillColor( 0, 0, 1 )
 physics.addBody( blueSquare, { friction=0, filter=blueCollisionFilter } )</pre>
-</section>
-<section id="collision-filter-worksheet" class="level3">
-<h3>Collision Filter Worksheet</h3>
+<h3 id="collision-filter-worksheet">Collision Filter Worksheet</h3>
 <p>Collision filter values can be calculated using a simple <nobr>cross-reference</nobr> worksheet. Consider the following example based on the classic arcade game “Asteroids” which had four basic object types which could potentially collide: the player, asteroids, aliens, and bullets fired from the player.</p>
 <div style="max-width: 740px; margin-top: 10px;">
 <p><img src="../../../images/simulator/collision-chart.png" /></p>
@@ -334,9 +307,7 @@ Important
 </div>
 <p>If you add additional game elements later, you must work through the entire chart again <nobr>(all object types)</nobr> because if the new object type should collide with any previous object types, values may change for those previous object types. As such, it’s recommended that you declare your filters as Lua variables which can be accessed by multiple game objects, regardless of when and where you create them.</p>
 </div>
-</section>
-<section id="groupindex" class="level3">
-<h3>groupIndex</h3>
+<h3 id="groupindex">groupIndex</h3>
 <p>An alternative collision filtering method is to assign a <code>groupIndex</code> to each object. This value can be a positive or negative integer and it may be a simpler way of specifying collision rules. Objects with the same positive <code>groupIndex</code> value will always collide with each other, and objects with the same negative <code>groupIndex</code> value will never collide with each other.</p>
 <pre class="brush: lua;">local greenCollisionFilter = { groupIndex = -2 }</pre>
 <div class="docs-tip-outer">
@@ -359,9 +330,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

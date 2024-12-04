@@ -70,8 +70,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/system/index.html">system</a>  ▸  <a href="../../../api/library/system/getPreference.html">getPreference</a>
 </div>
-<section id="system.getpreference" class="level1">
-<h1>system.getPreference()</h1>
+<h1 id="system.getpreference">system.getPreference()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -106,52 +105,39 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Returns the requested preference’s value.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>This function will return <code>nil</code> if the requested preference was not found, or if its value could not be converted to the requested value type such as <code>"boolean"</code>, <code>"number"</code>, or <code>"string"</code>.</p></li>
 <li><p>On iOS, the <code>"ui"</code> language is set in the <nobr><strong>iPhone/iPad Language</strong></nobr> field of the <strong>General</strong> → <nobr><strong>Language &amp; Region</strong></nobr> screen of <strong>Settings</strong>. The <code>"locale"</code> parameters are set in the <strong>Region</strong> field on the same screen.</p></li>
 <li><p>On Android, <nobr><code>system.getPreference( "ui", "language" )</code></nobr> may return <code>English</code> instead of <code>en</code>.</p></li>
 <li><p>In the Corona Simulator for Windows, the value returned by <nobr><code>system.getPreference( "ui", "language" )</code></nobr> may not match the expected value.</p></li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">system.getPreference( category, name [, type] )</pre>
-<section id="category-required" class="level5">
-<h5>category <sub><sup>(required)</sup></sub></h5>
+<h5 id="category-required">category <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Indicates where to read preferences from. Must be set to one of the following:</p>
 <ul>
 <li><code>"app"</code> — The application’s custom preferences. These are defined by the Corona app developer.</li>
 <li><code>"locale"</code> — Accesses the operating system’s <nobr>read-only</nobr> <nobr>locale-related</nobr> preferences.</li>
 <li><code>"ui"</code> — Accesses the operating system’s <nobr>read-only</nobr> <nobr>UI-related</nobr> preferences.</li>
 </ul>
-</section>
-<section id="name-required" class="level5">
-<h5>name <sub><sup>(required)</sup></sub></h5>
+<h5 id="name-required">name <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The unique name of the preference to read, depending on the category used:</p>
 <ul>
 <li><code>"app"</code> — A preference name written to storage by the Corona app developer via the <a href="../../../api/library/system/setPreferences.html">system.setPreferences()</a> function.</li>
 <li><code>"locale"</code> — Only supports preference names <code>"country"</code>, <code>"identifier"</code>, and <code>"language"</code>.</li>
 <li><code>"ui"</code> — Only supports preference name <code>"language"</code>.</li>
 </ul>
-</section>
-<section id="type-optional" class="level5">
-<h5>type <sub><sup>(optional)</sup></sub></h5>
+<h5 id="type-optional">type <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Indicates the value type to be returned by this function. This type should match the preference value’s type on storage. For example, all preferences belonging to the <code>"locale"</code> and <code>"ui"</code> categories are stored as strings and should be read as strings, while types for the <code>"app"</code> category should match the value types passed to the <a href="../../../api/library/system/setPreferences.html">system.setPreferences()</a> function. Accepted values include:</p>
 <ul>
 <li><code>"string"</code> (default)</li>
 <li><code>"boolean"</code></li>
 <li><code>"number"</code></li>
 </ul>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Print the operating system's read-only preferences
 print( system.getPreference( "ui", "language" ) )        -- Print the UI (device) language, i.e. "en-US"
 print( system.getPreference( "locale", "country" ) )     -- Print the locale country, i.e. "US"
@@ -181,8 +167,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

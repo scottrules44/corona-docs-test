@@ -82,8 +82,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/vk-direct/index.html">vk-direct</a>
 </div>
-<section id="plugin.vk.direct." class="level1">
-<h1>plugin.vk.direct.*</h1>
+<h1 id="plugin.vk.direct.">plugin.vk.direct.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -106,8 +105,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>The <a href="https://marketplace.coronalabs.com/plugin/com.coronalabs/plugin.vk.direct">VK Direct Games</a> plugin, simple wrapper for <a href="https://vk.com/dev/direct_games">VK Mobile</a>. For more information please, refer to <a href="https://vk.com/dev/Mobile_SDK?f=2.%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%20Mobile%20Client%20API">Mobile Client API documentation</a></p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -115,66 +113,34 @@ Important
 </div>
 <p>Note, that APIs would actually work only when app is ran as VK Direct Game on mobile device. To learn more about how to create and deploy your applications see Direct Games <a href="https://vk.com/dev/direct_games">documentation</a>.</p>
 </div>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">local vk = require("plugin_vk_direct")</pre>
-</section>
-<section id="functions" class="level2">
-<h2>Functions</h2>
-<section id="vk.initfunction" class="level3">
-<h3><code>vk.init(function)</code></h3>
+<h2 id="functions">Functions</h2>
+<h3 id="vk.initfunction"><code>vk.init(function)</code></h3>
 <p>Initializes the plugin and sets event listener to handle events from VK APIs. Event structure is described in the following section.</p>
 <p><br /></p>
-</section>
-<section id="vk.apimethodname-params" class="level3">
-<h3><code>vk.api(methodName, params)</code></h3>
+<h3 id="vk.apimethodname-params"><code>vk.api(methodName, params)</code></h3>
 <p>This method call would trigger <code>VK.api(methodName, params)</code> and invoke event name with <code>method</code> set to <code>methodName</code>.</p>
 <p><br /></p>
 <p>All following functions are wrappers around Mobile SDK methods with same name. Please, refer to <a href="https://vk.com/dev/Mobile_SDK?f=2.%20%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%20Mobile%20Client%20API">documentation</a> for details.</p>
-</section>
-<section id="vk.showinvitebox" class="level3">
-<h3><code>vk.showInviteBox()</code></h3>
-</section>
-<section id="vk.showrequestboxuser_id-message-request_key" class="level3">
-<h3><code>vk.showRequestBox(user_id, message, request_key)</code></h3>
-</section>
-<section id="vk.showshareboxmessage-attachments-target" class="level3">
-<h3><code>vk.showShareBox(message, attachments, target)</code></h3>
-</section>
-<section id="vk.showsettingsboxsettings" class="level3">
-<h3><code>vk.showSettingsBox(settings)</code></h3>
-</section>
-<section id="vk.showorderboxtype-item" class="level3">
-<h3><code>vk.showOrderBox(type, item)</code></h3>
-</section>
-<section id="vk.showleaderboardboxuser_result" class="level3">
-<h3><code>vk.showLeaderboardBox(user_result)</code></h3>
+<h3 id="vk.showinvitebox"><code>vk.showInviteBox()</code></h3>
+<h3 id="vk.showrequestboxuser_id-message-request_key"><code>vk.showRequestBox(user_id, message, request_key)</code></h3>
+<h3 id="vk.showshareboxmessage-attachments-target"><code>vk.showShareBox(message, attachments, target)</code></h3>
+<h3 id="vk.showsettingsboxsettings"><code>vk.showSettingsBox(settings)</code></h3>
+<h3 id="vk.showorderboxtype-item"><code>vk.showOrderBox(type, item)</code></h3>
+<h3 id="vk.showleaderboardboxuser_result"><code>vk.showLeaderboardBox(user_result)</code></h3>
 <p>This methods are aliases for <code>VK.callMethod(methodName, {arguments})</code>. Result would be dispatched to event listener with <code>method</code> field set to the function name.</p>
-</section>
-</section>
-<section id="event" class="level2">
-<h2>Event</h2>
+<h2 id="event">Event</h2>
 <p>Each API call would result in event sent to listener passed to <code>vk.init()</code>. All events have similar 3 fields:</p>
-<section id="event.name" class="level5">
-<h5><code>event.name</code></h5>
+<h5 id="event.name"><code>event.name</code></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Always <code>"vk"</code>.</p>
-</section>
-<section id="event.method" class="level5">
-<h5><code>event.method</code></h5>
+<h5 id="event.method"><code>event.method</code></h5>
 <p><em><a href="../../api/type/String.html">String</a></em> containing name of the method callback is invoked for. For example <code>"init"</code> or <code>"showInviteBox"</code>. Note that this would have different value in <code>vk.api()</code> callback.</p>
-</section>
-<section id="event.status" class="level5">
-<h5><code>event.status</code></h5>
+<h5 id="event.status"><code>event.status</code></h5>
 <p><em><a href="../../api/type/String.html">String</a></em> containing <code>"success"</code> or <code>"failure"</code> depending on call results.</p>
-</section>
-<section id="event.data" class="level5">
-<h5><code>event.data</code></h5>
+<h5 id="event.data"><code>event.data</code></h5>
 <p><em><a href="../../api/type/Table.html">Table</a></em> containing call results if applicable.</p>
-</section>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
+<h2 id="project-settings">Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="highlight: [5,6,7,8]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -186,9 +152,7 @@ Important
         },
     },
 }</pre>
-</section>
-<section id="sample" class="level2">
-<h2>Sample</h2>
+<h2 id="sample">Sample</h2>
 <pre class="first-line: 1; gutter: false; brush: lua;">
 local loadingText = display.newText( "Loading...", display.contentCenterX, display.contentCenterY, nil, 20)
 
@@ -218,8 +182,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

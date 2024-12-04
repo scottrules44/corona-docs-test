@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/math/index.html">math</a>  ▸  <a href="../../../api/library/math/random.html">random</a>
 </div>
-<section id="math.random" class="level1">
-<h1>math.random()</h1>
+<h1 id="math.random">math.random()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -100,8 +99,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Returns a pseudo-random number from a sequence with uniform distribution.</p>
 <p>This function is an interface to the simple pseudo-random generator function <code>rand</code> provided by ANSI C. No guarantees can be given for its statistical properties.</p>
 <p>There are three usage options for this function:</p>
@@ -116,25 +114,17 @@ Note
 </div>
 <p>The random number generator needs to be started with a seed using <a href="../../../api/library/math/randomseed.html">math.randomseed()</a> before this function is called or else it will generate the same sequence every time. While this is useful for testing, it is more usual to get a different random sequence each run by using a different seed <nobr>(such as the current time)</nobr>.</p>
 </div>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">math.random()
 
 math.random( m )
 
 math.random( m, n )</pre>
-<section id="m-optional" class="level5">
-<h5>m <sub><sup>(optional)</sup></sub></h5>
+<h5 id="m-optional">m <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> A number.</p>
-</section>
-<section id="n-optional" class="level5">
-<h5>n <sub><sup>(optional)</sup></sub></h5>
+<h5 id="n-optional">n <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> A number.</p>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
+<h2 id="examples">Examples</h2>
 <pre class="brush: lua;">print(math.random())        --> a number between 0 and 1
 print(math.random())        --> another number between 0 and 1
 print(math.random(10))      --> an integer between 1 and 10 (inclusive)
@@ -149,8 +139,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

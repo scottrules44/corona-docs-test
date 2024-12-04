@@ -71,8 +71,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/TableViewWidget/index.html">TableViewWidget</a>  ▸  <a href="../../../api/type/TableViewWidget/deleteRows.html">deleteRows</a>
 </div>
-<section id="objectdeleterows" class="level1">
-<h1>object:deleteRows()</h1>
+<h1 id="objectdeleterows">object:deleteRows()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -103,30 +102,18 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>This method is used to delete rows contained inside a <a href="../../../api/type/TableViewWidget/index.html">TableViewWidget</a>.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">object:deleteRows( rowArray [, animationOptions] )</pre>
-<section id="rowarray-required" class="level5">
-<h5>rowArray <sub><sup>(required)</sup></sub></h5>
+<h5 id="rowarray-required">rowArray <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> A Lua array of row indices to delete, for example <code>{ 2,3,5 }</code>.</p>
-</section>
-<section id="animationoptions-optional" class="level5">
-<h5>animationOptions <sub><sup>(optional)</sup></sub></h5>
+<h5 id="animationoptions-optional">animationOptions <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> An optional table of time animation options for the deletion effect. This table accepts two parameters, <code>slideLeftTransitionTime</code> and <code>slideUpTransitionTime</code>, both of which represent a time in milliseconds for the animation.</p>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="default-animation-time" class="level5">
-<h5>Default Animation Time</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="default-animation-time">Default Animation Time</h5>
 <pre class="brush: lua;">tableView:deleteRows( { 2,3,5 } )</pre>
-</section>
-<section id="custom-animation-time" class="level5">
-<h5>Custom Animation Time</h5>
+<h5 id="custom-animation-time">Custom Animation Time</h5>
 <pre class="brush: lua;">tableView:deleteRows( { 2,3,5 }, { slideLeftTransitionTime=1200, slideUpTransitionTime=400 } )</pre>
 <hr>
 <div id="footer">
@@ -138,9 +125,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

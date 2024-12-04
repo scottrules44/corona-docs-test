@@ -64,8 +64,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../native/index.html">Solar2D Native</a>  ▸  <a href="../../../native/C/index.html">Corona C Functions</a>  ▸  <a href="../../../native/C/CoronaLua/index.html">CoronaLua.h</a>  ▸  <a href="../../../native/C/CoronaLua/CoronaLuaPushUserdata.html">CoronaLuaPushUserdata</a>
 </div>
-<section id="coronaluapushuserdata" class="level1">
-<h1>CoronaLuaPushUserdata()</h1>
+<h1 id="coronaluapushuserdata">CoronaLuaPushUserdata()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -88,8 +87,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Wraps the pointer <code>ud</code> in a Lua userdata object and sets the userdata’s metatable to <code>metatableName</code>.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -97,9 +95,7 @@ Important
 </div>
 <p>This assumes that there will be only one Lua instance of the userdata. In other words, when the garbage collector collects the <code>ud</code>, <code>ud</code> will get deleted.</p>
 </div>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua; c">void CoronaLuaPushUserdata( lua_State* L, void* ud, const char metatableName[] )</pre>
 <hr>
 <div id="footer">
@@ -111,8 +107,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

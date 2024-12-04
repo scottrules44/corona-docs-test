@@ -68,15 +68,11 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/events/index.html">Events/Listeners</a>
 </div>
-<section id="setting-up-and-using-url-schemes" class="level1">
-<h1>Setting Up and Using URL Schemes</h1>
+<h1 id="setting-up-and-using-url-schemes">Setting Up and Using URL Schemes</h1>
 <p>This guide is heavily based on an old <a href="https://web.archive.org/web/20160506183953/https://coronalabs.com/blog/2011/12/22/using-app-url-schemes-in-ios/">blog post</a> and forums posts about creating integrating URL Scheme into your iOS and Android Apps. Note that Android URL Schemes are set up through <strong>Intent Filters</strong>, but for simplicity, this guide will refer to them as URL Schemes. Also, this guide will not cover <strong>App Links</strong> or launching your app with website URLs.</p>
-<section id="what-are-url-schemes" class="level2">
-<h2>What are URL Schemes</h2>
+<h2 id="what-are-url-schemes">What are URL Schemes</h2>
 <p>Simply put, URL Schemes allow your application to be opened from another application. They usually take the form like <code>mycoolappname://MyCustomString</code>. Modern iOS versions will enable you to open URLs Scheme in Safari. For Android, you may need to use a 3rd party tool like <a href="https://play.google.com/store/apps/details?id=org.thewheatfield.android.deeplinks">Deep Link Tester</a>. Note that Url Scheme should use lowercase letters.</p>
-</section>
-<section id="sample-build.settings" class="level2">
-<h2>Sample build.settings</h2>
+<h2 id="sample-build.settings">Sample build.settings</h2>
 <p>For iOS you need to define your url schemes in the <code>CFBundleURLScheme</code> and for Android an <code>Intent Filter</code> needs to be define in your apps <code>build.settings</code> similar to the sample code below.</p>
 <pre class="brush: lua;">settings = {
     orientation = {
@@ -110,9 +106,7 @@
     },
 
 }</pre>
-</section>
-<section id="handling-cold-open" class="level2">
-<h2>Handling Cold Open</h2>
+<h2 id="handling-cold-open">Handling Cold Open</h2>
 <p>A “cold launch” is when your app is neither in the foreground, nor is it suspended; it is completely closed. If your app is launched using a URL scheme, then here is how you would get the URL string that was used to launch your apps <strong>main.lua</strong>:</p>
 <pre class="brush: lua;">local launchArgs = ...
 local launchURL
@@ -121,9 +115,7 @@ if launchArgs and launchArgs.url then
 end
 print( launchURL ) -- output: mycoolappscheme://MyCustomString</pre>
 <p>The example above assumes your app has mycoolappscheme registered as a URL scheme, and that the user launched the app using the following URL string: mycoolappscheme://MyCustomString In the example above, if the user launches the app normally (not with an url scheme), then the value of launchURL will be nil.</p>
-</section>
-<section id="handling-warm-open" class="level2">
-<h2>Handling Warm Open</h2>
+<h2 id="handling-warm-open">Handling Warm Open</h2>
 <p>If your app is already opened but not in the foreground, it is considered “suspended”. When your app is launched with a URL scheme while it is suspended, you can get the URL used to launch your app using a System Event Listener. Here’s an example:</p>
 <pre class="brush: lua;">local launchURL
 local function onSystemEvent( event )
@@ -133,9 +125,7 @@ local function onSystemEvent( event )
     end
 end
 Runtime:addEventListener( "system", onSystemEvent )</pre>
-</section>
-<section id="handling-both" class="level2">
-<h2>Handling Both</h2>
+<h2 id="handling-both">Handling Both</h2>
 <p>You could simply combine the two examples above and everything would be just fine, but I recommend putting your code in a function, and just calling the function from the two different places. Here’s an example of how you could do that:</p>
 <pre class="brush: lua;">local launchArgs = ...
 local function printURL( url )
@@ -150,9 +140,7 @@ local function onSystemEvent( event )
     end
 end
 Runtime:addEventListener( "system", onSystemEvent )</pre>
-</section>
-<section id="checking-if-an-url-scheme" class="level2">
-<h2>Checking if an URL Scheme</h2>
+<h2 id="checking-if-an-url-scheme">Checking if an URL Scheme</h2>
 <p>To check if an app URL Scheme can be opened via <a href="../../../api/library/system/openURL.html">system.openURL()</a> see <a href="../../../api/library/system/canOpenURL.html">system.canOpenURL()</a>.</p>
 <hr>
 <div id="footer">
@@ -164,8 +152,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

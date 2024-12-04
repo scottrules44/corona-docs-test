@@ -66,8 +66,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/io/index.html">io</a>  ▸  <a href="../../../api/library/io/read.html">read</a>
 </div>
-<section id="io.read" class="level1">
-<h1>io.read()</h1>
+<h1 id="io.read">io.read()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -102,16 +101,12 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Reads the file set by <a href="../../../api/library/io/input.html">io.input()</a>, according to the given formats which specify what to read. For each format, the function returns a <a href="../../../api/type/String.html">string</a> or a <a href="../../../api/type/Number.html">number</a> with the characters read, or <code>nil</code> if it cannot read data with the specified format. When called without formats, it uses a default format that reads the entire next line (<code>"*l"</code>).</p>
 <p>If you are reading data from a file, <code>file:read()</code> should be used instead of <code>io.read()</code>.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">io.read( [fmt1] [, fmt2] [, ...] )</pre>
-<section id="fmt1-fmt2-optional" class="level5">
-<h5>fmt1, fmt2, … <sub><sup>(optional)</sup></sub></h5>
+<h5 id="fmt1-fmt2-optional">fmt1, fmt2, … <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a> or <a href="../../../api/type/Number.html">Number</a>.</em> Determines the type/amount of data to read. The available formats are:</p>
 <ul>
 <li><code>"*l"</code> — Reads the next line (skipping the end of line), returning <code>nil</code> on end of file (EOF). This is the <strong>default</strong> format.</li>
@@ -129,9 +124,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

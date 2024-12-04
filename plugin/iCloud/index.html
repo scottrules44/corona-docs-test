@@ -111,8 +111,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/iCloud/index.html">iCloud</a>
 </div>
-<section id="icloud." class="level1">
-<h1>iCloud.*</h1>
+<h1 id="icloud.">iCloud.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -135,8 +134,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>The iCloud plugin enables access to Apple’s iCloud APIs and provides instruments to synchronize data across a user’s devices.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -144,28 +142,18 @@ Important
 </div>
 <p>While iCloud is part of the iOS operating system, users may not log in with their iCloud account, or a user may choose to disable iCloud entirely. Thus, it’s important that users can interact with your app even if iCloud is not enabled.</p>
 </div>
-</section>
-<section id="icloud-storagesharing" class="level2">
-<h2>iCloud Storage/Sharing</h2>
+<h2 id="icloud-storagesharing">iCloud Storage/Sharing</h2>
 <p>iCloud provides three distinct ways of storing and sharing data:</p>
-<section id="key-value-storage" class="level3">
-<h3>Key-Value Storage</h3>
+<h3 id="key-value-storage">Key-Value Storage</h3>
 <p><strong>Key-Value Storage</strong> (KVS) is the easiest aspect of iCloud to use and Apple recommends that all apps benefit from its implementation. Essentially, it provides the ability to associate data (values) with keys (strings). These <nobr>key-value</nobr> pairs are synchronized across all of the user’s <nobr>iCloud-enabled</nobr> devices, allowing you to retrieve specific data using the associated key.</p>
 <p>Note that storage space for KVS is strictly limited. You can declare a maximum of 1024 keys and the total size of all values should be less than 1 MB. Keys should be less than 64 symbols (bytes). You may opt to store all data in a single key with a large set of data or divide the data into multiple keys — simply note that if a <nobr>key-value</nobr> pair is modified, it will be synchronized as a whole entity, so separating data across several keys may improve synchronization speed and minimize cellular data usage.</p>
-</section>
-<section id="documents-in-icloud" class="level3">
-<h3>Documents in iCloud</h3>
+<h3 id="documents-in-icloud">Documents in iCloud</h3>
 <p><strong>Documents in iCloud</strong> is designed to synchronize files across a user’s <nobr>iCloud-enabled</nobr> devices and the iCloud plugin provides APIs to read and write these files.</p>
 <p>Note that the storage space for Documents in iCloud is limited to the user’s iCloud Drive space. Also be aware that the user can manually delete specific stored files via the iOS settings screen, so your app should not assume that a certain file exists in iCloud storage.</p>
-</section>
-<section id="cloudkit" class="level3">
-<h3>CloudKit</h3>
+<h3 id="cloudkit">CloudKit</h3>
 <p><strong>CloudKit</strong> is the most recent addition to the iCloud framework. This is a distributed database where you can store records either privately and publicly. Private records can only be accessed by the user who created them, while public records are shared between users. Essentially, CloudKit is a very powerful tool for storing data as well as sharing data between users.</p>
 <p>Note that CloudKit storage space “<a href="https://developer.apple.com/icloud/">scales with your users</a>” but, in general practice, your app should not exceed the free storage limit unless there’s a dedicated need for extensive database usage.</p>
-</section>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
+<h2 id="project-settings">Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="highlight: [5,6,7,8]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -177,9 +165,7 @@ Important
         },
     },
 }</pre>
-</section>
-<section id="enabling-icloud" class="level2">
-<h2>Enabling iCloud</h2>
+<h2 id="enabling-icloud">Enabling iCloud</h2>
 <p>Using iCloud requires certain settings within your app’s provisioning configuration. You can <strong>not</strong> use a wildcard App ID with iCloud, so you must configure and use an explicit one (<a href="../../guide/distribution/iOSBuild/index.html">guide</a>). To configure iCloud with your app, follow these basic steps:</p>
 <ol type="1">
 <li><p>Log into the <a href="https://developer.apple.com/">Apple Developer</a> portal, enter the <strong>Member Center</strong>, and navigate to the <nobr><strong>Certificates, Identifiers &amp; Profiles</strong></nobr> dashboard.</p></li>
@@ -188,17 +174,14 @@ Important
 <li><p>Generate <nobr>(or regenerate)</nobr> all provisioning profiles that include the selected App ID. For details on this process, please refer to the <nobr><strong>Creating Provisioning Profiles</strong></nobr> section <a href="../../guide/distribution/iOSBuild/index.html">here</a>.</p></li>
 </ol>
 <p><a id="containers"></a></p>
-<section id="icloud-containers" class="level3">
-<h3>iCloud Containers</h3>
+<h3 id="icloud-containers">iCloud Containers</h3>
 <p>In addition to the steps above, if you want to use Documents in iCloud or CloudKit, you must associate an <strong>iCloud Container</strong> with the app as follows:</p>
 <ol type="1">
 <li><p>In the <a href="https://developer.apple.com/">Apple Developer</a> portal, from the same section reached in the steps above, select <nobr><strong>Include CloudKit support</strong></nobr> in the <strong>iCloud</strong> row.</p></li>
 <li><p>In the same row, click the <strong>Edit</strong> button. Here you can create a new iCloud Container or associate an existing iCloud Container with the app. If you are creating an iCloud Container for the first time, note that you’ll need to create/register it first, then repeat this step to associate the new container with the app and iCloud.</p></li>
 <li><p>Generate <nobr>(or regenerate)</nobr> all provisioning profiles that include the selected App ID. For details on this process, please refer to the <nobr><strong>Creating Provisioning Profiles</strong></nobr> section <a href="../../guide/distribution/iOSBuild/index.html">here</a>.</p></li>
 </ol>
-</section>
-<section id="sharing-data" class="level3">
-<h3>Sharing Data</h3>
+<h3 id="sharing-data">Sharing Data</h3>
 <p>For Documents in iCloud and CloudKit, you can share the data between multiple apps. This is facilitated by associating a dedicated <a href="#containers">iCloud Container</a> with each app via the <a href="https://developer.apple.com/">Apple Developer</a> portal as outlined in the steps above. From that point, Solar2D will automatically extract the container information during the build process for each platform in which <code>iCloud</code> is set to <code>true</code>:</p>
 <pre class="brush: lua;">settings =
 {
@@ -228,129 +211,61 @@ Important
         iCloud = { ["kvstore-identifier"] = "com.example.shared_KVS" },
     }
 }</pre>
-</section>
-</section>
-<section id="functions" class="level2">
-<h2>Functions</h2>
+<h2 id="functions">Functions</h2>
 <div class="small-header">
 <p>Key-Value Storage</p>
 </div>
-<section id="icloud.setkvslistenerplugin.icloud.setkvslistener" class="level4">
-<h4><a href="../../plugin/iCloud/setKVSListener.html">iCloud.setKVSListener()</a></h4>
-</section>
-<section id="icloud.setplugin.icloud.set" class="level4">
-<h4><a href="../../plugin/iCloud/set.html">iCloud.set()</a></h4>
-</section>
-<section id="icloud.getplugin.icloud.get" class="level4">
-<h4><a href="../../plugin/iCloud/get.html">iCloud.get()</a></h4>
-</section>
-<section id="icloud.deleteplugin.icloud.delete" class="level4">
-<h4><a href="../../plugin/iCloud/delete.html">iCloud.delete()</a></h4>
-</section>
-<section id="icloud.identitytokenplugin.icloud.identitytoken" class="level4">
-<h4><a href="../../plugin/iCloud/identityToken.html">iCloud.identityToken()</a></h4>
-</section>
-<section id="icloud.synchronizeplugin.icloud.synchronize" class="level4">
-<h4><a href="../../plugin/iCloud/synchronize.html">iCloud.synchronize()</a></h4>
-</section>
-<section id="icloud.tableplugin.icloud.table" class="level4">
-<h4><a href="../../plugin/iCloud/table.html">iCloud.table()</a></h4>
+<h4 id="icloud.setkvslistenerplugin.icloud.setkvslistener"><a href="../../plugin/iCloud/setKVSListener.html">iCloud.setKVSListener()</a></h4>
+<h4 id="icloud.setplugin.icloud.set"><a href="../../plugin/iCloud/set.html">iCloud.set()</a></h4>
+<h4 id="icloud.getplugin.icloud.get"><a href="../../plugin/iCloud/get.html">iCloud.get()</a></h4>
+<h4 id="icloud.deleteplugin.icloud.delete"><a href="../../plugin/iCloud/delete.html">iCloud.delete()</a></h4>
+<h4 id="icloud.identitytokenplugin.icloud.identitytoken"><a href="../../plugin/iCloud/identityToken.html">iCloud.identityToken()</a></h4>
+<h4 id="icloud.synchronizeplugin.icloud.synchronize"><a href="../../plugin/iCloud/synchronize.html">iCloud.synchronize()</a></h4>
+<h4 id="icloud.tableplugin.icloud.table"><a href="../../plugin/iCloud/table.html">iCloud.table()</a></h4>
 <div class="small-header">
 <p>Documents in iCloud</p>
 </div>
-</section>
-<section id="icloud.docinitplugin.icloud.docinit" class="level4">
-<h4><a href="../../plugin/iCloud/docInit.html">iCloud.docInit()</a></h4>
-</section>
-<section id="icloud.doclistplugin.icloud.doclist" class="level4">
-<h4><a href="../../plugin/iCloud/docList.html">iCloud.docList()</a></h4>
-</section>
-<section id="icloud.docwriteplugin.icloud.docwrite" class="level4">
-<h4><a href="../../plugin/iCloud/docWrite.html">iCloud.docWrite()</a></h4>
-</section>
-<section id="icloud.docreadplugin.icloud.docread" class="level4">
-<h4><a href="../../plugin/iCloud/docRead.html">iCloud.docRead()</a></h4>
-</section>
-<section id="icloud.docdeleteplugin.icloud.docdelete" class="level4">
-<h4><a href="../../plugin/iCloud/docDelete.html">iCloud.docDelete()</a></h4>
-</section>
-<section id="icloud.doccheckplugin.icloud.doccheck" class="level4">
-<h4><a href="../../plugin/iCloud/docCheck.html">iCloud.docCheck()</a></h4>
-</section>
-<section id="icloud.docdownloadplugin.icloud.docdownload" class="level4">
-<h4><a href="../../plugin/iCloud/docDownload.html">iCloud.docDownload()</a></h4>
-</section>
-<section id="icloud.docevictplugin.icloud.docevict" class="level4">
-<h4><a href="../../plugin/iCloud/docEvict.html">iCloud.docEvict()</a></h4>
-</section>
-<section id="icloud.docconflictsplugin.icloud.docconflicts" class="level4">
-<h4><a href="../../plugin/iCloud/docConflicts.html">iCloud.docConflicts()</a></h4>
-</section>
-<section id="icloud.docconflictdataplugin.icloud.docconflictdata" class="level4">
-<h4><a href="../../plugin/iCloud/docConflictData.html">iCloud.docConflictData()</a></h4>
-</section>
-<section id="icloud.docresolveplugin.icloud.docresolve" class="level4">
-<h4><a href="../../plugin/iCloud/docResolve.html">iCloud.docResolve()</a></h4>
+<h4 id="icloud.docinitplugin.icloud.docinit"><a href="../../plugin/iCloud/docInit.html">iCloud.docInit()</a></h4>
+<h4 id="icloud.doclistplugin.icloud.doclist"><a href="../../plugin/iCloud/docList.html">iCloud.docList()</a></h4>
+<h4 id="icloud.docwriteplugin.icloud.docwrite"><a href="../../plugin/iCloud/docWrite.html">iCloud.docWrite()</a></h4>
+<h4 id="icloud.docreadplugin.icloud.docread"><a href="../../plugin/iCloud/docRead.html">iCloud.docRead()</a></h4>
+<h4 id="icloud.docdeleteplugin.icloud.docdelete"><a href="../../plugin/iCloud/docDelete.html">iCloud.docDelete()</a></h4>
+<h4 id="icloud.doccheckplugin.icloud.doccheck"><a href="../../plugin/iCloud/docCheck.html">iCloud.docCheck()</a></h4>
+<h4 id="icloud.docdownloadplugin.icloud.docdownload"><a href="../../plugin/iCloud/docDownload.html">iCloud.docDownload()</a></h4>
+<h4 id="icloud.docevictplugin.icloud.docevict"><a href="../../plugin/iCloud/docEvict.html">iCloud.docEvict()</a></h4>
+<h4 id="icloud.docconflictsplugin.icloud.docconflicts"><a href="../../plugin/iCloud/docConflicts.html">iCloud.docConflicts()</a></h4>
+<h4 id="icloud.docconflictdataplugin.icloud.docconflictdata"><a href="../../plugin/iCloud/docConflictData.html">iCloud.docConflictData()</a></h4>
+<h4 id="icloud.docresolveplugin.icloud.docresolve"><a href="../../plugin/iCloud/docResolve.html">iCloud.docResolve()</a></h4>
 <div class="small-header">
 <p>CloudKit</p>
 </div>
-</section>
-<section id="icloud.recordcreateplugin.icloud.recordcreate" class="level4">
-<h4><a href="../../plugin/iCloud/recordCreate.html">iCloud.recordCreate()</a></h4>
-</section>
-<section id="icloud.recorddeleteplugin.icloud.recorddelete" class="level4">
-<h4><a href="../../plugin/iCloud/recordDelete.html">iCloud.recordDelete()</a></h4>
-</section>
-<section id="icloud.recordfetchplugin.icloud.recordfetch" class="level4">
-<h4><a href="../../plugin/iCloud/recordFetch.html">iCloud.recordFetch()</a></h4>
-</section>
-<section id="icloud.recordfetchmultipleplugin.icloud.recordfetchmultiple" class="level4">
-<h4><a href="../../plugin/iCloud/recordFetchMultiple.html">iCloud.recordFetchMultiple()</a></h4>
-</section>
-<section id="icloud.recordqueryplugin.icloud.recordquery" class="level4">
-<h4><a href="../../plugin/iCloud/recordQuery.html">iCloud.recordQuery()</a></h4>
-</section>
-<section id="icloud.recordcreatezoneplugin.icloud.recordcreatezone" class="level4">
-<h4><a href="../../plugin/iCloud/recordCreateZone.html">iCloud.recordCreateZone()</a></h4>
-</section>
-<section id="icloud.recordaccountstatusplugin.icloud.recordaccountstatus" class="level4">
-<h4><a href="../../plugin/iCloud/recordAccountStatus.html">iCloud.recordAccountStatus()</a></h4>
-</section>
-</section>
-<section id="events" class="level2">
-<h2>Events</h2>
+<h4 id="icloud.recordcreateplugin.icloud.recordcreate"><a href="../../plugin/iCloud/recordCreate.html">iCloud.recordCreate()</a></h4>
+<h4 id="icloud.recorddeleteplugin.icloud.recorddelete"><a href="../../plugin/iCloud/recordDelete.html">iCloud.recordDelete()</a></h4>
+<h4 id="icloud.recordfetchplugin.icloud.recordfetch"><a href="../../plugin/iCloud/recordFetch.html">iCloud.recordFetch()</a></h4>
+<h4 id="icloud.recordfetchmultipleplugin.icloud.recordfetchmultiple"><a href="../../plugin/iCloud/recordFetchMultiple.html">iCloud.recordFetchMultiple()</a></h4>
+<h4 id="icloud.recordqueryplugin.icloud.recordquery"><a href="../../plugin/iCloud/recordQuery.html">iCloud.recordQuery()</a></h4>
+<h4 id="icloud.recordcreatezoneplugin.icloud.recordcreatezone"><a href="../../plugin/iCloud/recordCreateZone.html">iCloud.recordCreateZone()</a></h4>
+<h4 id="icloud.recordaccountstatusplugin.icloud.recordaccountstatus"><a href="../../plugin/iCloud/recordAccountStatus.html">iCloud.recordAccountStatus()</a></h4>
+<h2 id="events">Events</h2>
 <div class="small-header">
 <p>Key-Value Storage</p>
 </div>
-<section id="icloudkvseventplugin.icloud.event.icloudkvsevent" class="level4">
-<h4><a href="../../plugin/iCloud/event/iCloudKVSEvent/index.html">iCloudKVSEvent</a></h4>
+<h4 id="icloudkvseventplugin.icloud.event.icloudkvsevent"><a href="../../plugin/iCloud/event/iCloudKVSEvent/index.html">iCloudKVSEvent</a></h4>
 <div class="small-header">
 <p>Documents in iCloud</p>
 </div>
-</section>
-<section id="iclouddoceventplugin.icloud.event.iclouddocevent" class="level4">
-<h4><a href="../../plugin/iCloud/event/iCloudDocEvent/index.html">iCloudDocEvent</a></h4>
+<h4 id="iclouddoceventplugin.icloud.event.iclouddocevent"><a href="../../plugin/iCloud/event/iCloudDocEvent/index.html">iCloudDocEvent</a></h4>
 <div class="small-header">
 <p>CloudKit</p>
 </div>
-</section>
-<section id="icloudrecordeventplugin.icloud.event.icloudrecordevent" class="level4">
-<h4><a href="../../plugin/iCloud/event/iCloudRecordEvent/index.html">iCloudRecordEvent</a></h4>
-</section>
-</section>
-<section id="types" class="level2">
-<h2>Types</h2>
+<h4 id="icloudrecordeventplugin.icloud.event.icloudrecordevent"><a href="../../plugin/iCloud/event/iCloudRecordEvent/index.html">iCloudRecordEvent</a></h4>
+<h2 id="types">Types</h2>
 <div class="small-header">
 <p>CloudKit</p>
 </div>
-<section id="cloudkitrecordplugin.icloud.type.cloudkitrecord" class="level4">
-<h4><a href="../../plugin/iCloud/type/CloudKitRecord/index.html">CloudKitRecord</a></h4>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="key-value-storage-1" class="level5">
-<h5>Key-Value Storage</h5>
+<h4 id="cloudkitrecordplugin.icloud.type.cloudkitrecord"><a href="../../plugin/iCloud/type/CloudKitRecord/index.html">CloudKitRecord</a></h4>
+<h2 id="examples">Examples</h2>
+<h5 id="key-value-storage-1">Key-Value Storage</h5>
 <pre class="brush: lua;">-- This simple example counts user taps across devices and keeps a
 -- synchronized counter in the cloud using Key-Value Storage (KVS)
 
@@ -395,9 +310,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

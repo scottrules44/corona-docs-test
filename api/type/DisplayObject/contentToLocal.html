@@ -69,8 +69,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/DisplayObject/index.html">DisplayObject</a>  ▸  <a href="../../../api/type/DisplayObject/contentToLocal.html">contentToLocal</a>
 </div>
-<section id="objectcontenttolocal" class="level1">
-<h1>object:contentToLocal()</h1>
+<h1 id="objectcontenttolocal">object:contentToLocal()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -109,28 +108,17 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Maps the given <strong>x</strong> and <strong>y</strong> values in content (<a href="../../../api/type/StageObject/index.html">stage</a>) coordinates to the target object’s local coordinates (center point).</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">object:contentToLocal( xContent, yContent )</pre>
-<section id="xcontent-required" class="level5">
-<h5>xContent <sub><sup>(required)</sup></sub></h5>
+<h5 id="xcontent-required">xContent <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The <strong>x</strong> coordinate in content (display) space.</p>
-</section>
-<section id="ycontent-required" class="level5">
-<h5>yContent <sub><sup>(required)</sup></sub></h5>
+<h5 id="ycontent-required">yContent <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The <strong>y</strong> coordinate in content (display) space.</p>
-</section>
-</section>
-<section id="return-values" class="level2">
-<h2>Return Values</h2>
+<h2 id="return-values">Return Values</h2>
 <p>This function returns the <strong>x</strong> and <strong>y</strong> coordinates of the given values in the object’s local coordinate space. The values returned are relative to the center point of the <a href="../../../api/type/DisplayObject/index.html">display object</a>, and these values will be negative if the given point is above or left of the object’s center point.</p>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Rectangle that fills screen
 local rect = display.newRect( 0, 0, display.contentWidth, display.contentHeight )
 rect.x = display.contentCenterX ; rect.y = display.contentCenterY
@@ -171,8 +159,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

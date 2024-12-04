@@ -75,8 +75,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/inmobi/index.html">InMobi</a>  ▸  <a href="../../plugin/inmobi/load.html">load</a>
 </div>
-<section id="inmobi.load" class="level1">
-<h1>inMobi.load()</h1>
+<h1 id="inmobi.load">inMobi.load()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -111,48 +110,27 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Preloads an InMobi ad. You can also call <a href="../../plugin/inmobi/isLoaded.html">inMobi.isLoaded()</a> to verify that the ad has been loaded and <a href="../../plugin/inmobi/show.html">inMobi.show()</a> to show it.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">inMobi.load( adUnitType, placementID [, params] )</pre>
-<section id="adunittype-required" class="level5">
-<h5>adUnitType <sub><sup>(required)</sup></sub></h5>
+<h5 id="adunittype-required">adUnitType <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The type of ad according to the InMobi placement ID. Supported values are <code>"banner"</code> or <code>"interstitial"</code>.</p>
-</section>
-<section id="placementid-required" class="level5">
-<h5>placementID <sub><sup>(required)</sup></sub></h5>
+<h5 id="placementid-required">placementID <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The placement ID for the ad, retrieved from the <a href="https://www.inmobi.com/portal/">InMobi developer portal</a>. This is a numeric string and is listed in the <a href="https://www.inmobi.com/portal/">InMobi developer portal</a> under the label <strong>Placement ID</strong>.</p>
-</section>
-<section id="params-optional" class="level5">
-<h5>params <sub><sup>(optional)</sup></sub></h5>
+<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing customization parameters for banner ads — see the next section for details.</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>params</code> table can include properties for customizing a banner ad. This does not apply to interstitial ads.</p>
-<section id="width-optional" class="level5">
-<h5>width <sub><sup>(optional)</sup></sub></h5>
+<h5 id="width-optional">width <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> The width of the banner ad. InMobi returns a <nobr>“best fit”</nobr> ad for the banner dimensions specified. Default is <code>320</code>.</p>
-</section>
-<section id="height-optional" class="level5">
-<h5>height <sub><sup>(optional)</sup></sub></h5>
+<h5 id="height-optional">height <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> The height of the banner ad. InMobi returns a <nobr>“best fit”</nobr> ad for the banner dimensions specified. Default is <code>50</code>.</p>
-</section>
-<section id="autorefresh-optional" class="level5">
-<h5>autoRefresh <sub><sup>(optional)</sup></sub></h5>
+<h5 id="autorefresh-optional">autoRefresh <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> Boolean value that determines if a banner ad should <nobr>auto-refresh</nobr> at a given interval <nobr>(see <code>refreshInterval</code> below)</nobr>. Default is <code>false</code>.</p>
-</section>
-<section id="refreshinterval-optional" class="level5">
-<h5>refreshInterval <sub><sup>(optional)</sup></sub></h5>
+<h5 id="refreshinterval-optional">refreshInterval <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> The refresh interval, in seconds, for which banner ads should <nobr>auto-refresh</nobr>. This only applies if <code>autoRefresh</code> is set to <code>true</code>. Default is <code>60</code>.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local inMobi = require( "plugin.inMobi" )
 
 -- Pre-declare a placement ID
@@ -188,8 +166,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

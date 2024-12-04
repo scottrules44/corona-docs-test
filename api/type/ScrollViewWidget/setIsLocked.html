@@ -71,8 +71,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/ScrollViewWidget/index.html">ScrollViewWidget</a>  ▸  <a href="../../../api/type/ScrollViewWidget/setIsLocked.html">setIsLocked</a>
 </div>
-<section id="objectsetislocked" class="level1">
-<h1>object:setIsLocked()</h1>
+<h1 id="objectsetislocked">object:setIsLocked()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -103,26 +102,16 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Sets a <a href="../../../api/type/ScrollViewWidget/index.html">ScrollViewWidget</a> to either locked (does not scroll) or unlocked (default behavior). Optionally, you can lock or unlock the scroll view on a specific directional axis.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">object:setIsLocked( isLocked [, axis] )</pre>
-<section id="islocked-required" class="level5">
-<h5>isLocked <sub><sup>(required)</sup></sub></h5>
+<h5 id="islocked-required">isLocked <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> Set to <code>true</code> to lock the scroll view; <code>false</code> to unlock the scroll view.</p>
-</section>
-<section id="axis-optional" class="level5">
-<h5>axis <sub><sup>(optional)</sup></sub></h5>
+<h5 id="axis-optional">axis <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Directional axis upon which to lock or unlock the scroll view, either <code>"horizontal"</code> or <code>"vertical"</code>.</p>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="lock-on-delay" class="level5">
-<h5>Lock on Delay</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="lock-on-delay">Lock on Delay</h5>
 <pre class="brush: lua;">local scrollView = widget.newScrollView {
     width = 400,
     height = 400,
@@ -139,9 +128,7 @@ end
 
 -- Lock the scroll view after 2 seconds
 timer.performWithDelay( 2000, lockScrollView )</pre>
-</section>
-<section id="lock-specific-axis" class="level5">
-<h5>Lock Specific Axis</h5>
+<h5 id="lock-specific-axis">Lock Specific Axis</h5>
 <pre class="brush: lua;">local scrollView = widget.newScrollView {
     width = 400,
     height = 400,
@@ -164,9 +151,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

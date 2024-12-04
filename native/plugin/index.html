@@ -77,8 +77,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../native/index.html">Solar2D Native</a>  ▸  <a href="../../native/plugin/index.html">Plugins</a>
 </div>
-<section id="plugins" class="level1">
-<h1>Plugins</h1>
+<h1 id="plugins">Plugins</h1>
 <p>Plugins allow you to extend the functionality of Solar2D. This guide outlines the fundamental details.</p>
 <div class="docs-tip-outer">
 <div class="docs-tip-inner-left">
@@ -99,8 +98,7 @@
 </ul>
 </div>
 <p><a id="architecture"></a></p>
-<section id="architecture" class="level2">
-<h2>Architecture</h2>
+<h2 id="architecture">Architecture</h2>
 <p>Solar2D plugins leverage Lua’s module system in which plugins are lazily loaded by a corresponding call to the Lua <a href="../../api/library/package/require.html">require()</a> function.</p>
 <p>Typically, these plugins are just shared native libraries which are supported on platforms like <nobr>macOS (<code>.dylib</code>)</nobr>, <nobr>Windows (<code>.dll</code>)</nobr>, and <nobr>Android (<code>.so</code>)</nobr>.</p>
 <div class="guide-notebox">
@@ -114,11 +112,8 @@ Note
 <p>In these two cases, Solar2D adds special loaders which ensure that these plugins can be easily loaded, assuming certain conventions are followed.</p>
 </div>
 <p><a id="using"></a></p>
-</section>
-<section id="using-plugins" class="level2">
-<h2>Using Plugins</h2>
-<section id="solar2d" class="level3">
-<h3>Solar2D</h3>
+<h2 id="using-plugins">Using Plugins</h2>
+<h3 id="solar2d">Solar2D</h3>
 <p>Plugins for Solar2D are hosted in a number of places. Many are available at <a href="https://plugins.solar2d.com/">Free Plugins Directory</a>, <a href="https://solar2dmarketplace.com/">Solar2D Marketplace</a>, and <a href="https://www.solar2dplugins.com/">Solar2D Plugins Marketplace</a>. You can incorporate a plugin by adding an entry to the <code>plugins</code> table of <code>build.settings</code>, for example:</p>
 <pre class="highlight: [5,6,7,8]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -134,9 +129,7 @@ Note
 <p>When added in this manner, Solar2D will integrate the plugin during the build phase.</p>
 <p>From there, the plugin can be loaded using the standard Lua <a href="../../api/library/package/require.html">require()</a> function, for instance:</p>
 <pre class="brush: lua;">local myPlugin = require( "plugin.myPlugin" )</pre>
-</section>
-<section id="solar2d-native" class="level3">
-<h3>Solar2D Native</h3>
+<h3 id="solar2d-native">Solar2D Native</h3>
 <p>Native plugins can easily be added to your iOS or Android project.</p>
 <p>On iOS, plugins will be in the form of static library (<code>.a</code>) files that need to be linked into your app executable.</p>
 <p>On Android, plugins can come in the form of <code>.so</code> (shared library), <code>.jar</code> or <code>.aar</code> files.</p>
@@ -151,10 +144,7 @@ Note
 </ul>
 </div>
 <p><a id="projects"></a></p>
-</section>
-</section>
-<section id="plugin-projects" class="level2">
-<h2>Plugin Projects</h2>
+<h2 id="plugin-projects">Plugin Projects</h2>
 <p>If you want to <a href="../../native/plugin/submission.html">create/submit</a> a plugin for availability in the <a href="https://www.solar2dplugins.com/">Solar2D Plugins Marketplace</a>, you can use our <code>App</code> project templates to simplify development of your plugin, as well as test it. After all, a plugin itself is not an executable and it must be run inside an actual application. The project templates can be located within the Solar2D Native folder:</p>
 <p><nobr><code>/Applications/Corona/Native/Project Template/App/</code></nobr></p>
 <p>This folder has separate <nobr>platform-specific</nobr> subfolders for each target platform:</p>
@@ -163,8 +153,7 @@ Note
 <li><code>android</code></li>
 </ul>
 <p>There’s also a <code>Corona</code> folder that sits alongside these folders which contains a classic Corona project (<code>main.lua</code>). You can modify these files to test the Lua APIs that are offered by your plugin.</p>
-<section id="ios" class="level3">
-<h3>iOS</h3>
+<h3 id="ios">iOS</h3>
 <p>In the <code>ios</code> folder, there are two Xcode projects:</p>
 <ol type="1">
 <li><p><code>App.xcodeproj</code> — This is the project that builds the <code>.app</code> executable which runs on the device. It automatically builds the plugin as an implicit dependency.</p></li>
@@ -178,31 +167,23 @@ Note
 <p>You can accomplish this via the <code>lipo</code> tool. In the following example, we are creating a universal library for <code>staticlibrary.a</code>:</p>
 <pre class="brush: lua;">lipo -create "/path/to/iphoneos/staticlibrary.a" "/path/to/iphoneos-simulator/staticlibrary.a" -output "/path/to/dst/staticlibrary.a"</pre>
 </div>
-</section>
-<section id="android" class="level3">
-<h3>Android</h3>
+<h3 id="android">Android</h3>
 <p>In the <code>android</code> folder, the contents include:</p>
 <ol type="1">
 <li><p><code>app</code> — This module builds the <code>.apk</code> that installs on the device. The <code>app</code> module automatically builds the plugin as an explicit dependency per this entry in the <code>dependencies</code> block of the <code>build.gradle</code> script for the <code>app</code> module (<code>compile project(':plugin')</code>).</p></li>
 <li><p><code>plugin</code> — This module builds the plugin as a <code>.jar</code> file, only including the Java files under <code>plugin/src/main/java</code> in your project. You can use this project directly if you want to share your plugin outside of the <code>App</code> project.</p></li>
 </ol>
 <p><a id="coding"></a></p>
-</section>
-</section>
-<section id="coding-plugins" class="level2">
-<h2>Coding Plugins</h2>
+<h2 id="coding-plugins">Coding Plugins</h2>
 <p>Plugins build upon Lua’s module system, so they can come in three different flavors:</p>
 <ol type="1">
 <li>Pure Lua code</li>
 <li>Native code</li>
 <li>Hybrid of Lua and native code</li>
 </ol>
-<section id="pure-lua" class="level3">
-<h3>Pure Lua</h3>
+<h3 id="pure-lua">Pure Lua</h3>
 <p>A Lua library plugin can be created using the <a href="../../api/type/CoronaLibrary/index.html">CoronaLibrary</a> class. Please see the <a href="../../native/plugin/luaplugin.html">Creating Lua Plugins</a> guide for details on how to create, package, and submit a Lua plugin to the available marketplaces.</p>
-</section>
-<section id="native-c" class="level3">
-<h3>Native C</h3>
+<h3 id="native-c">Native C</h3>
 <p>In addition to the plugin naming conventions discussed above, Solar2D expects plugins to follow some additional conventions that ensure Lua can locate these modules. In C, these conventions are just the standard Lua naming conventions for modules:</p>
 <ul>
 <li>The name of the module function must be prefixed by <code>luaopen_</code>.</li>
@@ -237,9 +218,7 @@ int luaopen_plugin_myLibrary( lua_State *L )
 
     return result;
 }</pre>
-</section>
-<section id="native-java" class="level3">
-<h3>Native Java</h3>
+<h3 id="native-java">Native Java</h3>
 <p>If you write the module in Java, Corona has set up Lua to load Java code and to let that Java code define the Lua library via <a href="https://code.google.com/archive/p/jnlua/">JNLua</a>. Here, Lua looks for the Java class <code>LuaLoader</code> and instantiates it.</p>
 <p>Solar2D assumes the following conventions:</p>
 <ul>
@@ -248,9 +227,7 @@ int luaopen_plugin_myLibrary( lua_State *L )
 <li>The namespace of <code>LuaLoader</code> should be the same as the name passed to <code>require()</code>.</li>
 </ul>
 <p>For example, the Lua library <code>plugin.myLibrary</code> would be implemented by the <nobr>(fully-qualified)</nobr> class <code>plugin.myLibrary.LuaLoader</code> and that class would implement the <code>invoke()</code> method of the <code>com.naef.jnlua.JavaFunction</code> interface.</p>
-</section>
-<section id="lua-native" class="level3">
-<h3>Lua + Native</h3>
+<h3 id="lua-native">Lua + Native</h3>
 <p>You can also create plugins in a hybrid fashion. For example, you can create the library via Lua code and then do further initialization in C.</p>
 <p>Below is an example for creating the <code>myLibrary</code> library from Lua and then adding additional functions on the native C side. Here, we assume <code>kBuffer</code> stores the Lua bytecodes corresponding to <code>myLibrary.lua</code>.</p>
 <pre class="brush: lua; c">// The bytecodes for "myLibrary.lua" are contained in kBuffer
@@ -297,9 +274,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

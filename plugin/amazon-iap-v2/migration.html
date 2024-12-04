@@ -65,28 +65,22 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/amazon-iap-v2/index.html">Amazon IAP</a>  ▸  <a href="../../plugin/amazon-iap-v2/migration.html">migration</a>
 </div>
-<section id="amazon-iap-v2-migration" class="level1">
-<h1>Amazon IAP v2 Migration</h1>
+<h1 id="amazon-iap-v2-migration">Amazon IAP v2 Migration</h1>
 <p>The current <a href="../../plugin/amazon-iap-v2/index.html">Amazon IAP</a> plugin corresponds to <nobr>Amazon IAP v2</nobr>. If you are migrating from the previous version to v2, please see the migration notes below.</p>
-<section id="differences" class="level2">
-<h2>Differences</h2>
+<h2 id="differences">Differences</h2>
 <ul>
 <li><p>When including the plugin within <code>build.settings</code>, change <nobr><code>publisherId = "com.amazon"</code></nobr> to <nobr><code>publisherId = "com.coronalabs"</code></nobr>. The key name of <nobr><code>["plugin.amazon.iap"]</code></nobr> remains the same.</p></li>
 <li><p>You must now call <a href="../../plugin/amazon-iap-v2/finishTransaction.html">store.finishTransaction()</a> following every transaction. This notifies Amazon about the transaction being processed.</p></li>
 <li><p>Amazon IAP v2 does not include a <code>"restored"</code> state for transactions. The <a href="../../plugin/amazon-iap-v2/restore.html">store.restore()</a> function should be called to retrieve all of the user’s purchases and, in this case, all valid transactions will be of the <code>"purchased"</code> state.</p></li>
 </ul>
-</section>
-<section id="additions" class="level2">
-<h2>Additions</h2>
+<h2 id="additions">Additions</h2>
 <ul>
 <li><p><a href="../../plugin/amazon-iap-v2/isActive.html">store.isActive</a> is now supported. This property will be <code>true</code> if the plugin was initialized successfully.</p></li>
 <li><p>New <a href="../../plugin/amazon-iap-v2/getUserData.html">store.getUserData()</a> function added to retrieve the user ID and marketplace code of the currently <nobr>logged-in</nobr> user.</p></li>
 <li><p>New properties available in the <a href="../../plugin/amazon-iap-v2/event/productList/index.html">productList</a> event table associated with <a href="../../plugin/amazon-iap-v2/loadProducts.html">store.loadProducts()</a>, as well as the <a href="../../plugin/amazon-iap-v2/event/storeTransaction/index.html">storeTransaction</a> event table associated with <a href="../../plugin/amazon-iap-v2/init.html">initialization</a>, <a href="../../plugin/amazon-iap-v2/purchase.html">purchase</a>, and <a href="../../plugin/amazon-iap-v2/restore.html">restore</a> requests.</p></li>
 <li><p><a href="../../plugin/amazon-iap-v2/canLoadProducts.html">store.canLoadProducts</a> and <a href="../../plugin/amazon-iap-v2/canMakePurchases.html">store.canMakePurchases</a> are supported, but only for <nobr>cross-platform</nobr> compatibility with other IAP providers. They mirror the value of <a href="../../plugin/amazon-iap-v2/isActive.html">store.isActive</a> and do not need to be checked to proceed with store transactions or requests.</p></li>
 </ul>
-</section>
-<section id="other" class="level2">
-<h2>Other</h2>
+<h2 id="other">Other</h2>
 <ul>
 <li>In Kindle FreeTime, only IAP subscription/entitlement or <nobr>non-consumable</nobr> IAP items will be shared along within the app in different profiles.</li>
 </ul>
@@ -100,8 +94,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

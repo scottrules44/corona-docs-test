@@ -103,8 +103,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/physics/index.html">physics</a>  ▸  <a href="../../../api/library/physics/addBody.html">addBody</a>
 </div>
-<section id="physics.addbody" class="level1">
-<h1>physics.addBody()</h1>
+<h1 id="physics.addbody">physics.addBody()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -143,8 +142,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>This function turns almost any Corona display object into a simulated physical object with specific physical properties. It accepts the display object, an optional body type (string), and an optional <code>params</code> table containing <nobr>key-value</nobr> pairs that specify the properties for the physics body. Within this <code>params</code> table, the following apply:</p>
 <ul>
 <li><p>If a <code>radius</code> value is specified, the body boundaries will be circular, centered at the middle of the display object used to create the physics body.</p></li>
@@ -154,9 +152,7 @@
 <li><p>Edge shape (chain) bodies can be defined via a <code>chain</code> array. See below for details.</p></li>
 <li><p>If an <code>outline</code> table is specified, the body boundaries will follow the outline provided by <a href="../../../api/library/graphics/newOutline.html">graphics.newOutline()</a>.</p></li>
 </ul>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>When you turn a display object into a physics object, the physics engine “owns” the object and has its own rules about the object. The engine also assumes that the anchor point is at the center of the object.</p></li>
 <li><p>When handling collisions with multi-element bodies, the body element index is reported as part of each collision event, so it’s possible to detect which specific part of a complex body is involved in a collision. See the <a href="../../../guide/physics/collisionDetection/index.html">Collision Detection</a> guide for more information.</p></li>
@@ -166,72 +162,40 @@
 <li><p>This call cannot be used in a collision event. However, your collision handler may set a flag or include a time delay via <a href="../../../api/library/timer/performWithDelay.html">timer.performWithDelay()</a> so that the action can occur in the next application cycle or later. See the <a href="../../../guide/physics/collisionDetection/index.html">Collision Detection</a> guide for a complete list of which APIs and methods are subject to this rule.</p></li>
 <li><p>For further information and limitation notes, see the <a href="../../../guide/physics/physicsBodies/index.html">Physics Bodies</a> guide and <a href="../../../guide/physics/limitations/index.html">Physics Notes/Limitations</a>.</p></li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">physics.addBody( object, [bodyType,] [params] )</pre>
-<section id="object-required" class="level5">
-<h5>object <sub><sup>(required)</sup></sub></h5>
+<h5 id="object-required">object <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/DisplayObject/index.html">DisplayObject</a>.</em> The display object to add a physics body to.</p>
-</section>
-<section id="bodytype-optional" class="level5">
-<h5>bodyType <sub><sup>(optional)</sup></sub></h5>
+<h5 id="bodytype-optional">bodyType <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The body type may be specified in an optional string parameter before the first body element. The possible types are <code>"static"</code>, <code>"dynamic"</code> and <code>"kinematic"</code>. The default type is <code>"dynamic"</code> if no value is specified. See <a href="../../../api/type/Body/bodyType.html">object.bodyType</a> for more information.</p>
-</section>
-<section id="params-optional" class="level5">
-<h5>params <sub><sup>(optional)</sup></sub></h5>
+<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table of key-value pairs that specifies the properties of the body — see the next section for details. For <nobr>multi-element</nobr> bodies, multiple distinct <code>params</code> tables can be declared in a <nobr>comma-delimited</nobr> series (one for each body element).</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>params</code> table includes the properties for the physics body.</p>
-<section id="core-parameters" class="level3">
-<h3>Core Parameters</h3>
-<section id="density-optional" class="level5">
-<h5>density <sub><sup>(optional)</sup></sub></h5>
+<h3 id="core-parameters">Core Parameters</h3>
+<h5 id="density-optional">density <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Multiplied by the area of the body’s shape to determine mass. Based on a standard value of <code>1.0</code> for water. Lighter materials (such as wood) have a density below <code>1.0</code>, and heavier materials (such as stone) have a density greater than <code>1.0</code>. Default value is <code>1.0</code>.</p>
-</section>
-<section id="friction-optional" class="level5">
-<h5>friction <sub><sup>(optional)</sup></sub></h5>
+<h5 id="friction-optional">friction <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> May be any non-negative value; a value of <code>0.0</code> means no friction and <code>1.0</code> means fairly strong friction. The default value is <code>0.0</code>.</p>
-</section>
-<section id="bounce-optional" class="level5">
-<h5>bounce <sub><sup>(optional)</sup></sub></h5>
+<h5 id="bounce-optional">bounce <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Determines how much of an object’s velocity is returned after a collision. The default value is <code>0.2</code>.</p>
-</section>
-<section id="issensor-optional" class="level5">
-<h5>isSensor <sub><sup>(optional)</sup></sub></h5>
+<h5 id="issensor-optional">isSensor <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> Sets the body as a <a href="../../../api/type/Body/isSensor.html">sensor</a>. A sensor is a fixture that detects collisions but does not produce a physical response.</p>
-</section>
-<section id="filter-optional" class="level5">
-<h5>filter <sub><sup>(optional)</sup></sub></h5>
+<h5 id="filter-optional">filter <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Filter values. See <a href="../../../guide/physics/collisionDetection/index.html">Collision Detection</a> for more information.</p>
 <ul>
 <li><code>categoryBits = cb</code> where <code>cb</code> is the category of object (generally only one bit set). Defaults to <code>0x0001</code> if not set.</li>
 <li><code>maskBits = mb</code>, where <code>mb</code> is the categories that the shape would accept for collision. Defaults to <code>0xFFFF</code>.</li>
 <li><code>groupIndex = gb</code>, where <code>gb</code> specifies that a certain group of objects will never collide (negative) or always collide (positive). Defaults to <code>0</code> (disabled). If <code>groupIndex</code> is set to non-zero, it overrides the <code>maskBits</code> setting.</li>
 </ul>
-</section>
-</section>
-<section id="circular-body" class="level3">
-<h3>Circular Body</h3>
-<section id="radius" class="level5">
-<h5>radius</h5>
+<h3 id="circular-body">Circular Body</h3>
+<h5 id="radius">radius</h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Radius of the bounding circle.</p>
-</section>
-</section>
-<section id="polygonal-body" class="level3">
-<h3>Polygonal Body</h3>
-<section id="shape" class="level5">
-<h5>shape</h5>
+<h3 id="polygonal-body">Polygonal Body</h3>
+<h5 id="shape">shape</h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> Shape array containing the shape’s vertices: <code>{ x1,y1, x2,y2, ..., xn,yn }</code>. For example <code>pentagonShape = { 0,-37, 37,-10, 23,34, -23,34, -37,-10 }</code>. The coordinates must be defined in <strong>clockwise</strong> order, and the resulting shape must be <strong>convex</strong> at all angle points. The physics engine assumes that the <code>0,0</code> point is the center of the object. A negative <strong>x</strong> will be to the left of object’s center and a negative <strong>y</strong> will be top of object’s center.</p>
-</section>
-</section>
-<section id="offsetangled-rectangular-body" class="level3">
-<h3>Offset/Angled Rectangular Body</h3>
-<section id="box" class="level5">
-<h5>box</h5>
+<h3 id="offsetangled-rectangular-body">Offset/Angled Rectangular Body</h3>
+<h5 id="box">box</h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table of <nobr>key-value</nobr> pairs including:</p>
 <ul>
 <li><code>halfWidth</code> — Half of the body width. This property is required.</li>
@@ -240,16 +204,10 @@
 <li><code>y</code> — The <strong>y</strong> offset (±) from the display object’s center. If you offset the body along the <strong>y</strong> axis, you must also specify the <strong>x</strong> offset, even if no offset should occur along that axis <nobr>(simply specify <code>x=0</code>)</nobr>.</li>
 <li><code>angle</code> — The angle (rotation) of the body. This property is optional and defaults to <code>0</code>.</li>
 </ul>
-</section>
-</section>
-<section id="edge-shape-chain-body" class="level3">
-<h3>Edge Shape (Chain) Body</h3>
-<section id="chain" class="level5">
-<h5>chain</h5>
+<h3 id="edge-shape-chain-body">Edge Shape (Chain) Body</h3>
+<h5 id="chain">chain</h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> An array of vertices to define the edge shape. Edge shapes are not restricted to convex angles like polygonal bodies.</p>
-</section>
-<section id="connectfirstandlastchainvertex-optional" class="level5">
-<h5>connectFirstAndLastChainVertex <sub><sup>(optional)</sup></sub></h5>
+<h5 id="connectfirstandlastchainvertex-optional">connectFirstAndLastChainVertex <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> If set to <code>true</code>, the first and last vertices will be joined by a straight line. If set to <code>false</code> (default), the edge shape will have disconnected ends.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -257,20 +215,11 @@ Important
 </div>
 <p>You should not construct an edge shape body with <nobr>self-intersecting</nobr> segments — in other words, your definition of vertices should not result in any segments of the chain intersecting with other segments. Doing so many break the expected collision detection of the shape.</p>
 </div>
-</section>
-</section>
-<section id="outline-body" class="level3">
-<h3>Outline Body</h3>
-<section id="outline" class="level5">
-<h5>outline</h5>
+<h3 id="outline-body">Outline Body</h3>
+<h5 id="outline">outline</h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> An outline array generated by <a href="../../../api/library/graphics/newOutline.html">graphics.newOutline()</a>. <code>outline</code> has fewer restrictions than <code>shape</code>, for example, an outline can be either convex or concave.</p>
-</section>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="rectangular-body" class="level5">
-<h5>Rectangular Body</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="rectangular-body">Rectangular Body</h5>
 <pre class="brush: lua;">local sky = display.newImage( "bkg_clouds.png" )
 sky.x = 160; sky.y = 195
  
@@ -283,23 +232,17 @@ local crate = display.newImage( "crate.png" )
 crate.x = 180; crate.y = -50; crate.rotation = 5
  
 physics.addBody( crate, { density=3.0, friction=0.5, bounce=0.3 } )</pre>
-</section>
-<section id="circular-body-1" class="level5">
-<h5>Circular Body</h5>
+<h5 id="circular-body-1">Circular Body</h5>
 <pre class="brush: lua;">local ball = display.newImage( "ball.png" )
  
 physics.addBody( ball, { density=1.0, friction=0.3, bounce=0.2, radius=25 } )</pre>
-</section>
-<section id="polygonal-body-1" class="level5">
-<h5>Polygonal Body</h5>
+<h5 id="polygonal-body-1">Polygonal Body</h5>
 <pre class="brush: lua;">local pentagon = display.newImage("pentagon.png")
  
 local pentagonShape = { 0,-37, 37,-10, 23,34, -23,34, -37,-10 }
  
 physics.addBody( pentagon, { density=3.0, friction=0.8, bounce=0.3, shape=pentagonShape } )</pre>
-</section>
-<section id="multi-element-body" class="level5">
-<h5>Multi-Element Body</h5>
+<h5 id="multi-element-body">Multi-Element Body</h5>
 <pre class="brush: lua;">local nebula = display.newImage( "nebula.png" )
 nebula.x, nebula.y = display.contentCenterX, display.contentCenterY
 
@@ -314,17 +257,13 @@ physics.addBody( nebula, "dynamic",
     { friction=0.8, bounce=0.0, shape=podB },
     { friction=0.2, bounce=0.4, shape=podL }
 )</pre>
-</section>
-<section id="offsetangled-rectangular-body-1" class="level5">
-<h5>Offset/Angled Rectangular Body</h5>
+<h5 id="offsetangled-rectangular-body-1">Offset/Angled Rectangular Body</h5>
 <pre class="brush: lua;">local body = display.newRect( 100, 200, 40, 40 )
 
 local offsetRectParams = { halfWidth=5, halfHeight=10, x=10, y=0, angle=60 }
 
 physics.addBody( body, "dynamic", { box=offsetRectParams } )</pre>
-</section>
-<section id="edge-shape-chain-body-1" class="level5">
-<h5>Edge Shape (Chain) Body</h5>
+<h5 id="edge-shape-chain-body-1">Edge Shape (Chain) Body</h5>
 <pre class="brush: lua;">local body = display.newRect( 150, 200, 40, 40 )
 
 physics.addBody( body, "static",
@@ -333,9 +272,7 @@ physics.addBody( body, "static",
         connectFirstAndLastChainVertex = true
     }
 )</pre>
-</section>
-<section id="outline-body-1" class="level5">
-<h5>Outline Body</h5>
+<h5 id="outline-body-1">Outline Body</h5>
 <pre class="brush: lua;">local image_name = "star.png"
 
 local image_outline = graphics.newOutline( 2, image_name )
@@ -353,9 +290,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../plugin/steamworks/setNotificationPosition.html">setNotificationPosition</a>
 </div>
-<section id="steamworks.setnotificationposition" class="level1">
-<h1>steamworks.setNotificationPosition()</h1>
+<h1 id="steamworks.setnotificationposition">steamworks.setNotificationPosition()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -104,25 +103,19 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Sets where Steam’s notification popups will appear within the application window. Steam notification popups appear when achievements have been unlocked, when friends appear online, etc. It is recommended to position notifications in a corner of the application window that won’t cover up vital gameplay content. This position can be changed dynamically during the lifetime of the application, such as after scene changes.</p>
 <p>Returns <code>true</code> if the notification position was successfully assigned.</p>
 <p>Returns <code>false</code> if given invalid arguments or if the <a href="../../plugin/steamworks/isLoggedOn.html">steamworks.isLoggedOn</a> property is <code>false</code>.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>Notification popups won’t appear in the app if the <a href="../../plugin/steamworks/canShowOverlay.html">steamworks.canShowOverlay</a> property is <code>false</code>.</p></li>
 <li><p>Notification popup position always defaults to the <nobr>bottom-right</nobr> corner on application startup.</p></li>
 <li><p>Steam will not store or remember the last assigned notification position after the application exits.</p></li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">steamworks.setNotificationPosition( positionName )</pre>
-<section id="positionname-required" class="level5">
-<h5>positionName <sub><sup>(required)</sup></sub></h5>
+<h5 id="positionname-required">positionName <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Indicates where within the application window notification popups should appear. Must be set to one of the following:</p>
 <ul>
 <li><code>"topLeft"</code></li>
@@ -130,10 +123,7 @@
 <li><code>"bottomLeft"</code></li>
 <li><code>"bottomRight"</code></li>
 </ul>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 steamworks.setNotificationPosition( "topRight" )</pre>
@@ -147,8 +137,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

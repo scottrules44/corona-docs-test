@@ -80,8 +80,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/facebook/index.html">Facebook (legacy)</a>  ▸  <a href="../../plugin/facebook/showDialog.html">showDialog</a>
 </div>
-<section id="facebook.showdialog" class="level1">
-<h1>facebook.showDialog()</h1>
+<h1 id="facebook.showdialog">facebook.showDialog()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -116,36 +115,22 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Displays a Facebook UI dialog for publishing posts to a user’s stream. This API pops up a Facebook UI that the user interacts with. Use <a href="../../plugin/facebook/request.html">facebook.request()</a> if you need the application to do the posting.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>Please see the <a href="../../guide/social/usingFacebook/index.html">Implementing Facebook</a> guide for important iOS and <nobr>Android-specific</nobr> notes.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">facebook.showDialog( action [, params ] )</pre>
-<section id="action-required" class="level5">
-<h5>action <sub><sup>(required)</sup></sub></h5>
+<h5 id="action-required">action <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The dialog you want to show, for example <code>"feed"</code> or <code>"apprequests"</code>. See <a href="http://developers.facebook.com/docs/reference/dialogs/">here</a> for more information.</p>
-</section>
-<section id="params-optional" class="level5">
-<h5>params <sub><sup>(optional)</sup></sub></h5>
+<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Lua table of key-value pairs that is passed as arguments to the Facebook API call. The keys you pass here correspond to specific options which are available for the dialog that you want to show. See <a href="http://developers.facebook.com/docs/reference/dialogs/">here</a> for more information.</p>
-</section>
-</section>
-<section id="facebook-places" class="level2">
-<h2>Facebook Places</h2>
+<h2 id="facebook-places">Facebook Places</h2>
 <p>Displays a native view controller, allowing the user to choose a place where they are.</p>
 <pre class="brush: lua;">facebook.showDialog( action, options, onComplete )</pre>
-<section id="action-required-1" class="level5">
-<h5>action <sub><sup>(required)</sup></sub></h5>
+<h5 id="action-required-1">action <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The dialog you want to show. For the place picker, you should pass <code>"place"</code>.</p>
-</section>
-<section id="options-required" class="level5">
-<h5>options <sub><sup>(required)</sup></sub></h5>
+<h5 id="options-required">options <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> This is a Lua table of key/value pairs that are passed as arguments to the Facebook API call. Supported keys are:</p>
 <ul>
 <li><code>title</code> — string value for the title that will appear in the view controller’s navigation bar (top of the screen).</li>
@@ -155,27 +140,16 @@
 <li><code>resultsLimit</code> — number representing the maximum number of results shown in the view controller.</li>
 <li><code>radiusInMeters</code> — numerical value for the radius in meters that the search should span.</li>
 </ul>
-</section>
-<section id="oncomplete-required" class="level5">
-<h5>onComplete <sub><sup>(required)</sup></sub></h5>
+<h5 id="oncomplete-required">onComplete <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> This listener is executed upon selecting a place.</p>
-</section>
-</section>
-<section id="facebook-friends" class="level2">
-<h2>Facebook Friends</h2>
+<h2 id="facebook-friends">Facebook Friends</h2>
 <p>Displays a native view controller, allowing the user to choose who they are with.</p>
 <pre class="brush: lua;">facebook.showDialog( action, onComplete )</pre>
-<section id="action-required-2" class="level5">
-<h5>action <sub><sup>(required)</sup></sub></h5>
+<h5 id="action-required-2">action <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The dialog you want to show. For the friend picker, you should pass <code>"friends"</code>.</p>
-</section>
-<section id="oncomplete-required-1" class="level5">
-<h5>onComplete <sub><sup>(required)</sup></sub></h5>
+<h5 id="oncomplete-required-1">onComplete <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> This listener is executed upon selecting a friend.</p>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
+<h2 id="examples">Examples</h2>
 <pre class="brush: lua;">local facebook = require( "facebook" )
 
 local function facebookListener( event )
@@ -190,8 +164,7 @@ local function facebookListener( event )
 end
 
 facebook.login( "XXXXXXXXXX", facebookListener )  --replace XXXXXXXXXX with your Facebook App ID</pre>
-<section id="placesfriends" class="level5">
-<h5>Places/Friends</h5>
+<h5 id="placesfriends">Places/Friends</h5>
 <pre class="brush: lua;">local facebook = require( "facebook" )
 
 local function facebookListener( event )
@@ -224,9 +197,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

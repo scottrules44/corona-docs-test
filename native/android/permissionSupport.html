@@ -77,8 +77,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../native/index.html">Solar2D Native</a>  ▸  <a href="../../native/android/index.html">Android</a>  ▸  <a href="../../native/android/permissionSupport.html">Runtime Permission Support</a>
 </div>
-<section id="android-runtime-permission-support" class="level1">
-<h1>Android Runtime Permission Support</h1>
+<h1 id="android-runtime-permission-support">Android Runtime Permission Support</h1>
 <p>This guide explains how to add support for Android Runtime Permissions in apps/plugins built with Solar2D Native.</p>
 <div class="guides-toc">
 <ul>
@@ -93,8 +92,7 @@
 </ul>
 </div>
 <p><a id="about"></a></p>
-<section id="about-android-runtime-permissions" class="level2">
-<h2>About Android Runtime Permissions</h2>
+<h2 id="about-android-runtime-permissions">About Android Runtime Permissions</h2>
 <p>When an Android application runs on a device, the operating system provides only limited access to resources. Before your application (or plugin) can make use of restricted resources, you must declare your intent to use them. This is done by editing your <code>AndroidManifest.xml</code> or by specifying the permissions in <code>metadata.lua</code>. See <a href="#declaring-permissions">Declaring Permissions</a> for more information.</p>
 <p>For apps running on <strong>Android 5.1</strong> or lower, the <code>AndroidManifest.xml</code> file is the sole decider for what permissions are allowed, since the user approves of them when installing the app.</p>
 <p>For apps running on <strong>Android 6.0</strong> or newer, the app can’t reliably assume that it has access to <a href="https://developer.android.com/guide/topics/permissions/overview#permission-groups">dangerous permissions</a>.</p>
@@ -115,9 +113,7 @@ Note
 <p>The Corona <a href="https://github.com/coronalabs/samples-coronasdk/blob/master/Media/Camera/main.lua">Camera</a> sample exhibits how <code>media.hasSource( media.Camera )</code> has been modified to report more information back to the user and how your project should take that information into account.</p>
 </div>
 <p><a id="android-6-0"></a></p>
-</section>
-<section id="targeting-android-6.0" class="level2">
-<h2>Targeting Android 6.0</h2>
+<h2 id="targeting-android-6.0">Targeting Android 6.0</h2>
 <p>To begin supporting and testing runtime permissions, you must first target Android 6.0. Simply change a number to <code>23</code> in a few places within the project (<a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API Level 23</a> corresponds with Android 6.0).</p>
 <ol type="1">
 <li><p><code>AndroidManifest.xml</code> — Change <code>android:targetSdkVersion="xx"</code> to <code>android:targetSdkVersion="23"</code>. This will allow you to test your changes in the local project.</p></li>
@@ -125,9 +121,7 @@ Note
 <li><p><code>project.plugin.properties</code> — For <nobr>natively-developed</nobr> plugins, change the line <code>target=android-xx</code> to <code>target=android-23</code>. This change will affect the plugin itself.</p></li>
 </ol>
 <p><a id="declaring"></a></p>
-</section>
-<section id="declaring-permissions" class="level2">
-<h2>Declaring Permissions</h2>
+<h2 id="declaring-permissions">Declaring Permissions</h2>
 <p>Once it has been determined which permissions the app/plugin requires, declaration is handled as follows:</p>
 <ul>
 <li><p>If you are developing a native plugin, you must declare permissions within <code>metadata.lua</code>. This ensures that the permissions are automatically imported for Solar2D users.</p>
@@ -167,33 +161,24 @@ Important
 &lt;/manifest></pre>
 </div>
 <p><a id="extended"></a></p>
-</section>
-<section id="extended-permission-apis" class="level2">
-<h2>Extended Permission APIs</h2>
+<h2 id="extended-permission-apis">Extended Permission APIs</h2>
 <p>Supporting runtime permissions in Corona is very similar to supporting them in native Android apps. This guide is intended as a supplement to Google’s <a href="https://developer.android.com/training/permissions/requesting.html">Requesting Permissions at Run Time</a> guide and follows along in parallel with it.</p>
 <p>In Corona, we have provided an interface for developers to handle their permission requests without having to worry about API Levels or <a href="https://www.owasp.org/images/c/ca/ASDC12-An_InDepth_Introduction_to_the_Android_Permissions_Modeland_How_to_Secure_MultiComponent_Applications.pdf#page=11">permission leak</a>.</p>
 <p>The majority of the functionality you’ll need comes from our <code>com.ansca.corona.permissions.PermissionsServices</code> class. This provides several APIs intended to bridge Google’s permission handling with the <nobr>cross-platform</nobr> manner that Corona handles permissions. It also provides <nobr>easy-to-use</nobr> APIs for gathering information about the state of the <code>AndroidManifest.xml</code> file, as well as the state of various permissions.</p>
 <p>See <a href="#permission-checking">Checking for Permissions</a> and <a href="#permission-requesting">Requesting Permissions</a> below for details.</p>
 <p><a id="checking"></a></p>
-</section>
-<section id="checking-for-permissions" class="level2">
-<h2>Checking for Permissions</h2>
+<h2 id="checking-for-permissions">Checking for Permissions</h2>
 <p>This can be done via Google’s <a href="https://developer.android.com/reference/android/content/Context.html#checkSelfPermission%28java.lang.String%29">context.checkSelfPermission()</a> API, however it’s only available in API Level 23, it doesn’t protect against <a href="https://www.owasp.org/images/c/ca/ASDC12-An_InDepth_Introduction_to_the_Android_Permissions_Modeland_How_to_Secure_MultiComponent_Applications.pdf#page=11">permission leak</a>, and it ignores instances when a permission is not listed in <code>AndroidManifest.xml</code>. Instead, we recommend checking for permissions using Corona’s <code>PermissionsServices.getPermissionStateFor()</code><!-- (TODO: LINK) --> API. This provides the state of a permission on all supported Android versions and can also determine if the desired permission is missing from <code>AndroidManifest.xml</code>.</p>
 <pre class="brush: java;">// Determine the PermissionState for the our ability to send SMS messages.
 PermissionsServices permissionsServices = new PermissionsServices(CoronaEnvironment.getApplicationContext());
 PermissionState sendSMSState = permissionsServices.getPermissionStateFor(PermissionsServices.Permission.SEND_SMS);</pre>
 <p>Here, we use a <code>PermissionsServices</code> instance to query the state of the <code>SEND.SMS</code> permission. If we get <code>PermissionState.GRANTED</code> back, we know that we’re able to continue to call code which requires this permission.</p>
 <p><a id="states"></a></p>
-</section>
-<section id="permission-states" class="level2">
-<h2>Permission States</h2>
+<h2 id="permission-states">Permission States</h2>
 <p><code>PermissionsServices.getPermissionStateFor()</code> returns a <code>PermissionState</code> enum with one of the following values. It’s important that your app/plugin can handle each one of these possible permission states without crashing or getting into a bad state.</p>
-<section id="permissionstate.granted" class="level3">
-<h3>PermissionState.GRANTED</h3>
+<h3 id="permissionstate.granted">PermissionState.GRANTED</h3>
 <p>This permission has been granted by the user. Corresponds to Google’s <code>android.content.pm.PackageManager.PERMISSION_GRANTED</code>. When a permission is in this state, you’re permitted to do whatever necessary that requires the permission.</p>
-</section>
-<section id="permissionstate.missing" class="level3">
-<h3>PermissionState.MISSING</h3>
+<h3 id="permissionstate.missing">PermissionState.MISSING</h3>
 <p>This permission isn’t listed in the app’s <code>AndroidManifest.xml</code> file. If a permission is in this state, one of the following scenarios may apply:</p>
 <ul>
 <li>For native plugins, <code>metadata.lua</code> may not have specified the permission as being required.</li>
@@ -203,9 +188,7 @@ PermissionState sendSMSState = permissionsServices.getPermissionStateFor(Permiss
 <pre class="brush: java;">// Display a "missing from manifest" alert
 PermissionsServices permissionsServices = new PermissionsServices(CoronaEnvironment.getApplicationContext());
 permissionsServices.showPermissionMissingFromManifestAlert(PermissionsServices.Permission.CAMERA, "The &lt;Super Cool QR Scanner Plugin> requires access to the device's camera(s)!");</pre>
-</section>
-<section id="permissionstate.denied" class="level3">
-<h3>PermissionState.DENIED</h3>
+<h3 id="permissionstate.denied">PermissionState.DENIED</h3>
 <p>This permission has either been explicitly denied, or has not yet been requested. Corresponds to Google’s <code>android.content.pm.PackageManager.PERMISSION_DENIED</code>.</p>
 <p>If a permission is in this state, it means that the permission is specified in the project’s <code>AndroidManifest.xml</code> file, but the Android OS has denied the app access to it. At this point, you should check whether the user still wants requests for the permission via <code>PermissionsServices.shouldNeverAskAgain()</code> <!-- TODO: LINK -->. Assuming the user still wants requests for this permission, the app should now <a href="#permission-requesting">request access</a> to the denied permission.</p>
 <pre class="brush: java;">// Request permission to use external storage
@@ -229,10 +212,7 @@ switch(writeExternalStoragePermissionState) {
         doDangerousWork();
 }</pre>
 <p><a id="requesting"></a></p>
-</section>
-</section>
-<section id="requesting-permissions" class="level2">
-<h2>Requesting Permissions</h2>
+<h2 id="requesting-permissions">Requesting Permissions</h2>
 <p>Now that you know how to determine the state of a permission, you’ll need to request required permissions using <code>permissionsServices.requestPermissions()</code>. Read further to learn about <code>PermissionsSettings</code> and <code>OnRequestPermissionsHandler</code>.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -240,8 +220,7 @@ Important
 </div>
 <p>Calling <code>PermissionsServices.requestPermissions()</code> is asynchronous and it will temporarily suspend the user’s application while presenting the permission UI to the user. The response will be on the main UI thread, not on the Lua thread. Be sure to use a <code>CoronaRuntimeTaskDispatcher</code> if necessary.</p>
 </div>
-<section id="using-permissions-settings" class="level3">
-<h3>Using Permissions Settings</h3>
+<h3 id="using-permissions-settings">Using Permissions Settings</h3>
 <p>A <code>PermissionsSettings</code> object is used to define the permissions you want to request. For example, you can request a single permission:</p>
 <pre class="brush: java;">// Define that we will request permission to write to external storage
 PermissionsSettings settings = new PermissionsSettings(PermissionsServices.Permission.WRITE_EXTERNAL_STORAGE);
@@ -255,9 +234,7 @@ PermissionsSettings settings = new PermissionsSettings(new String[] {Permissions
 PermissionsServices permissionsServices = new PermissionsServices(CoronaEnvironment.getApplicationContext());
 permissionsServices.requestPermissions(settings, MyOnRequestPermissionsHandler);</pre>
 <p>In both of these examples, <code>MyOnRequestPermissionsHandler</code> is an implementation of the <code>OnRequestPermissionsHandler</code>. Learn more about this in the next section.</p>
-</section>
-<section id="request-permissions-handler" class="level3">
-<h3>Request Permissions Handler</h3>
+<h3 id="request-permissions-handler">Request Permissions Handler</h3>
 <p>As <code>PermissionsServices.requestPermissions()</code> is asynchronous, a callback is required to indicate when the user has finished denying or granting the requested permissions. This is done through the <code>CoronaActivity.OnRequestPermissionsResultHandler</code> interface. When the user is finished, the <code>onHandleRequestPermissionsResult</code> method from this interface will be called.</p>
 <p>Here is a basic implementation:</p>
 <pre class="brush: java;">private class MyRequestPermissionsResultHandler implements CoronaActivity.OnRequestPermissionsResultHandler {
@@ -285,10 +262,7 @@ MyRequestPermissionsResultHandler handler = new MyRequestPermissionsResultHandle
 PermissionsServices permissionsServices = new PermissionsServices(CoronaEnvironment.getApplicationContext());
 permissionsServices.requestPermissions(settings, handler);</pre>
 <p><a id="complete-example"></a></p>
-</section>
-</section>
-<section id="complete-example" class="level2">
-<h2>Complete Example</h2>
+<h2 id="complete-example">Complete Example</h2>
 <p>Putting this together, we can write a class that implements <code>CoronaActivity.OnRequestPermissionsResultHandler</code> and handles permissions for us. The implementation may look like this:</p>
 <pre class="brush: java;">private class MyFileIOFunctionRequestPermissionsResultHandler implements CoronaActivity.OnRequestPermissionsResultHandler {
     public void handleRun() {
@@ -385,8 +359,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

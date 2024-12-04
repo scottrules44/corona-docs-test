@@ -64,8 +64,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/event/index.html">Events</a>  ▸  <a href="../../../api/event/system/index.html">system</a>  ▸  <a href="../../../api/event/system/commandLineArgs.html">commandLineArgs</a>
 </div>
-<section id="event.commandlineargs" class="level1">
-<h1>event.commandLineArgs</h1>
+<h1 id="event.commandlineargs">event.commandLineArgs</h1>
 <blockquote>
 <table>
 <tbody>
@@ -92,8 +91,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>An array of <a href="../../../api/type/String.html">strings</a> representing command line arguments that were given to subsequent launches of a <nobr>single-instance-only</nobr> Win32 desktop app that is already running. This property only exists when <a href="../../../api/event/system/type.html">event.type</a> is <code>"applicationOpen"</code>.</p>
 <p>If a Win32 desktop app is set up to be <nobr>single-instance-only</nobr> in its <code>build.settings</code> file (<a href="../../../guide/distribution/win32Build/index.html#singleinstance">reference</a>), subsequent launches of the app will bring the first instance’s window to the front of the desktop instead. If any command line arguments were provided to the second instance, its arguments are delivered to the first instance via an <code>"applicationOpen"</code> typed <a href="../../../api/event/system/index.html">system</a> event via this property.</p>
 <div class="guide-notebox">
@@ -102,9 +100,7 @@ Note
 </div>
 <p>This property is only supported by Win32 desktop apps. It will be an empty array on all other platforms when <a href="../../../api/event/system/type.html">event.type</a> is set to <code>"applicationOpen"</code>.</p>
 </div>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>An <code>"applicationOpen"</code> typed <a href="../../../api/event/system/index.html">system</a> event will <strong>not</strong> be dispatched:</p>
 <ul>
 <li>If the Win32 desktop app’s <code>singleInstance</code> build setting is set to <code>false</code> (<a href="../../../guide/distribution/win32Build/index.html#singleinstance">reference</a>).</li>
@@ -122,8 +118,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

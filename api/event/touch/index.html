@@ -83,8 +83,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/event/index.html">Events</a>  ▸  <a href="../../../api/event/touch/index.html">touch</a>
 </div>
-<section id="touch" class="level1">
-<h1>touch</h1>
+<h1 id="touch">touch</h1>
 <blockquote>
 <table>
 <tbody>
@@ -107,54 +106,24 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>When the user’s finger touches the screen, a hit event is generated and dispatched to display objects in the display hierarchy. Only those objects that intersect the hit location (the location of the finger on the screen) will be candidates for receiving events.</p>
 <p>Multitouch events are an extension of single touch events. Multitouch is enabled by the <a href="../../../api/library/system/activate.html">system.activate()</a> API.</p>
-</section>
-<section id="properties" class="level2">
-<h2>Properties</h2>
-<section id="event.idapi.event.touch.id" class="level4">
-<h4><a href="../../../api/event/touch/id.html">event.id</a></h4>
-</section>
-<section id="event.nameapi.event.touch.name" class="level4">
-<h4><a href="../../../api/event/touch/name.html">event.name</a></h4>
-</section>
-<section id="event.phaseapi.event.touch.phase" class="level4">
-<h4><a href="../../../api/event/touch/phase.html">event.phase</a></h4>
-</section>
-<section id="event.pressureapi.event.touch.pressure" class="level4">
-<h4><a href="../../../api/event/touch/pressure.html">event.pressure</a></h4>
-</section>
-<section id="event.targetapi.event.touch.target" class="level4">
-<h4><a href="../../../api/event/touch/target.html">event.target</a></h4>
-</section>
-<section id="event.timeapi.event.touch.time" class="level4">
-<h4><a href="../../../api/event/touch/time.html">event.time</a></h4>
-</section>
-<section id="event.xapi.event.touch.x" class="level4">
-<h4><a href="../../../api/event/touch/x.html">event.x</a></h4>
-</section>
-<section id="event.xstartapi.event.touch.xstart" class="level4">
-<h4><a href="../../../api/event/touch/xStart.html">event.xStart</a></h4>
-</section>
-<section id="event.xdeltaapi.event.touch.xdelta" class="level4">
-<h4><a href="../../../api/event/touch/xDelta.html">event.xDelta</a></h4>
-</section>
-<section id="event.yapi.event.touch.y" class="level4">
-<h4><a href="../../../api/event/touch/y.html">event.y</a></h4>
-</section>
-<section id="event.ystartapi.event.touch.ystart" class="level4">
-<h4><a href="../../../api/event/touch/yStart.html">event.yStart</a></h4>
-</section>
-<section id="event.ydeltaapi.event.touch.ydelta" class="level4">
-<h4><a href="../../../api/event/touch/yDelta.html">event.yDelta</a></h4>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="function-listener" class="level5">
-<h5>Function Listener</h5>
+<h2 id="properties">Properties</h2>
+<h4 id="event.idapi.event.touch.id"><a href="../../../api/event/touch/id.html">event.id</a></h4>
+<h4 id="event.nameapi.event.touch.name"><a href="../../../api/event/touch/name.html">event.name</a></h4>
+<h4 id="event.phaseapi.event.touch.phase"><a href="../../../api/event/touch/phase.html">event.phase</a></h4>
+<h4 id="event.pressureapi.event.touch.pressure"><a href="../../../api/event/touch/pressure.html">event.pressure</a></h4>
+<h4 id="event.targetapi.event.touch.target"><a href="../../../api/event/touch/target.html">event.target</a></h4>
+<h4 id="event.timeapi.event.touch.time"><a href="../../../api/event/touch/time.html">event.time</a></h4>
+<h4 id="event.xapi.event.touch.x"><a href="../../../api/event/touch/x.html">event.x</a></h4>
+<h4 id="event.xstartapi.event.touch.xstart"><a href="../../../api/event/touch/xStart.html">event.xStart</a></h4>
+<h4 id="event.xdeltaapi.event.touch.xdelta"><a href="../../../api/event/touch/xDelta.html">event.xDelta</a></h4>
+<h4 id="event.yapi.event.touch.y"><a href="../../../api/event/touch/y.html">event.y</a></h4>
+<h4 id="event.ystartapi.event.touch.ystart"><a href="../../../api/event/touch/yStart.html">event.yStart</a></h4>
+<h4 id="event.ydeltaapi.event.touch.ydelta"><a href="../../../api/event/touch/yDelta.html">event.yDelta</a></h4>
+<h2 id="examples">Examples</h2>
+<h5 id="function-listener">Function Listener</h5>
 <pre class="brush: lua;">local object = display.newImage( "ball.png" )
 object.id = "ball object"
 
@@ -167,9 +136,7 @@ local function onObjectTouch( event )
     return true
 end
 object:addEventListener( "touch", onObjectTouch )</pre>
-</section>
-<section id="table-listener-1" class="level5">
-<h5>Table Listener 1</h5>
+<h5 id="table-listener-1">Table Listener 1</h5>
 <pre class="brush: lua;">local object = display.newImage( "ball.png" )
 object.id = "ball object"
 
@@ -182,9 +149,7 @@ end
 
 object.touch = onObjectTouch
 object:addEventListener( "touch", object )</pre>
-</section>
-<section id="table-listener-2" class="level5">
-<h5>Table Listener 2</h5>
+<h5 id="table-listener-2">Table Listener 2</h5>
 <pre class="brush: lua;">local object = display.newImage( "ball.png" )
 object.id = "ball object"
 
@@ -195,9 +160,7 @@ function object:touch( event )
     return true
 end 
 object:addEventListener( "touch", object )</pre>
-</section>
-<section id="comprehensive" class="level5">
-<h5>Comprehensive</h5>
+<h5 id="comprehensive">Comprehensive</h5>
 <pre class="brush: lua;">local object = display.newImage( "ball.png" )
 object.id = "ball object"
 
@@ -233,9 +196,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

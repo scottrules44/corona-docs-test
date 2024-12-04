@@ -69,13 +69,11 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/games/index.html">Gaming/Physics</a>
 </div>
-<section id="liquidfun-essentials" class="level1">
-<h1>LiquidFun Essentials</h1>
+<h1 id="liquidfun-essentials">LiquidFun Essentials</h1>
 <p>The <a href="https://google.github.io/liquidfun/">LiquidFun</a> physics system allows you to simulate faucets, pools, waves, streams, and other amazing <nobr>physics-based</nobr> effects similar to those featured in <nobr>Corona-powered</nobr> games like <a href="http://freeze2.com">Freeze! 2 – Brothers</a> or other games where the physics world is not composed entirely of rigid objects. In addition to basic liquid effects, you can implement <nobr>semi-liquid</nobr> elastic/gelatin objects, create liquids that color mix and blend together when they come in contact, detect and manipulate “regions” of the liquids, and more.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kbAwJtuRV0U?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen>
 </iframe>
-<section id="particle-systems" class="level2">
-<h2>Particle Systems</h2>
+<h2 id="particle-systems">Particle Systems</h2>
 <p>In LiquidFun, all liquids are represented by a <strong>particle system</strong>, meaning that a stream or pool is made up of many “particles” which interact together to simulate the desired effect. Each particle is round and they are the minimal unit of matter in a particle system. By default, a particle behaves as a liquid, but you can change the behavior of individual particles or groups of particles. You can also set particle properties like position, velocity, and color.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -104,9 +102,7 @@ local testParticleSystem = physics.newParticleSystem(
     imageRadius = 4
 })</pre>
 <p>The complete list of other parameters and their purpose is beyond the scope of this tutorial, so please refer to the <a href="../../../api/library/physics/newParticleSystem.html#parameter-reference">documentation</a> or the <a href="https://google.github.io/liquidfun/Programmers-Guide/html/md__chapter11__particles.html">LiquidFun Programmer’s Guide</a> for more information.</p>
-</section>
-<section id="creating-particles" class="level2">
-<h2>Creating Particles</h2>
+<h2 id="creating-particles">Creating Particles</h2>
 <p>Once you have an established particle system, new particles are generated using the <a href="../../../api/type/ParticleSystem/createParticle.html">object:createParticle()</a> method. This accepts a table of optional parameters which control the behavior of each generated particle, for example:</p>
 <pre class="brush: lua;">testParticleSystem:createParticle(
 {
@@ -161,9 +157,7 @@ end
 timer.performWithDelay( 20, onTimer, 0 )</pre>
 </div>
 </div>
-</section>
-<section id="creating-particle-groups" class="level2">
-<h2>Creating Particle Groups</h2>
+<h2 id="creating-particle-groups">Creating Particle Groups</h2>
 <p>In addition to creating single particles in a system, you can create <strong>groups</strong> of related particles using the <a href="../../../api/type/ParticleSystem/createGroup.html">object:createGroup()</a> function. Essentially, this “fills” a defined region with multiple particles in one command and the group can be assigned various behavioral and visual properties. For example:</p>
 <pre class="brush: lua;">local physics = require( "physics" )
 physics.start()
@@ -185,16 +179,12 @@ testParticleSystem:createGroup(
     flags = { "water", "colorMixing" }
 })</pre>
 <p>This code generates a <strong>rectangular</strong> particle group, but you can also create circular groups and arbitrary shape groups. Please refer to the <a href="../../../api/type/ParticleSystem/createGroup.html#parameter-reference">documentation</a> for information on creating different group types.</p>
-</section>
-<section id="applying-forceimpulse" class="level2">
-<h2>Applying Force/Impulse</h2>
+<h2 id="applying-forceimpulse">Applying Force/Impulse</h2>
 <p>Linear force can be applied to the center of all particles in a particle system via the <a href="../../../api/type/ParticleSystem/applyForce.html">object:applyForce()</a> API. This method accepts two numerical values indicating the amount of force to apply in the <strong>x</strong> and <strong>y</strong> directions respectively. For instance:</p>
 <pre class="brush: lua;">testParticleSystem:applyForce( 0, -9.8 * testParticleSystem.particleMass )</pre>
 <p>Alternatively, you can apply a linear <strong>impulse</strong> to all particles with the <a href="../../../api/type/ParticleSystem/applyLinearImpulse.html">object:applyLinearImpulse()</a> API. This is similar to the above method except that an impulse is a single momentary jolt in <nobr>newton-seconds</nobr>. For example:</p>
 <pre class="brush: lua;">testParticleSystem:applyLinearImpulse( 0, -9.8 * testParticleSystem.particleMass )</pre>
-</section>
-<section id="region-querying" class="level2">
-<h2>Region Querying</h2>
+<h2 id="region-querying">Region Querying</h2>
 <p>While generating individual particles and even groups of particles can provide for some amazing effects, at some point you may need to detect and manipulate particles within a defined region. This is accomplished via the <a href="../../../api/type/ParticleSystem/queryRegion.html">object:queryRegion()</a> function using the following syntax:</p>
 <pre class="brush: lua;">ParticleSystem:queryRegion( upperLeftX, upperLeftY, lowerRightX, lowerRightY, hitProperties )</pre>
 <p>The defined region must be rectangular and it’s defined by the first four parameters — simply specify the <nobr>upper-left</nobr> corner <nobr>(<code>upperLeftX</code>/<code>upperleftY</code>)</nobr> and the <nobr>lower-right</nobr> corner <nobr>(<code>lowerRightX</code>/<code>lowerRightY</code>)</nobr> to query in a rectangular region created by these coordinates.</p>
@@ -213,13 +203,9 @@ Note
 </div>
 <p>All of the values potentially applied in the <code>hitProperties</code> table are <strong>delta</strong> values that will be applied to each particle’s current associated value(s). For example, if you apply a <code>velocityY</code> of <code>-40</code> to the particles in the region, it does not directly set <code>-40</code> as the actual <strong>y</strong> velocity on them, but rather it applies that velocity in delta relation to any existing velocity the particles already have.</p>
 </div>
-</section>
-<section id="particle-collisions" class="level2">
-<h2>Particle Collisions</h2>
+<h2 id="particle-collisions">Particle Collisions</h2>
 <p>Detecting collision events between LiquidFun particles and other physical objects is an <nobr>in-depth</nobr> topic beyond the scope of this tutorial. Please see the <a href="../../../tutorial/games/collisionsLiquidFun/index.html">LiquidFun Particle Collisions</a> tutorial for more details on this topic.</p>
-</section>
-<section id="conclusion" class="level2">
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>This tutorial is meant to be a brief introduction to LiquidFun physics in Corona, but the capabilities of the framework extend beyond this scope. Please consult the <a href="../../../api/library/physics/newParticleSystem.html#parameter-reference">documentation</a> or the <a href="https://google.github.io/liquidfun/Programmers-Guide/html/md__chapter11__particles.html">LiquidFun Programmer’s Guide</a> for more information.</p>
 <hr>
 <div id="footer">
@@ -231,8 +217,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

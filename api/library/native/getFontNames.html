@@ -66,8 +66,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/native/index.html">native</a>  ▸  <a href="../../../api/library/native/getFontNames.html">getFontNames</a>
 </div>
-<section id="native.getfontnames" class="level1">
-<h1>native.getFontNames()</h1>
+<h1 id="native.getfontnames">native.getFontNames()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -102,23 +101,16 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Returns an array of the available native fonts.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>The fonts available in the Corona Simulator may be different from those available on your device. In general, iOS device fonts can be accessed from the Corona Simulator for macOS, but additional macOS fonts will also be available that may not work on the device. If you encounter a problem of fonts appearing in the Corona Simulator but not on your device, this is the most likely cause. When in doubt, check the available device font names using <code>native.getFontNames()</code>.</p></li>
 <li><p>Also use <code>native.getFontNames()</code> if you’re using custom fonts. On Android, the font name must be spelled <strong>exactly</strong> right, but often the font name is different from the font file name; for a given font file, the font name can be different on Android than on iOS.</p></li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">native.getFontNames()</pre>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local systemFonts = native.getFontNames()
 
 -- Set the string to query for (part of the font name to locate)
@@ -143,8 +135,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

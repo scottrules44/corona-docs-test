@@ -67,8 +67,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/Runtime/index.html">Runtime</a>  ▸  <a href="../../../api/type/Runtime/hasEventSource.html">hasEventSource</a>
 </div>
-<section id="runtimehaseventsource" class="level1">
-<h1>Runtime:hasEventSource()</h1>
+<h1 id="runtimehaseventsource">Runtime:hasEventSource()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -103,17 +102,13 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Determines if the device is capable of providing events for a given event source such as <code>"accelerometer"</code> or <code>"gyroscope"</code>.</p>
 <p>This function returns <code>true</code> if the event source exists, meaning it is okay to call <a href="../../../api/type/EventDispatcher/addEventListener.html">EventDispatcher:addEventListener()</a> to handle its events.</p>
 <p>It returns <code>false</code> if the event source does not exist. For example, if this returns false for <code>"gyroscope"</code> then this would indicate that the appropriate hardware was not found on the device.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">Runtime:hasEventSource( eventSourceName )</pre>
-<section id="eventsourcename-required" class="level5">
-<h5>eventSourceName <sub><sup>(required)</sup></sub></h5>
+<h5 id="eventsourcename-required">eventSourceName <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The name of the event source for which to check existence. The following values are valid:</p>
 <ul>
 <li><code>"accelerometer"</code></li>
@@ -126,10 +121,7 @@
 <li><code>"multitouch"</code></li>
 <li><code>"orientation"</code></li>
 </ul>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">if Runtime:hasEventSource( "gyroscope" ) then
     Runtime:addEventListener( "gyroscope", myListener )
 end</pre>
@@ -143,8 +135,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

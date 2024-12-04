@@ -88,8 +88,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/fuse/index.html">fuse</a>  ▸  <a href="../../plugin/fuse/legacy.html">legacy</a>
 </div>
-<section id="fuse." class="level1">
-<h1>fuse.*</h1>
+<h1 id="fuse.">fuse.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -112,71 +111,38 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Fuse is the only monetization platform that lets you give each of your users a great experience, optimize monetization across <nobr>in-app</nobr> purchases and ads, and grow engagement. Fuse Powered is 100% focused on helping publishers make more money.</p>
 <p>For more information please visit <a href="http://www.fusepowered.com/corona">www.fusepowered.com/corona</a>.</p>
-</section>
-<section id="fuse-registration" class="level2">
-<h2>Fuse Registration</h2>
+<h2 id="fuse-registration">Fuse Registration</h2>
 <p>A Fuse account will be created for you automatically when you perform your first app build via Corona SDK build 2015.XXXX or later. Following that, you will receive an email from Fuse Powered with account information and instructions for logging into the Fuse dashboard. These credentials will be different from those associated with Corona SDK and <a href="http://www.coronalabs.com">coronalabs.com</a>.</p>
 <p>If you have any issues accessing your Fuse account, please contact [INSERT_SUPPORT_INFO].</p>
-<section id="manual-account-linking" class="level3">
-<h3>Manual Account linking</h3>
+<h3 id="manual-account-linking">Manual Account linking</h3>
 <p>If you happen to already have an existing Fuse account, then you will not be able to do device builds until your Fuse and Corona accounts are linked. Please contact [INSERT_SUPPORT_INFO] so we can manually link your accounts.</p>
-</section>
-</section>
-<section id="integration" class="level2">
-<h2>Integration</h2>
+<h2 id="integration">Integration</h2>
 <p>If you are using Corona SDK build 2015.XXXX or later, the Fuse plugin will be automatically integrated into your app. Please proceed to the function and event documentation below to learn how to fully implement Fuse Powered functionality.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">local fuse = require( "plugin.fuse" )</pre>
-</section>
-<section id="functions" class="level2">
-<h2>Functions</h2>
-<section id="fuse.initplugin.fuse.init" class="level4">
-<h4><a href="../../plugin/fuse/init.html">fuse.init()</a></h4>
-</section>
-<section id="fuse.showplugin.fuse.show" class="level4">
-<h4><a href="../../plugin/fuse/show.html">fuse.show()</a></h4>
-</section>
-<section id="fuse.checkloadedplugin.fuse.checkloaded" class="level4">
-<h4><a href="../../plugin/fuse/checkLoaded.html">fuse.checkLoaded()</a></h4>
-</section>
-<section id="fuse.checkcontentplugin.fuse.checkcontent" class="level4">
-<h4><a href="../../plugin/fuse/checkContent.html">fuse.checkContent()</a></h4>
-</section>
-<section id="fuse.getpropertyplugin.fuse.getproperty" class="level4">
-<h4><a href="../../plugin/fuse/getProperty.html">fuse.getProperty()</a></h4>
-</section>
-<section id="fuse.loadplugin.fuse.load" class="level4">
-<h4><a href="../../plugin/fuse/load.html">fuse.load()</a></h4>
-</section>
-<section id="fuse.registerplugin.fuse.register" class="level4">
-<h4><a href="../../plugin/fuse/register.html">fuse.register()</a></h4>
+<h2 id="functions">Functions</h2>
+<h4 id="fuse.initplugin.fuse.init"><a href="../../plugin/fuse/init.html">fuse.init()</a></h4>
+<h4 id="fuse.showplugin.fuse.show"><a href="../../plugin/fuse/show.html">fuse.show()</a></h4>
+<h4 id="fuse.checkloadedplugin.fuse.checkloaded"><a href="../../plugin/fuse/checkLoaded.html">fuse.checkLoaded()</a></h4>
+<h4 id="fuse.checkcontentplugin.fuse.checkcontent"><a href="../../plugin/fuse/checkContent.html">fuse.checkContent()</a></h4>
+<h4 id="fuse.getpropertyplugin.fuse.getproperty"><a href="../../plugin/fuse/getProperty.html">fuse.getProperty()</a></h4>
+<h4 id="fuse.loadplugin.fuse.load"><a href="../../plugin/fuse/load.html">fuse.load()</a></h4>
+<h4 id="fuse.registerplugin.fuse.register"><a href="../../plugin/fuse/register.html">fuse.register()</a></h4>
 <div class="h2-override">
 <p>Events</p>
 <h2 id="events">Events</h2>
 </div>
-</section>
-<section id="adsrequestplugin.fuse.event.adsrequest" class="level4">
-<h4><a href="../../plugin/fuse/event/adsRequest/index.html">adsRequest</a></h4>
-</section>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
-<section id="app-key" class="level3">
-<h3>App Key</h3>
+<h4 id="adsrequestplugin.fuse.event.adsrequest"><a href="../../plugin/fuse/event/adsRequest/index.html">adsRequest</a></h4>
+<h2 id="project-settings">Project Settings</h2>
+<h3 id="app-key">App Key</h3>
 <p>When the Corona Simulator does a device build, the build server automatically provisions a unique app key based on the app’s unique identifier (e.g. bundle identifier on iOS).</p>
 <p>NOTE: App keys are issued on a per-platform basis. If you deploy your app on multiple platforms, the app uses a different app key for each platform.</p>
-</section>
-<section id="newer-daily-builds" class="level3">
-<h3>Newer Daily Builds</h3>
+<h3 id="newer-daily-builds">Newer Daily Builds</h3>
 <p>For daily builds 2015.2618 and newer, the device build process in the Corona Simulator is seamlessly integrated with Fuse.</p>
-<section id="setup" class="level4">
-<h4>Setup</h4>
+<h4 id="setup">Setup</h4>
 <p>During the soft launch period, these features are temporarily hidden. You must activate them explicitly:</p>
 <ul>
 <li>On Mac, run following command from Terminal:
@@ -186,15 +152,10 @@
 <li>On Win, add a registry setting. From the Registry Editor, select the <code>HKEY_CURRENT_USER\Software\Ansca Corona\Corona Simulator\Preferences</code> setting and add a DWORD value with name <code>debugMonetizationPlugin</code> and value <code>1</code>:</li>
 </ul>
 <p>[][images.simulator.win-fuse-preference]</p>
-</section>
-<section id="device-builds" class="level4">
-<h4>Device Builds</h4>
+<h4 id="device-builds">Device Builds</h4>
 <p>To take full advantage of Fuse Powered functionality, ensure that monetization is enabled in the device build dialog:</p>
 <p><img src="../../images/simulator/device-build-dialog.png" /></p>
-</section>
-</section>
-<section id="legacy-build-usage" class="level3">
-<h3>Legacy Build Usage</h3>
+<h3 id="legacy-build-usage">Legacy Build Usage</h3>
 <p>If you are using a build older than 2015.2618, you must modify the <code>plugins</code> table of <code>build.settings</code>. This ensures that the build server will integrate the plugin during the build phase.</p>
 <pre class="brush: lua;">settings =
 {
@@ -211,10 +172,7 @@
         },
     },      
 }</pre>
-</section>
-</section>
-<section id="enterprise" class="level2">
-<h2>Enterprise</h2>
+<h2 id="enterprise">Enterprise</h2>
 <p>If you’re using Corona Enterprise for iOS, ensure that the following static libraries are linked:</p>
 <ul>
 <li><code>libplugin_fuse.a</code></li>
@@ -225,9 +183,7 @@
 If using Corona Enterprise for Android, ...
 
 -->
-</section>
-<section id="support" class="level2">
-<h2>Support</h2>
+<h2 id="support">Support</h2>
 <ul>
 <li><a href="https://www.fusepowered.com/contact/">https://www.fusepowered.com/contact/</a></li>
 <li><a href="http://forums.coronalabs.com/forum/646-fusepowered/">Corona Forums</a></li>
@@ -242,8 +198,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

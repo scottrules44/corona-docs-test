@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/system/index.html">system</a>  ▸  <a href="../../../api/library/system/ResourceDirectory.html">ResourceDirectory</a>
 </div>
-<section id="system.resourcedirectory" class="level1">
-<h1>system.ResourceDirectory</h1>
+<h1 id="system.resourcedirectory">system.ResourceDirectory</h1>
 <blockquote>
 <table>
 <tbody>
@@ -112,8 +111,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Used with <a href="../../../api/library/system/pathForFile.html">system.pathForFile()</a> to create a path for retrieving files where all the application assets exist, for example image and sound files. This is often called the “app bundle.”</p>
 <p>This property can also be used with other APIs requesting <code>baseDir</code> as a parameter, for example <a href="../../../api/library/display/newImageRect.html">display.newImageRect()</a>. The resource directory is generally the default directory if no other directory is specified.</p>
 <div class="guide-notebox-imp">
@@ -128,23 +126,15 @@ Note
 </div>
 <p>In the Corona Simulator, this will be in a sandboxed folder on a <nobr>per-application</nobr> basis, but unlike the <code>/Documents</code> and <code>/tmp</code> directories, the resource directory is not viewable via <nobr><strong>File</strong> → <strong>Show Project Sandbox</strong></nobr>.</p>
 </div>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>To restate what was mentioned above: <code>system.ResourceDirectory</code> is where your <code>main.lua</code> file and generally all of your asset (resource) files are stored. For security reasons, this directory is <nobr>read-only</nobr> and enforced by the operating system, not by Corona.</p>
-<section id="android" class="level3">
-<h3>Android</h3>
+<h3 id="android">Android</h3>
 <p>File access in Corona is based on the underlining operating system which varies by platform. On iOS devices, you can access files in all of the directories described above. On Android, however, there is no literal <code>system.ResourceDirectory</code> because all resource files reside inside a compressed <code>.apk</code> file.</p>
 <p>Corona allows direct loading of images and audio files using the appropriate APIs, but it has limited access to resource files on Android using the file I/O APIs. Specifically, the following types can not be read from the resources directory: <code>.html</code>, <code>.htm</code>., <code>.3gp</code>, <code>.m4v</code>, <code>.mp4</code>, <code>.png</code>, <code>.jpg</code>, and <code>.ttf</code>.</p>
 <p>Because of this limitation, if you have files of these types bundled in the core directory that you need to copy to another directory, you must change the file name so it can be accessed by the file I/O APIs. For example, if you want to move <code>cat.png</code> from the resource directory to the documents directory, it must be renamed <code>cat.png.txt</code> to be copied. See <a href="../../../guide/data/readWriteFiles/index.html#working-with-subfolders">here</a> for details.</p>
-</section>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">system.ResourceDirectory</pre>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Get path for file "data.txt" in the resource directory
 local path = system.pathForFile( "data.txt", system.ResourceDirectory )
 
@@ -168,8 +158,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -77,8 +77,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../guide/index.html">Developer Guides</a>  ▸  <a href="../../guide/graphics/index.html">Graphics/Audio/Animation</a>
 </div>
-<section id="d-perspective-and-depth" class="level1">
-<h1>2.5D — Perspective and Depth</h1>
+<h1 id="d-perspective-and-depth">2.5D — Perspective and Depth</h1>
 <p>This guide explains how you can achieve interesting 2.5D effects in Solar2D. While Solar2D is not a true 3D engine, its 2.5D capabilities allow you to simulate effects that appear <nobr>three-dimensional</nobr> (3D) without the complexity of working in 3D.</p>
 <div class="guides-toc">
 <ul>
@@ -88,15 +87,11 @@
 </ul>
 </div>
 <p><a id="background"></a></p>
-<section id="background" class="level2">
-<h2>Background</h2>
+<h2 id="background">Background</h2>
 <p>During the Renaissance, <a href="https://en.wikipedia.org/wiki/Filippo_Brunelleschi#Invention_of_linear_perspective">Filippo Brunelleschi</a> demonstrated the geometrical method of perspective that is still used today. This method solved the problem of how to represent three dimensional objects on a 2D plane. Even today, this remains the basis of how 3D computer graphics are represented on the screen. In essence, your eye is tricked into believing that what is rendered on a flat screen is actually 3D.</p>
 <p><a id="perspective"></a></p>
-</section>
-<section id="perspective" class="level2">
-<h2>Perspective</h2>
-<section id="quadrilateral-distortion" class="level3">
-<h3>Quadrilateral Distortion</h3>
+<h2 id="perspective">Perspective</h2>
+<h3 id="quadrilateral-distortion">Quadrilateral Distortion</h3>
 <p>Several <a href="../../guide/media/displayObjects/index.html">display objects</a> can be distorted by general quadrilaterals (quads). For objects with quadrilateral support, each corner has an associated <code>x,y</code> property which specifies how the corner of the object should be distorted. These properties default to <code>0,0</code>, meaning there is no offset.</p>
 <div class="inner-table" style="margin-bottom: 25px;">
 <table>
@@ -216,29 +211,19 @@
 
 logo.path.x4 = -110
 logo.path.y3 = -55</pre>
-</section>
-<section id="transitional-distortion" class="level3">
-<h3>Transitional Distortion</h3>
+<h3 id="transitional-distortion">Transitional Distortion</h3>
 <p>Just as individual corner points can be explicitly set to distort a display object, you can also <a href="../../guide/media/transitionLib/index.html">transition</a> the points for a gradual distortion effect.</p>
 <p>Note that you must reference the <code>object.path</code> property as the first argument in the transition method since you are transitioning the object’s path, not the object itself. Then, in turn, include the specific corner points of the path as the target properties of the transition.</p>
 <pre class="brush: lua;">-- Use "logo.path" as the first argument, not "logo"
 transition.to( logo.path, { time=2000, x2=20, y2=-20, x4=-40, y4=40 } )</pre>
 <p>The following <a href="https://github.com/coronalabs/samples-coronasdk/tree/master/Graphics/Perspective">sample</a> shows some of the interesting effects you can achieve using transitional distortion.</p>
-</section>
-<section id="z-axis-ordering" class="level3">
-<h3>Z-axis Ordering</h3>
+<h3 id="z-axis-ordering">Z-axis Ordering</h3>
 <p>All Solar2D display objects exist on the <code>z=0</code> plane, but they can be ordered as shown in the <a href="../../guide/graphics/group.html">Group Programming</a> guide. When you distort an image, it looks like it exists in a 3D world, but it actually remains in the same plane. Thus, all of the standard object ordering rules will continue to be honored.</p>
-</section>
-<section id="billboarding" class="level3">
-<h3>Billboarding</h3>
+<h3 id="billboarding">Billboarding</h3>
 <p>In the Solar2D graphics model, billboarding is available toll-free. Just create a group and ensure it’s the top-most by calling <a href="../../api/type/DisplayObject/toFront.html">group:toFront()</a>.</p>
-</section>
-<section id="mode-7" class="level3">
-<h3>Mode 7</h3>
+<h3 id="mode-7">Mode 7</h3>
 <p>In <a href="https://en.wikipedia.org/wiki/Mode_7">Super Nintendo Mode 7</a>, you could only place the background in perspective. In Solar2D, you can distort any rectangle to make the image appear in perspective.</p>
-</section>
-<section id="meshes" class="level3">
-<h3>Meshes</h3>
+<h3 id="meshes">Meshes</h3>
 <p>You can build more complex effects by creating a mesh of rectangles and distorting all of the corners for a particular intersection point in the mesh.</p>
 <p><img src="../../images/simulator/mesh.png" /></p>
 <pre class="brush: lua;">local group = display.newGroup()
@@ -263,24 +248,14 @@ c.path.y4 = intersectionY
 d.path.x1 = intersectionX
 d.path.y1 = intersectionY</pre>
 <p><a id="depth"></a></p>
-</section>
-</section>
-<section id="depth" class="level2">
-<h2>Depth</h2>
-<section id="z-axis-scaling" class="level3">
-<h3>Z-axis Scaling</h3>
+<h2 id="depth">Depth</h2>
+<h3 id="z-axis-scaling">Z-axis Scaling</h3>
 <p>In Solar2D, you can simulate depth by scaling objects as they move closer or further from the viewer. This can be used to create an illusion of relative depth, for example a series of trees receding into the distance.</p>
-</section>
-<section id="scrolling" class="level3">
-<h3>Scrolling</h3>
+<h3 id="scrolling">Scrolling</h3>
 <p>Placing images in the background is <nobr>toll-free</nobr> in Solar2D. Consequently, horizontal scrollers, side scrollers, and <nobr>bi-directional</nobr> scrollers are all easily achievable in Solar2D — just make sure that your background is drawn first or move it to the back via <a href="../../api/type/DisplayObject/toBack.html">object:toBack()</a>).</p>
-</section>
-<section id="parallax" class="level3">
-<h3>Parallax</h3>
+<h3 id="parallax">Parallax</h3>
 <p>Parallax provides a sense of “distance” between the camera and moving objects that recede into the simulated space.</p>
-</section>
-<section id="skyboxskydome" class="level3">
-<h3>Skybox/Skydome</h3>
+<h3 id="skyboxskydome">Skybox/Skydome</h3>
 <p>In Solar2D, the skybox/skydome effect is available <nobr>toll-free</nobr>. Just create a group and ensure it’s the <nobr>back-most</nobr> by calling <a href="../../api/type/DisplayObject/toBack.html">group:toBack()</a>.</p>
 <hr>
 <div id="footer">
@@ -292,9 +267,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

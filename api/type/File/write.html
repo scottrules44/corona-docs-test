@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/File/index.html">File</a>  ▸  <a href="../../../api/type/File/write.html">write</a>
 </div>
-<section id="objectwrite" class="level1">
-<h1>object:write()</h1>
+<h1 id="objectwrite">object:write()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,24 +107,15 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Writes the value of each of its arguments to the file. The arguments must be <a href="../../../api/type/String.html">Strings</a> or <a href="../../../api/type/Number.html">Numbers</a>. To write other values, use <code>tostring()</code> or <a href="../../../api/library/string/format.html">string.format()</a> before calling <code>File:write()</code>.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>For security reasons, you are <strong>not</strong> allowed to write files in the <code>system.ResourceDirectory</code> (the directory where the application is stored). You must specify either <code>system.DocumentsDirectory</code>, <code>system.TemporaryDirectory</code>, or <code>system.CachesDirectory</code> in the <a href="../../../api/library/system/pathForFile.html">system.pathForFile()</a> function when opening the file for writing.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">File:write( arg1 [, arg2] [, ...] )</pre>
-<section id="arg1-arg2-required" class="level5">
-<h5>arg1, arg2, … <sub><sup>(required)</sup></sub></h5>
+<h5 id="arg1-arg2-required">arg1, arg2, … <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> One or more strings to be written to the file represented by the <code>File</code> object.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Data (string) to write
 local saveData = "My app state data"
 
@@ -156,8 +146,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

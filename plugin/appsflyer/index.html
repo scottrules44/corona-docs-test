@@ -78,8 +78,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/appsflyer/index.html">appsflyer</a>
 </div>
-<section id="appsflyer." class="level1">
-<h1>appsflyer.*</h1>
+<h1 id="appsflyer.">appsflyer.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -102,8 +101,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>The <a href="https://www.appsflyer.com">AppsFlyer</a> is the world’s leading mobile attribution &amp; marketing analytics platform, helping app marketers around the world make better decisions.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -111,9 +109,7 @@ Important
 </div>
 <p>Check out init parameter <code>hasUserConsent</code> and also <code>setHasUserConsent</code> method to enable GDPR data collection restrictions.</p>
 </div>
-</section>
-<section id="registration" class="level2">
-<h2>Registration</h2>
+<h2 id="registration">Registration</h2>
 <p>Before using this plugin, you’ll need to <a href="https://www.appsflyer.com/get-started">register</a> with AppsFlyer to receive an app ID and Developer Key.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -122,40 +118,18 @@ Important
 <p>According to Facebook’s privacy policy, AppsFlyer (or any other 3rd party mobile measurement partner) cannot provide user-level attribution for Facebook installs unless you accept Facebook’s <a href="https://www.facebook.com/ads/manage/advanced_mobile_measurement/tos">Terms of Service</a>. More info <a href="https://support.appsflyer.com/hc/en-us/articles/207033826">here</a>.</p>
 <p>If you choose not to accept the Terms of Service, Facebook Mobile Ads installs are categorized as ‘Organic’ and you are unable to receive the user level data for Facebook installs.</p>
 </div>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">local appsflyer = require( "plugin.appsflyer" )</pre>
-</section>
-<section id="functions" class="level2">
-<h2>Functions</h2>
-<section id="appsflyer.initplugin.appsflyer.init" class="level4">
-<h4><a href="../../plugin/appsflyer/init.html">appsflyer.init()</a></h4>
-</section>
-<section id="appsflyer.logeventplugin.appsflyer.logevent" class="level4">
-<h4><a href="../../plugin/appsflyer/logEvent.html">appsflyer.logEvent()</a></h4>
-</section>
-<section id="appsflyer.getversionplugin.appsflyer.getversion" class="level4">
-<h4><a href="../../plugin/appsflyer/getVersion.html">appsflyer.getVersion()</a></h4>
-</section>
-<section id="appsflyer.sethasuserconsentplugin.appsflyer.sethasuserconsent" class="level4">
-<h4><a href="../../plugin/appsflyer/setHasUserConsent.html">appsflyer.setHasUserConsent()</a></h4>
-</section>
-<section id="appsflyer.logpurchaseplugin.appsflyer.logpurchase" class="level4">
-<h4><a href="../../plugin/appsflyer/logPurchase.html">appsflyer.logPurchase()</a></h4>
-</section>
-<section id="appsflyer.getappsflyeruidplugin.appsflyer.getappsflyeruid" class="level4">
-<h4><a href="../../plugin/appsflyer/getAppsFlyerUID.html">appsflyer.getAppsFlyerUID()</a></h4>
-</section>
-</section>
-<section id="events" class="level2">
-<h2>Events</h2>
-<section id="analyticsrequestplugin.appsflyer.event.analyticsrequest" class="level4">
-<h4><a href="../../plugin/appsflyer/event/analyticsRequest/index.html">analyticsRequest</a></h4>
-</section>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
+<h2 id="functions">Functions</h2>
+<h4 id="appsflyer.initplugin.appsflyer.init"><a href="../../plugin/appsflyer/init.html">appsflyer.init()</a></h4>
+<h4 id="appsflyer.logeventplugin.appsflyer.logevent"><a href="../../plugin/appsflyer/logEvent.html">appsflyer.logEvent()</a></h4>
+<h4 id="appsflyer.getversionplugin.appsflyer.getversion"><a href="../../plugin/appsflyer/getVersion.html">appsflyer.getVersion()</a></h4>
+<h4 id="appsflyer.sethasuserconsentplugin.appsflyer.sethasuserconsent"><a href="../../plugin/appsflyer/setHasUserConsent.html">appsflyer.setHasUserConsent()</a></h4>
+<h4 id="appsflyer.logpurchaseplugin.appsflyer.logpurchase"><a href="../../plugin/appsflyer/logPurchase.html">appsflyer.logPurchase()</a></h4>
+<h4 id="appsflyer.getappsflyeruidplugin.appsflyer.getappsflyeruid"><a href="../../plugin/appsflyer/getAppsFlyerUID.html">appsflyer.getAppsFlyerUID()</a></h4>
+<h2 id="events">Events</h2>
+<h4 id="analyticsrequestplugin.appsflyer.event.analyticsrequest"><a href="../../plugin/appsflyer/event/analyticsRequest/index.html">analyticsRequest</a></h4>
+<h2 id="project-settings">Project Settings</h2>
 <p>To use this plugin, add the following entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="brush: lua;">settings =
 {
@@ -167,9 +141,7 @@ Important
         },
     },
 }</pre>
-</section>
-<section id="strict-mode" class="level2">
-<h2>Strict Mode</h2>
+<h2 id="strict-mode">Strict Mode</h2>
 <p><a href="https://dev.appsflyer.com/hc/docs/install-ios-sdk#strict-mode-sdk">“Strict Mode SDK to completely remove IDFA collection functionality and AdSupport framework dependencies (for example, when developing apps for kids)”</a></p>
 <p>To use <a href="https://dev.appsflyer.com/hc/docs/install-ios-sdk#strict-mode-sdk">strict mode</a> for iOS include this in <code>build.settings</code> instead for the above. The strict mode version of the plugin include the regular <code>plugin.appsflyer</code> for Android so there is no need to include both plugins.</p>
 <pre class="brush: lua;">settings =
@@ -230,8 +202,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

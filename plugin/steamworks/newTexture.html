@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../plugin/steamworks/newTexture.html">newTexture</a>
 </div>
-<section id="steamworks.newtexture" class="level1">
-<h1>steamworks.newTexture()</h1>
+<h1 id="steamworks.newtexture">steamworks.newTexture()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,29 +107,20 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Loads a Steam image to a <a href="../../api/type/TextureResourceExternal/index.html">texture</a> by its unique <a href="../../plugin/steamworks/type/ImageInfo/imageHandle.html">imageHandle</a> that was retrieved by the <a href="../../plugin/steamworks/getAchievementImageInfo.html">steamworks.getAchievementImageInfo()</a> or <a href="../../plugin/steamworks/getUserImageInfo.html">steamworks.getUserImageInfo()</a> functions.</p>
 <p>The returned <a href="../../api/type/TextureResourceExternal/index.html">texture</a> can be shown by the <a href="../../api/library/display/newImage.html">display.newImage()</a> and <a href="../../api/library/display/newImageRect.html">display.newImageRect()</a> functions. The <a href="../../api/type/TextureResourceExternal/index.html">texture</a> can also be applied to an existing <a href="../../api/type/ShapeObject/index.html">ShapeObject</a> via its <a href="../../api/type/ShapeObject/fill.html">fill</a> property.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>This function will return <code>nil</code> in the following cases:</p>
 <ul>
 <li>Invalid arguments were specified.</li>
 <li>The <a href="../../plugin/steamworks/isLoggedOn.html">steamworks.isLoggedOn</a> property is <code>false</code>, indicating that the application is not currently connected to the Steam client.</li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">steamworks.newTexture( imageHandle )</pre>
-<section id="imagehandle-required" class="level5">
-<h5>imageHandle <sub><sup>(required)</sup></sub></h5>
+<h5 id="imagehandle-required">imageHandle <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Unique identifier of the Steam image to load as a texture. This identifier is provided by an <a href="../../plugin/steamworks/type/ImageInfo/index.html">ImageInfo</a> object’s <a href="../../plugin/steamworks/type/ImageInfo/imageHandle.html">imageHandle</a> property.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 -- Create a rectangle which we'll later fill with the avatar image
@@ -192,8 +182,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

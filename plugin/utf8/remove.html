@@ -69,8 +69,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/utf8/index.html">UTF-8</a>  ▸  <a href="../../plugin/utf8/remove.html">remove</a>
 </div>
-<section id="utf8.remove" class="level1">
-<h1>utf8.remove()</h1>
+<h1 id="utf8.remove">utf8.remove()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -101,33 +100,22 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Deletes a substring from a <nobr>UTF-8</nobr> string depending on usage:</p>
 <ul>
 <li><p>If <code>end</code> is not specified, this function deletes characters from <code>start</code> until the end of the string (<code>s</code>).</p></li>
 <li><p>If <code>end</code> is specified, this function deletes characters from <code>start</code> to <code>end</code>, inclusive of both.</p></li>
 </ul>
 <p>Note that <code>start</code> and <code>end</code> can be negative if you need to count from the end of the string.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">utf8.remove( s, start [, end] )</pre>
-<section id="s-required" class="level5">
-<h5>s <sub><sup>(required)</sup></sub></h5>
+<h5 id="s-required">s <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The string to operate on.</p>
-</section>
-<section id="start-required" class="level5">
-<h5>start <sub><sup>(required)</sup></sub></h5>
+<h5 id="start-required">start <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> The starting position.</p>
-</section>
-<section id="end-optional" class="level5">
-<h5>end <sub><sup>(optional)</sup></sub></h5>
+<h5 id="end-optional">end <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Ending position. Default is the number of characters in the string.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local utf8 = require( "plugin.utf8" )
 
 local testStr = "♡ 你好，世界 ♡"
@@ -142,8 +130,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

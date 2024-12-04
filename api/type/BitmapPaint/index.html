@@ -76,8 +76,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/BitmapPaint/index.html">BitmapPaint</a>
 </div>
-<section id="bitmappaint" class="level1">
-<h1>BitmapPaint</h1>
+<h1 id="bitmappaint">BitmapPaint</h1>
 <blockquote>
 <table>
 <tbody>
@@ -112,52 +111,29 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>A bitmap paint contains a single texture.</p>
 <p>If desired, bitmap fills can be repeated (tiled) across the span of a display object. See the <code>textureWrapX</code> and <code>textureWrapY</code> properties in the <strong>Texture Keys</strong> section of <a href="../../../api/library/display/setDefault.html">display.setDefault()</a> for more information.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">local paint = {
     type = "image",
     filename = ,
     baseDir = 
 }</pre>
-<section id="type-required" class="level5">
-<h5>type <sub><sup>(required)</sup></sub></h5>
+<h5 id="type-required">type <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> String value of <code>"image"</code>.</p>
-</section>
-<section id="filename-required" class="level5">
-<h5>filename <sub><sup>(required)</sup></sub></h5>
+<h5 id="filename-required">filename <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Filename of the image file.</p>
-</section>
-<section id="basedir-optional" class="level5">
-<h5>baseDir <sub><sup>(optional)</sup></sub></h5>
+<h5 id="basedir-optional">baseDir <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Constant.html">Constant</a>.</em> Specifies the base directory where filename is located. Options include <code>system.ResourceDirectory</code>, <code>system.DocumentsDirectory</code>, <code>system.TemporaryDirectory</code> and <code>system.CachesDirectory</code>. Default is <code>system.ResourceDirectory</code>.</p>
-</section>
-</section>
-<section id="properties" class="level2">
-<h2>Properties</h2>
+<h2 id="properties">Properties</h2>
 <p><em>(Inherits properties from <a href="../../../api/type/Paint/index.html">Paint</a>)</em></p>
-<section id="fill.rotationapi.type.bitmappaint.rotation" class="level4">
-<h4><a href="../../../api/type/BitmapPaint/rotation.html">fill.rotation</a></h4>
-</section>
-<section id="fill.scalexapi.type.bitmappaint.scalex" class="level4">
-<h4><a href="../../../api/type/BitmapPaint/scaleX.html">fill.scaleX</a></h4>
-</section>
-<section id="fill.scaleyapi.type.bitmappaint.scaley" class="level4">
-<h4><a href="../../../api/type/BitmapPaint/scaleY.html">fill.scaleY</a></h4>
-</section>
-<section id="fill.xapi.type.bitmappaint.x" class="level4">
-<h4><a href="../../../api/type/BitmapPaint/x.html">fill.x</a></h4>
-</section>
-<section id="fill.yapi.type.bitmappaint.y" class="level4">
-<h4><a href="../../../api/type/BitmapPaint/y.html">fill.y</a></h4>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h4 id="fill.rotationapi.type.bitmappaint.rotation"><a href="../../../api/type/BitmapPaint/rotation.html">fill.rotation</a></h4>
+<h4 id="fill.scalexapi.type.bitmappaint.scalex"><a href="../../../api/type/BitmapPaint/scaleX.html">fill.scaleX</a></h4>
+<h4 id="fill.scaleyapi.type.bitmappaint.scaley"><a href="../../../api/type/BitmapPaint/scaleY.html">fill.scaleY</a></h4>
+<h4 id="fill.xapi.type.bitmappaint.x"><a href="../../../api/type/BitmapPaint/x.html">fill.x</a></h4>
+<h4 id="fill.yapi.type.bitmappaint.y"><a href="../../../api/type/BitmapPaint/y.html">fill.y</a></h4>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">-- Create a vector rectangle
 local rect = display.newRect( 200, 200, 300, 300 )
 
@@ -179,8 +155,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../plugin/steamworks/requestUserProgress.html">requestUserProgress</a>
 </div>
-<section id="steamworks.requestuserprogress" class="level1">
-<h1>steamworks.requestUserProgress()</h1>
+<h1 id="steamworks.requestuserprogress">steamworks.requestUserProgress()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,8 +107,7 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Asynchronously fetches game progression data such as achievements and stats for one user from Steam’s server. If successful as indicated by the <a href="../../plugin/steamworks/event/userProgressUpdate/index.html">userProgressUpdate</a> event’s <a href="../../plugin/steamworks/event/userProgressUpdate/isError.html">isError</a> property being set to <code>false</code>, the <a href="../../plugin/steamworks/getAchievementInfo.html">steamworks.getAchievementInfo()</a> and <a href="../../plugin/steamworks/getUserStatValue.html">steamworks.getUserStatValue()</a> functions will provide updated progression data for that user.</p>
 <p>Returns <code>true</code> if the request was successfully sent to Steam. Note that this does not necessarily mean that the requested operation will succeed. For example, this function will return <code>true</code> if there is no Internet connection. So, a listener must check the <a href="../../plugin/steamworks/event/userProgressUpdate/index.html">userProgressUpdate</a> event’s <a href="../../plugin/steamworks/event/userProgressUpdate/isError.html">isError</a> property as mentioned above.</p>
 <p>Returns <code>false</code> if given invalid arguments or if the <a href="../../plugin/steamworks/isLoggedOn.html">steamworks.isLoggedOn</a> property is also <code>false</code>.</p>
@@ -119,21 +117,13 @@ Note
 </div>
 <p>The Steam plugin will automatically fetch the currently logged in user’s progression data on app startup. So, you will not normally call this function for the logged in user during gameplay to <nobr>re-fetch</nobr> their progression data. Instead, you will normally call this function for other users.</p>
 </div>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>If Internet is not available, then it may take over 1 minute for Steam to time-out and dispatch a <a href="../../plugin/steamworks/event/userProgressUpdate/index.html">userProgressUpdate</a> event.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">steamworks.requestUserProgress( [userSteamId] )</pre>
-<section id="usersteamid-optional" class="level5">
-<h5>userSteamId <sub><sup>(optional)</sup></sub></h5>
+<h5 id="usersteamid-optional">userSteamId <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The unique string ID of the user. The ID will default to the current user if this argument is not provided.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 -- Set the user ID of the friend to fetch progression data from
@@ -169,8 +159,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

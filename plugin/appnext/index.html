@@ -79,8 +79,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/appnext/index.html">Appnext</a>
 </div>
-<section id="appnext." class="level1">
-<h1>appnext.*</h1>
+<h1 id="appnext.">appnext.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -107,14 +106,11 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p><a href="https://www.appnext.com/?ref=corona">Appnext</a> is a leading mobile discovery platform, helping millions of users experience apps at the right moments throughout the day. Our platform provides mobile publishers and app marketers with <nobr>end-to-end</nobr> technology solutions for premium monetization and app growth.</p>
 <p>Leading mobile and <nobr>in-app</nobr> video advertising since 2012, Appnext has partnered with the top app, game, mobile web publishers, as well as OEMs and mobile operators to help them grow their mobile businesses by promoting apps.</p>
 <p>With a growing community of over 70,000 developers and 500M users worldwide, we’ve created a marketplace that connects publishers and advertisers directly and transparently, amplifying their monetization and advertising efforts.</p>
-</section>
-<section id="registration" class="level2">
-<h2>Registration</h2>
+<h2 id="registration">Registration</h2>
 <p>To begin, please register with <a href="https://www.appnext.com/?ref=corona">Appnext</a>.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -124,46 +120,20 @@ Note
 <p><strong>Apps</strong> → <strong>[Settings Icon]</strong> → <nobr><strong>Settings &amp; Placements</strong></nobr> → <strong>Placement ID</strong></p>
 <p>If you’re developing for both Android and iOS, copy the appropriate placement ID for each platform.</p>
 </div>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">local appnext = require( "plugin.appnext" )</pre>
-</section>
-<section id="functions" class="level2">
-<h2>Functions</h2>
-<section id="appnext.initplugin.appnext.init" class="level4">
-<h4><a href="../../plugin/appnext/init.html">appnext.init()</a></h4>
-</section>
-<section id="appnext.getapiversionplugin.appnext.getapiversion" class="level4">
-<h4><a href="../../plugin/appnext/getApiVersion.html">appnext.getApiVersion()</a></h4>
-</section>
-<section id="appnext.createadplugin.appnext.createad" class="level4">
-<h4><a href="../../plugin/appnext/createAd.html">appnext.createAd()</a></h4>
-</section>
-<section id="appnext.loadadplugin.appnext.loadad" class="level4">
-<h4><a href="../../plugin/appnext/loadAd.html">appnext.loadAd()</a></h4>
-</section>
-<section id="appnext.showadplugin.appnext.showad" class="level4">
-<h4><a href="../../plugin/appnext/showAd.html">appnext.showAd()</a></h4>
-</section>
-<section id="appnext.adisloadedplugin.appnext.adisloaded" class="level4">
-<h4><a href="../../plugin/appnext/adIsLoaded.html">appnext.adIsLoaded()</a></h4>
-</section>
-<section id="appnext.setplugin.appnext.set" class="level4">
-<h4><a href="../../plugin/appnext/set.html">appnext.set*</a></h4>
-</section>
-<section id="appnext.getplugin.appnext.get" class="level4">
-<h4><a href="../../plugin/appnext/get.html">appnext.get*</a></h4>
-</section>
-</section>
-<section id="events" class="level2">
-<h2>Events</h2>
-<section id="adeventplugin.appnext.event.adevent" class="level4">
-<h4><a href="../../plugin/appnext/event/adEvent/index.html">adEvent</a></h4>
-</section>
-</section>
-<section id="project-settings" class="level2">
-<h2>Project Settings</h2>
+<h2 id="functions">Functions</h2>
+<h4 id="appnext.initplugin.appnext.init"><a href="../../plugin/appnext/init.html">appnext.init()</a></h4>
+<h4 id="appnext.getapiversionplugin.appnext.getapiversion"><a href="../../plugin/appnext/getApiVersion.html">appnext.getApiVersion()</a></h4>
+<h4 id="appnext.createadplugin.appnext.createad"><a href="../../plugin/appnext/createAd.html">appnext.createAd()</a></h4>
+<h4 id="appnext.loadadplugin.appnext.loadad"><a href="../../plugin/appnext/loadAd.html">appnext.loadAd()</a></h4>
+<h4 id="appnext.showadplugin.appnext.showad"><a href="../../plugin/appnext/showAd.html">appnext.showAd()</a></h4>
+<h4 id="appnext.adisloadedplugin.appnext.adisloaded"><a href="../../plugin/appnext/adIsLoaded.html">appnext.adIsLoaded()</a></h4>
+<h4 id="appnext.setplugin.appnext.set"><a href="../../plugin/appnext/set.html">appnext.set*</a></h4>
+<h4 id="appnext.getplugin.appnext.get"><a href="../../plugin/appnext/get.html">appnext.get*</a></h4>
+<h2 id="events">Events</h2>
+<h4 id="adeventplugin.appnext.event.adevent"><a href="../../plugin/appnext/event/adEvent/index.html">adEvent</a></h4>
+<h2 id="project-settings">Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="highlight: [5,6,7,8]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -215,8 +185,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

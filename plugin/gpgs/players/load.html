@@ -74,8 +74,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../plugin/gpgs/index.html">Google Play Games Services</a>  ▸  <a href="../../../plugin/gpgs/players/index.html">players</a>  ▸  <a href="../../../plugin/gpgs/players/load.html">load</a>
 </div>
-<section id="players.load" class="level1">
-<h1>players.load()</h1>
+<h1 id="players.load">players.load()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -106,48 +105,30 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Retrieves information on the current player, a specified player, or multiple players.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">gpgs.players.load( params )</pre>
-<section id="params-required" class="level5">
-<h5>params <sub><sup>(required)</sup></sub></h5>
+<h5 id="params-required">params <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Contains parameters for the call — see the next section for details.</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>params</code> table contains parameters for the call.</p>
-<section id="playerid-optional" class="level5">
-<h5>playerId <sub><sup>(optional)</sup></sub></h5>
+<h5 id="playerid-optional">playerId <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Supported only on Android; if provided, loads information for only this player. If omitted, loads the current player’s information.</p>
-</section>
-<section id="playerids-optional" class="level5">
-<h5>playerIds <sub><sup>(optional)</sup></sub></h5>
+<h5 id="playerids-optional">playerIds <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> Supported only on Android; populate with <a href="../../../api/type/String.html">string</a> elements to load information for each specified player. If provided, this has higher priority than <code>playerId</code>.</p>
-</section>
-<section id="source-optional" class="level5">
-<h5>source <sub><sup>(optional)</sup></sub></h5>
+<h5 id="source-optional">source <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> One of the following values. If provided, this has higher priority than <code>playerIds</code> and loads information on players from the specified source.</p>
 <ul>
 <li><code>"connected"</code></li>
 <li><code>"invitable"</code> (Android only)</li>
 <li><code>"recentlyPlayedWith"</code></li>
 </ul>
-</section>
-<section id="limit-optional" class="level5">
-<h5>limit <sub><sup>(optional)</sup></sub></h5>
+<h5 id="limit-optional">limit <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Limits the number of results to this value. All results are internally fetched in batches of 25 items each.</p>
-</section>
-<section id="reload-optional" class="level5">
-<h5>reload <sub><sup>(optional)</sup></sub></h5>
+<h5 id="reload-optional">reload <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> If <code>true</code>, the data will be retrieved fresh, not from a cache.</p>
-</section>
-<section id="listener-optional" class="level5">
-<h5>listener <sub><sup>(optional)</sup></sub></h5>
+<h5 id="listener-optional">listener <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Listener.html">Listener</a>.</em> Listener function which receives a <a href="../../../plugin/gpgs/players/event/load/index.html">load</a> event.</p>
 <hr>
 <div id="footer">
@@ -159,9 +140,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -123,8 +123,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/widget/index.html">widget</a>  ▸  <a href="../../../api/library/widget/newPickerWheel.html">newPickerWheel</a>
 </div>
-<section id="widget.newpickerwheel" class="level1">
-<h1>widget.newPickerWheel()</h1>
+<h1 id="widget.newpickerwheel">widget.newPickerWheel()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -155,111 +154,62 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Creates a <a href="../../../api/type/PickerWheelWidget/index.html">PickerWheelWidget</a> object.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>To conserve texture memory, a <a href="../../../api/type/PickerWheelWidget/index.html">PickerWheelWidget</a> object can only be visually customized using an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>.</p></li>
 <li><p><a href="../../../api/type/PickerWheelWidget/index.html">PickerWheelWidget</a> objects do not support <a href="../../../api/type/DisplayObject/scale.html">scaling</a> nor changing the width/height via <a href="../../../api/type/DisplayObject/width.html">.width</a> or <a href="../../../api/type/DisplayObject/height.html">.height</a>. If you want to implement a <nobr>custom-size</nobr> picker wheel to suit your user interface, please see <a href="#resizable">Resizable Construction</a> below.</p></li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">widget.newPickerWheel( options )</pre>
 <p>This function takes a single argument, <code>options</code>, which is a table that accepts the following parameters:</p>
-<section id="id-optional" class="level5">
-<h5>id <sub><sup>(optional)</sup></sub></h5>
+<h5 id="id-optional">id <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> An optional identification to assign to the picker wheel. Default is <code>widget_pickerWheel</code>.</p>
-</section>
-<section id="x-y-optional" class="level5">
-<h5>x, y <sub><sup>(optional)</sup></sub></h5>
+<h5 id="x-y-optional">x, y <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Coordinates for the widget’s <strong>x</strong> and <strong>y</strong> center point. These values will be overridden by <code>left</code> and <code>top</code> if those values are defined.</p>
-</section>
-<section id="left-top-optional" class="level5">
-<h5>left, top <sub><sup>(optional)</sup></sub></h5>
+<h5 id="left-top-optional">left, top <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The left and top position where the widget will be created. If specified, these values override the <code>x</code> and <code>y</code> parameters.</p>
-</section>
-<section id="columns-required" class="level5">
-<h5>columns <sub><sup>(required)</sup></sub></h5>
+<h5 id="columns-required">columns <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table which contains a sub-table for each individual column within the picker wheel. See <a href="#columnconfig">Configuring Columns</a> below.</p>
-</section>
-<section id="style-optional" class="level5">
-<h5>style <sub><sup>(optional)</sup></sub></h5>
+<h5 id="style-optional">style <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Indicates the picker wheel construction style. If set to <code>"resizable"</code>, construction will adhere to the design outlined in <a href="#resizable">Resizable Construction</a> below. If omitted, construction will adhere to a fixed size of 320×222.</p>
-</section>
-<section id="onvalueselected-optional" class="level5">
-<h5>onValueSelected <sub><sup>(optional)</sup></sub></h5>
+<h5 id="onvalueselected-optional">onValueSelected <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Listener.html">Listener</a>.</em> Optional listener function which is triggered when the user selects an item in the picker wheel, or upon calling <a href="../../../api/type/PickerWheelWidget/selectValue.html">object:selectValue()</a>.</p>
-</section>
-</section>
-<section id="methods" class="level2">
-<h2>Methods</h2>
-<section id="objectgetvaluesapi.type.pickerwheelwidget.getvalues" class="level4">
-<h4><a href="../../../api/type/PickerWheelWidget/getValues.html">object:getValues()</a></h4>
-</section>
-<section id="objectselectvalueapi.type.pickerwheelwidget.selectvalue" class="level4">
-<h4><a href="../../../api/type/PickerWheelWidget/selectValue.html">object:selectValue()</a></h4>
+<h2 id="methods">Methods</h2>
+<h4 id="objectgetvaluesapi.type.pickerwheelwidget.getvalues"><a href="../../../api/type/PickerWheelWidget/getValues.html">object:getValues()</a></h4>
+<h4 id="objectselectvalueapi.type.pickerwheelwidget.selectvalue"><a href="../../../api/type/PickerWheelWidget/selectValue.html">object:selectValue()</a></h4>
 <p><a id="columnconfig"></a></p>
-</section>
-</section>
-<section id="configuring-columns" class="level2">
-<h2>Configuring Columns</h2>
+<h2 id="configuring-columns">Configuring Columns</h2>
 <p>Columns within the picker wheel are defined by an ordered series of <nobr>sub-tables</nobr> within the required <code>columns</code> table. These columns will be added to the picker wheel from left to right, in the order you define them.</p>
 <p>Each sub-table within the <code>columns</code> table accepts the following parameters:</p>
-<section id="labels-required" class="level5">
-<h5>labels <sub><sup>(required)</sup></sub></h5>
+<h5 id="labels-required">labels <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table of ordered values that represent the label for each row in the column. For example:</p>
 <pre class="brush: lua;">labels = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }</pre>
-</section>
-<section id="width-optional" class="level5">
-<h5>width <sub><sup>(optional)</sup></sub></h5>
+<h5 id="width-optional">width <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> By default, columns are split evenly between the picker wheel’s viewable area, but a column’s width can be defined via the <code>width</code> property — this allows you to resize each column width to better fit its defined labels.</p>
-</section>
-<section id="align-optional" class="level5">
-<h5>align <sub><sup>(optional)</sup></sub></h5>
+<h5 id="align-optional">align <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Specifies the alignment of the text labels within the column. Acceptable values are <code>"left"</code>, <code>"center"</code>, or <code>"right"</code>. Default is <code>"center"</code>.</p>
-</section>
-<section id="labelpadding-optional" class="level5">
-<h5>labelPadding <sub><sup>(optional)</sup></sub></h5>
+<h5 id="labelpadding-optional">labelPadding <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> An optional number of pixels to pad/offset the picker column labels. If <code>align</code> is set to <code>"left"</code>, padding will occur from the left edge of the column; if <code>align</code> is set to <code>"right"</code>, padding will occur from the right edge. <nobr>Default is <code>6</code>.</nobr></p>
-</section>
-<section id="startindex-required" class="level5">
-<h5>startIndex <sub><sup>(required)</sup></sub></h5>
+<h5 id="startindex-required">startIndex <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The column’s <nobr>initially-selected</nobr> row. This cannot be set higher than the column’s total range of values.</p>
-</section>
-</section>
-<section id="basic-visual-options" class="level2">
-<h2>Basic Visual Options</h2>
-<section id="font-optional" class="level5">
-<h5>font <sub><sup>(optional)</sup></sub></h5>
+<h2 id="basic-visual-options">Basic Visual Options</h2>
+<h5 id="font-optional">font <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Font used for the picker wheel column entries. Default is <a href="../../../api/library/native/systemFont.html">native.systemFont</a>.</p>
-</section>
-<section id="fontsize-optional" class="level5">
-<h5>fontSize <sub><sup>(optional)</sup></sub></h5>
+<h5 id="fontsize-optional">fontSize <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Font size (in pixels) for the picker wheel column entries. Default is <code>22</code>.</p>
-</section>
-<section id="fontcolor-optional" class="level5">
-<h5>fontColor <sub><sup>(optional)</sup></sub></h5>
+<h5 id="fontcolor-optional">fontColor <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Table specifying an RGB+A color for the font color of the “unselected” picker wheel labels.</p>
 <pre class="brush: lua;">fontColor = { 0.2, 0.2, 0.2 }</pre>
-</section>
-<section id="fontcolorselected-optional" class="level5">
-<h5>fontColorSelected <sub><sup>(optional)</sup></sub></h5>
+<h5 id="fontcolorselected-optional">fontColorSelected <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Table specifying an RGB+A color for the font color of the “selected” picker wheel labels.</p>
 <pre class="brush: lua;">fontColorSelected = { 1, 0, 0 }</pre>
-</section>
-<section id="columncolor-optional" class="level5">
-<h5>columnColor <sub><sup>(optional)</sup></sub></h5>
+<h5 id="columncolor-optional">columnColor <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Table specifying an RGB+A color setting for the background color of the picker wheel columns.</p>
 <pre class="brush: lua;">columnColor = { 0.8, 0.8, 0.8 }</pre>
 <p><a id="resizable"></a></p>
-</section>
-</section>
-<section id="resizable-construction" class="level2">
-<h2>Resizable Construction</h2>
+<h2 id="resizable-construction">Resizable Construction</h2>
 <p>Resizable picker wheels can be constructed at a size which fits your user interface — simply set <code>style</code> to <code>"resizable"</code> in the widget constructor parameters and include these additional required parameters:</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -270,12 +220,9 @@ Important
 <li><p>Resizable picker wheels are <strong>not</strong> compatible with legacy widget themes. If you’re implementing a resizable picker wheel, you should explicitly set a <nobr>non-legacy</nobr> theme via <a href="../../../api/library/widget/setTheme.html">widget.setTheme()</a>, such as <code>"widget_theme_android_holo_dark"</code>, <code>"widget_theme_android_holo_light"</code>, or <code>"widget_theme_ios7"</code>.</p></li>
 </ul>
 </div>
-<section id="width-required" class="level5">
-<h5>width <sub><sup>(required)</sup></sub></h5>
+<h5 id="width-required">width <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> An integer which sets the overall width of the picker wheel.</p>
-</section>
-<section id="rowheight-required" class="level5">
-<h5>rowHeight <sub><sup>(required)</sup></sub></h5>
+<h5 id="rowheight-required">rowHeight <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> An integer which sets the height of each row in the picker wheel’s columns. Because picker wheels are strictly designed to display 5 rows — a center selection row for the selected options along with two additional rows above and below — the overall height of the picker wheel will be 5 times this value. For instance, if you set <code>rowHeight</code> to <code>40</code>, the resulting picker wheel will be 200 pixels in overall height.</p>
 <div class="clear" style="margin-top: 11px;">
 
@@ -290,96 +237,52 @@ Important
 <div style="max-width: 336px">
 <p><img src="../../../images/simulator/widget-pickerwheel-resizable.png" /></p>
 </div>
-</section>
-<section id="sheet-required" class="level5">
-<h5>sheet <sub><sup>(required)</sup></sub></h5>
+<h5 id="sheet-required">sheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> The <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> object for the picker wheel.</p>
-</section>
-<section id="topleftframe-optional" class="level5">
-<h5>topLeftFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="topleftframe-optional">topLeftFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the <nobr>top-left</nobr> corner frame of the picker wheel border/overlay.</p>
-</section>
-<section id="topmiddleframe-optional" class="level5">
-<h5>topMiddleFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="topmiddleframe-optional">topMiddleFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the <nobr>top-middle</nobr> side of the picker wheel border/overlay. This frame will be stretched to span the distance between the <nobr>top-left</nobr> and <nobr>top-right</nobr> corner frames.</p>
-</section>
-<section id="toprightframe-optional" class="level5">
-<h5>topRightFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="toprightframe-optional">topRightFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the <nobr>top-right</nobr> corner frame of the picker wheel border/overlay.</p>
-</section>
-<section id="middleleftframe-optional" class="level5">
-<h5>middleLeftFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="middleleftframe-optional">middleLeftFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the <nobr>middle-left</nobr> side of the picker wheel border/overlay. This frame will be stretched to span the distance between the <nobr>top-left</nobr> and <nobr>bottom-left</nobr> corner frames.</p>
-</section>
-<section id="middlerightframe-optional" class="level5">
-<h5>middleRightFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="middlerightframe-optional">middleRightFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the <nobr>middle-right</nobr> side of the picker wheel border/overlay. This frame will be stretched to span the distance between the <nobr>top-right</nobr> and <nobr>bottom-right</nobr> corner frames.</p>
-</section>
-<section id="bottomleftframe-optional" class="level5">
-<h5>bottomLeftFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="bottomleftframe-optional">bottomLeftFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the <nobr>bottom-left</nobr> corner frame of the picker wheel border/overlay.</p>
-</section>
-<section id="bottommiddleframe-optional" class="level5">
-<h5>bottomMiddleFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="bottommiddleframe-optional">bottomMiddleFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the <nobr>bottom-middle</nobr> side of the picker wheel border/overlay. This frame will be stretched to span the distance between the <nobr>bottom-left</nobr> and <nobr>bottom-right</nobr> corner frames.</p>
-</section>
-<section id="bottomrightframe-optional" class="level5">
-<h5>bottomRightFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="bottomrightframe-optional">bottomRightFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the <nobr>bottom-right</nobr> corner frame of the picker wheel border/overlay.</p>
-</section>
-<section id="topfadeframe-optional" class="level5">
-<h5>topFadeFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="topfadeframe-optional">topFadeFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the top fade frame. This frame resides underneath the border/overlay and above the picker wheel columns. Its top edge aligns with the top of the picker wheel and it is stretched to span the defined width. This can be used to simulate a visual <nobr>fade-out</nobr> effect for column labels as they move outside the top edge of the wheel.</p>
-</section>
-<section id="bottomfadeframe-optional" class="level5">
-<h5>bottomFadeFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="bottomfadeframe-optional">bottomFadeFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the bottom fade frame. This frame resides underneath the border/overlay and above the picker wheel columns. Its bottom edge aligns with the bottom of the picker wheel and it is stretched to span the defined width. This can be used to simulate a visual <nobr>fade-out</nobr> effect for column labels as they move outside the bottom edge of the wheel.</p>
-</section>
-<section id="middlespantopframe-optional" class="level5">
-<h5>middleSpanTopFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="middlespantopframe-optional">middleSpanTopFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the upper middle span frame. This frame resides underneath the border/overlay and above the picker wheel columns. Its top edge aligns with the top edge of the picker wheel’s center selection row and it is stretched to span the defined width. If desired, the vertical alignment can be adjusted via <code>middleSpanOffset</code> as noted below.</p>
-</section>
-<section id="middlespanbottomframe-optional" class="level5">
-<h5>middleSpanBottomFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="middlespanbottomframe-optional">middleSpanBottomFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the lower middle span frame. This frame resides underneath the border/overlay and above the picker wheel columns. Its bottom edge aligns with the bottom edge of the picker wheel’s center selection row and it is stretched to span the defined width. If desired, the vertical alignment can be adjusted via <code>middleSpanOffset</code> as noted below.</p>
-</section>
-<section id="backgroundframe-optional" class="level5">
-<h5>backgroundFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="backgroundframe-optional">backgroundFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the background frame that resides behind the picker wheel. This frame will be stretched to span the picker wheel’s defined width and constructed height.</p>
-</section>
-<section id="separatorframe-optional" class="level5">
-<h5>separatorFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="separatorframe-optional">separatorFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the separator/divider frame. These separators will be automatically placed between the columns and they will be stretched to span the constructed height.</p>
-</section>
-<section id="middlespanoffset-optional" class="level5">
-<h5>middleSpanOffset <sub><sup>(optional)</sup></sub></h5>
+<h5 id="middlespanoffset-optional">middleSpanOffset <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> An offset value for both the upper and lower middle span frames. If positive, this value will offset <code>middleSpanTopFrame</code> upwards and <code>middleSpanBottomFrame</code> downwards from their default positions. This can be used to adjust the “spread” of the span frames in relation to the center selection row. Negative values are allowed.</p>
-</section>
-<section id="borderpadding-optional" class="level5">
-<h5>borderPadding <sub><sup>(optional)</sup></sub></h5>
+<h5 id="borderpadding-optional">borderPadding <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The number of pixels to pad the border/overlay on all sides. This can be used to expand the border frame beyond the picker wheel’s defined width and constructed height.</p>
-</section>
-</section>
-<section id="fixed-size-customization" class="level2">
-<h2>Fixed-Size Customization</h2>
+<h2 id="fixed-size-customization">Fixed-Size Customization</h2>
 <p>Fixed-size picker wheels can be visually customized using frames from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>. As exhibited in the following image, this consists of three frames: an overlay (<strong>left</strong>), a background frame which resides behind the overlay (<strong>center</strong>), and an optional separator/divider (<strong>right</strong>) that will be automatically placed between the columns (underneath the overlay and above the background).</p>
 <div style="max-width: 696px">
 <p><img src="../../../images/simulator/widget-pickerwheel-standard.png" /></p>
 </div>
-<section id="sheet-required-1" class="level5">
-<h5>sheet <sub><sup>(required)</sup></sub></h5>
+<h5 id="sheet-required-1">sheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> The <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> object for the picker wheel.</p>
-</section>
-<section id="overlayframe-optional" class="level5">
-<h5>overlayFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="overlayframe-optional">overlayFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the overlay edge/border frame.</p>
-</section>
-<section id="backgroundframe-optional-1" class="level5">
-<h5>backgroundFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="backgroundframe-optional-1">backgroundFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the background frame that resides behind the picker wheel.</p>
-</section>
-<section id="separatorframe-optional-1" class="level5">
-<h5>separatorFrame <sub><sup>(optional)</sup></sub></h5>
+<h5 id="separatorframe-optional-1">separatorFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index number for the separator/divider frame. These separators will be automatically placed between the columns.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -390,12 +293,8 @@ Notes
 <li><p>When implementing <nobr>fixed-size</nobr> picker wheels, the total width of all columns should be 280 pixels, leaving a 20 pixel border on the left and right.</p></li>
 </ul>
 </div>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="default-resizable" class="level5">
-<h5>Default — Resizable</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="default-resizable">Default — Resizable</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Set up the picker wheel columns
@@ -446,9 +345,7 @@ local currentColor = values[2].value
 local currentSize = values[3].value
 
 print( currentStyle, currentColor, currentSize )</pre>
-</section>
-<section id="default-fixed-size" class="level5">
-<h5>Default — Fixed-Size</h5>
+<h5 id="default-fixed-size">Default — Fixed-Size</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Set up the picker wheel columns
@@ -494,9 +391,7 @@ local currentColor = values[2].value
 local currentSize = values[3].value
 
 print( currentStyle, currentColor, currentSize )</pre>
-</section>
-<section id="image-sheet-resizable" class="level5">
-<h5>Image Sheet — Resizable</h5>
+<h5 id="image-sheet-resizable">Image Sheet — Resizable</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Set up the picker wheel columns
@@ -586,9 +481,7 @@ local currentColor = values[2].value
 local currentSize = values[3].value
 
 print( currentStyle, currentColor, currentSize )</pre>
-</section>
-<section id="image-sheet-fixed-size" class="level5">
-<h5>Image Sheet — Fixed-Size</h5>
+<h5 id="image-sheet-fixed-size">Image Sheet — Fixed-Size</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Set up the picker wheel columns
@@ -661,9 +554,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

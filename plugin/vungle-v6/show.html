@@ -77,8 +77,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/vungle-v6/index.html">vungle-v6</a>  ▸  <a href="../../plugin/vungle-v6/show.html">show</a>
 </div>
-<section id="vungle.show" class="level1">
-<h1>vungle.show()</h1>
+<h1 id="vungle.show">vungle.show()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -113,57 +112,32 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p><code>vungle.show()</code> begins playing a placement <nobr>full-screen</nobr> video ad if one is cached and available for display.</p>
 <p>This API returns a boolean <code>true</code> or <code>false</code> depending on the availability of a cached video ad.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">vungle.show( params )</pre>
-<section id="params-required" class="level5">
-<h5>params <sub><sup>(required)</sup></sub></h5>
+<h5 id="params-required">params <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table that specifies properties for the ad request — see the next section for details.</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>params</code> table includes properties for the ad request.</p>
-<section id="placementid-required" class="level5">
-<h5>placementID <sub><sup>(required)</sup></sub></h5>
+<h5 id="placementid-required">placementID <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The placement ID of the ad to show.</p>
-</section>
-<section id="isautorotation-required" class="level5">
-<h5>isAutoRotation <sub><sup>(required)</sup></sub></h5>
+<h5 id="isautorotation-required">isAutoRotation <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> If <code>true</code> (default), the video ad will rotate automatically with the device’s orientation. If <code>false</code>, it will use the ad’s preferred orientation. This is required for Android only — for iOS, it looks into the <code>orientations</code> key.</p>
-</section>
-<section id="orientation-optional" class="level5">
-<h5>orientation <sub><sup>(optional)</sup></sub></h5>
+<h5 id="orientation-optional">orientation <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> For iOS only, the bitmask with the possible orientation values. Default is <code>UIInterfaceOrientationMaskAll</code>.</p>
-</section>
-<section id="issoundenabled-optional" class="level5">
-<h5>isSoundEnabled <sub><sup>(optional)</sup></sub></h5>
+<h5 id="issoundenabled-optional">isSoundEnabled <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> If <code>true</code> (default), sound will be enabled during video ad playback, subject to the device’s sound settings. If <code>false</code>, video playback will begin muted. Note that the user can mute or <nobr>un-mute</nobr> sound during playback.</p>
-</section>
-<section id="username-optional" class="level5">
-<h5>username <sub><sup>(optional)</sup></sub></h5>
+<h5 id="username-optional">username <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> This parameter only applies to the incentivized ad unit type. When specified, it represents the user identifier that you wish to receive in a <nobr>server-to-server</nobr> callback that rewards the user for a completed video ad view.</p>
-</section>
-<section id="alerttitle-alerttext-alertcontinue-optional" class="level5">
-<h5>alertTitle, alertText, alertContinue <sub><sup>(optional)</sup></sub></h5>
+<h5 id="alerttitle-alerttext-alertcontinue-optional">alertTitle, alertText, alertContinue <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> You can customize a message to display to users when they attempt to close the incentivized video before completion. Note that this setting only applies to standard Vungle ads. For “Dynamic Template” ads, the same customization is available on the Vungle Dashboard.</p>
-</section>
-<section id="immersive-optional" class="level5">
-<h5>immersive <sub><sup>(optional)</sup></sub></h5>
+<h5 id="immersive-optional">immersive <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">String</a>.</em> For Android only, enables or disables immersive mode on KitKat+ devices.</p>
-</section>
-<section id="large-optional" class="level5">
-<h5>large <sub><sup>(optional)</sup></sub></h5>
+<h5 id="large-optional">large <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">String</a>.</em> For iOS only, draws larger buttons that control ad functions such as mute or close.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local vungle = require( "plugin.vungle.v6" )
 
 local appID
@@ -195,8 +169,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

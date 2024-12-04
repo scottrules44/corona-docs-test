@@ -97,8 +97,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/widget/index.html">widget</a>  ▸  <a href="../../../api/library/widget/newStepper.html">newStepper</a>
 </div>
-<section id="widget.newstepper" class="level1">
-<h1>widget.newStepper()</h1>
+<h1 id="widget.newstepper">widget.newStepper()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -129,116 +128,60 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Creates a <a href="../../../api/type/StepperWidget/index.html">StepperWidget</a> object. The stepper consists of a minus and plus button which can be tapped or held down to decrement/increment a value, for example, the music or sound volume setting in a game.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <ul>
 <li><p>To conserve texture memory, a <a href="../../../api/type/StepperWidget/index.html">StepperWidget</a> object can only be created from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>.</p></li>
 <li><p><a href="../../../api/type/StepperWidget/index.html">StepperWidget</a> objects do not support <a href="../../../api/type/DisplayObject/scale.html">scaling</a> nor changing the width/height via <a href="../../../api/type/DisplayObject/width.html">.width</a> or <a href="../../../api/type/DisplayObject/height.html">.height</a>.</p></li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">widget.newStepper( options )</pre>
 <p>This function takes a single argument, <code>options</code>, which is a table that accepts the following parameters:</p>
-<section id="id-optional" class="level5">
-<h5>id <sub><sup>(optional)</sup></sub></h5>
+<h5 id="id-optional">id <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> An optional identification to assign to the stepper. Default is <code>widget_stepper</code>.</p>
-</section>
-<section id="x-y-optional" class="level5">
-<h5>x, y <sub><sup>(optional)</sup></sub></h5>
+<h5 id="x-y-optional">x, y <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Coordinates for the widget’s <strong>x</strong> and <strong>y</strong> center point. These values will be overridden by <code>left</code> and <code>top</code> if those values are defined.</p>
-</section>
-<section id="left-top-optional" class="level5">
-<h5>left, top <sub><sup>(optional)</sup></sub></h5>
+<h5 id="left-top-optional">left, top <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The left and top position where the widget will be created. If specified, these values override the <code>x</code> and <code>y</code> parameters.</p>
-</section>
-<section id="width-height-optional" class="level5">
-<h5>width, height <sub><sup>(optional)</sup></sub></h5>
+<h5 id="width-height-optional">width, height <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width and height of each frame from the <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>. Set these only if you are using a custom image sheet for the stepper. If you are using the default theme, these values are set automatically.</p>
-</section>
-<section id="initialvalue-optional" class="level5">
-<h5>initialValue <sub><sup>(optional)</sup></sub></h5>
+<h5 id="initialvalue-optional">initialValue <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The initial value at which the stepper begins. Default is <code>0</code>.</p>
-</section>
-<section id="minimumvalue-optional" class="level5">
-<h5>minimumValue <sub><sup>(optional)</sup></sub></h5>
+<h5 id="minimumvalue-optional">minimumValue <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The minimum value that the stepper can reach. Default is <code>0</code>.</p>
-</section>
-<section id="maximumvalue-optional" class="level5">
-<h5>maximumValue <sub><sup>(optional)</sup></sub></h5>
+<h5 id="maximumvalue-optional">maximumValue <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The maximum value that the stepper can reach. Default is no limit.</p>
-</section>
-<section id="timerincrementspeed-optional" class="level5">
-<h5>timerIncrementSpeed <sub><sup>(optional)</sup></sub></h5>
+<h5 id="timerincrementspeed-optional">timerIncrementSpeed <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The initial speed at which each stepper increment occurs, in milliseconds. Default is <code>1000</code>. The number of increments at which the speed change occurs can be controlled via <code>changeSpeedAtIncrement</code>.</p>
-</section>
-<section id="changespeedatincrement-optional" class="level5">
-<h5>changeSpeedAtIncrement <sub><sup>(optional)</sup></sub></h5>
+<h5 id="changespeedatincrement-optional">changeSpeedAtIncrement <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The number of increments at which the increment speed changes. Default is <code>5</code>. The increment speed can be controlled via <code>timerIncrementSpeed</code>.</p>
-</section>
-<section id="onpress-optional" class="level5">
-<h5>onPress <sub><sup>(optional)</sup></sub></h5>
+<h5 id="onpress-optional">onPress <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Listener.html">Listener</a>.</em> An optional function to be called as soon as a stepper segment is pressed and held. This callback function returns the following <code>event.phase</code> events: <code>increment</code>, <code>decrement</code>, <code>minLimit</code>, and <code>maxLimit</code>.</p>
-</section>
-</section>
-<section id="functions" class="level2">
-<h2>Functions</h2>
-<section id="objectgetvalueapi.type.stepperwidget.getvalue" class="level4">
-<h4><a href="../../../api/type/StepperWidget/getValue.html">object:getValue()</a></h4>
-</section>
-<section id="objectsetvalueapi.type.stepperwidget.setvalue" class="level4">
-<h4><a href="../../../api/type/StepperWidget/setValue.html">object:setValue()</a></h4>
-</section>
-</section>
-<section id="properties" class="level2">
-<h2>Properties</h2>
-<section id="object.valueapi.type.stepperwidget.value" class="level4">
-<h4><a href="../../../api/type/StepperWidget/value.html">object.value</a></h4>
-</section>
-<section id="object.minimumvalueapi.type.stepperwidget.minimumvalue" class="level4">
-<h4><a href="../../../api/type/StepperWidget/minimumValue.html">object.minimumValue</a></h4>
-</section>
-<section id="object.maximumvalueapi.type.stepperwidget.maximumvalue" class="level4">
-<h4><a href="../../../api/type/StepperWidget/maximumValue.html">object.maximumValue</a></h4>
-</section>
-</section>
-<section id="visual-customization" class="level2">
-<h2>Visual Customization</h2>
+<h2 id="functions">Functions</h2>
+<h4 id="objectgetvalueapi.type.stepperwidget.getvalue"><a href="../../../api/type/StepperWidget/getValue.html">object:getValue()</a></h4>
+<h4 id="objectsetvalueapi.type.stepperwidget.setvalue"><a href="../../../api/type/StepperWidget/setValue.html">object:setValue()</a></h4>
+<h2 id="properties">Properties</h2>
+<h4 id="object.valueapi.type.stepperwidget.value"><a href="../../../api/type/StepperWidget/value.html">object.value</a></h4>
+<h4 id="object.minimumvalueapi.type.stepperwidget.minimumvalue"><a href="../../../api/type/StepperWidget/minimumValue.html">object.minimumValue</a></h4>
+<h4 id="object.maximumvalueapi.type.stepperwidget.maximumvalue"><a href="../../../api/type/StepperWidget/maximumValue.html">object.maximumValue</a></h4>
+<h2 id="visual-customization">Visual Customization</h2>
 <p>The stepper widget can be visually customized using 5 frames from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>.</p>
 <p><img src="../../../images/simulator/widget-stepper.png" /></p>
-<section id="sheet-required" class="level5">
-<h5>sheet <sub><sup>(required)</sup></sub></h5>
+<h5 id="sheet-required">sheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> The <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> object for the stepper.</p>
-</section>
-<section id="defaultframe-required" class="level5">
-<h5>defaultFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="defaultframe-required">defaultFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The default frame used when both the minus and plus sides are active.</p>
-</section>
-<section id="nominusframe-required" class="level5">
-<h5>noMinusFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="nominusframe-required">noMinusFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame used when the stepper reaches its minimum value, indicating no apparent result from a tap on the minus side.</p>
-</section>
-<section id="noplusframe-required" class="level5">
-<h5>noPlusFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="noplusframe-required">noPlusFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame used when the stepper reaches its maximum value, indicating no apparent result from a tap on the plus side.</p>
-</section>
-<section id="minusactiveframe-required" class="level5">
-<h5>minusActiveFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="minusactiveframe-required">minusActiveFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame used to indicate that a tap/hold occurred on the minus side.</p>
-</section>
-<section id="plusactiveframe-required" class="level5">
-<h5>plusActiveFrame <sub><sup>(required)</sup></sub></h5>
+<h5 id="plusactiveframe-required">plusActiveFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame used to indicate that a tap/hold occurred on the plus side.</p>
-</section>
-</section>
-<section id="examples" class="level2">
-<h2>Examples</h2>
-<section id="default" class="level5">
-<h5>Default</h5>
+<h2 id="examples">Examples</h2>
+<h5 id="default">Default</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 local currentNumber = 0
@@ -264,9 +207,7 @@ local newStepper = widget.newStepper(
         onPress = onStepperPress
     }
 )</pre>
-</section>
-<section id="image-sheet" class="level5">
-<h5>Image Sheet</h5>
+<h5 id="image-sheet">Image Sheet</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 local currentNumber = 0
@@ -317,9 +258,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

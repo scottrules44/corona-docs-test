@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/kidoz/index.html">KIDOZ</a>  ▸  <a href="../../plugin/kidoz/show.html">show</a>
 </div>
-<section id="kidoz.show" class="level1">
-<h1>kidoz.show()</h1>
+<h1 id="kidoz.show">kidoz.show()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -104,24 +103,15 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Shows a KIDOZ ad which was previously loaded via <a href="../../plugin/kidoz/load.html">kidoz.load()</a>.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>This call does not necessarily reveal the actual ad view. For example, if you load a <code>"panelView"</code> ad, only the initial UI handle will be shown by default. From this point, the user can tap the handle to reveal the ad view. However, the panel view can be configured without any UI element for the user to manipulate — in this case, <code>kidoz.show()</code> will fully reveal the ad view.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">kidoz.show( adType )</pre>
-<section id="adtype-required" class="level5">
-<h5>adType <sub><sup>(required)</sup></sub></h5>
+<h5 id="adtype-required">adType <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The ad type to show. Valid values include <code>"panelView"</code>, <code>"interstitial"</code>, <code>"rewardedVideo"</code>, and <code>"banner"</code>.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local kidoz = require( "plugin.kidoz" )
 
 local function adListener( event )
@@ -150,8 +140,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

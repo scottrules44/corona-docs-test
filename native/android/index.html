@@ -75,8 +75,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../native/index.html">Solar2D Native</a>  ▸  <a href="../../native/android/index.html">Android</a>
 </div>
-<section id="solar2d-native-android" class="level1">
-<h1>Solar2D Native — Android</h1>
+<h1 id="solar2d-native-android">Solar2D Native — Android</h1>
 <p>The following resources go further in depth on using Solar2D Native for Android.</p>
 <div class="guides-toc">
 <ul>
@@ -88,17 +87,12 @@
 </ul>
 </div>
 <p><a id="setup"></a></p>
-<section id="solar2d-native-setup" class="level2">
-<h2>Solar2D Native Setup</h2>
+<h2 id="solar2d-native-setup">Solar2D Native Setup</h2>
 <p>Download and install <a href="https://developer.android.com/studio">Android Studio</a>, the official IDE for Android development.</p>
-<section id="for-macos" class="level3">
-<h3>For macOS</h3>
+<h3 id="for-macos">For macOS</h3>
 <p>Within the <code>/Applications/Corona/Native/</code> folder, double click <strong>Setup Corona Native</strong>. This will create the symbolic link required for the project templates.</p>
 <p><a id="templates"></a></p>
-</section>
-</section>
-<section id="project-templates" class="level2">
-<h2>Project Templates</h2>
+<h2 id="project-templates">Project Templates</h2>
 <p>New projects can easily be created by using template files as a starting point. Project template can be found:</p>
 <ul>
 <li>macOS: <nobr><code>/Applications/Corona/Native/Project Template/</code></nobr></li>
@@ -170,41 +164,25 @@ Project Flow
 </div>
 </div>
 <p><a id="development"></a></p>
-</section>
-<section id="solar2d-native-development" class="level2">
-<h2>Solar2D Native Development</h2>
-<section id="bridging-luajava" class="level3">
-<h3>Bridging Lua/Java</h3>
+<h2 id="solar2d-native-development">Solar2D Native Development</h2>
+<h3 id="bridging-luajava">Bridging Lua/Java</h3>
 <p>To bridge Lua and Java code, you’ll use functionality made available by <a href="https://code.google.com/archive/p/jnlua/">JNLua</a>. This allows you to add libraries and functions in Lua that call directly into Java.</p>
-</section>
-<section id="native-apis" class="level3">
-<h3>Native APIs</h3>
+<h3 id="native-apis">Native APIs</h3>
 <p>The native APIs for Android are available as a <a href="html/overview-summary.html">JavaDoc</a>.</p>
-</section>
-<section id="using-proguard" class="level3">
-<h3>Using ProGuard</h3>
+<h3 id="using-proguard">Using ProGuard</h3>
 <p>Just remember to keep ProGuard from obfuscating your <code>plugin.your-plugin-name.LuaLoader</code> class by adding the line:</p>
 <pre class="brush: lua;">-keep public class plugin.your-plugin-name.LuaLoader { public *;}</pre>
 <p>to your <code>proguard-rules.pro</code> file within the plugin module.</p>
-</section>
-<section id="using-common-android-libraries" class="level3">
-<h3>Using Common Android Libraries</h3>
+<h3 id="using-common-android-libraries">Using Common Android Libraries</h3>
 <p>If you’re <a href="../../native/plugin/index.html">developing a plugin</a> that depends on the <a href="https://developer.android.com/topic/libraries/support-library/index.html">Android Support Libraries</a> or <a href="https://developers.google.com/android/guides/overview">Google Play Services</a>, please read our <a href="../../native/android/dependencies.html">Android Dependency Integration</a> guide.</p>
-</section>
-<section id="runtime-permission-support" class="level3">
-<h3>Runtime Permission Support</h3>
+<h3 id="runtime-permission-support">Runtime Permission Support</h3>
 <p>For information on working with Android Runtime Permissions in <strong>Android 6.0</strong> or newer, please read our <a href="../../native/android/permissionSupport.html">Android Runtime Permission Support</a> guide.</p>
 <p><a id="building"></a></p>
-</section>
-</section>
-<section id="building-for-devices" class="level2">
-<h2>Building for Devices</h2>
+<h2 id="building-for-devices">Building for Devices</h2>
 <p>To build a Solar2D Native project from Android Studio, simply use the <strong>Run</strong> button on the top bar of icons. This will build your project, sign it, and prompt you to select a deployment target. The built <code>.apk</code> is signed with either a keystore you’ve specified in the <nobr><code>android</code> → <code>signingConfigs</code></nobr> block of the <code>android/app/build.gradle</code> script, or the default <code>debug.keystore</code> if none is provided.</p>
 <p>Android Studio has several other <nobr>build-related</nobr> options that you can read about <a href="https://developer.android.com/studio/run">here</a>.</p>
 <p><a id="self-hosted"></a></p>
-</section>
-<section id="building-for-self-hosted-plugins" class="level2">
-<h2>Building for Self Hosted Plugins</h2>
+<h2 id="building-for-self-hosted-plugins">Building for Self Hosted Plugins</h2>
 <p>Building the plugin-in to be published on a web server (since the plugin is not yet intended to be shared with the community), a few simple extra steps are required:</p>
 <ol type="1">
 <li><p>Create a directory for packaging, for instance <code>package-plugin</code>. Create a folder named <code>android</code> within <code>package-plugin</code>.</p></li>
@@ -227,8 +205,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

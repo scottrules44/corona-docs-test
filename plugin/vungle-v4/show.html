@@ -76,8 +76,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/vungle-v4/index.html">Vungle 4</a>  ▸  <a href="../../plugin/vungle-v4/show.html">show</a>
 </div>
-<section id="vungle-v4.show" class="level1">
-<h1>vungle-v4.show()</h1>
+<h1 id="vungle-v4.show">vungle-v4.show()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,57 +107,34 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p><code>vungle-v4.show()</code> begins playing a full-screen video ad if one is cached and available for display.</p>
 <p>For Vungle, this API returns a boolean <code>true</code> or <code>false</code> depending on the availability of a cached video ad.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">vungle-v4.show( adUnitType [, params] )</pre>
-<section id="adunittype-required" class="level5">
-<h5>adUnitType <sub><sup>(required)</sup></sub></h5>
+<h5 id="adunittype-required">adUnitType <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Vungle supports the following types:</p>
 <ul>
 <li><code>"interstitial"</code> — default video ad unit</li>
 <li><code>"incentivized"</code> — video ad unit with optional server-to-server callback for in-app rewards</li>
 </ul>
-</section>
-<section id="params-optional" class="level5">
-<h5>params <sub><sup>(optional)</sup></sub></h5>
+<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table that specifies properties for the ad request — see the next section for details.</p>
-</section>
-</section>
-<section id="parameter-reference" class="level2">
-<h2>Parameter Reference</h2>
+<h2 id="parameter-reference">Parameter Reference</h2>
 <p>The <code>params</code> table can include properties for the ad request.</p>
-<section id="isanimated-optional" class="level5">
-<h5>isAnimated <sub><sup>(optional)</sup></sub></h5>
+<h5 id="isanimated-optional">isAnimated <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> This parameter only applies to iOS. If <code>true</code> (default), the video ad will transition in with a slide effect. If <code>false</code>, it will appear instantaneously.</p>
-</section>
-<section id="isautorotation-required" class="level5">
-<h5>isAutoRotation <sub><sup>(required)</sup></sub></h5>
+<h5 id="isautorotation-required">isAutoRotation <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> If <code>true</code> (default), the video ad will rotate automatically with the device’s orientation. If <code>false</code>, it will use the ad’s preferred orientation. This is required for Android only. For iOS, look into the <code>orientations</code> key.</p>
-</section>
-<section id="orientations-optional" class="level5">
-<h5>orientations <sub><sup>(optional)</sup></sub></h5>
+<h5 id="orientations-optional">orientations <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Bitmask with the possible orientation values. Default is <code>UIInterfaceOrientationMaskAll</code>.</p>
-</section>
-<section id="isbackbuttonenabled-optional" class="level5">
-<h5>isBackButtonEnabled <sub><sup>(optional)</sup></sub></h5>
+<h5 id="isbackbuttonenabled-optional">isBackButtonEnabled <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> This parameter only applies to Android. If <code>true</code>, the Android back button will stop playback of the video ad and display the post-roll. If <code>false</code> (default), the back button will be disabled during playback. Note that the back button is always enabled in the post-roll — when pressed, it exits the ad and returns to the application.</p>
-</section>
-<section id="issoundenabled-optional" class="level5">
-<h5>isSoundEnabled <sub><sup>(optional)</sup></sub></h5>
+<h5 id="issoundenabled-optional">isSoundEnabled <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> If <code>true</code> (default), sound will be enabled during video ad playback, subject to the device’s sound settings. If <code>false</code>, video playback will begin muted. Note that the user can mute or <nobr>un-mute</nobr> sound during playback.</p>
-</section>
-<section id="username-optional" class="level5">
-<h5>username <sub><sup>(optional)</sup></sub></h5>
+<h5 id="username-optional">username <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> This parameter only applies to the <code>"incentivized"</code> ad unit type. When specified, it represents the user identifier that you wish to receive in a <nobr>server-to-server</nobr> callback that rewards the user for a completed video ad view.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local ads = require( "ads" )
 
 local function adListener( event )
@@ -180,8 +156,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

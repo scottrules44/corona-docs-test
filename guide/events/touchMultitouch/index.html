@@ -69,8 +69,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/events/index.html">Events/Listeners</a>
 </div>
-<section id="tap-touch-multitouch" class="level1">
-<h1>Tap / Touch / Multitouch</h1>
+<h1 id="tap-touch-multitouch">Tap / Touch / Multitouch</h1>
 <p>This guide explains the difference between <strong>tap</strong>, <strong>touch</strong>, and <strong>multitouch</strong> and how to handle the events associated with each method.</p>
 <div class="docs-tip-outer">
 <div class="docs-tip-inner-left">
@@ -92,8 +91,7 @@
 </ul>
 </div>
 <p><a id="tapevents"></a></p>
-<section id="tap-detection" class="level2">
-<h2>Tap Detection</h2>
+<h2 id="tap-detection">Tap Detection</h2>
 <p><a href="../../../api/event/tap/index.html">Tap</a> events are the most basic form of screen interactivity. Essentially, a tap is represented by the user touching the screen and lifting off at the same approximate point. The tap event is considered successful only if the user touches <strong>and</strong> releases at that point.</p>
 <p>In Corona, you can listen for tap events by registering a <code>"tap"</code> event listener on most common <a href="../../../guide/media/displayObjects/index.html">display objects</a>:</p>
 <pre class="brush: lua;">local function tapListener( event )
@@ -133,9 +131,7 @@ local myButton = display.newRect( 100, 100, 200, 50 )
 myButton:addEventListener( "tap", tapListener )</pre>
 </div>
 <p><a id="touchevents"></a></p>
-</section>
-<section id="touch-detection" class="level2">
-<h2>Touch Detection</h2>
+<h2 id="touch-detection">Touch Detection</h2>
 <p><a href="../../../api/event/touch/index.html">Touch</a> events provide for a much greater level of screen interactivity. Using touch events, you can detect when the user first touches the screen and when the touch is lifted off the screen. You can also track the motion of the touch as it moves around the screen. To accomplish this, Corona offers the <code>event.phase</code> property in one of four states:</p>
 <ul>
 <li><code>"began"</code> — indicates that a touch has started on the screen.</li>
@@ -173,9 +169,7 @@ myButton:addEventListener( "touch", myTouchListener )  -- Add a "touch" listener
 <li><p><code>event.xStart</code> / <code>event.yStart</code> — the <strong>x</strong> and <strong>y</strong> position of the touch from the <code>"began"</code> phase of the touch sequence, in content coordinates.</p></li>
 </ul>
 <p><a id="multitouch"></a></p>
-</section>
-<section id="multitouch" class="level2">
-<h2>Multitouch</h2>
+<h2 id="multitouch">Multitouch</h2>
 <p>Enabling <strong>multitouch</strong> in an app lets you detect and handle multiple user touches on the screen at the same time.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -215,9 +209,7 @@ end
 -- Add a touch listener to the object
 newRect1:addEventListener( "touch", touchListener )</pre>
 <p><a id="propagation"></a></p>
-</section>
-<section id="taptouch-propagation" class="level2">
-<h2>Tap/Touch Propagation</h2>
+<h2 id="taptouch-propagation">Tap/Touch Propagation</h2>
 <p>When the user touches the screen, the event is dispatched to the display hierarchy. Only those display objects that intersect the touch location on the screen will receive the event.</p>
 <p><a href="../../../api/event/tap/index.html">Tap</a> and <a href="../../../api/event/touch/index.html">touch</a> events propagate through these objects in a particular order. By default, the first object to receive the event is the <nobr>front-most</nobr> display object in the display hierarchy that intersects the touch location. The next object to receive the event is the next object back in the hierarchy that intersects the touch location, and so on.</p>
 <p>Tap and touch events propagate until they are “handled.” This means that if you have multiple objects overlaying each other in the display hierarchy, and a tap or touch event listener has been applied to each, the event will propagate through <strong>all</strong> of these objects. However, you can stop propagation to the next underlying object by telling Corona that the event has been handled. This is as simple as returning <code>true</code> from the event listener — this stops the propagation cycle and prevents any underlying objects from responding to the hit event.</p>
@@ -243,9 +235,7 @@ myButton:addEventListener( "touch", myTouchListener )</pre>
 </div>
 </div>
 <p><a id="focus"></a></p>
-</section>
-<section id="setting-touch-focus" class="level2">
-<h2>Setting Touch Focus</h2>
+<h2 id="setting-touch-focus">Setting Touch Focus</h2>
 <p>You can direct all <a href="../../../api/event/touch/index.html">touch</a> events to a specific display object by setting <strong>focus</strong> on the object. This instructs the system to deliver all future touch events to that object, effectively making it “own” the first touch it receives for the lifetime of that touch.</p>
 <p>Consider a typical button — if the user touches the button and, without lifting/releasing touch, slides outside the button bounds, the button probably should not trigger an action upon touch release. Similary, if the touch slides off the button and intersects another <nobr>touch-sensitive</nobr> object, you probably don’t want that object to react since the touch began on the button. Both of these cases are easily solved by setting focus on the display object.</p>
 <p>To set focus on a display object, pass its object reference to <a href="../../../api/type/StageObject/setFocus.html">StageObject:setFocus()</a>. This may be <code>event.target</code> within a touch listener, or it can be any direct reference to the object itself.</p>
@@ -277,8 +267,7 @@ end
 -- Add a touch listener to each object
 newRect1:addEventListener( "touch", touchListener )
 newRect2:addEventListener( "touch", touchListener )</pre>
-<section id="multitouch-focus" class="level3">
-<h3>Multitouch Focus</h3>
+<h3 id="multitouch-focus">Multitouch Focus</h3>
 <p>Touch focus can also be achieved when <strong>multitouch</strong> is enabled via <a href="../../../api/library/system/activate.html">system.activate()</a>. However, because there may be multiple touches on the same object, you must dedicate the first touch it receives by a unique internal identifier. This is done by passing the <code>event.id</code> property gathered from the touch listener as the second argument to <a href="../../../api/type/StageObject/setFocus.html">StageObject:setFocus()</a>:</p>
 <pre class="brush: lua;">display.getCurrentStage():setFocus( event.target, event.id )</pre>
 <p>Then, when you wish to <strong>release</strong> focus on the object, simply pass <code>nil</code> as the second argument to <a href="../../../api/type/StageObject/setFocus.html">StageObject:setFocus()</a>:</p>
@@ -324,9 +313,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

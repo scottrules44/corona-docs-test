@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../plugin/steamworks/showGameOverlay.html">showGameOverlay</a>
 </div>
-<section id="steamworks.showgameoverlay" class="level1">
-<h1>steamworks.showGameOverlay()</h1>
+<h1 id="steamworks.showgameoverlay">steamworks.showGameOverlay()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -112,13 +111,10 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Displays a Steam overlay on top of the application window. This overlay shows information related to the game currently being played such as its main community page, user stats, achievements, etc. This is the same overlay that <nobr>Shift+Tab</nobr> would normally display.</p>
 <p>Returns <code>true</code> if Steam is able to display the overlay.</p>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>This function will return <code>false</code> — and the overlay will not show — in the following cases:</p>
 <ul>
 <li>Invalid arguments were specified.</li>
@@ -128,12 +124,9 @@
 <li>User has disabled overlays in the Steam client’s <nobr><strong>In-Game</strong></nobr> settings screen.</li>
 <li>During the first few seconds of app startup. This is normal behavior since the Steam client needs time to bind to the application process.</li>
 </ul>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">steamworks.showGameOverlay( [overlayName] )</pre>
-<section id="overlayname-optional" class="level5">
-<h5>overlayName <sub><sup>(optional)</sup></sub></h5>
+<h5 id="overlayname-optional">overlayName <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Unique name of the overlay to be displayed from among the following options. If you omit this argument or if the given name is unknown, Steam defaults to displaying what was last shown in the game overlay. If an overlay was not displayed before, Steam defaults to displaying the game’s main overlay which is normally shown when pressing <nobr>Shift+Tab</nobr>.</p>
 <ul>
 <li><code>"Achievements"</code></li>
@@ -144,10 +137,7 @@
 <li><code>"Settings"</code></li>
 <li><code>"Stats"</code></li>
 </ul>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 -- Attempt to show the user's current achievements
@@ -166,8 +156,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

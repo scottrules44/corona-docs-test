@@ -69,8 +69,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/distribution/index.html">Building/Distribution</a>
 </div>
-<section id="android-adaptive-icons" class="level1">
-<h1>Android Adaptive Icons</h1>
+<h1 id="android-adaptive-icons">Android Adaptive Icons</h1>
 <p>This guide discusses implementing <strong>Android Adaptive Icons</strong> on Android 8 (Oreo) or later.</p>
 <div class="guides-toc">
 <ul>
@@ -110,21 +109,17 @@
 <p>To keep it simple, Solar2D provides example <code>AndroidResources</code> folders when you create a new project from the Welcome screen, menu or you can copy the folder out of a Solar2D SampleApp. Copy the <code>AndoidResources</code> folder from one of these locations to your project in the same folder as <code>main.lua</code>. This will get you a base structure to work from.</p>
 </div>
 </div>
-<section id="android-7-and-earlier" class="level2">
-<h2>Android 7 and earlier</h2>
+<h2 id="android-7-and-earlier">Android 7 and earlier</h2>
 <p>To maintain your icons on Android 7 and earlier follow these steps:</p>
 <ul>
 <li>Copy your <code>Icon-mdpi.png</code> file to <code>AndroidResources/res/mipmap-mdpi</code> and rename it to <code>ic_launcher.png</code>.</li>
 <li>Repeat this process for each of the Android icons (Icon-hdpi.png to <code>Android-Resources/res/mipmap-hdpi/ic_launcher.png</code>, etc.</li>
 </ul>
 <p>Existing icons should be already sized and formatted for use. All you need to do is to move them into place and name them correctly.</p>
-</section>
-<section id="android-8-and-later" class="level2">
-<h2>Android 8 and Later</h2>
+<h2 id="android-8-and-later">Android 8 and Later</h2>
 <p>This requires a little more thought and actions on your part. First, please read the <a href="https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive">Android Adaptive Icon Guide</a></p>
 <p>You may very well need to re-think your apps icon look to make Adaptive icons work for you.</p>
-<section id="what-are-adaptive-icons" class="level3">
-<h3>What are Adaptive Icons</h3>
+<h3 id="what-are-adaptive-icons">What are Adaptive Icons</h3>
 <p>Google, along with device partners wanted to give their device partners more design flexibility. For instance on Google Pixel devices, icons are now round. For other device makers, they may be more of an Apple like rounded-rectangle. Each device maker provides a mask that is overlaid on the icon to give it its shape, for instance on Pixel devices:</p>
 <figure>
 <img src="https://developer.android.com/guide/practices/ui_guidelines/images/NB_Icon_Layers_3D_03_ext.gif" alt="Android adaptive icon layers" /><figcaption>Android adaptive icon layers</figcaption>
@@ -136,18 +131,14 @@
 <p>This is where the <code>AndroidResources\res\mipmap-anydpi-v26</code> and <code>AndroidResources\res\values</code> folders come into play. The default setup is to provide a solid color background (no image file needed) and a series of default foreground images. The foreground images, by default are named <code>ic_launcher_foreground.png</code>. The combination of this foreground image and a solid color background work well with the mask system used.</p>
 <p>Create a foreground image for your icon in the sizes listed below, place them in the appropriate <code>mipmap-*dpi</code> folder.</p>
 <p>Then to change the background color, open <code>AndroidResources/res/values/values.xml</code> with your favorite text editor and change the color to a suitable background color for your icon.</p>
-</section>
-<section id="but-i-want-my-own-background-image" class="level3">
-<h3>But I want my own background image</h3>
+<h3 id="but-i-want-my-own-background-image">But I want my own background image</h3>
 <p>You can do this as well. First create the appropriate .PNG image in the same size as <code>ic_launcher_foreground.png</code>,, name it <code>ic_launcher_background.png</code> and copy it to the appropriate <code>res/mipmap-*dpi</code> folder along side it’s foreground image.</p>
 <p>Next, edit the <code>AndroidResources/res/mipmap-anydpi-v26/ic_launcher.xml</code> file and change the background entry from:</p>
 <pre class="brush: lua;">&lt;background android:drawable="@color/ic_launcher_background"/></pre>
 <p>to:</p>
 <pre class="brush: lua;">&lt;background android:drawable="@mipmap/ic_launcher_background"/></pre>
 <p>Afterwards, all of your Android icon resources should be inside the various folders in <code>AndroidResources/res/</code></p>
-</section>
-<section id="image-sizes-for-various-icon-images" class="level3">
-<h3>Image sizes for various icon images</h3>
+<h3 id="image-sizes-for-various-icon-images">Image sizes for various icon images</h3>
 <p>26 is the API Level of Android 8.0 “Oreo”.</p>
 <div class="inner-table">
 <table>
@@ -269,9 +260,7 @@
 </tbody>
 </table>
 </div>
-</section>
-<section id="using-different-tools-to-create-android-icons" class="level3">
-<h3>Using different tools to create Android icons</h3>
+<h3 id="using-different-tools-to-create-android-icons">Using different tools to create Android icons</h3>
 <p>You can also use Android Studio to create icons(<a href="https://developer.android.com/studio/write/image-asset-studio">official guide</a>). However, it may create excessive files that are not used by Solar2D and may interfere with the building process. In particular, if it creates a style.xml file, for now, simply delete it.</p>
 <p>Again, we recommend the simple process of simply copying the right sized files over top of the <code>AndroidResources/res</code> folder that we generate and use a simple color background when possible.</p>
 <p>Android platform is extremely powerful, and Adaptive Icons are not limited to the template we provided. For example, you can also use vector images and gradients for icon layers. Don’t be afraid to experiment. Make sure you have valid Android drawable resource <code>ic_launcher</code>.</p>
@@ -285,9 +274,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -69,8 +69,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/TextField/index.html">TextField</a>  ▸  <a href="../../../api/type/TextField/setTextColor.html">setTextColor</a>
 </div>
-<section id="objectsettextcolor" class="level1">
-<h1>object:setTextColor()</h1>
+<h1 id="objectsettextcolor">object:setTextColor()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -101,33 +100,22 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Sets the color of the text in a native text input field.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">object:setTextColor( r, g, b )
 object:setTextColor( r, g, b, a )</pre>
-<section id="r-g-b-required" class="level5">
-<h5>r, g, b <sub><sup>(required)</sup></sub></h5>
+<h5 id="r-g-b-required">r, g, b <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> A value between <code>0</code> and <code>1</code> for red, green, and blue channels.</p>
-</section>
-<section id="a-optional" class="level5">
-<h5>a <sub><sup>(optional)</sup></sub></h5>
+<h5 id="a-optional">a <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> A value between <code>0</code> and <code>1</code> for the alpha channel. Default is <code>1</code>. This can not be changed on Windows.</p>
-</section>
-</section>
-<section id="gotchas" class="level2">
-<h2>Gotchas</h2>
+<h2 id="gotchas">Gotchas</h2>
 <p>If you are passing a table of color values to this function, the table must be <a href="../../../api/library/global/unpack.html">unpacked</a> so that the color values are dictated properly:</p>
 <pre class="brush: lua;">local field1 = native.newTextField( 50, 100, 100, 35 )
 
 local colorTable = { 1, 0, 0, 0.5 }
 field1:setTextColor( unpack(colorTable) )</pre>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local field1 = native.newTextField( 50, 100, 100, 35 )
 field1.align = "center"
 field1:setTextColor( 1, 0.5, 0 )
@@ -142,8 +130,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

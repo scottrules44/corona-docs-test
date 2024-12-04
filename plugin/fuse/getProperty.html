@@ -68,8 +68,7 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/fuse/index.html">fuse</a>  ▸  <a href="../../plugin/fuse/getProperty.html">getProperty</a>
 </div>
-<section id="fuse.getproperty" class="level1">
-<h1>fuse.getProperty()</h1>
+<h1 id="fuse.getproperty">fuse.getProperty()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -96,16 +95,12 @@
 </tbody>
 </table>
 </blockquote>
-<section id="overview" class="level2">
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Queries the Fuse engine for various properties.</p>
-</section>
-<section id="syntax" class="level2">
-<h2>Syntax</h2>
+<h2 id="syntax">Syntax</h2>
 <pre class="brush: lua;">fuse.getProperty( property )
 fuse.getProperty( property, params )</pre>
-<section id="property-required" class="level5">
-<h5>property <sub><sup>(required)</sup></sub></h5>
+<h5 id="property-required">property <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> String which specifies the property type. Valid options include:</p>
 <ul>
 <li><code>"numGamesPlayed"</code> — The number of times that the user has opened the application. On iOS, this is regarded as the app being opened from either the springboard or the system tray (minimized).</li>
@@ -113,14 +108,9 @@ fuse.getProperty( property, params )</pre>
 <li><code>"isConnected"</code> — Boolean value of <code>true</code> if the application is connected to the Internet; <code>false</code> otherwise.</li>
 <li><code>"rewardedPayload"</code> — The <a href="../../plugin/fuse/event/adsRequest/payload.html">payload</a> of the rewarded object for a specific zone. The zone should be specified within the <code>params</code> table via the <code>zone</code> key. If a <code>params</code> table is not supplied, the payload for the default zone is given.</li>
 </ul>
-</section>
-<section id="params-optional" class="level5">
-<h5>params <sub><sup>(optional)</sup></sub></h5>
+<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table in which to specify the zone for the <code>"rewardedPayload"</code> property. The zone should be specified with the <code>zone</code> key and a <a href="../../api/type/String.html">string</a> value representing the ad zone.</p>
-</section>
-</section>
-<section id="example" class="level2">
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="brush: lua;">local fuse = require( "plugin.fuse" )
 
 -- Event listener function
@@ -153,8 +143,6 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
-</section>
-</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">
