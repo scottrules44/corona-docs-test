@@ -479,7 +479,7 @@ MEDIA QUERIES SECTION
 	body { overflow: visible; width: auto; max-width: 1200px; }
 	html { padding: 0px; }
 	#TOC { display: none; overflow: visible; }
-	.level1 { left: 0px; overflow: visible; }
+	section.level1 { left: 0px !important; overflow: visible !important; }
 }
 
 
@@ -616,6 +616,8 @@ section[id="api-reference"] section[id="librariesapi.library"] { width: 33%; flo
 section[id="api-reference"] section[id="eventsapi.event"] { width: 33%; float: left; }
 section[id="api-reference"] section[id="typesapi.type"] { width: 33%; float: left; }
 section#section { clear: both; }
+
+section[id="corona-documentation"] { left: 0px !important; overflow: visible !important; }
 
 
 /* ------------------------------------------------------------
