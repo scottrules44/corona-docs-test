@@ -479,7 +479,7 @@ MEDIA QUERIES SECTION
 	body { overflow: visible; width: auto; max-width: 1200px; }
 	html { padding: 0px; }
 	#TOC { display: none; overflow: visible; }
-	section.level1 { left: 0px; overflow: visible; }
+	.level1 { left: 0px; overflow: visible; }
 }
 
 
