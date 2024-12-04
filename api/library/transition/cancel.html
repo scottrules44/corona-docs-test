@@ -69,7 +69,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/transition/index.html">transition</a>  ▸  <a href="../../../api/library/transition/cancel.html">cancel</a>
 </div>
-<h1 id="transition.cancel">transition.cancel()</h1>
+<section id="transition.cancel" class="level1">
+<h1>transition.cancel()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -100,7 +101,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>The <code>transition.cancel()</code> function will cancel one of the following, depending on the passed parameter:</p>
 <ul>
 <li>All transitions in progress, when called with no parameters.</li>
@@ -108,18 +110,28 @@
 <li>All transitions on a specific display object, when called with a display object reference.</li>
 <li>All transitions with a specific tag, when called with a string parameter representing a tag.</li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">transition.cancel()
 transition.cancel( transitionReference )
 transition.cancel( displayObject )
 transition.cancel( tagName )</pre>
-<h5 id="transitionreference-optional">transitionReference <sub><sup>(optional)</sup></sub></h5>
+<section id="transitionreference-optional" class="level5">
+<h5>transitionReference <sub><sup>(optional)</sup></sub></h5>
 <p>The specific transition to cancel.</p>
-<h5 id="displayobject-optional">displayObject <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="displayobject-optional" class="level5">
+<h5>displayObject <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/DisplayObject/index.html">DisplayObject</a>.</em> The display object upon which all associated transitions will be cancelled.</p>
-<h5 id="tagname-optional">tagName <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="tagname-optional" class="level5">
+<h5>tagName <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The tag name; all transitions with this tag will be cancelled.</p>
-<h2 id="examples">Examples</h2>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
 <pre class="brush: lua;">-- cancel all running (and paused) transitions
 
 local transition1 = transition.to( currentTarget, { time=400, y=y+100, iterations=5, tag="transTag" } )
@@ -158,6 +170,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

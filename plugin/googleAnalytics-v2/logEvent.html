@@ -74,7 +74,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/googleAnalytics-v2/index.html">googleAnalytics-v2</a>  ▸  <a href="../../plugin/googleAnalytics-v2/logEvent.html">logEvent</a>
 </div>
-<h1 id="googleanalytics.logevent">googleAnalytics.logEvent()</h1>
+<section id="googleanalytics.logevent" class="level1">
+<h1>googleAnalytics.logEvent()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -109,25 +110,44 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Logs an event with Google Analytics.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">googleAnalytics.logEvent( eventName, parameters )</pre>
-<h5 id="eventname-required">eventName <sub><sup>(required)</sup></sub></h5>
+<section id="eventname-required" class="level5">
+<h5>eventName <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> String which identifies the group of objects to track, for example <code>"share_image"</code>.</p>
-<h5 id="parameters-required">parameters <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="parameters-required" class="level5">
+<h5>parameters <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table of key value pairs that are added to event, for example <code>"{imageType = "png", id=321}"</code>.</p>
-<h2 id="syntax-legacy">Syntax (Legacy)</h2>
+</section>
+</section>
+<section id="syntax-legacy" class="level2">
+<h2>Syntax (Legacy)</h2>
 <pre class="brush: lua;">googleAnalytics.logEvent( eventName, action [, label] [, value] )</pre>
-<h5 id="eventname-required-1">eventName <sub><sup>(required)</sup></sub></h5>
+<section id="eventname-required-1" class="level5">
+<h5>eventName <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> String which identifies the group of objects to track, for example <code>"share_image"</code>.</p>
-<h5 id="action-required">action <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="action-required" class="level5">
+<h5>action <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> A string which is uniquely paired with the event as a parameter <code>"button_press"</code>.</p>
-<h5 id="label-optional">label <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="label-optional" class="level5">
+<h5>label <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> An optional string which is uniquely paired with the event as a parameter <code>"menu"</code> or <code>"quit"</code>.</p>
-<h5 id="value-optional">value <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="value-optional" class="level5">
+<h5>value <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> An optional integer which specifies the event value. Values must be <nobr>non-negative</nobr>.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local googleAnalytics = require( "plugin.googleAnalytics" )
 
 -- Initialize Google Analytics
@@ -148,6 +168,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

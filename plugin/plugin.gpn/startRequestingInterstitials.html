@@ -65,7 +65,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  [plugin.gpn][plugin.plugin.gpn]  ▸  [startRequestingInterstitials][plugin.plugin.gpn.startRequestingInterstitials]
 </div>
-<h1 id="gpn.startrequestinginterstitials">gpn.startRequestingInterstitials()</h1>
+<section id="gpn.startrequestinginterstitials" class="level1">
+<h1>gpn.startRequestingInterstitials()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -100,12 +101,17 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Starts requesting interstitial ads from the server.</p>
 <p><em>Note:</em> you should call startRequestingInterstitials() only once. The interstitial rotation is handled automatically by the SDK. Each time a new interstitial is received the “received” event is dispatched to your listener function. You only need to call startRequestingInterstitials() if the SDK received a memory warning (and freed the memory occupied by interstitial) or if an error occurred and “failed” event was dispatched.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">gpn.startRequestingInterstitials( )</pre>
-<h2 id="examples">Examples</h2>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
 <pre class="brush: lua;">
     -- start requesting interstitial after you've initialized gpn instance
     gpn.startRequestingInterstitials()
@@ -120,6 +126,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

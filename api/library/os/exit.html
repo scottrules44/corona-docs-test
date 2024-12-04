@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/os/index.html">os</a>  ▸  <a href="../../../api/library/os/exit.html">exit</a>
 </div>
-<h1 id="os.exit">os.exit()</h1>
+<section id="os.exit" class="level1">
+<h1>os.exit()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -102,7 +103,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
 Important
@@ -110,11 +112,17 @@ Important
 <p>This is a low level Lua call that should <strong>not</strong> be used on any platform. Use <a href="../../../api/library/native/requestExit.html">native.requestExit()</a> instead (other than on iOS which does not permit apps to terminate themselves).</p>
 </div>
 <p>Calls the C function <code>exit()</code>, with an optional code, to terminate the host program. The default value for code is the success code.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">os.exit( [ exit ] )</pre>
-<h5 id="exit-optional">exit <sub><sup>(optional)</sup></sub></h5>
+<section id="exit-optional" class="level5">
+<h5>exit <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Optional parameter that returns the exit code to the OS.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>This is not the API you are looking for. Use <a href="../../../api/library/native/requestExit.html">native.requestExit()</a> instead.</p>
 <hr>
 <div id="footer">
@@ -126,6 +134,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

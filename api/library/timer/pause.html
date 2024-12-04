@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/timer/index.html">timer</a>  ▸  <a href="../../../api/library/timer/pause.html">pause</a>
 </div>
-<h1 id="timer.pause">timer.pause()</h1>
+<section id="timer.pause" class="level1">
+<h1>timer.pause()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -98,14 +99,21 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Pauses a specific timer or all timers with the same tag that were started with <a href="../../../api/library/timer/performWithDelay.html">timer.performWithDelay()</a>.</p>
 <p>If a specific timer is paused, then the function returns a <a href="../../../api/type/Number.html">number</a> that represents the amount of time remaining, in milliseconds.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">timer.pause( whatToPause )</pre>
-<h5 id="whattopause-required">whatToPause <sub><sup>(required)</sup></sub></h5>
+<section id="whattopause-required" class="level5">
+<h5>whatToPause <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Object.html">Object</a> or <a href="../../../api/type/String.html">String</a>.</em> The timer ID from, or <code>tag</code> passed to, <a href="../../../api/library/timer/performWithDelay.html">timer.performWithDelay()</a>. Note: Using <code>tag</code> requires <code>Solar2D 2020.3611</code> or a newer build.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local function listener( event )
     print( "listener called" )
 end
@@ -134,6 +142,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

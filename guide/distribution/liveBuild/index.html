@@ -66,7 +66,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/distribution/index.html">Building/Distribution</a>
 </div>
-<h1 id="generating-live-builds">Generating Live Builds</h1>
+<section id="generating-live-builds" class="level1">
+<h1>Generating Live Builds</h1>
 <div class="guide-intro">
 <p><strong>Live builds</strong> are a powerful and efficient way to see exactly how your <nobr>in-development</nobr> Solar2D app will appear on real devices. Benefits include:</p>
 </div>
@@ -115,7 +116,8 @@ Important
 </ul>
 </div>
 <p><a id="create"></a></p>
-<h2 id="live-build-creation">Live Build Creation</h2>
+<section id="live-build-creation" class="level2">
+<h2>Live Build Creation</h2>
 <p>To create a live build, simply follow these steps:</p>
 <ol type="1">
 <li>In the Solar2D Simulator, open the <strong>Build</strong> dialog window <nobr>(<strong>File</strong> → <strong>Build</strong>)</nobr> for either iOS, Android, or tvOS.</li>
@@ -197,7 +199,9 @@ Important
 </div>
 <!--- REFERENCE LINKS -->
 <p><a id="cls"></a></p>
-<h2 id="corona-live-server">Corona Live Server</h2>
+</section>
+<section id="corona-live-server" class="level2">
+<h2>Corona Live Server</h2>
 <p><strong>Corona Live Server</strong> is an application which syncs project changes over your local network. Every time you <a href="#create">create a live build</a>, Simulator will initiate it and automatically add the built project to the Corona Live Server project list.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -212,7 +216,9 @@ Notes
 </ul>
 </div>
 <p><a id="live-build-file"></a></p>
-<h2 id="live-build-file">Live Build File</h2>
+</section>
+<section id="live-build-file" class="level2">
+<h2>Live Build File</h2>
 <p>Once a live build is successfully created, the source project will contain a hidden <code>.CoronaLiveBuild</code> file in its root directory. This file contains the information required to synchronize the project between the device and the development machine.</p>
 <p>Typically, you will <strong>not</strong> need to edit the contents of this file. However, in very specific cases, it can be modified to customize the behavior of live builds and Corona Live Server:</p>
 <pre class="brush: lua;">key = XXXXXXXX-YYYY-ZZZZ-WWWW-AAA0987654321
@@ -223,7 +229,9 @@ Notes
 <li><code>ip</code>/<code>port</code> — Remove the <code>#</code> from each and specify these two values to use a static address and disable automatic discovery. This will enable live builds to work on older Android devices and, potentially, resolve some network issues. The <code>port</code> value should be a number between <code>1025</code> and <code>65534</code>.</li>
 </ul>
 <p><a id="troubleshooting"></a></p>
-<h2 id="troubleshooting">Troubleshooting</h2>
+</section>
+<section id="troubleshooting" class="level2">
+<h2>Troubleshooting</h2>
 <p>If the live build doesn’t update/refresh, please proceed through the following instructions. If functionality returns to normal at any step along the way, do not proceed further.</p>
 <ol type="1">
 <li>Ensure that both your computer and the device are connected to the same local network.</li>
@@ -247,6 +255,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

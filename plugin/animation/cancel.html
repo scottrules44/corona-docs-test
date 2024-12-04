@@ -75,7 +75,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/animation/index.html">Animation</a>  ▸  <a href="../../plugin/animation/cancel.html">cancel</a>
 </div>
-<h1 id="animation.cancel">animation.cancel()</h1>
+<section id="animation.cancel" class="level1">
+<h1>animation.cancel()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -110,7 +111,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>The <code>animation.cancel()</code> function will cancel the following, depending on the passed parameter:</p>
 <ul>
 <li>All tweens/timelines in progress, when called with no parameters.</li>
@@ -125,22 +127,35 @@ Important
 </div>
 <p>Calls to this method which target specific child tweens within a <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> are ignored. Timeline tweens are controlled/owned by the parent timeline, so you should cancel the timeline itself via this method or <a href="../../plugin/animation/type/Timeline/cancel.html">object:cancel()</a>.</p>
 </div>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">animation.cancel()
 animation.cancel( tweenObject )
 animation.cancel( displayObject )
 animation.cancel( tagName )
 animation.cancel( timelineObject )</pre>
-<h5 id="tweenobject-optional">tweenObject <sub><sup>(optional)</sup></sub></h5>
+<section id="tweenobject-optional" class="level5">
+<h5>tweenObject <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../plugin/animation/type/Tween/index.html">Tween</a>.</em> The specific <a href="../../plugin/animation/type/Tween/index.html">Tween</a> to cancel.</p>
-<h5 id="displayobject-optional">displayObject <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="displayobject-optional" class="level5">
+<h5>displayObject <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/DisplayObject/index.html">DisplayObject</a>.</em> The display object upon which all associated tweens will be cancelled.</p>
-<h5 id="tagname-optional">tagName <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="tagname-optional" class="level5">
+<h5>tagName <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The tag name; all tweens with this tag will be cancelled.</p>
-<h5 id="timelineobject-optional">timelineObject <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="timelineobject-optional" class="level5">
+<h5>timelineObject <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../plugin/animation/type/Timeline/index.html">Timeline</a>.</em> The specific <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> to cancel.</p>
-<h2 id="examples">Examples</h2>
-<h5 id="all-tweenstimelines">All Tweens/Timelines</h5>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="all-tweenstimelines" class="level5">
+<h5>All Tweens/Timelines</h5>
 <pre class="brush: lua;">local object1 = display.newRect( 50, 50, 100, 100 )
 local object2 = display.newRect( 50, 150, 100, 100 )
 
@@ -149,7 +164,9 @@ local tween2 = animation.to( object2, { y=400 }, { time=200 } )
 
 -- Sometime later, cancel all tweens and timelines
 animation.cancel()</pre>
-<h5 id="specific-tween">Specific Tween</h5>
+</section>
+<section id="specific-tween" class="level5">
+<h5>Specific Tween</h5>
 <pre class="brush: lua;">local object1 = display.newRect( 50, 50, 100, 100 )
 local object2 = display.newRect( 50, 150, 100, 100 )
 
@@ -158,7 +175,9 @@ local tween2 = animation.to( object2, { y=400 }, { time=200 } )
 
 -- Sometime later, cancel a specific tween
 animation.cancel( tween1 )</pre>
-<h5 id="display-object-tweens">Display Object Tweens</h5>
+</section>
+<section id="display-object-tweens" class="level5">
+<h5>Display Object Tweens</h5>
 <pre class="brush: lua;">local object1 = display.newRect( 50, 50, 100, 100 )
 
 local tween1 = animation.to( object1, { y=300 }, { time=2000 } )
@@ -166,7 +185,9 @@ local tween2 = animation.to( object1, { rotation=90 }, { time=1000, delay=1000 }
 
 -- Sometime later, cancel all tweens on the object
 animation.cancel( object1 )</pre>
-<h5 id="tagged-tweens">Tagged Tweens</h5>
+</section>
+<section id="tagged-tweens" class="level5">
+<h5>Tagged Tweens</h5>
 <pre class="brush: lua;">local object1 = display.newRect( 50, 50, 100, 100 )
 local object2 = display.newRect( 50, 150, 100, 100 )
 
@@ -185,6 +206,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

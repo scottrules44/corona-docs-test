@@ -66,7 +66,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/onDemandResources/index.html">On-Demand Resources</a>  ▸  <a href="../../plugin/onDemandResources/path.html">path</a>
 </div>
-<h1 id="ondemandresources.path">onDemandResources.path()</h1>
+<section id="ondemandresources.path" class="level1">
+<h1>onDemandResources.path()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -97,11 +98,15 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Even though you can typically use <nobr>on-demand</nobr> resources as if they exist in your app’s bundle, they are not physically there. Use this convenience function or alternatively <a href="../../api/library/system/pathForFile.html">system.pathForFile()</a> to retrieve the actual path. This may be necessary when, for example, an <nobr>on-demand</nobr> resource is a text file <nobr>(not an image)</nobr> and <a href="../../api/library/io/open.html">io.open()</a> is required to open the file and read its contents (<a href="../../guide/data/readWriteFiles/index.html">guide</a>).</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">onDemandResources.path( filename )</pre>
-<h5 id="filename-required">filename <sub><sup>(required)</sup></sub></h5>
+<section id="filename-required" class="level5">
+<h5>filename <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The name of the file that was requested as part of an <nobr>on-demand</nobr> resources <a href="../../plugin/onDemandResources/request.html">request</a>.</p>
 <hr>
 <div id="footer">
@@ -113,6 +118,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

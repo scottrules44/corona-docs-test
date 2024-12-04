@@ -73,7 +73,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/physics/index.html">physics</a>  ▸  <a href="../../../api/library/physics/rayCast.html">rayCast</a>
 </div>
-<h1 id="physics.raycast">physics.rayCast()</h1>
+<section id="physics.raycast" class="level1">
+<h1>physics.rayCast()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -104,22 +105,36 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This function is used to find the objects that collide with a line, and the collision points along that line.</p>
 <p>The positions returned are in content space while the normals returned are in local space.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>If the starting position is inside an object, no hit will be registered for that object.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">physics.rayCast( fromX, fromY, toX, toY, behavior )</pre>
-<h5 id="fromx-required">fromX <sub><sup>(required)</sup></sub></h5>
+<section id="fromx-required" class="level5">
+<h5>fromX <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The starting <strong>x</strong> position of the ray.</p>
-<h5 id="fromy-required">fromY <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="fromy-required" class="level5">
+<h5>fromY <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The starting <strong>y</strong> position of the ray.</p>
-<h5 id="tox-required">toX <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="tox-required" class="level5">
+<h5>toX <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The ending <strong>x</strong> position of the ray.</p>
-<h5 id="toy-required">toY <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="toy-required" class="level5">
+<h5>toY <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The ending <strong>y</strong> position of the ray.</p>
-<h5 id="behavior-optional">behavior <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="behavior-optional" class="level5">
+<h5>behavior <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The collision test behavior, in increasing order of performance cost:</p>
 <ul>
 <li><code>"any"</code> — Return one result, but not necessarily the closest one.</li>
@@ -127,7 +142,10 @@
 <li><code>"unsorted"</code> — Return all results in no particular order.</li>
 <li><code>"sorted"</code> — Return all results, sorted from closest to farthest.</li>
 </ul>
-<h2 id="result-properties">Result Properties</h2>
+</section>
+</section>
+<section id="result-properties" class="level2">
+<h2>Result Properties</h2>
 <p><code>hits</code> will be an array of elements containing these properties:</p>
 <ul>
 <li><code>object</code> — The <a href="../../../api/type/DisplayObject/index.html">DisplayObject</a> colliding with the line.</li>
@@ -137,7 +155,9 @@
 <li><code>normal.y</code> — The <strong>y</strong> component of the normal of the surface hit in local space.</li>
 <li><code>fraction</code> — The fraction (<code>0</code>..<code>1</code>) along the ray where the hit is located. <code>0</code> is the start point of the ray cast and <code>1</code> is the end point.</li>
 </ul>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local hits = physics.rayCast( 0, 0, 200, 300, "closest" )
 
 if ( hits ) then
@@ -164,6 +184,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

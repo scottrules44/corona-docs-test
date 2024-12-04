@@ -79,7 +79,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/display/index.html">display</a>  ▸  <a href="../../../api/library/display/setDefault.html">setDefault</a>
 </div>
-<h1 id="display.setdefault">display.setDefault()</h1>
+<section id="display.setdefault" class="level1">
+<h1>display.setDefault()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -130,9 +131,12 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Set default display values including default colors for display objects, anchor point defaults, texture wrapping settings, etc.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <p>Any of the following are valid:</p>
 <pre class="brush: lua;">display.setDefault( key, value )
 
@@ -143,11 +147,17 @@ display.setDefault( key, r, g, b )
 display.setDefault( key, gray )
 
 display.setDefault( key, gray, alpha )</pre>
-<h5 id="key-required">key <sub><sup>(required)</sup></sub></h5>
+<section id="key-required" class="level5">
+<h5>key <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Specifies the key to set the default value for.</p>
-<h5 id="gray-r-g-b-alpha-optional">gray, r, g, b, alpha <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="gray-r-g-b-alpha-optional" class="level5">
+<h5>gray, r, g, b, alpha <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Color values between <code>0</code> and <code>1</code>.</p>
-<h2 id="display-object-keys">Display Object Keys</h2>
+</section>
+</section>
+<section id="display-object-keys" class="level2">
+<h2>Display Object Keys</h2>
 <p>These keys specify default anchor values and anchor bounds for all display objects.</p>
 <ul>
 <li><p><code>"anchorX"</code> — The anchor alignment along the <strong>x</strong> direction. This value is used for the value of the <a href="../../../api/type/DisplayObject/anchorX.html">anchorX</a> property in new objects. The default is <code>0.5</code> (centered along the <strong>x</strong> direction).</p></li>
@@ -164,7 +174,9 @@ display.setDefault( key, gray, alpha )</pre>
 <p>Some display objects are not fully compatible with <nobr>non-center</nobr> anchor points, in particular <a href="../../../api/library/widget/index.html">widgets</a>, so you should be careful which “scope” you set default anchors for. Typically, changing the default anchor values should be used near the beginning of a process — for instance, displaying a series of objects which must be anchored a certain way — and then immediately after they should be <strong>reset</strong> to default (<code>0.5</code>) so that other objects are not affected inadvertently.</p>
 </div>
 </div>
-<h2 id="color-keys">Color Keys</h2>
+</section>
+<section id="color-keys" class="level2">
+<h2>Color Keys</h2>
 <p>A color key specifies which default color value to set.</p>
 <ul>
 <li><p><code>"background"</code> — Corresponds to the default color for that the screen is cleared with. The default is initially black (<code>0,0,0</code>).</p></li>
@@ -172,12 +184,16 @@ display.setDefault( key, gray, alpha )</pre>
 <li><p><code>"strokeColor"</code> — Corresponds to the default stroke color for vector objects like <a href="../../../api/library/display/newRect.html">display.newRect()</a>. The default is initially white (<code>1,1,1</code>).</p></li>
 <li><p><code>"lineColor"</code> — Corresponds to the default color for line objects like <a href="../../../api/library/display/newLine.html">display.newLine()</a>. The default is initially white (<code>1,1,1</code>).</p></li>
 </ul>
-<h2 id="native-keys">Native Keys</h2>
+</section>
+<section id="native-keys" class="level2">
+<h2>Native Keys</h2>
 <ul>
 <li><p><code>"isNativeTextBoxFontSizeScaled"</code> — Sets the default <a href="../../../api/type/Boolean.html">Boolean</a> value to be assigned to a native text box’s <a href="../../../api/type/TextBox/isFontSizeScaled.html">object.isFontSizeScaled</a> property when created via the <a href="../../../api/library/native/newTextBox.html">native.newTextBox()</a> function. This is <code>true</code> by default. Set to <code>false</code> to enable legacy font handling support.</p></li>
 <li><p><code>"isNativeTextFieldFontSizeScaled"</code> — Sets the default <a href="../../../api/type/Boolean.html">Boolean</a> value to be assigned to a native text field’s <a href="../../../api/type/TextField/isFontSizeScaled.html">object.isFontSizeScaled</a> property when created via the <a href="../../../api/library/native/newTextField.html">native.newTextField()</a> function. This is <code>true</code> by default. Set to <code>false</code> to enable legacy font handling support.</p></li>
 </ul>
-<h2 id="texture-keys">Texture Keys</h2>
+</section>
+<section id="texture-keys" class="level2">
+<h2>Texture Keys</h2>
 <ul>
 <li><p><code>"preloadTextures"</code> — The default behavior for texture loading is to load the texture when the display object is created or when the display object uses it. Setting this value to <code>false</code> will delay loading of the texture to when the object appears on screen or to when it becomes visible.</p></li>
 <li><p><code>"isExternalTextureRetina"</code> — The default behavior for external textures is to be sampled like retina textures, applying content scaling to the <code>width</code> and <code>height</code> when resolving texture coordinates. Setting this value to <code>false</code> will simply use <code>width</code> and <code>height</code> as is.</p></li>
@@ -197,16 +213,23 @@ Important
 <li><p>When using one of the non-default wrap modes (<code>"repeat"</code> or <code>"mirroredRepeat"</code>), you should revert the wrap mode to default (<code>"clampToEdge"</code>) when repeating fills are no longer required. For example, after filling an object with a wrapping texture, revert the wrap mode to default before proceeding with any other <a href="../../../api/type/ShapeObject/fill.html">fill</a> operations.</p></li>
 </ul>
 </div>
-<h2 id="camera-source">Camera Source</h2>
+</section>
+<section id="camera-source" class="level2">
+<h2>Camera Source</h2>
 <ul>
 <li><code>"cameraSource"</code> — The default behavior for a camera object fill is to use the back-facing camera. Setting this value to <code>"front"</code>, will change the behavior to use the <nobr>front-facing</nobr> camera. Note that this is an <nobr>iOS-only</nobr> feature.</li>
 </ul>
-<h2 id="examples">Examples</h2>
-<h5 id="default-anchors">Default Anchors</h5>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="default-anchors" class="level5">
+<h5>Default Anchors</h5>
 <pre class="brush: lua;">-- Set default anchor point for objects to bottom-left
 display.setDefault( "anchorX", 0 )
 display.setDefault( "anchorY", 1 )</pre>
-<h5 id="non-clamped-anchors">Non-Clamped Anchors</h5>
+</section>
+<section id="non-clamped-anchors" class="level5">
+<h5>Non-Clamped Anchors</h5>
 <pre class="brush: lua;">display.setDefault( "isAnchorClamped", false )
 --display.setDefault( "isAnchorClamped", true )
 
@@ -215,13 +238,17 @@ rect.anchorX = -1
 rect.anchorY = 1.5
 
 transition.to( rect, { rotation=135, delay=500 } )</pre>
-<h5 id="fill-color-and-background">Fill Color and Background</h5>
+</section>
+<section id="fill-color-and-background" class="level5">
+<h5>Fill Color and Background</h5>
 <pre class="brush: lua;">-- Set default fill color for vector objects to red
 display.setDefault( "fillColor", 1, 0, 0 )
 
 -- Set default screen background color to blue
 display.setDefault( "background", 0, 0, 1 )</pre>
-<h5 id="texture-wrap">Texture Wrap</h5>
+</section>
+<section id="texture-wrap" class="level5">
+<h5>Texture Wrap</h5>
 <pre class="brush: lua;">display.setDefault( "textureWrapX", "repeat" )
 display.setDefault( "textureWrapY", "repeat" )
 
@@ -230,7 +257,9 @@ local o = display.newRect( x, y, display.contentWidth, display.contentHeight )
 o.fill = { type="image", filename="fish.small.red.png" }
 o.fill.scaleX = 0.1
 o.fill.scaleY = 0.1</pre>
-<h5 id="camera-source-1">Camera Source</h5>
+</section>
+<section id="camera-source-1" class="level5">
+<h5>Camera Source</h5>
 <pre class="brush: lua;">if ( system.getInfo( "environment" ) ~= "simulator" ) then
     display.setDefault( "cameraSource", "front" )   -- Front-facing camera
     --display.setDefault( "cameraSource", "back" )  -- Back-facing camera
@@ -245,6 +274,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

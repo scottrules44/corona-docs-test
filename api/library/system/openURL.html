@@ -72,7 +72,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/system/index.html">system</a>  ▸  <a href="../../../api/library/system/openURL.html">openURL</a>
 </div>
-<h1 id="system.openurl">system.openURL()</h1>
+<section id="system.openurl" class="level1">
+<h1>system.openURL()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -103,19 +104,26 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Open a web page in the browser, create an email, or dial a phone number. Executing this function will close the app and switch to the <nobr>built-in</nobr> browser, email, or phone app.</p>
 <p>You can check whether a URL can be opened via the <a href="../../../api/library/system/canOpenURL.html">system.canOpenURL()</a> function.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">system.openURL( url )</pre>
-<h5 id="url-required">url <sub><sup>(required)</sup></sub></h5>
+<section id="url-required" class="level5">
+<h5>url <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> One of the following:</p>
 <ul>
 <li>Email address — <code>"mailto:nobody@mycompany.com"</code>, optionally including <nobr>URL-encoded</nobr> subject and body parameters, for example:<br/><code>"mailto:nobody@mycompany.com?subject=Hi%20there&amp;body=I%20just%20wanted%20to%20say%2C%20Hi!"</code></li>
 <li>Phone number — <code>"tel:123-456-7890"</code></li>
 <li>Web link — <code>"https://solar2d.com/"</code></li>
 </ul>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>On Android, if dialing a phone number, you must add the <code>CALL_PHONE</code> permission to the <code>build.settings</code> file.</p>
 <pre class="brush: lua;">settings =
 {
@@ -127,12 +135,19 @@
         },
     },
 }</pre>
-<h2 id="examples">Examples</h2>
-<h5 id="open-web-page-in-device-browser">Open Web Page in Device Browser</h5>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="open-web-page-in-device-browser" class="level5">
+<h5>Open Web Page in Device Browser</h5>
 <pre class="brush: lua;">system.openURL( "https://solar2d.com/" )</pre>
-<h5 id="send-email-via-device-mail-application">Send Email via Device Mail Application</h5>
+</section>
+<section id="send-email-via-device-mail-application" class="level5">
+<h5>Send Email via Device Mail Application</h5>
 <pre class="brush: lua;">system.openURL( "mailto:nobody@mycompany.com" )</pre>
-<h5 id="dial-a-phone-number">Dial a Phone Number</h5>
+</section>
+<section id="dial-a-phone-number" class="level5">
+<h5>Dial a Phone Number</h5>
 <pre class="brush: lua;">system.openURL( "tel:123-456-7890" )</pre>
 <hr>
 <div id="footer">
@@ -144,6 +159,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

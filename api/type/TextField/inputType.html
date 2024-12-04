@@ -68,7 +68,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/TextField/index.html">TextField</a>  ▸  <a href="../../../api/type/TextField/inputType.html">inputType</a>
 </div>
-<h1 id="object.inputtype">object.inputType</h1>
+<section id="object.inputtype" class="level1">
+<h1>object.inputType</h1>
 <blockquote>
 <table>
 <tbody>
@@ -95,9 +96,12 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Sets the keyboard type for a native text input field.</p>
-<h2 id="keyboard-types">Keyboard Types</h2>
+</section>
+<section id="keyboard-types" class="level2">
+<h2>Keyboard Types</h2>
 <p>Possible string values are:</p>
 <ul>
 <li><code>"default"</code> — the default keyboard, supporting general text, numbers and punctuation.</li>
@@ -108,7 +112,8 @@
 <li><code>"email"</code> — a keyboard for entering email addresses.</li>
 <li><code>"no-emoji"</code> — the default keyboard, supporting general text, numbers and punctuation but does not allow emoji to be typed.</li>
 </ul>
-<h3 id="ios-extensions">iOS Extensions</h3>
+<section id="ios-extensions" class="level3">
+<h3>iOS Extensions</h3>
 <p>The following values are iOS-specific and correspond to the names of actual constants in the iOS API:</p>
 <ul>
 <li><code>"UIKeyboardTypeASCIICapable"</code></li>
@@ -118,14 +123,19 @@
 <li><code>"UIKeyboardTypeWebSearch"</code></li>
 </ul>
 <p>Please consult the iOS documentation on <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/doc/c_ref/UIKeyboardType">UIKeyboardType</a> for an explanation of each keyboard type.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li><p>To create an obscured password entry field, set the <a href="../../../api/type/TextField/isSecure.html">object.isSecure</a> boolean property to <code>true</code>.</p></li>
 <li><p>The Corona Simulator and desktop apps do not support the <code>"phone"</code>, <code>"url"</code>, or <code>"email"</code> input types.</p></li>
 <li><p>Some operating systems permit the user to paste text which includes emoji, even though they can’t be typed.</p></li>
 <li><p>Note that “emoji” is narrowly defined to be the <nobr>multi-byte</nobr> character entities that cause issues with some APIs. Some operating systems include characters on their “emoji keyboards” which are just basic Unicode symbols.</p></li>
 </ul>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local numericField = native.newTextField( 50, 150, 220, 36 )
 numericField.inputType = "number"</pre>
 <hr>
@@ -138,6 +148,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

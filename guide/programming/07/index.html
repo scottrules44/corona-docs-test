@@ -80,7 +80,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/programming/index.html">Getting Started</a>
 </div>
-<h1 id="chapter-7-sounds-and-music">Chapter 7 — Sounds and Music</h1>
+<section id="chapter-7-sounds-and-music" class="level1">
+<h1>Chapter 7 — Sounds and Music</h1>
 <div class="walkthrough-nav">
 <div class="walkthrough-nav-upper-right">
 <p><strong>⟨</strong> <a href="../../../guide/programming/06/index.html">Previous</a> <em>|</em> <a href="../../../guide/programming/08/index.html">Next</a> <strong>⟩</strong></p>
@@ -98,9 +99,11 @@
 </ul>
 </div>
 <p><a id="methods"></a></p>
-<h2 id="preloading-and-streaming">Preloading and Streaming</h2>
+<section id="preloading-and-streaming" class="level2">
+<h2>Preloading and Streaming</h2>
 <p>There are two ways to load audio in your Solar2D app. Which one you use typically depends on how the audio file will be utilized.</p>
-<h3 id="preloading">Preloading</h3>
+<section id="preloading" class="level3">
+<h3>Preloading</h3>
 <p>The first method is to use the <code>audio.loadSound()</code> command. This loads and <nobr>pre-processes</nobr> the entire audio file, after which it can be played on demand. For instance:</p>
 <pre class="brush: lua;">local explosionSound = audio.loadSound( "explosion.wav" )</pre>
 <p>Once loaded, the sound can be played as many times as needed using the <code>audio.play()</code> command along with the audio <strong>handle</strong> you created via <code>audio.loadSound()</code>.</p>
@@ -130,7 +133,9 @@ audio.play( explosionSound )</pre>
 <p>The <code>audio.loadSound()</code> method is very convenient, but if you load large audio files or a considerable number of audio files at the same time, there may be a noticeable pause/skip as they load. Thus, if you need to load a large audio file such as a background music track, it’s usually better to use the <strong>streaming</strong> method discussed in the next section.</p>
 </div>
 </div>
-<h3 id="streaming">Streaming</h3>
+</section>
+<section id="streaming" class="level3">
+<h3>Streaming</h3>
 <p>The second method to load audio into your app is <code>audio.loadStream()</code>. This will gradually load and process small chunks of the audio file as needed. This command is best used in situations where possible latency will not have a critical impact upon the usability of the app. Streaming does not use as much memory, so it’s usually the best choice for large audio files such as background music.</p>
 <pre class="brush: lua;">local backgroundMusic = audio.loadStream( "musicTrack1.wav" )</pre>
 <div class="guide-notebox">
@@ -142,8 +147,12 @@ Note
 local backgroundMusic2 = audio.loadStream( "musicTrack1.wav" )</pre>
 </div>
 <p><a id="sounds"></a></p>
-<h2 id="adding-sound-effects">Adding Sound Effects</h2>
-<h3 id="including-audio-files">Including Audio Files</h3>
+</section>
+</section>
+<section id="adding-sound-effects" class="level2">
+<h2>Adding Sound Effects</h2>
+<section id="including-audio-files" class="level3">
+<h3>Including Audio Files</h3>
 <p>Let’s add sound effects to our game! To begin, you’ll need to download the sample audio files, courtesy of <a href="https://www.soundimage.org" target="_new">Eric Matyas</a>. Within the <code>audio</code> subfolder of this chapter’s <a href="https://github.com/coronalabs/GettingStarted07/archive/master.zip">source files</a>, you’ll find the following audio files:</p>
 <div class="inner-table">
 <table>
@@ -187,7 +196,9 @@ local backgroundMusic2 = audio.loadStream( "musicTrack1.wav" )</pre>
 <p>For this project, copy the entire <code>audio</code> subfolder and all of its contents into your <code>StarExplorer</code> project folder. If you’re planning to use several audio files in a game, it’s helpful to keep them organized in a subfolder.</p>
 </div>
 </div>
-<h3 id="loading-sounds">Loading Sounds</h3>
+</section>
+<section id="loading-sounds" class="level3">
+<h3>Loading Sounds</h3>
 <p>First, we need to load the sounds. Since our sound effects are only going to occur during gameplay, we can load them in <code>game.lua</code>:</p>
 <ol type="1">
 <li>First, in the <nobr>scene-accessible</nobr> code area where you’ve already <nobr>pre-declared</nobr> some variables, add the following forward references:</li>
@@ -228,7 +239,9 @@ end</pre>
 <p>Notice that instead of specifying just the file name, we append it with <code>audio/</code> because our audio files are located inside the <code>audio</code> subfolder.</p>
 </div>
 </div>
-<h3 id="playing-sounds">Playing Sounds</h3>
+</section>
+<section id="playing-sounds" class="level3">
+<h3>Playing Sounds</h3>
 <p>With the sounds loaded, we can now play them with <code>audio.play()</code> whenever they’re needed:</p>
 <ol type="1">
 <li>The explosion sound should play whenever a laser hits an asteroid. That event is detected in the <code>onCollision()</code> function, so let’s add an <code>audio.play()</code> command in the first conditional block, directly following the <code>display.remove()</code> commands that remove the laser and asteroid:</li>
@@ -314,9 +327,13 @@ end</pre>
 <li>Save your modified <code>game.lua</code> file.</li>
 </ol>
 <p><a id="music"></a></p>
-<h2 id="adding-background-music">Adding Background Music</h2>
+</section>
+</section>
+<section id="adding-background-music" class="level2">
+<h2>Adding Background Music</h2>
 <p>To enhance the game further, let’s add background music. In the overall span of our game, there are three scenes. We could play the same music for each scene, but it’s better to play different audio tracks in each scene and set the tone for the action. For instance, in the menu scene, a more passive track can play, but when we get to the game scene where the action gets intense, it helps to have a <nobr>faster-paced</nobr> audio track. Finally, when the game is over, you may want something more solemn.</p>
-<h3 id="loading-music">Loading Music</h3>
+<section id="loading-music" class="level3">
+<h3>Loading Music</h3>
 <p>As discussed above, background music files tend to be large, so it’s best to use <code>audio.loadStream()</code>. Let’s use an approach similar to the sound effects:</p>
 <ol type="1">
 <li>In the <nobr>scene-accessible</nobr> code area of <code>game.lua</code> where you’ve already declared the two forward references for sounds, add a forward reference for the music track:</li>
@@ -335,7 +352,9 @@ local musicTrack</pre>
     musicTrack = audio.loadStream( "audio/80s-Space-Game_Looping.wav")
 end</pre>
 </div>
-<h3 id="playing-music">Playing Music</h3>
+</section>
+<section id="playing-music" class="level3">
+<h3>Playing Music</h3>
 <p>Now it’s time to play the music! This time we’re going to step deeper into audio setup with <strong>channel management</strong>. Basically, for our sound effects, we simply let the audio library pick a free channel on which to play any new sound instance. For music however, it’s often useful to <strong>reserve</strong> a specific channel and play all of the background music on that channel — after all, it’s unlikely that you’ll want to have multiple music files playing at the same time, overlapping and audibly conflicting with each other. By reserving one dedicated channel for music, we can use it for all of the background music throughout the game.</p>
 <p>To accomplish this, we need to provide a bit more information to our <code>audio.play()</code> command for the music, and also do a little extra work in preparation for using a dedicated channel.</p>
 <ol type="1">
@@ -399,7 +418,9 @@ end</pre>
 <p>These additions should get music playing in your app. Make sure that you save your modified <code>main.lua</code> and <code>game.lua</code> files and then relaunch the Simulator. Play a game and you should now hear a looping music track in addition to the sound effects.</p>
 </div>
 </div>
-<h3 id="stopping-music">Stopping Music</h3>
+</section>
+<section id="stopping-music" class="level3">
+<h3>Stopping Music</h3>
 <p>Unlike sound effects which are typically short and get cleared from their channel upon completion, streaming music should usually be stopped at an appropriate time when you’re about to leave the scene. This can be easily handled in the <code>"did"</code> phase condition of the <code>scene:hide()</code> function. Locate this block within <code>game.lua</code> and add the <nobr><code>audio.stop( 1 )</code></nobr> command:</p>
 <pre class="highlight: [332,333]; first-line: 318; gutter: true; brush: lua;">-- hide()
 function scene:hide( event )
@@ -422,7 +443,10 @@ function scene:hide( event )
 end</pre>
 <p>That’s it! When the scene goes fully off screen, the music playing on channel <code>1</code> will stop, clearing the way for a different music track to play on the channel in the next scene.</p>
 <p><a id="disposing"></a></p>
-<h2 id="disposing-audio">Disposing Audio</h2>
+</section>
+</section>
+<section id="disposing-audio" class="level2">
+<h2>Disposing Audio</h2>
 <p>Whether preloaded or streaming, audio takes up memory and it’s a resource that is <strong>not</strong> automatically managed or cleaned up by Composer. As a result, there’s one final important step in this chapter: <strong>disposing audio</strong>. This is where the <code>scene:destroy()</code> function comes in handy, since it gets triggered as a result of calling <a href="../../../api/library/composer/removeScene.html">composer.removeScene()</a> or when Composer itself destroys the scene.</p>
 <p>In your <code>game.lua</code> file, locate the <code>scene:destroy()</code> function near the bottom. Within it, add three <code>audio.dispose()</code> commands as shown here:</p>
 <pre class="highlight: [344,345,346,347]; first-line: 339; gutter: true; brush: lua;">-- destroy()
@@ -450,7 +474,9 @@ end</pre>
 <p><img src="../../../images/simulator/pastel-rocket.png" /></p>
 </div>
 <p><a id="extracredit"></a></p>
-<h2 id="extra-credit">Extra Credit</h2>
+</section>
+<section id="extra-credit" class="level2">
+<h2>Extra Credit</h2>
 <p>Although we’ve done it for you in this chapter’s <a href="https://github.com/coronalabs/GettingStarted07/archive/master.zip">source files</a>, challenge yourself to implement music inside the other two scenes, using the same audio techniques and scene event concepts that you learned above!</p>
 <div class="inner-table">
 <table>
@@ -473,7 +499,9 @@ end</pre>
 </table>
 </div>
 <p><a id="concepts"></a></p>
-<h2 id="chapter-concepts">Chapter Concepts</h2>
+</section>
+<section id="chapter-concepts" class="level2">
+<h2>Chapter Concepts</h2>
 <p>We’ve covered several concepts in this chapter, all related to audio:</p>
 <div class="inner-table">
 <table>
@@ -515,7 +543,9 @@ end</pre>
 </tbody>
 </table>
 </div>
-<h2 id="section"></h2>
+</section>
+<section id="section" class="level2">
+<h2></h2>
 <div class="walkthrough-nav">
 <p><strong>⟨</strong> <a href="../../../guide/programming/06/index.html">Chapter 6 — Implementing High Scores</a> <em>|</em> <a href="../../../guide/programming/08/index.html">Chapter 8 — Deployment</a> <strong>⟩</strong></p>
 </div>
@@ -529,6 +559,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

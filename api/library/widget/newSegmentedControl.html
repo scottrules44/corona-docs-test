@@ -100,7 +100,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/widget/index.html">widget</a>  ▸  <a href="../../../api/library/widget/newSegmentedControl.html">newSegmentedControl</a>
 </div>
-<h1 id="widget.newsegmentedcontrol">widget.newSegmentedControl()</h1>
+<section id="widget.newsegmentedcontrol" class="level1">
+<h1>widget.newSegmentedControl()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -131,50 +132,93 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Creates a <a href="../../../api/type/SegmentedControlWidget/index.html">SegmentedControlWidget</a> object.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li><p>To conserve texture memory, a <a href="../../../api/type/SegmentedControlWidget/index.html">SegmentedControlWidget</a> can only be created from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>.</p></li>
 <li><p>The <a href="../../../api/type/SegmentedControlWidget/index.html">SegmentedControlWidget</a> object does not support <a href="../../../api/type/DisplayObject/scale.html">scaling</a> nor changing of the width/height via <a href="../../../api/type/DisplayObject/width.html">.width</a> or <a href="../../../api/type/DisplayObject/height.html">.height</a>.</p></li>
 <li><p>The <a href="../../../api/type/SegmentedControlWidget/index.html">SegmentedControlWidget</a> object does not support changing the <a href="../../../api/type/DisplayObject/anchorX.html">anchorX</a> or <a href="../../../api/type/DisplayObject/anchorY.html">anchorY</a> properties after creation.</p></li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">widget.newSegmentedControl( options )</pre>
 <p>This function takes a single argument, <code>options</code>, which is a table that accepts the following parameters:</p>
-<h5 id="id-optional">id <sub><sup>(optional)</sup></sub></h5>
+<section id="id-optional" class="level5">
+<h5>id <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> An optional identification to assign to the segmented control. Default is <code>widget_segmentedControl</code>.</p>
-<h5 id="x-y-optional">x, y <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="x-y-optional" class="level5">
+<h5>x, y <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Coordinates for the widget’s <strong>x</strong> and <strong>y</strong> center point. These values will be overridden by <code>left</code> and <code>top</code> if those values are defined.</p>
-<h5 id="left-top-optional">left, top <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="left-top-optional" class="level5">
+<h5>left, top <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The left and top position where the widget will be created. If specified, these values override the <code>x</code> and <code>y</code> parameters.</p>
-<h5 id="segmentwidth-optional">segmentWidth <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="segmentwidth-optional" class="level5">
+<h5>segmentWidth <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The width of each segment in pixels (all segments must be of equal width). Default is <code>50</code>.</p>
-<h5 id="segments-required">segments <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="segments-required" class="level5">
+<h5>segments <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Table of comma-separated strings which defines the total segment count and the label that appears on each. For example:</p>
 <pre class="brush: lua;">segments = { "Item 1", "Item 2", "Item 3", "Item 4" }</pre>
-<h5 id="defaultsegment-optional">defaultSegment <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="defaultsegment-optional" class="level5">
+<h5>defaultSegment <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The segment that will be active upon the initial creation. Default is the first segment.</p>
-<h5 id="onpress-optional">onPress <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="onpress-optional" class="level5">
+<h5>onPress <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Listener.html">Listener</a>.</em> An optional function to be called when a segment is pressed. The callback function does not require testing for <code>event.phase</code> since it only honors <code>began</code>.</p>
-<h2 id="properties">Properties</h2>
-<h4 id="object.segmentlabelapi.type.segmentedcontrolwidget.segmentlabel"><a href="../../../api/type/SegmentedControlWidget/segmentLabel.html">object.segmentLabel</a></h4>
-<h4 id="object.segmentnumberapi.type.segmentedcontrolwidget.segmentnumber"><a href="../../../api/type/SegmentedControlWidget/segmentNumber.html">object.segmentNumber</a></h4>
-<h2 id="methods">Methods</h2>
-<h4 id="objectsetactivesegmentapi.type.segmentedcontrolwidget.setactivesegment"><a href="../../../api/type/SegmentedControlWidget/setActiveSegment.html">object:setActiveSegment()</a></h4>
-<h2 id="basic-visual-options">Basic Visual Options</h2>
-<h5 id="labelsize-optional">labelSize <sub><sup>(optional)</sup></sub></h5>
+</section>
+</section>
+<section id="properties" class="level2">
+<h2>Properties</h2>
+<section id="object.segmentlabelapi.type.segmentedcontrolwidget.segmentlabel" class="level4">
+<h4><a href="../../../api/type/SegmentedControlWidget/segmentLabel.html">object.segmentLabel</a></h4>
+</section>
+<section id="object.segmentnumberapi.type.segmentedcontrolwidget.segmentnumber" class="level4">
+<h4><a href="../../../api/type/SegmentedControlWidget/segmentNumber.html">object.segmentNumber</a></h4>
+</section>
+</section>
+<section id="methods" class="level2">
+<h2>Methods</h2>
+<section id="objectsetactivesegmentapi.type.segmentedcontrolwidget.setactivesegment" class="level4">
+<h4><a href="../../../api/type/SegmentedControlWidget/setActiveSegment.html">object:setActiveSegment()</a></h4>
+</section>
+</section>
+<section id="basic-visual-options" class="level2">
+<h2>Basic Visual Options</h2>
+<section id="labelsize-optional" class="level5">
+<h5>labelSize <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Font size (in pixels) for the segment labels. Default is <code>12</code>.</p>
-<h5 id="labelfont-optional">labelFont <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="labelfont-optional" class="level5">
+<h5>labelFont <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> Font used for the segment labels. Default is <a href="../../../api/library/native/systemFont.html">native.systemFont</a>.</p>
-<h5 id="labelcolor-optional">labelColor <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="labelcolor-optional" class="level5">
+<h5>labelColor <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Table of two RGB+A color settings, one each for the inactive (<code>default</code>) and active (<code>over</code>) states.</p>
 <pre class="brush: lua;">labelColor = { default={ 1, 1, 1 }, over={ 0, 0, 0, 0.5 } }</pre>
-<h5 id="emboss-optional">emboss <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="emboss-optional" class="level5">
+<h5>emboss <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> If set to <code>true</code>, the button label will appear embossed (inset effect).</p>
-<h5 id="labelxoffset-labelyoffset-optional">labelXOffset, labelYOffset <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="labelxoffset-labelyoffset-optional" class="level5">
+<h5>labelXOffset, labelYOffset <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Optional <strong>x</strong> and <strong>y</strong> offsets for the segment labels. For example, <code>labelYOffset = -8</code> will shift the labels 8 pixels up from default.</p>
-<h2 id="visual-customization">Visual Customization</h2>
+</section>
+</section>
+<section id="visual-customization" class="level2">
+<h2>Visual Customization</h2>
 <p>The segmented control widget can be visually customized using 7 frames from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>. As shown in the following example, 6 of these frames can be used to assemble an inactive and active state for each segment. The inactive frames consist of the left cap (red), the middle span (green), and the right cap (yellow). The active frames consist of a left cap (orange), a middle span (blue), and a right cap (purple).</p>
 <p>Depending on the width of the segments, the left and right caps remain at the size stated in the image sheet while the middle frames (green or blue) stretch to fill the remaining width of each segment.</p>
 <p>Optionally, the segmented control accepts dividers between each segment, shown as the dark blue bar in this example. If defined, dividers overlay the other frames and are distributed evenly across the entire span of the segmented control. If you do not want dividers to appear, simply omit the three associated properties in the widget declaration.</p>
@@ -189,22 +233,39 @@
 </tbody>
 </table>
 </div>
-<h5 id="sheet-required">sheet <sub><sup>(required)</sup></sub></h5>
+<section id="sheet-required" class="level5">
+<h5>sheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> The <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> object for the segmented control.</p>
-<h5 id="segmentframewidth-segmentframeheight-required">segmentFrameWidth, segmentFrameHeight <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="segmentframewidth-segmentframeheight-required" class="level5">
+<h5>segmentFrameWidth, segmentFrameHeight <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width/height of the main segment frames (end caps and middle spans). All of these frames should share the same width and height.</p>
-<h5 id="leftsegmentframe-leftsegmentselectedframe-required">leftSegmentFrame, leftSegmentSelectedFrame <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="leftsegmentframe-leftsegmentselectedframe-required" class="level5">
+<h5>leftSegmentFrame, leftSegmentSelectedFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The inactive and active frames for the left end caps.</p>
-<h5 id="middlesegmentframe-middlesegmentselectedframe-required">middleSegmentFrame, middleSegmentSelectedFrame <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="middlesegmentframe-middlesegmentselectedframe-required" class="level5">
+<h5>middleSegmentFrame, middleSegmentSelectedFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The inactive and active frames for the middle spans.</p>
-<h5 id="rightsegmentframe-rightsegmentselectedframe-required">rightSegmentFrame, rightSegmentSelectedFrame <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="rightsegmentframe-rightsegmentselectedframe-required" class="level5">
+<h5>rightSegmentFrame, rightSegmentSelectedFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The inactive and active frames for the right end caps.</p>
-<h5 id="dividerframe-optional">dividerFrame <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="dividerframe-optional" class="level5">
+<h5>dividerFrame <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The frame index for the divider frame. Omit this if you don’t want dividers to be shown.</p>
-<h5 id="dividerframewidth-dividerframeheight-optional">dividerFrameWidth, dividerFrameHeight <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="dividerframewidth-dividerframeheight-optional" class="level5">
+<h5>dividerFrameWidth, dividerFrameHeight <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width/height of the divider frame. These are required if <code>dividerFrame</code> is defined.</p>
-<h2 id="examples">Examples</h2>
-<h5 id="default">Default</h5>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="default" class="level5">
+<h5>Default</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Listen for segmented control events      
@@ -225,7 +286,9 @@ local segmentedControl = widget.newSegmentedControl(
         onPress = onSegmentPress
     }
 )</pre>
-<h5 id="image-sheet">Image Sheet</h5>
+</section>
+<section id="image-sheet" class="level5">
+<h5>Image Sheet</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Listen for segmented control events      
@@ -290,6 +353,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -66,7 +66,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../guide/index.html">Developer Guides</a>  ▸  <a href="../../guide/graphics/index.html">Graphics/Audio/Animation</a>
 </div>
-<h1 id="transforms-and-anchors">Transforms and Anchors</h1>
+<section id="transforms-and-anchors" class="level1">
+<h1>Transforms and Anchors</h1>
 <p>In Corona, every <a href="../../guide/media/displayObjects/index.html">display object</a> has properties which affect where and how it is rendered on screen. This guide explains how transforms and anchors apply to object rendering.</p>
 <div class="guides-toc">
 <ul>
@@ -75,7 +76,8 @@
 </ul>
 </div>
 <p><a id="transforms"></a></p>
-<h2 id="transforms">Transforms</h2>
+<section id="transforms" class="level2">
+<h2>Transforms</h2>
 <p>In terms of transforms — scale, rotation, and position — the <strong>origin</strong> is the point around which all transforms occur. The following properties and methods pertain to transforms:</p>
 <div class="inner-table" style="margin-bottom: 25px;">
 <table>
@@ -114,12 +116,15 @@ Note
 <p>Transforms are always relative to the parent, so the final transform includes the transforms of the object’s parents (and ancestors). See <strong>Group Transforms</strong> in the <a href="../../guide/graphics/group.html">Group Programming</a> guide for more information.</p>
 </div>
 <p><a id="anchors"></a></p>
-<h2 id="anchors">Anchors</h2>
+</section>
+<section id="anchors" class="level2">
+<h2>Anchors</h2>
 <p>The <strong>anchor</strong> of an object controls how geometry is positioned relative to the object’s origin. This is specified via the <a href="../../api/type/DisplayObject/anchorX.html">object.anchorX</a> and <a href="../../api/type/DisplayObject/anchorY.html">object.anchorY</a> properties.</p>
 <p>An anchor pair of <code>(0.5,0.5)</code> (default) centers the geometry about the origin. An anchor pair of <code>(0,0)</code> makes the <nobr>top-left</nobr> of the geometry’s bounds the origin, while an anchor pair of <code>(1,1)</code> makes it the <nobr>bottom-right</nobr> of the geometry’s bounds. By default, anchor values must range from <code>0.0</code> to <code>1.0</code> and the anchor of new objects is set to <code>(0.5,0.5)</code>, however these defaults can be modified via <a href="../../api/library/display/setDefault.html">display.setDefault()</a>.</p>
 <p>When you change an anchor value, the object’s origin does <strong>not</strong> change. Instead the geometry moves relative to the origin. In the following diagram, the blue square is rotated to illustrate how geometry is transformed around the origin depending on the anchor <nobr>(<code>object.anchorX</code>,<code>object.anchorY</code>)</nobr>.</p>
 <p><img src="/images/sdk/graphics/Anchor-Point.gif" /></p>
-<h3 id="group-anchors">Group Anchors</h3>
+<section id="group-anchors" class="level3">
+<h3>Group Anchors</h3>
 <p>Most <a href="../../guide/media/displayObjects/index.html">display objects</a> have anchors <nobr>pre-enabled</nobr>. However, <a href="../../api/type/GroupObject/index.html">group</a> objects do not honor anchors by default, so you must set the <a href="../../api/type/GroupObject/anchorChildren.html">anchorChildren</a> property to enable its anchor. See <nobr><strong>Groups and Anchors</strong></nobr> in the <a href="../../guide/graphics/group.html">Group Programming</a> guide for more information.</p>
 <hr>
 <div id="footer">
@@ -131,6 +136,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

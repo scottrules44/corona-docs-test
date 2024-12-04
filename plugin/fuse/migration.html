@@ -70,12 +70,18 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/fuse/index.html">fuse</a>  ▸  <a href="../../plugin/fuse/migration.html">migration</a>
 </div>
-<h1 id="adrally-to-fuse-migration-guide">AdRally to Fuse Migration Guide</h1>
-<h2 id="overview">Overview</h2>
+<section id="adrally-to-fuse-migration-guide" class="level1">
+<h1>AdRally to Fuse Migration Guide</h1>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>If you previously used the AdRally™ plugin, this guide will help you migrate to the new <a href="../../plugin/fuse/index.html">Fuse</a> plugin.</p>
-<h2 id="project-settings">Project Settings</h2>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
 <p>Please refer to the <strong>Project Settings</strong> section in the <a href="../../plugin/fuse/index.html">Fuse</a> documentation.</p>
-<h2 id="function-changes">Function Changes</h2>
+</section>
+<section id="function-changes" class="level2">
+<h2>Function Changes</h2>
 <p>The <a href="../../plugin/fuse/index.html">Fuse</a> plugin completely replaces the AdRally™ plugin. In addition to the namespace change, there are some minor changes to several functions:</p>
 <ul>
 <li><p><a href="../../plugin/fuse/init.html">fuse.init()</a> — The <code>providerName</code> argument has been removed. Also, if you build with Corona SDK, you only need to supply the listener function. The API key from the Fuse dashboard does not need to be specified, as the server will assign an API key based on your app’s bundle/package ID.</p></li>
@@ -83,10 +89,17 @@
 <li><p><a href="../../plugin/fuse/load.html">fuse.load()</a> — The <code>adType</code> argument has been removed. If provided, a warning message will appear in the console.</p></li>
 <li><p><a href="../../plugin/fuse/show.html">fuse.show()</a> — The <code>adType</code> argument has been removed. If provided, a warning message will appear in the console.</p></li>
 </ul>
-<h2 id="new-functionsproperties">New Functions/Properties</h2>
-<h4 id="fuse.checkcontentplugin.fuse.checkcontent"><a href="../../plugin/fuse/checkContent.html">fuse.checkContent()</a></h4>
-<h4 id="fuse.getpropertyplugin.fuse.getproperty"><a href="../../plugin/fuse/getProperty.html">fuse.getProperty()</a></h4>
-<h4 id="event.payloadplugin.fuse.event.adsrequest.payload"><a href="../../plugin/fuse/event/adsRequest/payload.html">event.payload</a></h4>
+</section>
+<section id="new-functionsproperties" class="level2">
+<h2>New Functions/Properties</h2>
+<section id="fuse.checkcontentplugin.fuse.checkcontent" class="level4">
+<h4><a href="../../plugin/fuse/checkContent.html">fuse.checkContent()</a></h4>
+</section>
+<section id="fuse.getpropertyplugin.fuse.getproperty" class="level4">
+<h4><a href="../../plugin/fuse/getProperty.html">fuse.getProperty()</a></h4>
+</section>
+<section id="event.payloadplugin.fuse.event.adsrequest.payload" class="level4">
+<h4><a href="../../plugin/fuse/event/adsRequest/payload.html">event.payload</a></h4>
 <hr>
 <div id="footer">
 <p class="copyright">
@@ -97,6 +110,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

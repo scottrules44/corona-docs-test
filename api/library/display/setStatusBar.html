@@ -68,7 +68,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/display/index.html">display</a>  ▸  <a href="../../../api/library/display/setStatusBar.html">setStatusBar</a>
 </div>
-<h1 id="display.setstatusbar">display.setStatusBar()</h1>
+<section id="display.setstatusbar" class="level1">
+<h1>display.setStatusBar()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -99,16 +100,22 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Hides or changes the appearance of the status bar on most devices.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li><p>On iOS devices, there is an optional parameter in the <nobr><code>iphone</code> → <code>plist</code></nobr> section of <code>build.settings</code> (<a href="../../../guide/distribution/buildSettings/index.html">guide</a>) which also controls whether the status bar is hidden or not. This API overrides the <code>plist</code> setting <strong>after</strong> the app loads. While the app is loading (when the splash screen is visible), the <code>plist</code> setting will control whether the status bar is visible or not.</p></li>
 <li><p>macOS desktop and Win32 desktop apps do not support status bars.</p></li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">display.setStatusBar( mode )</pre>
-<h5 id="mode-required">mode <sub><sup>(required)</sup></sub></h5>
+<section id="mode-required" class="level5">
+<h5>mode <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Constant.html">Constant</a>.</em> This argument should be one of the following:</p>
 <ul>
 <li><code>display.HiddenStatusBar</code></li>
@@ -118,7 +125,10 @@
 <li><code>display.LightTransparentStatusBar</code></li>
 <li><code>display.DarkTransparentStatusBar</code></li>
 </ul>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">display.setStatusBar( display.HiddenStatusBar )</pre>
 <hr>
 <div id="footer">
@@ -130,6 +140,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

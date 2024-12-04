@@ -69,7 +69,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../coronacards/index.html">CoronaCards</a>  ▸  <a href="../../coronacards/android/index.html">Android</a>  ▸  <a href="../../coronacards/android/communication.html">communication</a>
 </div>
-<h1 id="coronacards-nativelua-communication-android">CoronaCards: Native/Lua Communication — Android</h1>
+<section id="coronacards-nativelua-communication-android" class="level1">
+<h1>CoronaCards: Native/Lua Communication — Android</h1>
 <blockquote>
 <table>
 <tbody>
@@ -88,13 +89,17 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Communication between Lua and the Java environment is done through CoronaView instances which allow <strong>events</strong> to be sent from one environment to the other.</p>
 <p>In Java, these events are represented by <code>Hashtable</code> instances. In Lua, they are basic Lua tables. Both follow the Corona convention for events with a required <code>"name"</code> key along with a string value that identifies the key. Further information can additionally be passed via a series of <nobr>key-value</nobr> pairs.</p>
 <p>The central router for events between the two environments is the global <a href="../../api/type/Runtime/index.html">Runtime</a> object which exists on the Lua side.</p>
-<h2 id="java-to-lua">Java to Lua</h2>
+</section>
+<section id="java-to-lua" class="level2">
+<h2>Java to Lua</h2>
 <p>You can send events to Lua from Java by constructing a Corona-style event. In the example below, we create a custom event type (<code>"pauseEvent"</code>) by instantiating an instance of <code>HashMap</code>. We fill this with the proper field (the key/value pair <code>"name"</code>/<code>"pauseEvent"</code>) and a custom field <code>"otherKey"</code>/<code>"otherValue"</code>. We then call the CoronaView method <code>sendEvent</code>, passing in the <code>Hashtable</code>. The CoronaView will automatically translate this to a Lua table and dispatch it to any Lua listener that has been registered with the global <a href="../../api/type/Runtime/index.html">Runtime</a> object.</p>
-<h5 id="example">Example</h5>
+<section id="example" class="level5">
+<h5>Example</h5>
 <pre class="brush: lua;">// [Java]
 
 CoronaView view = ...
@@ -115,9 +120,13 @@ local function handlePause( event )
 end
 
 Runtime:addEventListener( "pauseEvent", handlePause )</pre>
-<h2 id="lua-to-java">Lua to Java</h2>
+</section>
+</section>
+<section id="lua-to-java" class="level2">
+<h2>Lua to Java</h2>
 <p>Lua code within a CoronaView instance can send events to the <code>CoronaView</code>. These events should be of the type <code>coronaView</code> and you must register a <code>CoronaEventListener</code> with <code>setCoronaEventListener</code> to listen for them. The Lua <code>event</code> table will be converted to a <code>Hashtable</code> by the time the listener is called.</p>
-<h5 id="example-1">Example</h5>
+<section id="example-1" class="level5">
+<h5>Example</h5>
 <pre class="brush: lua;">// [Java]
 
 coronaView.setCoronaEventListener(new CoronaEventListener() {
@@ -151,6 +160,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

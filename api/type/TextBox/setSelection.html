@@ -68,7 +68,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/TextBox/index.html">TextBox</a>  ▸  <a href="../../../api/type/TextBox/setSelection.html">setSelection</a>
 </div>
-<h1 id="objectsetselection">object:setSelection()</h1>
+<section id="objectsetselection" class="level1">
+<h1>object:setSelection()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -103,15 +104,24 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Sets the cursor position if the start and end positions are the same. Alternatively, sets a range of selected text if the start and end positions are different.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">object:setSelection( startPosition, endPosition )</pre>
-<h5 id="startposition-required">startPosition <sub><sup>(required)</sup></sub></h5>
+<section id="startposition-required" class="level5">
+<h5>startPosition <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The cursor position or the beginning of the selection area. To select the first character, this value should be <code>0</code>.</p>
-<h5 id="endposition-required">endPosition <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="endposition-required" class="level5">
+<h5>endPosition <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The end of the selection area, if greater than <code>startPosition</code>. The last character will be used if this number is greater than the length of the current string in the text box.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local textBox = native.newTextBox( 160, 240, 280, 140 )
 
 textBox.text = "asdf"
@@ -129,6 +139,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

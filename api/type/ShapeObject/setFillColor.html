@@ -74,7 +74,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/ShapeObject/index.html">ShapeObject</a>  ▸  <a href="../../../api/type/ShapeObject/setFillColor.html">setFillColor</a>
 </div>
-<h1 id="objectsetfillcolor">object:setFillColor()</h1>
+<section id="objectsetfillcolor" class="level1">
+<h1>object:setFillColor()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -129,35 +130,51 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Sets the fill color of vector and text objects. Also applies a tint to image objects.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">object:setFillColor( gray )
 object:setFillColor( gray, alpha )
 object:setFillColor( red, green, blue )
 object:setFillColor( red, green, blue, alpha )
 object:setFillColor( gradient )</pre>
-<h5 id="gray-red-green-blue-alpha-optional">gray, red, green, blue, alpha <sub><sup>(optional)</sup></sub></h5>
+<section id="gray-red-green-blue-alpha-optional" class="level5">
+<h5>gray, red, green, blue, alpha <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Numbers between <code>0</code> and <code>1</code> that represent the corresponding value for that channel. <code>alpha</code> represents the opacity of the fill color/tint.</p>
-<h5 id="gradient-optional">gradient <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="gradient-optional" class="level5">
+<h5>gradient <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a></em>. See the gradient fill example below.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>If you are passing a table of color values to this function, the table must be <a href="../../../api/library/global/unpack.html">unpacked</a> so that the color values are dictated properly:</p>
 <pre class="brush: lua;">local myText = display.newText( "hello", 0, 0, native.systemFontBold, 12 )
 
 local colorTable = { 1, 0, 0, 0.5 }
 myText:setFillColor( unpack(colorTable) )</pre>
-<h2 id="examples">Examples</h2>
-<h5 id="vector-object-fill">Vector Object Fill</h5>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="vector-object-fill" class="level5">
+<h5>Vector Object Fill</h5>
 <pre class="brush: lua;">local vertices = { 0,-110, 27,-35, 105,-35, 43,16, 65,90, 0,45, -65,90, -43,15, -105,-35, -27,-35 }
 
 local star = display.newPolygon( 300, 300, vertices )
 star:setFillColor( 1, 0.2, 0.2 )</pre>
-<h5 id="text-object-fill">Text Object Fill</h5>
+</section>
+<section id="text-object-fill" class="level5">
+<h5>Text Object Fill</h5>
 <pre class="brush: lua;">local myText = display.newText( "hello", 0, 0, native.systemFontBold, 12 )
 
 myText:setFillColor( 1, 0.2, 0.2 )</pre>
-<h5 id="gradient-fill">Gradient Fill</h5>
+</section>
+<section id="gradient-fill" class="level5">
+<h5>Gradient Fill</h5>
 <pre class="brush: lua;">local rect = display.newRect( 0, 0, 100, 200 )
 
 local gradient = {
@@ -165,7 +182,9 @@ local gradient = {
     color1={ 1, 1, 1 }, color2={ 0.8, 0.8, 0.8 }, direction="down"
 }
 rect:setFillColor( gradient )</pre>
-<h5 id="image-tint">Image Tint</h5>
+</section>
+<section id="image-tint" class="level5">
+<h5>Image Tint</h5>
 <pre class="brush: lua;">local image = display.newImage( "image.png" )
 image:setFillColor( 0.72, 0.9, 0.16, 0.78 )  -- Tints image green</pre>
 <hr>
@@ -178,6 +197,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -86,7 +86,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/native/index.html">native</a>  ▸  <a href="../../../api/library/native/showPopup.html">showPopup</a>
 </div>
-<h1 id="native.showpopup">native.showPopup()</h1>
+<section id="native.showpopup" class="level1">
+<h1>native.showPopup()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -117,13 +118,17 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Displays the operating system’s default popup window for a specified service. Displaying this popup suspends the app on both iOS and Android.</p>
 <p>This function returns <code>true</code> or <code>false</code> indicating whether the popup was displayed or not. If it returns <code>false</code>, then the popup was not available or the service was not available for the device.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">native.showPopup( name )
 native.showPopup( name, options )</pre>
-<h5 id="name-required">name <sub><sup>(required)</sup></sub></h5>
+<section id="name-required" class="level5">
+<h5>name <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The string name of the popup to be shown. It can be one of the following:</p>
 <ul>
 <li><code>"mail"</code> — Displays a popup window for composing an email.</li>
@@ -135,9 +140,14 @@ native.showPopup( name, options )</pre>
 <li><code>"addressbook"</code> — This setting pertains to the <a href="../../../plugin/CoronaProvider_native_popup_addressbook/index.html">Address Book</a> plugin.</li>
 <li><code>"quickLook"</code> — This setting pertains to the <a href="../../../plugin/CoronaProvider_native_popup_quickLook/index.html">Quick Look</a> plugin.</li>
 </ul>
-<h5 id="options-optional">options <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="options-optional" class="level5">
+<h5>options <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table that specifies the optional properties for the popup — see the section below which corresponds to the <code>name</code> parameter.</p>
-<h2 id="mail">mail</h2>
+</section>
+</section>
+<section id="mail" class="level2">
+<h2>mail</h2>
 <p>The following <nobr>key-value</nobr> pairs apply within the <code>options</code> table if <code>name</code> is set to <code>"mail"</code>:</p>
 <ul>
 <li><code>to</code> — Single <a href="../../../api/type/String.html">string</a> or an <a href="../../../api/type/Array.html">array</a> of strings where each string is an email address of a recipient.</li>
@@ -148,13 +158,17 @@ native.showPopup( name, options )</pre>
 <li><code>isBodyHtml</code> — <a href="../../../api/type/Boolean.html">Boolean</a> indicating whether the email is HTML. By default, plain text is assumed.</li>
 <li><code>subject</code> — <a href="../../../api/type/String.html">String</a> for the subject of the email.</li>
 </ul>
-<h2 id="sms">sms</h2>
+</section>
+<section id="sms" class="level2">
+<h2>sms</h2>
 <p>The following <nobr>key-value</nobr> pairs apply within the <code>options</code> table if <code>name</code> is set to <code>"sms"</code>:</p>
 <ul>
 <li><code>to</code> — Single <a href="../../../api/type/String.html">string</a> or an <a href="../../../api/type/Array.html">array</a> of strings where each string is a phone number of the recipient.</li>
 <li><code>body</code> — <a href="../../../api/type/String.html">String</a> for the SMS message content.</li>
 </ul>
-<h2 id="appstore-rateapp">appStore / rateApp</h2>
+</section>
+<section id="appstore-rateapp" class="level2">
+<h2>appStore / rateApp</h2>
 <p>The following <nobr>key-value</nobr> pairs apply within the <code>options</code> table if <code>name</code> is set to <code>"appStore"</code> or <code>"rateApp"</code>:</p>
 <ul>
 <li><code>iOSAppId</code> — <a href="../../../api/type/String.html">String</a> ID assigned to the app by the iTunes App Store.</li>
@@ -163,7 +177,9 @@ native.showPopup( name, options )</pre>
 <li><code>supportedAndroidStores</code> — <a href="../../../api/type/Array.html">Array</a> of strings indicating which app stores are supported on Android. This is needed in case the app was not installed by an app store so that Solar2D knows which app store to display the popup from. This is especially needed while testing and debugging the app. Currently, string names of <code>"amazon"</code> and <code>"google"</code> are supported.</li>
 </ul>
 <p><a id="requestAppPermission"></a></p>
-<h2 id="requestapppermission">requestAppPermission</h2>
+</section>
+<section id="requestapppermission" class="level2">
+<h2>requestAppPermission</h2>
 <p>Currently this option is only available on Android. The following <nobr>key-value</nobr> pairs apply within the <code>options</code> table if <code>name</code> is set to <code>"requestAppPermission"</code>:</p>
 <ul>
 <li><p><code>appPermission</code> — Single <a href="../../../api/type/String.html">string</a> or an <a href="../../../api/type/Array.html">array</a> of strings where each string is an app permission to request. Valid options include the following <nobr>platform-agnostic</nobr> types:</p>
@@ -197,18 +213,31 @@ native.showPopup( name, options )</pre>
 <li><p><code>settingsRedirectTitle</code> — <a href="../../../api/type/String.html">String</a> containing the title for the settings redirect dialog. This option only applies if <code>urgency</code> is set to <code>"Critical"</code>.</p></li>
 <li><p><code>settingsRedirectDescription</code> — <a href="../../../api/type/String.html">String</a> containing the description for the settings redirect dialog. This option only applies if <code>urgency</code> is set to <code>"Critical"</code>.</p></li>
 </ul>
-<h2 id="activity">activity</h2>
+</section>
+<section id="activity" class="level2">
+<h2>activity</h2>
 <p>The <code>name</code> value of <code>"activity"</code> pertains to the <a href="../../../plugin/CoronaProvider_native_popup_activity/index.html">Activity</a> plugin.</p>
-<h2 id="social">social</h2>
+</section>
+<section id="social" class="level2">
+<h2>social</h2>
 <p>The <code>name</code> value of <code>"social"</code> pertains to the <a href="../../../plugin/CoronaProvider_native_popup_social/index.html">Social</a> plugin.</p>
-<h2 id="addressbook">addressbook</h2>
+</section>
+<section id="addressbook" class="level2">
+<h2>addressbook</h2>
 <p>The <code>name</code> value of <code>"addressbook"</code> pertains to the <a href="../../../plugin/CoronaProvider_native_popup_addressbook/index.html">Address Book</a> plugin.</p>
-<h2 id="quicklook">quickLook</h2>
+</section>
+<section id="quicklook" class="level2">
+<h2>quickLook</h2>
 <p>The <code>name</code> value of <code>"quickLook"</code> pertains to the <a href="../../../plugin/CoronaProvider_native_popup_quickLook/index.html">Quick Look</a> plugin.</p>
-<h2 id="safariview">safariView</h2>
+</section>
+<section id="safariview" class="level2">
+<h2>safariView</h2>
 <p>The <code>name</code> value of <code>"safariView"</code> pertains to the <a href="../../../plugin/CoronaProvider_native_popup_safariView/index.html">Safari View</a> plugin.</p>
-<h2 id="examples">Examples</h2>
-<h5 id="email-popup">Email Popup</h5>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="email-popup" class="level5">
+<h5>Email Popup</h5>
 <pre class="brush: lua;">-- Email popup with one file attachment
 local options =
 {
@@ -218,7 +247,9 @@ local options =
    attachment = { baseDir=system.DocumentsDirectory, filename="Screenshot.png", type="image/png" }
 }
 native.showPopup( "mail", options )</pre>
-<h5 id="html-email-popup">HTML Email Popup</h5>
+</section>
+<section id="html-email-popup" class="level5">
+<h5>HTML Email Popup</h5>
 <pre class="brush: lua;">-- Email popup with multiple correspondents and attachments
 local options =
 {
@@ -234,27 +265,35 @@ local options =
    }
 }
 native.showPopup( "mail", options )</pre>
-<h5 id="sms-popup-simple">SMS Popup (Simple)</h5>
+</section>
+<section id="sms-popup-simple" class="level5">
+<h5>SMS Popup (Simple)</h5>
 <pre class="brush: lua;">local options =
 {
    body = "I scored over 9000!!! Can you do better?"
 }
 native.showPopup( "sms", options )</pre>
-<h5 id="sms-popup-multiple-recipients">SMS Popup (Multiple Recipients)</h5>
+</section>
+<section id="sms-popup-multiple-recipients" class="level5">
+<h5>SMS Popup (Multiple Recipients)</h5>
 <pre class="brush: lua;">local options =
 {
    to = { "1234567890", "9876543210" },
    body = "I scored over 9000!!! Can you do better?"
 }
 native.showPopup( "sms", options )</pre>
-<h5 id="store-details">Store Details</h5>
+</section>
+<section id="store-details" class="level5">
+<h5>Store Details</h5>
 <pre class="brush: lua;">local options =
 {
    iOSAppId = "1234567890",
    supportedAndroidStores = { "google", "amazon" }
 }
 native.showPopup( "appStore", options )</pre>
-<h5 id="store-details-for-another-app">Store Details for Another App</h5>
+</section>
+<section id="store-details-for-another-app" class="level5">
+<h5>Store Details for Another App</h5>
 <pre class="brush: lua;">local options =
 {
    iOSAppId = "1234567890",
@@ -262,13 +301,17 @@ native.showPopup( "appStore", options )</pre>
    supportedAndroidStores = { "google", "amazon" }
 }
 native.showPopup( "appStore", options )</pre>
-<h5 id="simple-app-permission-request">Simple App Permission Request</h5>
+</section>
+<section id="simple-app-permission-request" class="level5">
+<h5>Simple App Permission Request</h5>
 <pre class="brush: lua;">local options =
 {
    appPermission = "Calendars"
 }
 native.showPopup( "requestAppPermission", options )</pre>
-<h5 id="critical-app-permission-request">Critical App Permission Request</h5>
+</section>
+<section id="critical-app-permission-request" class="level5">
+<h5>Critical App Permission Request</h5>
 <pre class="brush: lua;">local function appPermissionsListener( event )
     for k,v in pairs( event.grantedAppPermissions ) do
         if ( v == "Camera" ) then
@@ -298,6 +341,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

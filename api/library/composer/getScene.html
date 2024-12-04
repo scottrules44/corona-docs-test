@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/composer/index.html">composer</a>  ▸  <a href="../../../api/library/composer/getScene.html">getScene</a>
 </div>
-<h1 id="composer.getscene">composer.getScene()</h1>
+<section id="composer.getscene" class="level1">
+<h1>composer.getScene()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -94,13 +95,20 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Returns the specified scene object, as returned from <a href="../../../api/library/composer/newScene.html">composer.newScene()</a>. Returns <code>nil</code> if the scene object does not exist. This function is useful for getting a reference to a specific scene object — for instance, if the current scene needs access to a specific function that’s attached to another scene.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">composer.getScene( sceneName )</pre>
-<h5 id="scenename-required">sceneName <sub><sup>(required)</sup></sub></h5>
+<section id="scenename-required" class="level5">
+<h5>sceneName <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The name of the scene object.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local composer = require( "composer" )
 
 -- Get a reference to "titleScene"
@@ -118,6 +126,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

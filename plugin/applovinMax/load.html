@@ -73,7 +73,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/applovinMax/index.html">applovinMax</a>  ▸  <a href="../../plugin/applovinMax/load.html">load</a>
 </div>
-<h1 id="applovinmax.load">applovinMax.load()</h1>
+<section id="applovinmax.load" class="level1">
+<h1>applovinMax.load()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,11 +109,15 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Preloads a AppLovin ad. You can also call <a href="../../plugin/applovinMax/isLoaded.html">applovinMax.isLoaded()</a> to verify that the ad has been loaded and <a href="../../plugin/applovinMax/show.html">applovinMax.show()</a> to show it.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">applovinMax.load( adType )</pre>
-<h5 id="adtype-required">adType <sub><sup>(required)</sup></sub></h5>
+<section id="adtype-required" class="level5">
+<h5>adType <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> One of the following values:</p>
 <ul>
 <li><code>"banner"</code></li>
@@ -129,17 +134,30 @@ Notes
 <li><p>Rewarded video offers can be limited to a certain amount in a given day, defined under “frequency capping” in the <a href="https://www.applovin.com/manage">AppLovin developer portal</a>.</p></li>
 </ul>
 </div>
-<h5 id="params-required">params <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="params-required" class="level5">
+<h5>params <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing AppLovin ad loading options.</p>
-<h2 id="parameter-reference">Parameter Reference</h2>
+</section>
+</section>
+<section id="parameter-reference" class="level2">
+<h2>Parameter Reference</h2>
 <p>The <code>params</code> table includes parameters for the AppLovin ad loading.</p>
-<h5 id="iosunitid-required-for-ios">iOSUnitId ~^(required for iOS)^~</h5>
+<section id="iosunitid-required-for-ios" class="level5">
+<h5>iOSUnitId ~^(required for iOS)^~</h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> iOS Ad Unit ID, found in <a href="https://www.applovin.com/manage">AppLovin developer portal</a> under <code>Manage</code> &gt; <code>Ad Units</code>.</p>
-<h5 id="androidunitid-required-for-android">androidUnitId ~^(required for android)^~</h5>
+</section>
+<section id="androidunitid-required-for-android" class="level5">
+<h5>androidUnitId ~^(required for android)^~</h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Android Ad Unit ID, found in <a href="https://www.applovin.com/manage">AppLovin developer portal</a> under <code>Manage</code> &gt; <code>Ad Units</code>.</p>
-<h5 id="bannersize-optional">bannerSize <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="bannersize-optional" class="level5">
+<h5>bannerSize <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Valid values: <code>"standard"</code> (typically 320 x 50), <code>"leader"</code> (typically 768 x 90) and <code>"mrec"</code> (typically 320 x 250). Default is <code>"standard"</code>.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local applovin = require( "plugin.applovin" )
 
 local function adListener( event )
@@ -171,6 +189,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

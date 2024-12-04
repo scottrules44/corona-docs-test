@@ -84,7 +84,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/display/index.html">display</a>  ▸  <a href="../../../api/library/display/newSprite.html">newSprite</a>
 </div>
-<h1 id="display.newsprite">display.newSprite()</h1>
+<section id="display.newsprite" class="level1">
+<h1>display.newSprite()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -119,40 +120,70 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Creates a sprite object. Sprites allow for animated sequences of frames that reside on <strong>image sheets</strong>. Please see the <a href="../../../guide/media/spriteAnimation/index.html">Sprite Animation</a> and <a href="../../../guide/media/imageSheets/index.html">Image Sheets</a> guides for more information.</p>
 <p>The local origin is at the center of the sprite and the <a href="../../../guide/graphics/transform-anchor.html">anchor point</a> is initialized to this local origin.</p>
 <p>By default, sprites use frames that reside on a single image sheet. This corresponds to the image sheet you pass to the <code>display.newSprite()</code> constructor.</p>
 <p>For each sequence, you can specify a different image sheet instead of using the default image sheet. You do this by using the optional <code>sheet</code> parameter in a <code>sequenceData</code> table. For details, see <a href="#sequencedata">Sequence Data</a> below.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">display.newSprite( [parent,] imageSheet, sequenceData )</pre>
-<h5 id="parent-optional">parent <sub><sup>(optional)</sup></sub></h5>
+<section id="parent-optional" class="level5">
+<h5>parent <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/GroupObject/index.html">GroupObject</a>.</em> An optional display group in which to insert the sprite.</p>
-<h5 id="imagesheet-required">imageSheet <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="imagesheet-required" class="level5">
+<h5>imageSheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> Specifies the default image sheet.</p>
-<h5 id="sequencedata-required">sequenceData <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="sequencedata-required" class="level5">
+<h5>sequenceData <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table which holds data for a specific sequence. Or, if you have more than one animation sequence for a single object, <code>sequenceData</code> is then an array of tables that hold data for each sequence. For instance, you might have a character object with several different animation sequences such as <code>"walking"</code>, <code>"jumping"</code>, and <code>"swimming"</code>. Frames in a given sequence may be consecutive (<code>1,2,3,4,...</code>) or non-consecutive (<code>1,3,4,6,9,...</code>) within the image sheet. See <a href="#sequencedata">Sequence Data</a> below.</p>
 <p><a id="sequencedata"></a></p>
-<h2 id="sequence-data">Sequence Data</h2>
+</section>
+</section>
+<section id="sequence-data" class="level2">
+<h2>Sequence Data</h2>
 <p>This is a table which holds data for one of more sequences. Sequences may be shared between multiple sprite objects.</p>
-<h5 id="name-required">name <sub><sup>(required)</sup></sub></h5>
+<section id="name-required" class="level5">
+<h5>name <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The unique sequence name, used to load the sequence when it’s time to play it.</p>
-<h5 id="start-optional">start <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="start-optional" class="level5">
+<h5>start <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> For consecutive-frame sequences, <code>start</code> represents the starting frame.</p>
-<h5 id="count-optional">count <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="count-optional" class="level5">
+<h5>count <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> For consecutive-frame sequences, <code>count</code> represents how many frames from the start that the sequence should end.</p>
-<h5 id="frames-optional">frames <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="frames-optional" class="level5">
+<h5>frames <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> For non-consecutive-frame sequences, this is an array that holds the frameIndex in the exact order animation should be played.</p>
-<h5 id="sheet-optional">sheet <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="sheet-optional" class="level5">
+<h5>sheet <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> You can specify a per-sequence image sheet. Typically you would do this if you wanted to use a different image sheet. If none is provided, it defaults to the image sheet you provided to <code>display.newSprite()</code>. A single sprite can also pull frames/sequences from different image sheets — see the <a href="#multiple">Multiple Image Sheets</a> example below.</p>
-<h5 id="time-optional">time <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="time-optional" class="level5">
+<h5>time <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> This is the time (in milliseconds) for the entire sequence to animate. If not specified, then the <nobr>per-frame</nobr> animation rate will be based on the frame rate of your app.</p>
-<h5 id="loopcount-optional">loopCount <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="loopcount-optional" class="level5">
+<h5>loopCount <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> This is a number that represents how many times you want the sequence to loop when it is played. Setting this to <code>1</code> will play the sequence once and then stop. The default is <code>0</code>, which will loop the sequence indefinitely.</p>
-<h5 id="loopdirection-optional">loopDirection <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="loopdirection-optional" class="level5">
+<h5>loopDirection <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> This can either be <code>"forward"</code> or <code>"bounce"</code>, with <code>"forward"</code> being the default. The <code>"bounce"</code> option will play forward then backwards through the sequence of frames.</p>
-<h2 id="examples">Examples</h2>
-<h5 id="single-sequence-consecutive-frames">Single Sequence (Consecutive Frames)</h5>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="single-sequence-consecutive-frames" class="level5">
+<h5>Single Sequence (Consecutive Frames)</h5>
 <pre class="brush: lua;">-- Example assumes 'imageSheet' is already created from graphics.newImageSheet()
 
 -- consecutive frames
@@ -167,7 +198,9 @@ local sequenceData =
 }
 
 local character = display.newSprite( imageSheet, sequenceData )</pre>
-<h5 id="single-sequence-non-consecutive-frames">Single Sequence (Non-Consecutive Frames)</h5>
+</section>
+<section id="single-sequence-non-consecutive-frames" class="level5">
+<h5>Single Sequence (Non-Consecutive Frames)</h5>
 <pre class="brush: lua;">-- Example assumes 'imageSheet' is already created using graphics.newImageSheet()
 
 -- non-consecutive frames
@@ -180,7 +213,9 @@ local sequenceData =
 }
 
 local character = display.newSprite( imageSheet, sequenceData )</pre>
-<h5 id="multiple-sequences">Multiple Sequences</h5>
+</section>
+<section id="multiple-sequences" class="level5">
+<h5>Multiple Sequences</h5>
 <pre class="brush: lua;">-- Example assumes 'imageSheet' already created using graphics.newImageSheet()
 
 local sequenceData =
@@ -192,7 +227,9 @@ local sequenceData =
 
 local character = display.newSprite( imageSheet, sequenceData )</pre>
 <p><a id="multiple"></a></p>
-<h5 id="multiple-image-sheets">Multiple Image Sheets</h5>
+</section>
+<section id="multiple-image-sheets" class="level5">
+<h5>Multiple Image Sheets</h5>
 <pre class="brush: lua;">-- 1st image sheet
 local sheetData1 = { width=64, height=64, numFrames=6, sheetContentWidth=384, sheetContentHeight=64 }
 local sheet1 = graphics.newImageSheet( "mySheet1.png", sheetData1 )
@@ -227,6 +264,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

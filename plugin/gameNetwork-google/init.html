@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/gameNetwork-google/index.html">gameNetwork-google</a>  ▸  <a href="../../plugin/gameNetwork-google/init.html">init</a>
 </div>
-<h1 id="gamenetwork.init">gameNetwork.init()</h1>
+<section id="gamenetwork.init" class="level1">
+<h1>gameNetwork.init()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -102,13 +103,20 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Initializes an app for use with Google Play Game Services.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">gameNetwork.init( "google" [, initCallback] )</pre>
-<h5 id="initcallback-optional">initCallback <sub><sup>(optional)</sup></sub></h5>
+<section id="initcallback-optional" class="level5">
+<h5>initCallback <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Callback function where, upon successful initialization, <code>event.isError</code> will be <code>nil</code>. On unsuccessful initialization, <code>event.isError</code> will be <code>true</code>. When problems such as network errors occur, <code>event.errorCode</code> (<a href="../../api/type/Number.html">integer</a>) and <code>event.errorMessage</code> (<a href="../../api/type/String.html">string</a>) will be defined.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local gameNetwork = require( "gameNetwork" )
 
 local function initCallback( event )
@@ -137,6 +145,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

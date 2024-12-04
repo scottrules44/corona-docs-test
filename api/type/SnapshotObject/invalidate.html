@@ -65,7 +65,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/SnapshotObject/index.html">SnapshotObject</a>  ▸  <a href="../../../api/type/SnapshotObject/invalidate.html">invalidate</a>
 </div>
-<h1 id="objectinvalidate">object:invalidate()</h1>
+<section id="objectinvalidate" class="level1">
+<h1>object:invalidate()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,13 +109,18 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Invalidating snapshots tells Corona to invalidate its texture cache and re-render the children to a texture on the next render pass.</p>
 <p>Unlike most other objects in Corona, snapshots will not automatically recognize when children have been modified. This is because there’s a cost to rendering to a texture.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">snapshot:invalidate()
 snapshot:invalidate( "canvas" )</pre>
-<h2 id="group-vs-canvas">Group vs Canvas</h2>
+</section>
+<section id="group-vs-canvas" class="level2">
+<h2>Group vs Canvas</h2>
 <ul>
 <li><code>snapshot:invalidate()</code> invalidates the snapshot’s <a href="../../../api/type/SnapshotObject/group.html">group</a>.</li>
 <li><code>snapshot:invalidate( "canvas" )</code> invalidates the snapshot’s <a href="../../../api/type/SnapshotObject/canvas.html">canvas</a>.</li>
@@ -129,6 +135,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

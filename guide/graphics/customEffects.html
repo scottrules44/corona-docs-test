@@ -106,7 +106,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../guide/index.html">Developer Guides</a>  ▸  <a href="../../guide/graphics/index.html">Graphics/Audio/Animation</a>
 </div>
-<h1 id="custom-shader-effects">Custom Shader Effects</h1>
+<section id="custom-shader-effects" class="level1">
+<h1>Custom Shader Effects</h1>
 <p>While Solar2D has an extensive list of <a href="../../guide/graphics/effects.html">built-in shader effects</a>, there are times when you may need to create custom effects. This guide outlines how to create custom effects using custom shader code, structured in the same way that Solar2D’s <nobr>built-in</nobr> shader effects are implemented.</p>
 <div class="guides-toc">
 <ul>
@@ -131,13 +132,16 @@ Notes
 </ul>
 </div>
 <p><a id="pipeline"></a></p>
-<h2 id="gpu-rendering-pipeline">GPU Rendering Pipeline</h2>
+<section id="gpu-rendering-pipeline" class="level2">
+<h2>GPU Rendering Pipeline</h2>
 <p>In a programmable graphics pipeline, the GPU is treated as a stream processor. Data flows through multiple processing units and each unit is capable of running a (shader) program.</p>
 <p>In OpenGL-ES 2.0, data flows from (<strong>1</strong>) the application to (<strong>2</strong>) the vertex processor to (<strong>3</strong>) the fragment processor and finally to (<strong>4</strong>) the framebuffer/screen.</p>
 <p><img src="../../images/sdk/graphics/GPU-pipeline.png" /></p>
 <p>In Solar2D, rather than write complete shader programs, custom shader effects are exposed in the form of vertex and fragment <strong>kernels</strong> which allow you to create powerful programmable effects.</p>
 <p><a id="programmable"></a></p>
-<h2 id="programmable-effects">Programmable Effects</h2>
+</section>
+<section id="programmable-effects" class="level2">
+<h2>Programmable Effects</h2>
 <p>Solar2D allows you to extend its pipeline to create several types of custom programmable effects, organized based on the number of input textures:</p>
 <ul>
 <li><strong>Generators</strong> — Procedurally-generated effects which don’t operate on any textures/images.</li>
@@ -145,7 +149,9 @@ Notes
 <li><strong>Composites</strong> — Effects which operate on two textures/images, combined together as a <a href="../../api/type/CompositePaint/index.html">CompositePaint</a>.</li>
 </ul>
 <p><a id="creating"></a></p>
-<h2 id="creating-custom-effects">Creating Custom Effects</h2>
+</section>
+<section id="creating-custom-effects" class="level2">
+<h2>Creating Custom Effects</h2>
 <p>To define a new effect, call <a href="../../api/library/graphics/defineEffect.html">graphics.defineEffect()</a>, passing in a Lua table which defines the effect. In order for this table to be a valid effect definition, it must contain several properties:</p>
 <ul>
 <li><code>category</code> — The type of effect.</li>
@@ -153,7 +159,8 @@ Notes
 <li><code>vertex</code> and/or <code>fragment</code> — Defines where your shader code goes, as described in the <a href="#kernels">Defining Kernels</a> section below.</li>
 </ul>
 <p>A complete and detailed description of all properties is available in the <a href="../../api/library/graphics/defineEffect.html">graphics.defineEffect()</a> documentation.</p>
-<h3 id="naming-effects">Naming Effects</h3>
+<section id="naming-effects" class="level3">
+<h3>Naming Effects</h3>
 <p>The name of an effect is determined by the following properties:</p>
 <ul>
 <li><code>category</code> — The type of effect.</li>
@@ -163,11 +170,16 @@ Notes
 <p>When you set an effect on a display object, you must provide a <nobr>fully-qualified</nobr> string by concatenating the above values and separating each by a <code>.</code> as follows:</p>
 <pre class="brush: lua;">local effectName = "[category].[group].[name]"</pre>
 <p><a id="kernels"></a></p>
-<h3 id="defining-kernels">Defining Kernels</h3>
+</section>
+<section id="defining-kernels" class="level3">
+<h3>Defining Kernels</h3>
 <p>Solar2D packages snippets of shader code in the form of <strong>kernels</strong>. By structuring specific vertex and fragment processing tasks in kernels, the creation of custom effects is dramatically simplified.</p>
 <p>Essentially, a kernel is shader code which the main shader program relies upon to handle specific processing tasks. Solar2D supports both <a href="#vertexkernels">vertex kernels</a> and <a href="#fragmentkernels">fragment kernels</a>. You must specify at least one kernel type in your effect (or both). If a vertex/fragment kernel is not specified, Solar2D inserts the default vertex/fragment kernel respectively.</p>
 <p><a id="vertexkernels"></a></p>
-<h2 id="vertex-kernels">Vertex Kernels</h2>
+</section>
+</section>
+<section id="vertex-kernels" class="level2">
+<h2>Vertex Kernels</h2>
 <p>Vertex kernels operate on a per-vertex basis, enabling you to modify vertex positions before they are used in the next stage of the pipeline. They must define the following function which accepts an incoming position and can modify that vertex position.</p>
 <p>Solar2D’s default vertex kernel simply returns the incoming position:</p>
 <pre class="brush: lua;">P_POSITION vec2 VertexKernel( P_POSITION vec2 position )
@@ -175,7 +187,8 @@ Notes
     return position;
 }</pre>
 <p><a id="vertextime"></a></p>
-<h3 id="time">Time</h3>
+<section id="time" class="level3">
+<h3>Time</h3>
 <p>The following time uniforms can be accessed by the vertex kernel:</p>
 <ul>
 <li><code>P_DEFAULT float CoronaTotalTime</code> — Running time of the app in seconds.</li>
@@ -185,7 +198,9 @@ Notes
 <p>When using these variables, you need to tell Solar2D that your shader requires the GPU to <nobr>re-render</nobr> the scene, even if there are no other changes to the display objects in the scene. You can do this by setting the <code>kernel.isTimeDependent</code> property in your kernel definition as indicated below. Note that you should only set this if your shader code is truly <nobr>time-dependent</nobr>, since it effectively forces the GPU to <nobr>re-render</nobr> every frame.</p>
 <pre class="brush: lua;">kernel.isTimeDependent = true</pre>
 <p><a id="vertexsize"></a></p>
-<h3 id="size">Size</h3>
+</section>
+<section id="size" class="level3">
+<h3>Size</h3>
 <p>The following size uniforms can be accessed by the vertex kernel:</p>
 <ul>
 <li><p><code>P_POSITION vec2 CoronaContentScale</code> — The number of content pixels per screen pixels along the <strong>x</strong> and <strong>y</strong> axes. Content pixels refer to Solar2D’s coordinate system and are determined by the <a href="../../guide/basics/configSettings/index.html">content scaling</a> settings for your project.</p></li>
@@ -213,11 +228,15 @@ Notes
 </table>
 </div>
 </div>
-<h3 id="coordinate">Coordinate</h3>
+</section>
+<section id="coordinate" class="level3">
+<h3>Coordinate</h3>
 <ul>
 <li><code>P_UV vec2 CoronaTexCoord</code> — The texture coordinate for the vertex.</li>
 </ul>
-<h3 id="example">Example</h3>
+</section>
+<section id="example" class="level3">
+<h3>Example</h3>
 <p>The following example causes the bottom edge of an image to wobble by a fixed amplitude:</p>
 <pre class="brush: lua;">local kernel = {}
 
@@ -239,7 +258,10 @@ P_POSITION vec2 VertexKernel( P_POSITION vec2 position )
 }
 ]]</pre>
 <p><a id="fragmentkernels"></a></p>
-<h2 id="fragment-kernels">Fragment Kernels</h2>
+</section>
+</section>
+<section id="fragment-kernels" class="level2">
+<h2>Fragment Kernels</h2>
 <p>Fragment kernels operate on a per-pixel basis, enabling you to modify each pixel <nobr>(i.e. image processing)</nobr> before it is drawn to the framebuffer. They must define the following function which accepts an incoming texture coordinate and returns a color vector, for example the pixel color to be used in the next stage of the pipeline.</p>
 <p>Solar2D’s default fragment kernel simply samples a single texture (<code>CoronaSampler0</code>) and, using <code>CoronaColorScale()</code>, modulates it by the display object’s alpha/tint:</p>
 <pre class="brush: lua;">P_COLOR vec4 FragmentKernel( P_UV vec2 texCoord )
@@ -247,21 +269,30 @@ P_POSITION vec2 VertexKernel( P_POSITION vec2 position )
     P_COLOR vec4 texColor = texture2D( CoronaSampler0, texCoord );
     return CoronaColorScale( texColor );
 }</pre>
-<h3 id="time-1">Time</h3>
+<section id="time-1" class="level3">
+<h3>Time</h3>
 <p>The same vertex kernel <a href="#vertextime">time</a> uniforms can be accessed by the fragment kernel.</p>
-<h3 id="size-1">Size</h3>
+</section>
+<section id="size-1" class="level3">
+<h3>Size</h3>
 <p>The same vertex kernel <a href="#vertexsize">size</a> uniforms can be accessed by the fragment kernel.</p>
-<h3 id="samplers">Samplers</h3>
+</section>
+<section id="samplers" class="level3">
+<h3>Samplers</h3>
 <ul>
 <li><code>P_COLOR sampler2D CoronaSampler0</code> — The texture sampler for the first texture.</li>
 <li><code>P_COLOR sampler2D CoronaSampler1</code> — The texture sampler for the second texture (requires a <a href="../../api/type/CompositePaint/index.html">composite paint</a>).</li>
 </ul>
-<h3 id="alphatint">Alpha/Tint</h3>
+</section>
+<section id="alphatint" class="level3">
+<h3>Alpha/Tint</h3>
 <p>All display objects have an <a href="../../api/type/DisplayObject/alpha.html">alpha</a> property. In addition, <a href="../../api/type/ShapeObject/index.html">shape</a> objects have a tint which is set either via <a href="../../api/type/ShapeObject/setFillColor.html">object:setFillColor()</a> or the color channel properties <nobr>(<a href="../../api/type/Paint/r.html">r</a>, <a href="../../api/type/Paint/g.html">g</a>, <a href="../../api/type/Paint/b.html">b</a>, <a href="../../api/type/Paint/a.html">a</a>)</nobr> of the object’s <a href="../../api/type/ShapeObject/fill.html">fill</a> property.</p>
 <p>Generally, your shader should incorporate the effect of these properties into the color that your fragment kernel returns. You can do this by calling the following function to calculate the correct color:</p>
 <pre class="brush: lua;">P_COLOR vec4 CoronaColorScale( P_COLOR vec4 color );</pre>
 <p>This function takes an input color vector (red, green, blue, and alpha channels) and returns a color vector modulated by the display object’s tint and alpha, as shown in the fragment kernel examples. Generally, you should call this function at the end of the fragment kernel so that you can properly calculate the color vector your fragment kernel should return.</p>
-<h3 id="example-1">Example</h3>
+</section>
+<section id="example-1" class="level3">
+<h3>Example</h3>
 <p>The following example brightens an image by a fixed amount per color component:</p>
 <pre class="brush: lua;">local kernel = {}
 
@@ -287,7 +318,10 @@ P_COLOR vec4 FragmentKernel( P_UV vec2 texCoord )
 }
 ]]</pre>
 <p><a id="timetransforms"></a></p>
-<h2 id="time-transforms">Time Transforms</h2>
+</section>
+</section>
+<section id="time-transforms" class="level2">
+<h2>Time Transforms</h2>
 <p>In the case of time-dependent vertex or fragment kernels, Solar2D will also look for <code>timeTransform</code>. If this exists, it must be a table with one of the following as its <code>func</code> member: <code>"modulo"</code>, <code>"pingpong"</code>, <code>"sine"</code>. The value of <code>CoronaTotalTime</code> within the shader will be the result of any such transformation, rather than the raw underlying time.</p>
 <p>The <code>"modulo"</code> transform is computed as <code>CoronaTotalTime = OriginalTotalTime % range</code>, where <code>range</code> is a positive number that may be supplied in the <code>timeTransform</code> table under that same key. By default, <code>range</code> is 1.</p>
 <p>The <code>"pingpong"</code> transform is similar, except <code>CoronaTotalTime</code> will first go from 0 to <code>range</code> (no default, in this case), then fall back to 0, and repeat indefinitely.</p>
@@ -310,10 +344,13 @@ local rect = display.newRect(300, 100, 50, 50)
 rect.fill.effect = "generator.time.pingpong"</pre>
 <p>See the <a href="#precisionissues">precision issues</a> below for the motivation behind these transforms.</p>
 <p><a id="varyingvariables"></a></p>
-<h2 id="custom-varying-variables">Custom Varying Variables</h2>
+</section>
+<section id="custom-varying-variables" class="level2">
+<h2>Custom Varying Variables</h2>
 <p>A “varying” variable enables data to be passed from a vertex shader to the fragment shader. The vertex shader outputs this value which corresponds to the positions of the primitive’s vertices. In turn, the fragment shader linearly interpolates this value across the primitive during rasterization.</p>
 <p>In Solar2D, you can declare your own varying variables in the shader code. You should put them at the beginning of both your vertex and fragment code.</p>
-<h3 id="example-2">Example</h3>
+<section id="example-2" class="level3">
+<h3>Example</h3>
 <p>The following example combines the wobble vertex and brighten fragment kernels. Unlike the <code>"myBrighten"</code> fragment example above, this version does not use a fixed value for brightness. Instead, the vertex shader calculates an oscillating brightness value for each vertex and the fragment shader linearly interpolates the brightness value according to the pixel it’s shading.</p>
 <pre class="brush: lua;">local kernel = {}
 kernel.category = "filter"
@@ -361,7 +398,10 @@ P_COLOR vec4 FragmentKernel( P_UV vec2 texCoord )
 }
 ]]</pre>
 <p><a id="effectparameters"></a></p>
-<h2 id="effect-parameters">Effect Parameters</h2>
+</section>
+</section>
+<section id="effect-parameters" class="level2">
+<h2>Effect Parameters</h2>
 <p>In Solar2D, you can pass effect parameters by setting appropriate properties on the <a href="../../api/type/Paint/effect.html">effect</a> of a <a href="../../api/type/ShapeObject/index.html">ShapeObject</a>. These properties depend on the effect. For example, the <nobr>built-in</nobr> brightness filter has an <code>intensity</code> parameter that can be propagated to the shader code:</p>
 <pre class="brush: lua;">object.fill.effect = "filter.brightness"
 object.fill.effect.intensity = 0.4</pre>
@@ -394,7 +434,8 @@ Vertex Versus Uniform
 <p>Typically, it’s best to use vertex userdata when you need to pass in effect parameters, because the parameter data can be passed in a vertex array. This maximizes the chance that Solar2D can batch draw calls together. This is especially true if you have numerous consecutive display objects with the same effect applied.</p>
 </div>
 <p><a id="vertexuserdata"></a></p>
-<h3 id="vertex-userdata">Vertex Userdata</h3>
+<section id="vertex-userdata" class="level3">
+<h3>Vertex Userdata</h3>
 <p>When using vertex userdata to pass effect parameters, the effect parameters are copied for each vertex. To minimize the data size impact, the effect parameters are limited to a <code>vec4</code> <nobr>(vector of 4 floats)</nobr>. This is available as the following <nobr>read-only</nobr> vector variable in both the vertex and fragment kernels:</p>
 <p><code>P_DEFAULT vec4 CoronaVertexUserData</code></p>
 <p>For example, suppose you want to modify the above <code>"filter.custom.myBrighten"</code> effect example so that, in Lua, there is a <code>"brightness"</code> parameter for the effect:</p>
@@ -434,10 +475,15 @@ P_COLOR vec4 FragmentKernel( P_UV vec2 texCoord )
 }
 ]]</pre>
 <p><a id="uniformuserdata"></a></p>
-<h3 id="uniform-userdata">Uniform Userdata</h3>
+</section>
+<section id="uniform-userdata" class="level3">
+<h3>Uniform Userdata</h3>
 <p>(forthcoming feature)</p>
 <p><a id="vertextextures"></a></p>
-<h2 id="vertex-textures">Vertex Textures</h2>
+</section>
+</section>
+<section id="vertex-textures" class="level2">
+<h2>Vertex Textures</h2>
 <p>If the device supports it, you can also sample textures in the vertex kernel. On the Solar2D side, calling <a href="../../api/library/system/getInfo.html">system.getInfo(“maxVertexTextureUnits”)</a> will give you the number of available samplers as the return value. This is also available in the vertex kernel as <code>gl_MaxVertexTextureImageUnits</code>.</p>
 <p>Any texture meant for use by vertex kernels should be created with both <a href="../../api/library/display/setDefault.html">sampling filters</a> set to <code>"nearest"</code> and use level-of-detail (<code>Lod</code>) sampling. You can declare samplers in the vertex code manually as <code>uniform sampler2D NAME</code>, where <code>NAME</code> is some unused name of your choosing. (<strong>TODO</strong>: with more than one, the declaration order <em>probably</em> maps to sampler order, but this needs confirmation)</p>
 <pre class="brush: lua;">kernel.vertex =
@@ -459,16 +505,25 @@ P_POSITION vec2 VertexKernel (P_POSITION vec2 pos)
 }
 ]]</pre>
 <p><a id="bestpractices"></a></p>
-<h2 id="glsl-conventions-and-best-practices">GLSL Conventions and Best Practices</h2>
+</section>
+<section id="glsl-conventions-and-best-practices" class="level2">
+<h2>GLSL Conventions and Best Practices</h2>
 <p>GLSL has many flavors across mobile and desktop. Solar2D assumes the use of GLSL ES <nobr>(OpenGL ES 2.0)</nobr>. To maximize compatibility and performance, you should follow the following conventions and best practices.</p>
-<h3 id="solar2d-simulator-vs-device">Solar2D Simulator vs Device</h3>
-<h6 id="performance">Performance</h6>
+<section id="solar2d-simulator-vs-device" class="level3">
+<h3>Solar2D Simulator vs Device</h3>
+<section id="performance" class="level6">
+<h6>Performance</h6>
 <p>Shader performance on desktop GPUs will <strong>not</strong> be the same as on devices. Therefore, if you run your shader under the Solar2D Simulator or in the <a href="https://shader.solar2d.com/">Solar2D Shader Playground</a>, you should run it on actual devices to be sure that you are getting the desired performance.</p>
 <p>Also note that if you are supporting devices from different manufacturers, the performance between them could vary significantly. On Android in particular, some <nobr>high-end</nobr> devices actually have underpowered GPUs, so you should <strong>not</strong> assume that you will get equal performance across different <nobr>high-end</nobr> Android devices.</p>
-<h6 id="syntax">Syntax</h6>
+</section>
+<section id="syntax" class="level6">
+<h6>Syntax</h6>
 <p>The Solar2D Simulator compiles your shader using <strong>desktop</strong> GLSL. Consequently, if you run your shader in the Solar2D Simulator, your shader may still contain GLSL ES errors that will not appear until you attempt to run your shader on a device.</p>
 <p>If you have a fragment-only kernel shader effect, you can test out your shader code in the <a href="https://shader.solar2d.com/">Solar2D Shader Playground</a>. This playground verifies against GLSL ES in a <nobr>WebGL-enabled</nobr> browser.</p>
-<h3 id="precision-qualifier-macros">Precision Qualifier Macros</h3>
+</section>
+</section>
+<section id="precision-qualifier-macros" class="level3">
+<h3>Precision Qualifier Macros</h3>
 <p>Unlike other flavors of GLSL, GLSL ES <nobr>(OpenGL ES 2.0)</nobr> generally requires precision qualifiers to be specified in variable declarations. Thus, it’s a good practice to be explicit about precision.</p>
 <p>Instead of using raw precision qualifiers like <code>lowp</code>, you should use one of the following precision qualifier macros. The defaults are optimized for the type of data:</p>
 <ul>
@@ -480,7 +535,9 @@ P_POSITION vec2 VertexKernel (P_POSITION vec2 pos)
 <li><code>P_COLOR</code> — For pixel colors; default is <code>lowp</code>.</li>
 </ul>
 <p>We strongly recommend you use Solar2D’s defaults for shader precision, all of which have been optimized to balance performance and fidelity. However, your project can override these settings in <code>config.lua</code> (<a href="../../guide/basics/configSettings/index.html">guide</a>).</p>
-<h3 id="high-precision-devices">High-Precision Devices</h3>
+</section>
+<section id="high-precision-devices" class="level3">
+<h3>High-Precision Devices</h3>
 <p>Not all devices support high precision. Therefore, if your kernel requires high precision, you should use the <code>GL_FRAGMENT_PRECISION_HIGH</code> macro. This is <code>1</code> if high precision is supported on the device, or undefined otherwise.</p>
 <p>If the device does not support <code>highp</code>, your kernel can gracefully degrade by writing two implementations:</p>
 <pre class="brush: lua;">P_COLOR vec4 FragmentKernel( P_UV vec2 texCoord )
@@ -491,7 +548,9 @@ P_POSITION vec2 VertexKernel (P_POSITION vec2 pos)
     // Code path for fallback
 #endif
 }</pre>
-<h3 id="pre-multiplied-alpha">Pre-Multiplied Alpha</h3>
+</section>
+<section id="pre-multiplied-alpha" class="level3">
+<h3>Pre-Multiplied Alpha</h3>
 <p>Solar2D provides textures with <a href="https://en.wikipedia.org/wiki/Alpha_compositing">pre-multiplied alpha</a>. Therefore, you may need to divide by the alpha to recover the original RGB values. However, for performance reasons, you should try to perform calculations to avoid the divide. Compare the following two kernels that brighten an image:</p>
 <ol type="1">
 <li>In the following, the original RGB values are recovered by undoing the <nobr>pre-multiplied</nobr> alpha, and later, the alpha is <nobr>re-applied</nobr>. This is not ideal because it generates a lot of additional operations on the GPU for every pixel.</li>
@@ -534,9 +593,12 @@ P_COLOR vec4 FragmentKernel( P_UV vec2 texCoord )
     return CoronaColorScale( texColor );
 }</pre>
 </div>
-<h3 id="vector-calculations">Vector Calculations</h3>
+</section>
+<section id="vector-calculations" class="level3">
+<h3>Vector Calculations</h3>
 <p>Some devices do not have GPUs with vector processors. In those cases, vector calculations may be performed on a scalar processor. Generally, you should carefully consider the order of operations in your shader to ensure that unnecessary calculations can be avoided on a scalar processor.</p>
-<h6 id="consolidate-scalar-calculations">Consolidate Scalar Calculations</h6>
+<section id="consolidate-scalar-calculations" class="level6">
+<h6>Consolidate Scalar Calculations</h6>
 <p>In the following example, a vector processor would execute each multiplication in parallel. However, because of the order of operations, a scalar processor would perform 8 multiplications, even though only one of the three parameters is a scalar value.</p>
 <pre class="brush: lua;">P_DEFAULT float f0, f1;
 P_DEFAULT vec4 v0, v1;
@@ -545,19 +607,29 @@ v0 = (v1 * f0) * f1; // BAD: Multiply each scalar to a vector</pre>
 <pre class="brush: lua;">highp float f0, f1;
 highp vec4 v0, v1;
 v0 = v1 * (f0 * f1); // GOOD: Multiply scalars first</pre>
-<h6 id="use-write-masks">Use Write Masks</h6>
+</section>
+<section id="use-write-masks" class="level6">
+<h6>Use Write Masks</h6>
 <p>Similar logic applies when your vector calculation does not use all components. A “write mask” allows you to limit the calculations to only the components specified in the mask. The following runs twice as fast on a scalar processor because the write mask is used to specify that only two of the four components are needed.</p>
 <pre class="brush: lua;">highp vec4 v0;
 highp vec4 v1;
 highp vec4 v2;
 v2.xz = v0 * v1; // GOOD: Write mask limits calculations</pre>
-<h3 id="avoid-dynamic-texture-lookups">Avoid Dynamic Texture Lookups</h3>
+</section>
+</section>
+<section id="avoid-dynamic-texture-lookups" class="level3">
+<h3>Avoid Dynamic Texture Lookups</h3>
 <p>When a fragment shader samples textures at a location different from the texture coordinate passed to the shader, it causes a dynamic texture lookup, also known as <nobr>“dependent texture reads.”</nobr> In <nobr>OpenGL-ES 2.0</nobr>, dependent texture reads can delay texel data loading and reduce performance. This is why certain effects that sample a region of texels, for instance blur effects, are slower.</p>
 <p>In contrast, effects that have no dependent texture reads enable the GPU to <nobr>pre-fetch</nobr> texel data before the shader executes, reducing I/O latency.</p>
-<h3 id="avoid-branching-and-loops">Avoid Branching and Loops</h3>
+</section>
+<section id="avoid-branching-and-loops" class="level3">
+<h3>Avoid Branching and Loops</h3>
 <p>Branching instructions (<code>if</code> conditions) are expensive. When possible, <code>for</code> loops should be unrolled or replaced by vector operations.</p>
 <p><a id="precisionissues"></a></p>
-<h2 id="precision-issues">Precision Issues</h2>
+</section>
+</section>
+<section id="precision-issues" class="level2">
+<h2>Precision Issues</h2>
 <p>Solar2D’s shaders use <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE-754 floats</a> as the underlying representation for numbers.</p>
 <p>In the majority of cases—the exceptions being irrelevant here—part of a floating-point number specifies an integer numerator. Let’s call this <code>N</code>. Our numerator can go from <code>0</code> to <code>D - 1</code>, where <code>D</code> is a fixed power of 2. Together these give us a scale factor <code>t = N / D</code> in the range [0, 1).</p>
 <p>The rest of the number is devoted to the sign (positive or negative) and an exponent, the latter being another integer that gives us a power of 2, for instance 2<sup>-3</sup> or 2<sup>5</sup>.</p>
@@ -577,6 +649,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

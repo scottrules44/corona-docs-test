@@ -84,7 +84,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/animation/index.html">Animation</a>  ▸  <a href="../../plugin/animation/newTimeline.html">newTimeline</a>
 </div>
-<h1 id="animation.newtimeline">animation.newTimeline()</h1>
+<section id="animation.newtimeline" class="level1">
+<h1>animation.newTimeline()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -119,7 +120,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Creates a new <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object. This can contain multiple sequential and/or overlapping tweens, each performing unique tweens on one or multiple objects. Additionally, you can set time markers anywhere across the span of the timeline as <nobr>jump-to</nobr> points.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -131,12 +133,19 @@ Note
 <li><p>Start it playing by calling <a href="../../plugin/animation/type/Timeline/resume.html">object:resume()</a> on the <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object, or by calling <a href="../../plugin/animation/resume.html">animation.resume()</a> with a reference to the <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object. Note that doing so will trigger the timeline’s <code>onResume</code> listener function, if you’ve specified one.</p></li>
 </ul>
 </div>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">animation.newTimeline( timelineParams )</pre>
-<h5 id="timelineparams-required">timelineParams <sub><sup>(required)</sup></sub></h5>
+<section id="timelineparams-required" class="level5">
+<h5>timelineParams <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table which specifies the child tweens, markers, and other parameters for the timeline — see the next section for details.</p>
-<h2 id="parameter-reference">Parameter Reference</h2>
-<h5 id="tweens-required">tweens <sub><sup>(required)</sup></sub></h5>
+</section>
+</section>
+<section id="parameter-reference" class="level2">
+<h2>Parameter Reference</h2>
+<section id="tweens-required" class="level5">
+<h5>tweens <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table containing child tables, each specifying a tween to be included in the timeline. Each of these tables accept the following <nobr>key-value</nobr> pairs:</p>
 <ul>
 <li><code>startTime</code> — Optional <a href="../../api/type/Number.html">number</a> of milliseconds into the timeline progression at which the tween should start. Default is <code>0</code> (start of the timeline).</li>
@@ -148,7 +157,9 @@ Note
         { startTime=0, tween={ object1, { x=400 }, { time=4000, iterations=5, reflect=true } } },
         { startTime=1000, tween={ object1, { y=400 }, { time=4000, easing=easing.outQuad } } }
     }</pre>
-<h5 id="markers-optional">markers <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="markers-optional" class="level5">
+<h5>markers <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> An optional table of time markers to associate with the timeline. These markers allow you to specify named <nobr>jump-to</nobr> points within the timeline. Each should be defined as a <a href="../../api/type/Table.html">table</a> which may contain the following properties:</p>
 <ul>
 <li><code>name</code> — A <a href="../../api/type/String.html">string</a> name to associate with the marker. This name can be used to reference the marker in other commands such as <a href="../../plugin/animation/type/Timeline/setPosition.html">object:setPosition()</a> and <a href="../../plugin/animation/setPosition.html">animation.setPosition()</a>. This name should be <strong>unique</strong> (you should not use duplicate marker names within the same timeline).</li>
@@ -161,35 +172,64 @@ Note
         { name="marker_2000", time=2000 },  -- 2 seconds into the timeline
         { name="marker_3000", time=3000 }   -- 3 seconds into the timeline
     }</pre>
-<h5 id="autoplay-optional">autoPlay <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="autoplay-optional" class="level5">
+<h5>autoPlay <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> If <code>true</code>, the timeline will begin playing immediately. Default is <code>false</code>.</p>
-<h5 id="tag-optional">tag <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="tag-optional" class="level5">
+<h5>tag <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Specifies the timeline tag. The animation library can pause, resume, cancel, set the position, or change the speed scale of timelines sharing the same tag.</p>
-<h5 id="id-optional">id <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="id-optional" class="level5">
+<h5>id <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> An optional identification string to assign to the timeline. This can be retrieved as <code>obj.id</code> from any of the timeline event listener functions (see below).</p>
-<h5 id="delay-optional">delay <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="delay-optional" class="level5">
+<h5>delay <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Specifies the delay, in milliseconds, before the timeline begins playing. Default is <code>0</code>.</p>
-<h5 id="speedscale-optional">speedScale <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="speedscale-optional" class="level5">
+<h5>speedScale <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Adjusts the relative speed scale for the timeline. This must be a positive number greater than <code>0</code>. By default, the speed scale is <code>1</code> (normal speed). Values greater than <code>1</code> will increase the speed while values lower than <code>1</code> will decrease it.</p>
-<h5 id="autocancel-optional">autoCancel <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="autocancel-optional" class="level5">
+<h5>autoCancel <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Boolean.html">Boolean</a>.</em> If set to <code>true</code>, all child tweens (and the timeline itself) will be cancelled upon completion of the timeline. This should only be done if you don’t intend to replay the timeline again after its first play through. Default is <code>false</code>.</p>
 <p><a id="timeline-events"></a></p>
-<h5 id="onstart-optional">onStart <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="onstart-optional" class="level5">
+<h5>onStart <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener function to be called directly before the timeline begins. This function will receive a reference to the associated <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object as its sole argument.</p>
-<h5 id="oncomplete-optional">onComplete <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="oncomplete-optional" class="level5">
+<h5>onComplete <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener function to be called after the timeline completes. This function will receive a reference to the associated <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object as its sole argument.</p>
-<h5 id="onpause-optional">onPause <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="onpause-optional" class="level5">
+<h5>onPause <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener function to be called when the timeline is paused. This function will receive a reference to the associated <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object as its sole argument.</p>
-<h5 id="onresume-optional">onResume <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="onresume-optional" class="level5">
+<h5>onResume <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener function to be called when the timeline is resumed. This function will receive a reference to the associated <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object as its sole argument.</p>
-<h5 id="oncancel-optional">onCancel <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="oncancel-optional" class="level5">
+<h5>onCancel <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener function to be called when the timeline is cancelled. This function will receive a reference to the associated <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object as its sole argument.</p>
-<h5 id="onpositionchange-optional">onPositionChange <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="onpositionchange-optional" class="level5">
+<h5>onPositionChange <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener function to be called when the timeline has its playback position changed manually via <a href="../../plugin/animation/type/Timeline/setPosition.html">object:setPosition()</a> or <a href="../../plugin/animation/setPosition.html">animation.setPosition()</a>. This function will receive a reference to the associated <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object as its sole argument.</p>
 <p><a id="onMarkerPass"></a></p>
-<h5 id="onmarkerpass-optional">onMarkerPass <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="onmarkerpass-optional" class="level5">
+<h5>onMarkerPass <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Listener function to be called when a marker within the timeline is reached/passed. This function will receive a <a href="../../api/type/Table.html">table</a> containing a reference to the associated <a href="../../plugin/animation/type/Timeline/index.html">Timeline</a> object (<code>timeline</code>), along with the <code>name</code> property and optional <code>params</code> table that was assigned to the specific marker.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local object1 = display.newRect( 50, 50, 100, 100 )
 
 local function timelineListener( obj )
@@ -223,6 +263,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

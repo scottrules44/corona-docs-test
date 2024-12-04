@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../plugin/gamecircle/index.html">Amazon GameCircle</a>  ▸  [Achievement][plugin.gamecircle.Achievement]  ▸  <a href="../../../plugin/gamecircle/Achievement/GetAchievements.html">GetAchievements</a>
 </div>
-<h1 id="gamecircle.achievement.getachievements">gamecircle.Achievement.GetAchievements</h1>
+<section id="gamecircle.achievement.getachievements" class="level1">
+<h1>gamecircle.Achievement.GetAchievements</h1>
 <blockquote>
 <table>
 <tbody>
@@ -94,13 +95,20 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This function works like a mass-grab version of [GetAchievement][plugin.gamecircleAchievement.GetAchievement]. It fetches all the achievements setup on Amazon’s servers for the app.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">gamecircle.Achievement.GetAchievements( callback )</pre>
-<h5 id="callback-required">callback <sub><sup>(required)</sup></sub></h5>
+<section id="callback-required" class="level5">
+<h5>callback <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Function.html">Function</a>.</em> The callback function for when the achievement’s information has been fetched. The callback will recieve a single parameter of type [AchievementsReturn][plugin.gamecircleAchievement.AchievementsReturn]</p>
-<h2 id="examples">Examples</h2>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
 <pre class="brush: lua;">local achievementID = "myFirstAchievement"  
 local gamecircle = require("plugin.gamecircle")  
 gamecircle.Init(true, false, false)  
@@ -135,6 +143,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

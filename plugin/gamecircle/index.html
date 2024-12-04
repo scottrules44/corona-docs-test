@@ -197,7 +197,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/gamecircle/index.html">Amazon GameCircle</a>
 </div>
-<h1 id="plugin.gamecircle">plugin.gamecircle</h1>
+<section id="plugin.gamecircle" class="level1">
+<h1>plugin.gamecircle</h1>
 <blockquote>
 <table>
 <tbody>
@@ -220,9 +221,12 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>The GameCircle plugin enables Android-based Corona games to access the full set of features made available in Amazon’s GameCircle service. Log player achievements with Amazon’s servers, maintain leaderboards, and make use of Amazon’s powerful Whispersync for Games functionality to maintain your game’s data in the cloud.</p>
-<h2 id="setup">Setup</h2>
+</section>
+<section id="setup" class="level2">
+<h2>Setup</h2>
 <p>To use the GameCircle plugin, you must first create a GameCircle configuration for your game on the Amazon servers and populate it with data.</p>
 <p>To do this, head to Amazon’s documentation for their GameCircle API. You may want to read and hunt around to understand how GameCircle works in general, as this plugin acts simply as a mediator between your Lua game code and the <nobr>Java-based</nobr> GameCircle API.</p>
 <ul>
@@ -231,13 +235,17 @@
 <li><p><a href="https://developer.amazon.com/public/apis/engage/gamecircle/docs/get-set-up-for-gamecircle">Amazon’s Get Set Up for GameCircle</a></p></li>
 </ul>
 <p>Once you’ve done all that, setting up your achievements, leaderboards, and security profile, there is one final step you need to do. You need to get the API key associated with your package name and security profile. It is usually a very long string of letters and numbers without spaces. It can be found under the “Kindle/Android Settings” of your application’s security profile. You need to copy and paste the entire key into an empty text file and then save that text file to your project’s directory as <code>api_key.txt</code>. That is how the GameCircle API identifies itself to Amazon’s servers; the plugin won’t work without a valid API key. Specific instructions for generating an API key can be found <a href="https://developer.amazon.com/public/apis/engage/gamecircle/docs/create-a-gamecircle-configuration#Generate%20API%20Keys">here</a>.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <p>Once you have your game set up on Amazon’s servers and have copies of your API key, you are ready to include and integrate the GameCircle plugin in your application. At the very start, there are only two functions you have to call to get GameCircle working for you.</p>
 <pre class="brush: lua;">local gamecircle = require( "plugin.gamecircle" )
 
 gamecircle.Init( true, true, true )</pre>
 <p>The <code>require()</code> line loads the GameCircle plugin into your app. The <code>Init()</code> function is how you tell the plugin which of GameCircle’s three features you want to make available to the user. Beyond that, read the <nobr>feature-dependent</nobr> sections below for function documentation and don’t forget to read up on the GameCircle API so you can understand how their SDK is operating behind the scenes.</p>
-<h2 id="gotchas-tips">Gotchas / Tips</h2>
+</section>
+<section id="gotchas-tips" class="level2">
+<h2>Gotchas / Tips</h2>
 <p>These are important things to know about the GameCircle plugin and the GameCircle SDK.</p>
 <ol type="1">
 <li><p>This plugin only works for Android. While code will compile in the Corona Simulator, all function calls to the GameCircle plugin will return <code>nil</code>. This is by design since the GameCircle SDK itself only works on Android.</p></li>
@@ -246,44 +254,110 @@ gamecircle.Init( true, true, true )</pre>
 <li><p>If you are already familiar with Amazon’s Whispersync for Games, please be sure to read the documentation on how this plugin emulates Whispersync’s use of data objects for the setting and retrieval of data. There is no way to directly pull in the data objects that Whispersync uses into Lua without destroying the intended functionality. Thus, the plugin approximates that functionality. You can read more in the Whispersync section.</p></li>
 <li><p>The plugin tries to maintain a 1-to-1 relationship between the functionality provided by the GameCircle SDK. If you are curious about a particular function and/or the significance of the data a function provides, check out Amazon’s GameCircle documentation.</p></li>
 </ol>
-<h2 id="general-functions">General Functions</h2>
+</section>
+<section id="general-functions" class="level2">
+<h2>General Functions</h2>
 <p>These functions offer some general purpose features that either do not relate to a specific GameCircle feature or are useful to all three.</p>
-<h4 id="gamecircle.initplugin.gamecircle.init"><a href="../../plugin/gamecircle/Init.html">gamecircle.Init</a></h4>
-<h4 id="gamecircle.getlocalplayerprofileplugin.gamecircle.getlocalplayerprofile"><a href="../../plugin/gamecircle/GetLocalPlayerProfile.html">gamecircle.GetLocalPlayerProfile</a></h4>
-<h4 id="gamecircle.isreadyplugin.gamecircle.isready"><a href="../../plugin/gamecircle/IsReady.html">gamecircle.IsReady</a></h4>
-<h4 id="gamecircle.isplayersignedinplugin.gamecircle.isplayersignedin"><a href="../../plugin/gamecircle/IsPlayerSignedIn.html">gamecircle.IsPlayerSignedIn</a></h4>
-<h4 id="gamecircle.getfriendsidsplugin.gamecircle.getfriendsids"><a href="../../plugin/gamecircle/GetFriendsIds.html">gamecircle.GetFriendsIds</a></h4>
-<h4 id="gamecircle.getbatchfriendsplugin.gamecircle.getbatchfriends"><a href="../../plugin/gamecircle/GetBatchFriends.html">gamecircle.GetBatchFriends</a></h4>
-<h4 id="gamecircle.setsignedinlistenerplugin.gamecircle.setsignedinlistener"><a href="../../plugin/gamecircle/SetSignedInListener.html">gamecircle.SetSignedInListener</a></h4>
-<h2 id="achievement-functions">Achievement Functions</h2>
+<section id="gamecircle.initplugin.gamecircle.init" class="level4">
+<h4><a href="../../plugin/gamecircle/Init.html">gamecircle.Init</a></h4>
+</section>
+<section id="gamecircle.getlocalplayerprofileplugin.gamecircle.getlocalplayerprofile" class="level4">
+<h4><a href="../../plugin/gamecircle/GetLocalPlayerProfile.html">gamecircle.GetLocalPlayerProfile</a></h4>
+</section>
+<section id="gamecircle.isreadyplugin.gamecircle.isready" class="level4">
+<h4><a href="../../plugin/gamecircle/IsReady.html">gamecircle.IsReady</a></h4>
+</section>
+<section id="gamecircle.isplayersignedinplugin.gamecircle.isplayersignedin" class="level4">
+<h4><a href="../../plugin/gamecircle/IsPlayerSignedIn.html">gamecircle.IsPlayerSignedIn</a></h4>
+</section>
+<section id="gamecircle.getfriendsidsplugin.gamecircle.getfriendsids" class="level4">
+<h4><a href="../../plugin/gamecircle/GetFriendsIds.html">gamecircle.GetFriendsIds</a></h4>
+</section>
+<section id="gamecircle.getbatchfriendsplugin.gamecircle.getbatchfriends" class="level4">
+<h4><a href="../../plugin/gamecircle/GetBatchFriends.html">gamecircle.GetBatchFriends</a></h4>
+</section>
+<section id="gamecircle.setsignedinlistenerplugin.gamecircle.setsignedinlistener" class="level4">
+<h4><a href="../../plugin/gamecircle/SetSignedInListener.html">gamecircle.SetSignedInListener</a></h4>
+</section>
+</section>
+<section id="achievement-functions" class="level2">
+<h2>Achievement Functions</h2>
 <p>These functions provide access to the achievement functionality of Amazon’s GameCircle API. Please remember to set up achievements on Amazon’s servers before you attempt to use these functions.</p>
-<h4 id="gamecircle.achievement.openoverlayplugin.gamecircle.achievement.openoverlay"><a href="../../plugin/gamecircle/Achievement/OpenOverlay.html">gamecircle.Achievement.OpenOverlay</a></h4>
-<h4 id="gamecircle.achievement.updateachievementplugin.gamecircle.achievement.updateachievement"><a href="../../plugin/gamecircle/Achievement/UpdateAchievement.html">gamecircle.Achievement.UpdateAchievement</a></h4>
-<h4 id="gamecircle.achievement.getachievementplugin.gamecircle.achievement.getachievement"><a href="../../plugin/gamecircle/Achievement/GetAchievement.html">gamecircle.Achievement.GetAchievement</a></h4>
-<h4 id="gamecircle.achievement.getachievementsplugin.gamecircle.achievement.getachievements"><a href="../../plugin/gamecircle/Achievement/GetAchievements.html">gamecircle.Achievement.GetAchievements</a></h4>
-<h2 id="achievement-properties">Achievement Properties</h2>
+<section id="gamecircle.achievement.openoverlayplugin.gamecircle.achievement.openoverlay" class="level4">
+<h4><a href="../../plugin/gamecircle/Achievement/OpenOverlay.html">gamecircle.Achievement.OpenOverlay</a></h4>
+</section>
+<section id="gamecircle.achievement.updateachievementplugin.gamecircle.achievement.updateachievement" class="level4">
+<h4><a href="../../plugin/gamecircle/Achievement/UpdateAchievement.html">gamecircle.Achievement.UpdateAchievement</a></h4>
+</section>
+<section id="gamecircle.achievement.getachievementplugin.gamecircle.achievement.getachievement" class="level4">
+<h4><a href="../../plugin/gamecircle/Achievement/GetAchievement.html">gamecircle.Achievement.GetAchievement</a></h4>
+</section>
+<section id="gamecircle.achievement.getachievementsplugin.gamecircle.achievement.getachievements" class="level4">
+<h4><a href="../../plugin/gamecircle/Achievement/GetAchievements.html">gamecircle.Achievement.GetAchievements</a></h4>
+</section>
+</section>
+<section id="achievement-properties" class="level2">
+<h2>Achievement Properties</h2>
 <p>These are the data structures returned by Achievement functions, either directly or through function callbacks.</p>
-<h4 id="gamecircle.achievement.achievementplugin.gamecircle.achievement.achievement"><a href="../../plugin/gamecircle/Achievement/Achievement.html">gamecircle.Achievement.Achievement</a></h4>
-<h4 id="gamecircle.achievement.achievementreturnplugin.gamecircle.achievement.achievementreturn"><a href="../../plugin/gamecircle/Achievement/AchievementReturn.html">gamecircle.Achievement.AchievementReturn</a></h4>
-<h4 id="gamecircle.achievement.achievementsreturnplugin.gamecircle.achievement.achievementsreturn"><a href="../../plugin/gamecircle/Achievement/AchievementsReturn.html">gamecircle.Achievement.AchievementsReturn</a></h4>
-<h2 id="leaderboard-functions">Leaderboard Functions</h2>
+<section id="gamecircle.achievement.achievementplugin.gamecircle.achievement.achievement" class="level4">
+<h4><a href="../../plugin/gamecircle/Achievement/Achievement.html">gamecircle.Achievement.Achievement</a></h4>
+</section>
+<section id="gamecircle.achievement.achievementreturnplugin.gamecircle.achievement.achievementreturn" class="level4">
+<h4><a href="../../plugin/gamecircle/Achievement/AchievementReturn.html">gamecircle.Achievement.AchievementReturn</a></h4>
+</section>
+<section id="gamecircle.achievement.achievementsreturnplugin.gamecircle.achievement.achievementsreturn" class="level4">
+<h4><a href="../../plugin/gamecircle/Achievement/AchievementsReturn.html">gamecircle.Achievement.AchievementsReturn</a></h4>
+</section>
+</section>
+<section id="leaderboard-functions" class="level2">
+<h2>Leaderboard Functions</h2>
 <p>These functions provide access to the leaderboard functionality of Amazon’s GameCircle API. Please remember to set up leaderboards on Amazon’s servers before you attempt to use these functions.</p>
-<h4 id="gamecircle.leaderboard.openoverlayplugin.gamecircle.leaderboard.openoverlay"><a href="../../plugin/gamecircle/Leaderboard/OpenOverlay.html">gamecircle.Leaderboard.OpenOverlay</a></h4>
-<h4 id="gamecircle.leaderboard.submitscoreplugin.gamecircle.leaderboard.submitscore"><a href="../../plugin/gamecircle/Leaderboard/SubmitScore.html">gamecircle.Leaderboard.SubmitScore</a></h4>
-<h4 id="gamecircle.leaderboard.getscoresplugin.gamecircle.leaderboard.getscores"><a href="../../plugin/gamecircle/Leaderboard/GetScores.html">gamecircle.Leaderboard.GetScores</a></h4>
-<h4 id="gamecircle.leaderboard.getlocalplayerscoreplugin.gamecircle.leaderboard.getlocalplayerscore"><a href="../../plugin/gamecircle/Leaderboard/GetLocalPlayerScore.html">gamecircle.Leaderboard.GetLocalPlayerScore</a></h4>
-<h4 id="gamecircle.leaderboard.getleaderboardsplugin.gamecircle.leaderboard.getleaderboards"><a href="../../plugin/gamecircle/Leaderboard/GetLeaderboards.html">gamecircle.Leaderboard.GetLeaderboards</a></h4>
-<h4 id="gamecircle.leaderboard.getpercentileranksplugin.gamecircle.leaderboard.getpercentileranks"><a href="../../plugin/gamecircle/Leaderboard/GetPercentileRanks.html">gamecircle.Leaderboard.GetPercentileRanks</a></h4>
-<h2 id="leaderboard-properties">Leaderboard Properties</h2>
+<section id="gamecircle.leaderboard.openoverlayplugin.gamecircle.leaderboard.openoverlay" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/OpenOverlay.html">gamecircle.Leaderboard.OpenOverlay</a></h4>
+</section>
+<section id="gamecircle.leaderboard.submitscoreplugin.gamecircle.leaderboard.submitscore" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/SubmitScore.html">gamecircle.Leaderboard.SubmitScore</a></h4>
+</section>
+<section id="gamecircle.leaderboard.getscoresplugin.gamecircle.leaderboard.getscores" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/GetScores.html">gamecircle.Leaderboard.GetScores</a></h4>
+</section>
+<section id="gamecircle.leaderboard.getlocalplayerscoreplugin.gamecircle.leaderboard.getlocalplayerscore" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/GetLocalPlayerScore.html">gamecircle.Leaderboard.GetLocalPlayerScore</a></h4>
+</section>
+<section id="gamecircle.leaderboard.getleaderboardsplugin.gamecircle.leaderboard.getleaderboards" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/GetLeaderboards.html">gamecircle.Leaderboard.GetLeaderboards</a></h4>
+</section>
+<section id="gamecircle.leaderboard.getpercentileranksplugin.gamecircle.leaderboard.getpercentileranks" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/GetPercentileRanks.html">gamecircle.Leaderboard.GetPercentileRanks</a></h4>
+</section>
+</section>
+<section id="leaderboard-properties" class="level2">
+<h2>Leaderboard Properties</h2>
 <p>These are the data structures returned by Leaderboard functions, either directly or through function callbacks.</p>
-<h4 id="gamecircle.leaderboard.leaderboardplugin.gamecircle.leaderboard.leaderboard"><a href="../../plugin/gamecircle/Leaderboard/Leaderboard.html">gamecircle.Leaderboard.Leaderboard</a></h4>
-<h4 id="gamecircle.leaderboard.leaderboardsreturnplugin.gamecircle.leaderboard.leaderboardsreturn"><a href="../../plugin/gamecircle/Leaderboard/LeaderboardsReturn.html">gamecircle.Leaderboard.LeaderboardsReturn</a></h4>
-<h4 id="gamecircle.leaderboard.localplayerscorereturnplugin.gamecircle.leaderboard.localplayerscorereturn"><a href="../../plugin/gamecircle/Leaderboard/LocalPlayerScoreReturn.html">gamecircle.Leaderboard.LocalPlayerScoreReturn</a></h4>
-<h4 id="gamecircle.leaderboard.scoreplugin.gamecircle.leaderboard.score"><a href="../../plugin/gamecircle/Leaderboard/Score.html">gamecircle.Leaderboard.Score</a></h4>
-<h4 id="gamecircle.leaderboard.getscoresreturnplugin.gamecircle.leaderboard.getscoresreturn"><a href="../../plugin/gamecircle/Leaderboard/GetScoresReturn.html">gamecircle.Leaderboard.GetScoresReturn</a></h4>
-<h4 id="gamecircle.leaderboard.percentilereturnplugin.gamecircle.leaderboard.percentilereturn"><a href="../../plugin/gamecircle/Leaderboard/PercentileReturn.html">gamecircle.Leaderboard.PercentileReturn</a></h4>
-<h4 id="gamecircle.leaderboard.percentileitemplugin.gamecircle.leaderboard.percentileitem"><a href="../../plugin/gamecircle/Leaderboard/PercentileItem.html">gamecircle.Leaderboard.PercentileItem</a></h4>
-<h2 id="whispersync-general-info">Whispersync General Info</h2>
+<section id="gamecircle.leaderboard.leaderboardplugin.gamecircle.leaderboard.leaderboard" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/Leaderboard.html">gamecircle.Leaderboard.Leaderboard</a></h4>
+</section>
+<section id="gamecircle.leaderboard.leaderboardsreturnplugin.gamecircle.leaderboard.leaderboardsreturn" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/LeaderboardsReturn.html">gamecircle.Leaderboard.LeaderboardsReturn</a></h4>
+</section>
+<section id="gamecircle.leaderboard.localplayerscorereturnplugin.gamecircle.leaderboard.localplayerscorereturn" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/LocalPlayerScoreReturn.html">gamecircle.Leaderboard.LocalPlayerScoreReturn</a></h4>
+</section>
+<section id="gamecircle.leaderboard.scoreplugin.gamecircle.leaderboard.score" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/Score.html">gamecircle.Leaderboard.Score</a></h4>
+</section>
+<section id="gamecircle.leaderboard.getscoresreturnplugin.gamecircle.leaderboard.getscoresreturn" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/GetScoresReturn.html">gamecircle.Leaderboard.GetScoresReturn</a></h4>
+</section>
+<section id="gamecircle.leaderboard.percentilereturnplugin.gamecircle.leaderboard.percentilereturn" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/PercentileReturn.html">gamecircle.Leaderboard.PercentileReturn</a></h4>
+</section>
+<section id="gamecircle.leaderboard.percentileitemplugin.gamecircle.leaderboard.percentileitem" class="level4">
+<h4><a href="../../plugin/gamecircle/Leaderboard/PercentileItem.html">gamecircle.Leaderboard.PercentileItem</a></h4>
+</section>
+</section>
+<section id="whispersync-general-info" class="level2">
+<h2>Whispersync General Info</h2>
 <p>The information in this section is mainly for those who have previously worked with the Java-based GameCircle SDK. It provides information on important differences between the implementations of the GameCircle SDK and this plugin.</p>
 <p>Compared to Amazon’s GameCircle SDK, this plugin differs the most when it comes to the implementation of Whispersync for Games. The Whispersync feature still has the same level of functionality and ease of use, but the plugin must be slightly different due to the fundamental differences between Java and Lua as programming languages.</p>
 <p>In the plugin, you use functions to put an object that represents a piece of data into Whispersync’s system. See the following example done in Java:</p>
@@ -301,97 +375,249 @@ gamecircle.Init( false, false, true )
 gamecircle.Whispersync.SetHighestNumber( key, 8675309, "INT" )</pre>
 <p>As you can see from the plugin, instead of using your key to grab a reference to a <code>SyncableNumber</code>, you use your key to set the value using the <code>SetHighestNumber()</code> function. At the core, that is the only difference between this plugin and the GameCircle SDK. You need to use dictionary-like functions to access the data instead of grabbing an object representing the data and just updating that. Whispersync’s systems still perform the background saving and updating of data both locally and in the cloud. And you, as the developer, can still hook into Whispersync’s events system by providing a callback function.</p>
 <p>There is also a key difference in how <code>GameData</code> objects are treated, but that will be discussed in the GameData Navigation section below.</p>
-<h2 id="whispersync-for-games-functions">Whispersync for Games Functions</h2>
+</section>
+<section id="whispersync-for-games-functions" class="level2">
+<h2>Whispersync for Games Functions</h2>
 <p>These are the functions allowing for the setting, getting, and manipulation of data stored with Whispersync for Games. For more information on how GameCircle uses Whispersync for Games, see Amazon’s [GameCircle documentation on Whispersync] (https://developer.amazon.com/public/apis/engage/gamecircle/docs/whispersync).</p>
-<h3 id="general">General</h3>
-<h4 id="gamecircle.whispersync.syncplugin.gamecircle.whispersync.sync"><a href="../../plugin/gamecircle/Whispersync/Sync.html">gamecircle.Whispersync.Sync</a></h4>
-<h4 id="gamecircle.whispersync.flushplugin.gamecircle.whispersync.flush"><a href="../../plugin/gamecircle/Whispersync/Flush.html">gamecircle.Whispersync.Flush</a></h4>
-<h4 id="gamecircle.whispersync.setwhispersynceventlistenerplugin.gamecircle.whispersync.setwhispersynceventlistener"><a href="../../plugin/gamecircle/Whispersync/SetWhispersyncEventListener.html">gamecircle.Whispersync.SetWhispersyncEventListener</a></h4>
-<h3 id="accumulated-number-functions">Accumulated Number Functions</h3>
+<section id="general" class="level3">
+<h3>General</h3>
+<section id="gamecircle.whispersync.syncplugin.gamecircle.whispersync.sync" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/Sync.html">gamecircle.Whispersync.Sync</a></h4>
+</section>
+<section id="gamecircle.whispersync.flushplugin.gamecircle.whispersync.flush" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/Flush.html">gamecircle.Whispersync.Flush</a></h4>
+</section>
+<section id="gamecircle.whispersync.setwhispersynceventlistenerplugin.gamecircle.whispersync.setwhispersynceventlistener" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetWhispersyncEventListener.html">gamecircle.Whispersync.SetWhispersyncEventListener</a></h4>
+</section>
+</section>
+<section id="accumulated-number-functions" class="level3">
+<h3>Accumulated Number Functions</h3>
 <p>Use an accumulated number when you want to count something the player does and ensure you have an accurate account across all devices they may use. For example, a count of all enemies slain.</p>
-<h4 id="gamecircle.whispersync.getaccumulatednumberplugin.gamecircle.whispersync.getaccumulatednumber"><a href="../../plugin/gamecircle/Whispersync/GetAccumulatedNumber.html">gamecircle.Whispersync.GetAccumulatedNumber</a></h4>
-<h4 id="gamecircle.whispersync.incrementaccumulatingnumberplugin.gamecircle.whispersync.incrementaccumulatingnumber"><a href="../../plugin/gamecircle/Whispersync/IncrementAccumulatingNumber.html">gamecircle.Whispersync.IncrementAccumulatingNumber</a></h4>
-<h4 id="gamecircle.whispersync.decrementaccumulatingnumberplugin.gamecircle.whispersync.decrementaccumulatingnumber"><a href="../../plugin/gamecircle/Whispersync/DecrementAccumulatingNumber.html">gamecircle.Whispersync.DecrementAccumulatingNumber</a></h4>
-<h4 id="gamecircle.whispersync.getaccumulatingnumberkeysplugin.gamecircle.whispersync.getaccumulatingnumberkeys"><a href="../../plugin/gamecircle/Whispersync/GetAccumulatingNumberKeys.html">gamecircle.Whispersync.GetAccumulatingNumberKeys</a></h4>
-<h3 id="developer-string-functions">Developer String Functions</h3>
+<section id="gamecircle.whispersync.getaccumulatednumberplugin.gamecircle.whispersync.getaccumulatednumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetAccumulatedNumber.html">gamecircle.Whispersync.GetAccumulatedNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.incrementaccumulatingnumberplugin.gamecircle.whispersync.incrementaccumulatingnumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/IncrementAccumulatingNumber.html">gamecircle.Whispersync.IncrementAccumulatingNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.decrementaccumulatingnumberplugin.gamecircle.whispersync.decrementaccumulatingnumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/DecrementAccumulatingNumber.html">gamecircle.Whispersync.DecrementAccumulatingNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.getaccumulatingnumberkeysplugin.gamecircle.whispersync.getaccumulatingnumberkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetAccumulatingNumberKeys.html">gamecircle.Whispersync.GetAccumulatingNumberKeys</a></h4>
+</section>
+</section>
+<section id="developer-string-functions" class="level3">
+<h3>Developer String Functions</h3>
 <p>A means for a developer to save a variety of data as a string. Data will be marked as “InConflict” if data downloaded from the cloud is newer and does not match current local data. The developer can then write code to manage the merging. This can range from automatically merging the important aspects of the information to asking the user which data set they want to keep.</p>
-<h4 id="gamecircle.whispersync.getdeveloperstringplugin.gamecircle.whispersync.getdeveloperstring"><a href="../../plugin/gamecircle/Whispersync/GetDeveloperString.html">gamecircle.Whispersync.GetDeveloperString</a></h4>
-<h4 id="gamecircle.whispersync.setdeveloperstringplugin.gamecircle.whispersync.setdeveloperstring"><a href="../../plugin/gamecircle/Whispersync/SetDeveloperString.html">gamecircle.Whispersync.SetDeveloperString</a></h4>
-<h4 id="gamecircle.whispersync.markasresolvedplugin.gamecircle.whispersync.markasresolved"><a href="../../plugin/gamecircle/Whispersync/MarkAsResolved.html">gamecircle.Whispersync.MarkAsResolved</a></h4>
-<h4 id="gamecircle.whispersync.getdeveloperstringkeysplugin.gamecircle.whispersync.getdeveloperstringkeys"><a href="../../plugin/gamecircle/Whispersync/GetDeveloperStringKeys.html">gamecircle.Whispersync.GetDeveloperStringKeys</a></h4>
-<h3 id="highest-number-functions">Highest Number Functions</h3>
+<section id="gamecircle.whispersync.getdeveloperstringplugin.gamecircle.whispersync.getdeveloperstring" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetDeveloperString.html">gamecircle.Whispersync.GetDeveloperString</a></h4>
+</section>
+<section id="gamecircle.whispersync.setdeveloperstringplugin.gamecircle.whispersync.setdeveloperstring" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetDeveloperString.html">gamecircle.Whispersync.SetDeveloperString</a></h4>
+</section>
+<section id="gamecircle.whispersync.markasresolvedplugin.gamecircle.whispersync.markasresolved" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/MarkAsResolved.html">gamecircle.Whispersync.MarkAsResolved</a></h4>
+</section>
+<section id="gamecircle.whispersync.getdeveloperstringkeysplugin.gamecircle.whispersync.getdeveloperstringkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetDeveloperStringKeys.html">gamecircle.Whispersync.GetDeveloperStringKeys</a></h4>
+</section>
+</section>
+<section id="highest-number-functions" class="level3">
+<h3>Highest Number Functions</h3>
 <p>Use a highest number when you want to keep track of the highest number of some value across multiple devices. For example, a player’s personal, all-time high score on a level.</p>
-<h4 id="gamecircle.whispersync.gethighestnumberplugin.gamecircle.whispersync.gethighestnumber"><a href="../../plugin/gamecircle/Whispersync/GetHighestNumber.html">gamecircle.Whispersync.GetHighestNumber</a></h4>
-<h4 id="gamecircle.whispersync.sethighestnumberplugin.gamecircle.whispersync.sethighestnumber"><a href="../../plugin/gamecircle/Whispersync/SetHighestNumber.html">gamecircle.Whispersync.SetHighestNumber</a></h4>
-<h4 id="gamecircle.whispersync.gethighestnumberkeysplugin.gamecircle.whispersync.gethighestnumberkeys"><a href="../../plugin/gamecircle/Whispersync/GetHighestNumberKeys.html">gamecircle.Whispersync.GetHighestNumberKeys</a></h4>
-<h3 id="latest-number-functions">Latest Number Functions</h3>
+<section id="gamecircle.whispersync.gethighestnumberplugin.gamecircle.whispersync.gethighestnumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetHighestNumber.html">gamecircle.Whispersync.GetHighestNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.sethighestnumberplugin.gamecircle.whispersync.sethighestnumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetHighestNumber.html">gamecircle.Whispersync.SetHighestNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.gethighestnumberkeysplugin.gamecircle.whispersync.gethighestnumberkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetHighestNumberKeys.html">gamecircle.Whispersync.GetHighestNumberKeys</a></h4>
+</section>
+</section>
+<section id="latest-number-functions" class="level3">
+<h3>Latest Number Functions</h3>
 <p>Use a latest number when you want to keep track of only the absolute latest number for a value across multiple devices. For example, a player’s most recent score for a level.</p>
-<h4 id="gamecircle.whispersync.getlatestnumberplugin.gamecircle.whispersync.getlatestnumber"><a href="../../plugin/gamecircle/Whispersync/GetLatestNumber.html">gamecircle.Whispersync.GetLatestNumber</a></h4>
-<h4 id="gamecircle.whispersync.setlatestnumberplugin.gamecircle.whispersync.setlatestnumber"><a href="../../plugin/gamecircle/Whispersync/SetLatestNumber.html">gamecircle.Whispersync.SetLatestNumber</a></h4>
-<h4 id="gamecircle.whispersync.getlatestnumberkeysplugin.gamecircle.whispersync.getlatestnumberkeys"><a href="../../plugin/gamecircle/Whispersync/GetLatestNumberKeys.html">gamecircle.Whispersync.GetLatestNumberKeys</a></h4>
-<h3 id="lowest-number-functions">Lowest Number Functions</h3>
+<section id="gamecircle.whispersync.getlatestnumberplugin.gamecircle.whispersync.getlatestnumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLatestNumber.html">gamecircle.Whispersync.GetLatestNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.setlatestnumberplugin.gamecircle.whispersync.setlatestnumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetLatestNumber.html">gamecircle.Whispersync.SetLatestNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.getlatestnumberkeysplugin.gamecircle.whispersync.getlatestnumberkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLatestNumberKeys.html">gamecircle.Whispersync.GetLatestNumberKeys</a></h4>
+</section>
+</section>
+<section id="lowest-number-functions" class="level3">
+<h3>Lowest Number Functions</h3>
 <p>Use a lowest number when you want to keep track of the lowest number of some value across multiple devices. For example, a player’s quickest completion time of a level.</p>
-<h4 id="gamecircle.whispersync.getlowestnumberplugin.gamecircle.whispersync.getlowestnumber"><a href="../../plugin/gamecircle/Whispersync/GetLowestNumber.html">gamecircle.Whispersync.GetLowestNumber</a></h4>
-<h4 id="gamecircle.whispersync.setlowestnumberplugin.gamecircle.whispersync.setlowestnumber"><a href="../../plugin/gamecircle/Whispersync/SetLowestNumber.html">gamecircle.Whispersync.SetLowestNumber</a></h4>
-<h4 id="gamecircle.whispersync.getlowestnumberkeysplugin.gamecircle.whispersync.getlowestnumberkeys"><a href="../../plugin/gamecircle/Whispersync/GetLowestNumberKeys.html">gamecircle.Whispersync.GetLowestNumberKeys</a></h4>
-<h3 id="high-number-list-functions">High Number List Functions</h3>
+<section id="gamecircle.whispersync.getlowestnumberplugin.gamecircle.whispersync.getlowestnumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLowestNumber.html">gamecircle.Whispersync.GetLowestNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.setlowestnumberplugin.gamecircle.whispersync.setlowestnumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetLowestNumber.html">gamecircle.Whispersync.SetLowestNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.getlowestnumberkeysplugin.gamecircle.whispersync.getlowestnumberkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLowestNumberKeys.html">gamecircle.Whispersync.GetLowestNumberKeys</a></h4>
+</section>
+</section>
+<section id="high-number-list-functions" class="level3">
+<h3>High Number List Functions</h3>
 <p>Just like a Highest Number, but it maintains a list of past entries from highest to lowest. Default list length limit is <code>5</code>.</p>
-<h4 id="gamecircle.whispersync.gethighnumberlistplugin.gamecircle.whispersync.gethighnumberlist"><a href="../../plugin/gamecircle/Whispersync/GetHighNumberList.html">gamecircle.Whispersync.GetHighNumberList</a></h4>
-<h4 id="gamecircle.whispersync.addtohighnumberlistplugin.gamecircle.whispersync.addtohighnumberlist"><a href="../../plugin/gamecircle/Whispersync/AddToHighNumberList.html">gamecircle.Whispersync.AddToHighNumberList</a></h4>
-<h4 id="gamecircle.whispersync.gethighnumberlistkeysplugin.gamecircle.whispersync.gethighnumberlistkeys"><a href="../../plugin/gamecircle/Whispersync/GetHighNumberListKeys.html">gamecircle.Whispersync.GetHighNumberListKeys</a></h4>
-<h4 id="gamecircle.whispersync.sethighnumberlistlengthplugin.gamecircle.whispersync.sethighnumberlistlength"><a href="../../plugin/gamecircle/Whispersync/SetHighNumberListLength.html">gamecircle.Whispersync.SetHighNumberListLength</a></h4>
-<h3 id="latest-number-list-functions">Latest Number List Functions</h3>
+<section id="gamecircle.whispersync.gethighnumberlistplugin.gamecircle.whispersync.gethighnumberlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetHighNumberList.html">gamecircle.Whispersync.GetHighNumberList</a></h4>
+</section>
+<section id="gamecircle.whispersync.addtohighnumberlistplugin.gamecircle.whispersync.addtohighnumberlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/AddToHighNumberList.html">gamecircle.Whispersync.AddToHighNumberList</a></h4>
+</section>
+<section id="gamecircle.whispersync.gethighnumberlistkeysplugin.gamecircle.whispersync.gethighnumberlistkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetHighNumberListKeys.html">gamecircle.Whispersync.GetHighNumberListKeys</a></h4>
+</section>
+<section id="gamecircle.whispersync.sethighnumberlistlengthplugin.gamecircle.whispersync.sethighnumberlistlength" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetHighNumberListLength.html">gamecircle.Whispersync.SetHighNumberListLength</a></h4>
+</section>
+</section>
+<section id="latest-number-list-functions" class="level3">
+<h3>Latest Number List Functions</h3>
 <p>Just like a Latest Number, but it maintains a list of past entries from newest to oldest. Default list length limit is <code>5</code>.</p>
-<h4 id="gamecircle.whispersync.getlatestnumberlistplugin.gamecircle.whispersync.getlatestnumberlist"><a href="../../plugin/gamecircle/Whispersync/GetLatestNumberList.html">gamecircle.Whispersync.GetLatestNumberList</a></h4>
-<h4 id="gamecircle.whispersync.addtolatestnumberlistplugin.gamecircle.whispersync.addtolatestnumberlist"><a href="../../plugin/gamecircle/Whispersync/AddToLatestNumberList.html">gamecircle.Whispersync.AddToLatestNumberList</a></h4>
-<h4 id="gamecircle.whispersync.getlatestnumberlistkeysplugin.gamecircle.whispersync.getlatestnumberlistkeys"><a href="../../plugin/gamecircle/Whispersync/GetLatestNumberListKeys.html">gamecircle.Whispersync.GetLatestNumberListKeys</a></h4>
-<h4 id="gamecircle.whispersync.setlatestnumberlistlengthplugin.gamecircle.whispersync.setlatestnumberlistlength"><a href="../../plugin/gamecircle/Whispersync/SetLatestNumberListLength.html">gamecircle.Whispersync.SetLatestNumberListLength</a></h4>
-<h3 id="low-number-list-functions">Low Number List Functions</h3>
+<section id="gamecircle.whispersync.getlatestnumberlistplugin.gamecircle.whispersync.getlatestnumberlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLatestNumberList.html">gamecircle.Whispersync.GetLatestNumberList</a></h4>
+</section>
+<section id="gamecircle.whispersync.addtolatestnumberlistplugin.gamecircle.whispersync.addtolatestnumberlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/AddToLatestNumberList.html">gamecircle.Whispersync.AddToLatestNumberList</a></h4>
+</section>
+<section id="gamecircle.whispersync.getlatestnumberlistkeysplugin.gamecircle.whispersync.getlatestnumberlistkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLatestNumberListKeys.html">gamecircle.Whispersync.GetLatestNumberListKeys</a></h4>
+</section>
+<section id="gamecircle.whispersync.setlatestnumberlistlengthplugin.gamecircle.whispersync.setlatestnumberlistlength" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetLatestNumberListLength.html">gamecircle.Whispersync.SetLatestNumberListLength</a></h4>
+</section>
+</section>
+<section id="low-number-list-functions" class="level3">
+<h3>Low Number List Functions</h3>
 <p>Just like Lowest Number, but it maintains a list of past values from lowest to highest. Default list length limit is <code>5</code>.</p>
-<h4 id="gamecircle.whispersync.getlownumberlistplugin.gamecircle.whispersync.getlownumberlist"><a href="../../plugin/gamecircle/Whispersync/GetLowNumberList.html">gamecircle.Whispersync.GetLowNumberList</a></h4>
-<h4 id="gamecircle.whispersync.addtolownumberlistplugin.gamecircle.whispersync.addtolownumberlist"><a href="../../plugin/gamecircle/Whispersync/AddToLowNumberList.html">gamecircle.Whispersync.AddToLowNumberList</a></h4>
-<h4 id="gamecircle.whispersync.getlownumberlistkeysplugin.gamecircle.whispersync.getlownumberlistkeys"><a href="../../plugin/gamecircle/Whispersync/GetLowNumberListKeys.html">gamecircle.Whispersync.GetLowNumberListKeys</a></h4>
-<h4 id="gamecircle.whispersync.setlownumberlistlengthplugin.gamecircle.whispersync.setlownumberlistlength"><a href="../../plugin/gamecircle/Whispersync/SetLowNumberListLength.html">gamecircle.Whispersync.SetLowNumberListLength</a></h4>
-<h3 id="latest-string-functions">Latest String Functions</h3>
+<section id="gamecircle.whispersync.getlownumberlistplugin.gamecircle.whispersync.getlownumberlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLowNumberList.html">gamecircle.Whispersync.GetLowNumberList</a></h4>
+</section>
+<section id="gamecircle.whispersync.addtolownumberlistplugin.gamecircle.whispersync.addtolownumberlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/AddToLowNumberList.html">gamecircle.Whispersync.AddToLowNumberList</a></h4>
+</section>
+<section id="gamecircle.whispersync.getlownumberlistkeysplugin.gamecircle.whispersync.getlownumberlistkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLowNumberListKeys.html">gamecircle.Whispersync.GetLowNumberListKeys</a></h4>
+</section>
+<section id="gamecircle.whispersync.setlownumberlistlengthplugin.gamecircle.whispersync.setlownumberlistlength" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetLowNumberListLength.html">gamecircle.Whispersync.SetLowNumberListLength</a></h4>
+</section>
+</section>
+<section id="latest-string-functions" class="level3">
+<h3>Latest String Functions</h3>
 <p>Works like a Latest Number, but uses a string instead.</p>
-<h4 id="gamecircle.whispersync.getlateststringplugin.gamecircle.whispersync.getlateststring"><a href="../../plugin/gamecircle/Whispersync/GetLatestString.html">gamecircle.Whispersync.GetLatestString</a></h4>
-<h4 id="gamecircle.whispersync.setlateststringplugin.gamecircle.whispersync.setlateststring"><a href="../../plugin/gamecircle/Whispersync/SetLatestString.html">gamecircle.Whispersync.SetLatestString</a></h4>
-<h4 id="gamecircle.whispersync.getlateststringkeysplugin.gamecircle.whispersync.getlateststringkeys"><a href="../../plugin/gamecircle/Whispersync/GetLatestStringKeys.html">gamecircle.Whispersync.GetLatestStringKeys</a></h4>
-<h3 id="latest-string-list-functions">Latest String List Functions</h3>
+<section id="gamecircle.whispersync.getlateststringplugin.gamecircle.whispersync.getlateststring" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLatestString.html">gamecircle.Whispersync.GetLatestString</a></h4>
+</section>
+<section id="gamecircle.whispersync.setlateststringplugin.gamecircle.whispersync.setlateststring" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetLatestString.html">gamecircle.Whispersync.SetLatestString</a></h4>
+</section>
+<section id="gamecircle.whispersync.getlateststringkeysplugin.gamecircle.whispersync.getlateststringkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLatestStringKeys.html">gamecircle.Whispersync.GetLatestStringKeys</a></h4>
+</section>
+</section>
+<section id="latest-string-list-functions" class="level3">
+<h3>Latest String List Functions</h3>
 <p>Works like a Latest Number List, but uses strings instead.</p>
-<h4 id="gamecircle.whispersync.getlateststringlistplugin.gamecircle.whispersync.getlateststringlist"><a href="../../plugin/gamecircle/Whispersync/GetLatestStringList.html">gamecircle.Whispersync.GetLatestStringList</a></h4>
-<h4 id="gamecircle.whispersync.addtolateststringlistplugin.gamecircle.whispersync.addtolateststringlist"><a href="../../plugin/gamecircle/Whispersync/AddToLatestStringList.html">gamecircle.Whispersync.AddToLatestStringList</a></h4>
-<h4 id="gamecircle.whispersync.getlateststringlistkeysplugin.gamecircle.whispersync.getlateststringlistkeys"><a href="../../plugin/gamecircle/Whispersync/GetLatestStringListKeys.html">gamecircle.Whispersync.GetLatestStringListKeys</a></h4>
-<h4 id="gamecircle.whispersync.setlateststringlistlengthplugin.gamecircle.whispersync.setlateststringlistlength"><a href="../../plugin/gamecircle/Whispersync/SetLatestStringListLength.html">gamecircle.Whispersync.SetLatestStringListLength</a></h4>
-<h3 id="string-set-functions">String Set Functions</h3>
+<section id="gamecircle.whispersync.getlateststringlistplugin.gamecircle.whispersync.getlateststringlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLatestStringList.html">gamecircle.Whispersync.GetLatestStringList</a></h4>
+</section>
+<section id="gamecircle.whispersync.addtolateststringlistplugin.gamecircle.whispersync.addtolateststringlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/AddToLatestStringList.html">gamecircle.Whispersync.AddToLatestStringList</a></h4>
+</section>
+<section id="gamecircle.whispersync.getlateststringlistkeysplugin.gamecircle.whispersync.getlateststringlistkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetLatestStringListKeys.html">gamecircle.Whispersync.GetLatestStringListKeys</a></h4>
+</section>
+<section id="gamecircle.whispersync.setlateststringlistlengthplugin.gamecircle.whispersync.setlateststringlistlength" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SetLatestStringListLength.html">gamecircle.Whispersync.SetLatestStringListLength</a></h4>
+</section>
+</section>
+<section id="string-set-functions" class="level3">
+<h3>String Set Functions</h3>
 <p>A list of unordered strings that have been stored in a group together. This function is useful for situations like recording entries that have been unlocked for an in-game guide.</p>
-<h4 id="gamecircle.whispersync.getstringsetplugin.gamecircle.whispersync.getstringset"><a href="../../plugin/gamecircle/Whispersync/GetStringSet.html">gamecircle.Whispersync.GetStringSet</a></h4>
-<h4 id="gamecircle.whispersync.addtostringsetplugin.gamecircle.whispersync.addtostringset"><a href="../../plugin/gamecircle/Whispersync/AddToStringSet.html">gamecircle.Whispersync.AddToStringSet</a></h4>
-<h4 id="gamecircle.whispersync.stringsetcontainsplugin.gamecircle.whispersync.stringsetcontains"><a href="../../plugin/gamecircle/Whispersync/StringSetContains.html">gamecircle.Whispersync.StringSetContains</a></h4>
-<h4 id="gamecircle.whispersync.getstringsetvalueplugin.gamecircle.whispersync.getstringsetvalue"><a href="../../plugin/gamecircle/Whispersync/GetStringSetValue.html">gamecircle.Whispersync.GetStringSetValue</a></h4>
-<h4 id="gamecircle.whispersync.getstringsetkeysplugin.gamecircle.whispersync.getstringsetkeys"><a href="../../plugin/gamecircle/Whispersync/GetStringSetKeys.html">gamecircle.Whispersync.GetStringSetKeys</a></h4>
-<h2 id="whispersync-properties">Whispersync Properties</h2>
+<section id="gamecircle.whispersync.getstringsetplugin.gamecircle.whispersync.getstringset" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetStringSet.html">gamecircle.Whispersync.GetStringSet</a></h4>
+</section>
+<section id="gamecircle.whispersync.addtostringsetplugin.gamecircle.whispersync.addtostringset" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/AddToStringSet.html">gamecircle.Whispersync.AddToStringSet</a></h4>
+</section>
+<section id="gamecircle.whispersync.stringsetcontainsplugin.gamecircle.whispersync.stringsetcontains" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/StringSetContains.html">gamecircle.Whispersync.StringSetContains</a></h4>
+</section>
+<section id="gamecircle.whispersync.getstringsetvalueplugin.gamecircle.whispersync.getstringsetvalue" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetStringSetValue.html">gamecircle.Whispersync.GetStringSetValue</a></h4>
+</section>
+<section id="gamecircle.whispersync.getstringsetkeysplugin.gamecircle.whispersync.getstringsetkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GetStringSetKeys.html">gamecircle.Whispersync.GetStringSetKeys</a></h4>
+</section>
+</section>
+</section>
+<section id="whispersync-properties" class="level2">
+<h2>Whispersync Properties</h2>
 <p>These are the data structures returned by Whispersync functions, either directly or through function callbacks.</p>
-<h4 id="gamecircle.whispersync.keytableplugin.gamecircle.whispersync.keytable"><a href="../../plugin/gamecircle/Whispersync/KeyTable.html">gamecircle.Whispersync.KeyTable</a></h4>
-<h4 id="gamecircle.whispersync.developerstringplugin.gamecircle.whispersync.developerstring"><a href="../../plugin/gamecircle/Whispersync/DeveloperString.html">gamecircle.Whispersync.DeveloperString</a></h4>
-<h4 id="gamecircle.whispersync.metadataplugin.gamecircle.whispersync.metadata"><a href="../../plugin/gamecircle/Whispersync/Metadata.html">gamecircle.Whispersync.Metadata</a></h4>
-<h4 id="gamecircle.whispersync.syncablenumberplugin.gamecircle.whispersync.syncablenumber"><a href="../../plugin/gamecircle/Whispersync/SyncableNumber.html">gamecircle.Whispersync.SyncableNumber</a></h4>
-<h4 id="gamecircle.whispersync.syncablenumberlistplugin.gamecircle.whispersync.syncablenumberlist"><a href="../../plugin/gamecircle/Whispersync/SyncableNumberList.html">gamecircle.Whispersync.SyncableNumberList</a></h4>
-<h4 id="gamecircle.whispersync.syncablenumberelementplugin.gamecircle.whispersync.syncablenumberelement"><a href="../../plugin/gamecircle/Whispersync/SyncableNumberElement.html">gamecircle.Whispersync.SyncableNumberElement</a></h4>
-<h4 id="gamecircle.whispersync.syncablestringplugin.gamecircle.whispersync.syncablestring"><a href="../../plugin/gamecircle/Whispersync/SyncableString.html">gamecircle.Whispersync.SyncableString</a></h4>
-<h4 id="gamecircle.whispersync.syncablestringlistplugin.gamecircle.whispersync.syncablestringlist"><a href="../../plugin/gamecircle/Whispersync/SyncableStringList.html">gamecircle.Whispersync.SyncableStringList</a></h4>
-<h4 id="gamecircle.whispersync.syncablestringelementplugin.gamecircle.whispersync.syncablestringelement"><a href="../../plugin/gamecircle/Whispersync/SyncableStringElement.html">gamecircle.Whispersync.SyncableStringElement</a></h4>
-<h4 id="gamecircle.whispersync.stringsetreturnplugin.gamecircle.whispersync.syncablestringset"><a href="../../plugin/gamecircle/Whispersync/SyncableStringSet.html">gamecircle.Whispersync.StringSetReturn</a></h4>
-<h2 id="whispersync-gamedata-navigation-functions">Whispersync GameData Navigation Functions</h2>
+<section id="gamecircle.whispersync.keytableplugin.gamecircle.whispersync.keytable" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/KeyTable.html">gamecircle.Whispersync.KeyTable</a></h4>
+</section>
+<section id="gamecircle.whispersync.developerstringplugin.gamecircle.whispersync.developerstring" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/DeveloperString.html">gamecircle.Whispersync.DeveloperString</a></h4>
+</section>
+<section id="gamecircle.whispersync.metadataplugin.gamecircle.whispersync.metadata" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/Metadata.html">gamecircle.Whispersync.Metadata</a></h4>
+</section>
+<section id="gamecircle.whispersync.syncablenumberplugin.gamecircle.whispersync.syncablenumber" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SyncableNumber.html">gamecircle.Whispersync.SyncableNumber</a></h4>
+</section>
+<section id="gamecircle.whispersync.syncablenumberlistplugin.gamecircle.whispersync.syncablenumberlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SyncableNumberList.html">gamecircle.Whispersync.SyncableNumberList</a></h4>
+</section>
+<section id="gamecircle.whispersync.syncablenumberelementplugin.gamecircle.whispersync.syncablenumberelement" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SyncableNumberElement.html">gamecircle.Whispersync.SyncableNumberElement</a></h4>
+</section>
+<section id="gamecircle.whispersync.syncablestringplugin.gamecircle.whispersync.syncablestring" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SyncableString.html">gamecircle.Whispersync.SyncableString</a></h4>
+</section>
+<section id="gamecircle.whispersync.syncablestringlistplugin.gamecircle.whispersync.syncablestringlist" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SyncableStringList.html">gamecircle.Whispersync.SyncableStringList</a></h4>
+</section>
+<section id="gamecircle.whispersync.syncablestringelementplugin.gamecircle.whispersync.syncablestringelement" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SyncableStringElement.html">gamecircle.Whispersync.SyncableStringElement</a></h4>
+</section>
+<section id="gamecircle.whispersync.stringsetreturnplugin.gamecircle.whispersync.syncablestringset" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/SyncableStringSet.html">gamecircle.Whispersync.StringSetReturn</a></h4>
+</section>
+</section>
+<section id="whispersync-gamedata-navigation-functions" class="level2">
+<h2>Whispersync GameData Navigation Functions</h2>
 <p>When working with Whispersync for Games in the GameCircle SDK, all the data is stored in a root GameData object. If you don’t touch any of the functions below, then all the data setting functions above will associate their data with that root GameData object. Whispersync, however, allows that root GameData object to have child GameData objects. Working like a tree, this allows you as a developer to separate out sets of data within your Whispersync. A common example of this is to have a child GameData object for each level of a game or for each character a player has, if multiple saves/characters are part of your game/app’s design.</p>
 <p>In this plugin, this functionality is accessed through the functions below and the concept of stepping up and down inside the GameData tree. Stepping down lets you go deeper into the tree. For example, moving from the root GameData object to a child object called “Level 1”, which is meant to save information related to a game’s first level. If you then need to get from the GameData “Level 1” to “Level 2”, you need to step back up to the root of the tree then step down to the “Level 2” data. If you have trouble visualizing these connections and methodology, please do some research into Tree data structures in programming.</p>
-<h4 id="gamecircle.whispersync.gamedatastepdowntoplugin.gamecircle.whispersync.gamedatastepdownto"><a href="../../plugin/gamecircle/Whispersync/GameDataStepDownTo.html">gamecircle.Whispersync.GameDataStepDownTo</a></h4>
-<h4 id="gamecircle.whispersync.gamedatastepupplugin.gamecircle.whispersync.gamedatastepup"><a href="../../plugin/gamecircle/Whispersync/GameDataStepUp.html">gamecircle.Whispersync.GameDataStepUp</a></h4>
-<h4 id="gamecircle.whispersync.gamedatareturntorootplugin.gamecircle.whispersync.gamedatareturntoroot"><a href="../../plugin/gamecircle/Whispersync/GameDataReturnToRoot.html">gamecircle.Whispersync.GameDataReturnToRoot</a></h4>
-<h4 id="gamecircle.whispersync.currentdatamapchildkeysplugin.gamecircle.whispersync.currentdatamapchildkeys"><a href="../../plugin/gamecircle/Whispersync/CurrentDataMapChildKeys.html">gamecircle.Whispersync.CurrentDataMapChildKeys</a></h4>
-<h4 id="gamecircle.whispersync.currentdatamapcontainschildplugin.gamecircle.whispersync.currentdatamapcontainschild"><a href="../../plugin/gamecircle/Whispersync/CurrentDataMapContainsChild.html">gamecircle.Whispersync.CurrentDataMapContainsChild</a></h4>
-<h4 id="gamecircle.whispersync.currentdatamapgetpathplugin.gamecircle.whispersync.currentdatamapgetpath"><a href="../../plugin/gamecircle/Whispersync/CurrentDataMapGetPath.html">gamecircle.Whispersync.CurrentDataMapGetPath</a></h4>
-<h2 id="project-settings">Project Settings</h2>
+<section id="gamecircle.whispersync.gamedatastepdowntoplugin.gamecircle.whispersync.gamedatastepdownto" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GameDataStepDownTo.html">gamecircle.Whispersync.GameDataStepDownTo</a></h4>
+</section>
+<section id="gamecircle.whispersync.gamedatastepupplugin.gamecircle.whispersync.gamedatastepup" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GameDataStepUp.html">gamecircle.Whispersync.GameDataStepUp</a></h4>
+</section>
+<section id="gamecircle.whispersync.gamedatareturntorootplugin.gamecircle.whispersync.gamedatareturntoroot" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/GameDataReturnToRoot.html">gamecircle.Whispersync.GameDataReturnToRoot</a></h4>
+</section>
+<section id="gamecircle.whispersync.currentdatamapchildkeysplugin.gamecircle.whispersync.currentdatamapchildkeys" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/CurrentDataMapChildKeys.html">gamecircle.Whispersync.CurrentDataMapChildKeys</a></h4>
+</section>
+<section id="gamecircle.whispersync.currentdatamapcontainschildplugin.gamecircle.whispersync.currentdatamapcontainschild" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/CurrentDataMapContainsChild.html">gamecircle.Whispersync.CurrentDataMapContainsChild</a></h4>
+</section>
+<section id="gamecircle.whispersync.currentdatamapgetpathplugin.gamecircle.whispersync.currentdatamapgetpath" class="level4">
+<h4><a href="../../plugin/gamecircle/Whispersync/CurrentDataMapGetPath.html">gamecircle.Whispersync.CurrentDataMapGetPath</a></h4>
+</section>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="brush: lua;">settings =
 {
@@ -403,7 +629,9 @@ gamecircle.Whispersync.SetHighestNumber( key, 8675309, "INT" )</pre>
         },
     },
 }</pre>
-<h2 id="solar2d-native">Solar2D Native</h2>
+</section>
+<section id="solar2d-native" class="level2">
+<h2>Solar2D Native</h2>
 <p>The Solar2D Native edition of the plugin can be achieved in a similar manner to the normal version. You must download the plugin’s package and include the four <code>.jar</code> files it contains.</p>
 <ul>
 <li><code>AmazonInsighss-android-sdk-2.1.26.jar</code></li>
@@ -443,7 +671,9 @@ android:theme="@style/GCAlert" android:hardwareAccelerated="false">&lt;/activity
      &lt;data android:scheme="package" />
   &lt;/intent-filter>
 &lt;/receiver></pre>
-<h2 id="sample-code">Sample Code</h2>
+</section>
+<section id="sample-code" class="level2">
+<h2>Sample Code</h2>
 <p>You can access sample code <a href="https://github.com/JesseInnovativeLeisure/CoronaGameCirclePluginSample">here</a>.</p>
 <hr>
 <div id="footer">
@@ -455,6 +685,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

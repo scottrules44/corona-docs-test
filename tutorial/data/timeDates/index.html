@@ -69,9 +69,11 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/data/index.html">Data/Files/Strings</a>
 </div>
-<h1 id="utilizing-time-and-dates">Utilizing Time and Dates</h1>
+<section id="utilizing-time-and-dates" class="level1">
+<h1>Utilizing Time and Dates</h1>
 <p>Working with “time” in any programming language can be initially challenging, since it’s not always obvious what various time/date functions mean and how they behave. This tutorial discusses some of these issues and shows you how to work with things like date calculations, time zones, and date formatting.</p>
-<h2 id="microseconds-and-milliseconds">Microseconds and Milliseconds</h2>
+<section id="microseconds-and-milliseconds" class="level2">
+<h2>Microseconds and Milliseconds</h2>
 <p>Before we get to code, there are several important concepts to understand. To a computer, the basic unit of time is a <strong>second</strong>. From that one value, we can determine any date, or with fractions, even smaller measures of time.</p>
 <p>While one second is a short period of time to a human, it’s actually a very long period of time to a computer. Just as humans break down long periods of time into smaller blocks, computers do as well. Besides <strong>seconds</strong>, many functions work in <strong>milliseconds</strong> <nobr>(1/1000th of a second)</nobr>. Other functions work in <strong>microseconds</strong> <nobr>(1/1,000,000th of a second)</nobr>.</p>
 <p>In Corona, the <a href="../../../api/library/system/getTimer.html">system.getTimer()</a> call returns the amount of time since your app started running, and the value is typically returned in <strong>milliseconds</strong>, where the fractional part represents microseconds if the hardware supports it. Most devices will return a fractional time like:</p>
@@ -83,7 +85,9 @@
 <li><a href="../../../api/library/audio/play.html">audio.play()</a></li>
 </ul>
 <p>Since each of these accepts time in milliseconds, you would, for example, provide a value of <code>5000</code> to the function for an equivalent of 5 seconds. ½ second would be <code>500</code>, 2½ seconds would be <code>2500</code>, and so on. Basically, just multiply the time you want in seconds by <code>1000</code> to get the time for any of these functions.</p>
-<h2 id="longer-periods-of-time">Longer Periods of Time</h2>
+</section>
+<section id="longer-periods-of-time" class="level2">
+<h2>Longer Periods of Time</h2>
 <p>As stated above, the basic unit of time for a computer is one second. Both iOS and Android, as well as macOS, are based on operating systems derived from Unix, and in those operating systems the standard “time” function returns the number of seconds since <nobr>January 1, 1970</nobr> at midnight. Microsoft uses a different reference point, but since many apps are built using the language C, which had its origins in Unix, their library also uses this <strong>time reference point</strong> or “Epoch.” Under this system, “negative” times are before 1970 and “positive” times are after 1970.</p>
 <p>In Corona, to get the current <strong>number of seconds</strong> since <nobr>January 1, 1970</nobr>, you can use the <a href="../../../api/library/os/time.html">os.time()</a> call:</p>
 <pre class="brush: lua;">print( os.time() )</pre>
@@ -102,7 +106,9 @@ end</pre>
 <li>Is your time older than a week? Use <code>604800</code> <nobr>( <code>7 * 24 * 60 * 60</code> )</nobr>.</li>
 <li>Set an alarm in 30 days? Use <code>2592000</code> <nobr>( <code>30 * 24 * 60 * 60</code> )</nobr>.</li>
 </ul>
-<h2 id="working-with-dates">Working With Dates</h2>
+</section>
+<section id="working-with-dates" class="level2">
+<h2>Working With Dates</h2>
 <p>Dates are a bit more challenging because they are <strong>strings</strong> which can be formatted in seemingly infinite ways, including:</p>
 <ul>
 <li><code>April 1, 2010 4:53pm</code></li>
@@ -112,7 +118,8 @@ end</pre>
 <li><code>13-JAN-13 15:17</code></li>
 </ul>
 <p>As a developer, you need to parse dates into their <nobr>“component values” — that is,</nobr> you must get each part of the date/time string: <strong>month</strong>, <strong>day</strong>, <strong>year</strong>, <strong>hour</strong>, <strong>minute</strong>, <strong>seconds</strong>, and <strong>time zone</strong>.</p>
-<h3 id="iso-8601">ISO-8601</h3>
+<section id="iso-8601" class="level3">
+<h3>ISO-8601</h3>
 <p>One common date format is the <nobr><strong>ISO-8601</strong></nobr> time format, a string that looks like this:</p>
 <pre class="brush: lua;">2017-01-12T12:04:35.03-0400</pre>
 <p>This may look a bit menacing, so let’s separate out the elements for further inspection:</p>
@@ -197,7 +204,10 @@ end</pre>
 <p>Despite its power and convenience, this code does <strong>not</strong> compensate for Daylight Savings Time, a topic that’s beyond the scope of this tutorial.</p>
 </div>
 </div>
-<h2 id="converting-a-timestamp">Converting a Timestamp</h2>
+</section>
+</section>
+<section id="converting-a-timestamp" class="level2">
+<h2>Converting a Timestamp</h2>
 <p>At some point, you will probably need to go the “other way” with your time and convert it to a date string in a format that users can understand. This is the purpose of the <a href="../../../api/library/os/date.html">os.date()</a> function.</p>
 <p>The <code>os.date()</code> function takes two optional parameters. Calling it with no parameters will return the current date/time for the time zone you’re in (or the zone your device thinks you’re in). This will be in a format like:</p>
 <pre class="brush: lua;">Sat Jan 12 14:07:30 2013</pre>
@@ -211,7 +221,9 @@ Important
 <p>By default, the values returned by <a href="../../../api/library/os/date.html">os.date()</a> will be based on your locale or time zone. This is crucial to understand if you want to create the type of date above, possibly for a multiplayer game with players in different time zones. In cases like these, you need to output the time based on <strong>UTC</strong> by placing a single <code>!</code> in front of the <code>format</code> parameter:</p>
 <pre class="brush: lua;">print( os.date("!%Y-%m-%dT%XZ") )  -- In UTC; outputs something like "2017-06-16T19:32:23Z"</pre>
 </div>
-<h2 id="conclusion">Conclusion</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
 <p>Dealing with time and dates can be heavy on syntax, but hopefully this tutorial has exhibited that it’s not an insurmountable task. With a little effort and the convenient functions/methods above, you can “wield time” in ways that you might not have considered in the past.</p>
 <hr>
 <div id="footer">
@@ -223,6 +235,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

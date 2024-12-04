@@ -83,7 +83,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/onDemandResources/index.html">On-Demand Resources</a>
 </div>
-<h1 id="ondemandresources.">onDemandResources.*</h1>
+<section id="ondemandresources." class="level1">
+<h1>onDemandResources.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -110,11 +111,14 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>The <a href="https://marketplace.coronalabs.com/plugin/on-demand-resources">onDemandResources</a> plugin provides an interface for Apple’s <a href="https://developer.apple.com/library/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/">on-demand resources</a>, applicable to tvOS.</p>
 <p>Usage of <nobr>on-demand</nobr> resources can be essential for developing tvOS games and apps since there is a <a href="https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/PlatformSizesforOn-DemandResources.html">limit</a> of 200 MB for the app bundle.</p>
 <p>Essentially, <nobr>on-demand</nobr> resources allow you to split your app into parts and download specific assets/resources when you require them. This technique can also be utilized to minimize the app’s initial download size and reduce the footprint size in the device’s storage.</p>
-<h2 id="tags">Tags</h2>
+</section>
+<section id="tags" class="level2">
+<h2>Tags</h2>
 <p>When using <nobr>on-demand</nobr> resources, you should separate parts of your app into downloadable packages and reference them with <strong>tags</strong>. Each tag can point to an individual resource (file) or a group of resources (folder). By default, these resources will be excluded from the app bundle and will be available only after the app is downloaded.</p>
 <p>See the <a href="#configureODR">instructions</a> below regarding configuration of <nobr>on-demand</nobr> resources/tags.</p>
 <div class="guide-notebox-imp">
@@ -127,13 +131,17 @@ Important
 <li><p>Even though you can typically use <nobr>on-demand</nobr> resources as if they exist in your app’s bundle, they are not physically there. Use <a href="../../api/library/system/pathForFile.html">system.pathForFile()</a> to retrieve the actual path, or alternatively the convenience function <a href="../../plugin/onDemandResources/path.html">onDemandResources.path()</a>. This may be necessary when, for example, an <nobr>on-demand</nobr> resource is a text file <nobr>(not an image)</nobr> and <a href="../../api/library/io/open.html">io.open()</a> is required to open the file and read its contents (<a href="../../guide/data/readWriteFiles/index.html">guide</a>).</p></li>
 </ul>
 </div>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li><p>You should not assign unique tags to both a folder and a nested folder within it. For example, if you assign a tag to <code>assets/images</code>, you should not assign a separate tag to <code>assets/images/level1</code> because, inherently, the <code>level1</code> resources are already included as part of the broader tag.</p></li>
 <li><p>If the operating system requires storage space, it may automatically cycle through tags and evict downloaded content. By default, resources which have not been used recently will be prioritized for eviction, although you can manage eviction behavior with <a href="../../plugin/onDemandResources/setPreservationPriority.html">onDemandResources.setPreservationPriority()</a>.</p></li>
 <li><p><nobr>On-demand</nobr> resources only function in distributed apps. To test functionality prior to release, use a service such as <a href="https://developer.apple.com/testflight/">TestFlight</a>.</p></li>
 </ul>
-<h2 id="project-settings">Project Settings</h2>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="highlight: [5,6,7,8]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -179,21 +187,50 @@ Important
 
 }</pre>
 </div>
-<h2 id="functions">Functions</h2>
-<h4 id="ondemandresources.requestplugin.ondemandresources.request"><a href="../../plugin/onDemandResources/request.html">onDemandResources.request()</a></h4>
-<h4 id="ondemandresources.releaseplugin.ondemandresources.release"><a href="../../plugin/onDemandResources/release.html">onDemandResources.release()</a></h4>
-<h4 id="ondemandresources.progressplugin.ondemandresources.progress"><a href="../../plugin/onDemandResources/progress.html">onDemandResources.progress()</a></h4>
-<h4 id="ondemandresources.pauseplugin.ondemandresources.pause"><a href="../../plugin/onDemandResources/pause.html">onDemandResources.pause()</a></h4>
-<h4 id="ondemandresources.resumeplugin.ondemandresources.resume"><a href="../../plugin/onDemandResources/resume.html">onDemandResources.resume()</a></h4>
-<h4 id="ondemandresources.cancelplugin.ondemandresources.cancel"><a href="../../plugin/onDemandResources/cancel.html">onDemandResources.cancel()</a></h4>
-<h4 id="ondemandresources.pathplugin.ondemandresources.path"><a href="../../plugin/onDemandResources/path.html">onDemandResources.path()</a></h4>
-<h4 id="ondemandresources.getdownloadpriorityplugin.ondemandresources.getdownloadpriority"><a href="../../plugin/onDemandResources/getDownloadPriority.html">onDemandResources.getDownloadPriority()</a></h4>
-<h4 id="ondemandresources.setdownloadpriorityplugin.ondemandresources.setdownloadpriority"><a href="../../plugin/onDemandResources/setDownloadPriority.html">onDemandResources.setDownloadPriority()</a></h4>
-<h4 id="ondemandresources.getpreservationpriorityplugin.ondemandresources.getpreservationpriority"><a href="../../plugin/onDemandResources/getPreservationPriority.html">onDemandResources.getPreservationPriority()</a></h4>
-<h4 id="ondemandresources.setpreservationpriorityplugin.ondemandresources.setpreservationpriority"><a href="../../plugin/onDemandResources/setPreservationPriority.html">onDemandResources.setPreservationPriority()</a></h4>
-<h4 id="ondemandresources.seteventlistenerplugin.ondemandresources.seteventlistener"><a href="../../plugin/onDemandResources/setEventListener.html">onDemandResources.setEventListener()</a></h4>
-<h2 id="events">Events</h2>
-<h4 id="ondemandresourceseventplugin.ondemandresources.event.ondemandresourcesevent"><a href="../../plugin/onDemandResources/event/onDemandResourcesEvent/index.html">onDemandResourcesEvent</a></h4>
+</section>
+<section id="functions" class="level2">
+<h2>Functions</h2>
+<section id="ondemandresources.requestplugin.ondemandresources.request" class="level4">
+<h4><a href="../../plugin/onDemandResources/request.html">onDemandResources.request()</a></h4>
+</section>
+<section id="ondemandresources.releaseplugin.ondemandresources.release" class="level4">
+<h4><a href="../../plugin/onDemandResources/release.html">onDemandResources.release()</a></h4>
+</section>
+<section id="ondemandresources.progressplugin.ondemandresources.progress" class="level4">
+<h4><a href="../../plugin/onDemandResources/progress.html">onDemandResources.progress()</a></h4>
+</section>
+<section id="ondemandresources.pauseplugin.ondemandresources.pause" class="level4">
+<h4><a href="../../plugin/onDemandResources/pause.html">onDemandResources.pause()</a></h4>
+</section>
+<section id="ondemandresources.resumeplugin.ondemandresources.resume" class="level4">
+<h4><a href="../../plugin/onDemandResources/resume.html">onDemandResources.resume()</a></h4>
+</section>
+<section id="ondemandresources.cancelplugin.ondemandresources.cancel" class="level4">
+<h4><a href="../../plugin/onDemandResources/cancel.html">onDemandResources.cancel()</a></h4>
+</section>
+<section id="ondemandresources.pathplugin.ondemandresources.path" class="level4">
+<h4><a href="../../plugin/onDemandResources/path.html">onDemandResources.path()</a></h4>
+</section>
+<section id="ondemandresources.getdownloadpriorityplugin.ondemandresources.getdownloadpriority" class="level4">
+<h4><a href="../../plugin/onDemandResources/getDownloadPriority.html">onDemandResources.getDownloadPriority()</a></h4>
+</section>
+<section id="ondemandresources.setdownloadpriorityplugin.ondemandresources.setdownloadpriority" class="level4">
+<h4><a href="../../plugin/onDemandResources/setDownloadPriority.html">onDemandResources.setDownloadPriority()</a></h4>
+</section>
+<section id="ondemandresources.getpreservationpriorityplugin.ondemandresources.getpreservationpriority" class="level4">
+<h4><a href="../../plugin/onDemandResources/getPreservationPriority.html">onDemandResources.getPreservationPriority()</a></h4>
+</section>
+<section id="ondemandresources.setpreservationpriorityplugin.ondemandresources.setpreservationpriority" class="level4">
+<h4><a href="../../plugin/onDemandResources/setPreservationPriority.html">onDemandResources.setPreservationPriority()</a></h4>
+</section>
+<section id="ondemandresources.seteventlistenerplugin.ondemandresources.seteventlistener" class="level4">
+<h4><a href="../../plugin/onDemandResources/setEventListener.html">onDemandResources.setEventListener()</a></h4>
+</section>
+</section>
+<section id="events" class="level2">
+<h2>Events</h2>
+<section id="ondemandresourceseventplugin.ondemandresources.event.ondemandresourcesevent" class="level4">
+<h4><a href="../../plugin/onDemandResources/event/onDemandResourcesEvent/index.html">onDemandResourcesEvent</a></h4>
 <hr>
 <div id="footer">
 <p class="copyright">
@@ -204,6 +241,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

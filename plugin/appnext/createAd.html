@@ -75,7 +75,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/appnext/index.html">Appnext</a>  ▸  <a href="../../plugin/appnext/createAd.html">createAd</a>
 </div>
-<h1 id="appnext.createad">appnext.createAd()</h1>
+<section id="appnext.createad" class="level1">
+<h1>appnext.createAd()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -106,17 +107,28 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This function is used to create an ad with a specific type and placement ID. If an ad with the same type and placement ID already exists, it will not be recreated.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">appnext.createAd( adType, placementID [, configParams] )</pre>
-<h5 id="adtype-required">adType <sub><sup>(required)</sup></sub></h5>
+<section id="adtype-required" class="level5">
+<h5>adType <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The type of the ad. Possible values include <code>"interstitial"</code>, <code>"fullscreen"</code>, and <code>"rewarded"</code>.</p>
-<h5 id="placementid-required">placementID <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="placementid-required" class="level5">
+<h5>placementID <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The placement ID for the ad.</p>
-<h5 id="configparams-optional">configParams <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="configparams-optional" class="level5">
+<h5>configParams <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A Lua table with configuration parameters for the created ad — see the next section for details.</p>
-<h2 id="parameter-reference">Parameter Reference</h2>
+</section>
+</section>
+<section id="parameter-reference" class="level2">
+<h2>Parameter Reference</h2>
 <p>The <code>configParams</code> table includes configuration parameters for the ad.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -127,7 +139,8 @@ Notes
 <li>Following creation of the ad, parameters can also be set and read via related <a href="../../plugin/appnext/set.html">appnext.set*</a> and <a href="../../plugin/appnext/get.html">appnext.get*</a> functions.</li>
 </ul>
 </div>
-<h3 id="general">General</h3>
+<section id="general" class="level3">
+<h3>General</h3>
 <ul>
 <li><code>Categories</code> — A comma-delimited list of <a href="../../api/type/String.html">strings</a> which set the preferred ad categories.</li>
 <li><code>Postback</code> — Postback parameters (<a href="../../api/type/String.html">string</a>) that will be posted to your server after user installs an app. Make sure to encode the values.</li>
@@ -137,13 +150,17 @@ Notes
 <li><code>BackButtonCanClose</code> — Android only; <a href="../../api/type/Boolean.html">boolean</a> value indicating if the “Back” key can close the ad. Default is <code>false</code>.</li>
 <li><code>Mute</code> — <a href="../../api/type/Boolean.html">Boolean</a> value which can mute the video which is played in the ad. Default is <code>false</code>.</li>
 </ul>
-<h3 id="interstitial">Interstitial</h3>
+</section>
+<section id="interstitial" class="level3">
+<h3>Interstitial</h3>
 <ul>
 <li><code>CreativeType</code> — <a href="../../api/type/String.html">String</a> which sets the creative type for the main section of the interstitial. Possible values are <code>"managed"</code>, <code>"video"</code>, or <code>"static"</code>. Default is <code>"managed"</code>.</li>
 <li><code>SkipText</code> — <a href="../../api/type/String.html">String</a> which sets a custom text for the “skip” button. Default is <code>"Skip"</code>.</li>
 <li><code>AutoPlay</code> — <a href="../../api/type/Boolean.html">Boolean</a> which sets the video to <nobr>auto-play</nobr>. Default is <code>true</code>.</li>
 </ul>
-<h3 id="full-screen-rewarded">Full-Screen / Rewarded</h3>
+</section>
+<section id="full-screen-rewarded" class="level3">
+<h3>Full-Screen / Rewarded</h3>
 <ul>
 <li><code>ProgressType</code> — <a href="../../api/type/String.html">String</a> which sets or hides the progress type. Possible values are <code>"clock"</code>, <code>"bar"</code>, <code>"none"</code>, or <code>"default"</code>. Default is <code>"clock"</code>.</li>
 <li><code>ProgressColor</code> — <a href="../../api/type/String.html">String</a> indicating the progress bar and clock color as a <nobr>6-character</nobr> hexadecimal color starting with <code>#</code>.</li>
@@ -151,7 +168,9 @@ Notes
 <li><code>ShowClose</code> — <a href="../../api/type/Boolean.html">Boolean</a> value which can display or hide the “close” button.</li>
 <li><code>CloseDelay</code> — If the “close” button is shown, this delays its appearance by the set <a href="../../api/type/Number.html">number</a> value, in seconds.</li>
 </ul>
-<h3 id="rewarded">Rewarded</h3>
+</section>
+<section id="rewarded" class="level3">
+<h3>Rewarded</h3>
 <ul>
 <li><code>RewardsTransactionId</code> — <a href="../../api/type/String.html">String</a> indicating a transaction ID per ad view. Make sure this is a <strong>unique</strong> rewards ID.</li>
 <li><code>RewardsUserId</code> — <a href="../../api/type/String.html">String</a> indicating the user ID so that you will know which user to reward.</li>
@@ -159,7 +178,10 @@ Notes
 <li><code>RewardsAmountRewarded</code> — <a href="../../api/type/String.html">String</a> indicating the amount of currency that was rewarded.</li>
 <li><code>RewardsCustomParameter</code> — <a href="../../api/type/String.html">String</a> which allows you to pass any custom value/data.</li>
 </ul>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local appnext = require( "plugin.appnext" )
 
 local function adListener( event )
@@ -208,6 +230,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

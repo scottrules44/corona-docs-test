@@ -73,7 +73,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/media/index.html">media</a>  ▸  <a href="../../../api/library/media/hasSource.html">hasSource</a>
 </div>
-<h1 id="media.hassource">media.hasSource()</h1>
+<section id="media.hassource" class="level1">
+<h1>media.hasSource()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -108,9 +109,12 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Determines if the given media source, such as a camera or photo library, is available on the platform. This function should be called before calling <a href="../../../api/library/media/selectPhoto.html">media.selectPhoto()</a> or <a href="../../../api/library/media/capturePhoto.html">media.capturePhoto()</a> to determine if that media service is available. Returns <code>true</code> if the media source is available on the platform/device. Returns <code>false</code> if not.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p><code>media.hasSource( media.Camera )</code> returns two <a href="../../../api/type/Boolean.html">booleans</a>. If the first boolean is <code>true</code>, this means that the device has a camera <strong>and</strong> the app has permission to access it. If the second boolean is <code>true</code>, this means that the device has a camera. With these two booleans, the following logic applies:</p>
 <ul>
 <li>The first being <code>true</code> implies the second is <code>true</code>.</li>
@@ -118,22 +122,31 @@
 <li>The first being <code>false</code> and the second being <code>true</code> means that the device has a camera, but the app does <strong>not</strong> have permission to access it.</li>
 <li>Both being <code>false</code> means the device does <strong>not</strong> have a camera.</li>
 </ul>
-<h3 id="ios">iOS</h3>
+<section id="ios" class="level3">
+<h3>iOS</h3>
 <ul>
 <li><p>For <code>media.hasSource( media.Camera )</code>, the first boolean will only be <code>false</code> if the device does <strong>not</strong> have a camera, <strong>or</strong> the user has explicitly denied camera access to the app.</p></li>
 <li><p>iOS will handle requesting permission to access the Camera or Photos the first time the user attempts this through the app.</p></li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">media.hasSource( mediaSource )</pre>
-<h5 id="mediasource-required">mediaSource <sub><sup>(required)</sup></sub></h5>
+<section id="mediasource-required" class="level5">
+<h5>mediaSource <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Constant.html">Constant</a>.</em> Can be one of the following:</p>
 <ul>
 <li><code>media.PhotoLibrary</code></li>
 <li><code>media.Camera</code></li>
 <li><code>media.SavedPhotosAlbum</code></li>
 </ul>
-<h2 id="examples">Examples</h2>
-<h5 id="checking-for-photo-library">Checking for Photo Library</h5>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="checking-for-photo-library" class="level5">
+<h5>Checking for Photo Library</h5>
 <pre class="brush: lua;">local onComplete = function( event )
     print( "Returned from camera view." )
 end
@@ -143,7 +156,9 @@ if ( media.hasSource( media.PhotoLibrary ) ) then
 else
     native.showAlert( "Corona", "This device does not have a camera.", { "OK" } )
 end</pre>
-<h5 id="checkingrequesting-camera-access">Checking/Requesting Camera Access</h5>
+</section>
+<section id="checkingrequesting-camera-access" class="level5">
+<h5>Checking/Requesting Camera Access</h5>
 <pre class="brush: lua;">local onComplete = function( event )
     print( "Returned from camera view." )
 end
@@ -169,6 +184,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

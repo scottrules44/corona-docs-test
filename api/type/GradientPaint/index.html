@@ -71,7 +71,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/GradientPaint/index.html">GradientPaint</a>
 </div>
-<h1 id="gradientpaint">GradientPaint</h1>
+<section id="gradientpaint" class="level1">
+<h1>GradientPaint</h1>
 <blockquote>
 <table>
 <tbody>
@@ -102,27 +103,42 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>A gradient paint creates a linear progression from one color to another.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">local paint = {
     type = "gradient",
     color1 = { r,g,b,a },
     color2 = { r,g,b,a },
     direction =
 }</pre>
-<h5 id="type-required">type <sub><sup>(required)</sup></sub></h5>
+<section id="type-required" class="level5">
+<h5>type <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> String value of <code>"gradient"</code>.</p>
-<h5 id="color1-required">color1 <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="color1-required" class="level5">
+<h5>color1 <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> An RGB+A array of color channels for the start color. Each number should range between <code>0</code> and <code>1</code> and represent the corresponding value for that channel.</p>
-<h5 id="color2-required">color2 <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="color2-required" class="level5">
+<h5>color2 <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> An RGB+A array of color channels for the end color. Each number should range between <code>0</code> and <code>1</code> and represent the corresponding value for that channel.</p>
-<h5 id="direction-optional">direction <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="direction-optional" class="level5">
+<h5>direction <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The direction of the gradient from <code>color1</code> to <code>color2</code>. This can be <code>"down"</code>, <code>"up"</code>, <code>"left"</code>, or <code>"right"</code>. Default is <code>"down"</code>.</p>
 <p>If <em><a href="../../../api/type/Number.html">number</a>.</em> is passed as <code>direction</code> parameter, <code>"down"</code> would be used and <a href="../../../api/type/BitmapPaint/rotation.html">fill.rotation</a> would be applied its value.</p>
-<h2 id="properties">Properties</h2>
+</section>
+</section>
+<section id="properties" class="level2">
+<h2>Properties</h2>
 <p><em>(Inherits properties from <a href="../../../api/type/Paint/index.html">Paint</a>)</em></p>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local paint = {
     type = "gradient",
     color1 = { 1, 0, 0.4 },
@@ -142,6 +158,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

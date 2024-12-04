@@ -70,18 +70,24 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/events/index.html">Events/Listeners</a>
 </div>
-<h1 id="taptouch-anatomy">Tap/Touch Anatomy</h1>
+<section id="taptouch-anatomy" class="level1">
+<h1>Tap/Touch Anatomy</h1>
 <p>Most Corona developers understand the concepts behind <strong>tap</strong> and <strong>touch</strong> events, but the lines get a little blurry when dealing with more complex scenarios, for example overlapping objects with different types of event listeners. This tutorial explains exactly how Corona handles these events and which events are broadcast to which objects.</p>
-<h2 id="tap-vs.-touch">Tap vs. Touch</h2>
+<section id="tap-vs.-touch" class="level2">
+<h2>Tap vs. Touch</h2>
 <p>Let’s quickly discuss the basics for users who may be new to Corona or mobile development in general. When the user touches the screen of a <nobr>touch-sensitive</nobr> device, this action is regarded in one of two ways:</p>
 <ul>
 <li><p><strong>tap</strong> — This event is represented by the user quickly touching the screen and lifting off at the same approximate point on the screen.</p></li>
 <li><p><strong>touch</strong> — These events provide for a much greater level of screen interactivity. Using touch events, you can detect when the user first touches the screen and when the touch is lifted off the screen. You can also track the motion of the touch as it moves around the screen.</p></li>
 </ul>
 <p>This tutorial won’t go into depth about the properties returned from these events — if you need to explore this topic further, please refer to the <a href="../../../guide/events/touchMultitouch/index.html">Tap/Touch/Multitouch</a> guide.</p>
-<h2 id="event-distinction">Event Distinction</h2>
+</section>
+<section id="event-distinction" class="level2">
+<h2>Event Distinction</h2>
 <p>Looking beyond the basic concept of tap vs. touch, let’s explore how Corona handles these events. At the core level, it’s important to understand that each type is regarded as <strong>distinct</strong>. You may think that “a screen touch is just a screen touch,” but the difference will become more apparent as we examine more complex examples.</p>
-<h2 id="test-project-setup">Test Project Setup</h2>
+</section>
+<section id="test-project-setup" class="level2">
+<h2>Test Project Setup</h2>
 <p>For purposes of this tutorial, let’s quickly set up a test project consisting of two squares that overlap in the center. We’ll use these squares to test different types of listeners and explore how/when the events are processed.</p>
 <ol type="1">
 <li><p>Open the Corona Simulator.</p></li>
@@ -118,7 +124,9 @@ backObject:addEventListener( "tap", tapListener )
 -- Add event listener to front object
 frontObject:addEventListener( "tap", tapListener )</pre>
 </div>
-<h2 id="tap-over-tap">Tap Over Tap</h2>
+</section>
+<section id="tap-over-tap" class="level2">
+<h2>Tap Over Tap</h2>
 <p>Working with this example, let’s explore the most simple case of overlapping objects: one <strong>tap</strong> object overlapping another <strong>tap</strong> object. When you click/tap in the center section where the squares <strong>overlap</strong> and observe the output in the console, you’ll notice that (by default) tap events transmit through — or “propagate” through — to underlying objects. In other words, the front (red) square doesn’t block the tap event from reaching the back (blue) square, and the console reflects this:</p>
 <pre class="brush: lua;">Front Object TAP
 Back Object TAP</pre>
@@ -132,7 +140,9 @@ local function tapListener( event )
 end</pre>
 <p>Now refresh/reload the project and, once again, click/tap in the center section where the squares <strong>overlap</strong>. By inspecting the console, you’ll notice that the tap now only reaches the <strong>front</strong> square:</p>
 <pre class="brush: lua;">Front Object TAP</pre>
-<h2 id="touch-over-touch">Touch Over Touch</h2>
+</section>
+<section id="touch-over-touch" class="level2">
+<h2>Touch Over Touch</h2>
 <p>As expected, the same principle applies to <strong>touch</strong> events. Let’s <nobr><code>return true</code></nobr> at the end of our touch event listener function (<code>touchListener()</code>) exactly as we did for the tap listener function:</p>
 <pre class="highlight: [22]; first-line: 18; gutter: true; brush: lua;">-- Touch listener function
 local function touchListener( event )
@@ -153,7 +163,9 @@ Front Object TOUCH (moved)
 Front Object TOUCH (moved)
 Front Object TOUCH (moved)
 ...</pre>
-<h2 id="taptouch-over-touchtap">Tap/Touch Over Touch/Tap</h2>
+</section>
+<section id="taptouch-over-touchtap" class="level2">
+<h2>Tap/Touch Over Touch/Tap</h2>
 <p>Things get a little more complicated when you have objects with different listener types overlapping each other, but you still need to control the propagation of tap and touch events. For testing purposes, let’s adjust the sample project so it becomes a <strong>tap</strong> object (red square) over a <strong>touch</strong> object (blue square). Do this by editing line 29, changing <code>"touch"</code> to <code>"tap"</code> and <code>touchListener</code> to <code>tapListener</code>:</p>
 <pre class="highlight: [29]; first-line: 25; gutter: true; brush: lua;">-- Add event listener to back object
 backObject:addEventListener( "touch", touchListener )
@@ -179,7 +191,9 @@ frontObject:addEventListener( "touch", touchListener )</pre>
 <pre class="brush: lua;">Front Object TOUCH (began)
 Front Object TOUCH (ended)
 Back Object TAP</pre>
-<h2 id="working-with-overlaps">Working with Overlaps</h2>
+</section>
+<section id="working-with-overlaps" class="level2">
+<h2>Working with Overlaps</h2>
 <p>The above examples of overlapping objects with different listener types is fairly common in app development, so you’ll need an approach to handle these situations. Some examples include:</p>
 <ul>
 <li><p>Objects with <strong>tap</strong> listeners over a larger region that must detect <strong>touch</strong> events, for example basic <nobr>tap-able</nobr> objects placed over a background that can be scrolled/moved as the user touches and drags it.</p></li>
@@ -222,7 +236,9 @@ backObject:addEventListener( "tap", tapListener )
 frontObject:addEventListener( "touch", touchListener )
 frontObject:addEventListener( "tap", function() return true; end )</pre>
 </div>
-<h2 id="conclusion">Conclusion</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
 <p>Every project will vary slightly in the exact way that it should behave in regards to tap and touch, but understanding these core concepts is essential to the ultimate user experience. Experiment with the different types and phases, and always remember to test, test, and test again!</p>
 <hr>
 <div id="footer">
@@ -234,6 +250,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

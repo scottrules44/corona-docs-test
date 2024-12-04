@@ -77,7 +77,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/photon/index.html">Photon</a>
 </div>
-<h1 id="photon.">photon.*</h1>
+<section id="photon." class="level1">
+<h1>photon.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -100,22 +101,35 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p><strong>Photon is a multiplayer-game development framework that is fast, lean and flexible.</strong></p>
 <p>Photon consists of a server and client SDKs for all major platforms. The <strong>Photon Cloud</strong> is a fully managed service of Photon Servers. Exit Games is running them in several regions, ready to use instantly.</p>
 <p>This <strong>Corona Photon Plugin</strong> provides a simple-to-use Lua API to find games, communicate with other clients through Photon Cloud or Photon Server, and a lot more.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">local photon = require "plugin.photon"
 local serverAddress = "ns.exitgames.com:5058" -- Photon Cloud Nameserver address
 local appId = "&lt;app-id>" -- each application on the Photon Cloud gets an appId
 local appVersion = "1.0" -- clients with different versions will be separated (easy to update clients)
 local client = photon.loadbalancing.LoadBalancingClient.new(serverAddress, appId, appVersion)
 client:connectToRegionMaster("EU") -- connect to Nameserver, get Master server address for "EU" region and connect to it</pre>
-<h2 id="modules">Modules</h2>
-<h4 id="photon-loadbalancing"><a href="http://doc-api.photonengine.com/en/corona/current/modules/loadbalancing.LoadBalancingClient.html">Photon LoadBalancing</a></h4>
-<h4 id="photon-chat"><a href="http://doc-api.photonengine.com/en/corona/current/modules/chat.ChatClient.html">Photon Chat</a></h4>
-<h4 id="photon-server-peer"><a href="http://doc-api.photonengine.com/en/corona/current/modules/core.PhotonPeer.html">Photon Server Peer</a></h4>
-<h2 id="project-settings">Project Settings</h2>
+</section>
+<section id="modules" class="level2">
+<h2>Modules</h2>
+<section id="photon-loadbalancing" class="level4">
+<h4><a href="http://doc-api.photonengine.com/en/corona/current/modules/loadbalancing.LoadBalancingClient.html">Photon LoadBalancing</a></h4>
+</section>
+<section id="photon-chat" class="level4">
+<h4><a href="http://doc-api.photonengine.com/en/corona/current/modules/chat.ChatClient.html">Photon Chat</a></h4>
+</section>
+<section id="photon-server-peer" class="level4">
+<h4><a href="http://doc-api.photonengine.com/en/corona/current/modules/core.PhotonPeer.html">Photon Server Peer</a></h4>
+</section>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="brush: lua;">settings =
 {
@@ -127,17 +141,29 @@ client:connectToRegionMaster("EU") -- connect to Nameserver, get Master server a
         },
     },
 }</pre>
-<h2 id="solar2d-native">Solar2D Native</h2>
+</section>
+<section id="solar2d-native" class="level2">
+<h2>Solar2D Native</h2>
 <p>Using Corona Photon Plugin in a Solar2D Native project can reduce time which client spends on establishing connection to the server (with encryption enabled for authentication phase). Download plugin library for your platform and link it into app executable.</p>
-<h4 id="android"><a href="http://doc-api.photonengine.com/en/corona/lib/corona-plugin/2013.1125/android/libplugin.photon.so">Android</a></h4>
-<h4 id="ios"><a href="http://doc-api.photonengine.com/en/corona/lib/corona-plugin/2013.1125/iphone/libplugin_photon.a">iOS</a></h4>
-<h4 id="ios-simulator"><a href="http://doc-api.photonengine.com/en/corona/lib/corona-plugin/2013.1125/iphone-sim/libplugin_photon.a">iOS Simulator</a></h4>
-<h2 id="sample-code">Sample Code</h2>
+<section id="android" class="level4">
+<h4><a href="http://doc-api.photonengine.com/en/corona/lib/corona-plugin/2013.1125/android/libplugin.photon.so">Android</a></h4>
+</section>
+<section id="ios" class="level4">
+<h4><a href="http://doc-api.photonengine.com/en/corona/lib/corona-plugin/2013.1125/iphone/libplugin_photon.a">iOS</a></h4>
+</section>
+<section id="ios-simulator" class="level4">
+<h4><a href="http://doc-api.photonengine.com/en/corona/lib/corona-plugin/2013.1125/iphone-sim/libplugin_photon.a">iOS Simulator</a></h4>
+</section>
+</section>
+<section id="sample-code" class="level2">
+<h2>Sample Code</h2>
 <p>The <a href="http://doc-api.photonengine.com/en/corona/samples/corona-plugin/photon_corona_plugin_sample.zip">Basic Sample</a> is a simple app that demonstrates creation of the room and events exchange in the room.</p>
 <p>The <a href="http://doc-api.photonengine.com/en/corona/samples/corona-plugin/photon_corona_plugin_sample_advanced.zip">Particle Demo</a> automatically joins players into a room, where it syncs the players’ positions on a grid. It also uses some advanced features like properties, event caching and it splits the “world” grid into four Interest Groups.</p>
 <p>The <a href="http://doc-api.photonengine.com/en/corona/samples/corona-plugin/photon_corona_plugin_sample_chat.zip">Chat API Demo</a> is a chat client sample.</p>
 <p><strong>Note:</strong> The samples are <a href="http://www.photonengine.com/en/Realtime">Photon Cloud</a> enabled - no need to setup any server! <a href="https://www.photonengine.com/Account/SignUp">Register (for free)</a>, check your mail to access the Photon Cloud Dashboard and copy and paste your AppID into the <code>AppId</code> field in <code>cloud-app-info.lua</code>.</p>
-<h2 id="support">Support</h2>
+</section>
+<section id="support" class="level2">
+<h2>Support</h2>
 <ul>
 <li><a href="http://www.photonengine.com">http://www.photonengine.com</a></li>
 <li><a href="mailto:developer@photonengine.com">Email</a></li>
@@ -152,6 +178,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

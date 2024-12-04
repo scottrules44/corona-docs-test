@@ -70,7 +70,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../../../plugin/steamworks/event/achievementInfoUpdate/index.html">achievementInfoUpdate</a>
 </div>
-<h1 id="achievementinfoupdate">achievementInfoUpdate</h1>
+<section id="achievementinfoupdate" class="level1">
+<h1>achievementInfoUpdate</h1>
 <blockquote>
 <table>
 <tbody>
@@ -97,15 +98,28 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This event occurs when an achievement’s progress or unlock status has been changed for the currently logged in user. It is dispatched after a successful call to the <a href="../../../../plugin/steamworks/setAchievementUnlocked.html">steamworks.setAchievementUnlocked()</a> or <a href="../../../../plugin/steamworks/setAchievementProgress.html">steamworks.setAchievementProgress()</a> functions.</p>
 <p>You can receive these events by adding a <a href="../../../../api/type/Listener.html">listener</a> to the plugin via the <a href="../../../../plugin/steamworks/addEventListener.html">steamworks.addEventListener()</a> function.</p>
-<h2 id="properties">Properties</h2>
-<h4 id="event.achievementnameplugin.steamworks.event.achievementinfoupdate.achievementname"><a href="../../../../plugin/steamworks/event/achievementInfoUpdate/achievementName.html">event.achievementName</a></h4>
-<h4 id="event.currentprogressplugin.steamworks.event.achievementinfoupdate.currentprogress"><a href="../../../../plugin/steamworks/event/achievementInfoUpdate/currentProgress.html">event.currentProgress</a></h4>
-<h4 id="event.maxprogressplugin.steamworks.event.achievementinfoupdate.maxprogress"><a href="../../../../plugin/steamworks/event/achievementInfoUpdate/maxProgress.html">event.maxProgress</a></h4>
-<h4 id="event.nameplugin.steamworks.event.achievementinfoupdate.name"><a href="../../../../plugin/steamworks/event/achievementInfoUpdate/name.html">event.name</a></h4>
-<h2 id="example">Example</h2>
+</section>
+<section id="properties" class="level2">
+<h2>Properties</h2>
+<section id="event.achievementnameplugin.steamworks.event.achievementinfoupdate.achievementname" class="level4">
+<h4><a href="../../../../plugin/steamworks/event/achievementInfoUpdate/achievementName.html">event.achievementName</a></h4>
+</section>
+<section id="event.currentprogressplugin.steamworks.event.achievementinfoupdate.currentprogress" class="level4">
+<h4><a href="../../../../plugin/steamworks/event/achievementInfoUpdate/currentProgress.html">event.currentProgress</a></h4>
+</section>
+<section id="event.maxprogressplugin.steamworks.event.achievementinfoupdate.maxprogress" class="level4">
+<h4><a href="../../../../plugin/steamworks/event/achievementInfoUpdate/maxProgress.html">event.maxProgress</a></h4>
+</section>
+<section id="event.nameplugin.steamworks.event.achievementinfoupdate.name" class="level4">
+<h4><a href="../../../../plugin/steamworks/event/achievementInfoUpdate/name.html">event.name</a></h4>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 -- Called when an achievement's progress or unlock status has changed
@@ -139,6 +153,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

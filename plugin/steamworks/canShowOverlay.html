@@ -65,7 +65,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../plugin/steamworks/canShowOverlay.html">canShowOverlay</a>
 </div>
-<h1 id="steamworks.canshowoverlay">steamworks.canShowOverlay</h1>
+<section id="steamworks.canshowoverlay" class="level1">
+<h1>steamworks.canShowOverlay</h1>
 <blockquote>
 <table>
 <tbody>
@@ -100,9 +101,12 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This will be <code>true</code> if Steam overlays can be shown on top of the app. This means that Steam popup notifications can be shown and screen overlays can be shown via this plugin’s APIs or by the user pressing the default <nobr>Shift+Tab</nobr> keys.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>This property will be <code>false</code> in the following cases:</p>
 <ul>
 <li>A valid <code>appId</code> was not set in <code>config.lua</code> as documented <a href="../../plugin/steamworks/index.html#project-settings">here</a>.</li>
@@ -113,7 +117,9 @@
 <li>On Mac, the application (such as the Corona Simulator) was not launched from the Steam client, or a required system preference setting is missing. See the <a href="../../plugin/steamworks/guide/overlays.html">Overlay Troubleshooting</a> guide for more details.</li>
 </ul>
 <!--- REFERENCE LINK -->
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 print( "Can Show Steam Overlay: " .. tostring(steamworks.canShowOverlay) )</pre>
@@ -127,6 +133,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

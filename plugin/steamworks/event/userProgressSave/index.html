@@ -70,7 +70,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../../../plugin/steamworks/event/userProgressSave/index.html">userProgressSave</a>
 </div>
-<h1 id="userprogresssave">userProgressSave</h1>
+<section id="userprogresssave" class="level1">
+<h1>userProgressSave</h1>
 <blockquote>
 <table>
 <tbody>
@@ -97,15 +98,28 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This event occurs when Steam has attempted to save and upload the currently logged in user’s progression data such as unlocked achievements and updated stats. The <a href="../../../../plugin/steamworks/event/userProgressSave/isError.html">event.isError</a> property indicates if progression was successfully saved to Steam or not. These events are typically triggered after calling the <a href="../../../../plugin/steamworks/setAchievementUnlocked.html">steamworks.setAchievementUnlocked()</a> and <a href="../../../../plugin/steamworks/setUserStatValues.html">steamworks.setUserStatValues()</a> functions.</p>
 <p>You can receive these events by adding a <a href="../../../../api/type/Listener.html">listener</a> to the plugin via the <a href="../../../../plugin/steamworks/addEventListener.html">steamworks.addEventListener()</a> function.</p>
-<h2 id="properties">Properties</h2>
-<h4 id="event.iserrorplugin.steamworks.event.userprogresssave.iserror"><a href="../../../../plugin/steamworks/event/userProgressSave/isError.html">event.isError</a></h4>
-<h4 id="event.nameplugin.steamworks.event.userprogresssave.name"><a href="../../../../plugin/steamworks/event/userProgressSave/name.html">event.name</a></h4>
-<h4 id="event.resultcodeplugin.steamworks.event.userprogresssave.resultcode"><a href="../../../../plugin/steamworks/event/userProgressSave/resultCode.html">event.resultCode</a></h4>
-<h4 id="event.usersteamidplugin.steamworks.event.userprogresssave.usersteamid"><a href="../../../../plugin/steamworks/event/userProgressSave/userSteamId.html">event.userSteamId</a></h4>
-<h2 id="example">Example</h2>
+</section>
+<section id="properties" class="level2">
+<h2>Properties</h2>
+<section id="event.iserrorplugin.steamworks.event.userprogresssave.iserror" class="level4">
+<h4><a href="../../../../plugin/steamworks/event/userProgressSave/isError.html">event.isError</a></h4>
+</section>
+<section id="event.nameplugin.steamworks.event.userprogresssave.name" class="level4">
+<h4><a href="../../../../plugin/steamworks/event/userProgressSave/name.html">event.name</a></h4>
+</section>
+<section id="event.resultcodeplugin.steamworks.event.userprogresssave.resultcode" class="level4">
+<h4><a href="../../../../plugin/steamworks/event/userProgressSave/resultCode.html">event.resultCode</a></h4>
+</section>
+<section id="event.usersteamidplugin.steamworks.event.userprogresssave.usersteamid" class="level4">
+<h4><a href="../../../../plugin/steamworks/event/userProgressSave/userSteamId.html">event.userSteamId</a></h4>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 -- Called when Steam has attempted to save/upload user progression
@@ -135,6 +149,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

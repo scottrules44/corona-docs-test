@@ -89,7 +89,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/gameNetwork-google/index.html">gameNetwork-google</a>  ▸  <a href="../../plugin/gameNetwork-google/request.html">request</a>
 </div>
-<h1 id="gamenetwork.request">gameNetwork.request()</h1>
+<section id="gamenetwork.request" class="level1">
+<h1>gameNetwork.request()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -124,16 +125,25 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Send or request information to/from <a href="http://developer.android.com/google/play-services/games.html">Google Play Game Services</a>.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">gameNetwork.request( command [, params] )</pre>
-<h5 id="command-required">command <sub><sup>(required)</sup></sub></h5>
+<section id="command-required" class="level5">
+<h5>command <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> String value as supported by Google Play Game Services — see <a href="#commands">Command Reference</a> below.</p>
-<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="params-optional" class="level5">
+<h5>params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table of parameters allowed by Google Play Game Services — see <a href="#params">Parameter Reference</a> below.</p>
 <p><a id="commands"></p>
-<h2 id="command-reference">Command Reference</h2>
+</section>
+</section>
+<section id="command-reference" class="level2">
+<h2>Command Reference</h2>
 <p>For the <code>command</code> parameter, Google Play Game Services supports the following values:</p>
 <ul>
 <li><code>"setHighScore"</code></li>
@@ -157,9 +167,12 @@
 <li><code>"setInvitationReceivedListener"</code></li>
 </ul>
 <p><a id="params"></p>
-<h2 id="parameter-reference">Parameter Reference</h2>
+</section>
+<section id="parameter-reference" class="level2">
+<h2>Parameter Reference</h2>
 <p>Depending on the specified <code>command</code> parameter, the contents of the <code>params</code> table will vary.</p>
-<h3 id="listener-function">Listener Function</h3>
+<section id="listener-function" class="level3">
+<h3>Listener Function</h3>
 <p>For most calls to <code>gameNetwork.request()</code>, the <code>params</code> table supports a <code>listener</code> key with its value as a callback listener function to monitor the call result. In the callback listener, <code>event.type</code> indicates the request that was executed, along with other data specific to each request type as outlined below.</p>
 <pre class="brush: lua;">local function requestCallback( event )
 
@@ -174,7 +187,9 @@ gameNetwork.request( "setHighScore",
         listener = requestCallback
     }
 )</pre>
-<h3 id="set-high-score">Set High Score</h3>
+</section>
+<section id="set-high-score" class="level3">
+<h3>Set High Score</h3>
 <p>For the <code>command</code> parameter of <code>"setHighScore"</code>, this function sets a high score for the currently <nobr>logged-in</nobr> user for the specified leaderboard (<code>category</code>). If the high score is not higher than the one currently on the server, the server will keep the highest value.</p>
 <pre class="brush: lua;">gameNetwork.request( "setHighScore",
     {
@@ -194,7 +209,9 @@ gameNetwork.request( "setHighScore",
 <li><code>value</code> (<a href="../../api/type/Number.html">number</a>)</li>
 <li><code>formattedValue</code> (<a href="../../api/type/String.html">string</a>) — The formatted value of the submitted score.</li>
 </ul>
-<h3 id="load-scores">Load Scores</h3>
+</section>
+<section id="load-scores" class="level3">
+<h3>Load Scores</h3>
 <p>For the <code>command</code> parameter of <code>"loadScores"</code>, this function retrieves scores based on various filters.</p>
 <pre class="brush: lua;">gameNetwork.request( "loadScores",
     {
@@ -229,7 +246,9 @@ gameNetwork.request( "setHighScore",
 </ul>
 <pre class="brush: lua;">event.data[1].playerID  --ID of the first player in the request
 event.data[3].rank      --rank of the third player in the request</pre>
-<h3 id="load-local-player">Load Local Player</h3>
+</section>
+<section id="load-local-player" class="level3">
+<h3>Load Local Player</h3>
 <p>For the <code>command</code> parameter of <code>"loadLocalPlayer"</code>, this function requests data for the currently <nobr>logged-in</nobr> player.</p>
 <pre class="brush: lua;">gameNetwork.request( "loadLocalPlayer", { listener=requestCallback } )</pre>
 <p>When handling the results of a <code>"loadLocalPlayer"</code> call, <code>event.data</code> in the callback listener contains the following properties:</p>
@@ -241,7 +260,9 @@ event.data[3].rank      --rank of the third player in the request</pre>
 <pre class="brush: lua;">event.data.playerID
 event.data.alias</pre>
 </div>
-<h3 id="load-players">Load Players</h3>
+</section>
+<section id="load-players" class="level3">
+<h3>Load Players</h3>
 <p>For the <code>command</code> parameter of <code>"loadPlayers"</code>, this function requests data for a list of players based on their player IDs.</p>
 <pre class="brush: lua;">gameNetwork.request( "loadPlayers",
     {
@@ -261,7 +282,9 @@ event.data.alias</pre>
 </ul>
 <pre class="brush: lua;">event.data[1].playerID  --ID of the first player in the request
 event.data[3].alias     --alias of the third player in the request</pre>
-<h3 id="load-friends">Load Friends</h3>
+</section>
+<section id="load-friends" class="level3">
+<h3>Load Friends</h3>
 <p>For the <code>command</code> parameter of <code>"loadFriends"</code>, this function requests the friends of the currently <nobr>logged-in</nobr> player.</p>
 <pre class="brush: lua;">gameNetwork.request( "loadFriends", { listener=requestCallback } )</pre>
 <p>When handling the results of a <code>"loadFriends"</code> call, <code>event.data</code> in the callback listener is an array of items (tables) corresponding to each friend.</p>
@@ -269,7 +292,9 @@ event.data[3].alias     --alias of the third player in the request</pre>
 <pre class="brush: lua;">event.data[2].playerID
 event.data[2].alias</pre>
 </div>
-<h3 id="load-achievements-load-achievement-descriptions">Load Achievements / Load Achievement Descriptions</h3>
+</section>
+<section id="load-achievements-load-achievement-descriptions" class="level3">
+<h3>Load Achievements / Load Achievement Descriptions</h3>
 <p>For the <code>command</code> parameter of <code>"loadAchievements"</code> or <code>"loadAchievementDescriptions"</code>, this function loads a list of the player’s completed achievements for the app.</p>
 <pre class="brush: lua;">gameNetwork.request( "loadAchievements", { listener=requestCallback } )</pre>
 <p>When handling the results of a <code>"loadAchievements"</code> or <code>"loadAchievementDescriptions"</code> call, <code>event.data</code> in the callback listener is an array of items (tables) representing each achievement. Each table contains the following properties:</p>
@@ -283,7 +308,9 @@ event.data[2].alias</pre>
 </ul>
 <pre class="brush: lua;">event.data[4].identifier   --identifier for the fourth achievement
 event.data[2].description  --description of the second achievement </pre>
-<h3 id="unlock-achievement">Unlock Achievement</h3>
+</section>
+<section id="unlock-achievement" class="level3">
+<h3>Unlock Achievement</h3>
 <p>For the <code>command</code> parameter of <code>"unlockAchievement"</code>, this function unlocks/sets the specified achievement (<code>identifier</code>).</p>
 <pre class="brush: lua;">gameNetwork.request( "unlockAchievement",
     {
@@ -296,7 +323,9 @@ event.data[2].description  --description of the second achievement </pre>
 )</pre>
 <p>Inside the <code>params</code> table, <code>achievement</code> is a required table wherein <code>identifier</code> (<a href="../../api/type/String.html">string</a>) must match the name of the achievement you want to unlock/report, as entered in Google’s developer console.</p>
 <p>When handling the results of a <code>"unlockAchievement"</code> call, <code>event.data</code> in the callback listener contains an <code>achievementId</code> identifier (<a href="../../api/type/String.html">string</a>).</p>
-<h3 id="load-leaderboard-categories">Load Leaderboard Categories</h3>
+</section>
+<section id="load-leaderboard-categories" class="level3">
+<h3>Load Leaderboard Categories</h3>
 <p>For the <code>command</code> parameter of <code>"loadLeaderboardCategories"</code>, this function requests a list of leaderboard categories for the app.</p>
 <pre class="brush: lua;">gameNetwork.request( "loadLeaderboardCategories", { listener=requestCallback } )</pre>
 <p>When handling the results of a <code>"loadLeaderboardCategories"</code> call, <code>event.data</code> is an array of items (tables). Each contains the following leaderboard properties:</p>
@@ -306,9 +335,13 @@ event.data[2].description  --description of the second achievement </pre>
 </ul>
 <pre class="brush: lua;">event.data[1].category  --> "CY_a49t8h4t43t43t"
 event.data[1].title     --> "Easy"</pre>
-<h3 id="is-connected">Is Connected</h3>
+</section>
+<section id="is-connected" class="level3">
+<h3>Is Connected</h3>
 <p>For the <code>command</code> parameter of <code>"isConnected"</code>, this call checks if the user is currently logged into Google Play Game Services, returning <code>true</code> if the user is currently logged in and <code>false</code> if not. This function returns immediately with the result so there is no need to supply it with a callback listener.</p>
-<h3 id="login">Login</h3>
+</section>
+<section id="login" class="level3">
+<h3>Login</h3>
 <p>For the <code>command</code> parameter of <code>"login"</code>, this function attempts to log the user into Google Play Game Services.</p>
 <pre class="brush: lua;">gameNetwork.request( "login",
     {
@@ -318,10 +351,14 @@ event.data[1].title     --> "Easy"</pre>
 )</pre>
 <p>Inside the <code>params</code> table, <code>userInitated</code> is a boolean with a default of <code>true</code>. When <code>true</code>, this call will try to resolve any problems with the login process by, for example, show the login popup. If it’s set to <code>false</code>, this call will simply attempt to connect without trying to resolve any errors. Setting <code>userInitated</code> to <code>false</code> is useful for automatically logging the user in while avoiding a repetitive prompt for each session.</p>
 <p>When handling the results of a <code>"login"</code> call, <code>event.data</code> in the callback listener contains an <code>isError</code> property (<a href="../../api/type/Boolean.html">boolean</a>) which indicates if there was an error with the login process.</p>
-<h3 id="logout">Logout</h3>
+</section>
+<section id="logout" class="level3">
+<h3>Logout</h3>
 <p>For the <code>command</code> parameter of <code>"logout"</code>, this call logs the user out of Google Play Game Services. This function does not accept a callback listener</p>
 <pre class="brush: lua;">gameNetwork.request( "logout" )</pre>
-<h3 id="create-room">Create Room</h3>
+</section>
+<section id="create-room" class="level3">
+<h3>Create Room</h3>
 <p>For the <code>command</code> parameter of <code>"createRoom"</code>, this function creates a <nobr>real-time</nobr> multiplayer match with the specified players. Specifying a listener function when calling this will override any room listener that was set via <code>gameNetwork.setRoomListener()</code>.</p>
 <pre class="brush: lua;">local function requestCallback( event )
     print( event.data.roomID )  --ID of the room that was created
@@ -340,7 +377,9 @@ gameNetwork.request( "createRoom",
         listener = requestCallback   --including this will override any listener set in 'gameNetwork.setRoomListener()'
     }
 )</pre>
-<h3 id="join-room">Join Room</h3>
+</section>
+<section id="join-room" class="level3">
+<h3>Join Room</h3>
 <p>For the <code>command</code> parameter of <code>"joinRoom"</code>, this function joins a room that has already been created. Specifying a listener function when calling this will override any room listener that was set via <code>gameNetwork.setRoomListener()</code>.</p>
 <p>Inside the <code>params</code> table, <code>roomID</code> is the ID which was created by <code>gameNetwork.request( "createRoom", ... )</code>.</p>
 <pre class="brush: lua;">local function requestCallback( event )
@@ -353,7 +392,9 @@ gameNetwork.request( "joinRoom",
         listener = requestCallback  --including this will override any listener set in 'gameNetwork.setRoomListener()'
     }
 )</pre>
-<h3 id="leave-room">Leave Room</h3>
+</section>
+<section id="leave-room" class="level3">
+<h3>Leave Room</h3>
 <p>For the <code>command</code> parameter of <code>"leaveRoom"</code>, this function leaves the room that the player is currently in and closes any connections. Specifying a listener function when calling this will override any room listener that was set via <code>gameNetwork.setRoomListener()</code>.</p>
 <pre class="brush: lua;">local function requestCallback( event )
     print( event.data.roomID )  --ID of the room that was left
@@ -365,7 +406,9 @@ gameNetwork.request( "leaveRoom",
         listener = requestCallback  --including this will override any listener set in 'gameNetwork.setRoomListener()'
     }
 )</pre>
-<h3 id="set-room-listener">Set Room Listener</h3>
+</section>
+<section id="set-room-listener" class="level3">
+<h3>Set Room Listener</h3>
 <p>For the <code>command</code> parameter of <code>"setRoomListener"</code>, this function sets the listener function that will be called when a room event occurs. Calling this will override any listener set from within a <code>"createRoom"</code>, <code>"joinRoom"</code>, or <code>"leaveRoom"</code> request. Note that this callback function may be triggered multiple times, for example if one player declines an invitation and then another person declines after that.</p>
 <pre class="brush: lua;">local function requestCallback( event )
     print( event.data.roomID )
@@ -395,7 +438,9 @@ gameNetwork.request( "setRoomListener",
 <li><code>peerLeftRoom</code> — The list of players who left the room.</li>
 <li><code>peerDisconnectedFromRoom</code> — The list of players who disconnected from the room.</li>
 </ul>
-<h3 id="send-message">Send Message</h3>
+</section>
+<section id="send-message" class="level3">
+<h3>Send Message</h3>
 <p>For the <code>command</code> parameter of <code>"sendMessage"</code>, this function sends a message to other player(s).</p>
 <pre class="brush: lua;">gameNetwork.request( "sendMessage",
     {
@@ -418,7 +463,9 @@ gameNetwork.request( "setRoomListener",
 <li><code>message</code> (<a href="../../api/type/String.html">string</a>) — Message to send.</li>
 <li><code>reliable</code> (<a href="../../api/type/Boolean.html">boolean</a>) — Optional parameter which, if <code>true</code>, sends a reliable message. Messages can be dropped if they’re not reliable but they will reach other players faster. Default is <code>true</code>.</li>
 </ul>
-<h3 id="set-message-received-listener">Set Message Received Listener</h3>
+</section>
+<section id="set-message-received-listener" class="level3">
+<h3>Set Message Received Listener</h3>
 <p>For the <code>command</code> parameter of <code>"setMessageReceivedListener"</code>, this function sets the listener function that will be called when a message has been received. This function will only be called for messages transmitted to the room that the current player is connected to.</p>
 <pre class="brush: lua;">local function requestCallback( event )
     print( event.data.participantID )
@@ -435,7 +482,9 @@ gameNetwork.request( "setMessageReceivedListener",
 <li><code>participantID</code> (<a href="../../api/type/String.html">string</a>) — ID of the participant who sent the message.</li>
 <li><code>message</code> (<a href="../../api/type/String.html">string</a>) — The message that was sent from the participant.</li>
 </ul>
-<h3 id="set-invitation-received-listener">Set Invitation Received Listener</h3>
+</section>
+<section id="set-invitation-received-listener" class="level3">
+<h3>Set Invitation Received Listener</h3>
 <p>For the <code>command</code> parameter of <code>"setInvitationReceivedListener"</code>, this function sets the listener function that will be called when an invitation has been received.</p>
 <pre class="brush: lua;">local function requestCallback( event )
     print( event.data.roomID )
@@ -464,6 +513,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

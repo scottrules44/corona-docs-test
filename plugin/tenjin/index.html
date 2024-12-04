@@ -78,7 +78,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/tenjin/index.html">Tenjin</a>
 </div>
-<h1 id="tenjin.">tenjin.*</h1>
+<section id="tenjin." class="level1">
+<h1>tenjin.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -101,7 +102,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>The <a href="https://tenjin.io/">Tenjin</a> plugin is used for advertising analytics, also known as <strong>attribution</strong>. It helps studios who run multiple advertising campaigns for their apps understand where their users are coming from. With this information, they can see the effectiveness of their spending and optimize their campaigns accordingly.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -109,20 +111,44 @@ Important
 </div>
 <p>Check out new <code>hasUserConsent</code> init parameter to enable GDPR data collection restrictions.</p>
 </div>
-<h2 id="registration">Registration</h2>
+</section>
+<section id="registration" class="level2">
+<h2>Registration</h2>
 <p>Before using this plugin, you’ll need to <a href="https://www.tenjin.io/sign_up">register</a> with Tenjin to receive an API key.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">local tenjin = require( "plugin.tenjin" )</pre>
-<h2 id="functions">Functions</h2>
-<h4 id="tenjin.initplugin.tenjin.init"><a href="../../plugin/tenjin/init.html">tenjin.init()</a></h4>
-<h4 id="tenjin.logeventplugin.tenjin.logevent"><a href="../../plugin/tenjin/logEvent.html">tenjin.logEvent()</a></h4>
-<h4 id="tenjin.logpurchaseplugin.tenjin.logpurchase"><a href="../../plugin/tenjin/logPurchase.html">tenjin.logPurchase()</a></h4>
-<h4 id="tenjin.getdeeplinkplugin.tenjin.getdeeplink"><a href="../../plugin/tenjin/getDeepLink.html">tenjin.getDeepLink()</a></h4>
-<h4 id="tenjin.updateconversionvalueplugin.tenjin.updateconversionvalue"><a href="../../plugin/tenjin/updateConversionValue.html">tenjin.updateConversionValue()</a></h4>
-<h2 id="events">Events</h2>
-<h4 id="analyticsrequestplugin.tenjin.event.analyticsrequest"><a href="../../plugin/tenjin/event/analyticsRequest/index.html">analyticsRequest</a></h4>
-<h4 id="deeplinkrequestplugin.tenjin.event.deeplinkrequest"><a href="../../plugin/tenjin/event/deepLinkRequest/index.html">deepLinkRequest</a></h4>
-<h2 id="project-settings">Project Settings</h2>
+</section>
+<section id="functions" class="level2">
+<h2>Functions</h2>
+<section id="tenjin.initplugin.tenjin.init" class="level4">
+<h4><a href="../../plugin/tenjin/init.html">tenjin.init()</a></h4>
+</section>
+<section id="tenjin.logeventplugin.tenjin.logevent" class="level4">
+<h4><a href="../../plugin/tenjin/logEvent.html">tenjin.logEvent()</a></h4>
+</section>
+<section id="tenjin.logpurchaseplugin.tenjin.logpurchase" class="level4">
+<h4><a href="../../plugin/tenjin/logPurchase.html">tenjin.logPurchase()</a></h4>
+</section>
+<section id="tenjin.getdeeplinkplugin.tenjin.getdeeplink" class="level4">
+<h4><a href="../../plugin/tenjin/getDeepLink.html">tenjin.getDeepLink()</a></h4>
+</section>
+<section id="tenjin.updateconversionvalueplugin.tenjin.updateconversionvalue" class="level4">
+<h4><a href="../../plugin/tenjin/updateConversionValue.html">tenjin.updateConversionValue()</a></h4>
+</section>
+</section>
+<section id="events" class="level2">
+<h2>Events</h2>
+<section id="analyticsrequestplugin.tenjin.event.analyticsrequest" class="level4">
+<h4><a href="../../plugin/tenjin/event/analyticsRequest/index.html">analyticsRequest</a></h4>
+</section>
+<section id="deeplinkrequestplugin.tenjin.event.deeplinkrequest" class="level4">
+<h4><a href="../../plugin/tenjin/event/deepLinkRequest/index.html">deepLinkRequest</a></h4>
+</section>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="brush: lua;">settings =
 {
@@ -153,7 +179,9 @@ Note
 <li><code>"android.permission.INTERNET"</code></li>
 </ul>
 </div>
-<h2 id="support">Support</h2>
+</section>
+<section id="support" class="level2">
+<h2>Support</h2>
 <ul>
 <li><a href="mailto:support@tenjin.com">Email</a></li>
 <li><a href="http://forums.coronalabs.com/forum/631-corona-premium-plugins/">Corona Forums</a></li>
@@ -168,6 +196,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

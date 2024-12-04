@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/samsung-iap/index.html">samsung-iap</a>  ▸  <a href="../../plugin/samsung-iap/consumePurchase.html">consumePurchase</a>
 </div>
-<h1 id="store.consumepurchase">store.consumePurchase()</h1>
+<section id="store.consumepurchase" class="level1">
+<h1>store.consumePurchase()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -94,18 +95,24 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This function “consumes” purchases and makes the item(s) available for purchase again. In Google IAP, once a product is purchased, it is considered “owned” and it cannot be purchased again. Thus, you must use this function to revert “owned” products to “unowned” products so they become available for purchase again.</p>
 <p>Note that some items are designed to be purchased only once and you should <strong>not</strong> consume them. For example, if a purchase unlocks a new world within a game, it should be ineligible for future consumption. Alternatively, some items can be purchased multiple times, for example energy packs and gems — these type of items must be consumed before they can be purchased again. For further information, please see Google’s <a href="http://developer.android.com/google/play/billing/api.html#consume">documentation</a>.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li><p>Consuming purchases is <strong>not</strong> instantaneous. It’s recommended that you wait a few minutes after calling <code>store.consumePurchase()</code>, then verify that the consumption actually happened.</p></li>
 <li><p>Consuming products also discards their previous purchase data.</p></li>
 <li><p>When a product is consumed, the transaction state will be <code>"consumed"</code>. There are no callbacks for invalid products.</p></li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">store.consumePurchase( productIdentifier )</pre>
-<h5 id="productidentifier-required">productIdentifier <sub><sup>(required)</sup></sub></h5>
+<section id="productidentifier-required" class="level5">
+<h5>productIdentifier <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> String representing the product identifier of the item to consume.</p>
 <hr>
 <div id="footer">
@@ -117,6 +124,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

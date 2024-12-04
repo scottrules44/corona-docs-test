@@ -71,7 +71,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/distribution/index.html">Building/Distribution</a>
 </div>
-<h1 id="signing-and-building-android">Signing and Building — Android</h1>
+<section id="signing-and-building-android" class="level1">
+<h1>Signing and Building — Android</h1>
 <p>This guide explains how to sign, build, and test your app on Android devices.</p>
 <div class="guides-toc">
 <ul>
@@ -93,7 +94,8 @@ Notes
 </ul>
 </div>
 <p><a id="javapackage"></a></p>
-<h2 id="java-package-name">Java Package Name</h2>
+<section id="java-package-name" class="level2">
+<h2>Java Package Name</h2>
 <p>When you build an Android app using Solar2D, you must specify a <strong>package name</strong>. In general, you can specify any package name you like, but it must be chosen carefully because it should be unique to your application.</p>
 <p>The traditional Java scheme is to use the <nobr>reverse-domain</nobr> format like <code>com.acme</code>, then append the name of a division/product, and finally append the name of the app. For example, <code>com.acme.games.catchafish</code> would be a good package name, assuming you own the <code>acme.com</code> domain name.</p>
 <p>In some cases, the package name that results from using <nobr>reverse-domain</nobr> format may not be valid, and it must be modified before Solar2D will build your Android app. This would be true in any of the following cases:</p>
@@ -103,7 +105,9 @@ Notes
 <li><p>One of the name components contains a keyword, for example <code>com.private.idaho</code>. In this case, suffix that part of the package name with an underscore: <code>com.private_.idaho</code>.</p></li>
 </ul>
 <p><a id="building"></a></p>
-<h2 id="build-process">Build Process</h2>
+</section>
+<section id="build-process" class="level2">
+<h2>Build Process</h2>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
 Important
@@ -167,25 +171,37 @@ Signing for Release Build
 </ol>
 </div>
 <p><a id="installapp"></a></p>
-<h2 id="device-installation">Device Installation</h2>
+</section>
+<section id="device-installation" class="level2">
+<h2>Device Installation</h2>
 <p>There are four methods to install an app on an Android device. You can <strong>not</strong> simply copy the <code>.apk</code> file over to the device.</p>
-<h3 id="copy-to-device">Copy to Device</h3>
+<section id="copy-to-device" class="level3">
+<h3>Copy to Device</h3>
 <p>If you’re using the Solar2D Simulator for macOS, you can copy the app directly to a connected device. This feature is not supported on Windows.</p>
 <ol type="1">
 <li><p>Connect your device.</p></li>
 <li><p>Follow the steps outlined in <a href="#building">Build Process</a> above, ensuring that you select <nobr><strong>Copy to device and launch</strong></nobr> for the <strong>After Build</strong> option.</p></li>
 </ol>
-<h3 id="android-sdk">Android SDK</h3>
+</section>
+<section id="android-sdk" class="level3">
+<h3>Android SDK</h3>
 <p>If you have already installed the <strong>Android SDK</strong>, use <code>adb install -r your-app.apk</code>.</p>
-<h3 id="web-server">Web Server</h3>
+</section>
+<section id="web-server" class="level3">
+<h3>Web Server</h3>
 <p>Upload the <code>.apk</code> to a web server. Next, point your Android device’s web browser to the file’s URL to download the app to the device. Finally, click on the file in the <strong>Download History</strong> to install it.</p>
 <p>If this method fails, and the application downloads as a text file, you may need to add the following configuration line to a <code>.htaccess</code> file in the application’s directory on the web server:</p>
 <p><code>AddType application/vnd.android.package-archive .apk</code></p>
 <p>Also, you should set your device to install non-Market applications if you are using <code>debug.keystore</code>. Click the <strong>Settings</strong> icon on the device, select <strong>Applications</strong>, then check the box next to <strong>Unknown Sources</strong>.</p>
-<h3 id="app-installer">App Installer</h3>
+</section>
+<section id="app-installer" class="level3">
+<h3>App Installer</h3>
 <p>Obtain an app installer from Google Play to assist with the process.</p>
 <p><a id="debugapp"></a></p>
-<h2 id="debugging">Debugging</h2>
+</section>
+</section>
+<section id="debugging" class="level2">
+<h2>Debugging</h2>
 <p>Google’s Android SDK provides a set of tools known as <strong>Android Debug Bridge</strong> or <strong>adb</strong>. These tools let you look at the device’s console log, install, and replace existing apps on your device. You can execute the <code>adb</code> command from the macOS <strong>Terminal</strong> or from the Windows <strong>Command Prompt</strong>. A GUI tool called <strong>monitor</strong> is also installed; it can be used to examine the log file and capture screen shots from your device.</p>
 <p>For more details on Android debugging, see the <a href="../../../guide/basics/debugging/index.html">Debugging Guide</a>.</p>
 <hr>
@@ -198,6 +214,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -113,7 +113,8 @@
 }
 
 </style>
-<h1 id="in-app-purchasing-iap">In-App Purchasing (IAP)</h1>
+<section id="in-app-purchasing-iap" class="level1">
+<h1>In-App Purchasing (IAP)</h1>
 <p>This guide discusses how to implement <nobr>in-app</nobr> purchasing (IAP) within Solar2D apps.</p>
 <div class="guides-toc">
 <ul>
@@ -129,10 +130,13 @@
 </ul>
 </div>
 <p><a id="overview"></a></p>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>In-app purchasing (IAP) allows users to purchase additional content from within an app. However, this content cannot be delivered through a marketplace as if it were physical inventory — you must either bundle the content with your app when you build it, anticipating that it will be unlocked/enabled upon purchase, or you must download additional content into the app using the <a href="../../../api/library/network/index.html">network</a> APIs.</p>
 <p><a id="products"></a></p>
-<h2 id="product-types">Product Types</h2>
+</section>
+<section id="product-types" class="level2">
+<h2>Product Types</h2>
 <p>There are four basic product types supported for <nobr>in-app</nobr> purchasing:</p>
 <ol type="1">
 <li>Items which the user can only buy once, for instance paying to unlock the full game, activate a special player ability, unlock levels <nobr>20-40</nobr>, etc.</li>
@@ -179,7 +183,8 @@
 </tbody>
 </table>
 </div>
-<h3 id="product-identifiers">Product Identifiers</h3>
+<section id="product-identifiers" class="level3">
+<h3>Product Identifiers</h3>
 <p>Products are individually identified by a unique string known as a <strong>product identifier</strong>. Each store may use a different term, but in all cases it’s a string value which must be unique for your app. It’s recommended that you follow the <nobr>reverse-domain</nobr> naming convention across all stores, for example:</p>
 <pre class="brush: lua;">com.acmegames.SuperRunner.UnlockFullGame</pre>
 <div class="docs-tip-outer">
@@ -193,7 +198,10 @@
 </div>
 </div>
 <p><a id="setup"></a></p>
-<h2 id="setup-configuration">Setup / Configuration</h2>
+</section>
+</section>
+<section id="setup-configuration" class="level2">
+<h2>Setup / Configuration</h2>
 <p>Each marketplace — the Apple App Store, Google Play, and the Amazon Appstore — has different requirements and setup procedures for configuring <nobr>in-app</nobr> purchasing. Please follow the steps below for each marketplace you intend to target.</p>
 <!--- iOS -->
 <a id="setup-ios"></a>
@@ -301,8 +309,11 @@ When you set up test accounts, be sure they're added to the &ldquo;Gmail account
 
 -->
 <p><a id="initialization"></a></p>
-<h2 id="initializing-iap">Initializing IAP</h2>
-<h3 id="module-inclusion">Module Inclusion</h3>
+</section>
+<section id="initializing-iap" class="level2">
+<h2>Initializing IAP</h2>
+<section id="module-inclusion" class="level3">
+<h3>Module Inclusion</h3>
 <p>Because each IAP provider utilizes a different module/plugin on the Solar2D side, you must load the proper one.</p>
 <p>If you are only supporting one store, you can simply <code>require()</code> the proper module as follows:</p>
 <div class="docs-tip-outer" style="background-color: #a5aec9;">
@@ -359,7 +370,9 @@ end</pre>
 <p>When building your app for <nobr>Android-based</nobr> devices, including Amazon’s Kindle Fire devices, remember to select the correct <strong>Target App Store</strong> from the Solar2D build dialog window (<a href="../../../guide/distribution/androidBuild/index.html">guide</a>).</p>
 </div>
 </div>
-<h3 id="initialization">Initialization</h3>
+</section>
+<section id="initialization" class="level3">
+<h3>Initialization</h3>
 <p>Once the proper module is loaded, you must initialize it using the <code>store.init()</code> call:</p>
 <pre class="brush: lua;">store.init( transactionListener )</pre>
 <p>The only required argument, <code>transactionListener</code>, is the function you intend to use to handle store <strong>transaction</strong> requests, including purchases and potential refunds. For example:</p>
@@ -408,7 +421,10 @@ store.init( transactionListener )</pre>
 </div>
 </div>
 <p><a id="products"></a></p>
-<h2 id="loading-products">Loading Products</h2>
+</section>
+</section>
+<section id="loading-products" class="level2">
+<h2>Loading Products</h2>
 <p>In your Solar2D app, you can use the <code>store.loadProducts()</code> function to load product information which you’ve entered into the respective stores:</p>
 <pre class="brush: lua;">store.loadProducts( productIdentifiers, productListener )</pre>
 <p>This function requires the following two arguments:</p>
@@ -449,7 +465,8 @@ store.loadProducts( productIdentifiers, productListener )</pre>
 <p>If you kept your product identifiers consistent for all platforms, you can use one product array, but if your identifiers vary between stores, you’ll need to use separate arrays and conditional logic with <nobr><code>system.getInfo( "targetAppStore" )</code></nobr> to load the appropriate products for the respective store.</p>
 </div>
 </div>
-<h3 id="product-properties">Product Properties</h3>
+<section id="product-properties" class="level3">
+<h3>Product Properties</h3>
 <p>When products are loaded, the product listener function (<code>productListener</code> argument for <code>store.loadProducts()</code>) will receive an <code>event</code> table as its sole argument. The properties/keys associated with this table will differ slightly because of core variances in store functionality, but at the very minimum, these two properties will be available:</p>
 <ul>
 <li><p><code>event.products</code> — A table in which each element is another table containing detailed product information. This is primarily the table you’ll need to inspect to get detailed information about the loaded products.</p></li>
@@ -489,7 +506,10 @@ store.loadProducts( productIdentifiers, productListener )</pre>
 </div>
 </div>
 <p><a id="transactions"></a></p>
-<h2 id="handling-transactions">Handling Transactions</h2>
+</section>
+</section>
+<section id="handling-transactions" class="level2">
+<h2>Handling Transactions</h2>
 <p>When a user/player chooses to buy a product within your app, a connection will be made with the store’s servers to initiate a <strong>transaction</strong>. The store will then process the transaction and send data back to your app with the results. As outlined above, this event is handled by the transaction listener function <nobr>(<code>transactionListener</code> argument within <code>store.init()</code>)</nobr>.</p>
 <p>Your transaction listener function should handle all of the following circumstances:</p>
 <ul>
@@ -498,7 +518,8 @@ store.loadProducts( productIdentifiers, productListener )</pre>
 <li>A purchase transaction <strong>failed</strong> for various reasons.</li>
 <li>A <strong>restore purchased items</strong> request was initiated via <code>store.restore()</code>.</li>
 </ul>
-<h3 id="transaction-properties">Transaction Properties</h3>
+<section id="transaction-properties" class="level3">
+<h3>Transaction Properties</h3>
 <p>When a transaction occurs, various properties will be available within the <code>event.transaction</code> table which is dispatched to the transaction listener function. Because of core variances in store functionality, these properties will differ for each store, but the following common properties will be available for transactions in <strong>all</strong> stores:</p>
 <ul>
 <li><code>state</code> — A <a href="../../../api/type/String.html">string</a> indicating the state of the transaction, for example <code>"purchased"</code>, <code>"cancelled"</code>, or <code>"failed"</code>.</li>
@@ -580,12 +601,17 @@ end</pre>
 </div>
 </div>
 <p><a id="purchasing"></a></p>
-<h2 id="purchasing-products">Purchasing Products</h2>
+</section>
+</section>
+<section id="purchasing-products" class="level2">
+<h2>Purchasing Products</h2>
 <p>To initiate a purchase, use the <code>store.purchase()</code> function. When called, this will submit a purchase request to the store and, when the store finishes processing the transaction, the listener function you specified in <code>store.init()</code> will be invoked.</p>
 <pre class="brush: lua;">store.purchase( productIdentifier )</pre>
 <p>As noted in <a href="#transaction-properties">Transaction Properties</a> above, <code>event.transaction</code> within the transaction listener function will receive a <code>state</code> property of <code>"purchased"</code> for a successfully processed purchase.</p>
 <p><a id="restoring"></a></p>
-<h2 id="restoring-purchased-items">Restoring Purchased Items</h2>
+</section>
+<section id="restoring-purchased-items" class="level2">
+<h2>Restoring Purchased Items</h2>
 <p>If a user wipes clean the information on a device or buys a new device, he/she needs a way to restore items previously purchased from your app (without paying for them again). The <code>store.restore()</code> function initiates this process:</p>
 <pre class="brush: lua;">store.restore()</pre>
 <p>When called, a restore process will be initiated and, during this process, the transaction listener function may be called multiple times <nobr>(once for each item)</nobr>. Using each product identifier (<code>event.transaction.productIdentifier</code>), you can then reset those products to “owned” or “unlocked” using whatever integration is suitable for your app.</p>
@@ -604,11 +630,16 @@ if ( transaction.state == "purchased" or transaction.state == "restored" ) then
 </div>
 </div>
 <p><a id="store-specific"></a></p>
-<h2 id="store-specific-functionality">Store-Specific Functionality</h2>
+</section>
+<section id="store-specific-functionality" class="level2">
+<h2>Store-Specific Functionality</h2>
 <p>Each marketplace offers some unique and potentially critical functionality which you must be aware of. The following list summarizes these, but you should always consult the documentation for <a href="../../../api/library/store/index.html">iOS</a>, <a href="../../../plugin/google-iap-billing-v2/index.html">Android</a>, and <a href="../../../plugin/amazon-iap-v3/index.html">Amazon</a> to inspect <nobr>platform-specific</nobr> functionality in detail.</p>
-<h3 id="purchasing-disabled-apple">Purchasing Disabled (Apple)</h3>
+<section id="purchasing-disabled-apple" class="level3">
+<h3>Purchasing Disabled (Apple)</h3>
 <p>iOS devices have a setting which can disable <nobr>in-app</nobr> purchasing entirely. This is commonly used to prevent children from accidentally purchasing items without permission. For Apple IAP, Solar2D provides the <a href="../../../api/library/store/canMakePurchases.html">store.canMakePurchases</a> property to check whether purchasing is enabled or disabled. You should use this to check in advance if purchasing is allowed and notify the user if it’s forbidden.</p>
-<h3 id="consuming-items-google">Consuming Items (Google)</h3>
+</section>
+<section id="consuming-items-google" class="level3">
+<h3>Consuming Items (Google)</h3>
 <p>Google IAP requires that you <strong>consume</strong> purchases to make item(s) available for purchase again. Essentially, once a product is purchased, it is considered “owned” and it cannot be purchased again. However, since you’ll almost certainly want to encourage players to buy certain items again — gem/coin packs, extra lives, etc. — you must send a consumption request to revert “owned” products to “unowned” products so that they become available for purchase again. Consuming products also discards their previous purchase data.</p>
 <p>To consume items, call <a href="../../../plugin/google-iap-billing-v2/consumePurchase.html">store.consumePurchase()</a> with the associated product identifier:</p>
 <pre class="brush: lua;">store.consumePurchase( productIdentifier )</pre>
@@ -623,9 +654,13 @@ if ( transaction.state == "purchased" or transaction.state == "restored" ) then
 <p>Note that some items are designed to be purchased only once and you should <strong>not</strong> consume them. For example, if a purchase unlocks a new world within a game or grants a permanent <nobr>power-up</nobr> to a character, it should be ineligible for future purchase.</p>
 </div>
 </div>
-<h3 id="handling-refunds-google">Handling Refunds (Google)</h3>
+</section>
+<section id="handling-refunds-google" class="level3">
+<h3>Handling Refunds (Google)</h3>
 <p>Google IAP allows for transactions to be refunded (<a href="https://support.google.com/payments/merchant/answer/7162697">instructions</a>). Upon receipt of a successful refund event, the value of <code>event.transaction.state</code> within the transaction listener function will be <code>"refunded"</code> and, in this case, you can disable the content that was refunded and/or delete it from the app locally if it was downloaded.</p>
-<h3 id="sandbox-mode-amazon">Sandbox Mode (Amazon)</h3>
+</section>
+<section id="sandbox-mode-amazon" class="level3">
+<h3>Sandbox Mode (Amazon)</h3>
 <p>Amazon lets you test <nobr>in-app</nobr> purchasing via a “sandbox” mode in which no real purchases are made. If you want to implement some form of debugging in your Solar2D app, you can use the <a href="../../../plugin/amazon-iap-v3/isSandboxMode.html">store.isSandboxMode()</a> API to check if the app is currently in testing mode.</p>
 <hr>
 <div id="footer">
@@ -637,6 +672,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

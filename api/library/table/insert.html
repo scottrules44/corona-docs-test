@@ -70,7 +70,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/table/index.html">table</a>  ▸  <a href="../../../api/library/table/insert.html">insert</a>
 </div>
-<h1 id="table.insert">table.insert()</h1>
+<section id="table.insert" class="level1">
+<h1>table.insert()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -101,22 +102,35 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Inserts a given value into a table. If a position is given, inserts the value before the element currently at that position.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">table.insert( t, value )
 
 table.insert( t, pos, value )</pre>
-<h5 id="t-required">t <sub><sup>(required)</sup></sub></h5>
+<section id="t-required" class="level5">
+<h5>t <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table to which the new value will be added. When a table has an element inserted both the size of the array and the element indices are updated.</p>
-<h5 id="pos-optional">pos <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="pos-optional" class="level5">
+<h5>pos <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The index of the table at which the new element will be inserted. The default value is the length of the table + 1 so that <code>table.insert(t,x)</code> inserts <code>x</code> at the end of table <code>t</code>.</p>
-<h5 id="value-required">value <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="value-required" class="level5">
+<h5>value <sub><sup>(required)</sup></sub></h5>
 <p>The new value to assign to be inserted into the table.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>When 2 parameters are provided, the optional parameter <code>pos</code> is ignored.</p>
 <p>Note that it is faster to use the length operator: <code>t[#t + 1] = x</code> when inserting new value to a table.</p>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local t = { 1, "jane" }
 
 table.insert( t, "doe" )
@@ -137,6 +151,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

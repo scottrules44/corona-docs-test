@@ -76,7 +76,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/media/index.html">Graphics/Audio/Animation</a>
 </div>
-<h1 id="display-objects-images-text-shapes-etc.">Display Objects — Images, Text, Shapes, etc.</h1>
+<section id="display-objects-images-text-shapes-etc." class="level1">
+<h1>Display Objects — Images, Text, Shapes, etc.</h1>
 <p>Corona <strong>display objects</strong> encompass a wide range of visual objects that you place on the stage or within display groups. These include images, text, shapes, lines, animated sprites, and more.</p>
 <div class="guides-toc">
 <ul>
@@ -91,7 +92,8 @@
 </ul>
 </div>
 <p><a id="creating"></a></p>
-<h2 id="creating-display-objects">Creating Display Objects</h2>
+<section id="creating-display-objects" class="level2">
+<h2>Creating Display Objects</h2>
 <p>Display objects are easily created using methods from Corona’s <a href="../../../api/library/display/index.html">display</a> library:</p>
 <div class="inner-table">
 <table>
@@ -175,7 +177,9 @@ Notes
 </ul>
 </div>
 <p><a id="propertiesmethods"></a></p>
-<h2 id="properties-and-methods">Properties and Methods</h2>
+</section>
+<section id="properties-and-methods" class="level2">
+<h2>Properties and Methods</h2>
 <p>Display objects are all first-class citizens. You can move them, rotate them, animate (transition) them, and much more using <a href="../../../api/type/DisplayObject/index.html">common properties and methods</a>.</p>
 <p><strong>Properties</strong> are accessed via the <strong>dot operator</strong>. For example, you can change the alpha of an object to 50% by coding:</p>
 <pre class="brush: lua;">local myImage = display.newImage( "image.png" )
@@ -184,16 +188,21 @@ myImage.alpha = 0.5  --change the alpha property</pre>
 <pre class="brush: lua;">local myImage = display.newImage( "image.png" )
 myImage:translate( 10, 50 )  --move the object 10 pixels right and 50 pixels down.</pre>
 <p><a id="hierarchy"></a></p>
-<h2 id="display-hierarchy">Display Hierarchy</h2>
+</section>
+<section id="display-hierarchy" class="level2">
+<h2>Display Hierarchy</h2>
 <p>The screen/display in Corona consists of the <a href="../../../api/type/StageObject/index.html">stage</a> and an optional hierarchy of child <a href="../../../api/type/GroupObject/index.html">display groups</a>. A display group is a special kind of display object that can contain child objects. This makes it possible to organize your display objects into groups and build relationships between other groups. Please refer to the <a href="../../../guide/graphics/group.html">Group Programming</a> guide for more information on this topic.</p>
 <p>Display objects are added to the stage by default. However, you’ll usually need to insert a display object into a specific display group. This is accomplished through two methods:</p>
-<h3 id="inline-method">Inline Method</h3>
+<section id="inline-method" class="level3">
+<h3>Inline Method</h3>
 <p>As a convenience, most display objects accept a display group as the first argument to the API call. This will insert the object into that group.</p>
 <pre class="brush: lua;">local myGroup = display.newGroup()
 
 --create object in 'myGroup'
 local myImage = display.newImage( myGroup, "image.png" )</pre>
-<h3 id="direct-method">Direct Method</h3>
+</section>
+<section id="direct-method" class="level3">
+<h3>Direct Method</h3>
 <p>The direct method inserts a display object into the specified group. This method can also be used to move an object from one group to another. Note that an object can’t exist in two groups at once, so inserting it into a different group also removes it from its current group.</p>
 <pre class="brush: lua;">local myGroup = display.newGroup()
 
@@ -209,7 +218,10 @@ Note
 <p>Although display groups are essentially tables, Lua library functions like <code>table.insert()</code> and <code>ipairs()</code> are <strong>not</strong> compatible with groups. In addition, you cannot get the number of children in a display group using <code>#myGroup</code>. Instead, use <code>myGroup.numChildren</code>.</p>
 </div>
 <p><a id="objectorder"></a></p>
-<h2 id="object-order">Object Order</h2>
+</section>
+</section>
+<section id="object-order" class="level2">
+<h2>Object Order</h2>
 <p>Within a particular display group, objects are drawn in back-to-front order. Thus, the <strong>first</strong> object you create will reside <strong>behind</strong> objects created later.</p>
 <p>Fortunately, the ordering of display objects is not set in stone. You can change the relative ordering of an object at any time. The order in which a display group’s children are drawn is determined by the order of the array. Using the <code>group:insert()</code> method, you can reorder the position of an object within its parent group.</p>
 <pre class="brush: lua;">local square = display.newRect( myGroup, 0, 0, 100, 100 )  --red square is at the bottom
@@ -230,11 +242,15 @@ parent:insert( square )
 parent:insert( 1, circle )</pre>
 <p>In addition, objects can also be moved within a group using the <code>object:toBack</code> and <code>object:toFront</code> methods.</p>
 <p><a id="screenupdates"></a></p>
-<h2 id="screen-updates">Screen Updates</h2>
+</section>
+<section id="screen-updates" class="level2">
+<h2>Screen Updates</h2>
 <p>The basic drawing model involves a cycle of executing Lua code and rendering objects in the display hierarchy. During this cycle, the screen only updates when objects in the display change. These changes occur by adding, removing, or changing properties of the child display objects.</p>
 <p>The screen never updates while a block of Lua code is executing. Therefore, if you modify a display object multiple times in a code block — updating the <code>x</code> position, for example — only the <strong>last</strong> change (the final <code>x</code> setting) will reflect when the screen updates.</p>
 <p><a id="reference"></a></p>
-<h2 id="object-references">Object References</h2>
+</section>
+<section id="object-references" class="level2">
+<h2>Object References</h2>
 <p>Because objects can be reordered in the hierarchy, using integer indices to access display group children is fragile. If you move a child above its sibling, all integer indices in your code must be updated.</p>
 <p>In most cases, it’s easiest to refer to a display object by its variable name. Variables can be named whatever you wish <strong>except</strong> for names that begin with a number or names that are reserved by Lua or Corona. These naming rules apply to all variables in Lua, so please commit them to memory.</p>
 <pre class="brush: lua;">local yellowDuck = display.newText( "Quack!", 50, 50, "Arial", 60 )  --OK!
@@ -269,10 +285,13 @@ local redSquares = { redSquare1, redSquare2, redSquare3 }</pre>
 end</pre>
 <p>Note that if you use this method to store/organize display objects, you <strong>must</strong> remove the references from the table when the objects are cleared from the screen.</p>
 <p><a id="remove"></a></p>
-<h2 id="removing-display-objects">Removing Display Objects</h2>
+</section>
+<section id="removing-display-objects" class="level2">
+<h2>Removing Display Objects</h2>
 <p>Because devices have limited memory, it’s important to remove display objects from the display hierarchy when you no longer need them. This helps overall system performance by reducing memory consumption (especially texture memory) as well as eliminating unnecessary screen drawing.</p>
 <p>There are two basic methods to remove display objects from the display hierarchy.</p>
-<h3 id="direct-removal">Direct Removal</h3>
+<section id="direct-removal" class="level3">
+<h3>Direct Removal</h3>
 <p>This method targets a particular display object and removes it from the display.</p>
 <pre class="brush: lua;">display.remove( myObject )
 
@@ -296,7 +315,9 @@ myObject = nil  --set reference to nil!
 
 myGroup:remove( myObject )
 myObject = nil  --set reference to nil!</pre>
-<h3 id="group-removal">Group Removal</h3>
+</section>
+<section id="group-removal" class="level3">
+<h3>Group Removal</h3>
 <p>This method removes all children in a display group — all you need to do is remove the display group itself and then <code>nil</code> its reference.</p>
 <pre class="brush: lua;">display.remove( myGroup )
 myGroup = nil
@@ -317,7 +338,10 @@ Important
 </ul>
 </div>
 <p><a id="technotes"></a></p>
-<h2 id="technical-notes">Technical Notes</h2>
+</section>
+</section>
+<section id="technical-notes" class="level2">
+<h2>Technical Notes</h2>
 <p>Near the beginning of this guide, we mentioned that display objects behave “essentially” like Lua tables. An exception to this rule is that you cannot set the metatables of display objects. This is due to the nature of our C++/Lua integration in this particular case.</p>
 <p>Corona display objects are native C++ objects internally. Lua implements binding of native pointers with “userdata,” which sets the metatable. Userdata metatables cannot be replaced by Lua code; this is a measure defined by Lua itself.</p>
 <p>Normally, native objects bound to Lua in this way do not behave like tables. There are several examples of this in Corona. Such objects may have properties and/or methods, but they are not extensible. In contrast, Corona display objects do behave like tables — this is a convenience feature, and the alternative would have been a field of “userdata” providing access to custom data associated with the display object. Merging this functionality directly into the display object is easier and more extensible for the end user.</p>
@@ -332,6 +356,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

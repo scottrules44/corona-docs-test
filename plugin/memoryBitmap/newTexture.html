@@ -71,7 +71,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/memoryBitmap/index.html">memoryBitmap</a>  ▸  <a href="../../plugin/memoryBitmap/newTexture.html">newTexture</a>
 </div>
-<h1 id="memorybitmap.newtexture">memoryBitmap.newTexture()</h1>
+<section id="memorybitmap.newtexture" class="level1">
+<h1>memoryBitmap.newTexture()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -98,7 +99,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Creates a <a href="../../plugin/memoryBitmap/type/MemoryBitmap/index.html">MemoryBitmap</a> object which allows you to access an <nobr>in-memory</nobr> texture.</p>
 <div class="docs-tip-outer docs-tip-color-alert">
 <div class="docs-tip-inner-left">
@@ -110,16 +112,27 @@
 <p>Created textures are subject to manual texture memory management. See the <a href="../../guide/graphics/textureManagement.html">Texture Loading/Management</a> guide for more information.</p>
 </div>
 </div>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">memoryBitmap.newTexture( params )</pre>
-<h5 id="params-required">params <sub><sup>(required)</sup></sub></h5>
+<section id="params-required" class="level5">
+<h5>params <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing the required parameters for the new object — see the next section for details.</p>
-<h2 id="parameter-reference">Parameter Reference</h2>
-<h5 id="width-required">width <sub><sup>(required)</sup></sub></h5>
+</section>
+</section>
+<section id="parameter-reference" class="level2">
+<h2>Parameter Reference</h2>
+<section id="width-required" class="level5">
+<h5>width <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Pixel width of the new bitmap. Note that some systems require bitmap widths to be divisible by 4 in order to be stored in the GPU. In practice, this means that <code>width</code> should be divisible by 4 if <code>format</code> is <code>"rgb"</code> or <code>"mask"</code>.</p>
-<h5 id="height-required">height <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="height-required" class="level5">
+<h5>height <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> Pixel height of the new bitmap.</p>
-<h5 id="format-optional">format <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="format-optional" class="level5">
+<h5>format <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Pixel format for the new bitmap. This should be one of the following values:</p>
 <ul>
 <li><code>"rgba"</code> (default) — <nobr>4-channel</nobr> <nobr>RGB+A</nobr> bitmap.</li>
@@ -136,6 +149,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -75,7 +75,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/display/index.html">display</a>  ▸  <a href="../../../api/library/display/newRect.html">newRect</a>
 </div>
-<h1 id="display.newrect">display.newRect()</h1>
+<section id="display.newrect" class="level1">
+<h1>display.newRect()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -110,31 +111,52 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Creates a rectangle object. The local origin is at the center of the rectangle and the <a href="../../../guide/graphics/transform-anchor.html">anchor point</a> is initialized to this local origin.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">display.newRect( [parent,] x, y, width, height )</pre>
-<h5 id="parent-optional">parent <sub><sup>(optional)</sup></sub></h5>
+<section id="parent-optional" class="level5">
+<h5>parent <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/GroupObject/index.html">GroupObject</a>.</em> An optional display group in which to insert the rectangle.</p>
-<h5 id="x-y-required">x / y <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="x-y-required" class="level5">
+<h5>x / y <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The <strong>x</strong> and <strong>y</strong> coordinates for the center of the rectangle.</p>
-<h5 id="width-height-required">width / height <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="width-height-required" class="level5">
+<h5>width / height <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Width and height of the rectangle.</p>
-<h2 id="properties">Properties</h2>
+</section>
+</section>
+<section id="properties" class="level2">
+<h2>Properties</h2>
 <p><em>(Inherits properties from <a href="../../../api/type/ShapeObject/index.html">ShapeObject</a>)</em></p>
 <p>Shape objects have a <code>path</code> property that exposes properties of the path. The first corner is at the top-left and they go around in counter-clockwise order.</p>
-<h5 id="object.path.x1-object.path.y1">object.path.x1 / object.path.y1</h5>
+<section id="object.path.x1-object.path.y1" class="level5">
+<h5>object.path.x1 / object.path.y1</h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The top-left corner. By default, <code>(0,0)</code>.</p>
-<h5 id="object.path.x2-object.path.y2">object.path.x2 / object.path.y2</h5>
+</section>
+<section id="object.path.x2-object.path.y2" class="level5">
+<h5>object.path.x2 / object.path.y2</h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The bottom-left corner. By default, <code>(0,0)</code>.</p>
-<h5 id="object.path.x3-object.path.y3">object.path.x3 / object.path.y3</h5>
+</section>
+<section id="object.path.x3-object.path.y3" class="level5">
+<h5>object.path.x3 / object.path.y3</h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The bottom-right corner. By default, <code>(0,0)</code>.</p>
-<h5 id="object.path.x4-object.path.y4">object.path.x4 / object.path.y4</h5>
+</section>
+<section id="object.path.x4-object.path.y4" class="level5">
+<h5>object.path.x4 / object.path.y4</h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The top-right corner. By default, <code>(0,0)</code>.</p>
 <figure>
 <img src="../../../images/sdk/graphics/rect-3D.png" alt="Quadrilateral Distortion" /><figcaption>Quadrilateral Distortion</figcaption>
 </figure>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local myRectangle = display.newRect( 0, 0, 150, 50 )
 myRectangle.strokeWidth = 3
 myRectangle:setFillColor( 0.5 )
@@ -149,6 +171,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

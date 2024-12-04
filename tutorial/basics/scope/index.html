@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/basics/index.html">Basics</a>
 </div>
-<h1 id="scope-for-beginners">Scope for Beginners</h1>
+<section id="scope-for-beginners" class="level1">
+<h1>Scope for Beginners</h1>
 <p>As a new — or relatively new — Lua/Solar2D programmer, are you confused by console errors like this?</p>
 <pre class="brush: lua;">Runtime error /Users/yourname/Projects/AwesomeGame\menu.lua:4: attempt to index global 'button' (a nil value)
 stack traceback:
@@ -75,9 +76,12 @@ stack traceback:
     ?: in function 'gotoScene'
     /Users/yourname/Projects/AwesomeGame\main.lua:16: in main chunk</pre>
 <p>If so, then you need to learn a very important programming concept known as <strong>scope</strong>. Scope impacts Lua’s ability to “see” variables <nobr>(as in the error above)</nobr> as well your ability to manage where functions exist in relation to other functions and variables.</p>
-<h2 id="scope-defined">Scope Defined</h2>
+<section id="scope-defined" class="level2">
+<h2>Scope Defined</h2>
 <p>When you think of terms like “telescope” or “microscope,” you think of devices that help you see, and see things within a limit — for instance, very small things in a microscope. In programming terms, scope is used to define what parts of your code can “see” variables, objects, and functions that you have created. In Lua, there are two main scope controls: <strong>global</strong> and <strong>local</strong>.</p>
-<h2 id="global">Global</h2>
+</section>
+<section id="global" class="level2">
+<h2>Global</h2>
 <div class="float-right" style="max-width: 130px; margin-bottom: 16px; clear: both;">
 <p><img src="../../../images/docs/warning-sign.png" /></p>
 </div>
@@ -94,7 +98,9 @@ stack traceback:
 <p>The global scope is discussed in more detail in the <a href="../../../tutorial/basics/globals/index.html">Goodbye Globals!</a> tutorial, along with a convenient method to create/access <nobr>pseudo-global</nobr> variables and functions.</p>
 </div>
 </div>
-<h2 id="local">Local</h2>
+</section>
+<section id="local" class="level2">
+<h2>Local</h2>
 <p>In Lua, the preferred scope is <strong>local</strong> which you control by using the <code>local</code> declaration before you define a variable/function. For example:</p>
 <pre class="brush: lua;">local someVariable</pre>
 <pre class="brush: lua;">local function someFunction()
@@ -131,7 +137,9 @@ print( sum )  -- This does NOT work (prints "nil" meaning it's unknown to Lua)</
 end</pre>
 <p>Like the first example, <code>sum</code> is local to <code>addTwoNumbers()</code>. That lets us add two numbers, and it’s also visible inside the block started by <nobr><code>if sum &lt; 10 then</code></nobr>. However, inside of that <nobr><code>if-then</code></nobr> block, another local variable (<code>secondSum</code>) is created, and that variable becomes local <strong>only</strong> to the <nobr><code>if-then</code></nobr> block. So, the attempt to print <code>secondSum</code> <strong>outside</strong> of the <nobr><code>if-then</code></nobr> block results in <code>nil</code> because <code>secondSum</code> doesn’t exist at that point in execution.</p>
 </div>
-<h2 id="index-variables-in-loops">Index Variables in Loops</h2>
+</section>
+<section id="index-variables-in-loops" class="level2">
+<h2>Index Variables in Loops</h2>
 <p>Consider a block of code like this:</p>
 <pre class="first-line: 1; gutter: true; brush: lua;">local i = 999
 
@@ -141,7 +149,9 @@ end
 
 print( i )  -- prints 999</pre>
 <p>Here, a local variable <code>i</code> is set to <code>999</code> on line 1. In addition, a <strong>loop index variable</strong> of <code>i</code> (line 3) is used, but this <code>i</code> is local <strong>only</strong> to the <code>for</code> loop. As the loop executes, its value represents the values <nobr><code>1</code>-<code>10</code></nobr> and that is reflected by the <nobr><code>print( i )</code></nobr> command on line 4. When the loop ends, this <code>i</code> will forget its final value from the loop and return to its previous definition (usually <code>nil</code>). Following that, the local variable <code>i</code> which was declared <strong>before</strong> the <code>for</code> loop is printed to the console (<nobr><code>print( i )</code> on line 7</nobr>) with the value of <code>999</code>. This is because for loops — just like functions — are blocks and they adhere to the same scope rules associated with blocks.</p>
-<h2 id="conclusion">Conclusion</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
 <p>Hopefully, this tutorial has illustrated that scope, as an overall concept, is relatively straightforward. When you use the keyword <code>local</code>, the variable can only be accessed at that block level or within any child blocks. With that in mind, if your variables or functions need to be seen at a wider level, simply move them above/outside the block or define them near the top of the module.</p>
 <hr>
 <div id="footer">
@@ -153,6 +163,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

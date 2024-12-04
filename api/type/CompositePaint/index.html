@@ -72,7 +72,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/CompositePaint/index.html">CompositePaint</a>
 </div>
-<h1 id="compositepaint">CompositePaint</h1>
+<section id="compositepaint" class="level1">
+<h1>CompositePaint</h1>
 <blockquote>
 <table>
 <tbody>
@@ -107,27 +108,44 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Composite paints contain multiple images, thus enabling multi-texturing.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">local paint = {
     type = "composite",
     paint1 = ,
     paint2 =
 }</pre>
-<h5 id="type-required">type <sub><sup>(required)</sup></sub></h5>
+<section id="type-required" class="level5">
+<h5>type <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> String value of <code>"composite"</code>.</p>
-<h5 id="paint1-required">paint1 <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="paint1-required" class="level5">
+<h5>paint1 <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table that specifies a <a href="../../../api/type/BitmapPaint/index.html">BitmapPaint</a>. See <strong>Limitations</strong> below.</p>
-<h5 id="paint2-required">paint2 <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="paint2-required" class="level5">
+<h5>paint2 <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table that specifies a <a href="../../../api/type/BitmapPaint/index.html">BitmapPaint</a>. See <strong>Limitations</strong> below.</p>
-<h5 id="basedir-optional">baseDir <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="basedir-optional" class="level5">
+<h5>baseDir <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Constant.html">Constant</a>.</em> Specifies the base directory where filename is located. Options include <code>system.ResourceDirectory</code>, <code>system.DocumentsDirectory</code>, <code>system.TemporaryDirectory</code> and <code>system.CachesDirectory</code>. Default is <code>system.ResourceDirectory</code>.</p>
-<h2 id="limitations">Limitations</h2>
+</section>
+</section>
+<section id="limitations" class="level2">
+<h2>Limitations</h2>
 <p>Because of the way multi-texturing works, both <code>paint1</code> and <code>paint2</code> will be rendered using the same texture coordinates. Because <a href="../../../api/type/GradientPaint/index.html">GradientPaints</a> and <a href="../../../api/type/ImageSheetPaint/index.html">ImageSheetPaints</a> use different texture coordinates from plain <a href="../../../api/type/BitmapPaint/index.html">BitmapPaints</a>, you will get unexpected results unless you use plain <a href="../../../api/type/BitmapPaint/index.html">BitmapPaints</a> for <code>paint1</code> and <code>paint2</code>.</p>
-<h2 id="properties">Properties</h2>
+</section>
+<section id="properties" class="level2">
+<h2>Properties</h2>
 <p><em>(Inherits properties from <a href="../../../api/type/Paint/index.html">Paint</a>)</em></p>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local paint = {
     type = "composite",
     paint1 = { type="image", filename="wood.png" },
@@ -147,6 +165,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -64,7 +64,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/SnapshotObject/index.html">SnapshotObject</a>  ▸  <a href="../../../api/type/SnapshotObject/canvasMode.html">canvasMode</a>
 </div>
-<h1 id="object.canvasmode">object.canvasMode</h1>
+<section id="object.canvasmode" class="level1">
+<h1>object.canvasMode</h1>
 <blockquote>
 <table>
 <tbody>
@@ -99,14 +100,17 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>The canvas mode controls what happens to the children of the snapshot’s <a href="../../../api/type/SnapshotObject/canvas.html">canvas</a>.</p>
 <p>This mode comes into play when the canvas is invalidated (i.e. calling <code>snapshot:invalidate("canvas")</code>). On the next render pass, the children will be removed from the canvas. The mode controls where those children go:</p>
 <ul>
 <li><code>"append"</code> — This is the default. The children will be appended to the snapshot’s <a href="../../../api/type/SnapshotObject/group.html">group</a> on the next render pass.</li>
 <li><code>"discard"</code> — The children will be discarded on the next render pass.</li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">snapshot.canvasMode</pre>
 <hr>
 <div id="footer">
@@ -118,6 +122,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

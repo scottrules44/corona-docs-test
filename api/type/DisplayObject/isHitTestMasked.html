@@ -64,7 +64,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/DisplayObject/index.html">DisplayObject</a>  ▸  <a href="../../../api/type/DisplayObject/isHitTestMasked.html">isHitTestMasked</a>
 </div>
-<h1 id="object.ishittestmasked">object.isHitTestMasked</h1>
+<section id="object.ishittestmasked" class="level1">
+<h1>object.isHitTestMasked</h1>
 <blockquote>
 <table>
 <tbody>
@@ -95,11 +96,14 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Limits touch events to the masked portion of the object. This property can be read or set.</p>
 <p>By default this property is <code>true</code>, meaning touch events for the object only occur on the masked portion of the object. Setting this property to <code>false</code> generates touch events when a touch occurs on any portion of the object.</p>
 <p>Currently, for an image mask created by <a href="../../../api/library/graphics/newMask.html">graphics.newMask()</a>, the touch sensitive area corresponds to the image bounds, i.e. it is rectangular regardless of the image contents.</p>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">-- Create and position image to be masked
 local image = display.newImageRect( "image.png", 768, 1024 )
 image:translate( display.contentCenterX, display.contentCenterY )
@@ -124,6 +128,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

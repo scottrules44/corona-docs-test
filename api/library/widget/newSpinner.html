@@ -90,7 +90,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/widget/index.html">widget</a>  ▸  <a href="../../../api/library/widget/newSpinner.html">newSpinner</a>
 </div>
-<h1 id="widget.newspinner">widget.newSpinner()</h1>
+<section id="widget.newspinner" class="level1">
+<h1>widget.newSpinner()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -121,52 +122,94 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Creates a <a href="../../../api/type/SpinnerWidget/index.html">SpinnerWidget</a> object.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li>To conserve texture memory, a <a href="../../../api/type/SpinnerWidget/index.html">SpinnerWidget</a> object can only be created from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>.</li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">widget.newSpinner( options )</pre>
 <p>This function takes a single argument, <code>options</code>, which is a table that accepts the following parameters:</p>
-<h5 id="id-optional">id <sub><sup>(optional)</sup></sub></h5>
+<section id="id-optional" class="level5">
+<h5>id <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> An optional identification to assign to the spinner. Default is <code>widget_spinner</code>.</p>
-<h5 id="x-y-optional">x, y <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="x-y-optional" class="level5">
+<h5>x, y <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Coordinates for the widget’s <strong>x</strong> and <strong>y</strong> center point. These values will be overridden by <code>left</code> and <code>top</code> if those values are defined.</p>
-<h5 id="left-top-optional">left, top <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="left-top-optional" class="level5">
+<h5>left, top <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The left and top position where the widget will be created. If specified, these values override the <code>x</code> and <code>y</code> parameters.</p>
-<h5 id="width-height-optional">width, height <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="width-height-optional" class="level5">
+<h5>width, height <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> The width and height of each frame from the <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>. If you are using the default theme, these values are set automatically.</p>
-<h2 id="methods">Methods</h2>
-<h4 id="objectstartapi.type.spinnerwidget.start"><a href="../../../api/type/SpinnerWidget/start.html">object:start()</a></h4>
-<h4 id="objectstopapi.type.spinnerwidget.stop"><a href="../../../api/type/SpinnerWidget/stop.html">object:stop()</a></h4>
+</section>
+</section>
+<section id="methods" class="level2">
+<h2>Methods</h2>
+<section id="objectstartapi.type.spinnerwidget.start" class="level4">
+<h4><a href="../../../api/type/SpinnerWidget/start.html">object:start()</a></h4>
+</section>
+<section id="objectstopapi.type.spinnerwidget.stop" class="level4">
+<h4><a href="../../../api/type/SpinnerWidget/stop.html">object:stop()</a></h4>
 <p><a id="single"></a></p>
-<h2 id="single-frame-construction">Single Frame Construction</h2>
+</section>
+</section>
+<section id="single-frame-construction" class="level2">
+<h2>Single Frame Construction</h2>
 <p>A basic spinner can be built using one frame from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>. The image will rotate by a specified delta angle on each increment of the specified time.</p>
 <p><img src="../../../images/simulator/widget-spinner-single.png" /></p>
-<h5 id="sheet-required">sheet <sub><sup>(required)</sup></sub></h5>
+<section id="sheet-required" class="level5">
+<h5>sheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> The <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> object for the spinner.</p>
-<h5 id="startframe-required">startFrame <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="startframe-required" class="level5">
+<h5>startFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The starting frame index of the spinner animation sequence (the index of the sole frame from the sheet).</p>
-<h5 id="deltaangle-optional">deltaAngle <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="deltaangle-optional" class="level5">
+<h5>deltaAngle <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The delta angle by which the spinner rotates per time increment (see <code>incrementEvery</code> below). For example, if you specify <code>30</code>, the spinner will rotate 30 degrees per increment.</p>
-<h5 id="incrementevery-optional">incrementEvery <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="incrementevery-optional" class="level5">
+<h5>incrementEvery <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The delay for each rotation iteration of the spinner, in milliseconds.</p>
 <p><a id="multi"></a></p>
-<h2 id="multi-frame-construction">Multi-Frame Construction</h2>
+</section>
+</section>
+<section id="multi-frame-construction" class="level2">
+<h2>Multi-Frame Construction</h2>
 <p>An animated spinner can be built using multiple frames from an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a>. This spinner type will loop through the frame sequence over a specified time.</p>
 <p><img src="../../../images/simulator/widget-spinner-multi.png" /></p>
-<h5 id="sheet-required-1">sheet <sub><sup>(required)</sup></sub></h5>
+<section id="sheet-required-1" class="level5">
+<h5>sheet <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/ImageSheet/index.html">ImageSheet</a>.</em> The <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> object for the spinner.</p>
-<h5 id="startframe-required-1">startFrame <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="startframe-required-1" class="level5">
+<h5>startFrame <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The starting frame index of the spinner animation sequence (the first frame in its animation sequence).</p>
-<h5 id="count-required">count <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="count-required" class="level5">
+<h5>count <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The total frame count of the spinner animation sequence.</p>
-<h5 id="time-optional">time <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="time-optional" class="level5">
+<h5>time <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The time for one complete loop of the spinner animation, in milliseconds. Default is <code>1000</code>.</p>
-<h2 id="examples">Examples</h2>
-<h5 id="single-frame">Single Frame</h5>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="single-frame" class="level5">
+<h5>Single Frame</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Image sheet options and declaration
@@ -193,7 +236,9 @@ local spinner = widget.newSpinner(
 )
 
 spinner:start()</pre>
-<h5 id="multi-frame">Multi-Frame</h5>
+</section>
+<section id="multi-frame" class="level5">
+<h5>Multi-Frame</h5>
 <pre class="brush: lua;">local widget = require( "widget" )
 
 -- Image sheet options and declaration
@@ -230,6 +275,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

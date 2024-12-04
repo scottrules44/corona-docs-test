@@ -82,7 +82,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/programming/index.html">Getting Started</a>
 </div>
-<h1 id="chapter-2-upward-onward">Chapter 2 — Upward &amp; Onward</h1>
+<section id="chapter-2-upward-onward" class="level1">
+<h1>Chapter 2 — Upward &amp; Onward</h1>
 <div class="walkthrough-nav">
 <div class="walkthrough-nav-upper-right">
 <p><strong>⟨</strong> <a href="../../../guide/programming/01/index.html">Previous</a> <em>|</em> <a href="../../../guide/programming/03/index.html">Next</a> <strong>⟩</strong></p>
@@ -98,7 +99,8 @@
 </ul>
 </div>
 <p><a id="planning"></a></p>
-<h2 id="design-document">Design Document</h2>
+<section id="design-document" class="level2">
+<h2>Design Document</h2>
 <div class="float-right" style="max-width: 240px; margin-bottom: 16px; clear: both;">
 <p><img src="../../../images/docs/sbs-starexplorer-0.png" /></p>
 </div>
@@ -132,7 +134,8 @@
 </table>
 </div>
 <p>Now we have a very basic outline for our game. Once the design document is created, you’ll be surprised at how quickly it grows!</p>
-<h3 id="project-setup">Project Setup</h3>
+<section id="project-setup" class="level3">
+<h3>Project Setup</h3>
 <p>With these basic design goals in mind, start a new project just like you did in the previous chapter:</p>
 <ol type="1">
 <li><p>From the <strong>Simulator</strong>, select <strong>New Project…</strong> from the <strong>File</strong> menu.</p></li>
@@ -142,9 +145,13 @@
 <li><p>Locate and open the project folder.</p></li>
 </ol>
 <p><a id="settings"></a></p>
-<h2 id="settings-and-configuration">Settings and Configuration</h2>
+</section>
+</section>
+<section id="settings-and-configuration" class="level2">
+<h2>Settings and Configuration</h2>
 <p>In addition to <code>main.lua</code>, there are two important files which configure your app to work correctly on multiple types of devices: <code>build.settings</code> and <code>config.lua</code>.</p>
-<h3 id="build-settings">Build Settings</h3>
+<section id="build-settings" class="level3">
+<h3>Build Settings</h3>
 <p>The <code>build.settings</code> file provides real devices <nobr>(phones, tablets, etc.)</nobr> with details they need regarding your app. This includes the supported orientations for the app, names of icon files, plugins to include, special information required by devices, and more.</p>
 <p>Using your text editor, locate and open the <code>build.settings</code> file within your project folder. It will contain a lot of information, but let’s focus on the highlighted block of code:</p>
 <pre class="highlight: [8,9,10,11,12,13,14,15]; first-line: 6; gutter: true; brush: lua;">settings =
@@ -175,7 +182,9 @@
 </div>
 </div>
 <p>There are several additional things which can be included inside the <code>build.settings</code> file, but in the interest of keeping this guide as straightforward as possible, let’s move on.</p>
-<h3 id="configuration-options">Configuration Options</h3>
+</section>
+<section id="configuration-options" class="level3">
+<h3>Configuration Options</h3>
 <p>The <code>config.lua</code> file contains app configuration settings. This is where we specify what content resolution the app will run at, the content scale mode, how <nobr>high-resolution</nobr> devices should be handled, etc.</p>
 <p>Using your text editor, locate and open the <code>config.lua</code> file within your project folder and inspect the following highlighted lines:</p>
 <pre class="highlight: [8,9,10,11,12]; first-line: 6; gutter: true; brush: lua;">application =
@@ -246,16 +255,22 @@
 </div>
 </div>
 <p><a id="gamesetup"></a></p>
-<h2 id="game-foundation">Game Foundation</h2>
+</section>
+</section>
+<section id="game-foundation" class="level2">
+<h2>Game Foundation</h2>
 <p>Now that you understand basic settings and configuration, let’s continue with creating the game.</p>
-<h3 id="physics-setup">Physics Setup</h3>
+<section id="physics-setup" class="level3">
+<h3>Physics Setup</h3>
 <p>Like the <code>BalloonTap</code> project, this game will use the physics engine, so let’s configure it right from the beginning. If you’re using physics, it’s often best to include your basic physics setup code early in the program.</p>
 <p>Using your chosen text editor, open the <code>main.lua</code> file within your project folder and type these commands:</p>
 <pre class="highlight: [7,8,9]; first-line: 7; gutter: true; brush: lua;">local physics = require( "physics" )
 physics.start()
 physics.setGravity( 0, 0 )</pre>
 <p>As you can see, after loading and starting the physics engine, we set <strong>gravity</strong> values. By default, the physics engine simulates standard Earth gravity which causes objects to fall toward the bottom of the screen. To change this, we use the <code>physics.setGravity()</code> command which can simulate gravity in both the horizontal (<strong>x</strong>) or vertical (<strong>y</strong>) directions. Since this game takes place in outer space, we are going to assume that gravity does not apply. Thus, we set both values to <code>0</code>.</p>
-<h3 id="random-seed">Random Seed</h3>
+</section>
+<section id="random-seed" class="level3">
+<h3>Random Seed</h3>
 <p>Our game will randomly spawn asteroids outside of the screen edges, so we’ll be implementing random number generation further along in this project. First, though, we need to set the “seed” for the <nobr>pseudo-random</nobr> number generator. On some operating systems, this generator begins with the same initial value which causes random numbers to repeat in a predictable pattern. The following addition to our code ensures that the generator always starts with a different seed.</p>
 <pre class="highlight: [11,12]; first-line: 7; gutter: true; brush: lua;">local physics = require( "physics" )
 physics.start()
@@ -283,7 +298,9 @@ math.randomseed( os.time() )</pre>
 <p>When you intend to generate random numbers in an app, seed the <nobr>pseudo-random</nobr> number generator just once, typically within <code>main.lua</code>. Doing so multiple times is redundant and unnecessary.</p>
 </div>
 </div>
-<h3 id="including-images">Including Images</h3>
+</section>
+<section id="including-images" class="level3">
+<h3>Including Images</h3>
 <p>Initially we’ll need just two visual assets for this project. As before, they should be placed within your <code>StarExplorer</code> project folder.</p>
 <div class="inner-table">
 <table>
@@ -318,7 +335,9 @@ math.randomseed( os.time() )</pre>
 <p>You can use our images as a starting point, available along with this chapter’s <a href="https://github.com/coronalabs/GettingStarted02/archive/master.zip">source files</a>.</p>
 </div>
 </div>
-<h3 id="loading-image-sheets">Loading Image Sheets</h3>
+</section>
+<section id="loading-image-sheets" class="level3">
+<h3>Loading Image Sheets</h3>
 <p>If you’ve used another game development platform, you may be familiar with the term “sprite sheet” or “texture atlas.” In Solar2D, it is called an <strong>image sheet</strong> and it allows you to load multiple images/frames from a single larger image file. Image sheets are also used for animated sprites, where frames for the sprite are pulled from the sheet and assembled into an animated sequence.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -403,7 +422,9 @@ local sheetOptions =
 <pre class="highlight: [51]; first-line: 49; gutter: true; brush: lua;">    },
 }
 local objectSheet = graphics.newImageSheet( "gameObjects.png", sheetOptions )</pre>
-<h3 id="initializing-variables">Initializing Variables</h3>
+</section>
+<section id="initializing-variables" class="level3">
+<h3>Initializing Variables</h3>
 <p>In larger programs, it’s a good idea to declare all of the variables that are used throughout the file near the beginning. This helps us stay organized and provides a quick reference if we forget what the name of a variable was and/or if the variable had an initial value.</p>
 <p>Following the image sheet options and setup, add these lines:</p>
 <pre class="first-line: 53; gutter: true; brush: lua;">-- Initialize variables
@@ -436,7 +457,9 @@ local scoreText</pre>
 </div>
 </div>
 <p>Great! With our initial variables set, we can begin loading objects onto the screen.</p>
-<h3 id="using-display-groups">Using Display Groups</h3>
+</section>
+<section id="using-display-groups" class="level3">
+<h3>Using Display Groups</h3>
 <p>In the previous chapter, we simply placed objects on the <strong>stage</strong> — this is essentially the core layer/group in which all display objects exist. In this game, we’ll insert objects into distinct <strong>display groups</strong> for more controlled layering and organization. Basically, a display group is a special kind of display object which can contain other display objects and even other display groups. Imagine it as a blank sheet of paper on which you “draw” images, text, shapes, and animated sprites.</p>
 <p>With this in mind, let’s create three initial display groups. Following the lines you’ve already entered, add these commands:</p>
 <pre class="first-line: 65; gutter: true; brush: lua;">-- Set up display groups
@@ -449,7 +472,9 @@ Note
 </div>
 <p>The most important aspect here is the <strong>order</strong> in which the groups are created. In the previous chapter, you learned that images loaded in succession will stack from back to front in terms of visual layering. This same principle applies to display groups — not only will display objects inserted into a display group stack/layer in this <nobr>back-to-front</nobr> manner, but you can also layer display groups one atop the other by creating them in similar succession.</p>
 </div>
-<h3 id="loading-the-background">Loading the Background</h3>
+</section>
+<section id="loading-the-background" class="level3">
+<h3>Loading the Background</h3>
 <p>As in the previous project, we’ll load the background image first:</p>
 <div class="float-right" style="max-width: 240px; margin-top: 14px; margin-bottom: 16px; clear: both;">
 <p><img src="../../../images/docs/sbs-starexplorer-12.png" /></p>
@@ -468,7 +493,9 @@ background.y = display.contentCenterY</pre>
 <p>These commands should appear straightforward at this point, but there is one very important difference! Inspect the first parameter to <a href="../../../api/library/display/newImageRect.html">display.newImageRect()</a> — before the image file name (now the second parameter), we indicate the <strong>display group</strong> (<code>backGroup</code>) in which to place the object. This is a convenient inline shortcut to specify the display group to insert the background image once it’s loaded.</p>
 </div>
 </div>
-<h3 id="loading-the-ship">Loading the Ship</h3>
+</section>
+<section id="loading-the-ship" class="level3">
+<h3>Loading the Ship</h3>
 <p>As mentioned earlier, image sheets can be used as a source for an animated sequence of images (sprite) <strong>or</strong> they can be used to organize a collection of static images that will be used within your app. For this project, we’ll use the second method.</p>
 <p>Loading an individual image from an image sheet is similar to loading it from a file. Instead of supplying an image name, however, we specify a reference to the image sheet along with a frame number. Add the following highlighted line to your project code:</p>
 <pre class="highlight: [75]; first-line: 71; gutter: true; brush: lua;">local background = display.newImageRect( backGroup, "background.png", 800, 1400 )
@@ -517,7 +544,9 @@ Note
 </div>
 <p>Although the ship image clearly isn’t circular, we added a circular physics body (<code>radius=30</code>) to the ship object. For this game, we’re just being somewhat “lazy” by using this approximate body shape — once you get more comfortable with Solar2D, you’ll learn how to add a perfect <nobr>shape-based</nobr> physics body to the ship which accurately matches the ship image’s outline.</p>
 </div>
-<h3 id="lives-and-score">Lives and Score</h3>
+</section>
+<section id="lives-and-score" class="level3">
+<h3>Lives and Score</h3>
 <p>Now let’s place UI labels for the player’s lives and score on the screen:</p>
 <pre class="first-line: 81; gutter: true; brush: lua;">-- Display lives and score
 livesText = display.newText( uiGroup, "Lives: " .. lives, 200, 80, native.systemFont, 36 )
@@ -565,7 +594,10 @@ end</pre>
 </div>
 </div>
 <p><a id="concepts"></a></p>
-<h2 id="chapter-concepts">Chapter Concepts</h2>
+</section>
+</section>
+<section id="chapter-concepts" class="level2">
+<h2>Chapter Concepts</h2>
 <p>We’ve covered several more concepts in this chapter. Here’s a quick overview:</p>
 <div class="inner-table">
 <table>
@@ -603,7 +635,9 @@ end</pre>
 </tbody>
 </table>
 </div>
-<h2 id="section"></h2>
+</section>
+<section id="section" class="level2">
+<h2></h2>
 <div class="walkthrough-nav">
 <p><strong>⟨</strong> <a href="../../../guide/programming/01/index.html">Chapter 1 — Creating a project</a> <em>|</em> <a href="../../../guide/programming/03/index.html">Chapter 3 — Bringing it to Life</a> <strong>⟩</strong></p>
 </div>
@@ -617,6 +651,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

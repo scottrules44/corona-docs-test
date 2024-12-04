@@ -69,7 +69,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/licensing/index.html">licensing</a>
 </div>
-<h1 id="licensing.">licensing.*</h1>
+<section id="licensing." class="level1">
+<h1>licensing.*</h1>
 <blockquote>
 <table>
 <tbody>
@@ -88,10 +89,13 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>The Solar2D licensing library lets you check to see if the app was bought from a store. Currently, only <a href="https://developer.android.com/google/play/licensing/setting-up">Google Play</a> is supported.</p>
 <p>For further information, see the Google <a href="https://developer.android.com/google/play/licensing/licensing-reference.html">licensing</a> reference page.</p>
-<h2 id="project-settings">Project Settings</h2>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
 <p>You must add the following permission to your <code>build.settings</code> file in order to use the Google licensing provider:</p>
 <pre class="highlight: [7]; first-line: 1; gutter: false; brush: lua;">settings =
 {
@@ -121,10 +125,18 @@ Note
 </div>
 <p>The <code>policy</code> key is optional. Its value can be either <code>"serverManaged"</code> (default) or <code>"strict"</code>. A value of <code>"serverManaged"</code> will query the Google server and cache the results; this is similar to Google’s <strong>ServerManagedPolicy</strong>. A value of <code>"strict"</code> will not cache the results, so when there’s a network failure, the licensing will fail; this is similar to Google’s <strong>StrictPolicy</strong>.</p>
 </div>
-<h2 id="functions">Functions</h2>
-<h4 id="licensing.initapi.library.licensing.init"><a href="../../../api/library/licensing/init.html">licensing.init()</a></h4>
-<h4 id="licensing.verifyapi.library.licensing.verify"><a href="../../../api/library/licensing/verify.html">licensing.verify()</a></h4>
-<h2 id="example">Example</h2>
+</section>
+<section id="functions" class="level2">
+<h2>Functions</h2>
+<section id="licensing.initapi.library.licensing.init" class="level4">
+<h4><a href="../../../api/library/licensing/init.html">licensing.init()</a></h4>
+</section>
+<section id="licensing.verifyapi.library.licensing.verify" class="level4">
+<h4><a href="../../../api/library/licensing/verify.html">licensing.verify()</a></h4>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local licensing = require( "licensing" )
 
 local function licensingListener( event )
@@ -150,6 +162,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

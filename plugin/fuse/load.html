@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/fuse/index.html">fuse</a>  ▸  <a href="../../plugin/fuse/load.html">load</a>
 </div>
-<h1 id="fuse.load">fuse.load()</h1>
+<section id="fuse.load" class="level1">
+<h1>fuse.load()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -106,14 +107,21 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Loads and caches a Fuse ad for the specified ad zone. This function will call the listener function specified by <a href="../../plugin/fuse/init.html">fuse.init()</a> with an <a href="../../plugin/fuse/event/adsRequest/phase.html">event.phase</a> value of <code>"loaded"</code>, however this does not necessarily mean that an ad of the specified zone was loaded. To determine this condition, check <a href="../../plugin/fuse/event/adsRequest/isError.html">event.isError</a> during the <code>"loaded"</code> event phase — a value of <code>true</code> indicates that an ad could <strong>not</strong> be loaded from the requested zone, while a value of <code>false</code> indicates that the requested zone’s ad was successfully loaded.</p>
 <p>Note that Fuse is already set up to pre-cache a few ads when you call <a href="../../plugin/fuse/init.html">fuse.init()</a>, so normally there’s no need to call <code>fuse.load()</code> prior to calling <a href="../../plugin/fuse/show.html">fuse.show()</a>. Generally, this function should be used to <nobr>pre-cache</nobr> an ad from a specific zone.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">fuse.load( [params] )</pre>
-<h5 id="params-optional">params <sub><sup>(optional)</sup></sub></h5>
+<section id="params-optional" class="level5">
+<h5>params <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table which specifies properties for the ad request. Within this table, you should specify the <code>zone</code> key with a <a href="../../api/type/String.html">string</a> value representing the ad zone for which to load an ad.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local fuse = require( "plugin.fuse" )
 
 -- Event listener function
@@ -151,6 +159,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -68,7 +68,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../plugin/steamworks/removeEventListener.html">removeEventListener</a>
 </div>
-<h1 id="steamworks.removeeventlistener">steamworks.removeEventListener()</h1>
+<section id="steamworks.removeeventlistener" class="level1">
+<h1>steamworks.removeEventListener()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -99,12 +100,16 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Removes a listener that was once added to the plugin via the <a href="../../plugin/steamworks/addEventListener.html">steamworks.addEventListener()</a> function. This prevents that listener from being invoked for its corresponding event.</p>
 <p>Returns <code>true</code> if the listener was successfully removed from the plugin. Returns <code>false</code> if given invalid arguments or if the given listener reference has not been added to the plugin.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">steamworks.removeEventListener( eventName, listener )</pre>
-<h5 id="eventname-required">eventName <sub><sup>(required)</sup></sub></h5>
+<section id="eventname-required" class="level5">
+<h5>eventName <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The name of the event to stop listening to. Must be one of the following:</p>
 <ul>
 <li><code>"achievementImageUpdate"</code> (<a href="../../plugin/steamworks/event/achievementImageUpdate/index.html">reference</a>)</li>
@@ -116,9 +121,14 @@
 <li><code>"userProgressUnload"</code> (<a href="../../plugin/steamworks/event/userProgressUnload/index.html">reference</a>)</li>
 <li><code>"userProgressUpdate"</code> (<a href="../../plugin/steamworks/event/userProgressUpdate/index.html">reference</a>)</li>
 </ul>
-<h5 id="listener-required">listener <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="listener-required" class="level5">
+<h5>listener <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Listener.html">Listener</a>.</em> Reference to the same listener that was originally added to the <a href="../../plugin/steamworks/addEventListener.html">steamworks.addEventListener()</a> function.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local steamworks = require( "plugin.steamworks" )
 
 -- Set up a listener to be called when Steam's overlay has been shown/hidden
@@ -139,6 +149,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

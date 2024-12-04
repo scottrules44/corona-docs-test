@@ -94,7 +94,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../native/index.html">Solar2D Native</a>  ▸  <a href="../../../native/C/index.html">Corona C Functions</a>  ▸  <a href="../../../native/C/CoronaLua/index.html">CoronaLua.h</a>
 </div>
-<h1 id="coronalua.h">CoronaLua.h</h1>
+<section id="coronalua.h" class="level1">
+<h1>CoronaLua.h</h1>
 <blockquote>
 <table>
 <tbody>
@@ -117,7 +118,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p><code>CoronaLua.h</code> contains C and C++ convenience functions for interacting with the Lua state. In particular, they vastly simplify dealing with <nobr>Corona-specific</nobr> patterns such as creating events, storing <nobr>C-side</nobr> references to Lua listeners, dispatching events, calling Lua functions, etc. These functions are all prefixed with <code>CoronaLua</code>.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -129,36 +131,95 @@ Notes
 <li><p>All C++ methods mirror the C functions but instead of the prefix, they are in the <code>Corona::Lua</code> namespace.</p></li>
 </ul>
 </div>
-<h2 id="functions">Functions</h2>
-<h4 id="coronaluagetcoronathreadnative.c.coronalua.coronaluagetcoronathread"><a href="../../../native/C/CoronaLua/CoronaLuaGetCoronaThread.html">CoronaLuaGetCoronaThread()</a></h4>
-<h4 id="coronaluanewnative.c.coronalua.coronaluanew"><a href="../../../native/C/CoronaLua/CoronaLuaNew.html">CoronaLuaNew()</a></h4>
-<h4 id="coronaluadeletenative.c.coronalua.coronaluadelete"><a href="../../../native/C/CoronaLua/CoronaLuaDelete.html">CoronaLuaDelete()</a></h4>
-<h4 id="coronaluanormalizenative.c.coronalua.coronaluanormalize"><a href="../../../native/C/CoronaLua/CoronaLuaNormalize.html">CoronaLuaNormalize()</a></h4>
-<h4 id="coronaluagetcontextnative.c.coronalua.coronaluagetcontext"><a href="../../../native/C/CoronaLua/CoronaLuaGetContext.html">CoronaLuaGetContext()</a></h4>
-<h4 id="coronaluainitializecontextnative.c.coronalua.coronaluainitializecontext"><a href="../../../native/C/CoronaLua/CoronaLuaInitializeContext.html">CoronaLuaInitializeContext()</a></h4>
-<h4 id="coronaluanewrefnative.c.coronalua.coronaluanewref"><a href="../../../native/C/CoronaLua/CoronaLuaNewRef.html">CoronaLuaNewRef()</a></h4>
-<h4 id="coronaluadeleterefnative.c.coronalua.coronaluadeleteref"><a href="../../../native/C/CoronaLua/CoronaLuaDeleteRef.html">CoronaLuaDeleteRef()</a></h4>
-<h4 id="coronaluaequalrefnative.c.coronalua.coronaluaequalref"><a href="../../../native/C/CoronaLua/CoronaLuaEqualRef.html">CoronaLuaEqualRef()</a></h4>
-<h4 id="coronaluaneweventnative.c.coronalua.coronaluanewevent"><a href="../../../native/C/CoronaLua/CoronaLuaNewEvent.html">CoronaLuaNewEvent()</a></h4>
-<h4 id="coronaluadispatcheventnative.c.coronalua.coronaluadispatchevent"><a href="../../../native/C/CoronaLua/CoronaLuaDispatchEvent.html">CoronaLuaDispatchEvent()</a></h4>
-<h4 id="coronaluaislistenernative.c.coronalua.coronaluaislistener"><a href="../../../native/C/CoronaLua/CoronaLuaIsListener.html">CoronaLuaIsListener()</a></h4>
-<h4 id="coronaluapushruntimenative.c.coronalua.coronaluapushruntime"><a href="../../../native/C/CoronaLua/CoronaLuaPushRuntime.html">CoronaLuaPushRuntime()</a></h4>
-<h4 id="coronaluaruntimedispatcheventnative.c.coronalua.coronaluaruntimedispatchevent"><a href="../../../native/C/CoronaLua/CoronaLuaRuntimeDispatchEvent.html">CoronaLuaRuntimeDispatchEvent()</a></h4>
-<h4 id="coronaluanewgcmetatablenative.c.coronalua.coronaluanewgcmetatable"><a href="../../../native/C/CoronaLua/CoronaLuaNewGCMetatable.html">CoronaLuaNewGCMetatable()</a></h4>
-<h4 id="coronaluanewmetatablenative.c.coronalua.coronaluanewmetatable"><a href="../../../native/C/CoronaLua/CoronaLuaNewMetatable.html">CoronaLuaNewMetatable()</a></h4>
-<h4 id="coronaluainitializegcmetatablenative.c.coronalua.coronaluainitializegcmetatable"><a href="../../../native/C/CoronaLua/CoronaLuaInitializeGCMetatable.html">CoronaLuaInitializeGCMetatable()</a></h4>
-<h4 id="coronaluainitializemetatablenative.c.coronalua.coronaluainitializemetatable"><a href="../../../native/C/CoronaLua/CoronaLuaInitializeMetatable.html">CoronaLuaInitializeMetatable()</a></h4>
-<h4 id="coronaluapushuserdatanative.c.coronalua.coronaluapushuserdata"><a href="../../../native/C/CoronaLua/CoronaLuaPushUserdata.html">CoronaLuaPushUserdata()</a></h4>
-<h4 id="coronaluatouserdatanative.c.coronalua.coronaluatouserdata"><a href="../../../native/C/CoronaLua/CoronaLuaToUserdata.html">CoronaLuaToUserdata()</a></h4>
-<h4 id="coronaluacheckuserdatanative.c.coronalua.coronaluacheckuserdata"><a href="../../../native/C/CoronaLua/CoronaLuaCheckUserdata.html">CoronaLuaCheckUserdata()</a></h4>
-<h4 id="coronaluaregistermoduleloadernative.c.coronalua.coronaluaregistermoduleloader"><a href="../../../native/C/CoronaLua/CoronaLuaRegisterModuleLoader.html">CoronaLuaRegisterModuleLoader()</a></h4>
-<h4 id="coronaluaregistermoduleloadersnative.c.coronalua.coronaluaregistermoduleloaders"><a href="../../../native/C/CoronaLua/CoronaLuaRegisterModuleLoaders.html">CoronaLuaRegisterModuleLoaders()</a></h4>
-<h4 id="coronaluacoronaluainsertpackageloadernative.c.coronalua.coronaluacoronaluainsertpackageloader"><a href="../../../native/C/CoronaLua/CoronaLuaCoronaLuaInsertPackageLoader.html">CoronaLuaCoronaLuaInsertPackageLoader()</a></h4>
-<h4 id="coronaluageterrorhandlernative.c.coronalua.coronaluageterrorhandler"><a href="../../../native/C/CoronaLua/CoronaLuaGetErrorHandler.html">CoronaLuaGetErrorHandler()</a></h4>
-<h4 id="coronaluaseterrorhandlernative.c.coronalua.coronaluaseterrorhandler"><a href="../../../native/C/CoronaLua/CoronaLuaSetErrorHandler.html">CoronaLuaSetErrorHandler()</a></h4>
-<h4 id="coronaluadocallnative.c.coronalua.coronaluadocall"><a href="../../../native/C/CoronaLua/CoronaLuaDoCall.html">CoronaLuaDoCall()</a></h4>
-<h4 id="coronaluadobuffernative.c.coronalua.coronaluadobuffer"><a href="../../../native/C/CoronaLua/CoronaLuaDoBuffer.html">CoronaLuaDoBuffer()</a></h4>
-<h4 id="coronaluadofilenative.c.coronalua.coronaluadofile"><a href="../../../native/C/CoronaLua/CoronaLuaDoFile.html">CoronaLuaDoFile()</a></h4>
+</section>
+<section id="functions" class="level2">
+<h2>Functions</h2>
+<section id="coronaluagetcoronathreadnative.c.coronalua.coronaluagetcoronathread" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaGetCoronaThread.html">CoronaLuaGetCoronaThread()</a></h4>
+</section>
+<section id="coronaluanewnative.c.coronalua.coronaluanew" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaNew.html">CoronaLuaNew()</a></h4>
+</section>
+<section id="coronaluadeletenative.c.coronalua.coronaluadelete" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaDelete.html">CoronaLuaDelete()</a></h4>
+</section>
+<section id="coronaluanormalizenative.c.coronalua.coronaluanormalize" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaNormalize.html">CoronaLuaNormalize()</a></h4>
+</section>
+<section id="coronaluagetcontextnative.c.coronalua.coronaluagetcontext" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaGetContext.html">CoronaLuaGetContext()</a></h4>
+</section>
+<section id="coronaluainitializecontextnative.c.coronalua.coronaluainitializecontext" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaInitializeContext.html">CoronaLuaInitializeContext()</a></h4>
+</section>
+<section id="coronaluanewrefnative.c.coronalua.coronaluanewref" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaNewRef.html">CoronaLuaNewRef()</a></h4>
+</section>
+<section id="coronaluadeleterefnative.c.coronalua.coronaluadeleteref" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaDeleteRef.html">CoronaLuaDeleteRef()</a></h4>
+</section>
+<section id="coronaluaequalrefnative.c.coronalua.coronaluaequalref" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaEqualRef.html">CoronaLuaEqualRef()</a></h4>
+</section>
+<section id="coronaluaneweventnative.c.coronalua.coronaluanewevent" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaNewEvent.html">CoronaLuaNewEvent()</a></h4>
+</section>
+<section id="coronaluadispatcheventnative.c.coronalua.coronaluadispatchevent" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaDispatchEvent.html">CoronaLuaDispatchEvent()</a></h4>
+</section>
+<section id="coronaluaislistenernative.c.coronalua.coronaluaislistener" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaIsListener.html">CoronaLuaIsListener()</a></h4>
+</section>
+<section id="coronaluapushruntimenative.c.coronalua.coronaluapushruntime" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaPushRuntime.html">CoronaLuaPushRuntime()</a></h4>
+</section>
+<section id="coronaluaruntimedispatcheventnative.c.coronalua.coronaluaruntimedispatchevent" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaRuntimeDispatchEvent.html">CoronaLuaRuntimeDispatchEvent()</a></h4>
+</section>
+<section id="coronaluanewgcmetatablenative.c.coronalua.coronaluanewgcmetatable" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaNewGCMetatable.html">CoronaLuaNewGCMetatable()</a></h4>
+</section>
+<section id="coronaluanewmetatablenative.c.coronalua.coronaluanewmetatable" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaNewMetatable.html">CoronaLuaNewMetatable()</a></h4>
+</section>
+<section id="coronaluainitializegcmetatablenative.c.coronalua.coronaluainitializegcmetatable" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaInitializeGCMetatable.html">CoronaLuaInitializeGCMetatable()</a></h4>
+</section>
+<section id="coronaluainitializemetatablenative.c.coronalua.coronaluainitializemetatable" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaInitializeMetatable.html">CoronaLuaInitializeMetatable()</a></h4>
+</section>
+<section id="coronaluapushuserdatanative.c.coronalua.coronaluapushuserdata" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaPushUserdata.html">CoronaLuaPushUserdata()</a></h4>
+</section>
+<section id="coronaluatouserdatanative.c.coronalua.coronaluatouserdata" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaToUserdata.html">CoronaLuaToUserdata()</a></h4>
+</section>
+<section id="coronaluacheckuserdatanative.c.coronalua.coronaluacheckuserdata" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaCheckUserdata.html">CoronaLuaCheckUserdata()</a></h4>
+</section>
+<section id="coronaluaregistermoduleloadernative.c.coronalua.coronaluaregistermoduleloader" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaRegisterModuleLoader.html">CoronaLuaRegisterModuleLoader()</a></h4>
+</section>
+<section id="coronaluaregistermoduleloadersnative.c.coronalua.coronaluaregistermoduleloaders" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaRegisterModuleLoaders.html">CoronaLuaRegisterModuleLoaders()</a></h4>
+</section>
+<section id="coronaluacoronaluainsertpackageloadernative.c.coronalua.coronaluacoronaluainsertpackageloader" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaCoronaLuaInsertPackageLoader.html">CoronaLuaCoronaLuaInsertPackageLoader()</a></h4>
+</section>
+<section id="coronaluageterrorhandlernative.c.coronalua.coronaluageterrorhandler" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaGetErrorHandler.html">CoronaLuaGetErrorHandler()</a></h4>
+</section>
+<section id="coronaluaseterrorhandlernative.c.coronalua.coronaluaseterrorhandler" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaSetErrorHandler.html">CoronaLuaSetErrorHandler()</a></h4>
+</section>
+<section id="coronaluadocallnative.c.coronalua.coronaluadocall" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaDoCall.html">CoronaLuaDoCall()</a></h4>
+</section>
+<section id="coronaluadobuffernative.c.coronalua.coronaluadobuffer" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaDoBuffer.html">CoronaLuaDoBuffer()</a></h4>
+</section>
+<section id="coronaluadofilenative.c.coronalua.coronaluadofile" class="level4">
+<h4><a href="../../../native/C/CoronaLua/CoronaLuaDoFile.html">CoronaLuaDoFile()</a></h4>
 <hr>
 <div id="footer">
 <p class="copyright">
@@ -169,6 +230,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

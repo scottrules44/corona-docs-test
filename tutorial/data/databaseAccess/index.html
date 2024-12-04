@@ -71,7 +71,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/data/index.html">Data/Files/Strings</a>
 </div>
-<h1 id="database-access-using-sqlite">Database Access Using SQLite</h1>
+<section id="database-access-using-sqlite" class="level1">
+<h1>Database Access Using SQLite</h1>
 <p>The topic of databases is <nobr>far-reaching</nobr> in the world of programming, especially for web developers, and for good reason. Databases are great for storing and organizing a lot of information, and when it comes to retrieving that data for later use, there’s rarely a better option.</p>
 <p>For instance, if you are writing a “notes” app, you should ideally store the user’s individual notes in a database. Sure, you could just store each note as a separate text file, but then you’d potentially have a large number of files to deal with separately, versus a consolidated database file. An even bigger hindrance would be that tasks such as sorting and searching — both commonplace in the world of databases — would be nearly impossible.</p>
 <p>In this tutorial, we’ll walk through creating a database, saving it to a file, storing information, and retrieving that data for use in a Corona app.</p>
@@ -83,7 +84,8 @@ What About JSON?
 <p>A basic rule of thumb when deciding which one to use is, if it’s a large amount of data — and especially if the data needs to be searched or sorted — a database is the clear winner every time. However, for smaller sets of data such as tables that store configuration data, JSON wins because of its simplicity.</p>
 <p>For more details on saving and loading data in JSON format, please see the <a href="../../../tutorial/data/jsonSaveLoad/index.html">Saving/Loading Tables Using JSON</a> tutorial.</p>
 </div>
-<h2 id="creating-a-database">Creating a Database</h2>
+<section id="creating-a-database" class="level2">
+<h2>Creating a Database</h2>
 <p>There are two ways you can go about creating a SQLite database:</p>
 <ol type="1">
 <li>Create an <nobr>in-memory</nobr> database with a lifespan that only extends as far as the runtime of the app.</li>
@@ -109,7 +111,9 @@ local db = sqlite3.open( path )</pre>
 <p>Note that the recommended location for creating a database is <code>system.DocumentsDirectory</code>, as shown in this example. Your project resource directory cannot be written to, and the temporary/cache directories are periodically wiped clean by the OS, so using the documents directory will ensure that you’re able to read/write from/to your database and that it resides in a safe, persistent location.</p>
 </div>
 </div>
-<h2 id="creating-a-table">Creating a Table</h2>
+</section>
+<section id="creating-a-table" class="level2">
+<h2>Creating a Table</h2>
 <p>Some common terms you’ll hear when working with SQLite databases include <strong>tables</strong> (not Lua tables, but SQL tables), <strong>columns</strong>, and <strong>rows</strong>. Basically, SQL <strong>tables</strong> can be thought of as “categories” of data. Each table, in turn, can have multiple <strong>columns</strong> which can be thought of as “properties” of the table, for example <code>UserID</code>, <code>FirstName</code>, <code>LastName</code>, etc. Finally, the individual “records” which are inserted into tables are known as <strong>rows</strong>.</p>
 <p>Rows — and more specifically their properties — are the actual data you’ll most commonly be working with, but before we can add rows, we must set up a table with specific columns:</p>
 <pre class="brush: lua;">local tableSetup = [[CREATE TABLE IF NOT EXISTS test ( UserID INTEGER PRIMARY KEY autoincrement, FirstName, LastName );]]
@@ -130,7 +134,9 @@ Important
 <li><p>Note that the query string is wrapped in double brackets <nobr>(<code>[[</code> and <code>]]</code>)</nobr> instead of quotes. This is because it’s possible to use both single and double quotes in a SQL query, so using brackets is the safest option.</p></li>
 </ul>
 </div>
-<h2 id="creating-new-rows">Creating New Rows</h2>
+</section>
+<section id="creating-new-rows" class="level2">
+<h2>Creating New Rows</h2>
 <p>Creating new rows is accomplished via the <code>INSERT</code> statement. First, we’ll illustrate the basic usage, then we’ll go over a more dynamic example.</p>
 <pre class="brush: lua;">local insertQuery = [[INSERT INTO test VALUES ( NULL, "John", "Smith" );]]
 db:exec( insertQuery )</pre>
@@ -151,7 +157,9 @@ db:exec( insertQuery )</pre>
 </div>
 </div>
 </div>
-<h2 id="lua-table-to-sql-table">Lua Table to SQL Table</h2>
+</section>
+<section id="lua-table-to-sql-table" class="level2">
+<h2>Lua Table to SQL Table</h2>
 <p>Now, let’s get creative with a more dynamic example. The following code will insert three rows into the SQL table (<code>test</code>) based on values extracted from a Lua table (this assumes that you’ve already created the database and the <code>test</code> table).</p>
 <pre class="brush: lua;">local people = {
     {
@@ -172,16 +180,22 @@ for i = 1,#people do
     local q = [[INSERT INTO test VALUES ( NULL, "]] .. people[i].FirstName .. [[","]] .. people[i].LastName .. [[" );]]
     db:exec( q )
 end</pre>
-<h2 id="updating-existing-rows">Updating Existing Rows</h2>
+</section>
+<section id="updating-existing-rows" class="level2">
+<h2>Updating Existing Rows</h2>
 <p>You won’t always need to create a new row — in fact, you’ll often need to <strong>update</strong> a row that already exists. In the following example, we’ll assume that the three rows from the previous example are already inserted into the <code>test</code> table.</p>
 <pre class="brush: lua;">local q = [[UPDATE test SET FirstName="Trisha" WHERE UserID=3;]]
 db:exec( q )</pre>
 <p>Essentially, this query finds the row where <code>UserID</code> <nobr>(the primary key)</nobr> equals <code>3</code> and changes the <code>FirstName</code> value to <code>Trisha</code>. While you don’t necessarily need to use the primary key column to find the row, it’s often the easiest way to locate a specific row since it will always be unique.</p>
-<h2 id="deleting-a-row">Deleting a Row</h2>
+</section>
+<section id="deleting-a-row" class="level2">
+<h2>Deleting a Row</h2>
 <p>The SQL query for <strong>deleting</strong> a row looks very similar to the query we used to update a row, with the primary difference being the use of <nobr><code>DELETE FROM</code></nobr> rather than <code>UPDATE</code>. The following example removes the <nobr><code>John Smith</code></nobr> row from the <code>test</code> table:</p>
 <pre class="brush: lua;">local q = [[DELETE FROM test WHERE UserID=1;]]
 db:exec( q )</pre>
-<h2 id="retrieving-data">Retrieving Data</h2>
+</section>
+<section id="retrieving-data" class="level2">
+<h2>Retrieving Data</h2>
 <p>There are several ways to retrieve data from an SQL database. Sometimes you’ll want a single specific row, while other times you might need <strong>all</strong> of the rows in a specific table. In other instances, to narrow it down slightly, you might want only a subset of rows in a certain table based on specific criteria. All of this (and more) is possible with SQLite!</p>
 <p>The following example illustrates how to load an existing database from a file and populate a Lua array from the rows of a specific query. This assumes that <code>data.db</code> has our <nobr>3-person</nobr> table (<code>test</code>) included within it:</p>
 <pre class="first-line: 1; gutter: true; brush: lua;">-- Require the SQLite library
@@ -219,13 +233,17 @@ end</pre>
 <p>For more information on using the <code>SELECT</code> command to filter data, read <a href="https://zetcode.com/db/sqlite/">this article</a>.</p>
 </div>
 </div>
-<h2 id="closing-the-database">Closing the Database</h2>
+</section>
+<section id="closing-the-database" class="level2">
+<h2>Closing the Database</h2>
 <p>When you’re finished accessing a database, it’s very important that you close the “connection” to it by calling the <code>close()</code> method on the database object, for example <code>db:close()</code>:</p>
 <pre class="brush: lua;">if ( db and db:isopen() ) then
     db:close()
 end</pre>
 <p>Of course this code must exist in the correct scope of the database object you’re closing — the <code>db</code> object in the example above — so that Lua understands which database it should close.</p>
-<h2 id="conclusion">Conclusion</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
 <p>That wraps up the essentials of database access in Corona. However, we’ve only scratched the surface of what’s possible with SQLite, so we encourage you to explore further to discover what’s possible, starting with our SQLite <a href="../../../api/library/sqlite3/index.html">documentation</a>.</p>
 <hr>
 <div id="footer">
@@ -237,6 +255,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

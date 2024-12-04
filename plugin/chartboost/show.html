@@ -69,7 +69,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/chartboost/index.html">Chartboost</a>  ▸  <a href="../../plugin/chartboost/show.html">show</a>
 </div>
-<h1 id="chartboost.show">chartboost.show()</h1>
+<section id="chartboost.show" class="level1">
+<h1>chartboost.show()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -104,7 +105,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Shows a Chartboost static interstitial, video interstitial, rewarded video, or the “more apps” screen.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -115,19 +117,27 @@ Notes
 <li><p>Before calling this function, you must call <a href="../../plugin/chartboost/init.html">chartboost.init()</a> and and ensure that the <code>"init"</code> event <a href="../../plugin/chartboost/event/adsRequest/phase.html">phase</a> occurs.</p></li>
 </ul>
 </div>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">chartboost.show( adType [, namedLocation] )</pre>
-<h5 id="adtype-required">adType <sub><sup>(required)</sup></sub></h5>
+<section id="adtype-required" class="level5">
+<h5>adType <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> One of the following values:</p>
 <ul>
 <li><code>"interstitial"</code></li>
 <li><code>"rewardedVideo"</code></li>
 <li><code>"moreApps"</code> (Deprecated. Will be removed from the Chartboost SDK in July 2017)</li>
 </ul>
-<h5 id="namedlocation-optional">namedLocation <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="namedlocation-optional" class="level5">
+<h5>namedLocation <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> The advertisement location. If omitted, the legacy <code>"Default"</code> location will be used. Although you can specify any string, Chartboost recommends using one of their <nobr>pre-defined</nobr> locations to help keep eCPM levels as high as possible. See the <a href="#locations">list</a> below for valid <nobr>pre-defined</nobr> options.</p>
 <p><a id="locations"></a></p>
-<h2 id="predefined-locations">Predefined Locations</h2>
+</section>
+</section>
+<section id="predefined-locations" class="level2">
+<h2>Predefined Locations</h2>
 <p>The following list outlines the <nobr>pre-defined</nobr> locations recommended by Chartboost:</p>
 <div class="inner-table">
 <table>
@@ -209,7 +219,9 @@ Notes
 </tbody>
 </table>
 </div>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local chartboost = require( "plugin.chartboost" )
 
 -- Chartboost listener function
@@ -237,6 +249,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

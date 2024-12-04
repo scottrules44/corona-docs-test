@@ -65,7 +65,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../../plugin/steamworks/guide/index.html">Developer Guides</a>
 </div>
-<h1 id="steamworks-overlay-troubleshooting">Steamworks — Overlay Troubleshooting</h1>
+<section id="steamworks-overlay-troubleshooting" class="level1">
+<h1>Steamworks — Overlay Troubleshooting</h1>
 <p>This guide documents how to troubleshoot Steam <nobr>in-app</nobr> overlay display issues.</p>
 <div class="guides-toc">
 <ul>
@@ -75,7 +76,8 @@
 </ul>
 </div>
 <p><a id="clientsettings"></a></p>
-<h2 id="steam-client-settings">Steam Client Settings</h2>
+<section id="steam-client-settings" class="level2">
+<h2>Steam Client Settings</h2>
 <p>If the end user has disabled overlays within the Steam client’s <nobr><strong>In-Game</strong></nobr> settings/preferences window, Steam overlays and popup notifications will <strong>not</strong> appear within the application window for any <nobr>Steam-based game</nobr>. This setting is controlled by the end user and is normally enabled by default. If overlays are not appearing as expected, this should be the first thing to check, following these steps:</p>
 <ol type="1">
 <li>Display the Steam client window.</li>
@@ -88,7 +90,9 @@
 <p><img src="../../../images/docs/plugin-screenshot-steamworks-in-game-settings.png" /></p>
 </div>
 <p><a id="macprefs"></a></p>
-<h2 id="mac-system-preferences">Mac System Preferences</h2>
+</section>
+<section id="mac-system-preferences" class="level2">
+<h2>Mac System Preferences</h2>
 <p>On Mac, Steam cannot display overlays and popup notifications within an application window until the end user has given the Steam client permission in the <nobr><strong>System Preferences</strong></nobr> window. This can be done as follows:</p>
 <ol type="1">
 <li>Open the <nobr><strong>System Preferences</strong></nobr> window.</li>
@@ -104,7 +108,9 @@
 <p><img src="../../../images/docs/plugin-screenshot-steamworks-mac-system-prefs-accessibility.png" /></p>
 </div>
 <p><a id="testing"></a></p>
-<h2 id="mac-app-testing">Mac App Testing</h2>
+</section>
+<section id="mac-app-testing" class="level2">
+<h2>Mac App Testing</h2>
 <p>On Mac, Steam can only show overlays and popup notifications in applications that have been launched from the Steam client. Applications purchased, downloaded, and installed by Steam are normally launched in this fashion.</p>
 <p>In order for developers to test Steam overlay support, the application using the Steamworks plugin must be added to the Steam client as a <nobr><strong>Non-Steam Game</strong></nobr> and then launched from the Steam client. For example, to test Steam overlay support within the Corona Simulator, the Corona Simulator application must be added and launched from the Steam client. The same must be done with Mac applications built from the Corona Simulator as well.</p>
 <ol type="1">
@@ -140,6 +146,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

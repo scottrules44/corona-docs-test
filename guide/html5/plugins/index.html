@@ -77,7 +77,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  [HTML5][guide.html5]
 </div>
-<h1 id="using-javascript-in-html5-builds">Using JavaScript in HTML5 Builds</h1>
+<section id="using-javascript-in-html5-builds" class="level1">
+<h1>Using JavaScript in HTML5 Builds</h1>
 <p>This guide explains how to interact between JavaScript and Lua code when running HTML5 build.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -102,7 +103,8 @@ Note
 </div>
 <p>HTML5 provides extremely rich access to a variety of APIs, both built-in and third party integrations. It would be impossible to create bindings for all of them in Lua. This is why Solar2D provides an extremely easy way to bridge between Lua and JavaScript code.</p>
 <p><a id="plugin"></a></p>
-<h2 id="javascript-module-loader">JavaScript Module Loader</h2>
+<section id="javascript-module-loader" class="level2">
+<h2>JavaScript Module Loader</h2>
 <p>When trying to <code>require</code> a module from Lua, one can make use of the JavaScript Module Loader included into HTML5 builds. It looks for file in root of the project with <code>.js</code> extension.</p>
 <p>For example:</p>
 <pre class="brush: lua;">local demo_plugin = require "demo_plugin"</pre>
@@ -116,7 +118,8 @@ Note
 <p>You can execute additional JS code in body of the file, but it is recommended to move all initialization into functions, like <code>init</code>.</p>
 <p>Note, that if file contains syntactical errors it would produce runtime errors during runtime in the HTML5 build. If you see <code>ERROR: module "demo_plugin" not found</code> error popup, check the JavaScript Console from browser’s developer tools. If it has warning like <code>Module file is loaded, but object 'demo_plugin' is not found!</code> it means that module contained syntax errors, so it failed to create global module object.</p>
 <p><a id="wrapper"></a></p>
-<h3 id="making-a-dummy-wrapper-for-simulator">Making a dummy wrapper for Simulator</h3>
+<section id="making-a-dummy-wrapper-for-simulator" class="level3">
+<h3>Making a dummy wrapper for Simulator</h3>
 <p>It can be bothersome to develop plugins that are getting errors all the time since JS code doesn’t work in simulator. For that purpose we recommend making a Lua wrapper. It should check if JavaScript can be executed, and do so if possible.</p>
 <p>For that you would create two files: <code>demo_plugin.lua</code>:</p>
 <pre class="brush: lua;">if system.getInfo("platform") == 'html5' then
@@ -138,7 +141,10 @@ end</pre>
 }</pre>
 <p>Note that module’s object has to be renamed to <code>demo_plugin_js</code> as well.</p>
 <p><a id="luaJs"></a></p>
-<h2 id="bridging-between-lua-and-javascript">Bridging between Lua and JavaScript</h2>
+</section>
+</section>
+<section id="bridging-between-lua-and-javascript" class="level2">
+<h2>Bridging between Lua and JavaScript</h2>
 <p>We tried to make bridging between Lua and JavaScript as seamless as possible. Our bridge works only in one direction: you can call methods or access properties of you JS module object from Lua.</p>
 <p>To demonstrate that, lets add some properties to our <code>demo_plugin_js.js</code>:</p>
 <pre class="brush: js;">demo_plugin_js = {
@@ -160,10 +166,12 @@ demo.someString = "Hi!"
 demo.log( 42 )</pre>
 <p>Now build this for HTML5. Make sure to open <a href="http://127.0.0.1:20605/index-debug.html">/index-debug.html</a> to see output from Lua’s <code>print</code> instructions. It is hidden in default index file. You should see that everything works as expected. Methods are getting called, printed values are displayed and assigned properties work as well. Values passed as parameters, assigned to properties or returned by methods are copied and go through simple type transformation to be passed between JS &amp; Lua environments. If types cannot be copied or transparently converted, they are omitted.</p>
 <p><a id="funcToJs"></a></p>
-<h3 id="passing-functions-to-javascript">Passing functions to JavaScript</h3>
+<section id="passing-functions-to-javascript" class="level3">
+<h3>Passing functions to JavaScript</h3>
 <p>We have already seen that it is very straightforward to call JavaScript functions from Lua. But it is often required to do the reverse - invoke a callback to Lua when some JavaScript async operations is finished. This is tricky, since JavaScript doesn’t provide any mechanisms to interact with its garbage collector. Simpler, value types like strings, numbers or event tables can be copied between Lua and JavaScript, so memory leaks are not a problem because copies are handled separately on each side. Functions on other hand, must maintain connection to their environment in order to perform expected tasks. Nevertheless, Solar2D provides two ways that allow Lua functions can be passed to Javascript:</p>
 <p><a id="funcToJsProp"></a></p>
-<h4 id="assigning-lua-function-to-a-property">1. Assigning Lua function to a property</h4>
+<section id="assigning-lua-function-to-a-property" class="level4">
+<h4>1. Assigning Lua function to a property</h4>
 <p>in <code>main.lua</code>:</p>
 <pre class="brush: lua;">local function callbackFunction( message )
     print( message )
@@ -179,7 +187,9 @@ demo.execute()</pre>
 }</pre>
 <p>This works as expected and prints “Hello World” to the <a href="http://127.0.0.1:20605/index-debug.html">index-debug.html</a> console. If <code>demo.callback</code> is assigned from Lua, the JS Module Loader would take care of memory management. If you want to assign something to <code>this.callback</code> from JavaScript, make sure to <em>release</em> it before hence. More on this in next section.</p>
 <p><a id="funcToJsParam"></a></p>
-<h4 id="passing-lua-functions-as-parameters">2. Passing Lua functions as parameters</h4>
+</section>
+<section id="passing-lua-functions-as-parameters" class="level4">
+<h4>2. Passing Lua functions as parameters</h4>
 <p>The previous method, while simple, is not very elegant or idiomatic from Lua point of view. In Lua we usually pass functions around as parameters. This causes problems in interface bridges to other languages, since we have to “hold on” to passed functions. When the Lua C API is used, we manually have to tell the garbage collector that particular function is being used and shouldn’t be collected as garbage.</p>
 <p>A similar approach is implemented in JS Module Loader. When functions are passed from Lua to JavaScript it is transformed to a <em>reference</em> and you have a choice to “hold on” to it and create a callable JavaScript function. When it is not needed anymore, you should release it to prevent memory leaks.</p>
 <p>Here is all APIs to work with functions passed to JavaScript:</p>
@@ -219,9 +229,14 @@ demo.execute( callbackFunction )</pre>
     }
 }</pre>
 <p><a id="example"></a></p>
-<h2 id="plugin-example">Plugin example</h2>
+</section>
+</section>
+</section>
+<section id="plugin-example" class="level2">
+<h2>Plugin example</h2>
 <p>To see example of real-world plugin check out our VK Direct Games plugin available on <a href="https://github.com/coronalabs/com.coronalabs-plugin.vk.direct/blob/master/plugins/2018.3275/web/plugin_vk_direct_js.js">GitHub</a>. Lets review some notable parts.</p>
-<h4 id="init"><code>init()</code></h4>
+<section id="init" class="level4">
+<h4><code>init()</code></h4>
 <p>Function <code>init()</code> is most interesting. It has 2 parts. First - it remembers callback to dispatch events to:</p>
 <pre class="brush: js;">        LuaReleaseFunction( this.callback );
         if ( LuaIsFunction( callback ) ) {
@@ -236,7 +251,9 @@ demo.execute( callbackFunction )</pre>
             this.init_internal = null;
         }</pre>
 <p>It calls the method <code>init_internal</code> then sets it to <code>null</code> so it won’t be called again. This is simple way to make sure <code>init_internal</code> is called only once.</p>
-<h4 id="init_internal"><code>init_internal()</code></h4>
+</section>
+<section id="init_internal" class="level4">
+<h4><code>init_internal()</code></h4>
 <p>VK Direct Games is a third party integration. We have to use an external JavaScript library to use it. The library loaded and initialized in <code>init_internal()</code> method. Lets take a look:</p>
 <pre class="brush: js;">    init_internal: function()
     {
@@ -259,7 +276,10 @@ demo.execute( callbackFunction )</pre>
     }</pre>
 <p>In this code, we programmatically create a <code>&lt;script/&gt;</code> element and attach it to our HTML page. We also set <code>onerror</code> and <code>onload</code> handlers where we dispatch messages. Also, we call <code>VK.init</code> when the script is loaded to initialize VK APIs. Check out original code for more details.</p>
 <p><a id="packaging"></a></p>
-<h2 id="packaging-html5-plugins">Packaging HTML5 plugins</h2>
+</section>
+</section>
+<section id="packaging-html5-plugins" class="level2">
+<h2>Packaging HTML5 plugins</h2>
 <p>Follow the existing <a href="https://docs.coronalabs.com/native/plugin/submission.html">plugin submission guide</a>. To add HTML5 JS plugins, put your JS &amp; Lua files alongside with the <code>metadata.lua</code> to <code>web</code> folder next to other platforms plugins.</p>
 <p>Sample <code>metadata.lua</code>:</p>
 <pre class="brush: lua;">local metadata = {
@@ -271,7 +291,9 @@ demo.execute( callbackFunction )</pre>
 return metadata</pre>
 <p>Use <a href="https://github.com/coronalabs/com.coronalabs-plugin.vk.direct/blob/master/plugins/2018.3275/web/plugin_vk_direct_js.js">VK Direct Games plugin</a> as an example.</p>
 <p><a id="support"></a></p>
-<h2 id="support">Support</h2>
+</section>
+<section id="support" class="level2">
+<h2>Support</h2>
 <p>If you have any questions or ideas, feel free to join community discussions on the <a href="https://forums.solar2d.com/c/beta-testing/html5/96">forums</a> or <a href="https://discord.gg/Abf5V9G">Discord</a>.</p>
 <hr>
 <div id="footer">
@@ -283,6 +305,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

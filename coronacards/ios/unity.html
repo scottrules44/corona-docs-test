@@ -69,7 +69,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../coronacards/index.html">CoronaCards</a>  ▸  <a href="../../coronacards/ios/index.html">iOS</a>  ▸  <a href="../../coronacards/ios/unity.html">unity</a>
 </div>
-<h1 id="coronacards-unity-integration-ios">CoronaCards: Unity Integration — iOS</h1>
+<section id="coronacards-unity-integration-ios" class="level1">
+<h1>CoronaCards: Unity Integration — iOS</h1>
 <blockquote>
 <table>
 <tbody>
@@ -92,7 +93,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This guide explains how to integrate CoronaCards within a Unity project for iOS.</p>
 <div class="guide-notebox">
 <div class="notebox-title">
@@ -103,11 +105,16 @@ Notes
 <li>Unity is a trademark of Unity Technologies and is in no way associated or affiliated with Corona Labs.</li>
 </ul>
 </div>
-<h2 id="xcode-project-setup">Xcode Project Setup</h2>
+</section>
+<section id="xcode-project-setup" class="level2">
+<h2>Xcode Project Setup</h2>
 <p>Please refer to <a href="../../coronacards/ios/setup.html">Xcode Project Setup — iOS</a></p>
-<h2 id="integrating-coronacards">Integrating CoronaCards</h2>
+</section>
+<section id="integrating-coronacards" class="level2">
+<h2>Integrating CoronaCards</h2>
 <p>Basic integration of CoronaCards within Unity can be achieved by modifying the <code>UnityViewController</code> that is generated from the Unity project. This <code>UnityViewController</code> becomes the root controller upon which the <code>CoronaViewController</code> will overlay.</p>
-<h5 id="example">Example</h5>
+<section id="example" class="level5">
+<h5>Example</h5>
 <p>To add the <code>CoronaViewController</code> and <code>CoronaView</code> to the view controller hierarchy, add a member in <code>UnityAppController.h</code> via the process outlined below. In this example, we’ll add a simple Corona project to the native Xcode Unity project, set to run as an overlay.</p>
 <ol type="1">
 <li>Add the following line to the <code>UnityAppController</code> interface:</li>
@@ -161,7 +168,9 @@ Notes
     //...
 } </pre>
 </div>
-<h3 id="transparent-views">Transparent Views</h3>
+</section>
+<section id="transparent-views" class="level3">
+<h3>Transparent Views</h3>
 <p>In iOS, a CoronaView can have transparent backgrounds. To accomplish this, two things are required:</p>
 <p>First, instruct iOS to enable transparency in the <code>UIView</code> itself:</p>
 <pre class="brush: lua;">// [Obj-C]
@@ -170,7 +179,10 @@ coronaView.opaque = NO;</pre>
 <p>Second, tell Corona to utilize an transparent OpenGL surface by setting the <code>alpha</code> key to <code>0</code>:</p>
 <pre class="brush: lua;">-- [Lua]
 display.setDefault( "background", 0, 0, 0, 0 )</pre>
-<h2 id="nativelua-communication">Native/Lua Communication</h2>
+</section>
+</section>
+<section id="nativelua-communication" class="level2">
+<h2>Native/Lua Communication</h2>
 <p>Once integrated, a Corona-based view can communicate with the native app and <nobr>vice-versa.</nobr> Learn more in the <nobr><a href="../../coronacards/ios/communication.html">Native/Lua Communication</a></nobr> guide.</p>
 <hr>
 <div id="footer">
@@ -182,6 +194,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

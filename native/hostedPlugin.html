@@ -75,14 +75,21 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../native/index.html">Solar2D Native</a>  ▸  <a href="../native/hostedPlugin.html">Self-Hosted Plugins</a>
 </div>
-<h1 id="self-hosted-plugins">Self-Hosted Plugins</h1>
-<h2 id="overview">Overview</h2>
+<section id="self-hosted-plugins" class="level1">
+<h1>Self-Hosted Plugins</h1>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Solar2D Native users can enable plugins hosted on third-party servers. This allows you to use third party plugins as well as creating plugins for internal use and leveraging Solar2D’s rapid build process with native code that you’ve written.</p>
-<h2 id="packaging-and-hosting">Packaging and Hosting</h2>
+</section>
+<section id="packaging-and-hosting" class="level2">
+<h2>Packaging and Hosting</h2>
 <p>Plugins must be packaged for each platform <strong>separately</strong> as a <code>.tgz</code> file and hosted on a web server.</p>
-<h3 id="package-as-archives">Package as Archives</h3>
+<section id="package-as-archives" class="level3">
+<h3>Package as Archives</h3>
 <p>Follow the <a href="../native/plugin/index.html">Plugins</a> guide to build your plugin. Remember that for each support platform, a separate archive has to be packaged.</p>
-<h3 id="ios">iOS</h3>
+</section>
+<section id="ios" class="level3">
+<h3>iOS</h3>
 <p>Building the plugin-in to be hosted on a web server, a few simple extra steps are required:</p>
 <ol type="1">
 <li>Create a directory for packaging, for instance <code>package-plugin</code>. Create a folder named <code>iphone</code> within <code>package-plugin</code>.</li>
@@ -95,7 +102,9 @@
 tar -czf iphone.tgz libplugin_YOUR-PLUGIN.a metadata.lua resources
 scp ../iphone.tgz "youruser@www.your-web-server-where-plugin-will-be-hostd.de:/var/www/YOUR_DOMAIN/plugins"</pre>
 <p>Finally, for those who will use your Self-Hosted-Plugin, they have to add the location (<code>www.YOUR_DOMAIN.com/plugins/android.tgz</code>) into their <code>build.settings</code> so that the build proccess for Solar2D Apps can find the plugin (see also below).</p>
-<h3 id="android">Android</h3>
+</section>
+<section id="android" class="level3">
+<h3>Android</h3>
 <p>Building the plugin-in to be published on a web server, a few simple extra steps are required:</p>
 <ol type="1">
 <li><p>Create a directory for packaging, for instance <code>package-plugin</code>. Create a folder named <code>android</code> within <code>package-plugin</code>.</p></li>
@@ -108,17 +117,27 @@ cp ../../build/outputs/aar/plugin-release.aar .
 COPYFILE_DISABLE=true tar -czf ../"$(basename "$(pwd)").tgz" --exclude='.[^/]*'  ./*
 scp ../android.tgz "youruser@www.your-web-server-where-plugin-will-be-hostd.de:/var/www/YOUR_DOMAIN/plugins"</pre>
 <p>Finally, for those who will use your Self-Hosted-Plugin, they have to add the location (<code>www.YOUR_DOMAIN.com/plugins/android.tgz</code>) into their <code>build.settings</code> so that the build proccess for Solar2D Apps can find the plugin (see also below).</p>
-<h3 id="lua">Lua</h3>
+</section>
+<section id="lua" class="level3">
+<h3>Lua</h3>
 <p>The plugin needs to be stored in a flat (no directories) <code>.tgz</code> format. For example, from inside your plugin build folder, run:</p>
 <pre class="brush: lua;">COPYFILE_DISABLE=true tar -czf myplugin.tgz myplugin.lua metadata.lua</pre>
-<h3 id="web-server-requirements">Web Server Requirements</h3>
+</section>
+<section id="web-server-requirements" class="level3">
+<h3>Web Server Requirements</h3>
 <p>Upload the resulting <code>.tgz</code> file to a web server that is accessible from the Internet. If necessary, <code>https://</code> and basic authentication are supported for security and access control. You can use <code>localhost</code> as web server too, since builds are local now. Note that this way machine performing the build would have to run the server.</p>
-<h2 id="solar2d-simulator-and-builds">Solar2D Simulator and Builds</h2>
-<h3 id="running-plugins-in-the-simulator">Running Plugins in the Simulator</h3>
+</section>
+</section>
+<section id="solar2d-simulator-and-builds" class="level2">
+<h2>Solar2D Simulator and Builds</h2>
+<section id="running-plugins-in-the-simulator" class="level3">
+<h3>Running Plugins in the Simulator</h3>
 <p>Solar2D Simulator only accesses hosted plugins for device builds. When it comes to running these plugins in the Simulator, you can install these plugins locally by placing the plugin file in the following directory:</p>
 <pre class="brush: lua;">~/Library/Application Support/Corona/Simulator/Plugins/</pre>
 <p>This file should match the name used as the key in the <code>plugins</code> table, for example <code>"plugin.hostedplugin"</code> in the <code>build.settings</code> example below.</p>
-<h3 id="device-buildssettings">Device Builds/Settings</h3>
+</section>
+<section id="device-buildssettings" class="level3">
+<h3>Device Builds/Settings</h3>
 <p>In order to use hosted plugins with your Solar2D project, the following changes to <code>build.settings</code> must be made:</p>
 <ol type="1">
 <li>For each <strong>device</strong> platform, you must tell Solar2D the URL from which to fetch the plugin <code>.tgz</code> file.</li>
@@ -155,7 +174,10 @@ Note
 </div>
 <p>Note, that if no Simulator urls are there Solar2D Simulator will throw an error on launch/relaunch saying that the plugin couldn’t be downloaded. This message is safe to ignore.</p>
 </div>
-<h2 id="using-local-storage-instead-of-urls">Using local storage instead of URLs</h2>
+</section>
+</section>
+<section id="using-local-storage-instead-of-urls" class="level2">
+<h2>Using local storage instead of URLs</h2>
 <p>Local storage can be used instead of web server. To do this, rename resulting archive to <code>data.tgz</code>, and put it into <code>Solar2DPlugins/&lt;publiserId&gt;/&lt;plugin.name&gt;/&lt;platform&gt;/data.tgz</code>. The <code>Solar2DPlugins</code> can be found at <code>~/Solar2DPlugins</code> on macOS or <code>%APPDATA%\Solar2DPlugins</code> on Windows.</p>
 <p>Platform can be one of:</p>
 <ul>
@@ -184,6 +206,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

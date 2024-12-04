@@ -73,7 +73,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../../plugin/memoryBitmap/index.html">memoryBitmap</a>  ▸  <a href="../../../../plugin/memoryBitmap/type/MemoryBitmap/index.html">MemoryBitmap</a>  ▸  <a href="../../../../plugin/memoryBitmap/type/MemoryBitmap/setPixel.html">setPixel</a>
 </div>
-<h1 id="memorybitmapsetpixel">MemoryBitmap:setPixel()</h1>
+<section id="memorybitmapsetpixel" class="level1">
+<h1>MemoryBitmap:setPixel()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -112,26 +113,42 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Sets a bitmap pixel to a specific color.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">bitmap:setPixel( x, y, r, g, b, a )
 bitmap:setPixel( x, y, color )</pre>
-<h5 id="x-y-required">x, y <sub><sup>(required)</sup></sub></h5>
+<section id="x-y-required" class="level5">
+<h5>x, y <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../../api/type/Number.html">Numbers</a>.</em> The <strong>x</strong> and <strong>y</strong> pixel coordinates to be changed.</p>
-<h5 id="r-g-b-a-required">r, g, b, a <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="r-g-b-a-required" class="level5">
+<h5>r, g, b, a <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../../api/type/Number.html">Numbers</a>.</em> The red, green, blue and alpha components to set the bitmap pixel to. Values should be in the range of <code>0</code> to <code>1</code>. Depending on the bitmap <code>format</code>, some components may be ignored — for example, a <code>format</code> of <code>"rgb"</code> uses only <code>r</code>, <code>g</code> and <code>b</code>, while a <code>format</code> of <code>"mask"</code> ignores everything but <code>r</code>.</p>
-<h5 id="color-required">color <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="color-required" class="level5">
+<h5>color <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../../api/type/Table.html">Table</a>.</em> As an alternative to passing <code>r</code>, <code>g</code>, <code>b</code>, and <code>a</code> component values, you may pass color components in a Lua array as noted in the example below.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li>Passing <code>nil</code> instead of a component value will keep that component unchanged.</li>
 <li>Colors should have premultiplied alpha.</li>
 </ul>
-<h2 id="examples">Examples</h2>
-<h5 id="individual-components">Individual Components</h5>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="individual-components" class="level5">
+<h5>Individual Components</h5>
 <pre class="brush: lua;">texture:setPixel( 10, 10, 1, 0, 0, 1 )</pre>
-<h5 id="lua-array">Lua Array</h5>
+</section>
+<section id="lua-array" class="level5">
+<h5>Lua Array</h5>
 <pre class="brush: lua;">texture:setPixel( 10, 10, {1,0,0,1} )</pre>
 <hr>
 <div id="footer">
@@ -143,6 +160,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

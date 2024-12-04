@@ -79,7 +79,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/programming/index.html">Getting Started</a>
 </div>
-<h1 id="chapter-1-creating-a-project">Chapter 1 — Creating a project</h1>
+<section id="chapter-1-creating-a-project" class="level1">
+<h1>Chapter 1 — Creating a project</h1>
 <div class="walkthrough-nav">
 <div class="walkthrough-nav-upper-right">
 <p><strong>⟨</strong> <a href="../../../guide/programming/intro/index.html">Previous</a> <em>|</em> <a href="../../../guide/programming/02/index.html">Next</a> <strong>⟩</strong></p>
@@ -95,11 +96,15 @@
 </ul>
 </div>
 <p><a id="using"></a></p>
-<h2 id="using-solar2d">Using Solar2D</h2>
-<h3 id="scripting">Scripting</h3>
+<section id="using-solar2d" class="level2">
+<h2>Using Solar2D</h2>
+<section id="scripting" class="level3">
+<h3>Scripting</h3>
 <p>Solar2D uses <a href="https://www.lua.org/">Lua</a> scripting language. If you’ve ever programmed in any language, you will find Lua an easy transition. <a href="../../../guide/start/introLua/index.html">Introduction to Lua</a> guide provides an overview of Lua, or you can <a href="https://www.youtube.com/playlist?list=PLxgtJR7f0RBKGid7F2dfv7qc-xWwSee2O">learn Lua on YouTube</a>. In a very short time, you will find yourself writing that great app that you’ve dreamed of creating!</p>
 <p>If you’re completely new to programming, Lua is still easy to learn and this guide will help you along.</p>
-<h3 id="text-editors">Text Editors</h3>
+</section>
+<section id="text-editors" class="level3">
+<h3>Text Editors</h3>
 <p>In addition to Solar2D, you will need a <strong>text editor</strong>. There are several editors available and choosing one is much like choosing a car — everybody has their own preferences and you should explore which one suits you best.</p>
 <p>If you don’t already have a favorite text editor, the following options are recommended:</p>
 <div class="inner-table">
@@ -159,7 +164,10 @@
 </table>
 </div>
 <p><a id="createapp"></a></p>
-<h2 id="creating-a-project">Creating a project</h2>
+</section>
+</section>
+<section id="creating-a-project" class="level2">
+<h2>Creating a project</h2>
 <div class="float-right" style="max-width: 240px; margin-bottom: 16px; clear: both;">
 <p><img src="../../../images/docs/sbs-balloon-0.png" /></p>
 </div>
@@ -173,7 +181,8 @@ Notes
 <li><p>Included with each chapter is a downloadable file which contains all of the images, audio files, and other assets related to that chapter. This chapter’s source files are available <a href="https://github.com/coronalabs/GettingStarted01/archive/master.zip">here</a>.</p></li>
 </ul>
 </div>
-<h3 id="starting-a-project">Starting a Project</h3>
+<section id="starting-a-project" class="level3">
+<h3>Starting a Project</h3>
 <p>Creating a new project in Solar2D is easy. In just a few simple steps you’ll be ready to make your first game!</p>
 <ol type="1">
 <li><p>Open the <strong>Solar2D Simulator</strong>.</p></li>
@@ -183,7 +192,9 @@ Notes
 <ol start="3" type="1">
 <li>For the project/application name, type <code>BalloonTap</code> and ensure that the <strong>Blank</strong> template option is selected. Leave the other settings at default and click <strong>OK</strong> (Windows) or <strong>Next</strong> (Mac). This will create the basic files for your first game in the location (folder) that you specified. This is also the folder in which you’ll place all of your app files/assets, including images, program files, etc.</li>
 </ol>
-<h3 id="including-images">Including Images</h3>
+</section>
+<section id="including-images" class="level3">
+<h3>Including Images</h3>
 <p>For this project, you will need three <strong>image files</strong>, placed within the <code>BalloonTap</code> project folder created above:</p>
 <div class="inner-table">
 <table>
@@ -238,7 +249,9 @@ Notes
 </ul>
 </div>
 </div>
-<h3 id="loading-the-background">Loading the Background</h3>
+</section>
+<section id="loading-the-background" class="level3">
+<h3>Loading the Background</h3>
 <p>The first image that we need to load is the background. Solar2D places everything on the screen from back to front in regards to layering, so the first image we load will exist behind other images that are loaded afterward. While there are ways to change the layering order of images and send them to the back or front of the display stack, we’ll keep this project simple and load them in a logical order.</p>
 <p>Using your chosen text editor, locate and open the <code>main.lua</code> file within your project folder. The <code>main.lua</code> file is the foundational <nobr>“core program file”</nobr> of every Solar2D project and you cannot create an app without it. This is the Lua file with which the application starts, every time you run the app.</p>
 <p>In this <code>main.lua</code> file, type in the highlighted command:</p>
@@ -335,7 +348,9 @@ background.y = display.contentCenterY</pre>
 <p>Remember that the <nobr><strong>Simulator Console</strong></nobr> window is a valuable place to check for and diagnose potential errors in your code. On Windows, this panel is always accessible in the Simulator. On Mac, if this window isn’t already open, you can view it by selecting <nobr><strong>Window</strong> → <strong>Console</strong></nobr>.</p>
 </div>
 </div>
-<h3 id="loading-the-platform">Loading the Platform</h3>
+</section>
+<section id="loading-the-platform" class="level3">
+<h3>Loading the Platform</h3>
 <p>Time to load the platform. This is very similar to loading the background. Following the three lines of code you’ve already typed, enter the following highlighted commands:</p>
 <pre class="highlight: [11,12,13]; first-line: 7; gutter: true; brush: lua;">local background = display.newImageRect( "background.png", 360, 570 )
 background.x = display.contentCenterX
@@ -349,7 +364,9 @@ platform.y = display.contentHeight-25</pre>
 <p><img src="../../../images/docs/sbs-balloon-2.png" /></p>
 </div>
 <p>Save your <code>main.lua</code> file and relaunch the Simulator to see the platform graphic.</p>
-<h3 id="loading-the-balloon">Loading the Balloon</h3>
+</section>
+<section id="loading-the-balloon" class="level3">
+<h3>Loading the Balloon</h3>
 <p>To load the balloon, we’ll follow the same process. Below the previous commands, type these lines:</p>
 <pre class="highlight: [15,16,17]; first-line: 15; gutter: true; brush: lua;">local balloon = display.newImageRect( "balloon.png", 112, 112 )
 balloon.x = display.contentCenterX
@@ -360,7 +377,9 @@ balloon.x = display.contentCenterX
 balloon.y = display.contentCenterY
 balloon.alpha = 0.8</pre>
 <p>Save your <code>main.lua</code> file and relaunch the Simulator. There should now be a balloon in the center of the screen.</p>
-<h3 id="adding-physics">Adding Physics</h3>
+</section>
+<section id="adding-physics" class="level3">
+<h3>Adding Physics</h3>
 <p>Time to get into physics! <a href="https://www.box2d.org/">Box2D</a> is the included physics engine for your use in building apps and games. While using physics is not required to make a game, it makes it much easier to handle many game situations.</p>
 <p>Including physics is very easy. Below the previous lines, add these commands:</p>
 <pre class="highlight: [20,21]; first-line: 20; gutter: true; brush: lua;">local physics = require( "physics" )
@@ -416,7 +435,9 @@ Notes
 <p>Save your <code>main.lua</code> file and relaunch the Simulator. As a fun experiment, you can try adjusting the <code>bounce</code> value and relaunch the project to see the effect.</p>
 </div>
 </div>
-<h3 id="functions">Functions</h3>
+</section>
+<section id="functions" class="level3">
+<h3>Functions</h3>
 <p>At this point, we have a balloon that drops onto a platform and bounces slightly. That’s not very fun, so let’s make this into a game! For our balloon tap game to work, we need to be able to push the balloon up a little each time it’s tapped.</p>
 <p>To perform this kind of feature, programming languages use what are called <strong>functions</strong>. Functions are short (usually) sections of code that only run when we tell them to, like when the player taps the balloon.</p>
 <p>Let’s create our first function:</p>
@@ -472,7 +493,9 @@ end</pre>
 </div>
 <p>The third and fourth parameters, <code>balloon.x</code> and <code>balloon.y</code>, tell the physics engine where to apply the force, relative to the balloon itself. If you apply the force at a location which is not the center of the balloon, it may cause the balloon to move in an unexpected direction or spin around. For this game, we will keep the force focused on the center of the balloon.</p>
 <p>That’s it! We could, if needed, add additional commands inside the <code>pushBalloon()</code> function, but for this simple game, we only need to push the balloon upward with a small amount of force.</p>
-<h3 id="events">Events</h3>
+</section>
+<section id="events" class="level3">
+<h3>Events</h3>
 <p>Events are what create interactivity and, in many ways, Solar2D is an <nobr>event-based</nobr> framework where information is dispatched during a specific event to an <strong>event listener</strong>. Whether that event is the user touching an object/button, tapping the screen, or (in this game) tapping the balloon, Solar2D can react by triggering an event.</p>
 <p>Adding an event listener is easy — do so now, following the function:</p>
 <pre class="highlight: [30]; first-line: 26; gutter: true; brush: lua;">local function pushBalloon()
@@ -531,7 +554,10 @@ balloon:addEventListener( "tap", pushBalloon )</pre>
 <p><img src="../../../images/simulator/pastel-rocket.png" /></p>
 </div>
 <p><a id="extracredit"></a></p>
-<h2 id="extra-credit">Extra Credit</h2>
+</section>
+</section>
+<section id="extra-credit" class="level2">
+<h2>Extra Credit</h2>
 <p>Congratulations, you have created a basic game in just 30 lines of code! But there is something missing, isn’t there? Wouldn’t it be nice if the game kept track of how many times the balloon was tapped? Fortunately that’s easy to add!</p>
 <p>First, let’s create a local Lua variable to keep track of the tap count. You can add this at the very top of your existing code. In this case, we’ll use it to store an <strong>integer</strong> instead of associating it with an image. Since the player should begin the game with no score, we’ll initially set its value to <code>0</code>, but this can change later.</p>
 <pre class="highlight: [7]; first-line: 7; gutter: true; brush: lua;">local tapCount = 0
@@ -624,7 +650,9 @@ end</pre>
 </div>
 </div>
 <p><a id="concepts"></a></p>
-<h2 id="chapter-concepts">Chapter Concepts</h2>
+</section>
+<section id="chapter-concepts" class="level2">
+<h2>Chapter Concepts</h2>
 <p>We’ve covered many concepts in this chapter. It may seem a bit overwhelming, but be patient, look at your code, and read through the sections again if necessary. If you need help, <a href="https://discord.com/invite/Abf5V9G">Discord</a> and <a href="https://forums.solar2d.com/">the forums</a> are a friendly venue to communicate with other developers.</p>
 <p>Here’s a quick overview of what you learned in this chapter:</p>
 <div class="inner-table">
@@ -691,7 +719,9 @@ end</pre>
 </tbody>
 </table>
 </div>
-<h2 id="section"></h2>
+</section>
+<section id="section" class="level2">
+<h2></h2>
 <div class="walkthrough-nav">
 <p><strong>⟨</strong> <a href="../../../guide/programming/intro/index.html">Introduction to Solar2D</a> <em>|</em> <a href="../../../guide/programming/02/index.html">Chapter 2 — Upward &amp; Onward</a> <strong>⟩</strong></p>
 </div>
@@ -705,6 +735,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

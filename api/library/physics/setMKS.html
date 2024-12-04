@@ -68,7 +68,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/physics/index.html">physics</a>  ▸  <a href="../../../api/library/physics/setMKS.html">setMKS</a>
 </div>
-<h1 id="physics.setmks">physics.setMKS()</h1>
+<section id="physics.setmks" class="level1">
+<h1>physics.setMKS()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -99,11 +100,15 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Sets the MKS (meters, kilograms, and seconds) value of the physics simulation for specific keys. This is strictly for advanced purposes — the average developer and project will not require this function.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">physics.setMKS( key, value )</pre>
-<h5 id="key-required">key <sub><sup>(required)</sup></sub></h5>
+<section id="key-required" class="level5">
+<h5>key <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The key to set MKS units for. Can be any one of the following values:</p>
 <ul>
 <li><code>"velocityThreshold"</code> — corresponds to <code>b2_velocityThreshold</code>.</li>
@@ -111,9 +116,14 @@
 <li><code>"linearSleepTolerance"</code> — corresponds to <code>b2_linearSleepTolerance</code>.</li>
 <li><code>"angularSleepTolerance"</code> — corresponds to <code>b2_angularSleepTolerance</code>.</li>
 </ul>
-<h5 id="value-required">value <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="value-required" class="level5">
+<h5>value <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The value of for the chosen MKS key.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">physics.setMKS( "timeToSleep", 10 )</pre>
 <hr>
 <div id="footer">
@@ -125,6 +135,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

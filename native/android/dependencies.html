@@ -75,7 +75,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../native/index.html">Solar2D Native</a>  ▸  <a href="../../native/android/index.html">Android</a>  ▸  <a href="../../native/android/dependencies.html">Android Dependency Integration</a>
 </div>
-<h1 id="android-dependency-integration">Android Dependency Integration</h1>
+<section id="android-dependency-integration" class="level1">
+<h1>Android Dependency Integration</h1>
 <p>This guide explains how to properly integrate common Android libraries into your plugin project. Following these procedures ensures that your plugin works with the most <nobr>Corona-compatible</nobr> version of a library and also guarantees that your plugin will be compatible with other plugins that share the same dependency on a library.</p>
 <div class="guides-toc">
 <ul>
@@ -89,11 +90,14 @@
 </ul>
 </div>
 <p><a id="background"></a></p>
-<h2 id="background">Background</h2>
+<section id="background" class="level2">
+<h2>Background</h2>
 <p>When Corona originally opened up the <a href="https://marketplace.coronalabs.com/">Corona Marketplace</a> to accept content made by third parties, plugin developers could upload any <code>.jar</code> files needed to run their plugin. This resulted in plugins being submitted that would include versions of the <a href="https://developer.android.com/topic/libraries/support-library/index.html">Android Support Libraries</a> or <a href="https://developers.google.com/android/guides/overview">Google Play Services</a>. The version of these <code>.jar</code> files would often be the latest version available when the plugin was initially developed, but they were not typically updated when newer versions of the plugin were released.</p>
 <p>Essentially, with different versions of libraries floating around inside of plugins, incompatibilities would occur between a plugin needing, for instance, Google Play Services version 8.4 and another plugin needing Google Play Services version 4.2.</p>
 <p><a id="dependency-plugins"></a></p>
-<h2 id="dependency-plugins">Dependency Plugins</h2>
+</section>
+<section id="dependency-plugins" class="level2">
+<h2>Dependency Plugins</h2>
 <p>In Corona, <strong>dependency plugins</strong> are special plugins that address version incompatibilities between dependencies which multiple plugins may have. They contain all of the resources for the latest version of a particular library that Corona supports, plus any additional resources to aid in integration and proper usage of a library.</p>
 <p>If your project depends on a common Android library like the <a href="https://developer.android.com/topic/libraries/support-library/index.html">Android Support Libraries</a> or <a href="https://developers.google.com/android/guides/overview">Google Play Services</a>, you’ll need to include a dependency plugin to incorporate that library into your plugin submission. This is to ensure compatibility with other plugins that may be dependent on these libraries.</p>
 <p>The following table outlines which libraries are supported by Corona as dependency plugins. While developing your plugin that meets the above criteria, you should test it against the library version encapsulated in a dependency plugin.</p>
@@ -165,16 +169,23 @@
 </tbody>
 </table>
 </div>
-<h3 id="android-support-libraries">Android Support Libraries</h3>
+<section id="android-support-libraries" class="level3">
+<h3>Android Support Libraries</h3>
 <p>Any library with a dependency plugin name containing <code>shared.android.support</code> is part of Google’s <a href="https://developer.android.com/topic/libraries/support-library/index.html">Android Support Libraries</a>. These dependency plugins encapsulate the respective components listed <a href="https://developer.android.com/topic/libraries/support-library/index.html">here</a> and are analogous to adding the following to the <code>dependencies</code> block of your project’s <code>build.gradle</code>:</p>
 <pre class="brush: lua;">compile 'com.android.support:[COMPONENT_NAME]:[VERSION_NUMBER]'</pre>
-<h3 id="google-play-services">Google Play Services</h3>
+</section>
+<section id="google-play-services" class="level3">
+<h3>Google Play Services</h3>
 <p>Any library with a dependency plugin name containing <code>shared.google.play.services</code> is part of <a href="https://developers.google.com/android/guides/overview">Google Play Services</a>. These dependency plugins encapsulate the respective components listed <a href="https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project">here</a> and are analogous to adding the following to the <code>dependencies</code> block of your project’s <code>build.gradle</code>:</p>
 <pre class="brush: lua;">compile 'com.google.android.gms:play-services-[COMPONENT_NAME]:[VERSION_NUMBER]'</pre>
 <p><a id="base-logic"></a></p>
-<h2 id="base-logic-layer">Base Logic Layer</h2>
+</section>
+</section>
+<section id="base-logic-layer" class="level2">
+<h2>Base Logic Layer</h2>
 <p>The <code>shared.google.play.services.base</code> dependency plugin also includes a base logic layer that will check if the environment on the device is safe for using Google Play Services and attempt to resolve any issues with using the Google Play Services <code>.apk</code>. This is to follow Google’s <a href="https://developers.google.com/android/guides/setup#ensure_devices_have_the_google_play_services_apk">guidelines</a> on ensuring devices have the Google Play Services APK. Resolution attempts are made by presenting either an alert or a notification with context about the issue and how to resolve it. From an alert, the end user would then tap a button and be taken somewhere else on their device to resolve the problem. From a notification, tapping on it will launch the app and present an alert with similar context.</p>
-<h3 id="behavior-changes">Behavior Changes</h3>
+<section id="behavior-changes" class="level3">
+<h3>Behavior Changes</h3>
 <p>When the <code>shared.google.play.services.base</code> dependency plugin is included, your app’s <code>main.lua</code> will not begin to execute until any environment issues for using Google Play Services are resolved by the end user. Should an environment change affecting Google Play Services occur during your app’s execution, such as the end user disabling Google Play Services on their device, the end user will be presented with an alert or notification similar to when the app was initially launched, prior to <code>main.lua</code> executing.</p>
 <p>If the end user just re-enabled Google Play Services and they still need to download an update to Google Play Services, your app will display an alert requesting the end user reboot their device. This reboot is strictly enforced if your app includes the <code>"android.permission.RECEIVE_BOOT_COMPLETED"</code> permission. In this case, your app won’t be able to get past this alert until the end user reboots the device. If the <code>"android.permission.RECEIVE_BOOT_COMPLETED"</code> permission is <strong>not</strong> requested by your app, it will recommend the user reboot their device, but will have no means of enforcing it. This reboot is recommended to get around potential <nobr>DF-DLA-15</nobr> errors from the Google Play store while updating Google Play Services.</p>
 <div class="guide-notebox-imp">
@@ -183,13 +194,18 @@ Limitations
 </div>
 <p>Note that the base logic layer does <strong>not</strong> account for issues that may occur while trying to connect to Google Play Services and use Google’s APIs. It will only guarantee that the app has access to the correct version of the Google Play Services <code>.apk</code> at all times. When it’s time for your plugin to connect to Google Play Services, be sure to follow the <a href="https://developers.google.com/android/guides/api-client">Accessing Google APIs</a> and <a href="https://developers.google.com/android/guides/permissions">Runtime Permissions</a> guides.</p>
 </div>
-<h3 id="solar2d-native-gotchas">Solar2D Native Gotchas</h3>
+</section>
+<section id="solar2d-native-gotchas" class="level3">
+<h3>Solar2D Native Gotchas</h3>
 <p>To use the base logic layer with a Solar2D Native project, you will need to identify which components of Google Play Services are being used with <nobr><code>&lt;meta-data&gt;</code></nobr> tags in the <code>&lt;application&gt;</code> block of your application’s <code>AndroidManifest.xml</code>. These tags are used to identify components of Google Play Services that may need additional process. The format for these <nobr><code>&lt;meta-data&gt;</code></nobr> tags is as follows:</p>
 <pre class="brush: xml;">&lt;meta-data android:name="usesGooglePlayServicesComponent[PascalCase_NAME_OF_COMPONENT]" android:value="true" /></pre>
 <p>Here, <code>[PascalCase_NAME_OF_COMPONENT]</code> corresponds to the <code>[COMPONENT_NAME]</code> that would be specified in the <code>dependencies</code> block of your project’s <code>build.gradle</code>. For example, if the <code>dependencies</code> block of your <code>build.gradle</code> includes <nobr><code>compile 'com.google.android.gms:play-services-ads:15.0.1'</code></nobr>, you would need to include the following in the <code>&lt;application&gt;</code> block of <code>AndroidManifest.xml</code>:</p>
 <pre class="brush: xml;">&lt;meta-data android:name="usesGooglePlayServicesComponentAds" android:value="true" /></pre>
 <p><a id="including"></a></p>
-<h2 id="including-dependency-plugins">Including Dependency Plugins</h2>
+</section>
+</section>
+<section id="including-dependency-plugins" class="level2">
+<h2>Including Dependency Plugins</h2>
 <p>To include a dependency plugin when <a href="../../native/plugin/submission.html">submitting your plugin</a>, add an entry to the <nobr><code>coronaManifest</code> → <code>dependencies</code></nobr> table of your plugin’s <code>android/metadata.lua</code>:</p>
 <pre class="brush: lua;">local metadata =
 {
@@ -225,7 +241,9 @@ Notes
 </div>
 </div>
 <p><a id="testing"></a></p>
-<h2 id="testing-against-dependencies">Testing Against Dependencies</h2>
+</section>
+<section id="testing-against-dependencies" class="level2">
+<h2>Testing Against Dependencies</h2>
 <p>Most dependency plugins simply wrap the distribution of a library accessible from the <a href="https://developer.android.com/studio/intro/update.html#sdk-manager">Android SDK Manager</a>. In these cases, simply including the correct version of the library in the <code>dependencies</code> block of the plugin’s <nobr><code>build.gradle (Module: plugin)</code></nobr> file is sufficient for testing. For example, a plugin that depends on the <a href="https://developer.android.com/topic/libraries/support-library/features.html#v7-cardview">CardView</a> library can be accurately tested by adding <nobr><code>compile 'com.android.support:cardview-v7:27.1.1'</code></nobr> to the <code>dependencies</code> block of the <nobr><code>build.gradle (Module: plugin)</code></nobr> file.</p>
 <p>Other dependency plugins may require additional resources to test against. Any dependency plugin that falls in this category will have an entry in the tarball of plugins provided in the release files of Solar2D Native. For a dependency plugin with this requirement, be sure to:</p>
 <ul>
@@ -234,13 +252,17 @@ Notes
 <li><p>Add any resources for the dependency plugin’s package into your project. If the dependency plugin contains multiple packages inside the <code>resources</code> folder, look for the <code>package.txt</code> file containing the dependency plugin’s package name and add the contents of the <code>res</code> folder to your project’s <code>res</code> folder.</p></li>
 </ul>
 <p><a id="chaining"></a></p>
-<h2 id="dependency-plugin-chaining">Dependency Plugin Chaining</h2>
+</section>
+<section id="dependency-plugin-chaining" class="level2">
+<h2>Dependency Plugin Chaining</h2>
 <p>Just as your plugin may rely upon a dependency plugin, a dependency plugin itself may depend upon other dependency plugins. The following flow chart illustrates the chaining between dependency plugins:</p>
 <div style="max-width: 800px">
 <p><img src="../../images/simulator/dependencies.png" /></p>
 </div>
 <p><a id="permissions"></a></p>
-<h2 id="dependency-plugins-and-permissions">Dependency Plugins and Permissions</h2>
+</section>
+<section id="dependency-plugins-and-permissions" class="level2">
+<h2>Dependency Plugins and Permissions</h2>
 <p>When using a dependency plugin, some permissions may be automatically added to your app. The following table illustrates which permissions are added for which dependency plugins.</p>
 <style>.inner-table table td { padding-top: 4px; padding-bottom: 2px; }</style>
 <div class="inner-table">
@@ -277,6 +299,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

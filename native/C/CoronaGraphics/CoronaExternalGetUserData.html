@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../native/index.html">Solar2D Native</a>  ▸  <a href="../../../native/C/index.html">Corona C Functions</a>  ▸  <a href="../../../native/C/CoronaGraphics/index.html">CoronaGraphics.h</a>  ▸  <a href="../../../native/C/CoronaGraphics/CoronaExternalGetUserData.html">CoronaExternalGetUserData</a>
 </div>
-<h1 id="coronaexternalgetuserdata">CoronaExternalGetUserData()</h1>
+<section id="coronaexternalgetuserdata" class="level1">
+<h1>CoronaExternalGetUserData()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -90,14 +91,20 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Returns the <code>userData</code> that was assigned to a Lua <a href="../../../api/type/TextureResourceExternal/index.html">TextureResourceExternal</a> object which was created by a call to the <a href="../../../native/C/CoronaGraphics/CoronaExternalPushTexture.html">CoronaExternalPushTexture()</a> function. This function is useful when implementing the <code>callback.onGetField()</code> <a href="../../../native/C/CoronaGraphics/CoronaExternalTextureCallbacks.html">callback</a>.</p>
 <p>Returns <code>NULL</code> if the given stack index doesn’t reference a texture object.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua; c">void* CoronaExternalGetUserData( lua_State *L, int index )</pre>
-<h5 id="l">L</h5>
+<section id="l" class="level5">
+<h5>L</h5>
 <p>Pointer to the Lua state from which to access the Lua <a href="../../../api/type/TextureResourceExternal/index.html">TextureResourceExternal</a> object.</p>
-<h5 id="index">index</h5>
+</section>
+<section id="index" class="level5">
+<h5>index</h5>
 <p><code>1</code>-based index to the <a href="../../../api/type/TextureResourceExternal/index.html">TextureResourceExternal</a> object on the Lua stack.</p>
 <hr>
 <div id="footer">
@@ -109,6 +116,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

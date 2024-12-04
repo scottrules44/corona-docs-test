@@ -74,7 +74,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/display/index.html">display</a>  ▸  <a href="../../../api/library/display/captureScreen.html">captureScreen</a>
 </div>
-<h1 id="display.capturescreen">display.captureScreen()</h1>
+<section id="display.capturescreen" class="level1">
+<h1>display.captureScreen()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -113,7 +114,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Captures the contents of the screen and returns it as a new <a href="../../../api/type/DisplayObject/index.html">display object</a>. You can optionally save the capture as a file to the device’s photo library.</p>
 <p>Calling this method places the captured image on the screen on top of all other display objects. Use <a href="../../../api/type/DisplayObject/removeSelf.html">object:removeSelf()</a> to remove this object from the screen.</p>
 <div class="guide-notebox">
@@ -123,8 +125,11 @@ Note
 <p>This capture function will only capture what is rendered in OpenGL. It will <strong>not</strong> capture native display objects such as text input boxes/fields, web popups, ads, etc.</p>
 </div>
 <p><a id="gotchas"></a></p>
-<h2 id="gotchas">Gotchas</h2>
-<h3 id="android">Android</h3>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
+<section id="android" class="level3">
+<h3>Android</h3>
 <p>When an app is suspended, the Android OS removes all OpenGL textures from memory. When the app is resumed, Corona must reload all images, but the capture image no longer exists in memory. If you need to restore a captured image in Android, one solution is as follows:</p>
 <ul>
 <li>Save the returned capture image to file via the <a href="../../../api/library/display/save.html">display.save()</a> function. Note that you can’t use the <a href="../../../api/library/display/save.html">display.save()</a> function in Android <code>"applicationSuspend"</code> and <code>"applicationExit"</code> <a href="../../../api/event/system/type.html">events</a> because there are no OpenGL textures in memory to save.</li>
@@ -141,7 +146,9 @@ Note
         },
     },
 }</pre>
-<h3 id="ios">iOS</h3>
+</section>
+<section id="ios" class="level3">
+<h3>iOS</h3>
 <p>On iOS, if you include the <code>saveToPhotoLibrary</code> <a href="#options-reference">option</a> as <code>true</code>, you must include the following keys/descriptions in the <code>plist</code> table of <code>build.settings</code>. When the system prompts the user to allow access, the associated description is displayed as part of the alert. Note that these descriptions can be customized to your preference and they can even be localized (<a href="../../../guide/distribution/localization/index.html">guide</a>).</p>
 <pre class="brush: lua;">settings =
 {
@@ -154,7 +161,9 @@ Note
         },
     },
 }</pre>
-<h3 id="macos">macOS</h3>
+</section>
+<section id="macos" class="level3">
+<h3>macOS</h3>
 <p>Saves screen capture images as JPEG files to the current user’s <code>Pictures</code> folder.</p>
 <p>Note that if you plan to submit your application to the Mac App Store, it will be <strong>sandboxed</strong>. This means that special entitlements for read/write files in the <code>Pictures</code> folder must be requested. To do this, simply add an <code>entitlements</code> entry within the <nobr><code>settings</code> → <code>osx</code></nobr> table of <code>build.settings</code> as indicated below. For further details, see Apple’s <a href="https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html">documentation</a>.</p>
 <pre class="brush: lua;">settings = 
@@ -165,21 +174,32 @@ Note
         },
     },
 }</pre>
-<h3 id="windows">Windows</h3>
+</section>
+<section id="windows" class="level3">
+<h3>Windows</h3>
 <p>Saves screen capture images as PNG files to the user’s <nobr><code>My Pictures</code></nobr> directory under a subdirectory named after the Corona app. For the Corona Simulator, this directory will be <nobr><code>My Pictures\Corona Simulator</code></nobr>. For <nobr>Corona-built</nobr> desktop apps, this directory will be <nobr><code>My Pictures\&lt;AppName&gt;</code></nobr>.</p>
-<h3 id="capture-on-launch">Capture on Launch</h3>
+</section>
+<section id="capture-on-launch" class="level3">
+<h3>Capture on Launch</h3>
 <p>If you need to capture a display object on application launch, for example when <code>main.lua</code> is executed to initialize the app, you must call <code>display.captureScreen()</code> within a <a href="../../../api/library/timer/performWithDelay.html">timer.performWithDelay()</a> call. A delay of at least 100 milliseconds is recommended.</p>
 <pre class="brush: lua;">local function captureWithDelay()
     local capture = display.captureScreen()
 end
 
 timer.performWithDelay( 100, captureWithDelay )</pre>
-<h2 id="syntax">Syntax</h2>
+</section>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">display.captureScreen( [saveToPhotoLibrary] )</pre>
 <p><a id="options-reference"></a></p>
-<h5 id="savetophotolibrary-optional">saveToPhotoLibrary <sub><sup>(optional)</sup></sub></h5>
+<section id="savetophotolibrary-optional" class="level5">
+<h5>saveToPhotoLibrary <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Boolean.html">Boolean</a>.</em> If <code>true</code>, then it adds the image to your device’s photo library. For Android and iOS devices, this also necessitates the requirements outlined in <a href="#gotchas">Gotchas</a>.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">-- Fill the screen with a green rectangle
 local rect = display.newRect( 0, 0, display.contentWidth, display.contentHeight )
 rect:setFillColor( 0, 1, 0.2 )
@@ -217,6 +237,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

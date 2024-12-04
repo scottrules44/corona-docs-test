@@ -67,9 +67,11 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../tutorial/index.html">Tutorials</a>  ▸  <a href="../../../tutorial/games/index.html">Gaming/Physics</a>
 </div>
-<h1 id="predicting-trajectory">Predicting Trajectory</h1>
+<section id="predicting-trajectory" class="level1">
+<h1>Predicting Trajectory</h1>
 <p>Predicting trajectory has traditionally been a confusing endeavor, and some developers simply “guess” and hope for the best. In this tutorial, we’ll discuss the real solution!</p>
-<h2 id="test-project-setup">Test Project Setup</h2>
+<section id="test-project-setup" class="level2">
+<h2>Test Project Setup</h2>
 <p>For purposes of this tutorial, let’s quickly create a test project:</p>
 <ol type="1">
 <li><p>Open the Corona Simulator.</p></li>
@@ -89,7 +91,9 @@ local predictedPath = display.newGroup()
 local getTrajectoryPoint
 local launchProjectile</pre>
 </div>
-<h2 id="touch-handling">Touch Handling</h2>
+</section>
+<section id="touch-handling" class="level2">
+<h2>Touch Handling</h2>
 <p>The core task of predictive trajectory is gathering some basic data like the starting position and starting velocity of the projectile you want to launch. This can be accomplished with a <code>"touch"</code> event listener, so add the following code to your test project after the previous commands:</p>
 <pre class="highlight: [3,6,7,9,11,12,13,14,15]; first-line: 1; gutter: false; brush: lua;">local function screenTouch( event )
 
@@ -121,7 +125,9 @@ Runtime:addEventListener( "touch", screenTouch )</pre>
 <li><p>Following that, we calculate the starting <strong>x</strong> and <strong>y</strong> “velocity” values by subtracting the starting touch location (<code>event.xStart</code>/<code>event.yStart</code>) from the current touch location (<code>event.x</code>/<code>event.y</code>).</p></li>
 <li><p>Finally, with this basic information, we run a <code>for</code> loop which draws the predicted trajectory path in 240 steps — 4 seconds of launch time at <nobr>60 frames-per-second —</nobr> using vector circles (you could use images if desired). Note that we iterate by <code>2</code> in the loop since, for test purposes, 120 path points (dots) is enough to clearly represent the predicted trajectory.</p></li>
 </ol>
-<h2 id="calculating-trajectory">Calculating Trajectory</h2>
+</section>
+<section id="calculating-trajectory" class="level2">
+<h2>Calculating Trajectory</h2>
 <p>Within the <code>for</code> loop in the above function, the core calculation is done via the following function which uses the <nobr>frames-per-second</nobr> in “time steps” along with the starting position and velocity. Add this code block to your project following the previous lines:</p>
 <pre class="first-line: 1; gutter: false; brush: lua;">getTrajectoryPoint = function( startingPosition, startingVelocity, n )
 
@@ -142,7 +148,9 @@ Note
 </div>
 <p>This trajectory calculation is based on an app running at 60 <nobr>frames-per-second</nobr> <nobr>(<code>fps</code> value within <code>config.lua</code>)</nobr>. If you wish to use 30 frames per second, change each instance of <code>0.25</code> in the returned <code>x</code> and <code>y</code> values to <code>0.5</code> and everything should mesh up perfectly.</p>
 </div>
-<h2 id="launching-a-projectile">Launching a Projectile</h2>
+</section>
+<section id="launching-a-projectile" class="level2">
+<h2>Launching a Projectile</h2>
 <p>On touch release, firing the projectile is simple. We simply generate the projectile, add a physical body, and assign the velocity values that we gathered to send it flying across the trajectory path in a perfect match. To test, add this code block to your project following the previous lines:</p>
 <pre class="brush: lua;">launchProjectile = function( event )
     
@@ -158,7 +166,9 @@ Note
     proj:setLinearVelocity( vx, vy )
 end</pre>
 <p>Now save the project, refresh/reload it, and touch/drag around the screen to draw a predicted trajectory path. Upon release, a projectile (red circle) should generate at the starting point and it should perfectly follow the predicted path!</p>
-<h2 id="conclusion">Conclusion</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
 <p>Hopefully this tutorial illustrates that predictive trajectory is not an insurmountable task, nor one that requires a “best guess” sort of operation. With these calculations, accurate trajectory paths are easily accomplished in Corona!</p>
 <hr>
 <div id="footer">
@@ -170,6 +180,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

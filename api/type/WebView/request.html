@@ -69,7 +69,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/WebView/index.html">WebView</a>  ▸  <a href="../../../api/type/WebView/request.html">request</a>
 </div>
-<h1 id="objectrequest">object:request()</h1>
+<section id="objectrequest" class="level1">
+<h1>object:request()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -100,16 +101,25 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Loads the specified URL (string) into the <a href="../../../api/type/WebView/index.html">WebView</a>. For local content, you must specify a base <a href="../../../api/library/system/index.html">system</a> directory as a search path.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">object:request( url )
 object:request( url, baseDir )</pre>
-<h5 id="url-required">url <sub><sup>(required)</sup></sub></h5>
+<section id="url-required" class="level5">
+<h5>url <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> The URL to load. For local files, this is a path relative to <code>baseDir</code>.</p>
-<h5 id="basedir-optional">baseDir <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="basedir-optional" class="level5">
+<h5>baseDir <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Constant.html">Constant</a>.</em> A base directory constant.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>On Android, if the web view is displaying web pages from the Internet, you must add the <code>INTERNET</code> permission to the <code>build.settings</code> file. This permission is unnecessary if the web view will only be displaying local HTML files that do not access the Internet.</p>
 <pre class="brush: lua;">settings =
 {
@@ -121,7 +131,9 @@ object:request( url, baseDir )</pre>
         },
     },
 }</pre>
-<h2 id="example">Example</h2>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local webView = native.newWebView( 0, 0, 320, 480 )
 webView:request( "https://solar2d.com/" )</pre>
 <hr>
@@ -134,6 +146,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

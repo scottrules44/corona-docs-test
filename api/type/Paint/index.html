@@ -79,7 +79,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/Paint/index.html">Paint</a>
 </div>
-<h1 id="paint">Paint</h1>
+<section id="paint" class="level1">
+<h1>Paint</h1>
 <blockquote>
 <table>
 <tbody>
@@ -114,7 +115,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>For object <a href="../../../api/type/ShapeObject/fill.html">fills</a> and <a href="../../../api/type/ShapeObject/stroke.html">strokes</a>, Corona uses the concept of <strong>paint</strong>. Once a paint is declared, it can be applied to objects via <a href="../../../api/type/ShapeObject/fill.html">object.fill</a> and <a href="../../../api/type/ShapeObject/stroke.html">object.stroke</a>.</p>
 <p>Solid fills and strokes are specified by an array of color channels. For other fill/stroke types, including images, composites, and gradients, please see:</p>
 <ul>
@@ -123,27 +125,52 @@
 <li><a href="../../../api/type/GradientPaint/index.html">GradientPaint</a> — used for linear gradient fills/strokes.</li>
 <li><a href="../../../api/type/ImageSheetPaint/index.html">ImageSheetPaint</a> — used to fill/stroke an object with an <a href="../../../api/library/graphics/newImageSheet.html">image sheet</a> frame.</li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">{ gray }
 { gray, alpha }
 { red, green, blue }
 { red, green, blue, alpha }</pre>
-<h5 id="gray-red-green-blue-alpha-optional">gray, red, green, blue, alpha <sub><sup>(optional)</sup></sub></h5>
+<section id="gray-red-green-blue-alpha-optional" class="level5">
+<h5>gray, red, green, blue, alpha <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Numbers</a>.</em> Numbers between <code>0</code> and <code>1</code> that represent the corresponding value for that channel. <code>alpha</code> represents the opacity of the object.</p>
-<h2 id="properties">Properties</h2>
-<h4 id="fill.rapi.type.paint.r"><a href="../../../api/type/Paint/r.html">fill.r</a></h4>
-<h4 id="fill.gapi.type.paint.g"><a href="../../../api/type/Paint/g.html">fill.g</a></h4>
-<h4 id="fill.bapi.type.paint.b"><a href="../../../api/type/Paint/b.html">fill.b</a></h4>
-<h4 id="fill.aapi.type.paint.a"><a href="../../../api/type/Paint/a.html">fill.a</a></h4>
-<h4 id="fill.blendequationapi.type.paint.blendequation"><a href="../../../api/type/Paint/blendEquation.html">fill.blendEquation</a></h4>
-<h4 id="fill.blendmodeapi.type.paint.blendmode"><a href="../../../api/type/Paint/blendMode.html">fill.blendMode</a></h4>
-<h4 id="fill.effectapi.type.paint.effect"><a href="../../../api/type/Paint/effect.html">fill.effect</a></h4>
-<h2 id="examples">Examples</h2>
-<h5 id="gray-fill">50% Gray Fill</h5>
+</section>
+</section>
+<section id="properties" class="level2">
+<h2>Properties</h2>
+<section id="fill.rapi.type.paint.r" class="level4">
+<h4><a href="../../../api/type/Paint/r.html">fill.r</a></h4>
+</section>
+<section id="fill.gapi.type.paint.g" class="level4">
+<h4><a href="../../../api/type/Paint/g.html">fill.g</a></h4>
+</section>
+<section id="fill.bapi.type.paint.b" class="level4">
+<h4><a href="../../../api/type/Paint/b.html">fill.b</a></h4>
+</section>
+<section id="fill.aapi.type.paint.a" class="level4">
+<h4><a href="../../../api/type/Paint/a.html">fill.a</a></h4>
+</section>
+<section id="fill.blendequationapi.type.paint.blendequation" class="level4">
+<h4><a href="../../../api/type/Paint/blendEquation.html">fill.blendEquation</a></h4>
+</section>
+<section id="fill.blendmodeapi.type.paint.blendmode" class="level4">
+<h4><a href="../../../api/type/Paint/blendMode.html">fill.blendMode</a></h4>
+</section>
+<section id="fill.effectapi.type.paint.effect" class="level4">
+<h4><a href="../../../api/type/Paint/effect.html">fill.effect</a></h4>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="gray-fill" class="level5">
+<h5>50% Gray Fill</h5>
 <pre class="brush: lua;">local paint = { 0.5 }
 local rect = display.newRect( 200, 300, 300, 300 )
 rect.fill = paint</pre>
-<h5 id="solid-color-fill">Solid Color Fill</h5>
+</section>
+<section id="solid-color-fill" class="level5">
+<h5>Solid Color Fill</h5>
 <pre class="brush: lua;">local paint = { 1, 0, 0.5 }
 local rect = display.newRect( 200, 300, 300, 300 )
 rect.fill = paint</pre>
@@ -157,6 +184,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

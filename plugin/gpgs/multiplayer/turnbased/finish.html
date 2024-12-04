@@ -77,7 +77,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../../plugin/gpgs/index.html">Google Play Games Services</a>  ▸  <a href="../../../../plugin/gpgs/multiplayer/index.html">multiplayer</a>  ▸  <a href="../../../../plugin/gpgs/multiplayer/turnbased/index.html">turnbased</a>  ▸  <a href="../../../../plugin/gpgs/multiplayer/turnbased/finish.html">finish</a>
 </div>
-<h1 id="gpgs.multiplayer.turnbased.finish">gpgs.multiplayer.turnbased.finish()</h1>
+<section id="gpgs.multiplayer.turnbased.finish" class="level1">
+<h1>gpgs.multiplayer.turnbased.finish()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -112,29 +113,51 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Indicates that a participant is finished with a match. Optionally sends match results to specified participants.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">gpgs.multiplayer.turnbased.finish( params )</pre>
-<h5 id="params-required">params <sub><sup>(required)</sup></sub></h5>
+<section id="params-required" class="level5">
+<h5>params <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../../api/type/Table.html">Table</a>.</em> Contains parameters for the call — see the next section for details.</p>
-<h2 id="parameter-reference">Parameter Reference</h2>
+</section>
+</section>
+<section id="parameter-reference" class="level2">
+<h2>Parameter Reference</h2>
 <p>The <code>params</code> table contains parameters for the call.</p>
-<h5 id="matchid-required">matchId <sub><sup>(required)</sup></sub></h5>
+<section id="matchid-required" class="level5">
+<h5>matchId <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../../api/type/String.html">String</a>.</em> The multiplayer match ID.</p>
-<h5 id="payload-optional">payload <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="payload-optional" class="level5">
+<h5>payload <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../../api/type/String.html">String</a>.</em> Match data to send to other participants. This has a size limit as noted in <a href="../../../../plugin/gpgs/multiplayer/getLimits.html">gpgs.multiplayer.getLimits()</a>.</p>
-<h5 id="listener-optional">listener <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="listener-optional" class="level5">
+<h5>listener <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../../api/type/Listener.html">Listener</a>.</em> Listener function which receives a <a href="../../../../plugin/gpgs/multiplayer/turnbased/event/finish/index.html">finish</a> event.</p>
-<h5 id="results-optional">results <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="results-optional" class="level5">
+<h5>results <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../../api/type/Array.html">Array</a>.</em> Populate with result table elements as defined in the next section. The client which calls <code>finish()</code> is responsible for reporting the results for all appropriate participants in the match. Not every participant is required to have a result, but providing results for participants who are not in the match is an error.</p>
-<h2 id="results-parameters">Results Parameters</h2>
+</section>
+</section>
+<section id="results-parameters" class="level2">
+<h2>Results Parameters</h2>
 <p>The <code>results</code> array can be populated with child tables, each containing individual participant details:</p>
-<h5 id="participantid-required">participantId <sub><sup>(required)</sup></sub></h5>
+<section id="participantid-required" class="level5">
+<h5>participantId <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../../api/type/String.html">String</a>.</em> Participant to send the result to.</p>
-<h5 id="result-optional">result <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="result-optional" class="level5">
+<h5>result <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../../api/type/String.html">String</a>.</em> The result of the match. Can be either <code>"disagreed"</code>, <code>"disconnect"</code>, <code>"loss"</code>, <code>"tie"</code>, <code>"win"</code>, or <code>"none"</code>. Default is <code>"none"</code>.</p>
-<h5 id="placing-optional">placing <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="placing-optional" class="level5">
+<h5>placing <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../../api/type/Number.html">Number</a>.</em> The place/rank the participant has earned.</p>
 <hr>
 <div id="footer">
@@ -146,6 +169,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

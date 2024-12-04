@@ -78,7 +78,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/notifications-v2/index.html">Notifications</a>  ▸  <a href="../../plugin/notifications-v2/scheduleNotification.html">scheduleNotification</a>
 </div>
-<h1 id="notifications.schedulenotification">notifications.scheduleNotification()</h1>
+<section id="notifications.schedulenotification" class="level1">
+<h1>notifications.scheduleNotification()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -109,13 +110,19 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Schedules a local <a href="../../api/event/notification/index.html">notification</a> event to be delivered in the future.</p>
 <p>This function returns a reference ID that can be used to cancel the notification. The ID is a memory address (pointer) to an object, thus it cannot be saved and it will not be available the next time the program runs.</p>
-<h2 id="gotchas">Gotchas</h2>
-<h3 id="ios">iOS</h3>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
+<section id="ios" class="level3">
+<h3>iOS</h3>
 <p>Scheduling a notification upon application suspend can cause the application to crash.</p>
-<h3 id="android">Android</h3>
+</section>
+<section id="android" class="level3">
+<h3>Android</h3>
 <p>Unlike iOS, local notifications on Android are managed by the application and not by the operating system. This means that all scheduled notifications and status bar notifications will be cleared when the application process terminates. However, pressing the <strong>Back</strong> key to exit the application window will not terminate the application process — this only destroys the application window which runs your project’s Lua scripts and it will receive the <code>"applicationExit"</code> <a href="../../api/event/system/type.html">system</a> event just before being destroyed. Thus, the application process will continue to run in the background — this is standard Android application behavior which allows its notifications to remain available. If the application process gets fully terminated, Corona will automatically restore all pending notifications when the application restarts.</p>
 <p>This said, calling <a href="../../api/library/os/exit.html">os.exit()</a> will terminate the application process and <strong>clear</strong> all notifications. If you need to close just the application window, call <a href="../../api/library/native/requestExit.html">native.requestExit()</a> which only exits the application window and keeps the application process alive, thus keeping your notifications alive.</p>
 <p>Also note that all scheduled notifications and status bar notifications will be cleared after rebooting the Android device. In order to restore all notifications, you must set the following permission in your <code>build.settings</code> file to set up your application to be started in the background after the Android device boots up:</p>
@@ -129,27 +136,46 @@
         },
     },
 }</pre>
-<h2 id="syntax">Syntax</h2>
+</section>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">notifications.scheduleNotification( time [, options] )</pre>
-<h5 id="time-required">time <sub><sup>(required)</sup></sub></h5>
+<section id="time-required" class="level5">
+<h5>time <sub><sup>(required)</sup></sub></h5>
 <p>This parameter can be in one of two formats:</p>
 <ul>
 <li>A <a href="../../api/type/Number.html">number</a> indicating the number of seconds from this schedule call until delivery.</li>
 <li>A <a href="../../api/type/Table.html">table</a> indicating the <strong>Coordinated Universal Time</strong> (UTC) at which to deliver the notification. This table should contain the same properties as returned by <nobr><code>os.date( "!*t" )</code></nobr>. Note that a common pitfall is to pass <code>"*t"</code> instead of <code>"!*t"</code> which results in a time given in your current time zone instead of a UTC time.</li>
 </ul>
-<h5 id="options-optional">options <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="options-optional" class="level5">
+<h5>options <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table that specifies details about the notification to be scheduled — see the next section for details.</p>
-<h2 id="options-reference">Options Reference</h2>
+</section>
+</section>
+<section id="options-reference" class="level2">
+<h2>Options Reference</h2>
 <p>The <code>options</code> table contains details about the notification to be scheduled.</p>
-<h5 id="alert-optional">alert <sub><sup>(optional)</sup></sub></h5>
+<section id="alert-optional" class="level5">
+<h5>alert <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> or <em><a href="../../api/type/Table.html">Table</a>.</em> If String notification message to be displayed to the user. If the application is not currently running, a system alert will display this message. For table, you can pass in a <code>title</code> and/or <code>body</code> for the notification.</p>
-<h5 id="badge-optional">badge <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="badge-optional" class="level5">
+<h5>badge <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Number.html">Number</a>.</em> The badge number to be displayed on the application icon when the scheduled notification triggers. This replaces the last badge number that was applied. Set to <code>0</code> to omit the badge number. This option is not supported on Android.</p>
-<h5 id="sound-optional">sound <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="sound-optional" class="level5">
+<h5>sound <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> Name of the sound file in the <a href="../../api/library/system/ResourceDirectory.html">system.ResourceDirectory</a> to be played when the scheduled notification triggers. This sound is only played if the app is <strong>not</strong> currently in the foreground. On iOS, there are limitations on the kinds of sound that can be played (consult Apple’s <a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/SupportingNotificationsinYourApp.html">documentation</a> for more details).</p>
-<h5 id="custom-optional">custom <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="custom-optional" class="level5">
+<h5>custom <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> A table that will be delivered with the <a href="../../api/event/notification/index.html">notification</a> event. This allows you to pass custom information with the notification.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">local notifications = require( "plugin.notifications.v2" )
 
 -- Get the app's launch arguments in case it was started when the user tapped on a notification
@@ -194,6 +220,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

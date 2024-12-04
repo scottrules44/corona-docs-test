@@ -98,7 +98,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/gpgs2/index.html">gpgs2</a>
 </div>
-<h1 id="google-play-games-services">Google Play Games Services</h1>
+<section id="google-play-games-services" class="level1">
+<h1>Google Play Games Services</h1>
 <blockquote>
 <table>
 <tbody>
@@ -125,7 +126,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>The Google Play Games Services plugin enables access to <nobr>Google Play Games Services</nobr> for game networking, including achievements, leaderboards, quests, videos, and more.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -146,9 +148,13 @@ Important
 <p>If you encounter <nobr>Google Play Games Services</nobr> login issues/errors after implementing this plugin, ensure that you have enabled both <strong>Drive API</strong> and <nobr><strong>Google Play Developer API</strong></nobr> within the <a href="https://console.developers.google.com/">Google Play Developer Console</a>.</p>
 </div>
 </div>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">local gpgs = require( "plugin.gpgs.v2" )</pre>
-<h2 id="project-settings">Project Settings</h2>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="brush: lua;">settings = {
     plugins = {
@@ -165,37 +171,94 @@ Important
         googlePlayGamesAppId = "YOUR_APPLICATION_ID",
     },
 }</pre>
-<h2 id="nodes">Nodes</h2>
+</section>
+<section id="nodes" class="level2">
+<h2>Nodes</h2>
 <p>The plugin is divided into API nodes for better organization.</p>
-<h4 id="gpgs2.achievementsplugin.gpgs2.achievements"><a href="../../plugin/gpgs2/achievements/index.html">gpgs2.achievements</a></h4>
-<h4 id="gpgs2.leaderboardsplugin.gpgs2.leaderboards"><a href="../../plugin/gpgs2/leaderboards/index.html">gpgs2.leaderboards</a></h4>
-<h4 id="gpgs2.playersplugin.gpgs2.players"><a href="../../plugin/gpgs2/players/index.html">gpgs2.players</a></h4>
-<h4 id="gpgs2.eventsplugin.gpgs2.events"><a href="../../plugin/gpgs2/events/index.html">gpgs2.events</a></h4>
-<h4 id="gpgs2.snapshotsplugin.gpgs2.snapshots"><a href="../../plugin/gpgs2/snapshots/index.html">gpgs2.snapshots</a></h4>
-<h4 id="gpgs2.videosplugin.gpgs2.videos"><a href="../../plugin/gpgs2/videos/index.html">gpgs2.videos</a></h4>
-<h2 id="gpgs.">gpgs.*</h2>
-<h2 id="overview-1">Overview</h2>
+<section id="gpgs2.achievementsplugin.gpgs2.achievements" class="level4">
+<h4><a href="../../plugin/gpgs2/achievements/index.html">gpgs2.achievements</a></h4>
+</section>
+<section id="gpgs2.leaderboardsplugin.gpgs2.leaderboards" class="level4">
+<h4><a href="../../plugin/gpgs2/leaderboards/index.html">gpgs2.leaderboards</a></h4>
+</section>
+<section id="gpgs2.playersplugin.gpgs2.players" class="level4">
+<h4><a href="../../plugin/gpgs2/players/index.html">gpgs2.players</a></h4>
+</section>
+<section id="gpgs2.eventsplugin.gpgs2.events" class="level4">
+<h4><a href="../../plugin/gpgs2/events/index.html">gpgs2.events</a></h4>
+</section>
+<section id="gpgs2.snapshotsplugin.gpgs2.snapshots" class="level4">
+<h4><a href="../../plugin/gpgs2/snapshots/index.html">gpgs2.snapshots</a></h4>
+</section>
+<section id="gpgs2.videosplugin.gpgs2.videos" class="level4">
+<h4><a href="../../plugin/gpgs2/videos/index.html">gpgs2.videos</a></h4>
+</section>
+</section>
+<section id="gpgs." class="level2">
+<h2>gpgs.*</h2>
+</section>
+<section id="overview-1" class="level2">
+<h2>Overview</h2>
 <p>This is the base API node for the plugin. It manages connection to the Google’s servers, authentication and general SDK tasks.</p>
-<h2 id="functions">Functions</h2>
-<h4 id="gpgs2.enabledebugplugin.gpgs2.enabledebug"><a href="../../plugin/gpgs2/enableDebug.html">gpgs2.enableDebug()</a></h4>
-<h4 id="gpgs2.isconnectedplugin.gpgs2.isconnected"><a href="../../plugin/gpgs2/isConnected.html">gpgs2.isConnected()</a></h4>
-<h4 id="gpgs2.isauthenticatedplugin.gpgs2.isauthenticated"><a href="../../plugin/gpgs2/isAuthenticated.html">gpgs2.isAuthenticated()</a></h4>
-<h4 id="gpgs2.loginparamsplugin.gpgs2.login"><a href="../../plugin/gpgs2/login.html">gpgs2.login(params)</a></h4>
-<h4 id="gpgs2.logoutplugin.gpgs2.logout"><a href="../../plugin/gpgs2/logout.html">gpgs2.logout()</a></h4>
-<h4 id="gpgs2.getaccountnamelistenerplugin.gpgs2.getaccountname"><a href="../../plugin/gpgs2/getAccountName.html">gpgs2.getAccountName(listener)</a></h4>
-<h4 id="gpgs2.getserverauthcodeparamsplugin.gpgs2.getserverauthcode"><a href="../../plugin/gpgs2/getServerAuthCode.html">gpgs2.getServerAuthCode(params)</a></h4>
-<h4 id="gpgs2.setpopuppositionpositionplugin.gpgs2.setpopupposition"><a href="../../plugin/gpgs2/setPopupPosition.html">gpgs2.setPopupPosition(position)</a></h4>
-<h4 id="gpgs2.loadgamelistenerplugin.gpgs2.loadgame"><a href="../../plugin/gpgs2/loadGame.html">gpgs2.loadGame(listener)</a></h4>
-<h4 id="gpgs2.loadimageparamsplugin.gpgs2.loadimage"><a href="../../plugin/gpgs2/loadImage.html">gpgs2.loadImage(params)</a></h4>
-<h4 id="gpgs2.showsettingslistenerplugin.gpgs2.showsettings"><a href="../../plugin/gpgs2/showSettings.html">gpgs2.showSettings(listener)</a></h4>
-<h2 id="events">Events</h2>
-<h4 id="loginplugin.gpgs2.event.login"><a href="../../plugin/gpgs2/event/login/index.html">login</a></h4>
-<h4 id="getaccountnameplugin.gpgs2.event.getaccountname"><a href="../../plugin/gpgs2/event/getAccountName/index.html">getAccountName</a></h4>
-<h4 id="getserverauthcodeplugin.gpgs2.event.getserverauthcode"><a href="../../plugin/gpgs2/event/getServerAuthCode/index.html">getServerAuthCode</a></h4>
-<h4 id="loadgameplugin.gpgs2.event.loadgame"><a href="../../plugin/gpgs2/event/loadGame/index.html">loadGame</a></h4>
-<h4 id="loadimageplugin.gpgs2.event.loadimage"><a href="../../plugin/gpgs2/event/loadImage/index.html">loadImage</a></h4>
-<h2 id="types">Types</h2>
-<h4 id="gameplugin.gpgs2.type.game"><a href="../../plugin/gpgs2/type/Game/index.html">Game</a></h4>
+</section>
+<section id="functions" class="level2">
+<h2>Functions</h2>
+<section id="gpgs2.enabledebugplugin.gpgs2.enabledebug" class="level4">
+<h4><a href="../../plugin/gpgs2/enableDebug.html">gpgs2.enableDebug()</a></h4>
+</section>
+<section id="gpgs2.isconnectedplugin.gpgs2.isconnected" class="level4">
+<h4><a href="../../plugin/gpgs2/isConnected.html">gpgs2.isConnected()</a></h4>
+</section>
+<section id="gpgs2.isauthenticatedplugin.gpgs2.isauthenticated" class="level4">
+<h4><a href="../../plugin/gpgs2/isAuthenticated.html">gpgs2.isAuthenticated()</a></h4>
+</section>
+<section id="gpgs2.loginparamsplugin.gpgs2.login" class="level4">
+<h4><a href="../../plugin/gpgs2/login.html">gpgs2.login(params)</a></h4>
+</section>
+<section id="gpgs2.logoutplugin.gpgs2.logout" class="level4">
+<h4><a href="../../plugin/gpgs2/logout.html">gpgs2.logout()</a></h4>
+</section>
+<section id="gpgs2.getaccountnamelistenerplugin.gpgs2.getaccountname" class="level4">
+<h4><a href="../../plugin/gpgs2/getAccountName.html">gpgs2.getAccountName(listener)</a></h4>
+</section>
+<section id="gpgs2.getserverauthcodeparamsplugin.gpgs2.getserverauthcode" class="level4">
+<h4><a href="../../plugin/gpgs2/getServerAuthCode.html">gpgs2.getServerAuthCode(params)</a></h4>
+</section>
+<section id="gpgs2.setpopuppositionpositionplugin.gpgs2.setpopupposition" class="level4">
+<h4><a href="../../plugin/gpgs2/setPopupPosition.html">gpgs2.setPopupPosition(position)</a></h4>
+</section>
+<section id="gpgs2.loadgamelistenerplugin.gpgs2.loadgame" class="level4">
+<h4><a href="../../plugin/gpgs2/loadGame.html">gpgs2.loadGame(listener)</a></h4>
+</section>
+<section id="gpgs2.loadimageparamsplugin.gpgs2.loadimage" class="level4">
+<h4><a href="../../plugin/gpgs2/loadImage.html">gpgs2.loadImage(params)</a></h4>
+</section>
+<section id="gpgs2.showsettingslistenerplugin.gpgs2.showsettings" class="level4">
+<h4><a href="../../plugin/gpgs2/showSettings.html">gpgs2.showSettings(listener)</a></h4>
+</section>
+</section>
+<section id="events" class="level2">
+<h2>Events</h2>
+<section id="loginplugin.gpgs2.event.login" class="level4">
+<h4><a href="../../plugin/gpgs2/event/login/index.html">login</a></h4>
+</section>
+<section id="getaccountnameplugin.gpgs2.event.getaccountname" class="level4">
+<h4><a href="../../plugin/gpgs2/event/getAccountName/index.html">getAccountName</a></h4>
+</section>
+<section id="getserverauthcodeplugin.gpgs2.event.getserverauthcode" class="level4">
+<h4><a href="../../plugin/gpgs2/event/getServerAuthCode/index.html">getServerAuthCode</a></h4>
+</section>
+<section id="loadgameplugin.gpgs2.event.loadgame" class="level4">
+<h4><a href="../../plugin/gpgs2/event/loadGame/index.html">loadGame</a></h4>
+</section>
+<section id="loadimageplugin.gpgs2.event.loadimage" class="level4">
+<h4><a href="../../plugin/gpgs2/event/loadImage/index.html">loadImage</a></h4>
+</section>
+</section>
+<section id="types" class="level2">
+<h2>Types</h2>
+<section id="gameplugin.gpgs2.type.game" class="level4">
+<h4><a href="../../plugin/gpgs2/type/Game/index.html">Game</a></h4>
 <hr>
 <div id="footer">
 <p class="copyright">
@@ -206,6 +269,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

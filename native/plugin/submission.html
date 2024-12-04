@@ -79,7 +79,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../native/index.html">Solar2D Native</a>  ▸  <a href="../../native/plugin/index.html">Plugins</a>  ▸  <a href="../../native/plugin/submission.html">Plugin Submission Guide</a>
 </div>
-<h1 id="plugin-submission-guide">Plugin Submission Guide</h1>
+<section id="plugin-submission-guide" class="level1">
+<h1>Plugin Submission Guide</h1>
 <style>
 
 .faq p, .faq ul { padding-left: 20px; }
@@ -106,17 +107,27 @@
 </ul>
 </div>
 <p><a id="distribution"></a></p>
-<h2 id="distribution">Distribution</h2>
+<section id="distribution" class="level2">
+<h2>Distribution</h2>
 <p>Plugins are distributed differently depending on the product for which it will be used.</p>
-<h3 id="solar2d">Solar2D</h3>
+<section id="solar2d" class="level3">
+<h3>Solar2D</h3>
 <p>Your plugins will be hosted live on Corona’s build servers, immediately available to all Solar2D developers. When a Solar2D developer creates a project that requires your plugin, the build server automatically integrates the plugin during the build process.</p>
-<h3 id="solar2d-native">Solar2D Native</h3>
+</section>
+<section id="solar2d-native" class="level3">
+<h3>Solar2D Native</h3>
 <p>The Solar2D Native developer will have to include the plugin in the native project. Depending on the target platform, this can take several forms: a static library (iOS), a shared library (macOS/Windows/Android), or <nobr>a <code>.jar</code> file (Android)</nobr>.</p>
 <p><a id="packaging"></a></p>
-<h2 id="packaging-for-submission">Packaging for Submission</h2>
-<h3 id="pure-lua">Pure Lua</h3>
+</section>
+</section>
+<section id="packaging-for-submission" class="level2">
+<h2>Packaging for Submission</h2>
+<section id="pure-lua" class="level3">
+<h3>Pure Lua</h3>
 <p>If you have a plugin written in <strong>pure Lua</strong> <nobr>(Lua code only)</nobr>, please see the <a href="../../native/plugin/luaplugin.html">Creating Lua Plugins</a>.</p>
-<h3 id="native-hybrid">Native / Hybrid</h3>
+</section>
+<section id="native-hybrid" class="level3">
+<h3>Native / Hybrid</h3>
 <p>If your plugin is written in native code or hybrid native+Lua, it should be submitted via a Bitbucket repo that has been shared with you (the structure of that repo must follow a particular format). Once you have an update for your repo, you can generate a pull request.</p>
 <p>To help you get started, we have created a <a href="https://github.com/coronalabs/plugins-submission-template">plugin submission template</a> that contains starter files, with the exception of the <code>plugins</code> binary directory. Essentially, you should package up your native/hybrid plugin files with the following structure:</p>
 <div class="tree">
@@ -162,7 +173,9 @@
 </ul>
 </div>
 <p><a id="metadata-json"></a></p>
-<h3 id="metadata.json">metadata.json</h3>
+</section>
+<section id="metadata.json" class="level3">
+<h3>metadata.json</h3>
 <p>This JSON file contains information about the publisher, the name of the plugin as it appears in Lua, and other related information, for example:</p>
 <pre class="brush: lua; json">{
     "contact": "me@mycompany.com",
@@ -171,7 +184,9 @@
     "publisherId": "com.mycompany"
 }</pre>
 <p><a id="metadata-lua"></a></p>
-<h3 id="metadata.lua">metadata.lua</h3>
+</section>
+<section id="metadata.lua" class="level3">
+<h3>metadata.lua</h3>
 <p>For <strong>native/hybrid</strong> plugins, the <nobr>per-platform</nobr> <code>metadata.lua</code> file describes properties of the plugin binary. This file is required for Android, iOS, and the iOS Simulator.</p>
 <ul>
 <li>For <strong>Android</strong>, you need to specify the format of the binary. Currently, <code>.jar</code> and <code>.so</code> are supported. In addition, you can specify elements in the <code>AndroidManifest.xml</code> file that need to be modified in order to accommodate the plugin.</li>
@@ -303,7 +318,9 @@ Note
 <p>Additionally, for backward compatibility, Corona weak links against the <code>Accounts</code>, <code>AdSupport</code>, <code>Social</code>, and <code>Twitter</code> frameworks.</p>
 </div>
 </div>
-<h3 id="android-resources">Android Resources</h3>
+</section>
+<section id="android-resources" class="level3">
+<h3>Android Resources</h3>
 <p>For Android, resources can be included into the <code>assets</code> or the <code>res</code> directory in the resulting <code>.apk</code> after a build.</p>
 <p>To package resources into the <code>assets</code> directory, put the resources into the <code>assets</code> folder indicated below. The directory structure will be persist through the build process.</p>
 <div class="tree">
@@ -341,7 +358,9 @@ Note
 </ul></li>
 </ul>
 </div>
-<h3 id="ios-resources">iOS Resources</h3>
+</section>
+<section id="ios-resources" class="level3">
+<h3>iOS Resources</h3>
 <p>To include resources in the <code>.app</code> bundle, put them into the <code>resources</code> folder indicated below. These resources will be added to the bundle relative to the base directory. For example, if you put <code>example.png</code> into the <code>resources</code> folder, it will be included like <code>example.app/example.png</code>.</p>
 <div class="tree">
 <ul>
@@ -362,7 +381,10 @@ Note
 </ul>
 </div>
 <p><a id="version"></a></p>
-<h2 id="version-targeting">Version Targeting</h2>
+</section>
+</section>
+<section id="version-targeting" class="level2">
+<h2>Version Targeting</h2>
 <p>When a plugin is published to Corona’s servers, you must specify a <nobr><strong>minimum build version</strong></nobr> of Solar2D for the plugin you’re deploying. This build version controls the availability of your plugin — specifically, developers will need to use that version (or later) of Solar2D in order to use the plugin for a device build and, if available, within the Corona Simulator.</p>
 <p>For example, if you want your plugin to be supported in build 2024.3703 or later, you should use <code>2024.3703</code> for <code>${VERSION}</code> per the directory structures shown above. Then, in your documentation or elsewhere, you would tell developers to install Solar2D version 2024.3703 or later to access the plugin.</p>
 <div class="docs-tip-outer docs-tip-color-alert">
@@ -375,13 +397,19 @@ Note
 <p>When you build your plugin binary, you should use the corresponding version of Solar2D Native.</p>
 </div>
 </div>
-<h3 id="choosing-a-version">Choosing a Version</h3>
+<section id="choosing-a-version" class="level3">
+<h3>Choosing a Version</h3>
 <p>For new plugins, we highly recommend that you support the most recent public release. This ensures that your plugin is available to the broadest audience possible.</p>
-<h3 id="multiple-versions">Multiple Versions</h3>
+</section>
+<section id="multiple-versions" class="level3">
+<h3>Multiple Versions</h3>
 <p>Normally, when you update a plugin binary, you simply <nobr>re-submit</nobr> the plugin. However, there may be occasions when a newer version of the plugin breaks backwards compatibility, or your updated plugin relies on new functionality available in a more recent <a href="https://github.com/coronalabs/corona/releases">Solar2D build</a>.</p>
 <p>In this situation, you should deploy a separate plugin binary. This binary will correspond to a different/newer build version of Solar2D. A developer can then simply obtain that version to access the newer version of the plugin. In this manner, you can keep the legacy plugin binary around to preserve backwards compatibility.</p>
 <p><a id="faq"></a></p>
-<h2 id="faq">FAQ</h2>
+</section>
+</section>
+<section id="faq" class="level2">
+<h2>FAQ</h2>
 <div class="faq">
 <h6 id="do-i-need-to-create-plugins-for-platforms-that-are-not-yet-supported-such-as-windows-and-macos"><strong>Do I need to create plugins for platforms that are not yet supported, such as Windows and macOS?</strong></h6>
 <p>At a minimum, you will need to supply a Lua plugin stub for all platforms, including versions for Windows and macOS. These stubs should allow Solar2D developers to make calls as they would on a <nobr>fully-supported</nobr> platform. A sample Lua stub can be found <a href="https://github.com/coronalabs/plugins-submission-template/blob/master/plugins/VERSION/mac-sim/plugin_PLUGIN_NAME.lua">here</a>.</p>
@@ -411,6 +439,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

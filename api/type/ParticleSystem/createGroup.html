@@ -99,7 +99,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/ParticleSystem/index.html">ParticleSystem</a>  ▸  <a href="../../../api/type/ParticleSystem/createGroup.html">createGroup</a>
 </div>
-<h1 id="objectcreategroup">object:createGroup()</h1>
+<section id="objectcreategroup" class="level1">
+<h1>object:createGroup()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -146,11 +147,15 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This function is used to create multiple particles simultaneously by filling a region.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">ParticleSystem:createGroup( params )</pre>
-<h5 id="params-required">params <sub><sup>(required)</sup></sub></h5>
+<section id="params-required" class="level5">
+<h5>params <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> A table that specifies the particle group properties (flags) — see the next section for valid entries.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -158,9 +163,13 @@ Important
 </div>
 <p>When implementing particle collisions via the <a href="../../../api/event/particleCollision/index.html">particleCollision</a> event, you must set the <code>"fixtureContactListener"</code> flag for the particle group. If this flag is omitted, you will not receive particle collision responses.</p>
 </div>
-<h2 id="parameter-reference">Parameter Reference</h2>
+</section>
+</section>
+<section id="parameter-reference" class="level2">
+<h2>Parameter Reference</h2>
 <p>To learn more about the parameters available for particles, please refer to the <a href="https://google.github.io/liquidfun/Programmers-Guide/html/md__chapter11__particles.html">LiquidFun Programmer’s Guide</a>.</p>
-<h5 id="flags-optional">flags <sub><sup>(optional)</sup></sub></h5>
+<section id="flags-optional" class="level5">
+<h5>flags <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a> or <a href="../../../api/type/Table.html">Table</a>.</em> One of the following strings or a table containing a <nobr>comma-delimited</nobr> list of these strings.</p>
 <ul>
 <li><code>"water"</code></li>
@@ -181,7 +190,9 @@ Important
 <li><code>"fixtureContactFilter"</code></li>
 <li><code>"particleContactFilter"</code></li>
 </ul>
-<h5 id="groupflags-optional">groupFlags <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="groupflags-optional" class="level5">
+<h5>groupFlags <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a> or <a href="../../../api/type/Table.html">Table</a>.</em> One of the following strings or a table containing a <nobr>comma-delimited</nobr> list of these strings.</p>
 <ul>
 <li><code>"solid"</code></li>
@@ -191,45 +202,87 @@ Important
 <li><code>"needsUpdateDepth"</code></li>
 <li><code>"internalMask"</code></li>
 </ul>
-<h5 id="x-optional">x <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="x-optional" class="level5">
+<h5>x <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The starting <strong>x</strong> position of the generated group, in content space.</p>
-<h5 id="y-optional">y <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="y-optional" class="level5">
+<h5>y <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The starting <strong>y</strong> position of the generated group, in content space.</p>
-<h5 id="angle-optional">angle <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="angle-optional" class="level5">
+<h5>angle <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The starting angle (rotation) of the generated group.</p>
-<h5 id="linearvelocityx-optional">linearVelocityX <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="linearvelocityx-optional" class="level5">
+<h5>linearVelocityX <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The <strong>x</strong> velocity of the generated group.</p>
-<h5 id="linearvelocityy-optional">linearVelocityY <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="linearvelocityy-optional" class="level5">
+<h5>linearVelocityY <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The <strong>y</strong> velocity of the generated group.</p>
-<h5 id="angularvelocity-optional">angularVelocity <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="angularvelocity-optional" class="level5">
+<h5>angularVelocity <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The angular velocity of the generated group.</p>
-<h5 id="color-optional">color <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="color-optional" class="level5">
+<h5>color <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Table of RGB+A color settings for the particles in the group.</p>
 <div class="code-indent" style="width:300px;">
 <pre class="brush: lua;">color = { 0, 0.3, 1, 1 }</pre>
 </div>
-<h5 id="strength-optional">strength <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="strength-optional" class="level5">
+<h5>strength <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The cohesion of a group of particles in the range of <code>0.0</code> (least cohesive) to <code>1.0</code> (most cohesive). Default value is <code>1.0</code>.</p>
-<h5 id="stride-optional">stride <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="stride-optional" class="level5">
+<h5>stride <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The interval of particles in the group.</p>
-<h5 id="lifetime-optional">lifetime <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="lifetime-optional" class="level5">
+<h5>lifetime <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Lifetime of the generated group, in seconds.</p>
-<h3 id="rectangular-group">Rectangular Group</h3>
-<h5 id="halfwidth-optional">halfWidth <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="rectangular-group" class="level3">
+<h3>Rectangular Group</h3>
+<section id="halfwidth-optional" class="level5">
+<h5>halfWidth <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Half the width of the desired rectangular particle group.</p>
-<h5 id="halfheight-optional">halfHeight <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="halfheight-optional" class="level5">
+<h5>halfHeight <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Half the height of the desired rectangular particle group.</p>
-<h3 id="circular-group">Circular Group</h3>
-<h5 id="radius-optional">radius <sub><sup>(optional)</sup></sub></h5>
+</section>
+</section>
+<section id="circular-group" class="level3">
+<h3>Circular Group</h3>
+<section id="radius-optional" class="level5">
+<h5>radius <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> Radius of the desired circular particle group.</p>
-<h3 id="arbitrary-shape">Arbitrary Shape</h3>
-<h5 id="shape-optional">shape <sub><sup>(optional)</sup></sub></h5>
+</section>
+</section>
+<section id="arbitrary-shape" class="level3">
+<h3>Arbitrary Shape</h3>
+<section id="shape-optional" class="level5">
+<h5>shape <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Array.html">Array</a>.</em> Array of up to eight <strong>x</strong> and <strong>y</strong> coordinates to generate an arbitrary convex shape group.</p>
-<h3 id="outlined-shape">Outlined Shape</h3>
-<h5 id="outline-optional">outline <sub><sup>(optional)</sup></sub></h5>
+</section>
+</section>
+<section id="outlined-shape" class="level3">
+<h3>Outlined Shape</h3>
+<section id="outline-optional" class="level5">
+<h5>outline <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/Table.html">Table</a>.</em> Shape table returned by <a href="../../../api/library/graphics/newOutline.html">graphics.newOutline()</a>.</p>
-<h2 id="examples">Examples</h2>
-<h5 id="rectangular-group-1">Rectangular Group</h5>
+</section>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="rectangular-group-1" class="level5">
+<h5>Rectangular Group</h5>
 <pre class="brush: lua;">ParticleSystem:createGroup(
     {
         flags = { "water", "colorMixing" },
@@ -240,7 +293,9 @@ Important
         halfHeight = 32
     }
 )</pre>
-<h5 id="circular-group-1">Circular Group</h5>
+</section>
+<section id="circular-group-1" class="level5">
+<h5>Circular Group</h5>
 <pre class="brush: lua;">ParticleSystem:createGroup(
     {
         flags = "elastic",
@@ -250,7 +305,9 @@ Important
         radius = 32
     }
 )</pre>
-<h5 id="arbitrary-shape-1">Arbitrary Shape</h5>
+</section>
+<section id="arbitrary-shape-1" class="level5">
+<h5>Arbitrary Shape</h5>
 <pre class="brush: lua;">ParticleSystem:createGroup(
     {
         flags = { "elastic", "colorMixing" },
@@ -260,7 +317,9 @@ Important
         shape = { 0,0, 64,64, 0,64 }
     }
 )</pre>
-<h5 id="outlined-shape-1">Outlined Shape</h5>
+</section>
+<section id="outlined-shape-1" class="level5">
+<h5>Outlined Shape</h5>
 <pre class="brush: lua;">local imageOutline = graphics.newOutline( 2, "outline.png" )
 
 ParticleSystem:createGroup(
@@ -282,6 +341,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

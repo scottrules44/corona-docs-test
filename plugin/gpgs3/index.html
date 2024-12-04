@@ -111,7 +111,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/gpgs3/index.html">gpgs3</a>
 </div>
-<h1 id="google-play-games-services">Google Play Games Services</h1>
+<section id="google-play-games-services" class="level1">
+<h1>Google Play Games Services</h1>
 <blockquote>
 <table>
 <tbody>
@@ -138,7 +139,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This plugin enables access to Google Play Games Services API, such as achievements, leaderboards and snapshots(Saved Games).</p>
 <p>Make sure you check out <a href="https://developers.google.com/games/services/console/enabling">Google’s Setup Guide</a> to get before getting started with the plugin.</p>
 <div class="docs-tip-outer docs-tip-color-alert">
@@ -158,26 +160,56 @@ Important
 </div>
 <p>If you deploy the application locally using <code>Copy to device</code>, <nobr>Google Play Games Services</nobr> will not work. You must use Google Play’s testing tracks(internal, closed or open testing) to deploy your application.</p>
 </div>
-<h2 id="changes-from-gpgs-v2-to-v3">Changes from GPGS V2 to V3</h2>
-<h3 id="changed-apis">Changed Apis</h3>
-<h4 id="gpgs.initplugin.gpgs3.init"><a href="../../plugin/gpgs3/init.html">gpgs.init()</a></h4>
+</section>
+<section id="changes-from-gpgs-v2-to-v3" class="level2">
+<h2>Changes from GPGS V2 to V3</h2>
+<section id="changed-apis" class="level3">
+<h3>Changed Apis</h3>
+<section id="gpgs.initplugin.gpgs3.init" class="level4">
+<h4><a href="../../plugin/gpgs3/init.html">gpgs.init()</a></h4>
 <p>Initialize is now required and will attempt to sign in the player automatically</p>
-<h4 id="gpgs.isconnectedlistenerplugin.gpgs3.isconnected"><a href="../../plugin/gpgs3/isConnected.html">gpgs.isConnected(listener)</a></h4>
+</section>
+<section id="gpgs.isconnectedlistenerplugin.gpgs3.isconnected" class="level4">
+<h4><a href="../../plugin/gpgs3/isConnected.html">gpgs.isConnected(listener)</a></h4>
 <p>isConnected is now async and has a callback. use isConnected to check if a player is automatically connected via <a href="../../plugin/gpgs3/init.html">init</a> or manually <a href="../../plugin/gpgs3/login.html">login</a> functions</p>
-<h4 id="gpgs.isauthenticatedplugin.gpgs3.isauthenticated"><a href="../../plugin/gpgs3/isAuthenticated.html">gpgs.isAuthenticated()</a></h4>
+</section>
+<section id="gpgs.isauthenticatedplugin.gpgs3.isauthenticated" class="level4">
+<h4><a href="../../plugin/gpgs3/isAuthenticated.html">gpgs.isAuthenticated()</a></h4>
 <p>isAuthenticated is actually the same but should be noted that isAuthenticated only applies for logins in via <a href="../../plugin/gpgs3/login.html">gpgs.login()</a>. This is important for <a href="../../plugin/gpgs3/snapshots/index.html">Snapshots</a> which is needed to use <a href="../../plugin/gpgs3/login.html">gpgs.login()</a> for requesting <strong>Drive API</strong> access.</p>
-<h4 id="gpgs.loginplugin.gpgs3.login"><a href="../../plugin/gpgs3/login.html">gpgs.login()</a></h4>
+</section>
+<section id="gpgs.loginplugin.gpgs3.login" class="level4">
+<h4><a href="../../plugin/gpgs3/login.html">gpgs.login()</a></h4>
 <p>There is a new <code>useDrive</code> param which is need for <a href="../../plugin/gpgs3/snapshots/index.html">Snapshots</a>. It is import to note that the Drive scope is not added by default and you must set the <code>useDrive</code> param to <code>true</code>.</p>
-<h3 id="no-longer-supported-functions">No longer supported functions</h3>
-<h4 id="gpgs.setpopupposition">gpgs.setPopupPosition()</h4>
-<h4 id="gpgs.showsettings">gpgs.showSettings()</h4>
-<h4 id="gpgs.loadgame">gpgs.loadGame()</h4>
-<h4 id="gpgs.clearnotifications">gpgs.clearNotifications()</h4>
-<h4 id="gpgs.videos.">gpgs.videos.*</h4>
-<h3 id="revert-back-to-gpgs.v2plugin.gpgs2-to-use-these-functions">Revert back to <a href="../../plugin/gpgs2/index.html">gpgs.v2</a> to use these functions</h3>
-<h2 id="syntax">Syntax</h2>
+</section>
+</section>
+<section id="no-longer-supported-functions" class="level3">
+<h3>No longer supported functions</h3>
+<section id="gpgs.setpopupposition" class="level4">
+<h4>gpgs.setPopupPosition()</h4>
+</section>
+<section id="gpgs.showsettings" class="level4">
+<h4>gpgs.showSettings()</h4>
+</section>
+<section id="gpgs.loadgame" class="level4">
+<h4>gpgs.loadGame()</h4>
+</section>
+<section id="gpgs.clearnotifications" class="level4">
+<h4>gpgs.clearNotifications()</h4>
+</section>
+<section id="gpgs.videos." class="level4">
+<h4>gpgs.videos.*</h4>
+</section>
+</section>
+<section id="revert-back-to-gpgs.v2plugin.gpgs2-to-use-these-functions" class="level3">
+<h3>Revert back to <a href="../../plugin/gpgs2/index.html">gpgs.v2</a> to use these functions</h3>
+</section>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">local gpgs= require( "plugin.gpgs.v3" )</pre>
-<h2 id="project-settings">Project Settings</h2>
+</section>
+<section id="project-settings" class="level2">
+<h2>Project Settings</h2>
 <p>To use this plugin, add an entry into the <code>plugins</code> table of <code>build.settings</code>. When added, the build server will integrate the plugin during the build phase.</p>
 <pre class="highlight: [5,6,7,8]; first-line: 1; gutter: false; brush: lua;">settings = {
 
@@ -197,34 +229,85 @@ Important
         googlePlayGamesAppId = "YOUR_APPLICATION_ID",
     },
 }</pre>
-<h2 id="nodes">Nodes</h2>
+</section>
+<section id="nodes" class="level2">
+<h2>Nodes</h2>
 <p>The plugin is divided into API nodes for better organization.</p>
-<h4 id="gpgs.achievementsplugin.gpgs3.achievements"><a href="../../plugin/gpgs3/achievements/index.html">gpgs.achievements</a></h4>
-<h4 id="gpgs.leaderboardsplugin.gpgs3.leaderboards"><a href="../../plugin/gpgs3/leaderboards/index.html">gpgs.leaderboards</a></h4>
-<h4 id="gpgs.playersplugin.gpgs3.players"><a href="../../plugin/gpgs3/players/index.html">gpgs.players</a></h4>
-<h4 id="gpgs.eventsplugin.gpgs3.events"><a href="../../plugin/gpgs3/events/index.html">gpgs.events</a></h4>
-<h4 id="gpgs.snapshotsplugin.gpgs3.snapshots"><a href="../../plugin/gpgs3/snapshots/index.html">gpgs.snapshots</a></h4>
-<h2 id="gpgs.">gpgs.*</h2>
-<h2 id="overview-1">Overview</h2>
+<section id="gpgs.achievementsplugin.gpgs3.achievements" class="level4">
+<h4><a href="../../plugin/gpgs3/achievements/index.html">gpgs.achievements</a></h4>
+</section>
+<section id="gpgs.leaderboardsplugin.gpgs3.leaderboards" class="level4">
+<h4><a href="../../plugin/gpgs3/leaderboards/index.html">gpgs.leaderboards</a></h4>
+</section>
+<section id="gpgs.playersplugin.gpgs3.players" class="level4">
+<h4><a href="../../plugin/gpgs3/players/index.html">gpgs.players</a></h4>
+</section>
+<section id="gpgs.eventsplugin.gpgs3.events" class="level4">
+<h4><a href="../../plugin/gpgs3/events/index.html">gpgs.events</a></h4>
+</section>
+<section id="gpgs.snapshotsplugin.gpgs3.snapshots" class="level4">
+<h4><a href="../../plugin/gpgs3/snapshots/index.html">gpgs.snapshots</a></h4>
+</section>
+</section>
+<section id="gpgs." class="level2">
+<h2>gpgs.*</h2>
+</section>
+<section id="overview-1" class="level2">
+<h2>Overview</h2>
 <p>This is the base API node for the plugin. It manages connection to the Google’s servers, authentication and general SDK tasks.</p>
-<h2 id="functions">Functions</h2>
-<h4 id="gpgs.initplugin.gpgs3.init-1"><a href="../../plugin/gpgs3/init.html">gpgs.init()</a></h4>
-<h4 id="gpgs.enabledebugplugin.gpgs3.enabledebug"><a href="../../plugin/gpgs3/enableDebug.html">gpgs.enableDebug()</a></h4>
-<h4 id="gpgs.isconnectedlistenerplugin.gpgs3.isconnected-1"><a href="../../plugin/gpgs3/isConnected.html">gpgs.isConnected(listener)</a></h4>
-<h4 id="gpgs.isauthenticatedplugin.gpgs3.isauthenticated-1"><a href="../../plugin/gpgs3/isAuthenticated.html">gpgs.isAuthenticated()</a></h4>
-<h4 id="gpgs.loginparamsplugin.gpgs3.login"><a href="../../plugin/gpgs3/login.html">gpgs.login(params)</a></h4>
-<h4 id="gpgs.logoutplugin.gpgs3.logout"><a href="../../plugin/gpgs3/logout.html">gpgs.logout()</a></h4>
-<h4 id="gpgs.getaccountnamelistenerplugin.gpgs3.getaccountname"><a href="../../plugin/gpgs3/getAccountName.html">gpgs.getAccountName(listener)</a></h4>
-<h4 id="gpgs.getserverauthcodeparamsplugin.gpgs3.getserverauthcode"><a href="../../plugin/gpgs3/getServerAuthCode.html">gpgs.getServerAuthCode(params)</a></h4>
-<h4 id="gpgs.loadimageparamsplugin.gpgs3.loadimage"><a href="../../plugin/gpgs3/loadImage.html">gpgs.loadImage(params)</a></h4>
-<h2 id="events">Events</h2>
-<h4 id="loginplugin.gpgs3.event.login"><a href="../../plugin/gpgs3/event/login/index.html">login</a></h4>
-<h4 id="getaccountnameplugin.gpgs3.event.getaccountname"><a href="../../plugin/gpgs3/event/getAccountName/index.html">getAccountName</a></h4>
-<h4 id="getserverauthcodeplugin.gpgs3.event.getserverauthcode"><a href="../../plugin/gpgs3/event/getServerAuthCode/index.html">getServerAuthCode</a></h4>
-<h4 id="loadgameplugin.gpgs3.event.loadgame"><a href="../../plugin/gpgs3/event/loadGame/index.html">loadGame</a></h4>
-<h4 id="loadimageplugin.gpgs3.event.loadimage"><a href="../../plugin/gpgs3/event/loadImage/index.html">loadImage</a></h4>
-<h2 id="types">Types</h2>
-<h4 id="gameplugin.gpgs3.type.game"><a href="../../plugin/gpgs3/type/Game/index.html">Game</a></h4>
+</section>
+<section id="functions" class="level2">
+<h2>Functions</h2>
+<section id="gpgs.initplugin.gpgs3.init-1" class="level4">
+<h4><a href="../../plugin/gpgs3/init.html">gpgs.init()</a></h4>
+</section>
+<section id="gpgs.enabledebugplugin.gpgs3.enabledebug" class="level4">
+<h4><a href="../../plugin/gpgs3/enableDebug.html">gpgs.enableDebug()</a></h4>
+</section>
+<section id="gpgs.isconnectedlistenerplugin.gpgs3.isconnected-1" class="level4">
+<h4><a href="../../plugin/gpgs3/isConnected.html">gpgs.isConnected(listener)</a></h4>
+</section>
+<section id="gpgs.isauthenticatedplugin.gpgs3.isauthenticated-1" class="level4">
+<h4><a href="../../plugin/gpgs3/isAuthenticated.html">gpgs.isAuthenticated()</a></h4>
+</section>
+<section id="gpgs.loginparamsplugin.gpgs3.login" class="level4">
+<h4><a href="../../plugin/gpgs3/login.html">gpgs.login(params)</a></h4>
+</section>
+<section id="gpgs.logoutplugin.gpgs3.logout" class="level4">
+<h4><a href="../../plugin/gpgs3/logout.html">gpgs.logout()</a></h4>
+</section>
+<section id="gpgs.getaccountnamelistenerplugin.gpgs3.getaccountname" class="level4">
+<h4><a href="../../plugin/gpgs3/getAccountName.html">gpgs.getAccountName(listener)</a></h4>
+</section>
+<section id="gpgs.getserverauthcodeparamsplugin.gpgs3.getserverauthcode" class="level4">
+<h4><a href="../../plugin/gpgs3/getServerAuthCode.html">gpgs.getServerAuthCode(params)</a></h4>
+</section>
+<section id="gpgs.loadimageparamsplugin.gpgs3.loadimage" class="level4">
+<h4><a href="../../plugin/gpgs3/loadImage.html">gpgs.loadImage(params)</a></h4>
+</section>
+</section>
+<section id="events" class="level2">
+<h2>Events</h2>
+<section id="loginplugin.gpgs3.event.login" class="level4">
+<h4><a href="../../plugin/gpgs3/event/login/index.html">login</a></h4>
+</section>
+<section id="getaccountnameplugin.gpgs3.event.getaccountname" class="level4">
+<h4><a href="../../plugin/gpgs3/event/getAccountName/index.html">getAccountName</a></h4>
+</section>
+<section id="getserverauthcodeplugin.gpgs3.event.getserverauthcode" class="level4">
+<h4><a href="../../plugin/gpgs3/event/getServerAuthCode/index.html">getServerAuthCode</a></h4>
+</section>
+<section id="loadgameplugin.gpgs3.event.loadgame" class="level4">
+<h4><a href="../../plugin/gpgs3/event/loadGame/index.html">loadGame</a></h4>
+</section>
+<section id="loadimageplugin.gpgs3.event.loadimage" class="level4">
+<h4><a href="../../plugin/gpgs3/event/loadImage/index.html">loadImage</a></h4>
+</section>
+</section>
+<section id="types" class="level2">
+<h2>Types</h2>
+<section id="gameplugin.gpgs3.type.game" class="level4">
+<h4><a href="../../plugin/gpgs3/type/Game/index.html">Game</a></h4>
 <hr>
 <div id="footer">
 <p class="copyright">
@@ -235,6 +318,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

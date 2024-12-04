@@ -70,7 +70,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/media/index.html">Graphics/Audio/Animation</a>
 </div>
-<h1 id="masking-images">Masking Images</h1>
+<section id="masking-images" class="level1">
+<h1>Masking Images</h1>
 <p>This guide discusses how to use <a href="../../../api/library/graphics/newMask.html">graphics.newMask()</a> to mask individual display objects or entire display groups.</p>
 <div class="guides-toc">
 <ul>
@@ -85,7 +86,8 @@
 </ul>
 </div>
 <p><a id="overview"></a></p>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Masking is a common practice in digital design. Using a black and white (or grayscale) image mask, you can show/hide portions of a <a href="../../../guide/media/displayObjects/index.html">display object</a> or <a href="../../../guide/graphics/group.html">display group</a> according to the mask composition. For example, you may create a mask image with white portions and black portions. When applied to a target object/group, the black portions of the mask will render the underlying pixels fully transparent (this is represented by the gray checkerboard in the following examples). In contrast, pixels behind the white portion of the mask image will remain fully visible.</p>
 <div class="float-right" style="float: none; margin: 20px 0px 20px 0px; font-size: 125%; color: #292929; vertical-align: middle;">
 <table>
@@ -115,7 +117,9 @@
 </table>
 </div>
 <p><a id="create"></a></p>
-<h2 id="creating-mask-images">Creating Mask Images</h2>
+</section>
+<section id="creating-mask-images" class="level2">
+<h2>Creating Mask Images</h2>
 <p>Mask image files can be created using any standard image editing program like <a href="https://www.adobe.com/products/photoshop.html">Photoshop</a>®, <a href="https://www.gimp.org/downloads/">GIMP</a>, or <a href="https://www.getpaint.net/download.html">Paint.NET</a>. When creating the image, you <strong>must</strong> obey the following rules to ensure that masks behave properly.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp title-nomargin">
@@ -128,7 +132,9 @@ Mask Image Requirements
 </ul>
 </div>
 <p><a id="apply"></a></p>
-<h2 id="applying-masks">Applying Masks</h2>
+</section>
+<section id="applying-masks" class="level2">
+<h2>Applying Masks</h2>
 <p>With the mask file properly prepared and saved, the next step is to create an actual mask using the <a href="../../../api/library/graphics/newMask.html">graphics.newMask()</a> API. Just supply the name of the mask image file to the function as follows:</p>
 <pre class="brush: lua;">local mask = graphics.newMask( "maskframe.png" )</pre>
 <p>Next, apply the mask to an object of your choice using the <code>setMask()</code> function:</p>
@@ -156,7 +162,9 @@ Important
 <p>Currently, mask images are not dynamically selected based on the device resolution, unlike images that are displayed using <a href="../../../api/library/display/newImageRect.html">display.newImageRect()</a>. Thus, if your masks are very detailed and you need to choose a mask image of the proper resolution for different devices, you should check <a href="../../../api/library/display/imageSuffix.html">display.imageSuffix</a> and use the appropriate mask image based on its value. See the example in <a href="../../../api/library/graphics/newMask.html">graphics.newMask()</a> for more details.</p>
 </div>
 <p><a id="manipulate"></a></p>
-<h2 id="mask-manipulation">Mask Manipulation</h2>
+</section>
+<section id="mask-manipulation" class="level2">
+<h2>Mask Manipulation</h2>
 <p>Masks are always applied to an object’s default anchor point at an angle of 0 with a scale ratio of 1:1. However, you can manipulate the mask after you’ve set it, in instances where you need to rotate/scale it or change its position relative to the image/group.</p>
 <p>The following properties are available for mask manipulation:</p>
 <div class="inner-table">
@@ -215,7 +223,9 @@ mountains.maskScaleY = 0.8</pre>
 </table>
 </div>
 <p><a id="groupmask"></a></p>
-<h2 id="group-masking">Group Masking</h2>
+</section>
+<section id="group-masking" class="level2">
+<h2>Group Masking</h2>
 <p>As indicated already, masks can be applied to <a href="../../../guide/graphics/group.html">display groups</a> as well as individual display objects.</p>
 <pre class="brush: lua;">local group = display.newGroup()
 
@@ -226,7 +236,9 @@ group:setMask( mask )
 group.maskX = group.x
 group.maskY = group.y</pre>
 <p><a id="hitmasking"></a></p>
-<h2 id="hit-masking">Hit Masking</h2>
+</section>
+<section id="hit-masking" class="level2">
+<h2>Hit Masking</h2>
 <p>Masking can also be used to prevent touch/tap response over completely masked (invisible) regions of an object. This is not possible with a standard, unmasked display object surrounded by transparent pixels. In that case, the object will appear smaller than its canvas size, but the system will still recognize user input on the transparent region. Thus, when dealing with very precise touch/tap recognition, the solution is to mask the image, using 100% black to mask the areas which should <strong>not</strong> return a touch or tap response.</p>
 <p>In the normal, unmasked image below, the system will report input response over the entire canvas, including the transparent pixels represented by gray checkerboard. However, if you need to constrain user input to only the <strong>visible</strong> portion (the icon itself), a mask is the best solution. In the masked example shown here, touch/tap response will be ignored outside of the visible region.</p>
 <div class="float-right" style="float: none; margin: 20px 0px 20px 0px; font-size: 125%; color: #292929; vertical-align: middle;">
@@ -243,11 +255,15 @@ group.maskY = group.y</pre>
 <p>If you need to override this behavior, but still require masking on the object, you can instruct the system to recognize user input on <strong>all</strong> areas of the masked object by setting the <code>object.isHitTestMasked</code> property to <code>false</code>:</p>
 <pre class="brush: lua;">object.isHitTestMasked = false</pre>
 <p><a id="dynamic"></a></p>
-<h2 id="dynamic-mask-selection">Dynamic Mask Selection</h2>
+</section>
+<section id="dynamic-mask-selection" class="level2">
+<h2>Dynamic Mask Selection</h2>
 <p>Unlike images and image sheets, Solar2D does not automatically load different mask files based on the screen resolution. The standard behavior of masks is to scale along with the content area. This makes basic mask usage very simple: provide one mask image file and it will scale according to the object on which it’s placed.</p>
 <p>However, an accurate, sharp mask image is sometimes required and <nobr>auto-scaling</nobr> is not ideal in such cases. One solution is to retrieve the internal image suffix using <a href="../../../api/library/display/imageSuffix.html">display.imageSuffix</a> and append it to the file parameter when creating the mask. Please see the example in <a href="../../../api/library/graphics/newMask.html">graphics.newMask()</a> for details.</p>
 <p><a id="remove"></a></p>
-<h2 id="removing-masks">Removing Masks</h2>
+</section>
+<section id="removing-masks" class="level2">
+<h2>Removing Masks</h2>
 <p>To remove a mask from an object, simply call <code>object:setMask( nil )</code>. Remember to also <code>nil</code> the handle of the mask if it won’t be used again.</p>
 <pre class="brush: lua;">mountains:setMask( nil )
 mask = nil</pre>
@@ -261,6 +277,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

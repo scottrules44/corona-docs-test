@@ -68,7 +68,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/system/index.html">system</a>  ▸  <a href="../../../api/library/system/setAccelerometerInterval.html">setAccelerometerInterval</a>
 </div>
-<h1 id="system.setaccelerometerinterval">system.setAccelerometerInterval()</h1>
+<section id="system.setaccelerometerinterval" class="level1">
+<h1>system.setAccelerometerInterval()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -99,7 +100,8 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Sets the frequency of <a href="../../../api/event/accelerometer/index.html">accelerometer</a> events.</p>
 <p>On both Android and iOS, the default value is not documented but it is typically low, for example 10 Hz.</p>
 <div class="docs-tip-outer docs-tip-color-alert">
@@ -112,7 +114,9 @@
 <p>Accelerometer events are a significant drain on the battery, so only increase the frequency when you need faster responses.</p>
 </div>
 </div>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li>On iOS, you must include the following keys/descriptions in the <code>plist</code> table of <code>build.settings</code>. When the system prompts the user to allow access, the associated description is displayed as part of the alert. Note that these descriptions can be customized to your preference and they can even be localized (<a href="../../../guide/distribution/localization/index.html">guide</a>).</li>
 </ul>
@@ -131,11 +135,17 @@
 <ul>
 <li>On iOS devices, the frequency limits are between 10 Hz and 100 Hz.</li>
 </ul>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">system.setAccelerometerInterval( frequency )</pre>
-<h5 id="frequency-required">frequency <sub><sup>(required)</sup></sub></h5>
+<section id="frequency-required" class="level5">
+<h5>frequency <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/Number.html">Number</a>.</em> The measurement interval in Hz.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">-- Set the measurement interval to 50 Hz
 -- This makes the system take 50 measurements per second
 system.setAccelerometerInterval( 50 )</pre>
@@ -149,6 +159,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -82,7 +82,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/Paint/index.html">Paint</a>  ▸  <a href="../../../api/type/Paint/blendMode.html">blendMode</a>
 </div>
-<h1 id="fill.blendmode">fill.blendMode</h1>
+<section id="fill.blendmode" class="level1">
+<h1>fill.blendMode</h1>
 <blockquote>
 <table>
 <tbody>
@@ -121,9 +122,12 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Allows you to change the blend mode on a specific object.</p>
-<h2 id="standard-blend-modes">Standard Blend Modes</h2>
+</section>
+<section id="standard-blend-modes" class="level2">
+<h2>Standard Blend Modes</h2>
 <p>Standard blend modes can be specified via one of the following strings:</p>
 <ul>
 <li><code>"normal"</code> — This is the standard blend mode.</li>
@@ -131,7 +135,9 @@
 <li><code>"multiply"</code> — Multiply blends are useful for creating shadows. Blending with white results in no change; blending with other colors will darken the composited image.</li>
 <li><code>"screen"</code> — This is useful for lightening images without lightening the darkest areas.</li>
 </ul>
-<h2 id="porter-duff-presets">Porter-Duff Presets</h2>
+</section>
+<section id="porter-duff-presets" class="level2">
+<h2>Porter-Duff Presets</h2>
 <p>Porter-Duff blend modes can be specified via one of the strings listed below.</p>
 <ul>
 <li><code>"clear"</code></li>
@@ -147,20 +153,33 @@
 <li><code>"dstAtop"</code></li>
 <li><code>"xor"</code></li>
 </ul>
-<h2 id="custom-blend-modes">Custom Blend Modes</h2>
+</section>
+<section id="custom-blend-modes" class="level2">
+<h2>Custom Blend Modes</h2>
 <p>Custom blend modes allow you to control how the source and destination factors are used in the blending calculation. They follow the blend factors discussed in the <a href="https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glBlendEquationSeparate.xml">OpenGL-ES 2 specification</a>.</p>
 <p>You can specify custom blend modes via a Lua table that specifies the source and destination factors as <nobr>key-value</nobr> pairs.</p>
-<h3 id="keys">Keys</h3>
-<h5 id="srccolor-required">srcColor <sub><sup>(required)</sup></sub></h5>
+<section id="keys" class="level3">
+<h3>Keys</h3>
+<section id="srccolor-required" class="level5">
+<h5>srcColor <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> See <a href="#values">values</a> below for a list of valid string values.</p>
-<h5 id="srcalpha-optional">srcAlpha <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="srcalpha-optional" class="level5">
+<h5>srcAlpha <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> By default, same as <code>srcColor</code>.</p>
-<h5 id="dstcolor-required">dstColor <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="dstcolor-required" class="level5">
+<h5>dstColor <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> See <a href="#values">values</a> below for a list of valid string values.</p>
-<h5 id="dstalpha-optional">dstAlpha <sub><sup>(optional)</sup></sub></h5>
+</section>
+<section id="dstalpha-optional" class="level5">
+<h5>dstAlpha <sub><sup>(optional)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> By default, same as <code>dstColor</code>.</p>
 <p><a id="values"></a></p>
-<h3 id="values">Values</h3>
+</section>
+</section>
+<section id="values" class="level3">
+<h3>Values</h3>
 <ul>
 <li><code>"zero"</code></li>
 <li><code>"one"</code></li>
@@ -174,18 +193,30 @@
 <li><code>"oneMinusDstAlpha"</code></li>
 <li><code>"srcAlphaSaturate"</code></li>
 </ul>
-<h2 id="limitations">Limitations</h2>
-<h3 id="premultiplied-alpha">Premultiplied Alpha</h3>
+</section>
+</section>
+<section id="limitations" class="level2">
+<h2>Limitations</h2>
+<section id="premultiplied-alpha" class="level3">
+<h3>Premultiplied Alpha</h3>
 <p>Some Android devices do not consistently load images as premultiplied alpha. We have applied workarounds but they are not foolproof. On those devices, the <code>"multiply"</code> and <code>"screen"</code> blend modes will not work correctly, and you should see a single warning message in the console about it.</p>
 <p>Porter-Duff blend modes will only work with images that have been loaded as premultiplied alpha.</p>
-<h2 id="examples">Examples</h2>
-<h5 id="additive-blend">Additive Blend</h5>
+</section>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
+<section id="additive-blend" class="level5">
+<h5>Additive Blend</h5>
 <pre class="brush: lua;">local laser = display.newImage( "blendmode_laser.png" )
 laser.fill.blendMode = "add"</pre>
-<h5 id="porter-duff-preset">Porter-Duff Preset</h5>
+</section>
+<section id="porter-duff-preset" class="level5">
+<h5>Porter-Duff Preset</h5>
 <pre class="brush: lua;">local laser = display.newImage( "blendmode_laser.png" )
 laser.fill.blendMode = "srcAtop"</pre>
-<h5 id="custom-blend">Custom Blend</h5>
+</section>
+<section id="custom-blend" class="level5">
+<h5>Custom Blend</h5>
 <pre class="brush: lua;">local laser = display.newImage( "blendmode_laser.png" )
 
 local customBlend = {
@@ -206,6 +237,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

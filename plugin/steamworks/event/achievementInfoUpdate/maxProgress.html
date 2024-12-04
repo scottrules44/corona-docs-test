@@ -64,7 +64,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../../plugin/index.html">Plugins</a>  ▸  <a href="../../../../plugin/steamworks/index.html">Steamworks</a>  ▸  <a href="../../../../plugin/steamworks/event/achievementInfoUpdate/index.html">achievementInfoUpdate</a>  ▸  <a href="../../../../plugin/steamworks/event/achievementInfoUpdate/maxProgress.html">maxProgress</a>
 </div>
-<h1 id="event.maxprogress">event.maxProgress</h1>
+<section id="event.maxprogress" class="level1">
+<h1>event.maxProgress</h1>
 <blockquote>
 <table>
 <tbody>
@@ -95,10 +96,13 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Number indicating the maximum progress towards unlocking an achievement. Only applicable if the <a href="../../../../plugin/steamworks/setAchievementProgress.html">steamworks.setAchievementProgress()</a> function has been called. Intended to be compared with the <a href="../../../../plugin/steamworks/event/achievementInfoUpdate/currentProgress.html">event.currentProgress</a> property.</p>
 <p>In order to calculate a percentage complete, you must divide the <a href="../../../../plugin/steamworks/event/achievementInfoUpdate/currentProgress.html">event.currentProgress</a> property by this property.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <ul>
 <li><p>This will be <code>nil</code> if the <a href="../../../../plugin/steamworks/setAchievementProgress.html">steamworks.setAchievementProgress()</a> function has never been called or if the achievement has been unlocked.</p></li>
 <li><p>Steam does not save the current progress of an achievement. It only saves an achievement’s lock/unlock status. This event property and the <a href="../../../../plugin/steamworks/setAchievementProgress.html">steamworks.setAchievementProgress()</a> function is mostly intended for displaying a popup notification to the user for visualization purposes.</p></li>
@@ -113,6 +117,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

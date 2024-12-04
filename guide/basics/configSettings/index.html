@@ -78,7 +78,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../guide/index.html">Developer Guides</a>  ▸  <a href="../../../guide/basics/index.html">Basics</a>
 </div>
-<h1 id="project-configuration">Project Configuration</h1>
+<section id="project-configuration" class="level1">
+<h1>Project Configuration</h1>
 <p>Configuration settings for an app are defined using a <code>config.lua</code> file written in Lua syntax. It should be placed in the project’s base directory.</p>
 <div class="guide-notebox-imp">
 <div class="notebox-title-imp">
@@ -99,7 +100,8 @@ Important
 </ul>
 </div>
 <p><a id="basicstruct"></a></p>
-<h2 id="basic-structure">Basic Structure</h2>
+<section id="basic-structure" class="level2">
+<h2>Basic Structure</h2>
 <p>The <code>config.lua</code> file is set up using a <code>content</code> table nested within a <code>application</code> table as follows:</p>
 <pre class="brush: lua;">application =
 {
@@ -109,7 +111,9 @@ Important
     }
 }</pre>
 <p><a id="contentscaling"></a></p>
-<h2 id="content-scaling">Content Scaling</h2>
+</section>
+<section id="content-scaling" class="level2">
+<h2>Content Scaling</h2>
 <p>Since most apps are developed for multiple devices and screen resolutions, Corona features several <strong>content scaling</strong> options. This allows you to use a common set of screen coordinates while Corona automatically scales text, vector objects, and images to different resolutions depending on the device.</p>
 <p>Corona can scale both upward or downward depending on your starting resolution. It can also substitute image files of differing resolution when needed, ensuring that your app appears clear and sharp on all devices (see <a href="#dynamicimages">Dynamic Image Selection</a> below).</p>
 <div class="guide-notebox">
@@ -120,7 +124,8 @@ Content Area
 <p>The content area represents the overall “stage” on which text, vector objects, and image assets are displayed. Everything will be positioned in relation to this content area, which may or may not match the screen’s actual pixel resolution. The content area will be <strong>scaled</strong> to fit the screen, with subtle differences dictated by the <code>scale</code> definition (see <strong>scale</strong> below).</p>
 <p>The internal <strong>coordinate system</strong> is also dependent on the content area, with coordinates <code>(0,0)</code> residing in the top-left corner of the content area, <strong>not</strong> necessarily the top-left corner of the screen. For more information on the Corona coordinate system, see the <a href="../../../guide/graphics/group.html">Group Programming Guide</a>.</p>
 </div>
-<h3 id="width-height">width | height</h3>
+<section id="width-height" class="level3">
+<h3>width | height</h3>
 <p>The content area is defined by the <code>width</code> and <code>height</code> values in <code>config.lua</code>. If you omit or set either of these values to <code>0</code>, content scaling will <strong>not</strong> be used.</p>
 <pre class="brush: lua;">application =
 {
@@ -137,7 +142,9 @@ Important
 <p>The content area should always be defined in respect to <strong>portrait</strong> orientation. If your app is designed for landscape orientation, you should still set the <code>width</code> and <code>height</code> according to <strong>portrait</strong> orientation. In the example above, a <nobr>landscape-oriented</nobr> app should still use <code>width</code> and <code>height</code> parameters of 320 and 480 respectively, <strong>not</strong> 480 and 320.</p>
 <p>To control an app’s orientation on actual devices, you must define specific parameters in the <code>build.settings</code> file. See <a href="../../../guide/distribution/buildSettings/index.html">Project Build Settings</a> for more information.</p>
 </div>
-<h3 id="scale">scale</h3>
+</section>
+<section id="scale" class="level3">
+<h3>scale</h3>
 <p>The <strong>scaling method</strong> of the content area is determined by the <code>scale</code> value. If you omit this (not recommended), the <code>width</code> and <code>height</code> values will be ignored and the content area will be set to the device’s actual pixel width and height.</p>
 <pre class="brush: lua;">application =
 {
@@ -175,7 +182,9 @@ Important
 <li><p><code>"adaptive"</code> — instead of a static content area, a dynamic content width and height is chosen based on the device. See the <a href="../../../guide/system/adaptiveScale/index.html">Adaptive Scaling (Resolution Independence)</a> guide for details. Note that <code>"adaptive"</code> mode is <strong>not</strong> supported for macOS desktop apps or Win32 desktop apps.</p></li>
 <li><p><code>"zoomStretch"</code> — scales the content area to fill the entire screen on any device, ignoring the content aspect ratio. This mode should be used with caution since it will stretch/warp images and text if the device’s aspect ratio doesn’t exactly match the content area’s aspect ratio.</p></li>
 </ul>
-<h3 id="xalign-yalign">xAlign | yAlign</h3>
+</section>
+<section id="xalign-yalign" class="level3">
+<h3>xAlign | yAlign</h3>
 <p>By default, scaled content is <strong>centered</strong> on the screen. In <code>letterbox</code> scale mode, empty screen area will be evenly divided between both sides. In <code>zoomEven</code> mode, the bleed area will be cropped equally on both sides.</p>
 <p>If you need to align the content area to a particular edge of the screen, you can use the <code>xAlign</code> and <code>yAlign</code> values.</p>
 <ul>
@@ -194,7 +203,10 @@ Important
     }
 }</pre>
 <p><a id="dynamicimages"></a></p>
-<h2 id="dynamic-image-selection">Dynamic Image Selection</h2>
+</section>
+</section>
+<section id="dynamic-image-selection" class="level2">
+<h2>Dynamic Image Selection</h2>
 <p>In addition to content scaling, Corona supports <strong>dynamic image selection</strong>. If you are developing an app for both normal and Retina/HD devices, you should not rely on Corona to simply scale one set of images across a wide array of screen resolutions. There are several issues related to this:</p>
 <ol type="1">
 <li><p>If you design all of your images in low resolution and allow Corona to scale them up for Retina/HD devices, the images will appear blurry or pixelated. Not only will this result in poor visual appearance, but it may cause the app to be rejected before it reaches the marketplace.</p></li>
@@ -227,7 +239,8 @@ Important
 </div>
 <p>If you use widgets from the Corona <a href="../../../api/library/widget/index.html">widget</a> library, you must adhere to the standardized <code>@2x</code> and <code>@4x</code> suffix options, otherwise the proper <nobr>hi-resolution</nobr> assets will not be selected on Retina/HD devices. Note that this rule does not apply for <nobr>visually-customized</nobr> widgets for which you’ve created custom assets and/or image sheets — in this case you can use any suffix setup and name the assets accordingly.</p>
 </div>
-<h3 id="example">Example</h3>
+<section id="example" class="level3">
+<h3>Example</h3>
 <p>In the following example, just one suffix is defined (<code>"@2x"</code>), but it accommodates several <nobr>high-resolution</nobr> devices. Resolutions below this scale factor will simply use the <nobr>non-suffixed</nobr> image set. A <nobr>non-suffixed</nobr> image set should be included in every project as a basic precaution — this ensures that if a particular device falls outside of the scale factor range(s) you’ve defined, Corona can use these images instead.</p>
 <pre class="brush: lua;">application = 
 {
@@ -252,7 +265,10 @@ Note
 <p>Although you can define as many image sets as you wish, there are simply too many screen sizes and aspect ratios to achieve a perfect 1:1 ratio on all of them. Thus, you must accept some degree of scaling, even when using dynamic image selection. In most cases, you should set up image suffixes that target devices of similar resolution, then allow Corona to scale the images up or down slightly depending on the device. This minor degree of scaling will generally not be perceived by the end user, since most modern devices have a very high pixel density. As noted at the top of this section, it’s better to scale images down versus up and you should attempt to construct a scaling setup that achieves this on the most popular devices.</p>
 </div>
 <p><a id="contentproperties"></a></p>
-<h2 id="content-properties">Content Properties</h2>
+</section>
+</section>
+<section id="content-properties" class="level2">
+<h2>Content Properties</h2>
 <p>Several properties are exposed within Corona to help you work with scaled content, including those mentioned below. Please refer to the <a href="../../../api/library/display/index.html">API Reference</a> for a complete list.</p>
 <ul>
 <li><p><a href="../../../api/library/display/contentWidth.html">display.contentWidth</a> and <a href="../../../api/library/display/contentHeight.html">display.contentHeight</a> — <nobr>read-only</nobr> properties representing the original width and height of the content, in pixels.</p></li>
@@ -262,7 +278,9 @@ Note
 <li><p><a href="../../../api/library/display/contentCenterX.html">display.contentCenterX</a> and <a href="../../../api/library/display/contentCenterY.html">display.contentCenterY</a> — <nobr>read-only</nobr> properties representing the center of the content area, useful for positioning objects along either central axis.</p></li>
 </ul>
 <p><a id="debug"></a></p>
-<h2 id="runtime-errors">Runtime Errors</h2>
+</section>
+<section id="runtime-errors" class="level2">
+<h2>Runtime Errors</h2>
 <p>In the Corona Simulator, there is a setting under <strong>Preferences</strong> called <strong>Show Runtime Errors</strong> which defaults to <strong>on</strong>. This global setting triggers <nobr>pop-up</nobr> error messages while running an app in the Simulator. If you don’t like this feature or if it doesn’t fit your workflow, you can turn it off.</p>
 <p>You can also set this on a per-app basis from <code>config.lua</code> to control error messages while running the app on a device. <code>showRuntimeErrors</code> accepts a boolean value <nobr>(<code>true</code> or <code>false</code>)</nobr>. The default depends on whether the app is built for distribution: if an app is built with a developer provisioning profile or the debug keystore then <code>showRuntimeErrors</code> will default to <code>true</code>, otherwise it will default to <code>false</code>. Obviously, an explicit setting will override the default.</p>
 <pre class="brush: lua;">application =
@@ -294,7 +312,9 @@ end
 
 Runtime:addEventListener( "unhandledError", myUnhandledErrorListener )</pre>
 <p><a id="fps"></a></p>
-<h2 id="frame-rate-fps">Frame Rate (fps)</h2>
+</section>
+<section id="frame-rate-fps" class="level2">
+<h2>Frame Rate (fps)</h2>
 <p>The default frame rate is 30 frames per second, but you can set it to 60 frames per second by adding the <code>fps</code> key. Values other than <code>30</code> or <code>60</code> will be ignored.</p>
 <pre class="brush: lua;">application =
 {
@@ -304,7 +324,9 @@ Runtime:addEventListener( "unhandledError", myUnhandledErrorListener )</pre>
     }
 }</pre>
 <p><a id="licensing"></a></p>
-<h2 id="app-licensing">App Licensing</h2>
+</section>
+<section id="app-licensing" class="level2">
+<h2>App Licensing</h2>
 <p>The Corona <a href="../../../api/library/licensing/index.html">licensing</a> library lets you confirm that the app was bought from a store. To implement licensing, the <code>license</code> table must be added to the <code>application</code> table of <code>config.lua</code>:</p>
 <pre class="brush: lua;">application =
 {
@@ -318,7 +340,9 @@ Runtime:addEventListener( "unhandledError", myUnhandledErrorListener )</pre>
 }</pre>
 <p>Please see the <a href="../../../api/library/licensing/index.html">licensing</a> documentation for full details on how to implement and execute licensing.</p>
 <p><a id="shaderPrecision"></a></p>
-<h2 id="shader-precision">Shader Precision</h2>
+</section>
+<section id="shader-precision" class="level2">
+<h2>Shader Precision</h2>
 <p>This is used to override the default shader precision for all OpenGL ES shaders (on devices).</p>
 <p>Acceptable values are <code>"highp"</code>, <code>"mediump"</code>, and <code>"lowp"</code>.</p>
 <p>You should <strong>not</strong> specify this unless you absolutely require higher precision and see no performance impact from setting it.</p>
@@ -329,7 +353,8 @@ Runtime:addEventListener( "unhandledError", myUnhandledErrorListener )</pre>
         shaderPrecision = "highp",
     },
 }</pre>
-<h3 id="fine-tuning">Fine Tuning</h3>
+<section id="fine-tuning" class="level3">
+<h3>Fine Tuning</h3>
 <p>Assigning a string value as outlined above will change the meaning of all precision qualifier macros. Thus, another option is to set individual precision macros by assigning a table to <code>shaderPrecision</code>. This table should contain Corona precision qualifier macros as keys and OpenGL ES precision qualifiers as values, for example:</p>
 <pre class="brush: lua;">application =
 {
@@ -381,6 +406,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

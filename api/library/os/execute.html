@@ -68,7 +68,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/library/index.html">Libraries</a>  ▸  <a href="../../../api/library/os/index.html">os</a>  ▸  <a href="../../../api/library/os/execute.html">execute</a>
 </div>
-<h1 id="os.execute">os.execute()</h1>
+<section id="os.execute" class="level1">
+<h1>os.execute()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -99,16 +100,25 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Passes a string to the operating system for execution and returns a system-dependent status code. This function is equivalent to the C function <code>system()</code>.</p>
 <p>This function returns a <a href="../../../api/type/Number.html">number</a> representing the status code with the system-dependent results of the command.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>This function does not work on devices.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <pre class="brush: lua;">os.execute( cmd )</pre>
-<h5 id="cmd-required">cmd <sub><sup>(required)</sup></sub></h5>
+<section id="cmd-required" class="level5">
+<h5>cmd <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../../api/type/String.html">String</a>.</em> String specifying a command to be executed by an operating system shell. The function of this command depends on what is allowed by the running OS. If <code>cmd</code> is not specified, the return value is <nobr>non-zero</nobr> if a shell is available, or zero otherwise.</p>
-<h2 id="example">Example</h2>
+</section>
+</section>
+<section id="example" class="level2">
+<h2>Example</h2>
 <pre class="brush: lua;">os.execute( "ls" )</pre>
 <hr>
 <div id="footer">
@@ -120,6 +130,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

@@ -67,7 +67,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../plugin/index.html">Plugins</a>  ▸  <a href="../../plugin/google-iap-billing/index.html">Google IAP</a>  ▸  <a href="../../plugin/google-iap-billing/finishTransaction.html">finishTransaction</a>
 </div>
-<h1 id="store.finishtransaction">store.finishTransaction()</h1>
+<section id="store.finishtransaction" class="level1">
+<h1>store.finishTransaction()</h1>
 <blockquote>
 <table>
 <tbody>
@@ -98,16 +99,22 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>Notifies Google Play Store that purchase was processed (acknowledges it).</p>
 <p>Following every successful transaction you must call this function and/or <a href="../../plugin/google-iap-billing/consumePurchase.html">consume</a> it. If you don’t do it over three days, Google Play will <a href="(https://developer.android.com/google/play/billing/integrate#process)">refund</a> the purchase to customer.</p>
-<h2 id="syntax">Syntax</h2>
+</section>
+<section id="syntax" class="level2">
+<h2>Syntax</h2>
 <p>This function has two alternative syntaxes</p>
 <pre class="brush: lua;">store.finishTransaction( transaction )
 store.finishTransaction( productIdentifier )</pre>
-<h5 id="transaction-required">transaction <sub><sup>(required)</sup></sub></h5>
+<section id="transaction-required" class="level5">
+<h5>transaction <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/Table.html">Table</a>.</em> Table containing data related to the <a href="../../plugin/google-iap-billing/event/storeTransaction/transaction.html">transaction</a>.</p>
-<h5 id="transaction-required-1">transaction <sub><sup>(required)</sup></sub></h5>
+</section>
+<section id="transaction-required-1" class="level5">
+<h5>transaction <sub><sup>(required)</sup></sub></h5>
 <p><em><a href="../../api/type/String.html">String</a>.</em> String representing the product identifier of the item to be acknowledged.</p>
 <hr>
 <div id="footer">
@@ -119,6 +126,9 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">

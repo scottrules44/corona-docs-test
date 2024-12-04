@@ -65,7 +65,8 @@
 <div id="breadcrumb">
 <a href="https://docs.coronalabs.com">Documentation</a>  ▸  <a href="../../../api/index.html">API Reference</a>  ▸  <a href="../../../api/type/index.html">type</a>  ▸  <a href="../../../api/type/DisplayObject/index.html">DisplayObject</a>  ▸  <a href="../../../api/type/DisplayObject/alpha.html">alpha</a>
 </div>
-<h1 id="object.alpha">object.alpha</h1>
+<section id="object.alpha" class="level1">
+<h1>object.alpha</h1>
 <blockquote>
 <table>
 <tbody>
@@ -92,17 +93,22 @@
 </tbody>
 </table>
 </blockquote>
-<h2 id="overview">Overview</h2>
+<section id="overview" class="level2">
+<h2>Overview</h2>
 <p>This property represents the alpha value of a <a href="../../../api/type/DisplayObject/index.html">display object</a>. Use it to set or retrieve the object’s opacity. A value of <code>0</code> is transparent and <code>1.0</code> is fully opaque.</p>
 <p>This property is often used in the <a href="../../../api/library/transition/to.html">transition.to()</a> function to fade in/out an object over time.</p>
-<h2 id="gotchas">Gotchas</h2>
+</section>
+<section id="gotchas" class="level2">
+<h2>Gotchas</h2>
 <p>The alpha value set by <a href="../../../api/type/ShapeObject/setFillColor.html">object:setFillColor</a> only applies to the color/tint portion of the object, while <code>object.alpha</code> controls the overall opacity of the object, including the fill color/image. The fill alpha is the <code>object.alpha</code> value multiplied by the <code>object:setFillColor()</code> alpha value. Consider the following examples:</p>
 <ul>
 <li><p>If the <code>object:setFillColor()</code> alpha is <code>0</code>, the color/tint portion alpha of the object will be <code>0</code> no matter what the <code>object.alpha</code> value is.</p></li>
 <li><p>If the <code>object:setFillColor()</code> alpha is <code>0.5</code>, transitioning the <code>object.alpha</code> from <code>0</code> to <code>1</code> will transition the <code>object:setFillColor()</code> portion of the object from <code>0</code> to <code>0.5</code>.</p></li>
 </ul>
 <p>Also note that an object may consist of both the <a href="../../../api/type/ShapeObject/fill.html">fill</a> color/tint and the <a href="../../../api/type/ShapeObject/stroke.html">stroke</a>. In this case, <code>object.alpha</code> controls the opacity of both portions, while <a href="../../../api/type/ShapeObject/setFillColor.html">object:setFillColor</a> only controls the fill color/tint.</p>
-<h2 id="examples">Examples</h2>
+</section>
+<section id="examples" class="level2">
+<h2>Examples</h2>
 <pre class="brush: lua;">local rect1 = display.newRect( 100, 100, 50, 50 )
 rect1:setFillColor( 1, 0, 0 )
 
@@ -121,6 +127,8 @@ Help us help you! If you notice a problem with this page, please report it.
 </p>
 <p><a class="feedback-button" href="https://github.com/coronalabs/corona-docs/issues" target="_blank">Report an Issue</a></p>
 </div>
+</section>
+</section>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shCore.js" type="text/javascript"></script>
 <script src="https://corona-cdn.coronalabs.com/js/SyntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
 <script type="text/javascript">
