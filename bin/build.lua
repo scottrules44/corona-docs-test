@@ -656,6 +656,7 @@ for i=1,#markdown_files do
 		
 		-- Run pandoc command on the markdown file
 		local pandoc = "pandoc -f markdown -t html -o '" .. full_html_path .. "' '" .. path1 .. "'"
+			.. " --section-divs"
 			.. " --css " .. relative_css_path
 			.. " --css " .. relative_css_SH_path
 			.. " --toc"
@@ -673,8 +674,8 @@ for i=1,#markdown_files do
 		pandoc = nil
 	end
 
-	local percent_completed = math_ceil((i/#markdown_files)*100)
-	print( "PROGRESS:" .. percent_completed )
+	-- local percent_completed = math_ceil((i/#markdown_files)*100)
+	-- print( "PROGRESS:" .. percent_completed )
 end
 
 local execute = normpath(abspath( tmp_resources_dir .. "/execute" ))
@@ -683,7 +684,6 @@ handle:write( table.concat( pandocCommands, "\0" ) )
 io.close( handle )
 
 utils.execute("cat '" .. execute .. "' | xargs -n1 -P8 -0 bash -c")
-print("run1323//", pandocCommands)
 -- write last modified date to file
 local fh = io.open( ".lastbuild.log", "w" )
 fh:write( Date():__tostring() )
