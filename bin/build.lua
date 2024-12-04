@@ -656,7 +656,6 @@ for i=1,#markdown_files do
 		
 		-- Run pandoc command on the markdown file
 		local pandoc = "pandoc -f markdown -t html -o '" .. full_html_path .. "' '" .. path1 .. "'"
-			.. " --section-divs"
 			.. " --css " .. relative_css_path
 			.. " --css " .. relative_css_SH_path
 			.. " --toc"
